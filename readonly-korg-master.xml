@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="goog"
            fetch="ssh://android-git.corp.google.com:29418/"
            review="https://android-git.corp.google.com/g/Gerrit" />
-  <default revision="master"
+  <default revision="readonly-korg-master"
            remote="goog" />
-  <manifest-server url="http://android-test:8787" />
 
-  <!-- BEGIN open-source projects -->
   <project path="build" name="platform/build">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
@@ -20,24 +17,12 @@
   <project path="dalvik" name="platform/dalvik" />
   <project path="development" name="platform/development" />
   <project path="device/common" name="device/common" />
-  <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" />
-  <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" />
   <project path="device/htc/common" name="device/htc/common" />
   <project path="device/htc/passion" name="device/htc/passion" />
   <project path="device/htc/passion-common" name="device/htc/passion-common" />
-  <project path="device/moto/common" name="device/moto/common" />
-  <project path="device/moto/stingray" name="device/moto/stingray" />
-  <project path="device/moto/wingray" name="device/moto/wingray" />
   <project path="device/sample" name="device/sample" />
   <project path="device/samsung/crespo" name="device/samsung/crespo" />
-  <project path="device/samsung/crespo4g" name="device/samsung/crespo4g" />
-  <project path="device/ti/bootloader/uboot" name="device/ti/bootloader/uboot" />
-  <project path="device/ti/bootloader/xloader" name="device/ti/bootloader/xloader" />
-  <project path="device/ti/panda" name="device/ti/panda" />
-  <project path="docs/source.android.com" name="platform/docs/source.android.com" />
-  <project path="external/android-mock" name="platform/external/android-mock" />
   <project path="external/apache-http" name="platform/external/apache-http" />
-  <project path="external/apache-xml" name="platform/external/apache-xml" />
   <project path="external/astl" name="platform/external/astl" />
   <project path="external/bison" name="platform/external/bison" />
   <project path="external/blktrace" name="platform/external/blktrace" />
@@ -48,13 +33,10 @@
   <project path="external/bsdiff" name="platform/external/bsdiff" />
   <project path="external/bzip2" name="platform/external/bzip2" />
   <project path="external/chromium" name="platform/external/chromium" />
-  <project path="external/clang" name="platform/external/clang" />
-  <project path="external/collada" name="platform/external/collada" />
-  <project path="external/curl" name="platform/external/curl" />
+  <project path="external/clearsilver" name="platform/external/clearsilver" />
   <project path="external/dbus" name="platform/external/dbus" />
   <project path="external/dhcpcd" name="platform/external/dhcpcd" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" />
-  <project path="external/doclava" name="platform/external/doclava" />
   <project path="external/dropbear" name="platform/external/dropbear" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" />
   <project path="external/easymock" name="platform/external/easymock" />
@@ -65,23 +47,19 @@
   <project path="external/esd" name="platform/external/esd" />
   <project path="external/expat" name="platform/external/expat" />
   <project path="external/fdlibm" name="platform/external/fdlibm" />
-  <project path="external/flac" name="platform/external/flac" />
   <project path="external/freetype" name="platform/external/freetype" />
   <project path="external/fsck_msdos" name="platform/external/fsck_msdos" />
   <project path="external/genext2fs" name="platform/external/genext2fs" />
   <project path="external/giflib" name="platform/external/giflib" />
-  <project path="external/google-diff-match-patch" name="platform/external/google-diff-match-patch" />
   <project path="external/grub" name="platform/external/grub" />
   <project path="external/gtest" name="platform/external/gtest" />
   <project path="external/guava" name="platform/external/guava" />
   <project path="external/harfbuzz" name="platform/external/harfbuzz" />
-  <project path="external/hsqldb" name="platform/external/hsqldb" />
   <project path="external/hyphenation" name="platform/external/hyphenation" />
   <project path="external/icu4c" name="platform/external/icu4c" />
   <project path="external/iproute2" name="platform/external/iproute2" />
   <project path="external/ipsec-tools" name="platform/external/ipsec-tools" />
   <project path="external/iptables" name="platform/external/iptables" />
-  <project path="external/javassist" name="platform/external/javassist" />
   <project path="external/jdiff" name="platform/external/jdiff" />
   <project path="external/jhead" name="platform/external/jhead" />
   <project path="external/jpeg" name="platform/external/jpeg" />
@@ -93,14 +71,10 @@
   <project path="external/libgsm" name="platform/external/libgsm" />
   <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" />
   <project path="external/libpcap" name="platform/external/libpcap" />
-  <project path="external/libphonenumber" name="platform/external/libphonenumber" />
   <project path="external/libpng" name="platform/external/libpng" />
   <project path="external/libvpx" name="platform/external/libvpx" />
   <project path="external/libxml2" name="platform/external/libxml2" />
   <project path="external/libxslt" name="platform/external/libxslt" />
-  <project path="external/llvm" name="platform/external/llvm" />
-  <project path="external/markdown" name="platform/external/markdown" />
-  <project path="external/mesa3d" name="platform/external/mesa3d" />
   <project path="external/mtpd" name="platform/external/mtpd" />
   <project path="external/netcat" name="platform/external/netcat" />
   <project path="external/netperf" name="platform/external/netperf" />
@@ -109,9 +83,7 @@
   <project path="external/oauth" name="platform/external/oauth" />
   <project path="external/openssl" name="platform/external/openssl" />
   <project path="external/oprofile" name="platform/external/oprofile" />
-  <project path="external/pcre" name="platform/external/pcre" />
   <project path="external/ping" name="platform/external/ping" />
-  <project path="external/ping6" name="platform/external/ping6" />
   <project path="external/ppp" name="platform/external/ppp" />
   <project path="external/proguard" name="platform/external/proguard" />
   <project path="external/protobuf" name="platform/external/protobuf" />
@@ -131,24 +103,15 @@
   <project path="external/tinyxml" name="platform/external/tinyxml" />
   <project path="external/tremolo" name="platform/external/tremolo" />
   <project path="external/v8" name="platform/external/v8" />
-  <project path="external/valgrind" name="platform/external/valgrind" />
   <project path="external/webkit" name="platform/external/webkit" />
-  <project path="external/webp" name="platform/external/webp" />
   <project path="external/wpa_supplicant" name="platform/external/wpa_supplicant" />
   <project path="external/wpa_supplicant_6" name="platform/external/wpa_supplicant_6" />
-  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" />
   <project path="external/yaffs2" name="platform/external/yaffs2" />
   <project path="external/zlib" name="platform/external/zlib" />
   <project path="frameworks/base" name="platform/frameworks/base" />
-  <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" />
-  <project path="frameworks/compile/pixelflinger2" name="platform/frameworks/compile/pixelflinger2" />
-  <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" />
   <project path="frameworks/ex" name="platform/frameworks/ex" />
-  <project path="frameworks/media/libvideoeditor" name="platform/frameworks/media/libvideoeditor" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
-  <project path="frameworks/opt/vcard" name="platform/frameworks/opt/vcard" />
-  <project path="frameworks/support" name="platform/frameworks/support" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" />
@@ -160,7 +123,7 @@
   <project path="hardware/ti/wlan" name="platform/hardware/ti/wlan" />
   <project path="libcore" name="platform/libcore" />
   <project path="ndk" name="platform/ndk" />
-  <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
+  <project path="packages/apps/AccountsAndSyncSettings" name="platform/packages/apps/AccountsAndSyncSettings" />
   <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" />
   <project path="packages/apps/Browser" name="platform/packages/apps/Browser" />
   <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" />
@@ -170,7 +133,6 @@
   <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" />
   <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" />
   <project path="packages/apps/Email" name="platform/packages/apps/Email" />
-  <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
   <project path="packages/apps/Gallery3D" name="platform/packages/apps/Gallery3D" />
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" />
@@ -188,7 +150,6 @@
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" />
   <project path="packages/apps/Stk" name="platform/packages/apps/Stk" />
   <project path="packages/apps/Tag" name="platform/packages/apps/Tag" />
-  <project path="packages/apps/VideoEditor" name="platform/packages/apps/VideoEditor" />
   <project path="packages/apps/VoiceDialer" name="platform/packages/apps/VoiceDialer" />
   <project path="packages/experimental" name="platform/packages/experimental" />
   <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" />
@@ -204,7 +165,6 @@
   <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" />
   <project path="packages/providers/UserDictionaryProvider" name="platform/packages/providers/UserDictionaryProvider" />
   <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" />
-  <project path="packages/wallpapers/HoloSpiral" name="platform/packages/wallpapers/HoloSpiral" />
   <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" />
   <project path="packages/wallpapers/MagicSmoke" name="platform/packages/wallpapers/MagicSmoke" />
   <project path="packages/wallpapers/MusicVisualization" name="platform/packages/wallpapers/MusicVisualization" />
@@ -217,88 +177,7 @@
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/vold" name="platform/system/vold" />
   <project path="system/wlan/ti" name="platform/system/wlan/ti" />
-  <!-- END open-source projects -->
 
-  <!-- BEGIN closed-source projects -->
-  <project path="vendor/adobe/prebuilt" name="platform/vendor/adobe/prebuilt" />
-  <project path="vendor/android/compatibility" name="platform/vendor/android/compatibility" />
-  <project path="vendor/android/z" name="platform/vendor/android/z" />
-  <project path="vendor/broadcom/wlan" name="platform/vendor/broadcom/wlan" />
-  <project path="vendor/docomo" name="platform/vendor/docomo" />
-  <project path="vendor/esmertec" name="platform/vendor/esmertec" />
-  <project path="vendor/facebook" name="platform/vendor/facebook" />
-  <project path="vendor/google" name="platform/vendor/google" />
-  <project path="vendor/htc/common" name="platform/vendor/htc/common" />
-  <project path="vendor/htc/packages" name="platform/vendor/htc/packages" />
-  <project path="vendor/htc/passion" name="platform/vendor/htc/passion" />
-  <project path="vendor/htc/passion-common" name="platform/vendor/htc/passion-common" />
-  <project path="vendor/htc/prebuilt" name="platform/vendor/htc/prebuilt" />
-  <project path="vendor/khronos" name="platform/vendor/khronos" />
-  <project path="vendor/moto/common" name="platform/vendor/moto/common" />
-  <project path="vendor/moto/olympus" name="platform/vendor/moto/olympus" />
-  <project path="vendor/moto/prebuilt" name="platform/vendor/moto/prebuilt" />
-  <project path="vendor/moto/sholes" name="platform/vendor/moto/sholes" />
-  <project path="vendor/moto/stingray" name="platform/vendor/moto/stingray" />
-  <project path="vendor/nvidia/harmony" name="platform/vendor/nvidia/harmony" />
-  <project path="vendor/nvidia/proprietary" name="platform/vendor/nvidia/proprietary" />
-  <project path="vendor/nxp" name="platform/vendor/nxp" />
-  <project path="vendor/omron" name="platform/vendor/omron" />
-  <project path="vendor/pv" name="platform/vendor/pv" />
-  <project path="vendor/qcom/android" name="platform/vendor/qcom/android" />
-  <project path="vendor/qcom/gpu" name="platform/vendor/qcom/gpu" />
-  <project path="vendor/qcom/media" name="platform/vendor/qcom/media" />
-  <project path="vendor/qcom/proprietary" name="platform/vendor/qcom/proprietary" />
-  <project path="vendor/qcom/surf" name="platform/vendor/qcom/surf" />
-  <project path="vendor/qcom/surf7x30" name="platform/vendor/qcom/surf7x30" />
-  <project path="vendor/qcom/surf8k" name="platform/vendor/qcom/surf8k" />
-  <project path="vendor/qcom/telephony" name="platform/vendor/qcom/telephony" />
-  <project path="vendor/quickoffice/prebuilt" name="platform/vendor/quickoffice/prebuilt" />
-  <project path="vendor/samsung/crespo" name="platform/vendor/samsung/crespo" revision="gingerbread" />
-  <project path="vendor/samsung/packages/wallpapers" name="platform/vendor/samsung/packages/wallpapers" />
-  <project path="vendor/silvertree" name="platform/vendor/silvertree" />
-  <project path="vendor/singtelgroup" name="platform/vendor/singtelgroup" />
-  <project path="vendor/thinkfree" name="platform/vendor/thinkfree" />
-  <project path="vendor/ti/common" name="platform/vendor/ti/common" />
-  <project path="vendor/ti/proprietary" name="platform/vendor/ti/proprietary" />
-  <project path="vendor/tmobile" name="platform/vendor/tmobile" />
-  <project path="vendor/trendy" name="platform/vendor/trendy" />
-  <project path="vendor/twitter/prebuilt" name="platform/vendor/twitter/prebuilt" />
-  <project path="vendor/unbundled_google/libraries" name="platform/vendor/unbundled_google/libraries" />
-  <project path="vendor/unbundled_google/packages/AdDemos" name="platform/vendor/unbundled_google/packages/AdDemos" />
-  <project path="vendor/unbundled_google/packages/Books" name="platform/vendor/unbundled_google/packages/Books" />
-  <project path="vendor/unbundled_google/packages/Buzz" name="platform/vendor/unbundled_google/packages/Buzz" />
-  <project path="vendor/unbundled_google/packages/CarHome" name="platform/vendor/unbundled_google/packages/CarHome" />
-  <project path="vendor/unbundled_google/packages/CarHomeGoogle" name="platform/vendor/unbundled_google/packages/CarHomeGoogle" />
-  <project path="vendor/unbundled_google/packages/CarHomeLauncher" name="platform/vendor/unbundled_google/packages/CarHomeLauncher" />
-  <project path="vendor/unbundled_google/packages/ChromeBookmarksSyncAdapter" name="platform/vendor/unbundled_google/packages/ChromeBookmarksSyncAdapter" />
-  <project path="vendor/unbundled_google/packages/CloudPrint" name="platform/vendor/unbundled_google/packages/CloudPrint" />
-  <project path="vendor/unbundled_google/packages/DeskClockGoogle" name="platform/vendor/unbundled_google/packages/DeskClockGoogle" />
-  <project path="vendor/unbundled_google/packages/Earth" name="platform/vendor/unbundled_google/packages/Earth" />
-  <project path="vendor/unbundled_google/packages/Finsky" name="platform/vendor/unbundled_google/packages/Finsky" />
-  <project path="vendor/unbundled_google/packages/Gmail" name="platform/vendor/unbundled_google/packages/Gmail" />
-  <project path="vendor/unbundled_google/packages/Goggles" name="platform/vendor/unbundled_google/packages/Goggles" />
-  <project path="vendor/unbundled_google/packages/GoogleAdService" name="platform/vendor/unbundled_google/packages/GoogleAdService" />
-  <project path="vendor/unbundled_google/packages/GoogleCalendarSyncAdapter" name="platform/vendor/unbundled_google/packages/GoogleCalendarSyncAdapter" />
-  <project path="vendor/unbundled_google/packages/GoogleContactsSyncAdapter" name="platform/vendor/unbundled_google/packages/GoogleContactsSyncAdapter" />
-  <project path="vendor/unbundled_google/packages/GooglePartnerSetup" name="platform/vendor/unbundled_google/packages/GooglePartnerSetup" />
-  <project path="vendor/unbundled_google/packages/GoogleServicesFramework" name="platform/vendor/unbundled_google/packages/GoogleServicesFramework" />
-  <project path="vendor/unbundled_google/packages/KoreanIME" name="platform/vendor/unbundled_google/packages/KoreanIME" />
-  <project path="vendor/unbundled_google/packages/LatinIMEGoogle" name="platform/vendor/unbundled_google/packages/LatinIMEGoogle" />
-  <project path="vendor/unbundled_google/packages/Market" name="platform/vendor/unbundled_google/packages/Market" revision="market-myapps" />
-  <project path="vendor/unbundled_google/packages/Music2" name="platform/vendor/unbundled_google/packages/Music2" />
-  <project path="vendor/unbundled_google/packages/MusicGoogle" name="platform/vendor/unbundled_google/packages/MusicGoogle" />
-  <project path="vendor/unbundled_google/packages/NewsWeather" name="platform/vendor/unbundled_google/packages/NewsWeather" />
-  <project path="vendor/unbundled_google/packages/Notes" name="platform/vendor/unbundled_google/packages/Notes" />
-  <project path="vendor/unbundled_google/packages/Print" name="platform/vendor/unbundled_google/packages/Print" />
-  <project path="vendor/unbundled_google/packages/QuickSearchBoxGoogle" name="platform/vendor/unbundled_google/packages/QuickSearchBoxGoogle" />
-  <project path="vendor/unbundled_google/packages/Talk" name="platform/vendor/unbundled_google/packages/Talk" />
-  <project path="vendor/unbundled_google/packages/VoiceSearch" name="platform/vendor/unbundled_google/packages/VoiceSearch" />
-  <project path="vendor/unbundled_google/packages/WebdriveMusic" name="platform/vendor/unbundled_google/packages/WebdriveMusic" />
-  <project path="vendor/unbundled_google/packages/YouTube" name="platform/vendor/unbundled_google/packages/YouTube" />
-  <project path="vendor/unbundled_google/packages/Wallet" name="platform/vendor/unbundled_google/packages/Wallet" />
-  <project path="vendor/verizon" name="platform/vendor/verizon" />
-  <project path="vendor/vodafone" name="platform/vendor/vodafone" />
-  <project path="vendor/widevine" name="platform/vendor/widevine" />
-  <!-- END closed-source projects -->
+  <project path="tools/tradefederation" name="platform/tools/tradefederation" />
 
 </manifest>
