@@ -3,21 +3,23 @@
 
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"/>
-  <remote  name="github-yuanqy" revision="ics"
-           fetch="https://github.com/YuanQY/"/>
+  <remote  name="github" revision="ics"
+           fetch="https://github.com/"/>
   <default revision="refs/tags/android-4.0.4_r2.1"
            remote="aosp"
            sync-j="4" />
-  <project path="device/motorola/milestone2" name="android_device_motorola_milestone2" remote="github-yuanqy" revision="ics"/>
-  <project path="vendor/motorola" name="proprietary_vendor_motorola" remote="github-yuanqy" revision="ics"/>
+  <project path="device/motorola/milestone2" name="YuanQY/android_device_motorola_milestone2" remote="github" revision="ics"/>
+  <project path="vendor/motorola" name="YuanQY/proprietary_vendor_motorola" remote="github" revision="ics"/>
   
-  <project path="build" name="android_build" remote="github-yuanqy" revision="master">
+  <project path="build" name="YuanQY/android_build" remote="github" revision="master">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="hardware/ti/wlan" name="hardware_ti_wlan" remote="github-yuanqy" revision="master"></project>
-  <project path="external/gtest" name="external_gtest" remote="github-yuanqy" revision="master"></project>
-  <project path="external/llvm" name="external_llvm" remote="github-yuanqy" revision="master"></project>
-  <project path="external/hostapd" name="external_hostapd" remote="github-yuanqy" revision="master"></project>
+  <project path="hardware/ti/wlan" name="YuanQY/hardware_ti_wlan" remote="github" revision="master"></project>
+  <project path="external/gtest" name="YuanQY/external_gtest" remote="github" revision="master"></project>
+  <project path="external/llvm" name="YuanQY/external_llvm" remote="github" revision="master"></project>
+  <project path="external/hostapd" name="YuanQY/external_hostapd" remote="github" revision="master"></project>
+  <project path="device/motorola/common" name="YuanQY/android_device_motorola_common" remote="github" revision="master"></project>
+  <project path="device/motorola/jordan" name="YuanQY/android_device_motorola_jordan" remote="github" revision="master"></project>
   
   <!--project path="build" name="platform/build">
     <copyfile src="core/root.mk" dest="Makefile" />
