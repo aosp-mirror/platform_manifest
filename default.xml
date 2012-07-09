@@ -5,29 +5,30 @@
            fetch="https://android.googlesource.com/"/>
   <remote  name="github"
            fetch="https://github.com/"/>
+  <remote  name="github-yuanqy"
+           revision="refs/heads/android-4.0.4_r2.1"
+           fetch="https://github.com/YuanQY" />
   <default revision="refs/tags/android-4.0.4_r2.1"
            remote="aosp"
            sync-j="4" />
-  <project path="device/motorola/milestone2" name="YuanQY/android_device_motorola_milestone2" remote="github" revision="ics"/>
-  <project path="vendor/motorola" name="YuanQY/proprietary_vendor_motorola" remote="github" revision="ics"/>
+  <project path="device/motorola/milestone2" name="android_device_motorola_milestone2" remote="github" revision="ics"/>
+  <project path="vendor/motorola" name="android_vendor_motorola" remote="github" revision="ics"/>
   
-  <project path="build" name="YuanQY/android_build" remote="github" revision="master">
+  <project path="build" name="android_build" remote="github" revision="master">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="hardware/ti/wlan" name="YuanQY/hardware_ti_wlan" remote="github" revision="master"></project>
-  <project path="external/gtest" name="YuanQY/external_gtest" remote="github" revision="master"></project>
-  <project path="external/llvm" name="YuanQY/external_llvm" remote="github" revision="master"></project>
-  <project path="external/hostapd" name="YuanQY/external_hostapd" remote="github" revision="master"></project>
-  <project path="external/mesa3d" name="YuanQY/external_mesa3d" remote="github" revision="master"></project>
-  <project path="external/oprofile" name="YuanQY/external_oprofile" remote="github" revision="master"></project>
-  <project path="frameworks/compile/slang" name="YuanQY/frameworks_compile_slang" remote="github" revision="master"></project>
-  <project path="device/motorola/common" name="YuanQY/android_device_motorola_common" remote="github" revision="master"></project>
-  <project path="device/motorola/jordan" name="YuanQY/android_device_motorola_jordan" remote="github" revision="master"></project>
+  <project path="hardware/ti/wlan" name="android_hardware_ti_wlan" remote="github-yuanqy" ></project>
+  <project path="external/gtest" name="android_external_gtest" remote="github-yuanqy"></project>
+  <project path="external/llvm" name="android_external_llvm" remote="github-yuanqy"></project>
+  <project path="external/hostapd" name="android_external_hostapd" remote="github-yuanqy" ></project>
+  <project path="external/mesa3d" name="android_external_mesa3d" remote="github-yuanqy" ></project>
+  <project path="external/oprofile" name="android_external_oprofile" remote="github-yuanqy" ></project>
+  <project path="frameworks/compile/slang" name="android_frameworks_compile_slang" remote="github-yuanqy" ></project>
+  <project path="device/motorola/common" name="android_device_motorola_common" remote="github-yuanqy" ></project>
+  <project path="device/motorola/jordan" name="android_device_motorola_jordan" remote="github-yuanqy" ></project>
   <project path="external/bootmenu" name="tezet/android_external_bootmenu" remote="github" revision="ics"></project>
-  <project path="external/busybox" name="CyanogenMod/android_external_busybox" revision="ics"></project>
-  <!--project path="build" name="platform/build">
-    <copyfile src="core/root.mk" dest="Makefile" />
-  </project-->
+  <project path="external/busybox" name="CyanogenMod/android_external_busybox" remote="github" revision="ics"></project>
+
   <project path="abi/cpp" name="platform/abi/cpp" />
   <project path="bionic" name="platform/bionic" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
