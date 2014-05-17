@@ -1,459 +1,446 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
   <default revision="master"
            remote="aosp"
            sync-j="4" />
-
-  <project path="build" name="platform/build" groups="pdk" revision="tools_r22.6" >
-    <copyfile src="core/root.mk" dest="Makefile" />
+  
+  <project groups="device,flo" name="device/asus/deb" revision="eb47925d3e3d2cee23b6907a12dcbbc2a68a02bc" upstream="mirror-aosp-master"/>
+  <project groups="device,flo" name="device/asus/flo" revision="a0fe7ac2449f9b4c0d246cb182df0f48554b912d" upstream="mirror-aosp-master"/>
+  <project groups="device,flo" name="device/asus/flo-kernel" revision="54068606cc8cad1ad0e022dc275c523101fc73f6" upstream="mirror-aosp-master"/>
+  <project groups="device,grouper" name="device/asus/grouper" revision="f0c73f5b587ed9513a1be05f4ab5cafac9f5f88b" upstream="mirror-aosp-master"/>
+  <project groups="device,grouper" name="device/asus/tilapia" revision="8b79009e845a7b42a5d5dc10a5fc13cc2bef17e9" upstream="mirror-aosp-master"/>
+  <project name="device/common" revision="6a2995683de147791e516aae2ccb31fdfbe2ad30" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/generic/armv7-a-neon" revision="c1e9a5fe7a7804e37c3d26449ee703eab4498182" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/generic/common" revision="11c092a6cbfcf6207f07a9a8e3398e747e7f5461" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/generic/goldfish" revision="61a8f0bbc146a4050a885e1e7c314dfc4ab72779" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/generic/mini-emulator-armv7-a-neon" revision="37da65cc0e9ee79de404b1b470ceb8a9410ca1e5" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/generic/mini-emulator-mips" revision="2ff06dda649ba43507a911057f7854a3373ef7d6" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/generic/mini-emulator-x86" revision="a2f05b8c5259c232be5b029b2d5e721ba3f70917" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/generic/mips" revision="dd06e7883227cc68bb1206584c8e3a768e49d02d" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/generic/x86" revision="f111878fb41e2bdf4eb092d1edf0eb53cc5d0153" upstream="mirror-aosp-master"/>
+  <project groups="device" name="device/google/accessory/arduino" revision="abc5159a3ca9dbb5c7e364a1eab99901a4440ac5" upstream="mirror-aosp-master"/>
+  <project groups="device" name="device/google/accessory/demokit" revision="7dfe7f89a3b174709c773fe319531006e46440d9" upstream="mirror-aosp-master"/>
+  <project groups="device,hammerhead" name="device/lge/hammerhead" revision="829b9f3a856cc5ae2d8d90750595b4ae2d449c07" upstream="mirror-aosp-master"/>
+  <project groups="device,hammerhead" name="device/lge/hammerhead-kernel" revision="8b392a30f1228e890fa0f7b39598f3b1c73cea94" upstream="mirror-aosp-master"/>
+  <project groups="device,mako" name="device/lge/mako" revision="14467dfdb2d11803d40feb4108fa3723875d3f2b" upstream="mirror-aosp-master"/>
+  <project groups="device,mako" name="device/lge/mako-kernel" revision="daa498456e695773fe5922d739b68b2ed6d9a1ee" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="device/sample" revision="29772deae7a4f45faf337dbd84ce16d743ae5404" upstream="mirror-aosp-master"/>
+  <project groups="device,manta" name="device/samsung/manta" revision="591ea1e1bce45f1ef4f64dc2fd6b7f45dc54c075" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/abi/cpp" path="abi/cpp" revision="a0f99286d0909f7a30b0bee742bec2a0b62c4dd0" upstream="mirror-aosp-master"/>
+  <project name="platform/art" path="art" revision="c311d0c85e17773042daaa7a4abc58b3e3c0a0c1" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/bionic" path="bionic" revision="a13c7fd3b34c1deb6592a75e79df9fe44dbf4d88" upstream="mirror-aosp-master"/>
+  <project name="platform/bootable/bootloader/legacy" path="bootable/bootloader/legacy" revision="3c491d6efb8ff2534a6934702760a6273f197918" upstream="mirror-aosp-master"/>
+  <project name="platform/bootable/diskinstaller" path="bootable/diskinstaller" revision="ca40959a8caafa0df6a5c3d845e2afe6b252093f" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/bootable/recovery" path="bootable/recovery" revision="558f2700e18d50cf8e798254200ef37f7a09678d" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/build" path="build" revision="tools_r22.6">
+    <copyfile dest="Makefile" src="core/root.mk"/>
   </project>
-  <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
-  <project path="art" name="platform/art" />
-  <project path="bionic" name="platform/bionic" groups="pdk" />
-  <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
-  <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
-  <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
-  <project path="cts" name="platform/cts" groups="cts" />
-  <project path="dalvik" name="platform/dalvik" />
-  <project path="developers/build" name="platform/developers/build" />
-  <project path="developers/demos" name="platform/developers/demos" />
-  <project path="developers/docs" name="platform/developers/docs" />
-  <project path="developers/samples/android" name="platform/developers/samples/android" />
-  <project path="development" name="platform/development" />
-  <project path="device/asus/deb" name="device/asus/deb" groups="device,flo" />
-  <project path="device/asus/flo" name="device/asus/flo" groups="device,flo" />
-  <project path="device/asus/flo-kernel" name="device/asus/flo-kernel" groups="device,flo" />
-  <project path="device/asus/grouper" name="device/asus/grouper" groups="device,grouper" />
-  <project path="device/asus/tilapia" name="device/asus/tilapia" groups="device,grouper" />
-  <project path="device/common" name="device/common" />
-  <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
-  <project path="device/generic/common" name="device/generic/common" groups="pdk" />
-  <project path="device/generic/goldfish" name="device/generic/goldfish" groups="pdk" />
-  <project path="device/generic/mips" name="device/generic/mips" groups="pdk" />
-  <project path="device/generic/mini-emulator-armv7-a-neon" name="device/generic/mini-emulator-armv7-a-neon" groups="pdk" />
-  <project path="device/generic/mini-emulator-mips" name="device/generic/mini-emulator-mips" groups="pdk" />
-  <project path="device/generic/mini-emulator-x86" name="device/generic/mini-emulator-x86" groups="pdk" />
-  <project path="device/generic/x86" name="device/generic/x86" groups="pdk" />
-  <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
-  <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
-  <project path="device/lge/hammerhead" name="device/lge/hammerhead" groups="device,hammerhead" />
-  <project path="device/lge/hammerhead-kernel" name="device/lge/hammerhead-kernel" groups="device,hammerhead" />
-  <project path="device/lge/mako" name="device/lge/mako" groups="device,mako" />
-  <project path="device/lge/mako-kernel" name="device/lge/mako-kernel" groups="device,mako" />
-  <project path="device/sample" name="device/sample" groups="pdk" />
-  <project path="device/samsung/manta" name="device/samsung/manta" groups="device,manta" />
-  <project path="docs/source.android.com" name="platform/docs/source.android.com" />
-  <project path="external/aac" name="platform/external/aac" groups="pdk" />
-  <project path="external/android-clat" name="platform/external/android-clat" />
-  <project path="external/android-mock" name="platform/external/android-mock" />
-  <project path="external/ant-glob" name="platform/external/ant-glob" />
-  <project path="external/antlr" name="platform/external/antlr" />
-  <project path="external/apache-harmony" name="platform/external/apache-harmony" />
-  <project path="external/apache-http" name="platform/external/apache-http" />
-  <project path="external/apache-qp" name="platform/external/apache-qp" />
-  <project path="external/apache-xml" name="platform/external/apache-xml" />
-  <project path="external/arduino" name="platform/external/arduino" />
-  <project path="external/bison" name="platform/external/bison" groups="pdk" />
-  <project path="external/blktrace" name="platform/external/blktrace" />
-  <project path="external/bluetooth/bluedroid" name="platform/external/bluetooth/bluedroid" groups="pdk" />
-  <project path="external/bouncycastle" name="platform/external/bouncycastle" />
-  <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
-  <project path="external/bzip2" name="platform/external/bzip2" groups="pdk" />
-  <project path="external/ceres-solver" name="platform/external/ceres-solver" />
-  <project path="external/checkpolicy" name="platform/external/checkpolicy" groups="pdk" />
-  <project path="external/chromium" name="platform/external/chromium" />
-  <project path="external/chromium-libpac" name="platform/external/chromium-libpac" />
-  <project path="external/chromium-trace" name="platform/external/chromium-trace" groups="pdk" />
-  <project path="external/chromium_org" name="platform/external/chromium_org" />
-  <project path="external/chromium_org/sdch/open-vcdiff" name="platform/external/chromium_org/sdch/open-vcdiff" />
-  <project path="external/chromium_org/testing/gtest" name="platform/external/chromium_org/testing/gtest" />
-  <project path="external/chromium_org/third_party/WebKit" name="platform/external/chromium_org/third_party/WebKit" />
-  <project path="external/chromium_org/third_party/angle" name="platform/external/chromium_org/third_party/angle" />
-  <project path="external/chromium_org/third_party/brotli/src" name="platform/external/chromium_org/third_party/brotli/src" />
-  <project path="external/chromium_org/third_party/eyesfree/src/android/java/src/com/googlecode/eyesfree/braille" name="platform/external/chromium_org/third_party/eyesfree/src/android/java/src/com/googlecode/eyesfree/braille" />
-  <project path="external/chromium_org/third_party/freetype" name="platform/external/chromium_org/third_party/freetype" />
-  <project path="external/chromium_org/third_party/icu" name="platform/external/chromium_org/third_party/icu" />
-  <project path="external/chromium_org/third_party/leveldatabase/src" name="platform/external/chromium_org/third_party/leveldatabase/src" />
-  <project path="external/chromium_org/third_party/libjingle/source/talk" name="platform/external/chromium_org/third_party/libjingle/source/talk" />
-  <project path="external/chromium_org/third_party/libphonenumber/src/phonenumbers" name="platform/external/chromium_org/third_party/libphonenumber/src/phonenumbers" />
-  <project path="external/chromium_org/third_party/libphonenumber/src/resources" name="platform/external/chromium_org/third_party/libphonenumber/src/resources" />
-  <project path="external/chromium_org/third_party/libsrtp" name="platform/external/chromium_org/third_party/libsrtp" />
-  <project path="external/chromium_org/third_party/libvpx" name="platform/external/chromium_org/third_party/libvpx" />
-  <project path="external/chromium_org/third_party/libyuv" name="platform/external/chromium_org/third_party/libyuv" />
-  <project path="external/chromium_org/third_party/mesa/src" name="platform/external/chromium_org/third_party/mesa/src" />
-  <project path="external/chromium_org/third_party/openssl" name="platform/external/chromium_org/third_party/openssl" />
-  <project path="external/chromium_org/third_party/opus/src" name="platform/external/chromium_org/third_party/opus/src" />
-  <project path="external/chromium_org/third_party/ots" name="platform/external/chromium_org/third_party/ots" />
-  <project path="external/chromium_org/third_party/sfntly/cpp/src" name="platform/external/chromium_org/third_party/sfntly/cpp/src" />
-  <project path="external/chromium_org/third_party/skia/gyp" name="platform/external/chromium_org/third_party/skia/gyp" />
-  <project path="external/chromium_org/third_party/skia/include" name="platform/external/chromium_org/third_party/skia/include" />
-  <project path="external/chromium_org/third_party/skia/src" name="platform/external/chromium_org/third_party/skia/src" />
-  <project path="external/chromium_org/third_party/smhasher/src" name="platform/external/chromium_org/third_party/smhasher/src" />
-  <project path="external/chromium_org/third_party/usrsctp/usrsctplib" name="platform/external/chromium_org/third_party/usrsctp/usrsctplib" />
-  <project path="external/chromium_org/third_party/webrtc" name="platform/external/chromium_org/third_party/webrtc" />
-  <project path="external/chromium_org/third_party/yasm/source/patched-yasm" name="platform/external/chromium_org/third_party/yasm/source/patched-yasm" />
-  <project path="external/chromium_org/tools/grit" name="platform/external/chromium_org/tools/grit" />
-  <project path="external/chromium_org/tools/gyp" name="platform/external/chromium_org/tools/gyp" />
-  <project path="external/chromium_org/v8" name="platform/external/chromium_org/v8" />
-  <project path="external/clang" name="platform/external/clang" groups="pdk" />
-  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
-  <project path="external/conscrypt" name="platform/external/conscrypt" />
-  <project path="external/dexmaker" name="platform/external/dexmaker" />
-  <project path="external/dhcpcd" name="platform/external/dhcpcd" />
-  <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="pdk" />
-  <project path="external/doclava" name="platform/external/doclava" />
-  <project path="external/dropbear" name="platform/external/dropbear" />
-  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" />
-  <project path="external/easymock" name="platform/external/easymock" />
-  <project path="external/eclipse-basebuilder" name="platform/external/eclipse-basebuilder" />
-  <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" />
-  <project path="external/eigen" name="platform/external/eigen" />
-  <project path="external/elfutils" name="platform/external/elfutils" />
-  <project path="external/embunit" name="platform/external/embunit" />
-  <project path="external/emma" name="platform/external/emma" />
-  <project path="external/esd" name="platform/external/esd" />
-  <project path="external/expat" name="platform/external/expat" groups="pdk" />
-  <project path="external/eyes-free" name="platform/external/eyes-free" />
-  <project path="external/fdlibm" name="platform/external/fdlibm" />
-  <project path="external/flac" name="platform/external/flac" groups="pdk" />
-  <project path="external/freetype" name="platform/external/freetype" groups="pdk" />
-  <project path="external/fsck_msdos" name="platform/external/fsck_msdos" />
-  <project path="external/ganymed-ssh2" name="platform/external/ganymed-ssh2" />
-  <project path="external/gcc-demangle" name="platform/external/gcc-demangle" groups="pdk" />
-  <project path="external/genext2fs" name="platform/external/genext2fs" />
-  <project path="external/giflib" name="platform/external/giflib" />
-  <project path="external/google-diff-match-patch" name="platform/external/google-diff-match-patch" />
-  <project path="external/grub" name="platform/external/grub" />
-  <project path="external/gtest" name="platform/external/gtest" groups="pdk" />
-  <project path="external/guava" name="platform/external/guava" />
-  <project path="external/hamcrest" name="platform/external/hamcrest" />
-  <project path="external/harfbuzz" name="platform/external/harfbuzz" />
-  <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" />
-  <project path="external/hyphenation" name="platform/external/hyphenation" />
-  <project path="external/icu4c" name="platform/external/icu4c" groups="pdk" />
-  <project path="external/iproute2" name="platform/external/iproute2" groups="pdk" />
-  <project path="external/ipsec-tools" name="platform/external/ipsec-tools" />
-  <project path="external/iptables" name="platform/external/iptables" />
-  <project path="external/iputils" name="platform/external/iputils" />
-  <project path="external/jack" name="platform/external/jack" />
-  <project path="external/javasqlite" name="platform/external/javasqlite" />
-  <project path="external/javassist" name="platform/external/javassist" />
-  <project path="external/jdiff" name="platform/external/jdiff" />
-  <project path="external/jhead" name="platform/external/jhead" groups="pdk" />
-  <project path="external/jmdns" name="platform/external/jmdns" />
-  <project path="external/jmonkeyengine" name="platform/external/jmonkeyengine" />
-  <project path="external/jpeg" name="platform/external/jpeg" groups="pdk" />
-  <project path="external/jsilver" name="platform/external/jsilver" />
-  <project path="external/jsr305" name="platform/external/jsr305" />
-  <project path="external/junit" name="platform/external/junit" />
-  <project path="external/kernel-headers" name="platform/external/kernel-headers" />
-  <project path="external/libcap-ng" name="platform/external/libcap-ng" />
-  <project path="external/libcxx" name="platform/external/libcxx" />
-  <project path="external/libcxxabi" name="platform/external/libcxxabi" />
-  <project path="external/libffi" name="platform/external/libffi" />
-  <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" />
-  <project path="external/liblzf" name="platform/external/liblzf" groups="pdk" />
-  <project path="external/libmtp" name="platform/external/libmtp" />
-  <project path="external/libnfc-nci" name="platform/external/libnfc-nci" groups="pdk" />
-  <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" groups="pdk" />
-  <project path="external/libnl" name="platform/external/libnl" />
-  <project path="external/libnl-headers" name="platform/external/libnl-headers" groups="pdk" />
-  <project path="external/libogg" name="platform/external/libogg" />
-  <project path="external/libpcap" name="platform/external/libpcap" />
-  <project path="external/libphonenumber" name="platform/external/libphonenumber" />
-  <project path="external/libpng" name="platform/external/libpng" groups="pdk" />
-  <project path="external/libppp" name="platform/external/libppp" />
-  <project path="external/libseccomp-helper" name="platform/external/libseccomp-helper" />
-  <project path="external/libselinux" name="platform/external/libselinux" groups="pdk" />
-  <project path="external/libsepol" name="platform/external/libsepol" groups="pdk" />
-  <project path="external/libunwind" name="platform/external/libunwind" />
-  <project path="external/libusb" name="platform/external/libusb" />
-  <project path="external/libusb-compat" name="platform/external/libusb-compat" />
-  <project path="external/libvorbis" name="platform/external/libvorbis" />
-  <project path="external/libvpx" name="platform/external/libvpx" groups="pdk" />
-  <project path="external/libxml2" name="platform/external/libxml2" />
-  <project path="external/libxslt" name="platform/external/libxslt" />
-  <project path="external/libyuv" name="platform/external/libyuv" groups="libyuv" />
-  <project path="external/linux-tools-perf" name="platform/external/linux-tools-perf" />
-  <project path="external/littlemock" name="platform/external/littlemock" />
-  <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
-  <project path="external/lzma" name="platform/external/lzma" />
-  <project path="external/marisa-trie" name="platform/external/marisa-trie" />
-  <project path="external/markdown" name="platform/external/markdown" />
-  <project path="external/mdnsresponder" name="platform/external/mdnsresponder" groups="pdk" />
-  <project path="external/mesa3d" name="platform/external/mesa3d" />
-  <project path="external/mksh" name="platform/external/mksh" groups="pdk" />
-  <project path="external/mockito" name="platform/external/mockito" />
-  <project path="external/mockwebserver" name="platform/external/mockwebserver" />
-  <project path="external/mp4parser" name="platform/external/mp4parser" />
-  <project path="external/mtpd" name="platform/external/mtpd" />
-  <project path="external/naver-fonts" name="platform/external/naver-fonts" />
-  <project path="external/netcat" name="platform/external/netcat" />
-  <project path="external/netperf" name="platform/external/netperf" />
-  <project path="external/neven" name="platform/external/neven" />
-  <project path="external/nfacct" name="platform/external/nfacct" />
-  <project path="external/nist-pkits" name="platform/external/nist-pkits" />
-  <project path="external/nist-sip" name="platform/external/nist-sip" />
-  <project path="external/noto-fonts" name="platform/external/noto-fonts" />
-  <project path="external/oauth" name="platform/external/oauth" />
-  <project path="external/objenesis" name="platform/external/objenesis" />
-  <project path="external/okhttp" name="platform/external/okhttp" />
-  <project path="external/open-vcdiff" name="platform/external/open-vcdiff" />
-  <project path="external/opencv" name="platform/external/opencv" />
-  <project path="external/openfst" name="platform/external/openfst" />
-  <project path="external/openssh" name="platform/external/openssh" />
-  <project path="external/openssl" name="platform/external/openssl" groups="pdk" />
-  <project path="external/oprofile" name="platform/external/oprofile" />
-  <project path="external/pcre" name="platform/external/pcre" />
-  <project path="external/pixman" name="platform/external/pixman" />
-  <project path="external/ppp" name="platform/external/ppp" />
-  <project path="external/proguard" name="platform/external/proguard" groups="pdk-java" />
-  <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
-  <project path="external/qemu" name="platform/external/qemu" revision="tools_r22.6" />
-  <project path="external/qemu-pc-bios" name="platform/external/qemu-pc-bios" />
-  <project path="external/regex-re2" name="platform/external/regex-re2" />
-  <project path="external/replicaisland" name="platform/external/replicaisland" />
-  <project path="external/robolectric" name="platform/external/robolectric" />
-  <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
-  <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" />
-  <project path="external/sepolicy" name="platform/external/sepolicy" groups="pdk" />
-  <project path="external/sfntly" name="platform/external/sfntly" />
-  <project path="external/sil-fonts" name="platform/external/sil-fonts" />
-  <project path="external/skia" name="platform/external/skia" />
-  <project path="external/smack" name="platform/external/smack" />
-  <project path="external/smali" name="platform/external/smali" />
-  <project path="external/sonivox" name="platform/external/sonivox" groups="pdk" />
-  <project path="external/speex" name="platform/external/speex" groups="pdk" />
-  <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
-  <project path="external/srec" name="platform/external/srec" />
-  <project path="external/srtp" name="platform/external/srtp" />
-  <project path="external/stlport" name="platform/external/stlport" groups="pdk" />
-  <project path="external/strace" name="platform/external/strace" />
-  <project path="external/stressapptest" name="platform/external/stressapptest" />
-  <project path="external/svox" name="platform/external/svox" />
-  <project path="external/tagsoup" name="platform/external/tagsoup" />
-  <project path="external/tcpdump" name="platform/external/tcpdump" />
-  <project path="external/timezonepicker-support" name="platform/external/timezonepicker-support" />
-  <project path="external/tinyalsa" name="platform/external/tinyalsa" groups="pdk" />
-  <project path="external/tinycompress" name="platform/external/tinycompress" groups="pdk" />
-  <project path="external/tinyxml" name="platform/external/tinyxml" groups="pdk" />
-  <project path="external/tinyxml2" name="platform/external/tinyxml2" groups="pdk" />
-  <project path="external/tremolo" name="platform/external/tremolo" groups="pdk" />
-  <project path="external/v8" name="platform/external/v8" />
-  <project path="external/valgrind" name="platform/external/valgrind" groups="pdk" />
-  <project path="external/vixl" name="platform/external/vixl" />
-  <project path="external/webp" name="platform/external/webp" />
-  <project path="external/webrtc" name="platform/external/webrtc" groups="pdk" />
-  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="pdk" />
-  <project path="external/xmlwriter" name="platform/external/xmlwriter" />
-  <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" />
-  <project path="external/yaffs2" name="platform/external/yaffs2" groups="pdk" />
-  <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
-  <project path="external/zxing" name="platform/external/zxing" />
-  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
-  <project path="frameworks/base" name="platform/frameworks/base" />
-  <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
-  <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
-  <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
-  <project path="frameworks/ex" name="platform/frameworks/ex" />
-  <project path="frameworks/mff" name="platform/frameworks/mff" />
-  <project path="frameworks/ml" name="platform/frameworks/ml" />
-  <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" />
-  <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" />
-  <project path="frameworks/opt/carddav" name="platform/frameworks/opt/carddav" />
-  <project path="frameworks/opt/colorpicker" name="platform/frameworks/opt/colorpicker" />
-  <project path="frameworks/opt/datetimepicker" name="platform/frameworks/opt/datetimepicker" />
-  <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
-  <project path="frameworks/opt/inputmethodcommon" name="platform/frameworks/opt/inputmethodcommon" />
-  <project path="frameworks/opt/mailcommon" name="platform/frameworks/opt/mailcommon" />
-  <project path="frameworks/opt/mms" name="platform/frameworks/opt/mms" />
-  <project path="frameworks/opt/net/voip" name="platform/frameworks/opt/net/voip" />
-  <project path="frameworks/opt/photoviewer" name="platform/frameworks/opt/photoviewer" />
-  <project path="frameworks/opt/timezonepicker" name="platform/frameworks/opt/timezonepicker" />
-  <project path="frameworks/opt/telephony" name="platform/frameworks/opt/telephony" groups="pdk" />
-  <project path="frameworks/opt/vcard" name="platform/frameworks/opt/vcard" />
-  <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" />
-  <project path="frameworks/support" name="platform/frameworks/support" />
-  <project path="frameworks/testing" name="platform/frameworks/testing" />
-  <project path="frameworks/uiautomator" name="platform/frameworks/uiautomator" />
-  <project path="frameworks/volley" name="platform/frameworks/volley" />
-  <project path="frameworks/webview" name="platform/frameworks/webview" />
-  <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" />
-  <project path="hardware/akm" name="platform/hardware/akm" />
-  <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
-  <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" groups="broadcom_wlan" />
-  <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense" />
-  <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
-  <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
-  <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom" />
-  <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" />
-  <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" groups="qcom" />
-  <project path="hardware/qcom/display" name="platform/hardware/qcom/display" groups="qcom" />
-  <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" groups="qcom" />
-  <project path="hardware/qcom/media" name="platform/hardware/qcom/media" groups="qcom" />
-  <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" groups="qcom_msm8960" />
-  <project path="hardware/qcom/msm8x74" name="platform/hardware/qcom/msm8x74" groups="qcom_msm8x74" />
-  <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom" />
-  <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" groups="qcom" />
-  <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan" />
-  <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
-  <project path="hardware/samsung_slsi/exynos5" name="platform/hardware/samsung_slsi/exynos5" groups="exynos5" />
-  <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
-  <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" groups="omap4" />
-  <project path="libcore" name="platform/libcore" />
-  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk-java" />
-  <project path="ndk" name="platform/ndk" />
-  <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
-  <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" />
-  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" />
-  <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" />
-  <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" />
-  <project path="packages/apps/Camera" name="platform/packages/apps/Camera" />
-  <project path="packages/apps/Camera2" name="platform/packages/apps/Camera2" />
-  <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" />
-  <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" />
-  <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" />
-  <project path="packages/apps/ContactsCommon" name="platform/packages/apps/ContactsCommon" />
-  <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" />
-  <project path="packages/apps/Dialer" name="platform/packages/apps/Dialer" />
-  <project path="packages/apps/Email" name="platform/packages/apps/Email" />
-  <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" />
-  <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
-  <project path="packages/apps/Gallery2" name="platform/packages/apps/Gallery2" />
-  <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" />
-  <project path="packages/apps/InCallUI" name="platform/packages/apps/InCallUI" />
-  <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" />
-  <project path="packages/apps/Launcher2" name="platform/packages/apps/Launcher2" />
-  <project path="packages/apps/Launcher3" name="platform/packages/apps/Launcher3" />
-  <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" />
-  <project path="packages/apps/Mms" name="platform/packages/apps/Mms" />
-  <project path="packages/apps/Music" name="platform/packages/apps/Music" />
-  <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" />
-  <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" />
-  <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" />
-  <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" />
-  <project path="packages/apps/Phone" name="platform/packages/apps/Phone" />
-  <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" />
-  <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
-  <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
-  <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
-  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" />
-  <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
-  <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
-  <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" />
-  <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" />
-  <project path="packages/apps/Stk" name="platform/packages/apps/Stk" />
-  <project path="packages/apps/Tag" name="platform/packages/apps/Tag" />
-  <project path="packages/apps/UnifiedEmail" name="platform/packages/apps/UnifiedEmail" />
-  <project path="packages/apps/VideoEditor" name="platform/packages/apps/VideoEditor" />
-  <project path="packages/apps/VoiceDialer" name="platform/packages/apps/VoiceDialer" />
-  <project path="packages/experimental" name="platform/packages/experimental" />
-  <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" />
-  <project path="packages/inputmethods/OpenWnn" name="platform/packages/inputmethods/OpenWnn" />
-  <project path="packages/inputmethods/PinyinIME" name="platform/packages/inputmethods/PinyinIME" />
-  <project path="packages/providers/ApplicationsProvider" name="platform/packages/providers/ApplicationsProvider" />
-  <project path="packages/providers/CalendarProvider" name="platform/packages/providers/CalendarProvider" />
-  <project path="packages/providers/ContactsProvider" name="platform/packages/providers/ContactsProvider" />
-  <project path="packages/providers/DownloadProvider" name="platform/packages/providers/DownloadProvider" />
-  <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" />
-  <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" />
-  <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" />
-  <project path="packages/providers/UserDictionaryProvider" name="platform/packages/providers/UserDictionaryProvider" />
-  <project path="packages/screensavers/Basic" name="platform/packages/screensavers/Basic" />
-  <project path="packages/screensavers/PhotoTable" name="platform/packages/screensavers/PhotoTable" />
-  <project path="packages/screensavers/WebView" name="platform/packages/screensavers/WebView" />
-  <project path="packages/services/Telephony" name="platform/packages/services/Telephony" />
-  <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" />
-  <project path="packages/wallpapers/Galaxy4" name="platform/packages/wallpapers/Galaxy4" />
-  <project path="packages/wallpapers/HoloSpiral" name="platform/packages/wallpapers/HoloSpiral" />
-  <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" />
-  <project path="packages/wallpapers/MagicSmoke" name="platform/packages/wallpapers/MagicSmoke" />
-  <project path="packages/wallpapers/MusicVisualization" name="platform/packages/wallpapers/MusicVisualization" />
-  <project path="packages/wallpapers/NoiseField" name="platform/packages/wallpapers/NoiseField" />
-  <project path="packages/wallpapers/PhaseBeam" name="platform/packages/wallpapers/PhaseBeam" />
-  <project path="pdk" name="platform/pdk" groups="pdk" />
-  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" revision="tools_r22.6" clone-depth="1" />
-  <project path="prebuilts/clang/darwin-x86/3.1" name="platform/prebuilts/clang/darwin-x86/3.1" groups="pdk,darwin" />
-  <project path="prebuilts/clang/darwin-x86/3.2" name="platform/prebuilts/clang/darwin-x86/3.2" groups="pdk,darwin" />
-  <project path="prebuilts/clang/darwin-x86/arm/3.3" name="platform/prebuilts/clang/darwin-x86/arm/3.3" groups="darwin,arm" />
-  <project path="prebuilts/clang/darwin-x86/host/3.4" name="platform/prebuilts/clang/darwin-x86/host/3.4" groups="pdk,darwin" />
-  <project path="prebuilts/clang/darwin-x86/host/3.5" name="platform/prebuilts/clang/darwin-x86/host/3.5" groups="pdk,darwin" />
-  <project path="prebuilts/clang/darwin-x86/mips/3.3" name="platform/prebuilts/clang/darwin-x86/mips/3.3" groups="darwin,mips" />
-  <project path="prebuilts/clang/darwin-x86/x86/3.3" name="platform/prebuilts/clang/darwin-x86/x86/3.3" groups="darwin,x86" />
-  <project path="prebuilts/clang/linux-x86/3.1" name="platform/prebuilts/clang/linux-x86/3.1" groups="pdk,linux" />
-  <project path="prebuilts/clang/linux-x86/3.2" name="platform/prebuilts/clang/linux-x86/3.2" groups="pdk,linux" />
-  <project path="prebuilts/clang/linux-x86/arm/3.3" name="platform/prebuilts/clang/linux-x86/arm/3.3" groups="linux,arm" />
-  <project path="prebuilts/clang/linux-x86/host/3.4" name="platform/prebuilts/clang/linux-x86/host/3.4" groups="pdk,linux" />
-  <project path="prebuilts/clang/linux-x86/host/3.5" name="platform/prebuilts/clang/linux-x86/host/3.5" groups="pdk,linux" />
-  <project path="prebuilts/clang/linux-x86/mips/3.3" name="platform/prebuilts/clang/linux-x86/mips/3.3" groups="linux,mips" />
-  <project path="prebuilts/clang/linux-x86/x86/3.3" name="platform/prebuilts/clang/linux-x86/x86/3.3" groups="linux,x86" />
-  <project path="prebuilts/devtools" name="platform/prebuilts/devtools" revision="tools_r22.6" />
-  <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" groups="pdk" />
-  <project path="prebuilts/eclipse-build-deps" name="platform/prebuilts/eclipse-build-deps" groups="notdefault,eclipse" />
-  <project path="prebuilts/eclipse-build-deps-sources" name="platform/prebuilts/eclipse-build-deps-sources" groups="notdefault,eclipse" />
-  <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.7" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.7" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" />
-  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" />
-  <project path="prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.6" name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.6" groups="pdk,darwin,mips" />
-  <project path="prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.7" name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.7" groups="pdk,darwin,mips" />
-  <project path="prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8" name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8" groups="pdk,darwin,mips" />
-  <project path="prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.6" name="platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.6" groups="pdk,darwin,x86" />
-  <project path="prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.7" name="platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.7" groups="pdk,darwin,x86" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.7" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.7" groups="pdk,darwin,x86" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8" groups="pdk,darwin,x86" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.6" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.7" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.4.3" name="platform/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.4.3" groups="pdk,linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" groups="pdk,linux" />
-  <project path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6" groups="pdk,linux,mips" />
-  <project path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.7" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.7" groups="pdk,linux,mips" />
-  <project path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.8" groups="pdk,linux,mips" />
-  <project path="prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" name="platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" groups="pdk,linux,x86" />
-  <project path="prebuilts/gcc/linux-x86/x86/i686-linux-android-4.7" name="platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.7" groups="pdk,linux,x86" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7" groups="pdk,linux,x86" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" groups="pdk,linux,x86" />
-  <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" />
-  <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" />
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" />
-  <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin" />
-  <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux" />
-  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" groups="pdk" />
-  <project path="prebuilts/runtime" name="platform/prebuilts/runtime" />
-  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" revision="tools_r22.6" />
-  <project path="sdk" name="platform/sdk" revision="tools_r22.6" />
-  <project path="system/core" name="platform/system/core" groups="pdk" />
-  <project path="system/extras" name="platform/system/extras" groups="pdk" />
-  <project path="system/media" name="platform/system/media" groups="pdk" />
-  <project path="system/netd" name="platform/system/netd" groups="pdk" />
-  <project path="system/security" name="platform/system/security" groups="pdk" />
-  <project path="system/vold" name="platform/system/vold" groups="pdk" />
-  <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse" groups="notdefault,tools" />
-  <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
-  <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" revision="tools_r22.6" />
-  <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" />
-  <project path="tools/emulator" name="platform/tools/emulator" groups="notdefault,tools" revision="tools_r22.6" />
-  <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools" />
-  <project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" />
-  <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
-  <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" />
-  <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" revision="tools_r22.6" />
-
+  <project groups="cts" name="platform/cts" path="cts" revision="e247b1603b8a1c6827a97370b7f28a5f5ad14628" upstream="mirror-aosp-master"/>
+  <project name="platform/dalvik" path="dalvik" revision="1c004e50316f6f3bbb95b75d4826d7ec454be698" upstream="mirror-aosp-master"/>
+  <project name="platform/developers/build" path="developers/build" revision="737ccb75a8522baa4ae36f3b855dd8911d2ea954" upstream="mirror-aosp-master"/>
+  <project name="platform/developers/demos" path="developers/demos" revision="a7254542b06878f0c3b34a6c3d91b9e7d3990f74" upstream="mirror-aosp-master"/>
+  <project name="platform/developers/docs" path="developers/docs" revision="c0b835ddd9acc27176dc9a0f7d1aa2faf5d51806" upstream="mirror-aosp-master"/>
+  <project name="platform/developers/samples/android" path="developers/samples/android" revision="77e78aca995fc79330a0571052729361b27b7cb4" upstream="mirror-aosp-master"/>
+  <project name="platform/development" path="development" revision="ea0a954826ca0849bf05053e38ee325db9867873" upstream="mirror-aosp-master"/>
+  <project name="platform/docs/source.android.com" path="docs/source.android.com" revision="91967463b09003f9f7c9d9b3cac585c1f18dc946" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/aac" path="external/aac" revision="35f30c5ab8089f38681d2fdd416c00aebef5a7ff" upstream="mirror-aosp-master"/>
+  <project name="platform/external/android-clat" path="external/android-clat" revision="932614ee5e740704d7ef951dff6daede4fe12904" upstream="mirror-aosp-master"/>
+  <project name="platform/external/android-mock" path="external/android-mock" revision="4fe497660c2e939300dc5b743d662aef458b1726" upstream="mirror-aosp-master"/>
+  <project name="platform/external/ant-glob" path="external/ant-glob" revision="0f189400fd2a36bf11bfb058e7f3917eb7ed163a" upstream="mirror-aosp-master"/>
+  <project name="platform/external/antlr" path="external/antlr" revision="47997265eeb7d954a32ece693bbe6dab740872dd" upstream="mirror-aosp-master"/>
+  <project name="platform/external/apache-harmony" path="external/apache-harmony" revision="8a1d02f24ca786ac83e500bb62729739c392f878" upstream="mirror-aosp-master"/>
+  <project name="platform/external/apache-http" path="external/apache-http" revision="db97129042e7baaab6eda49138d9328f1217aaca" upstream="mirror-aosp-master"/>
+  <project name="platform/external/apache-qp" path="external/apache-qp" revision="64ea622b23e6612eb8e7dcae6bfd4314beb022a8" upstream="mirror-aosp-master"/>
+  <project name="platform/external/apache-xml" path="external/apache-xml" revision="490db688eaa8e162a4dd59f9aa491bf4520c46db" upstream="mirror-aosp-master"/>
+  <project name="platform/external/arduino" path="external/arduino" revision="d06daf9bbc46838400461eb8e15842974e38d82a" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/bison" path="external/bison" revision="c2418b886165add7f5a31fc5609f0ce2d004a90e" upstream="mirror-aosp-master"/>
+  <project name="platform/external/blktrace" path="external/blktrace" revision="d345431f16b8f76f30a58193ff2b26d5853e1109" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/bluetooth/bluedroid" path="external/bluetooth/bluedroid" revision="c7d4ce671ccc74ee05813bef10639fd34e1bf81f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/bouncycastle" path="external/bouncycastle" revision="b0bd6578c030086b816f3ace7b37ee21ca5a25a3" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/bsdiff" path="external/bsdiff" revision="23e322ab19fb7d74c2c37e40ce364d9f709bdcee" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/bzip2" path="external/bzip2" revision="1cb636bd8e9e5cdfd5d5b2909a122f6e80db62de" upstream="mirror-aosp-master"/>
+  <project name="platform/external/ceres-solver" path="external/ceres-solver" revision="399f7d09e0c45af54b77b4ab9508d6f23759b927" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/checkpolicy" path="external/checkpolicy" revision="c66ac590eebc731f6021f267ebea208e87d8f04f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium" path="external/chromium" revision="f294081d501ad98b7d7f50bc73f291063caf2c5f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium-libpac" path="external/chromium-libpac" revision="0471ee0ff68adf0933de812753b5fba61afd4c6f" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/chromium-trace" path="external/chromium-trace" revision="8252ae6b83ea65cf871e7981e981da07379f5a0f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org" path="external/chromium_org" revision="c668ac7f639a8d18e9713f15d128c18517ebc051" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/sdch/open-vcdiff" path="external/chromium_org/sdch/open-vcdiff" revision="e3234efd26ff1ee30da0d1b5fb335384a0e460d6" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/testing/gtest" path="external/chromium_org/testing/gtest" revision="fbf423ac701608666ad972946cdcbe5150499e07" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/WebKit" path="external/chromium_org/third_party/WebKit" revision="6d81f81eb41d7cc6e64344522ea8f8037894378c" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/angle_dx11" path="external/chromium_org/third_party/angle_dx11" revision="2d47722ceba1e11d1de0cf7085a7b1771e1a9dae" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/eyesfree/src/android/java/src/com/googlecode/eyesfree/braille" path="external/chromium_org/third_party/eyesfree/src/android/java/src/com/googlecode/eyesfree/braille" revision="3ebcd023018786a28793f5e293533adc01e32e2e" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/freetype" path="external/chromium_org/third_party/freetype" revision="ae6e74bbdac17b94dbd8264ab46dd8d46fa64377" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/icu" path="external/chromium_org/third_party/icu" revision="86dcc68f5853183af7e98d764daa86ad2aa702b9" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/leveldatabase/src" path="external/chromium_org/third_party/leveldatabase/src" revision="a48a47721e328410ea386730a38b5ef2925682b9" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/libjingle/source/talk" path="external/chromium_org/third_party/libjingle/source/talk" revision="9ee220a0a559f7263c712404b9646cf39415a56a" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/libphonenumber/src/phonenumbers" path="external/chromium_org/third_party/libphonenumber/src/phonenumbers" revision="eaa1197a14e08a6751abaf5fd84991efe1289d32" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/libphonenumber/src/resources" path="external/chromium_org/third_party/libphonenumber/src/resources" revision="75346690e109a41887bf5d3706929ae86b4b3713" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/mesa/src" path="external/chromium_org/third_party/mesa/src" revision="8cd8c297bbfd6731c852bbd23b77bca4e347353b" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/openssl" path="external/chromium_org/third_party/openssl" revision="9b09fd8d530e17e59b2938fa264b35065a7b4dd5" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/opus/src" path="external/chromium_org/third_party/opus/src" revision="54ea6c69d7ca7c5435dcc3d9924ac5fc4f90d180" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/ots" path="external/chromium_org/third_party/ots" revision="b471362917834b3a2576dcff760906ac79135b6d" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/skia/gyp" path="external/chromium_org/third_party/skia/gyp" revision="492eca10cdbfb13f963abf4b0f16c6536abf17b5" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/skia/include" path="external/chromium_org/third_party/skia/include" revision="658e3185acf0d232cb2a568a8430297369b59898" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/skia/src" path="external/chromium_org/third_party/skia/src" revision="ec502fb532582da0f3141560bc451df3902ce463" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/smhasher/src" path="external/chromium_org/third_party/smhasher/src" revision="6357d70719a079aed733caf4e079413e4c20bda7" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/third_party/yasm/source/patched-yasm" path="external/chromium_org/third_party/yasm/source/patched-yasm" revision="14b111222650bc66253d06b5bc60360ea4703f41" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/tools/grit" path="external/chromium_org/tools/grit" revision="9b597299ec06dc2d4d99e8f410d47e27f25a45ca" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/tools/gyp" path="external/chromium_org/tools/gyp" revision="a52bb1eaf55d6b3d98d24f200821a82f4d6f0653" upstream="mirror-aosp-master"/>
+  <project name="platform/external/chromium_org/v8" path="external/chromium_org/v8" revision="c202d88454d84375dde82777a7131cbd8496342a" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/clang" path="external/clang" revision="e45aa073431f94fc0dafb56477aec2068ba2880f" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/compiler-rt" path="external/compiler-rt" revision="de2f642ae7c903e79b350b567a339d481b5f91a7" upstream="mirror-aosp-master"/>
+  <project name="platform/external/conscrypt" path="external/conscrypt" revision="19fdf1af6bada9ebf4820839780d8713ac3824fa" upstream="mirror-aosp-master"/>
+  <project name="platform/external/dexmaker" path="external/dexmaker" revision="2b528c4b156f2de5c641875b98e59e0b09ebaccd" upstream="mirror-aosp-master"/>
+  <project name="platform/external/dhcpcd" path="external/dhcpcd" revision="dda7bc2000ee9df014ecdadb20e9df6abd5716e4" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/dnsmasq" path="external/dnsmasq" revision="41d356427a632f5336384bfa45c8420ffc274f66" upstream="mirror-aosp-master"/>
+  <project name="platform/external/doclava" path="external/doclava" revision="5e48143876c73bfa9f84e7996005103d6a615e1f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/dropbear" path="external/dropbear" revision="a34ddbe3819bc465968f3676c734b405e655f8b7" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/e2fsprogs" path="external/e2fsprogs" revision="78374f0476e3af9060362028e99085e1c200514b" upstream="mirror-aosp-master"/>
+  <project name="platform/external/easymock" path="external/easymock" revision="c9a234086537e5fd820b110bbd99e3cdc695004c" upstream="mirror-aosp-master"/>
+  <project name="platform/external/eclipse-basebuilder" path="external/eclipse-basebuilder" revision="6134da6347cc997e0cf2921aaadfb46f21c05d85" upstream="mirror-aosp-master"/>
+  <project name="platform/external/eclipse-windowbuilder" path="external/eclipse-windowbuilder" revision="a5f3ee137e94737538ec3bdf9b3716765d178c17" upstream="mirror-aosp-master"/>
+  <project name="platform/external/eigen" path="external/eigen" revision="b015e75e8c7ba1ab4ddb91e9372a57e76f3fd159" upstream="mirror-aosp-master"/>
+  <project name="platform/external/elfutils" path="external/elfutils" revision="e417b559763a69c6917a409b28f272b08b15ab20" upstream="mirror-aosp-master"/>
+  <project name="platform/external/embunit" path="external/embunit" revision="336b7c65098af0d1be69f2db55f4e75342d73b3f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/emma" path="external/emma" revision="77c73b8b1a0c9e33bf48ebc3212d439e46d3094d" upstream="mirror-aosp-master"/>
+  <project name="platform/external/esd" path="external/esd" revision="224a67f2683a7ee997179fc5dd16115e39987b0f" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/expat" path="external/expat" revision="af67dda3fccc957a74b29dc2ba8e709b08e3dd7d" upstream="mirror-aosp-master"/>
+  <project name="platform/external/eyes-free" path="external/eyes-free" revision="16bd4c7a4d1bfe229068b637614dad7c48dd2ceb" upstream="mirror-aosp-master"/>
+  <project name="platform/external/fdlibm" path="external/fdlibm" revision="7c7fad18d0277533f25e9ddc47c61764911d7482" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/flac" path="external/flac" revision="20ca0a0aa4bab60ae6868ed2f45482153812bc61" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/freetype" path="external/freetype" revision="899c67b6cfcd2010784fbf08c5415af16c526e0c" upstream="mirror-aosp-master"/>
+  <project name="platform/external/fsck_msdos" path="external/fsck_msdos" revision="17a1471db8c528cd9d44ec4385d2eb3614138856" upstream="mirror-aosp-master"/>
+  <project name="platform/external/ganymed-ssh2" path="external/ganymed-ssh2" revision="d3724dabc1cfbacd105fe6c422b4dcba80e4fb2d" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/gcc-demangle" path="external/gcc-demangle" revision="9241386b62c353302c2f9eccda0672685b252b4d" upstream="mirror-aosp-master"/>
+  <project name="platform/external/genext2fs" path="external/genext2fs" revision="e11a9c7fe6f1cef99aad2f25afaea37b72fe9f93" upstream="mirror-aosp-master"/>
+  <project name="platform/external/giflib" path="external/giflib" revision="9aef3ea079a57c98a9207f8c3b95a5dc08ee74b5" upstream="mirror-aosp-master"/>
+  <project name="platform/external/google-diff-match-patch" path="external/google-diff-match-patch" revision="cecbe12841337860291c2d6a5728b681ec5fca2a" upstream="mirror-aosp-master"/>
+  <project name="platform/external/grub" path="external/grub" revision="33a4e7e4cfa81dc21d37091515891859ef3ab934" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/gtest" path="external/gtest" revision="d0d0008f894d419ee24cea8a2c17f420f498e111" upstream="mirror-aosp-master"/>
+  <project name="platform/external/guava" path="external/guava" revision="87ffc45d2619a0c178a058de887e3050bb577efe" upstream="mirror-aosp-master"/>
+  <project name="platform/external/hamcrest" path="external/hamcrest" revision="0aa9946b5d271ca10d973d5a086f3640b29b5872" upstream="mirror-aosp-master"/>
+  <project name="platform/external/harfbuzz" path="external/harfbuzz" revision="858f2d28ac741ef139f74bdbdbcefa7560f17c91" upstream="mirror-aosp-master"/>
+  <project name="platform/external/harfbuzz_ng" path="external/harfbuzz_ng" revision="3309edccdbc2a92eb03a285abb27c1c1c4a88e43" upstream="mirror-aosp-master"/>
+  <project name="platform/external/hyphenation" path="external/hyphenation" revision="bfa84834dfeb7fe8d058c2e7e07b5981451ddf82" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/icu4c" path="external/icu4c" revision="9a0097dd87327531802ed8ea15e97b56c74b5549" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/iproute2" path="external/iproute2" revision="e120c4bf77ddd60b94cecbe480158bf676a3d64f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/ipsec-tools" path="external/ipsec-tools" revision="f4cb1ee4b00abbfb6f968dc25818c23b4b47e584" upstream="mirror-aosp-master"/>
+  <project name="platform/external/iptables" path="external/iptables" revision="e3928b77f18db0fdc615693017c6c15eb71bf4e0" upstream="mirror-aosp-master"/>
+  <project name="platform/external/iputils" path="external/iputils" revision="44a65406c9d97908145fd03deeaf531f4645ad6f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/jack" path="external/jack" revision="5ceb2025ac5d25ed48183ac2d3dac4691fe761fb" upstream="mirror-aosp-master"/>
+  <project name="platform/external/javasqlite" path="external/javasqlite" revision="1bbcd337ec8d51bea41e0d44df57a7e93c8af181" upstream="mirror-aosp-master"/>
+  <project name="platform/external/javassist" path="external/javassist" revision="9566207cff5871c672fac1f0d4332d93292036d7" upstream="mirror-aosp-master"/>
+  <project name="platform/external/jdiff" path="external/jdiff" revision="e4694302d6a3786c64d954e0b3cf42786283bd3c" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/jhead" path="external/jhead" revision="6c59af6011c9ba9892fb94bd0df8147cf2c0ec12" upstream="mirror-aosp-master"/>
+  <project name="platform/external/jmdns" path="external/jmdns" revision="f4eb7466d5c09098f9dc54137ed3235e3c43fc9f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/jmonkeyengine" path="external/jmonkeyengine" revision="a6b44658eb1c55295f132a36233a11aa2bd8f9cf" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/jpeg" path="external/jpeg" revision="746f1f0853ddbd14ab5da6af35cc1fa560453d1e" upstream="mirror-aosp-master"/>
+  <project name="platform/external/jsilver" path="external/jsilver" revision="601ffd7efb82f3dce1c1840b5f8e6c759414cdd1" upstream="mirror-aosp-master"/>
+  <project name="platform/external/jsr305" path="external/jsr305" revision="a82868820d6350811b9ddfde4bf8ed5016084269" upstream="mirror-aosp-master"/>
+  <project name="platform/external/junit" path="external/junit" revision="9d96ec477b50480702d8d7167d0bfb391147878d" upstream="mirror-aosp-master"/>
+  <project name="platform/external/kernel-headers" path="external/kernel-headers" revision="383130eabe21d24a5a00791d416c712378a4d7f0" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libcap-ng" path="external/libcap-ng" revision="1d1011a3c5049a7f9eef99d22f3704e4367579cc" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libffi" path="external/libffi" revision="385ba8b006b9995456d3c9283fd20dded90809cc" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/libgsm" path="external/libgsm" revision="50761abed8f4734970874165b386cfd4d9599db4" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/liblzf" path="external/liblzf" revision="6946aa575b0949d045722794850896099d937cbb" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libmtp" path="external/libmtp" revision="7075348937f6a8c9d9211942fcb6c376f4227776" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/libnfc-nci" path="external/libnfc-nci" revision="46abb3dcf960058e48d1444b6a11cc7e84912339" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/libnfc-nxp" path="external/libnfc-nxp" revision="15d81f71a668b3092549c6b7f83694bf680d9c49" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libnl" path="external/libnl" revision="028a3e21476437685a1df497b7abac6a12f19885" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/libnl-headers" path="external/libnl-headers" revision="52c926a9de955fa2d987bf8c5d4a1304b5a2a611" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libogg" path="external/libogg" revision="ec0b24fb1468abe37be4164a6feb16568e036bde" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libpcap" path="external/libpcap" revision="9dab0cd7430a4d23e0a7752fb13b941692171c3d" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libphonenumber" path="external/libphonenumber" revision="485e6d5c6e48a1fc43cc0a090e687c723dac056c" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/libpng" path="external/libpng" revision="7acebabfedea522f08376096754800570f2c28e2" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libppp" path="external/libppp" revision="706e567fc5ff6b79738a5f470e5aa7b2cae76459" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libseccomp-helper" path="external/libseccomp-helper" revision="e87019943a8b5a7cd0880910f671c37b240d5754" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/libselinux" path="external/libselinux" revision="13319cfa30ae74638bc984015f84d113f3bf8d7a" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/libsepol" path="external/libsepol" revision="c71644b06ebd417ef060f3f07472125516f86c41" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libunwind" path="external/libunwind" revision="f622936d6c5239b3d5ccafdf38189cec8bca55c0" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libusb" path="external/libusb" revision="2801917fe150393d4f4a354165fe89550ae22613" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libusb-compat" path="external/libusb-compat" revision="94867ba54eb7faa8efca81cf2214d00bb9143d27" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libvorbis" path="external/libvorbis" revision="de559619fd4dd0d2d9608436696fd44bdf74eba8" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/libvpx" path="external/libvpx" revision="b2e48fbeea3ad651e5e1d00770cb3609c60bb3e7" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libxml2" path="external/libxml2" revision="ea22b769c74393d832eb047b131a70087b022a45" upstream="mirror-aosp-master"/>
+  <project name="platform/external/libxslt" path="external/libxslt" revision="98f5140c33273d3bd67ca03566f8417406001016" upstream="mirror-aosp-master"/>
+  <project groups="libyuv" name="platform/external/libyuv" path="external/libyuv" revision="482a582884351288fb701532359652970b1ba7c0" upstream="mirror-aosp-master"/>
+  <project name="platform/external/linux-tools-perf" path="external/linux-tools-perf" revision="ddcab1ce499b2abdcff954f71f526fb7f1173fd7" upstream="mirror-aosp-master"/>
+  <project name="platform/external/littlemock" path="external/littlemock" revision="328b01eada8965cd38feea884d4080c31e3763b0" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/llvm" path="external/llvm" revision="92e3f69b3f498f1d48e1f31d72fc7205b781ed45" upstream="mirror-aosp-master"/>
+  <project name="platform/external/lzma" path="external/lzma" revision="19cf4f773361c09e47a2ffe1613d66cbf632227f" upstream="mirror-aosp-master"/>
+  <project name="platform/external/marisa-trie" path="external/marisa-trie" revision="629ed059b1e85cd8e4de363d8b3dc53c15c3e08a" upstream="mirror-aosp-master"/>
+  <project name="platform/external/markdown" path="external/markdown" revision="6f2e3554ae38cc90518d32e02cb57d05988270a6" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/mdnsresponder" path="external/mdnsresponder" revision="b25c2507ecc3f674e3b4f0a770acf9ad8fd874d0" upstream="mirror-aosp-master"/>
+  <project name="platform/external/mesa3d" path="external/mesa3d" revision="97d3f36a59ea448fa77e47a90bf04f1254670542" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/mksh" path="external/mksh" revision="2a54bce0ae98f53f0b867e949b26d081691e1493" upstream="mirror-aosp-master"/>
+  <project name="platform/external/mockito" path="external/mockito" revision="34f80a94e45f7110ec3444c1d0ecfacc194d009a" upstream="mirror-aosp-master"/>
+  <project name="platform/external/mockwebserver" path="external/mockwebserver" revision="87572b95a6f01f7c8b701fef642d755b247e5fc9" upstream="mirror-aosp-master"/>
+  <project name="platform/external/mp4parser" path="external/mp4parser" revision="16051e950485c6b62127c0446a760111de1a0cb9" upstream="mirror-aosp-master"/>
+  <project name="platform/external/mtpd" path="external/mtpd" revision="5ea8006691664b7e6d46d6a6dc889eac91b7fe37" upstream="mirror-aosp-master"/>
+  <project name="platform/external/naver-fonts" path="external/naver-fonts" revision="3bba7d2430bc3ec8105678a27f03fb080f0f8384" upstream="mirror-aosp-master"/>
+  <project name="platform/external/netcat" path="external/netcat" revision="444644cfa9a2f3002863caa168fb2d6b34dfd1e8" upstream="mirror-aosp-master"/>
+  <project name="platform/external/netperf" path="external/netperf" revision="ee5fe13b7f9f82b9e42a1fd1ba2d997f07e2e5f3" upstream="mirror-aosp-master"/>
+  <project name="platform/external/neven" path="external/neven" revision="504ee5ccaabd8bce4da3430b0f4e9714ac2a8e6c" upstream="mirror-aosp-master"/>
+  <project name="platform/external/nfacct" path="external/nfacct" revision="6f7aae0264821b44e9fe80fb5596c525d3e2f475" upstream="mirror-aosp-master"/>
+  <project name="platform/external/nist-pkits" path="external/nist-pkits" revision="ad3f12ec91a6b419bbf4b24b619ed39bf04589ea" upstream="mirror-aosp-master"/>
+  <project name="platform/external/nist-sip" path="external/nist-sip" revision="b23dbfce7ea84c39cea75b612868a5832cb9af2b" upstream="mirror-aosp-master"/>
+  <project name="platform/external/noto-fonts" path="external/noto-fonts" revision="90372d894b5d9c9f2a111315d2eb3b8de1979ee4" upstream="mirror-aosp-master"/>
+  <project name="platform/external/oauth" path="external/oauth" revision="bc170f58de82000ed6460f111686a850a1890c07" upstream="mirror-aosp-master"/>
+  <project name="platform/external/objenesis" path="external/objenesis" revision="e8740d2e04179cd15a85dd055cac90b5aeb52589" upstream="mirror-aosp-master"/>
+  <project name="platform/external/okhttp" path="external/okhttp" revision="808b7a3adfc04a1c9e618dbf35d6ad5f54e46fcf" upstream="mirror-aosp-master"/>
+  <project name="platform/external/open-vcdiff" path="external/open-vcdiff" revision="6d29f2f083baf8250db94ed0b4807e513a84163d" upstream="mirror-aosp-master"/>
+  <project name="platform/external/opencv" path="external/opencv" revision="1691b57dbad9cfc15b9a8b72f8b376733b934ffe" upstream="mirror-aosp-master"/>
+  <project name="platform/external/openfst" path="external/openfst" revision="5bf56ba7027cd5f22ff52d0138893f7a585135fb" upstream="mirror-aosp-master"/>
+  <project name="platform/external/openssh" path="external/openssh" revision="47da33088eb8dc14f930f09ba0b5b4ff017b0002" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/openssl" path="external/openssl" revision="df2735d4aecddaa4063dd81fa8a45930f0133ba3" upstream="mirror-aosp-master"/>
+  <project name="platform/external/oprofile" path="external/oprofile" revision="3722f1053f4cab90c4daf61451713a2d61d79c71" upstream="mirror-aosp-master"/>
+  <project name="platform/external/pcre" path="external/pcre" revision="73c8126716643065098d518eb9d6897677b68486" upstream="mirror-aosp-master"/>
+  <project name="platform/external/pixman" path="external/pixman" revision="afd5bbd8074cedec8544d07920fa06786d5a4f08" upstream="mirror-aosp-master"/>
+  <project name="platform/external/ppp" path="external/ppp" revision="03bccb2a88575be729a88b9e3c8bf6b79f68b989" upstream="mirror-aosp-master"/>
+  <project groups="pdk-java" name="platform/external/proguard" path="external/proguard" revision="b005651c72190ee37f463417143cd2e612cafce6" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/protobuf" path="external/protobuf" revision="ea68d73c08b3b9319faef8ef9cd283e773a6ef20" upstream="mirror-aosp-master"/>
+  <project name="platform/external/qemu" path="external/qemu" revision="tools_r22.6"/>
+  <project name="platform/external/qemu-pc-bios" path="external/qemu-pc-bios" revision="20349dae98d7de09a7e390d4a706c64f1db6edc2" upstream="mirror-aosp-master"/>
+  <project name="platform/external/regex-re2" path="external/regex-re2" revision="0d4c52358a1af421705c54bd8a9fdd8a30558a2e" upstream="mirror-aosp-master"/>
+  <project name="platform/external/replicaisland" path="external/replicaisland" revision="99e2e54c5d036048caf09bb05eea0969de093104" upstream="mirror-aosp-master"/>
+  <project name="platform/external/robolectric" path="external/robolectric" revision="6bf395c984ed3f69711663b006aeffbb0f7e8a90" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/safe-iop" path="external/safe-iop" revision="aa0725fb1da35e47676b6da30009322eb5ed59be" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/scrypt" path="external/scrypt" revision="dde037b82e5cd6215244e3240dbaad417928eafa" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/sepolicy" path="external/sepolicy" revision="53667e259fb2b8e52ea3302dd072113ae0cb2427" upstream="mirror-aosp-master"/>
+  <project name="platform/external/sfntly" path="external/sfntly" revision="fa7aae3642754610576328469c6afc68740cec5e" upstream="mirror-aosp-master"/>
+  <project name="platform/external/sil-fonts" path="external/sil-fonts" revision="795a2f4339f8a82d6cff187e2a77bb01d5911aac" upstream="mirror-aosp-master"/>
+  <project name="platform/external/skia" path="external/skia" revision="188a0d3a1400a63185f0b0c6fbe2d3d6edf48434" upstream="mirror-aosp-master"/>
+  <project name="platform/external/smack" path="external/smack" revision="d7955ce24d294fb2014c59d11fca184471056f44" upstream="mirror-aosp-master"/>
+  <project name="platform/external/smali" path="external/smali" revision="5fd395796e215a80c722815bf180728948868f18" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/sonivox" path="external/sonivox" revision="2dbbd3bac0f0e819d196a80cc7855054148ef8b6" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/speex" path="external/speex" revision="eaa4765b8cc6a6dd5ee0d26dc1b61a1044817f32" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/sqlite" path="external/sqlite" revision="ac0e0d5f866fbce0ebf00d0ddd615464849aa83b" upstream="mirror-aosp-master"/>
+  <project name="platform/external/srec" path="external/srec" revision="b8f86496166793a1deab81273ea27c3c31a2c376" upstream="mirror-aosp-master"/>
+  <project name="platform/external/srtp" path="external/srtp" revision="98bd63b48a31b4633cdfdc8138577dfa6d8dd2a6" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/stlport" path="external/stlport" revision="6003041ad7f1abbdf83b10ef22f863a03752c61c" upstream="mirror-aosp-master"/>
+  <project name="platform/external/strace" path="external/strace" revision="7f276d26bd17841b8ce3729d4833252da94f43c9" upstream="mirror-aosp-master"/>
+  <project name="platform/external/stressapptest" path="external/stressapptest" revision="0956427aa995561acb4471764158ae057a36dad5" upstream="mirror-aosp-master"/>
+  <project name="platform/external/svox" path="external/svox" revision="c18822de1291c5a0bdc2eb7434f435b4588038af" upstream="mirror-aosp-master"/>
+  <project name="platform/external/tagsoup" path="external/tagsoup" revision="02545911b6caa33f9ab6ba30c88f2b8197be2a31" upstream="mirror-aosp-master"/>
+  <project name="platform/external/tcpdump" path="external/tcpdump" revision="de49cdcfddf36f2b41ef3278e98a8a550a189952" upstream="mirror-aosp-master"/>
+  <project name="platform/external/timezonepicker-support" path="external/timezonepicker-support" revision="99e91a76fd74bad10266623d67cdb98d011f709e" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/tinyalsa" path="external/tinyalsa" revision="653e7a4015341c87b4d55ec9a94ec7bdee044f6f" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/tinycompress" path="external/tinycompress" revision="56d8daedc9f26ed2c3e6b4328364654621a4fbbb" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/tinyxml" path="external/tinyxml" revision="494e448824844d866e805831d1d5f5acb654065c" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/tinyxml2" path="external/tinyxml2" revision="c74b546f5af36968ffa56d7fd4529f4273b96f48" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/tremolo" path="external/tremolo" revision="f368828a7e2e0657fc29ac4466a3c14f116a6007" upstream="mirror-aosp-master"/>
+  <project name="platform/external/v8" path="external/v8" revision="a2836f4c21141d36a324a49639d14c7d97472cb6" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/valgrind" path="external/valgrind" revision="77e45d6af41d20d8a127a989b8c2f61dd15fb3f9" upstream="mirror-aosp-master"/>
+  <project name="platform/external/vixl" path="external/vixl" revision="1353889f2e520fc95b19933ba8376d2ca7238f23" upstream="mirror-aosp-master"/>
+  <project name="platform/external/webp" path="external/webp" revision="0db01fc3411621bec473d50db0071fd2a225962e" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/webrtc" path="external/webrtc" revision="d62aeac391d16d4953a12120c0ff614ccde02a30" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/wpa_supplicant_8" path="external/wpa_supplicant_8" revision="d28183c0c33f5ee3876b49ce24cad01f701b6742" upstream="mirror-aosp-master"/>
+  <project name="platform/external/xmlwriter" path="external/xmlwriter" revision="e95d92246ee35273dde2bee8b00485cc14c12be5" upstream="mirror-aosp-master"/>
+  <project name="platform/external/xmp_toolkit" path="external/xmp_toolkit" revision="42ea4dc6d1fc2206a7778029070ed9213e3b0fbf" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/yaffs2" path="external/yaffs2" revision="a2cff2275e1b501ff478b03757d6e4f05fddc2db" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/external/zlib" path="external/zlib" revision="a5c7131da47c991585a6c6ac0c063b6d7d56e3fc" upstream="mirror-aosp-master"/>
+  <project name="platform/external/zxing" path="external/zxing" revision="7620644768ffc235607b3a94671e49518c18686f" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/frameworks/av" path="frameworks/av" revision="432ed3d66d09464778df31c73374ee897f7b8840" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/base" path="frameworks/base" revision="aa19a2f69c33fdb6499d0bc1cfafced9f572da5b" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/frameworks/compile/libbcc" path="frameworks/compile/libbcc" revision="476d773476d6536bb88f51c54db6bc6032b5453c" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/frameworks/compile/mclinker" path="frameworks/compile/mclinker" revision="334c6f83c1265eabd58ac7c8b860898038831eab" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/frameworks/compile/slang" path="frameworks/compile/slang" revision="2fded9d7407e1c6ded9b82c07e1d0ffbf21d5931" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/ex" path="frameworks/ex" revision="56bab444c3bc89bb63aac728f549bd3261d01f6f" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/mff" path="frameworks/mff" revision="b9669b8540a1e5c953374d53b115514335e23c27" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/ml" path="frameworks/ml" revision="44abbf76afcfffd51c5344ba66cce40856979a06" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/frameworks/native" path="frameworks/native" revision="85085cd6dd5ffed556e0a044ccf4080fbe7c5981" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/calendar" path="frameworks/opt/calendar" revision="03b18577f8f8f799e87a62b8e03889ddacf6daa2" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/carddav" path="frameworks/opt/carddav" revision="f08aa2df132dd8dc32a0013d3750137d9dd9280a" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/colorpicker" path="frameworks/opt/colorpicker" revision="ac2c013b6cab1e25bc9381b5fe9685f29ee1d208" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/datetimepicker" path="frameworks/opt/datetimepicker" revision="3a2fd6dff7b7bf4125cffe21652c12170811e4a9" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/emoji" path="frameworks/opt/emoji" revision="dbbe673145107e99883f62bafd70c5f43f11065c" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/inputmethodcommon" path="frameworks/opt/inputmethodcommon" revision="df9dd39c2047992a43b64e13bb0fc348a1630f3b" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/mailcommon" path="frameworks/opt/mailcommon" revision="1537812900e59f875cfea0483f0ae261b16d3e4b" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/mms" path="frameworks/opt/mms" revision="8d193b8e027ac0ff4579370a31f997ae3af55b07" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/net/voip" path="frameworks/opt/net/voip" revision="0f722c7f09ce67e058eb1cfaabf1d85f1abdf797" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/photoviewer" path="frameworks/opt/photoviewer" revision="506dd08da59f66f2d2c75337e199d7049117ac17" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/frameworks/opt/telephony" path="frameworks/opt/telephony" revision="b0b5c014448c55ff953f2a09e5d665ef220bdeb3" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/timezonepicker" path="frameworks/opt/timezonepicker" revision="5e287dfe3cba1a91727c2e98308b1fd83d27ce5e" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/opt/vcard" path="frameworks/opt/vcard" revision="5907243e6cf0603adf266ebfa7ee5ee465b9c596" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/frameworks/rs" path="frameworks/rs" revision="c726af7297d4818264999ced4078bdae728b9a04" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/support" path="frameworks/support" revision="3c02db6db2e5d521a5d1f8f3d2697f6ec0266c95" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/testing" path="frameworks/testing" revision="eba0081f35f5f58cc2bc696c1d58b97507c38143" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/uiautomator" path="frameworks/uiautomator" revision="87828477f19061e924919c874408a2c34e9093bc" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/volley" path="frameworks/volley" revision="04884d344043063aaff1bef567912e1be0f254ff" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/webview" path="frameworks/webview" revision="b23880dafe8d10882c6934f570a25e4106dba1d8" upstream="mirror-aosp-master"/>
+  <project name="platform/frameworks/wilhelm" path="frameworks/wilhelm" revision="a62c3572e60ae0446632de15418a65089cccf551" upstream="mirror-aosp-master"/>
+  <project name="platform/hardware/akm" path="hardware/akm" revision="02cb925ca99b6fe98f687cfa7d332158c045f441" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/hardware/broadcom/libbt" path="hardware/broadcom/libbt" revision="55ddd0cce019e88829f92b2fe4e17d5869daa9b9" upstream="mirror-aosp-master"/>
+  <project groups="broadcom_wlan" name="platform/hardware/broadcom/wlan" path="hardware/broadcom/wlan" revision="ff4d18edaead1ec08a0c1cd9238e616d8f339235" upstream="mirror-aosp-master"/>
+  <project groups="invensense" name="platform/hardware/invensense" path="hardware/invensense" revision="0f5bc7cd710fac85377621a8b9a4c364af80605f" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/hardware/libhardware" path="hardware/libhardware" revision="37de84bc96f808601897bcd126b73fc839fd2c20" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/hardware/libhardware_legacy" path="hardware/libhardware_legacy" revision="600898287d579c41b77af309f0ab75dbe40c559b" upstream="mirror-aosp-master"/>
+  <project groups="qcom" name="platform/hardware/qcom/audio" path="hardware/qcom/audio" revision="7bc597c30d8a5170a254d7a512e9eff11a46dc2b" upstream="mirror-aosp-master"/>
+  <project groups="qcom" name="platform/hardware/qcom/bt" path="hardware/qcom/bt" revision="cf314a462ba06f4bd3352d5d4630edcf6edbbe97" upstream="mirror-aosp-master"/>
+  <project groups="qcom" name="platform/hardware/qcom/camera" path="hardware/qcom/camera" revision="e36e9363b63580e09a3a88abc9d95e3bd894e189" upstream="mirror-aosp-master"/>
+  <project groups="qcom" name="platform/hardware/qcom/display" path="hardware/qcom/display" revision="c6918a50fd246dee6255625f9b36fd066d529931" upstream="mirror-aosp-master"/>
+  <project groups="qcom" name="platform/hardware/qcom/keymaster" path="hardware/qcom/keymaster" revision="711560b67b176efdcaa3dfe4e5d8fea13e60f01f" upstream="mirror-aosp-master"/>
+  <project groups="qcom" name="platform/hardware/qcom/media" path="hardware/qcom/media" revision="1490d8ec09f3253f4a6f946d63247574c0fa0d51" upstream="mirror-aosp-master"/>
+  <project groups="qcom_msm8960" name="platform/hardware/qcom/msm8960" path="hardware/qcom/msm8960" revision="ca38ed098b05a79d20e852348f27d7c40a53f801" upstream="mirror-aosp-master"/>
+  <project groups="qcom_msm8x74" name="platform/hardware/qcom/msm8x74" path="hardware/qcom/msm8x74" revision="78d11014da753cc4144df73f1a4edb09f8b7437a" upstream="mirror-aosp-master"/>
+  <project groups="qcom" name="platform/hardware/qcom/power" path="hardware/qcom/power" revision="ff9f4538c09399030fa73e3e65a167852cb91e8f" upstream="mirror-aosp-master"/>
+  <project groups="qcom" name="platform/hardware/qcom/sensors" path="hardware/qcom/sensors" revision="07c5bcdb36158e22d33bac02eecd83d4ff1fb2f8" upstream="mirror-aosp-master"/>
+  <project groups="qcom_wlan" name="platform/hardware/qcom/wlan" path="hardware/qcom/wlan" revision="daa321b0ad8c10b454dc28d7e6dadc72196a8c7a" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/hardware/ril" path="hardware/ril" revision="c6bb97274337f55fec2e7f33aec7acc9de117ddf" upstream="mirror-aosp-master"/>
+  <project groups="exynos5" name="platform/hardware/samsung_slsi/exynos5" path="hardware/samsung_slsi/exynos5" revision="5b1fd1826dc8f13a26390f42190093c366aac01e" upstream="mirror-aosp-master"/>
+  <project name="platform/hardware/ti/omap3" path="hardware/ti/omap3" revision="3bbaa29066a684d01df42ddf0365266e59f2dc44" upstream="mirror-aosp-master"/>
+  <project groups="omap4" name="platform/hardware/ti/omap4xxx" path="hardware/ti/omap4xxx" revision="9182ce4dc3c2b180c7dba83fb6253eea08d81022" upstream="mirror-aosp-master"/>
+  <project name="platform/libcore" path="libcore" revision="a5cfa107e2e5cb1510155712a2cb3037fe0d1e40" upstream="mirror-aosp-master"/>
+  <project groups="pdk-java" name="platform/libnativehelper" path="libnativehelper" revision="d6d057ff855592245cc6c8eac18d902cda107ff1" upstream="mirror-aosp-master"/>
+  <project name="platform/ndk" path="ndk" revision="781500e9a47b3ebcb5f72942831dd77284be7a0c" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/BasicSmsReceiver" path="packages/apps/BasicSmsReceiver" revision="37bba2ea52a8503658ff5b3edb80ed48eb96f8c0" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Bluetooth" path="packages/apps/Bluetooth" revision="b9c0706b00f64a59911a5ac63e3f609dabebc284" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Browser" path="packages/apps/Browser" revision="f4abb38e9ba7daeefedb24431dc71d9554164177" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Calculator" path="packages/apps/Calculator" revision="b313afd51277e4e0a0a2a75a19c44e265628e6dd" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Calendar" path="packages/apps/Calendar" revision="3a229e6f71ffe1004304ad1a9fba17621106b0ab" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Camera" path="packages/apps/Camera" revision="06677eed6ae20738cda2df1717ad232e3e502f6c" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Camera2" path="packages/apps/Camera2" revision="b102c5089dffd5d81394788560c69c7c743d86a5" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/CellBroadcastReceiver" path="packages/apps/CellBroadcastReceiver" revision="b8811919bee383b5ef3f6dde88071b1daa16ab5f" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/CertInstaller" path="packages/apps/CertInstaller" revision="05f3aaf8668858d24ce90bd595af09019dc9dc01" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Contacts" path="packages/apps/Contacts" revision="955ace240ff9881ef7d47605adbe6aae43014376" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/ContactsCommon" path="packages/apps/ContactsCommon" revision="edc43fbf846b893a9c4699e637ac02998231c249" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/DeskClock" path="packages/apps/DeskClock" revision="e4f70b16887780dc9f81a099067988374eac2f12" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Dialer" path="packages/apps/Dialer" revision="dc372cc7464e7869e6ca0caed6a81bd53e43a6e1" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Email" path="packages/apps/Email" revision="b2cbd6e486090d1d8a2bbfe83b2db2027a235419" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Exchange" path="packages/apps/Exchange" revision="88651d50c835286f462eca4ced3fb2ebe19a3b02" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Gallery" path="packages/apps/Gallery" revision="0b1de00241225f424e15ec98127e15b2d38f0a06" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Gallery2" path="packages/apps/Gallery2" revision="7a6bd46dc1a67e79afe1045877cf0115d43a6be8" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/HTMLViewer" path="packages/apps/HTMLViewer" revision="ff9625bd7217114c61d7bd0c08ce2dbbe8df4ae1" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/InCallUI" path="packages/apps/InCallUI" revision="5feee86142930f23fa9d67f18c3ff54f9431096d" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/KeyChain" path="packages/apps/KeyChain" revision="e6243f79f3ce6daeb2d8d879e6e1a684ffc1b2fc" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Launcher2" path="packages/apps/Launcher2" revision="10ae9943117c66778fbe5308f1b2540530b5280f" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Launcher3" path="packages/apps/Launcher3" revision="daa9dfcbd5865bd25d729f313159f8f8adfd2fcd" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/LegacyCamera" path="packages/apps/LegacyCamera" revision="8e944e6303d1c952929989f56da6b9d97bb54b3c" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Mms" path="packages/apps/Mms" revision="80c20b369e24adbcdcb1387923182bbaa917dba0" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Music" path="packages/apps/Music" revision="75a9f75a505d8a68ed00c83f93fb2fcb3f316ee8" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/MusicFX" path="packages/apps/MusicFX" revision="aaa2f99caac6f088b23de55fe2eb1e8ee305b1fb" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Nfc" path="packages/apps/Nfc" revision="6f6e8bf682dd58b0fe68b6bc3e6e310f7950d736" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/OneTimeInitializer" path="packages/apps/OneTimeInitializer" revision="01e429c08e51291315890de9677151a7e0b6ad35" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/PackageInstaller" path="packages/apps/PackageInstaller" revision="a5f543db022c98a1d27a4d2ac3117556bbd1b4c4" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Phone" path="packages/apps/Phone" revision="116be5379a44fd6bf26adf15f7e3bf1c39cbf30e" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/PhoneCommon" path="packages/apps/PhoneCommon" revision="16f62c5ab5c21981e63d678187ad4b44e686332b" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Protips" path="packages/apps/Protips" revision="325232e344b257a3c236ead2adc60c7378f226c0" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Provision" path="packages/apps/Provision" revision="78ca0db658fe6253d506916e36319e620476f809" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/QuickSearchBox" path="packages/apps/QuickSearchBox" revision="cfb7af6652a7fbcc0f86341edfe14dc316c9ff37" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Settings" path="packages/apps/Settings" revision="6829c48c36fceebb46989f8ee25c369fa5f7adeb" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/SmartCardService" path="packages/apps/SmartCardService" revision="29eae320a4bd222b5ff1c092f84f1aebba88d0b7" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/SoundRecorder" path="packages/apps/SoundRecorder" revision="4c52c5f292877d8b8921716f5029e0fafcb7dd3b" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/SpareParts" path="packages/apps/SpareParts" revision="4db997871e3f4c3f84660815096e5276b47c5c91" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/SpeechRecorder" path="packages/apps/SpeechRecorder" revision="536aa74ff3a77186bef29dc9333a34688fa59d13" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Stk" path="packages/apps/Stk" revision="2845090227bee0b85fc08b6006eb8a75ebadf200" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/Tag" path="packages/apps/Tag" revision="bea392cb1bd057826cc30b9124d045ad0cb41f6d" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/UnifiedEmail" path="packages/apps/UnifiedEmail" revision="a717105eb39261efe3fc182675a2d70fd7faf7f2" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/VideoEditor" path="packages/apps/VideoEditor" revision="ecd55f6aff7f62d7a9dd66460fe4e4e385539aab" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/apps/VoiceDialer" path="packages/apps/VoiceDialer" revision="9d05aab7db8a8eb5182f961957f284c131539718" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/experimental" path="packages/experimental" revision="588c7cda9c62fb77d23bc089a63cba8a96bc9ffb" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/inputmethods/LatinIME" path="packages/inputmethods/LatinIME" revision="136b32c975827ac0171e10ab089952c0ef706571" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/inputmethods/OpenWnn" path="packages/inputmethods/OpenWnn" revision="59aefa242169b7a51c2381daee58ff22fd1834ce" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/inputmethods/PinyinIME" path="packages/inputmethods/PinyinIME" revision="40056ae7c2757681d88d2e226c4681281bd07129" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/providers/ApplicationsProvider" path="packages/providers/ApplicationsProvider" revision="3347f31bd268ca3153abe5def9361f625bd73efd" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/providers/CalendarProvider" path="packages/providers/CalendarProvider" revision="bad06d305e1ce6f2c020f353f93ab2e232c34da2" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/providers/ContactsProvider" path="packages/providers/ContactsProvider" revision="f9dd751e527f6857054ce67beb4cbacfad6d0c92" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/providers/DownloadProvider" path="packages/providers/DownloadProvider" revision="2834a68d04dc3d0ce42c231873e5bec4b0f0c65c" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/providers/MediaProvider" path="packages/providers/MediaProvider" revision="ba1cd257603746daf38f4b1fe4cac8528b77de6e" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/providers/PartnerBookmarksProvider" path="packages/providers/PartnerBookmarksProvider" revision="96d0a80af45923767baf449fc8c735c2f71d64ae" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/providers/TelephonyProvider" path="packages/providers/TelephonyProvider" revision="91e705bc7662192ea33f2bac6b0a6c79fc9bc7ab" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/providers/UserDictionaryProvider" path="packages/providers/UserDictionaryProvider" revision="361f35b7b1fe758d93e0952536a298b2ed045a89" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/screensavers/Basic" path="packages/screensavers/Basic" revision="4b5d9d8bea733c4e5876541831f27bf40588b516" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/screensavers/PhotoTable" path="packages/screensavers/PhotoTable" revision="a5e0fee8e923cfc8682eb4431bc3997ed15f649a" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/screensavers/WebView" path="packages/screensavers/WebView" revision="6e0a80f6faed6191acc8ce1b6c79eada09e9e042" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/services/Telephony" path="packages/services/Telephony" revision="53db16dd3213d046eda160405972242de2bb2d7a" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/wallpapers/Basic" path="packages/wallpapers/Basic" revision="bfeefec9ba04e2c8bcc618786595544ffd43a456" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/wallpapers/Galaxy4" path="packages/wallpapers/Galaxy4" revision="ca92fdc25da99afdfe33447aefb2cd270c5b5e4d" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/wallpapers/HoloSpiral" path="packages/wallpapers/HoloSpiral" revision="63b75996a7cfb713a6a6feb5c774ba4b46c7d6eb" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/wallpapers/LivePicker" path="packages/wallpapers/LivePicker" revision="c0968c9cabafe01fdfc7dcc24d75ef05cace0afe" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/wallpapers/MagicSmoke" path="packages/wallpapers/MagicSmoke" revision="f01ea4c07914010d52a42130acb7e67d4306fbda" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/wallpapers/MusicVisualization" path="packages/wallpapers/MusicVisualization" revision="72fbcf3a8e4ebee42c36a5887432ca823ef0e4e5" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/wallpapers/NoiseField" path="packages/wallpapers/NoiseField" revision="7d3e52a18a1255baffd7c0675a465f1b85b99f56" upstream="mirror-aosp-master"/>
+  <project name="platform/packages/wallpapers/PhaseBeam" path="packages/wallpapers/PhaseBeam" revision="0da76f35378677f1102e0be218ce1993c0e528b6" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/pdk" path="pdk" revision="4902d71d230d21639be817a83e8998230a6ff5e0" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin" name="platform/prebuilts/clang/darwin-x86/3.1" path="prebuilts/clang/darwin-x86/3.1" revision="426233405bef3c7c825095ab14256c3773894b9b" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin" name="platform/prebuilts/clang/darwin-x86/3.2" path="prebuilts/clang/darwin-x86/3.2" revision="af856d77b3cbb1f6afccdc531bee991403c28907" upstream="mirror-aosp-master"/>
+  <project groups="darwin,arm" name="platform/prebuilts/clang/darwin-x86/arm/3.3" path="prebuilts/clang/darwin-x86/arm/3.3" revision="54acc51e28850485e380b55916868a4e1ff17998" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin" name="platform/prebuilts/clang/darwin-x86/host/3.4" path="prebuilts/clang/darwin-x86/host/3.4" revision="a798fe00dbd92ad4e5f7123a2e2bc1d805db04f6" upstream="mirror-aosp-master"/>
+  <project groups="darwin,mips" name="platform/prebuilts/clang/darwin-x86/mips/3.3" path="prebuilts/clang/darwin-x86/mips/3.3" revision="da3dad928542362835082b2eda44e4dc315d65bb" upstream="mirror-aosp-master"/>
+  <project groups="darwin,x86" name="platform/prebuilts/clang/darwin-x86/x86/3.3" path="prebuilts/clang/darwin-x86/x86/3.3" revision="f67a83f35e30f92b312fbee852184c3f6dc38f34" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux" name="platform/prebuilts/clang/linux-x86/3.1" path="prebuilts/clang/linux-x86/3.1" revision="e95b4ce22c825da44d14299e1190ea39a5260bde" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux" name="platform/prebuilts/clang/linux-x86/3.2" path="prebuilts/clang/linux-x86/3.2" revision="471afab478649078ad7c75ec6b252481a59e19b8" upstream="mirror-aosp-master"/>
+  <project groups="linux,arm" name="platform/prebuilts/clang/linux-x86/arm/3.3" path="prebuilts/clang/linux-x86/arm/3.3" revision="2f6d2db9e2af3507d132cf5d286a42fe1d47f7bc" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux" name="platform/prebuilts/clang/linux-x86/host/3.4" path="prebuilts/clang/linux-x86/host/3.4" revision="fae26a039f79d780ddedcad07f164d9e6c05fc87" upstream="mirror-aosp-master"/>
+  <project groups="linux,mips" name="platform/prebuilts/clang/linux-x86/mips/3.3" path="prebuilts/clang/linux-x86/mips/3.3" revision="51f8e2760628588fe268438d612d942c30d13fb2" upstream="mirror-aosp-master"/>
+  <project groups="linux,x86" name="platform/prebuilts/clang/linux-x86/x86/3.3" path="prebuilts/clang/linux-x86/x86/3.3" revision="017a8a67f92a66b29ab17772e50642a7b9d0f8e6" upstream="mirror-aosp-master"/>
+  <project name="platform/prebuilts/devtools" path="prebuilts/devtools" revision="tools_r22.6"/>
+  <project groups="pdk" name="platform/prebuilts/eclipse" path="prebuilts/eclipse" revision="4b6337f8d6887e5597344810d3fe9c43f3a6d9c1" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,eclipse" name="platform/prebuilts/eclipse-build-deps" path="prebuilts/eclipse-build-deps" revision="ceb739d6a7c10f5fb5a6cf6e1f702453b1361ad3" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,eclipse" name="platform/prebuilts/eclipse-build-deps-sources" path="prebuilts/eclipse-build-deps-sources" revision="8b7d8f6033ffe2d22905d10cf6d57d5bdcbe519b" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,arm" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8" path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8" revision="d0406950b235765a31f692d8150919f164347006" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,arm" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" revision="21b2cba584638ed5ffad8e3fd3e6808bfa299cf0" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,arm" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.7" path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.7" revision="26cb1865482ce3d9dd47ff5766180f3e7ade98ec" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,arm" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" revision="6d08ca9f45ff685648fd13c75bf5cac4b11c19bb" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,arm" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6" path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6" revision="0f74cbc89b93c4db7fbf737f561cd69221f779a7" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,arm" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7" path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7" revision="c208db6423f39b8a816f60dd18bc2f92fd9ba1f4" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,arm" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8" path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8" revision="264394c23b2686ce52cd4ffb116ced127aa7f8fc" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin" name="platform/prebuilts/gcc/darwin-x86/host/headers" path="prebuilts/gcc/darwin-x86/host/headers" revision="4ac4f7cc41cf3c9e36fc3d6cf37fd1cfa9587a68" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" revision="8834958755acc291d126ba7ee38ac731d04f9c9e" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,mips" name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.6" path="prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.6" revision="837cdd9b3ac7231daaf961056c7505843130f667" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,mips" name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.7" path="prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.7" revision="f485004fb17923478ce2953862a71edd246dce3d" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,mips" name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8" path="prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8" revision="35659b6ba625f3705a9c5b09a1fd670bf814e173" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,x86" name="platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.6" path="prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.6" revision="042d6130038c95be86fcea5dddda2db07bd5aa27" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,x86" name="platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.7" path="prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.7" revision="b8d6b5d787751a78c0a1d38f209037a933b2371b" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,x86" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.7" path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.7" revision="95c2f1d64d6cdeefcd19e48a1cecdb977f206e6f" upstream="mirror-aosp-master"/>
+  <project groups="pdk,darwin,x86" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8" path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8" revision="5b4741595fe328bebf6e4e9aaa9a4d26dcce4164" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,arm" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8" revision="beb8d7929ce8eabaeac987c7522e4b19d043c005" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,arm" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.6" revision="d73a051b1fd1d98f5c2463354fb67898f0090bdb" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,arm" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.7" revision="8b880805d454664b3eed11d0f053cdeafa1ff06e" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,arm" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" revision="26e93f6af47f7bd3a9beb5c102a5f45e19bfa38a" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,arm" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" revision="71c99ec3db1503a2124d5e287097d58b964deef7" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,arm" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7" revision="c8f2679358c7b1fa8a544c3a6f1c69c9dc9fad52" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,arm" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" revision="d9735fc81434f2af2c44d86ca57740c673c8d9bc" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux" name="platform/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.4.3" path="prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.4.3" revision="10191e2f442c5409cb70783508658d474612a97e" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux" name="platform/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" path="prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" revision="d2685281e2e54ca14d1df304867aa82c37b27162" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" revision="627f9b20fc518937b93747a7ff1ed4f5ed46e06f" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,mips" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6" path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6" revision="90fc0bd53f2d07ef2383bfad53671f76801c740e" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,mips" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.7" path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.7" revision="05ac38084fee1be0610b3361a4ebcee115871b42" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,mips" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.8" path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.8" revision="4e495d02f2f3a5c04525b6a78167f6eed05b8970" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,x86" name="platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" path="prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" revision="b9ebba077c2f62e930b16240d7f3ad61f1ad1dfc" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,x86" name="platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.7" path="prebuilts/gcc/linux-x86/x86/i686-linux-android-4.7" revision="c7931763d41be602407ed9d71e2c0292c6597e00" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,x86" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7" path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7" revision="c21d587f614bc587a887fef161b7eabb741cbdc1" upstream="mirror-aosp-master"/>
+  <project groups="pdk,linux,x86" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" revision="515a379df952ce2d4e922d04da1ea92f000b6259" upstream="mirror-aosp-master"/>
+  <project name="platform/prebuilts/gradle-plugin" path="prebuilts/gradle-plugin" revision="71348f05649f1658bcd323152da4534101949c81" upstream="mirror-aosp-master"/>
+  <project name="platform/prebuilts/maven_repo/android" path="prebuilts/maven_repo/android" revision="84da01fa4991736839db006caf681a367fae7644" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/prebuilts/misc" path="prebuilts/misc" revision="6508a52fe64a113fb4deb21e12b1bbbaaee8f657" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/prebuilts/ndk" path="prebuilts/ndk" revision="2969536c5d4329ffe006f31fc51e98e1fc435bac" upstream="mirror-aosp-master"/>
+  <project groups="darwin" name="platform/prebuilts/python/darwin-x86/2.7.5" path="prebuilts/python/darwin-x86/2.7.5" revision="2bdd4fd418614c7c0101147d02199d0e47c4980e" upstream="mirror-aosp-master"/>
+  <project groups="linux" name="platform/prebuilts/python/linux-x86/2.7.5" path="prebuilts/python/linux-x86/2.7.5" revision="880b9a71dab8a0f744acef6e6b42d1f27ca5f4c8" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/prebuilts/qemu-kernel" path="prebuilts/qemu-kernel" revision="ea0a444cfea940690e7e00ca69a310b813771ec0" upstream="mirror-aosp-master"/>
+  <project name="platform/prebuilts/runtime" path="prebuilts/runtime" revision="56e663b8ec9cd0df9ce5afdc7b7d56460faf44c8" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/prebuilts/sdk" path="prebuilts/sdk" revision="a5f4aac15d62597d53fd950113d7590a9c114239" upstream="mirror-aosp-master"/>
+  <project groups="pdk,tools" name="platform/prebuilts/tools" path="prebuilts/tools" revision="tools_r22.6"/>
+  <project name="platform/sdk" path="sdk" revision="tools_r22.6"/>
+  <project groups="pdk" name="platform/system/core" path="system/core" revision="0f4575dbbd6587023229c87bcd385557a96830ae" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/system/extras" path="system/extras" revision="75cd8ffa850aa6414d1771bbc44c4ae806702b85" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/system/media" path="system/media" revision="77828c90b42043e375230afec9876c7b5bfe1f84" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/system/netd" path="system/netd" revision="45d7b7482e97b7445bf47fba3ffa3af764cadf48" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/system/security" path="system/security" revision="9ffe9be8dd27def3f674da90cf9619437e3d428c" upstream="mirror-aosp-master"/>
+  <project groups="pdk" name="platform/system/vold" path="system/vold" revision="470f0b3ff46493b4a46b3599db33a29e94615d30" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,tools" name="platform/tools/adt/eclipse" path="tools/adt/eclipse" revision="ede2ed86419bb4c78428f1ac09825b1a247d8e24" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,tools" name="platform/tools/adt/idea" path="tools/adt/idea" revision="51be21f1d9d7cb088c6e65a92c3c9ffcb7bf52a2" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,tools" name="platform/tools/base" path="tools/base" revision="tools_r22.6"/>
+  <project groups="notdefault,tools" name="platform/tools/build" path="tools/build" revision="ef84df96b7b1a26a96a37506d95e3d427ee830ed" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,tools" name="platform/tools/emulator" path="tools/emulator" revision="tools_r22.6"/>
+  <project groups="tools" name="platform/tools/external/fat32lib" path="tools/external/fat32lib" revision="91029673923ab3f1bb9d1d205ad1e72623802536" upstream="mirror-aosp-master"/>
+  <project groups="tools" name="platform/tools/external/gradle" path="tools/external/gradle" revision="dc2c917960a066e48c098cbbf58c5b6acf0cc452" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,tools" name="platform/tools/idea" path="tools/idea" revision="6758886fd1b3517ba849760029321baba8ddd3b1" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,motodev" name="platform/tools/motodev" path="tools/motodev" revision="69989786cefbde82527960a1e100ec9afba46a98" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,tools" name="platform/tools/studio/cloud" path="tools/studio/cloud" revision="079fb2990ed0875a30aff50f469dab6005cd9aa1" upstream="mirror-aosp-master"/>
+  <project groups="notdefault,tools" name="platform/tools/swt" path="tools/swt" revision="tools_r22.6"/>
 </manifest>
