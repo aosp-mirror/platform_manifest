@@ -8,21 +8,37 @@
            remote="goog" />
   <manifest-server url="http://android-test:8787" />
 
-  <project path="tools/gradle" name="platform/tools/gradle">
-    <copyfile src="build/build.gradle" dest="tools/build.gradle" />
-    <copyfile src="build/settings.gradle" dest="tools/settings.gradle" />
+  <project path="tools/buildSrc" name="platform/tools/buildSrc">
+    <copyfile src="base/build.gradle"      dest="tools/build.gradle" />
+    <copyfile src="base/settings.gradle"   dest="tools/settings.gradle" />
+    <copyfile src="base/gradlew"           dest="tools/gradlew" />
+    <copyfile src="base/gradlew.bat"       dest="tools/gradlew.bat" />
+    <copyfile src="base/gradle.properties" dest="tools/gradle.properties" />
   </project>
 
-  <project path="tools/buildSrc" name="platform/tools/buildSrc" />
+  <project path="external/ant-glob" name="platform/external/ant-glob" />
+  <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" />
+  <project path="external/emma" name="platform/external/emma"/>
+  <project path="external/gtest" name="platform/external/gtest" />
+  <project path="external/qemu" name="platform/external/qemu" />
+  <project path="prebuilts/eclipse-build-deps" name="platform/prebuilts/eclipse-build-deps" />
+  <project path="prebuilts/eclipse-build-deps-sources" name="platform/prebuilts/eclipse-build-deps-sources" />
+  <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" />
+  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" />
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" />
+  <project path="sdk" name="platform/sdk" />
   <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" />
   <project path="tools/base" name="platform/tools/base" />
   <project path="tools/emulator" name="platform/tools/emulator" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" />
   <project path="tools/external/gradle" name="platform/tools/external/gradle" />
+  <project path="tools/gradle" name="platform/tools/gradle" />
   <project path="tools/idea" name="platform/tools/idea" />
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" />
   <project path="tools/swt" name="platform/tools/swt" />
-  <project path="external/qemu" name="platform/external/qemu" />
 
 </manifest>
