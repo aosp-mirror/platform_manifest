@@ -4,6 +4,9 @@
   <remote  name="goog"
            fetch=".."
            review="sso://googleplex-android/" />
+  <remote  name="goog-and-upload-partner"
+           fetch=".."
+           review="sso://partner-android/" />
   <default revision="lmp-sprout-dev"
            remote="goog" />
   <manifest-server url="http://android-test:8787" />
@@ -27,6 +30,8 @@
   <project path="development" name="platform/development" groups="pdk-cw-fs" />
   <project path="device/asus/anthias" name="device/asus/anthias" groups="device,anthias" />
   <project path="device/asus/anthias-kernel" name="device/asus/anthias-kernel" groups="device,anthias" clone-depth="1" />
+  <project path="device/asus/sparrow" name="device/asus/sparrow" groups="device,sparrow" remote="goog-and-upload-partner" revision="lmp-sprout-devices" />
+  <project path="device/asus/sparrow-kernel" name="device/asus/sparrow-kernel" groups="device,sparrow" clone-depth="1" remote="goog-and-upload-partner" revision="lmp-sprout-devices" />
   <project path="device/asus/deb" name="device/asus/deb" groups="device,flo" />
   <project path="device/asus/flo" name="device/asus/flo" groups="device,flo" />
   <project path="device/asus/flo-kernel" name="device/asus/flo-kernel" groups="device,flo" clone-depth="1" />
@@ -84,6 +89,8 @@
   <project path="device/moto/metallica" name="device/moto/metallica" groups="device,metallica" />
   <project path="device/moto/minnow" name="device/moto/minnow" groups="device,minnow" />
   <project path="device/moto/minnow-kernel" name="device/moto/minnow-kernel" groups="device,minnow" clone-depth="1" />
+  <project path="device/moto/smelt" name="device/moto/smelt" groups="device,smelt" remote="goog-and-upload-partner" revision="lmp-sprout-devices" />
+  <project path="device/moto/smelt-kernel" name="device/moto/smelt-kernel" groups="device,smelt" clone-depth="1" remote="goog-and-upload-partner" revision="lmp-sprout-devices" />
   <project path="device/moto/shamu" name="device/moto/shamu" groups="device,shamu" />
   <project path="device/moto/shamu-kernel" name="device/moto/shamu-kernel" groups="device,shamu" clone-depth="1" />
   <project path="device/nvidia/ardbeg" name="device/nvidia/ardbeg" groups="device,ardbeg" />
@@ -578,6 +585,7 @@
   <project path="vendor/adobe/prebuilt" name="platform/vendor/adobe/prebuilt" groups="vendor" />
   <project path="vendor/android/compatibility" name="platform/vendor/android/compatibility" groups="vendor" />
   <project path="vendor/asus/anthias" name="platform/vendor/asus/anthias" groups="vendor,anthias" />
+  <project path="vendor/asus/sparrow" name="platform/vendor/asus/sparrow" groups="vendor,sparrow" remote="goog-and-upload-partner" revision="lmp-sprout-devices" />
   <project path="vendor/asus/deb" name="platform/vendor/asus/deb" groups="vendor,flo" />
   <project path="vendor/asus/flo" name="platform/vendor/asus/flo" groups="vendor,flo" />
   <project path="vendor/asus/fugu" name="platform/vendor/asus/fugu" groups="vendor,fugu" />
@@ -636,6 +644,7 @@
   <project path="vendor/lge/occam" name="platform/vendor/lge/occam" groups="vendor,mako" />
   <project path="vendor/moto/common" name="platform/vendor/moto/common" groups="vendor,stingray" />
   <project path="vendor/moto/minnow" name="platform/vendor/moto/minnow" groups="vendor,minnow" />
+  <project path="vendor/moto/smelt" name="platform/vendor/moto/smelt" groups="vendor,smelt" remote="goog-and-upload-partner" revision="lmp-sprout-devices" />
   <project path="vendor/moto/prebuilt" name="platform/vendor/moto/prebuilt" groups="vendor" />
   <project path="vendor/moto/shamu" name="platform/vendor/moto/shamu" groups="vendor,shamu" />
   <project path="vendor/netflix" name="platform/vendor/netflix" groups="vendor" />
