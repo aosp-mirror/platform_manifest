@@ -1,44 +1,46 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <manifest>
 
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="studio-1.1-release" sync-j="4" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/"/>
+  <default revision="studio-1.1-release" remote="aosp" sync-j="4"/>
 
-  <project name="platform/tools/buildSrc" path="tools/buildSrc">
-    <copyfile dest="tools/build.gradle" src="base/build.gradle" />
-    <copyfile dest="tools/settings.gradle" src="base/settings.gradle" />
-    <copyfile dest="tools/gradlew" src="base/gradlew" />
-    <copyfile dest="tools/gradlew.bat" src="base/gradlew.bat" />
-    <copyfile dest="tools/gradle.properties" src="base/gradle.properties" />
+  <project path="tools/buildSrc" name="platform/tools/buildSrc">
+    <copyfile src="base/build.gradle" dest="tools/build.gradle"/>
+    <copyfile src="base/settings.gradle" dest="tools/settings.gradle"/>
+    <copyfile src="base/gradlew" dest="tools/gradlew"/>
+    <copyfile src="base/gradlew.bat" dest="tools/gradlew.bat"/>
+    <copyfile src="base/gradle.properties" dest="tools/gradle.properties"/>
   </project>
 
-  <project name="platform/external/ant-glob" path="external/ant-glob" />
-  <project name="platform/external/eclipse-windowbuilder" path="external/eclipse-windowbuilder" />
-  <project name="platform/external/gtest" path="external/gtest" />
-  <project name="platform/external/emma" path="external/emma" />
-  <project name="platform/external/qemu" path="external/qemu" />
-  <project name="platform/prebuilts/android-emulator" path="prebuilts/android-emulator" />
-  <project name="platform/prebuilts/eclipse-build-deps" path="prebuilts/eclipse-build-deps" />
-  <project name="platform/prebuilts/eclipse-build-deps-sources" path="prebuilts/eclipse-build-deps-sources" />
-  <project name="platform/prebuilts/eclipse" path="prebuilts/eclipse" />
-  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" />
-  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" />
-  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" />
-  <project name="platform/prebuilts/qemu-kernel" path="prebuilts/qemu-kernel" />
-  <project name="platform/prebuilts/tools" path="prebuilts/tools" />
-  <project name="platform/sdk" path="sdk" />
-  <project name="platform/tools/adt/eclipse" path="tools/adt/eclipse" />
-  <project name="platform/tools/adt/idea" path="tools/adt/idea" />
-  <project name="platform/tools/base" path="tools/base" />
-  <project name="platform/tools/emulator" path="tools/emulator" />
-  <project name="platform/tools/external/fat32lib" path="tools/external/fat32lib" />
-  <project name="platform/tools/external/gradle" path="tools/external/gradle" />
-  <project name="platform/tools/gradle" path="tools/gradle" />
-  <project name="platform/tools/idea" path="tools/idea" />
-  <project name="platform/tools/studio/google/cloud/testing" path="tools/studio/google/cloud/testing" />
-  <project name="platform/tools/studio/google/cloud/tools" path="tools/studio/google/cloud/tools" />
-  <project name="platform/tools/studio/google/login" path="tools/studio/google/login" />
-  <project name="platform/tools/studio/google/play" path="tools/studio/google/play" />
-  <project name="platform/tools/swt" path="tools/swt" />
+  <project path="external/ant-glob" name="platform/external/ant-glob"/>
+  <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder"/>
+  <project path="external/gtest" name="platform/external/gtest"/>
+  <project path="external/emma" name="platform/external/emma"/>
+  <project path="external/protobuf" name="platform/external/protobuf"/>
+  <project path="external/qemu" name="platform/external/qemu"/>
+  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator"/>
+  <project path="prebuilts/eclipse-build-deps" name="platform/prebuilts/eclipse-build-deps"/>
+  <project path="prebuilts/eclipse-build-deps-sources" name="platform/prebuilts/eclipse-build-deps-sources"/>
+  <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse"/>
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6"/>
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8"/>
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8"/>
+  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel"/>
+  <project path="prebuilts/tools" name="platform/prebuilts/tools"/>
+  <project path="sdk" name="platform/sdk"/>
+  <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse"/>
+  <project path="tools/adt/idea" name="platform/tools/adt/idea"/>
+  <project path="tools/base" name="platform/tools/base"/>
+  <project path="tools/emulator" name="platform/tools/emulator"/>
+  <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib"/>
+  <project path="tools/external/gradle" name="platform/tools/external/gradle"/>
+  <project path="tools/gpu" name="platform/tools/gpu"/>
+  <project path="tools/gradle" name="platform/tools/gradle"/>
+  <project path="tools/idea" name="platform/tools/idea"/>
+  <project path="tools/studio/google/cloud/testing" name="platform/tools/studio/google/cloud/testing"/>
+  <project path="tools/studio/google/cloud/tools" name="platform/tools/studio/google/cloud/tools"/>
+  <project path="tools/studio/google/login" name="platform/tools/studio/google/login"/>
+  <project path="tools/studio/google/play" name="platform/tools/studio/google/play"/>
+  <project path="tools/swt" name="platform/tools/swt"/>
 
 </manifest>
