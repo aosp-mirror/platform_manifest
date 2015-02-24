@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="aosp"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+  <default revision="android-support-test"
+           remote="aosp"
+           sync-j="4" />
+
+  <project path="build" name="platform/build" revision="master" >
+      <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+
+  <project path="external/antlr" name="platform/external/antlr" revision="master" />
+  <project path="external/dexmaker" name="platform/external/dexmaker" revision="master" />
+  <project path="external/doclava" name="platform/external/doclava" />
+  <project path="external/emma" name="platform/external/emma" revision="master" />
+  <project path="external/guava" name="platform/external/guava" revision="master" />
+  <project path="external/hamcrest" name="platform/external/hamcrest" revision="master" />
+  <project path="external/jarjar" name="platform/external/jarjar" revision="master" />
+  <project path="external/jsilver" name="platform/external/jsilver" revision="master" />
+  <project path="external/jsr305" name="platform/external/jsr305" revision="master" />
+  <project path="external/junit" name="platform/external/junit" />
+  <project path="external/mockito" name="platform/external/mockito" revision="master" />
+  <project path="external/objenesis" name="platform/external/objenesis" revision="master" />
+  <project path="external/proguard" name="platform/external/proguard" revision="master" />
+  <project path="external/tagsoup" name="platform/external/tagsoup" revision="master" />
+  <project path="frameworks/testing" name="platform/frameworks/testing" />
+  <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" />
+  <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" revision="master" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" revision="master" />
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" revision="master" />
+
+</manifest>
