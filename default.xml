@@ -16,7 +16,10 @@
   <project path="bionic" name="platform/bionic" groups="pdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="build/blueprint" name="platform/build/blueprint" />
-  <project path="build/soong" name="platform/build/soong" />
+  <project path="build/soong" name="platform/build/soong" >
+    <linkfile src="root.bp" dest="Blueprints" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs" />
   <project path="developers/build" name="platform/developers/build" />
