@@ -8,6 +8,7 @@
            remote="goog" />
   <manifest-server url="http://android-test:8787" />
 
+  <!-- BEGIN open-source projects -->
   <project path="tools/buildSrc" name="platform/tools/buildSrc" revision="mirror-aosp-studio-1.3-dev" >
     <copyfile src="base/build.gradle"      dest="tools/build.gradle" />
     <copyfile src="base/settings.gradle"   dest="tools/settings.gradle" />
@@ -43,10 +44,15 @@
   <project path="tools/studio/google/login" name="platform/tools/studio/google/login" revision="mirror-aosp-studio-1.3-dev" />
   <project path="tools/studio/google/play" name="platform/tools/studio/google/play" revision="mirror-aosp-studio-1.3-dev" />
   <project path="tools/swt" name="platform/tools/swt" revision="mirror-aosp-studio-1.3-dev" />
+  <!-- END open-source projects -->
+
+  <!-- BEGIN closed-source projects -->
   <project path="tools/vendor/google" name="platform/tools/vendor/google" />
   <project path="tools/vendor/intel" name="platform/tools/vendor/intel" revision="master" />
+  <project path="tools/vendor/intellij/cidr" name="platform/tools/vendor/intellij/cidr" revision="141" />
   <project path="tools/vendor/microsoft" name="platform/tools/vendor/microsoft" />
   <!-- Contains the release scripts. So, we always track the latest one. -->
   <project path="vendor/google" name="platform/vendor/google" groups="notdefault" revision="master"/>
+  <!-- END closed-source projects -->
 
 </manifest>
