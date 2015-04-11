@@ -3,11 +3,13 @@
 
   <remote  name="aosp"
            fetch=".." />
+  <remote name="github"
+          fetch="https://github.com/" />
   <default revision="refs/tags/android-5.1.0_r3"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" groups="pdk,tradefed" >
+  <project path="build" name="nxtDroid/platform_build" remote="github" revision="lollipop-mr1-release" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
@@ -52,7 +54,7 @@
   <project path="device/lge/hammerhead-kernel" name="device/lge/hammerhead-kernel" groups="device,hammerhead" clone-depth="1" />
   <project path="device/lge/mako" name="device/lge/mako" groups="device,mako" />
   <project path="device/lge/mako-kernel" name="device/lge/mako-kernel" groups="device,mako" clone-depth="1" />
-  <project path="device/moto/shamu" name="device/moto/shamu" groups="device,shamu" />
+  <project path="device/moto/shamu" name="nxtDroid/android_device_moto_shamu" remote="github" revision="lollipop-ras-mr1" />
   <project path="device/moto/shamu-kernel" name="device/moto/shamu-kernel" groups="device,shamu" clone-depth="1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
   <project path="device/samsung/manta" name="device/samsung/manta" groups="device,manta" />
@@ -510,5 +512,8 @@
   <project path="tools/studio/translation" name="platform/tools/studio/translation" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
+  
+  <!-- vendor stuff -->
+  <project path="vendor/moto/shamu" name="nxtDroid/vendor_moto_shamu" remote="github" revision="lp-mr1" />
 
 </manifest>
