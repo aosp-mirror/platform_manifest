@@ -3,7 +3,7 @@
 
   <remote name="goog" fetch=".." review="sso://googleplex-android/"/>
   <default revision="mnc-release" remote="goog"/>
-  <manifest-server url="http://android-test:8787"/>
+  <manifest-server url="https://android-build.corp.google.com/manifestserver"/>
 
   <!-- BEGIN open-source projects -->
   <project path="build" name="platform/build" groups="pdk">
@@ -48,13 +48,13 @@
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu"/>
   <project path="device/google/clockwork" name="device/google/clockwork" groups="device,pdk-cw"/>
   <project path="device/google/dragon" name="device/google/dragon" groups="device,dragon"/>
-  <project path="device/google/dragon-kernel" name="device/google/dragon-kernel" groups="device,dragon"/>
+  <project path="device/google/dragon-kernel" name="device/google/dragon-kernel" groups="device,dragon" clone-depth="1"/>
   <project path="device/google/gce" name="device/google/gce" groups="device"/>
   <project path="device/google/gce_x86" name="device/google/gce_x86" groups="device"/>
   <project path="device/google/guppy" name="device/google/guppy" groups="device"/>
   <project path="device/google/guppy-kernel" name="device/google/guppy-kernel" groups="device" clone-depth="1"/>
   <project path="device/google/shark" name="device/google/shark" groups="device"/>
-  <project path="device/google/shark-kernel" name="device/google/shark-kernel" groups="device"/>
+  <project path="device/google/shark-kernel" name="device/google/shark-kernel" groups="device" clone-depth="1"/>
   <project path="device/htc/flounder" name="device/htc/flounder" groups="device,flounder"/>
   <project path="device/htc/flounder-kernel" name="device/htc/flounder-kernel" groups="device,flounder" clone-depth="1"/>
   <project path="device/htc/flounder_svelte-kernel" name="device/htc/flounder_svelte-kernel" groups="device" clone-depth="1"/>
@@ -64,7 +64,7 @@
   <project path="device/intel/coho-kernel" name="device/intel/coho-kernel" groups="device,coho" clone-depth="1"/>
   <project path="device/intel/common" name="device/intel/common" groups="device"/>
   <project path="device/lge/bullhead" name="device/lge/bullhead" groups="device,bullhead"/>
-  <project path="device/lge/bullhead-kernel" name="device/lge/bullhead-kernel" groups="device,bullhead"/>
+  <project path="device/lge/bullhead-kernel" name="device/lge/bullhead-kernel" groups="device,bullhead" clone-depth="1"/>
   <project path="device/lge/hammerhead" name="device/lge/hammerhead" groups="device,hammerhead"/>
   <project path="device/lge/hammerhead-kernel" name="device/lge/hammerhead-kernel" groups="device,hammerhead" clone-depth="1"/>
   <project path="device/lge/hammerhead_fp-kernel" name="device/lge/hammerhead_fp-kernel" groups="device" clone-depth="1"/>
@@ -639,14 +639,14 @@
   <project path="vendor/unbundled_google/packages/BigTop" name="platform/vendor/unbundled_google/packages/BigTop" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/BrowserGoogle" name="platform/vendor/unbundled_google/packages/BrowserGoogle" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/Buzz" name="platform/vendor/unbundled_google/packages/Buzz" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/CalendarGooglePrebuilt" name="platform/vendor/unbundled_google/packages/CalendarGooglePrebuilt" groups="vendor"/>
+  <project path="vendor/unbundled_google/packages/CalendarGooglePrebuilt" name="platform/vendor/unbundled_google/packages/CalendarGooglePrebuilt" groups="vendor" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/CarHome" name="platform/vendor/unbundled_google/packages/CarHome" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/CarHomeGoogle" name="platform/vendor/unbundled_google/packages/CarHomeGoogle" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/CarHomeLauncher" name="platform/vendor/unbundled_google/packages/CarHomeLauncher" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/Centauri" name="platform/vendor/unbundled_google/packages/Centauri" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/Chrome" name="platform/vendor/unbundled_google/packages/Chrome" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/Clockwork" name="platform/vendor/unbundled_google/packages/Clockwork" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/ClockworkPrebuilts" name="platform/vendor/unbundled_google/packages/ClockworkPrebuilts" groups="vendor"/>
+  <project path="vendor/unbundled_google/packages/ClockworkPrebuilts" name="platform/vendor/unbundled_google/packages/ClockworkPrebuilts" groups="vendor" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/CloudPrint2" name="platform/vendor/unbundled_google/packages/CloudPrint2" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/DeskClockGoogle" name="platform/vendor/unbundled_google/packages/DeskClockGoogle" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/DMAgent" name="platform/vendor/unbundled_google/packages/DMAgent" groups="vendor"/>
@@ -657,7 +657,7 @@
   <project path="vendor/unbundled_google/packages/FMRadioGoogle" name="platform/vendor/unbundled_google/packages/FMRadioGoogle" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/FaceLock" name="platform/vendor/unbundled_google/packages/FaceLock" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/FindMyPhone" name="platform/vendor/unbundled_google/packages/FindMyPhone" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/FitnessPrebuilt" name="platform/vendor/unbundled_google/packages/FitnessPrebuilt" groups="vendor"/>
+  <project path="vendor/unbundled_google/packages/FitnessPrebuilt" name="platform/vendor/unbundled_google/packages/FitnessPrebuilt" groups="vendor" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/GalleryGoogle" name="platform/vendor/unbundled_google/packages/GalleryGoogle" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GoogleAdService" name="platform/vendor/unbundled_google/packages/GoogleAdService" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GoogleCamera" name="platform/vendor/unbundled_google/packages/GoogleCamera" groups="vendor"/>
@@ -667,14 +667,14 @@
   <project path="vendor/unbundled_google/packages/GoogleDialer" name="platform/vendor/unbundled_google/packages/GoogleDialer" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GoogleHindiIME" name="platform/vendor/unbundled_google/packages/GoogleHindiIME" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GoogleJapaneseIME" name="platform/vendor/unbundled_google/packages/GoogleJapaneseIME" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/GoogleKeepPrebuilt" name="platform/vendor/unbundled_google/packages/GoogleKeepPrebuilt" groups="vendor"/>
+  <project path="vendor/unbundled_google/packages/GoogleKeepPrebuilt" name="platform/vendor/unbundled_google/packages/GoogleKeepPrebuilt" groups="vendor" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/GooglePartnerSetup" name="platform/vendor/unbundled_google/packages/GooglePartnerSetup" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GooglePhone" name="platform/vendor/unbundled_google/packages/GooglePhone" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GooglePinyinIME" name="platform/vendor/unbundled_google/packages/GooglePinyinIME" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GooglePlus" name="platform/vendor/unbundled_google/packages/GooglePlus" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GooglePlusPhotos" name="platform/vendor/unbundled_google/packages/GooglePlusPhotos" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GoogleProvisioningService" name="platform/vendor/unbundled_google/packages/GoogleProvisioningService" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/GoogleSearchPrebuilt" name="platform/vendor/unbundled_google/packages/GoogleSearchPrebuilt" groups="vendor"/>
+  <project path="vendor/unbundled_google/packages/GoogleSearchPrebuilt" name="platform/vendor/unbundled_google/packages/GoogleSearchPrebuilt" groups="vendor" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/GoogleSearchLangPacks" name="platform/vendor/unbundled_google/packages/GoogleSearchLangPacks" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GoogleServicesFramework" name="platform/vendor/unbundled_google/packages/GoogleServicesFramework" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/GoogleSpeechServices" name="platform/vendor/unbundled_google/packages/GoogleSpeechServices"/>
@@ -692,7 +692,7 @@
   <project path="vendor/unbundled_google/packages/NfcProgrammer" name="platform/vendor/unbundled_google/packages/NfcProgrammer" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/NfcProvision" name="platform/vendor/unbundled_google/packages/NfcProvision" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/Notes" name="platform/vendor/unbundled_google/packages/Notes" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/NovaPrebuilts" name="platform/vendor/unbundled_google/packages/NovaPrebuilts" groups="vendor"/>
+  <project path="vendor/unbundled_google/packages/NovaPrebuilts" name="platform/vendor/unbundled_google/packages/NovaPrebuilts" groups="vendor" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/Phonesky" name="platform/vendor/unbundled_google/packages/Phonesky" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/PhoneskyTV" name="platform/vendor/unbundled_google/packages/PhoneskyTV" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/PhotoEditorGoogle" name="platform/vendor/unbundled_google/packages/PhotoEditorGoogle" groups="vendor"/>
@@ -704,12 +704,12 @@
   <project path="vendor/unbundled_google/packages/PlayMusic" name="platform/vendor/unbundled_google/packages/PlayMusic" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/PlayNewsstand" name="platform/vendor/unbundled_google/packages/PlayNewsstand" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/PlayVideos" name="platform/vendor/unbundled_google/packages/PlayVideos" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/PrebuiltBugle" name="platform/vendor/unbundled_google/packages/PrebuiltBugle" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/PrebuiltDeskClock" name="platform/vendor/unbundled_google/packages/PrebuiltDeskClock" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/PrebuiltGmail" name="platform/vendor/unbundled_google/packages/PrebuiltGmail" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/PrebuiltGmsCore" name="platform/vendor/unbundled_google/packages/PrebuiltGmsCore" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/PrebuiltNewsWeather" name="platform/vendor/unbundled_google/packages/PrebuiltNewsWeather" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/PrebuiltNfcProvision" name="platform/vendor/unbundled_google/packages/PrebuiltNfcProvision" groups="vendor"/>
+  <project path="vendor/unbundled_google/packages/PrebuiltBugle" name="platform/vendor/unbundled_google/packages/PrebuiltBugle" groups="vendor" clone-depth="1"/>
+  <project path="vendor/unbundled_google/packages/PrebuiltDeskClock" name="platform/vendor/unbundled_google/packages/PrebuiltDeskClock" groups="vendor" clone-depth="1"/>
+  <project path="vendor/unbundled_google/packages/PrebuiltGmail" name="platform/vendor/unbundled_google/packages/PrebuiltGmail" groups="vendor" clone-depth="1"/>
+  <project path="vendor/unbundled_google/packages/PrebuiltGmsCore" name="platform/vendor/unbundled_google/packages/PrebuiltGmsCore" groups="vendor" clone-depth="1"/>
+  <project path="vendor/unbundled_google/packages/PrebuiltNewsWeather" name="platform/vendor/unbundled_google/packages/PrebuiltNewsWeather" groups="vendor" clone-depth="1"/>
+  <project path="vendor/unbundled_google/packages/PrebuiltNfcProvision" name="platform/vendor/unbundled_google/packages/PrebuiltNfcProvision" groups="vendor" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/RemoteBugReports" name="platform/vendor/unbundled_google/packages/RemoteBugReports" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/Scribble" name="platform/vendor/unbundled_google/packages/Scribble" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/SecondScreenSetup" name="platform/vendor/unbundled_google/packages/SecondScreenSetup" groups="vendor"/>
@@ -722,7 +722,7 @@
   <project path="vendor/unbundled_google/packages/Talk" name="platform/vendor/unbundled_google/packages/Talk" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/TalkBack" name="platform/vendor/unbundled_google/packages/TalkBack" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/TouchCollector" name="platform/vendor/unbundled_google/packages/TouchCollector" groups="vendor"/>
-  <project path="vendor/unbundled_google/packages/TranslatePrebuilt" name="platform/vendor/unbundled_google/packages/TranslatePrebuilt" groups="vendor"/>
+  <project path="vendor/unbundled_google/packages/TranslatePrebuilt" name="platform/vendor/unbundled_google/packages/TranslatePrebuilt" groups="vendor" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/TVBackdrop" name="platform/vendor/unbundled_google/packages/TVBackdrop" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/TvSearch" name="platform/vendor/unbundled_google/packages/TvSearch" groups="vendor"/>
   <project path="vendor/unbundled_google/packages/TVVoiceInput" name="platform/vendor/unbundled_google/packages/TVVoiceInput" groups="vendor"/>
