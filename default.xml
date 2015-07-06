@@ -48,13 +48,14 @@
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="pdk" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
-  <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk" />
+  <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device" />
   <project path="device/google/clockwork" name="device/google/clockwork" groups="device,pdk-cw" />
   <project path="device/google/dragon" name="device/google/dragon" groups="device,dragon" />
   <project path="device/google/dragon-kernel" name="device/google/dragon-kernel" groups="device,dragon" clone-depth="1" />
   <project path="device/google/gce" name="device/google/gce" groups="device" />
   <project path="device/google/gce_x86" name="device/google/gce_x86" groups="device" />
+  <project path="device/google/gce_x86-kernel" name="device/google/gce_x86-kernel" groups="device" clone-depth="1" />
   <project path="device/google/guppy" name="device/google/guppy" groups="device" />
   <project path="device/google/guppy-kernel" name="device/google/guppy-kernel" groups="device" clone-depth="1" />
   <project path="device/google/shark" name="device/google/shark" groups="device" />
@@ -67,18 +68,18 @@
   <project path="device/intel/coho" name="device/intel/coho" groups="device,coho" />
   <project path="device/intel/coho-kernel" name="device/intel/coho-kernel" groups="device,coho" clone-depth="1" />
   <project path="device/intel/common" name="device/intel/common" groups="device" />
-  <project path="device/lge/bullhead" name="device/lge/bullhead" groups="device,bullhead,broadcom_pdk" />
-  <project path="device/lge/bullhead-kernel" name="device/lge/bullhead-kernel" groups="device,bullhead,broadcom_pdk" clone-depth="1" />
-  <project path="device/lge/hammerhead" name="device/lge/hammerhead" groups="device,hammerhead,broadcom_pdk" />
-  <project path="device/lge/hammerhead-kernel" name="device/lge/hammerhead-kernel" groups="device,hammerhead,broadcom_pdk" clone-depth="1" />
+  <project path="device/lge/bullhead" name="device/lge/bullhead" groups="device,bullhead" />
+  <project path="device/lge/bullhead-kernel" name="device/lge/bullhead-kernel" groups="device,bullhead" clone-depth="1" />
+  <project path="device/lge/hammerhead" name="device/lge/hammerhead" groups="device,hammerhead,broadcom_pdk,generic_fs" />
+  <project path="device/lge/hammerhead-kernel" name="device/lge/hammerhead-kernel" groups="device,hammerhead,broadcom_pdk,generic_fs" clone-depth="1" />
   <project path="device/lge/hammerhead_fp-kernel" name="device/lge/hammerhead_fp-kernel" groups="device" clone-depth="1" />
   <project path="device/lge/hammerhead_svelte-kernel" name="device/lge/hammerhead_svelte-kernel" groups="device" clone-depth="1" />
   <project path="device/mediatek/sprout" name="device/mediatek/sprout" groups="device,sprout" />
   <project path="device/mediatek/sprout-kernel" name="device/mediatek/sprout-kernel" groups="device,sprout" clone-depth="1" />
   <project path="device/moto/shamu" name="device/moto/shamu" groups="device,shamu,broadcom_pdk" />
   <project path="device/moto/shamu-kernel" name="device/moto/shamu-kernel" groups="device,shamu,broadcom_pdk" clone-depth="1" />
-  <project path="device/qcom/seed" name="device/qcom/seed" groups="device" />
-  <project path="device/qcom/seed-kernel" name="device/qcom/seed-kernel" groups="device" clone-depth="1" />
+  <project path="device/qcom/seed" name="device/qcom/seed" groups="device,seed" />
+  <project path="device/qcom/seed-kernel" name="device/qcom/seed-kernel" groups="device,seed" clone-depth="1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
   <project path="device/sony/amai" name="device/sony/amai" groups="device,amai" />
   <project path="device/sony/amai-kernel" name="device/sony/amai-kernel" groups="device,amai" clone-depth="1" />
@@ -177,7 +178,7 @@
   <project path="external/libcap-ng" name="platform/external/libcap-ng" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" />
   <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" />
-  <project path="external/libdrm" name="platform/external/libdrm" groups="libdrm" />
+  <project path="external/libdrm" name="platform/external/libdrm" groups="pdk-fs,libdrm" />
   <project path="external/libedit" name="platform/external/libedit" groups="pdk-fs" />
   <project path="external/libexif" name="platform/external/libexif" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" />
@@ -245,7 +246,7 @@
   <project path="external/pcre" name="platform/external/pcre" groups="pdk" />
   <project path="external/pdfium" name="platform/external/pdfium" groups="pdk" />
   <project path="external/ppp" name="platform/external/ppp" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/proguard" name="platform/external/proguard" groups="pdk-java" />
+  <project path="external/proguard" name="platform/external/proguard" groups="pdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
   <project path="external/regex-re2" name="platform/external/regex-re2" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/replicaisland" name="platform/external/replicaisland" groups="pdk-cw-fs,pdk-fs" />
@@ -343,7 +344,7 @@
   <project path="hardware/intel/img/hwcomposer" name="platform/hardware/intel/img/hwcomposer" groups="intel" />
   <project path="hardware/intel/img/psb_headers" name="platform/hardware/intel/img/psb_headers" groups="intel" />
   <project path="hardware/intel/img/psb_video" name="platform/hardware/intel/img/psb_video" groups="intel" />
-  <project path="hardware/intel/sensors" name="platform/hardware/intel/sensors" groups="intel" />
+  <project path="hardware/intel/sensors" name="platform/hardware/intel/sensors" groups="intel_sensors" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
@@ -364,15 +365,15 @@
   <project path="hardware/qcom/msm8x74" name="platform/hardware/qcom/msm8x74" groups="qcom_msm8x74" />
   <project path="hardware/qcom/msm8x84" name="platform/hardware/qcom/msm8x84" groups="qcom_msm8x84" />
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom" />
-  <project path="hardware/qcom/seed/audio" name="platform/hardware/qcom/seed/audio" />
-  <project path="hardware/qcom/seed/bt" name="platform/hardware/qcom/seed/bt" />
-  <project path="hardware/qcom/seed/camera" name="platform/hardware/qcom/seed/camera" />
-  <project path="hardware/qcom/seed/display" name="platform/hardware/qcom/seed/display" />
-  <project path="hardware/qcom/seed/gps" name="platform/hardware/qcom/seed/gps" />
+  <project path="hardware/qcom/seed/audio" name="platform/hardware/qcom/seed/audio" groups="seed" />
+  <project path="hardware/qcom/seed/bt" name="platform/hardware/qcom/seed/bt" groups="seed" />
+  <project path="hardware/qcom/seed/camera" name="platform/hardware/qcom/seed/camera" groups="seed" />
+  <project path="hardware/qcom/seed/display" name="platform/hardware/qcom/seed/display" groups="seed" />
+  <project path="hardware/qcom/seed/gps" name="platform/hardware/qcom/seed/gps" groups="seed" />
   <project path="hardware/qcom/seed/keymaster" name="platform/hardware/qcom/seed/keymaster" />
-  <project path="hardware/qcom/seed/media" name="platform/hardware/qcom/seed/media" />
-  <project path="hardware/qcom/seed/msm8916" name="platform/hardware/qcom/seed/msm8916" />
-  <project path="hardware/qcom/seed/sensors" name="platform/hardware/qcom/seed/sensors" />
+  <project path="hardware/qcom/seed/media" name="platform/hardware/qcom/seed/media" groups="seed" />
+  <project path="hardware/qcom/seed/msm8916" name="platform/hardware/qcom/seed/msm8916" groups="seed" />
+  <project path="hardware/qcom/seed/sensors" name="platform/hardware/qcom/seed/sensors" groups="seed" />
   <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" groups="qcom" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan" />
   <project path="hardware/realtek/8723bs" name="platform/hardware/realtek/8723bs" groups="8723bs" />
@@ -386,54 +387,54 @@
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="platform/ndk" />
-  <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
+  <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" />
-  <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" />
-  <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" />
-  <project path="packages/apps/Camera" name="platform/packages/apps/Camera" />
-  <project path="packages/apps/Camera2" name="platform/packages/apps/Camera2" />
-  <project path="packages/apps/CarrierConfig" name="platform/packages/apps/CarrierConfig" />
+  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" groups="pdk-fs" />
+  <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" groups="pdk-fs" />
+  <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" groups="pdk-fs" />
+  <project path="packages/apps/Camera" name="platform/packages/apps/Camera" groups="pdk-fs" />
+  <project path="packages/apps/Camera2" name="platform/packages/apps/Camera2" groups="pdk-fs" />
+  <project path="packages/apps/CarrierConfig" name="platform/packages/apps/CarrierConfig" groups="pdk-fs" />
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" groups="pdk-fs" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" />
-  <project path="packages/apps/ContactsCommon" name="platform/packages/apps/ContactsCommon" />
-  <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" />
-  <project path="packages/apps/Dialer" name="platform/packages/apps/Dialer" />
-  <project path="packages/apps/Email" name="platform/packages/apps/Email" />
-  <project path="packages/apps/ExactCalculator" name="platform/packages/apps/ExactCalculator" />
-  <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" />
-  <project path="packages/apps/FMRadio" name="platform/packages/apps/FMRadio" />
-  <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
-  <project path="packages/apps/Gallery2" name="platform/packages/apps/Gallery2" />
-  <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" />
-  <project path="packages/apps/InCallUI" name="platform/packages/apps/InCallUI" />
-  <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" />
-  <project path="packages/apps/Launcher2" name="platform/packages/apps/Launcher2" />
-  <project path="packages/apps/Launcher3" name="platform/packages/apps/Launcher3" />
-  <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" />
-  <project path="packages/apps/ManagedProvisioning" name="platform/packages/apps/ManagedProvisioning" />
-  <project path="packages/apps/Music" name="platform/packages/apps/Music" />
-  <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" />
-  <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" groups="apps_nfc" />
+  <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" groups="pdk-fs" />
+  <project path="packages/apps/ContactsCommon" name="platform/packages/apps/ContactsCommon" groups="pdk-fs"/>
+  <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" groups="pdk-fs" />
+  <project path="packages/apps/Dialer" name="platform/packages/apps/Dialer" groups="pdk-fs" />
+  <project path="packages/apps/Email" name="platform/packages/apps/Email" groups="pdk-fs" />
+  <project path="packages/apps/ExactCalculator" name="platform/packages/apps/ExactCalculator" groups="pdk-fs" />
+  <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" groups="pdk-fs" />
+  <project path="packages/apps/FMRadio" name="platform/packages/apps/FMRadio" groups="pdk-fs" />
+  <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" groups="pdk-fs" />
+  <project path="packages/apps/Gallery2" name="platform/packages/apps/Gallery2" groups="pdk-fs" />
+  <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" groups="pdk-fs" />
+  <project path="packages/apps/InCallUI" name="platform/packages/apps/InCallUI" groups="pdk-fs" />
+  <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" groups="pdk-fs" />
+  <project path="packages/apps/Launcher2" name="platform/packages/apps/Launcher2" groups="pdk-fs" />
+  <project path="packages/apps/Launcher3" name="platform/packages/apps/Launcher3" groups="pdk-fs" />
+  <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" groups="pdk-fs" />
+  <project path="packages/apps/ManagedProvisioning" name="platform/packages/apps/ManagedProvisioning" groups="pdk-fs" />
+  <project path="packages/apps/Music" name="platform/packages/apps/Music" groups="pdk-fs" />
+  <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" groups="pdk-fs" />
+  <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" groups="apps_nfc,pdk-fs" />
   <project path="packages/apps/OMA-DM" name="platform/packages/apps/OMA-DM" groups="shamu,oma_dm" />
-  <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" />
-  <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" />
-  <project path="packages/apps/Phone" name="platform/packages/apps/Phone" />
-  <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" groups="pdk-fs"/>
-  <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
-  <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
-  <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
-  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" />
-  <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
-  <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
-  <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" />
-  <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" />
-  <project path="packages/apps/Stk" name="platform/packages/apps/Stk" groups="apps_stk" />
-  <project path="packages/apps/Tag" name="platform/packages/apps/Tag" />
-  <project path="packages/apps/Terminal" name="platform/packages/apps/Terminal" />
-  <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" />
-  <project path="packages/apps/UnifiedEmail" name="platform/packages/apps/UnifiedEmail" />
+  <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" groups="pdk-fs" />
+  <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" groups="pdk-fs" />
+  <project path="packages/apps/Phone" name="platform/packages/apps/Phone" groups="pdk-fs" />
+  <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" groups="pdk-cw-fs,pdk-fs"/>
+  <project path="packages/apps/Protips" name="platform/packages/apps/Protips" groups="pdk-fs" />
+  <project path="packages/apps/Provision" name="platform/packages/apps/Provision" groups="pdk-fs" />
+  <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" groups="pdk-fs" />
+  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" groups="pdk-fs" />
+  <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" groups="pdk-fs" />
+  <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" groups="pdk-fs" />
+  <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" groups="pdk-fs" />
+  <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" groups="pdk-fs" />
+  <project path="packages/apps/Stk" name="platform/packages/apps/Stk" groups="apps_stk,pdk-fs" />
+  <project path="packages/apps/Tag" name="platform/packages/apps/Tag" groups="pdk-fs" />
+  <project path="packages/apps/Terminal" name="platform/packages/apps/Terminal" groups="pdk-fs" />
+  <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="generic_fs" />
+  <project path="packages/apps/UnifiedEmail" name="platform/packages/apps/UnifiedEmail" groups="pdk-fs" />
   <project path="packages/experimental" name="platform/packages/experimental" />
   <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" groups="pdk-fs" />
   <project path="packages/inputmethods/OpenWnn" name="platform/packages/inputmethods/OpenWnn" groups="pdk-fs" />
@@ -445,23 +446,23 @@
   <project path="packages/providers/DownloadProvider" name="platform/packages/providers/DownloadProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" groups="pdk-fs" />
-  <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" groups="pdk-fs" />
+  <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/TvProvider" name="platform/packages/providers/TvProvider" groups="pdk-fs" />
   <project path="packages/providers/UserDictionaryProvider" name="platform/packages/providers/UserDictionaryProvider" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/screensavers/Basic" name="platform/packages/screensavers/Basic" />
-  <project path="packages/screensavers/PhotoTable" name="platform/packages/screensavers/PhotoTable" />
-  <project path="packages/screensavers/WebView" name="platform/packages/screensavers/WebView" />
-  <project path="packages/services/Mms" name="platform/packages/services/Mms" groups="pdk-fs" />
-  <project path="packages/services/Telecomm" name="platform/packages/services/Telecomm" groups="pdk-fs" />
-  <project path="packages/services/Telephony" name="platform/packages/services/Telephony" groups="pdk-fs" />
-  <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" />
-  <project path="packages/wallpapers/Galaxy4" name="platform/packages/wallpapers/Galaxy4" />
-  <project path="packages/wallpapers/HoloSpiral" name="platform/packages/wallpapers/HoloSpiral" />
-  <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" />
-  <project path="packages/wallpapers/MagicSmoke" name="platform/packages/wallpapers/MagicSmoke" />
-  <project path="packages/wallpapers/MusicVisualization" name="platform/packages/wallpapers/MusicVisualization" />
-  <project path="packages/wallpapers/NoiseField" name="platform/packages/wallpapers/NoiseField" />
-  <project path="packages/wallpapers/PhaseBeam" name="platform/packages/wallpapers/PhaseBeam" />
+  <project path="packages/screensavers/Basic" name="platform/packages/screensavers/Basic" groups="pdk-fs" />
+  <project path="packages/screensavers/PhotoTable" name="platform/packages/screensavers/PhotoTable" groups="pdk-fs" />
+  <project path="packages/screensavers/WebView" name="platform/packages/screensavers/WebView" groups="pdk-fs" />
+  <project path="packages/services/Mms" name="platform/packages/services/Mms" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/services/Telecomm" name="platform/packages/services/Telecomm" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/services/Telephony" name="platform/packages/services/Telephony" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" groups="pdk-fs" />
+  <project path="packages/wallpapers/Galaxy4" name="platform/packages/wallpapers/Galaxy4" groups="pdk-fs" />
+  <project path="packages/wallpapers/HoloSpiral" name="platform/packages/wallpapers/HoloSpiral" groups="pdk-fs" />
+  <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" groups="pdk-fs" />
+  <project path="packages/wallpapers/MagicSmoke" name="platform/packages/wallpapers/MagicSmoke" groups="pdk-fs" />
+  <project path="packages/wallpapers/MusicVisualization" name="platform/packages/wallpapers/MusicVisualization" groups="pdk-fs" />
+  <project path="packages/wallpapers/NoiseField" name="platform/packages/wallpapers/NoiseField" groups="pdk-fs" />
+  <project path="packages/wallpapers/PhaseBeam" name="platform/packages/wallpapers/PhaseBeam" groups="pdk-fs" />
   <project path="pdk" name="platform/pdk" groups="pdk" />
   <project path="platform_testing" name="platform/platform_testing" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" groups="pdk-fs" />
@@ -579,8 +580,8 @@
   <project path="vendor/huawei/angler" name="platform/vendor/huawei/angler" groups="vendor,angler" />
   <project path="vendor/hulu" name="platform/vendor/hulu" groups="vendor" />
   <project path="vendor/intel/coho" name="platform/vendor/intel/coho" groups="vendor,coho" />
-  <project path="vendor/intel/fw/sst" name="platform/vendor/intel/fw/sst" groups="vendor,fugu" />
-  <project path="vendor/intel/fw/video" name="platform/vendor/intel/fw/video" groups="vendor,fugu" />
+  <project path="vendor/intel/fw/sst" name="platform/vendor/intel/fw/sst" groups="vendor,fugu,intel_fw" />
+  <project path="vendor/intel/fw/video" name="platform/vendor/intel/fw/video" groups="vendor,fugu,intel_fw" />
   <project path="vendor/intel/moorefield/prebuilts/hardware/DRM" name="platform/vendor/intel/moorefield/prebuilts/hardware/DRM" groups="vendor,fugu" />
   <project path="vendor/intel/moorefield/prebuilts/hardware/libmediaparser" name="platform/vendor/intel/moorefield/prebuilts/hardware/libmediaparser" groups="vendor,fugu" />
   <project path="vendor/intel/moorefield/prebuilts/hardware/mediasdk" name="platform/vendor/intel/moorefield/prebuilts/hardware/mediasdk" groups="vendor,fugu" />
@@ -605,12 +606,12 @@
   <project path="vendor/nxp" name="platform/vendor/nxp" groups="vendor" />
   <project path="vendor/omron" name="platform/vendor/omron" groups="vendor" />
   <project path="vendor/pdk/data/google" name="platform/vendor/pdk/data/google" groups="vendor" />
-  <project path="vendor/qcom/gpu" name="platform/vendor/qcom/gpu" groups="vendor,qcom_gpu,anthias,flo,hammerhead,dory,sprat,lenok,shamu,smelt,sparrow,sprat" />
+  <project path="vendor/qcom/gpu" name="platform/vendor/qcom/gpu" groups="vendor,qcom_gpu" />
   <project path="vendor/qcom/media" name="platform/vendor/qcom/media" groups="vendor" />
-  <project path="vendor/qcom/seed" name="platform/vendor/qcom/seed" groups="vendor" />
+  <project path="vendor/qcom/seed" name="platform/vendor/qcom/seed" groups="vendor,seed" />
   <project path="vendor/qcom/telephony" name="platform/vendor/qcom/telephony" groups="vendor" />
   <project path="vendor/quickoffice/prebuilt" name="platform/vendor/quickoffice/prebuilt" groups="vendor" />
-  <project path="vendor/seed/longcheer" name="platform/vendor/seed/longcheer" groups="vendor" />
+  <project path="vendor/seed/longcheer" name="platform/vendor/seed/longcheer" groups="vendor,seed" />
   <project path="vendor/silvertree" name="platform/vendor/silvertree" groups="vendor" />
   <project path="vendor/singtelgroup" name="platform/vendor/singtelgroup" groups="vendor" />
   <project path="vendor/sony/amai" name="platform/vendor/sony/amai" groups="vendor,amai" />
@@ -660,7 +661,6 @@
   <project path="vendor/unbundled_google/packages/Clockwork" name="platform/vendor/unbundled_google/packages/Clockwork" groups="vendor" />
   <project path="vendor/unbundled_google/packages/ClockworkPrebuilts" name="platform/vendor/unbundled_google/packages/ClockworkPrebuilts" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/CloudPrint2" name="platform/vendor/unbundled_google/packages/CloudPrint2" groups="vendor" />
-  <project path="vendor/unbundled_google/packages/DeskClockGoogle" name="platform/vendor/unbundled_google/packages/DeskClockGoogle" groups="vendor" />
   <project path="vendor/unbundled_google/packages/DMAgent" name="platform/vendor/unbundled_google/packages/DMAgent" groups="vendor" />
   <project path="vendor/unbundled_google/packages/Docs" name="platform/vendor/unbundled_google/packages/Docs" groups="vendor" />
   <project path="vendor/unbundled_google/packages/Drive" name="platform/vendor/unbundled_google/packages/Drive" groups="vendor" />
@@ -715,6 +715,7 @@
   <project path="vendor/unbundled_google/packages/PlayVideos" name="platform/vendor/unbundled_google/packages/PlayVideos" groups="vendor" />
   <project path="vendor/unbundled_google/packages/PrebuiltBugle" name="platform/vendor/unbundled_google/packages/PrebuiltBugle" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltDeskClock" name="platform/vendor/unbundled_google/packages/PrebuiltDeskClock" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltDeskClockMicroApp" name="platform/vendor/unbundled_google/packages/PrebuiltDeskClockMicroApp" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltGearHead" name="platform/vendor/unbundled_google/packages/PrebuiltGearHead" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltGmail" name="platform/vendor/unbundled_google/packages/PrebuiltGmail" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltGmsCore" name="platform/vendor/unbundled_google/packages/PrebuiltGmsCore" groups="vendor" revision="master" clone-depth="1" />
