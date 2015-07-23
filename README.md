@@ -33,7 +33,7 @@ Written by Branden M and updated for Frank by syko
 
   platform_packages_apps_settings
 
-   Initial exposure of Settings.ap utilizing layers tag “exposed”.
+    Initial exposure of Settings app utilizing layers tag “exposed”.
     
     https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/77481f590a69fd0ce7925497c64a53dca697fc35
 
@@ -49,6 +49,7 @@ Written by Branden M and updated for Frank by syko
     https://github.com/The-Ancile-Project/platform_packages_apps_contacts/commit/dc96c05df54a883f46461e3a514693c175337649
     
    platform_packages_apps_Dialer
+   
     Exposing hard coded items within the Dialer.apk
     https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/ba7d995a12f696a479612474558996bbddfb66f6
    
@@ -68,7 +69,7 @@ Recommened Optional commits
     https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/30cf34090be297c3e93ffa1b0141a07912a8bfb6
     
     Convert Setting Icons to vectors
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/e67cd5714196614f7c2f650c4e835f98ef3878e8
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/e9855cbd9128ee06e0fc8c211631eb10aa2e7b9f
        
     Exposing dashboard category backgrounds and dashboard background allowing themers to theme these backgrounds with a: .png, .xml, or still use existing color code while not impacting stock or existing themes. 
     INFO:  https://plus.google.com/u/0/101729058057775926785/posts/XzhYADKHL8Z
