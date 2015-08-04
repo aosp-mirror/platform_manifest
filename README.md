@@ -62,22 +62,20 @@ Layers Type 3
 
    platform_packages_apps_settings
     
-    This commit is up to you guys but will help themers color all icons with a simple color code in res/values/colors.xml. I would say about 75% of roms have this commit.
-    https://github.com/LayersTeam/platform_packages_apps_settings/commit/f84f50e8e4c96713bed75f49f7fb093f67714f4f
-
     Fix subsettings force close with some ROMs not utilizing this feature it would conflict with some themes and cause force close in settings.(Cataclysm was the main reason for this).
     https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/30cf34090be297c3e93ffa1b0141a07912a8bfb6
     
     Convert Setting Icons to vectors
     https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/e9855cbd9128ee06e0fc8c211631eb10aa2e7b9f
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/afb051afb796ab8b4a8baf3da833a4ea07fa8590
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/932508fcf49a8892b5f29e4caefe37eb9bb91b6d
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/1a804d14f545e95d3e3e2d6704e962f6f218b50a
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/40fcddcfc7cc84b048b0cb5369df4c1d78c45173
        
     Exposing dashboard category backgrounds and dashboard background allowing themers to theme these backgrounds with a: .png, .xml, or still use existing color code while not impacting stock or existing themes. 
     INFO:  https://plus.google.com/u/0/101729058057775926785/posts/XzhYADKHL8Z
     https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/d82bc73e79cba7d04def1571656d42e972d9aa27
     https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/966b1edef997ee66d7406a9edf737bc85c9601e7
+    
+    No icon left behind for vectors
+    https://github.com/IllusionLP/platform_packages_apps_settings/commit/54a9a7c3ed3b0702cea21a916c8d909c85cf32a9
     
 packages_apps_dialer
 
