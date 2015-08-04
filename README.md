@@ -58,7 +58,7 @@ Written by Branden M and updated for Frank by syko
     Exposing Contacts more by getting rid of hardcoded codes.
     https://github.com/The-Ancile-Project/platform_packages_apps_ContactsCommon/commit/0fb415861c5c71555d61a23e1f04153e096980b2
     
-Recommened Optional commits
+Layers Type 3
 
    platform_packages_apps_settings
     
@@ -70,6 +70,9 @@ Recommened Optional commits
     
     Convert Setting Icons to vectors
     https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/e9855cbd9128ee06e0fc8c211631eb10aa2e7b9f
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/afb051afb796ab8b4a8baf3da833a4ea07fa8590
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/932508fcf49a8892b5f29e4caefe37eb9bb91b6d
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/1a804d14f545e95d3e3e2d6704e962f6f218b50a
        
     Exposing dashboard category backgrounds and dashboard background allowing themers to theme these backgrounds with a: .png, .xml, or still use existing color code while not impacting stock or existing themes. 
     INFO:  https://plus.google.com/u/0/101729058057775926785/posts/XzhYADKHL8Z
@@ -84,4 +87,11 @@ packages_apps_dialer
      https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/cc03d70b6c5460b1ed06ecf16825a4340139b8db
      https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/4dde09f1d4d4b229197b6cdbb7a5794f95f6a5e5
      https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/8244e9736226f68f2ad8122abb8a90223cd8beec
+     
+ platform_frameworks_base commits
+    Allow prevention of doze notification color inversion Doze 2.1
+    https://github.com/The-Ancile-Project/platform_frameworks_base/commit/75229c5c4c17bc7fb8cc24f11e1e388756ebf0d7
+    
+New commits for type 3 8/2/15
+    
 
