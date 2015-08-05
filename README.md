@@ -17,6 +17,16 @@ compile
 
 
 Layers Type 1 is plain RRO from sony
+         lollipop fixes
+         https://android-review.googlesource.com/#/c/113419/
+         https://android-review.googlesource.com/#/c/113650/
+         https://android-review.googlesource.com/#/c/113652/
+         https://android-review.googlesource.com/#/c/113651/
+         https://android-review.googlesource.com/#/c/113653/
+         
+         newly added fix from sony 8/1/15
+         to fix overlay sorting
+         https://android-review.googlesource.com/#/c/143049/
 
 Type 2 was the initial to add more things to expand theming. no longer in use
 
@@ -90,6 +100,9 @@ packages_apps_dialer
     Allow prevention of doze notification color inversion Doze 2.1
     https://github.com/The-Ancile-Project/platform_frameworks_base/commit/75229c5c4c17bc7fb8cc24f11e1e388756ebf0d7
     
-New commits for type 3 8/2/15
+New commits for type 3 8/5/15
     
-
+    Expand on the original settings commit to expose dashboard categories 
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/abb72401cb25b31429dbf5a4a397c2cd813509b5
+    
+    
