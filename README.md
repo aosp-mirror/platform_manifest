@@ -51,7 +51,7 @@ Written by Branden M and updated for Frank by syko
    platform_packages_apps_InCallUI
 
     Exposing InCallUI card backgrounds and utilizing layers tag “exposed”.
-     https://github.com/LayersTeam/platform_packages_apps_InCallUI/commit/4af8219e3344ca07052215298f6eff2b879bb62d
+     https://github.com/The-Ancile-Project/platform_packages_apps_InCallUI/commit/bfa2c851fd88f371d0717fbf05835f5c8da85664
     
    platform_packages_apps_contacts
 
@@ -61,7 +61,7 @@ Written by Branden M and updated for Frank by syko
    platform_packages_apps_Dialer
    
     Exposing hard coded items within the Dialer.apk
-    https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/ba7d995a12f696a479612474558996bbddfb66f6
+    https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/20d9b74000943b807584d68e34341ca6af495d35
    
    platform_packages_apps_ContactsCommon
 
@@ -93,8 +93,8 @@ packages_apps_dialer
     INFO: https://plus.google.com/u/0/101729058057775926785/posts
 
      https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/cc03d70b6c5460b1ed06ecf16825a4340139b8db
-     https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/4dde09f1d4d4b229197b6cdbb7a5794f95f6a5e5
-     https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/8244e9736226f68f2ad8122abb8a90223cd8beec
+     https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/314f46d02e75ca4d858065d0f8068fa630503cb6
+     https://github.com/The-Ancile-Project/platform_packages_apps_Dialer/commit/243db9a1c7c8fa6da47545f448b96af50e123e67
      
  platform_frameworks_base commits
     Allow prevention of doze notification color inversion Doze 2.1
