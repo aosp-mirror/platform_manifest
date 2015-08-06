@@ -1,5 +1,5 @@
  To get Frank
- Frank is 5.1.1 r5
+ Frank is 5.1.1 r9
 
 repo init -u https://github.com/The-Ancile-Project/platform_manifest.git -b frank-mutant-test-1
 
@@ -38,14 +38,14 @@ Written by Branden M and updated for Frank by syko
 
     Initial commit to get layers working properly.
     
-    https://github.com/The-Ancile-Project/platform_frameworks_base/commit/b38505f4ee5bba79ddbfebabefb090955d76b773
+    https://github.com/The-Ancile-Project/platform_frameworks_base/commit/0e9cbbc63d22093596cb7df770d15f303cd49750
 
 
   platform_packages_apps_settings
 
     Initial exposure of Settings app utilizing layers tag “exposed”.
     
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/77481f590a69fd0ce7925497c64a53dca697fc35
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/6cc6357ad2df115704d16f2243fca8e21ce2546b
 
 
    platform_packages_apps_InCallUI
@@ -73,19 +73,19 @@ Layers Type 3
    platform_packages_apps_settings
     
     Fix subsettings force close with some ROMs not utilizing this feature it would conflict with some themes and cause force close in settings.(Cataclysm was the main reason for this).
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/30cf34090be297c3e93ffa1b0141a07912a8bfb6
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/f008fbc107fac2b4d983bc601a20dada8ee2b1d5
     
     Convert Setting Icons to vectors
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/e9855cbd9128ee06e0fc8c211631eb10aa2e7b9f
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/40fcddcfc7cc84b048b0cb5369df4c1d78c45173
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/de788db15e5b866303c73c783acaee8565ff5515
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/17087235b9b1c0d5c4c22562b7e82d1c4d9e74fe
        
     Exposing dashboard category backgrounds and dashboard background allowing themers to theme these backgrounds with a: .png, .xml, or still use existing color code while not impacting stock or existing themes. 
     INFO:  https://plus.google.com/u/0/101729058057775926785/posts/XzhYADKHL8Z
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/d82bc73e79cba7d04def1571656d42e972d9aa27
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/966b1edef997ee66d7406a9edf737bc85c9601e7
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/0f6e58b5e1d66f075dbf8a27b10a77e2ef94ef3f
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/cb26255126b4f3fa30335aaa8cb89ec87a3412ce
     
     No icon left behind for vectors
-    https://github.com/IllusionLP/platform_packages_apps_settings/commit/54a9a7c3ed3b0702cea21a916c8d909c85cf32a9
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/ef8151adc118e03f17533fb956dadebc1e0b9766
     
 packages_apps_dialer
 
@@ -103,6 +103,6 @@ packages_apps_dialer
 New commits for type 3 8/5/15
     
     Expand on the original settings commit to expose dashboard categories 
-    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/abb72401cb25b31429dbf5a4a397c2cd813509b5
+    https://github.com/The-Ancile-Project/platform_packages_apps_settings/commit/4b668f02e40a42e1c01d17fc27da9e8331680c8f
     
     
