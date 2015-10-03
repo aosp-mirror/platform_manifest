@@ -9,56 +9,88 @@
            sync-j="4" />
 
   <project path="tools/buildSrc" name="platform/tools/buildSrc">
-    <copyfile src="base/build.gradle"      dest="tools/build.gradle" />
-    <copyfile src="base/settings.gradle"   dest="tools/settings.gradle" />
-    <copyfile src="base/gradlew"           dest="tools/gradlew" />
-    <copyfile src="base/gradlew.bat"       dest="tools/gradlew.bat" />
+    <copyfile src="base/build.gradle" dest="tools/build.gradle" />
+    <copyfile src="base/settings.gradle" dest="tools/settings.gradle" />
+    <copyfile src="base/gradlew" dest="tools/gradlew" />
+    <copyfile src="base/gradlew.bat" dest="tools/gradlew.bat" />
     <copyfile src="base/gradle.properties" dest="tools/gradle.properties" />
   </project>
 
-  <project path="external/ant-glob" name="platform/external/ant-glob" revision="master" />
-  <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" revision="master" />
-  <project path="external/gtest" name="platform/external/gtest" revision="master" />
-  <project path="external/emma" name="platform/external/emma" revision="master" />
-  <project path="external/gmock" name="platform/external/gmock" revision="master" />
-  <project path="external/iosched" name="platform/external/iosched" revision="master" />
+  <project path="external/ant-glob" name="platform/external/ant-glob" />
+  <project path="external/clang" name="platform/external/clang" groups="lldb,notdefault" />
+  <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" />
+  <project path="external/emma" name="platform/external/emma" />
+  <project path="external/gmock" name="platform/external/gmock" groups="gpu" />
+  <project path="external/iosched" name="platform/external/iosched" />
+  <project path="external/lldb" name="platform/external/lldb" groups="lldb,notdefault" />
+  <project path="external/lldb-utils" name="platform/external/lldb-utils" groups="lldb,notdefault" />
+  <project path="external/llvm" name="platform/external/llvm" groups="lldb,notdefault" />
   <project path="external/protobuf" name="platform/external/protobuf" />
+  <project path="external/gtest" name="platform/external/gtest" />
   <project path="external/qemu" name="platform/external/qemu" />
   <project path="external/qemu-android" name="platform/external/qemu-android" />
+  <project path="frameworks/native" name="platform/frameworks/native" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" />
   <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
-  <project path="prebuilts/clang/darwin-x86/host/3.5" name="platform/prebuilts/clang/darwin-x86/host/3.5" revision="master" />
-  <project path="prebuilts/clang/darwin-x86/sdk/3.5" name="platform/prebuilts/clang/darwin-x86/sdk/3.5" revision="master" />
-  <project path="prebuilts/eclipse-build-deps" name="platform/prebuilts/eclipse-build-deps" revision="master" />
-  <project path="prebuilts/eclipse-build-deps-sources" name="platform/prebuilts/eclipse-build-deps-sources" revision="master" />
-  <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" revision="master" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" revision="master" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" revision="master" />
-  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" />
-  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" />
-  <project path="prebuilts/go/windows-x86" name="platform/prebuilts/go/windows-x86" />
-  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" revision="master" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" revision="master" />
+  <project path="prebuilts/clang/darwin-x86/host/3.5" name="platform/prebuilts/clang/darwin-x86/host/3.5" groups="gpu" />
+  <project path="prebuilts/clang/darwin-x86/host/3.6" name="platform/prebuilts/clang/darwin-x86/host/3.6" groups="lldb,notdefault,darwin" />
+  <project path="prebuilts/clang/darwin-x86/sdk/3.5" name="platform/prebuilts/clang/darwin-x86/sdk/3.5" />
+  <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" groups="lldb,notdefault,darwin" />
+  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" groups="lldb,notdefault,windows" />
+  <project path="prebuilts/eclipse-build-deps" name="platform/prebuilts/eclipse-build-deps" />
+  <project path="prebuilts/eclipse-build-deps-sources" name="platform/prebuilts/eclipse-build-deps-sources" />
+  <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" />
+  <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="gpu" />
+  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="gpu" />
+  <project path="prebuilts/go/windows-x86" name="platform/prebuilts/go/windows-x86" groups="gpu" />
+  <project path="prebuilts/libedit/darwin-x86" name="platform/prebuilts/libedit/darwin-x86" groups="lldb,notdefault,darwin" />
+  <project path="prebuilts/libedit/linux-x86" name="platform/prebuilts/libedit/linux-x86" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/libglog/darwin-x86" name="platform/prebuilts/libglog/darwin-x86" groups="lldb,notdefault,darwin" />
+  <project path="prebuilts/libglog/linux-x86" name="platform/prebuilts/libglog/linux-x86" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/libglog/windows-x86" name="platform/prebuilts/libglog/windows-x86" groups="lldb,notdefault,windows" />
+  <project path="prebuilts/libprotobuf/darwin-x86" name="platform/prebuilts/libprotobuf/darwin-x86" groups="lldb,notdefault,darwin" />
+  <project path="prebuilts/libprotobuf/linux-x86" name="platform/prebuilts/libprotobuf/linux-x86" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/libprotobuf/windows-x86" name="platform/prebuilts/libprotobuf/windows-x86" groups="lldb,notdefault,windows" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" groups="lldb,notdefault,darwin" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/ninja/windows-x86" name="platform/prebuilts/ninja/windows-x86" groups="lldb,notdefault,windows" />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" groups="lldb,notdefault,darwin" />
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" groups="lldb,notdefault,windows" />
+  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" />
+  <project path="prebuilts/swig/darwin-x86" name="platform/prebuilts/swig/darwin-x86" groups="lldb,notdefault,darwin" />
+  <project path="prebuilts/swig/linux-x86" name="platform/prebuilts/swig/linux-x86" groups="lldb,notdefault,linux" />
+  <project path="prebuilts/swig/windows-x86" name="platform/prebuilts/swig/windows-x86" groups="lldb,notdefault,windows" />
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" />
   <project path="sdk" name="platform/sdk" />
   <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" />
   <project path="tools/base" name="platform/tools/base" />
+  <project path="tools/data-binding" name="platform/frameworks/data-binding" />
   <project path="tools/emulator" name="platform/tools/emulator" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" />
-  <project path="tools/external/go/src/github.com/go-gl-legacy/gl" name="platform/tools/external/go/src/github.com/go-gl-legacy/gl" revision="master" />
-  <project path="tools/external/go/src/github.com/go-gl/glfw" name="platform/tools/external/go/src/github.com/go-gl/glfw" revision="master" />
-  <project path="tools/external/go/src/github.com/golang/protobuf" name="platform/tools/external/go/src/github.com/golang/protobuf" revision="master" />
-  <project path="tools/external/go/src/golang.org/x/net" name="platform/tools/external/go/src/golang.org/x/net" revision="master" />
-  <project path="tools/external/go/src/golang.org/x/tools" name="platform/tools/external/go/src/golang.org/x/tools" revision="master" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" revision="master" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" />
+  <project path="tools/gpu/src/golang.org/x/net" name="platform/tools/external/go/src/golang.org/x/net" groups="gpu" />
+  <project path="tools/gpu/src/golang.org/x/tools" name="platform/tools/external/go/src/golang.org/x/tools" groups="gpu" />
+  <project path="tools/gpu/src/android.googlesource.com/platform/tools/gpu" name="platform/tools/gpu" groups="gpu" />
   <project path="tools/gradle" name="platform/tools/gradle" />
-  <project path="tools/gpu" name="platform/tools/gpu" />
-  <project path="tools/idea" name="platform/tools/idea" revision="idea14-dev" />
-  <project path="tools/studio/google/cloud/testing" name="platform/tools/studio/google/cloud/testing" />
+  <project path="tools/idea" name="platform/tools/idea" />
   <project path="tools/studio/google/cloud/tools" name="platform/tools/studio/google/cloud/tools" />
+  <project path="tools/studio/google/cloud/testing" name="platform/tools/studio/google/cloud/testing" />
   <project path="tools/studio/google/login" name="platform/tools/studio/google/login" />
   <project path="tools/studio/google/play" name="platform/tools/studio/google/play" />
   <project path="tools/studio/google/services" name="platform/tools/studio/google/services" />
