@@ -1,56 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
+  <![CDATA[
+    Manifest for building NDK shader-tools from master.
+       To build this project on Linux and Mac:
+          cmake src/shaderc -DCMAKE_BUILD_TYPE=RelWithDebInfo
+          cmake --build .
+       Then executables are in:
+          glslc/glslc
+          third_party/spirv-tools/spirv-as
+          third_party/spirv-tools/spirv-dis
+          third_party/spirv-tools/spirv-val
+       To build this project on Windows:
+          cmake src/shaderc
+          cmake --build . --config RelWithDebInfo
+       Then executables are in:
+          RelWithDebInfo/glslc/glslc
+          RelWithDebInfo/third_party/spirv-tools/spirv-as
+          RelWithDebInfo/third_party/spirv-tools/spirv-dis
+          RelWithDebInfo/third_party/spirv-tools/spirv-val
+  ]]>
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
   <default revision="master"
-           remote="aosp"
-           sync-j="4" />
-
-  <project path="bionic" name="platform/bionic" groups="pdk" />
-  <project path="development" name="platform/development" groups="pdk-cw-fs" />
-  <project path="external/shaderc/glslang" name="platform/external/shaderc/glslang" />
-  <project path="external/shaderc/shaderc" name="platform/external/shaderc/shaderc" />
-  <project path="external/shaderc/spirv-tools" name="platform/external/shaderc/spirv-tools" />
-  <project path="ndk" name="platform/ndk" />
-  <project path="prebuilts/clang/darwin-x86/host/3.6" name="platform/prebuilts/clang/darwin-x86/host/3.6" groups="pdk,darwin" />
-  <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="pdk,linux" />
-  <project path="prebuilts/clang/windows-x86/host/3.6" name="platform/prebuilts/clang/host/windows-x86" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" />
-  <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
-  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" />
-  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" />
-  <project path="prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" groups="pdk,darwin,mips" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" groups="pdk,darwin,x86" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="pdk,linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" />
-  <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" groups="pdk,linux,mips" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" revision="dev" groups="pdk" />
-  <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin,pdk,pdk-cw-fs" />
-  <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux,pdk,pdk-cw-fs" />
-  <project path="toolchain/binutils" name="toolchain/binutils" />
-  <project path="toolchain/build" name="toolchain/build" />
-  <project path="toolchain/cloog" name="toolchain/cloog" />
-  <project path="toolchain/expat" name="toolchain/expat" />
-  <project path="toolchain/gcc" name="toolchain/gcc" />
-  <project path="toolchain/gdb" name="toolchain/gdb" />
-  <project path="toolchain/gmp" name="toolchain/gmp" />
-  <project path="toolchain/isl" name="toolchain/isl" />
-  <project path="toolchain/mpc" name="toolchain/mpc" />
-  <project path="toolchain/mpfr" name="toolchain/mpfr" />
-  <project path="toolchain/ppl" name="toolchain/ppl" />
-  <project path="toolchain/python" name="toolchain/python" />
-  <project path="toolchain/sed" name="toolchain/sed" />
-  <project path="toolchain/yasm" name="toolchain/yasm" />
-
+           remote="aosp" />
+  <project path="src/shaderc" name="platform/external/shaderc/shaderc" />
+  <project path="src/shaderc/third_party/glslang" name="platform/external/shaderc/glslang" />
+  <project path="src/shaderc/third_party/spirv-tools" name="platform/external/shaderc/spirv-tools" />
+  <project path="src/shaderc/third_party/googletest" name="platform/external/googletest" revision="82b11b8cfcca464c2ac74b623d04e74452e74f32" />
 </manifest>
