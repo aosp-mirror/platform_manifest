@@ -3,33 +3,11 @@
   <![CDATA[
     Manifest for building NDK shader-tools from master.
 
-    Use prebuilts for cmake and ninja for all platforms.
-    Use "cl" from MSVC as the compiler on Windows.
-    Use the default compiler on Linux and Mac.
+    Uses prebuilts for cmake, ninja, and python where necessary.
 
-    Assume you want the build temporary files to go in the directory "out",
-    and installation to go into $DIST_DIR.
+    To build this project, run src/shaderc/utils/build.py --installdir $DIST_DIR.
 
-       To build this project on Linux (assume OS=linux) and Mac (assume OS=darwin):
-          SRC_ROOT=`pwd` && \
-          cd out && \
-          "$SRC_ROOT/prebuilts/cmake/$OS-x86/bin/cmake" "$SRC_ROOT/src/shaderc" \
-             -G Ninja \
-             -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-             -DCMAKE_INSTALL_PREFIX="$DIST_DIR" && \
-          "$SRC_ROOT/prebuilts/ninja/$OS-x86/ninja" install
-
-       To build this project on Windows (assuming Cygwin, and OS=windows):
-          SRC_ROOT=`pwd` && \
-          cd out && \
-          "$SRC_ROOT/prebuilts/cmake/$OS-x86/bin/cmake" "$SRC_ROOT/src/shaderc" \
-             -G Ninja \
-             -DCMAKE_CXX_COMPILER=cl \
-             -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-             -DCMAKE_INSTALL_PREFIX="$DIST_DIR" && \
-          "$SRC_ROOT/prebuilts/ninja/$OS-x86/ninja" install
-
-       Then executables are in:
+    Then executables are in:
           $DIST_DIR/glslc/glslc
           $DIST_DIR/third_party/spirv-tools/spirv-as
           $DIST_DIR/third_party/spirv-tools/spirv-dis
@@ -51,7 +29,7 @@
 
 
  <![CDATA[
-   Get prebuilt cmake and ninja.
+   Get prebuilt cmake, ninja, and python.
  ]]>
 
  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
@@ -61,4 +39,8 @@
  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
  <project path="prebuilts/ninja/windows-x86" name="platform/prebuilts/ninja/windows-x86" clone-depth="1" groups="notdefault,platform-cygwin_nt-6.1,platform-cygwin_nt-6.2,platform-cygwin_nt-6.3,platform-cygwin_nt-10.0" />
+
+ <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
+ <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
+ <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" groups="notdefault,platform-cygwin_nt-6.1,platform-cygwin_nt-6.2,platform-cygwin_nt-6.3,platform-cygwin_nt-10.0" />
 </manifest>
