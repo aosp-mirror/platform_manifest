@@ -4,15 +4,21 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/ndk-r12b"
+  <default revision="refs/tags/ndk-r13-beta1"
            remote="aosp"
            sync-j="4" />
 
   <project path="bionic" name="platform/bionic" groups="presubmit" />
   <project path="development" name="platform/development" groups="presubmit" />
+  <!-- For lit.py, needed by the libc++ tests. -->
+  <project path="external/libcxx" name="platform/external/libcxx" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" />
+  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" />
+  <project path="external/llvm" name="platform/external/llvm" />
   <project path="external/googletest" name="platform/external/googletest" groups="presubmit" />
   <project path="external/shaderc/glslang" name="platform/external/shaderc/glslang" groups="presubmit" />
   <project path="external/shaderc/shaderc" name="platform/external/shaderc/shaderc" groups="presubmit" />
+  <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers" groups="presubmit" />
   <project path="external/shaderc/spirv-tools" name="platform/external/shaderc/spirv-tools" groups="presubmit" />
   <project path="external/vulkan-validation-layers" name="platform/external/vulkan-validation-layers" groups="presubmit" />
   <project path="ndk" name="platform/ndk" groups="presubmit" />
