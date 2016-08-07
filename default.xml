@@ -92,7 +92,9 @@
   <project path="tools/base" name="platform/tools/base">
     <copyfile src="bazel/tools.idea.BUILD" dest="tools/BUILD" />
     <copyfile src="bazel/toplevel.WORKSPACE" dest="WORKSPACE" />
-  </project>
+    <copyfile src="bazel/sdk/prebuilts.studio.sdk.BUILD" dest="prebuilts/studio/sdk/BUILD" />
+    <copyfile src="bazel/sdk/prebuilts.studio.sdk.README.md" dest="prebuilts/studio/sdk/README.md" />
+   </project>
   <project path="tools/data-binding" name="platform/frameworks/data-binding"/>
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" />
   <project path="tools/external/gradle" name="platform/tools/external/gradle" revision="master" />
@@ -119,6 +121,9 @@
   <project path="tools/vendor/intellij/cidr" name="platform/tools/vendor/intellij/cidr" />
   <project path="tools/vendor/microsoft" name="platform/tools/vendor/microsoft" />
   <project path="tools/vendor/adt_infra_internal" name="platform/tools/adt_infra_internal" revision="master" />
+  <project path="prebuilts/studio/sdk/darwin" name="platform/tools/vendor/google_prebuilts/studio/sdk/darwin" clone-depth="1" groups="notdefault,platform-darwin" />
+  <project path="prebuilts/studio/sdk/linux" name="platform/tools/vendor/google_prebuilts/studio/sdk/linux" clone-depth="1" groups="notdefault,platform-linux" />
+  <project path="prebuilts/studio/sdk/windows" name="platform/tools/vendor/google_prebuilts/studio/sdk/windows" clone-depth="1" groups="notdefault,platform-windows" />
   <!-- Contains the release scripts. So, we always track the latest one. -->
   <project path="vendor/google" name="platform/vendor/google" groups="notdefault" revision="master" />
   <!-- END closed-source projects -->
