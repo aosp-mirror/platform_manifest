@@ -9,118 +9,12 @@
   <manifest-server url="http://android-test:8787" />
 
   <!-- BEGIN open-source projects -->
-  <project path="tools/buildSrc" name="platform/tools/buildSrc">
-    <copyfile src="base/build.gradle"      dest="tools/build.gradle" />
-    <copyfile src="base/settings.gradle"   dest="tools/settings.gradle" />
-    <copyfile src="base/gradlew"           dest="tools/gradlew" />
-    <copyfile src="base/gradlew.bat"       dest="tools/gradlew.bat" />
-    <copyfile src="base/gradle.properties" dest="tools/gradle.properties" />
-  </project>
-
-  <project path="external/ant-glob" name="platform/external/ant-glob" revision="master" />
-  <project path="external/boringssl" name="platform/external/boringssl" />
-  <project path="external/emma" name="platform/external/emma" revision="master" />
-  <project path="external/gmock" name="platform/external/gmock" revision="master" groups="gpu" />
-  <project path="external/gtest" name="platform/external/gtest" revision="master" />
-  <project path="external/iosched" name="platform/external/iosched" revision="master" />
-  <project path="external/AntennaPod/AntennaPod" name="platform/external/AntennaPod/AntennaPod" revision="master" />
-  <project path="external/AntennaPod/AudioPlayer" name="platform/external/AntennaPod/AudioPlayer" revision="master" />
-  <project path="external/AntennaPod/afollestad" name="platform/external/AntennaPod/afollestad" revision="master" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/nanopb-c" name="platform/external/nanopb-c" />
-  <project path="external/grpc-grpc" name="platform/external/grpc-grpc" />
-  <project path="external/smali" name="platform/external/smali" />
-  <project path="external/zlib" name="platform/external/zlib" />
-  <project path="tools/analytics-library" name="platform/tools/analytics-library" />
-  <project path="tools/external/go/src/golang.org/x/net" name="platform/tools/external/go/src/golang.org/x/net" />
-  <project path="tools/external/go/src/golang.org/x/tools" name="platform/tools/external/go/src/golang.org/x/tools" />
-  <project path="tools/vendor/google3/aswb" name="platform/tools/vendor/google3/aswb" />
-  <project path="frameworks/native" name="platform/frameworks/native" revision="lmp-release" />
-  <project path="frameworks/base" name="platform/frameworks/base" clone-depth="1" revision="f4732f59d8cb3d4923702713da1539a53bb98bd7" upstream="nyc-layoutlib-dev" groups="notdefault,layoutlib" />
-  <project path="prebuilts/clang/darwin-x86/host/3.5" name="platform/prebuilts/clang/darwin-x86/host/3.5" revision="master" groups="gpu,notdefault,platform-darwin" />
-  <project path="prebuilts/clang/darwin-x86/sdk/3.5" name="platform/prebuilts/clang/darwin-x86/sdk/3.5" revision="master" />
-  <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,platform-linux" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="master" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,platform-darwin" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,platform-linux" />
-  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,platform-cygwin_nt-6.1,platform-cygwin_nt-6.2,platform-cygwin_nt-6.3,platform-cygwin_nt-10.0" />
-  <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" revision="master" />
-  <project path="prebuilts/fullsdk/darwin/build-tools/21-darwin" name="platform/prebuilts/fullsdk/build-tools/21-darwin" clone-depth="1" revision="master" groups="gpu,notdefault,platform-darwin" />
-  <project path="prebuilts/fullsdk/darwin/platforms/android-21" name="platform/prebuilts/fullsdk/platforms/android-21" clone-depth="1" revision="master" groups="gpu,notdefault,platform-darwin" />
-  <project path="prebuilts/fullsdk/linux/build-tools/21-linux" name="platform/prebuilts/fullsdk/build-tools/21-linux" clone-depth="1" revision="master" groups="gpu,notdefault,platform-linux" />
-  <project path="prebuilts/fullsdk/linux/platforms/android-21" name="platform/prebuilts/fullsdk/platforms/android-21" clone-depth="1" revision="master" groups="gpu,notdefault,platform-linux" />
-  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" clone-depth="1" revision="master" />
-  <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" clone-depth="1" revision="master" groups="gpu,notdefault,platform-darwin" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" revision="master" groups="gpu,notdefault,platform-darwin" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" clone-depth="1" revision="master" groups="gpu,notdefault,platform-darwin" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" clone-depth="1" revision="master" groups="gpu,notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" revision="master" groups="gpu,notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" clone-depth="1" revision="master" groups="gpu,notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" clone-depth="1" revision="master" groups="lldb,notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" revision="master" />
-  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="gpu,notdefault,platform-linux" />
-  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="gpu,notdefault,platform-darwin" />
-  <project path="prebuilts/go/windows-x86" name="platform/prebuilts/go/windows-x86" groups="gpu,notdefault,platform-windows" />
-  <project path="prebuilts/google-breakpad/darwin-x86" name="platform/prebuilts/google-breakpad/darwin-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/google-breakpad/linux-x86" name="platform/prebuilts/google-breakpad/linux-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/google-breakpad/windows-x86" name="platform/prebuilts/google-breakpad/windows-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,windows" />
-  <project path="prebuilts/libedit/darwin-x86" name="platform/prebuilts/libedit/darwin-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/libedit/linux-x86" name="platform/prebuilts/libedit/linux-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/libglog/darwin-x86" name="platform/prebuilts/libglog/darwin-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/libglog/linux-x86" name="platform/prebuilts/libglog/linux-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/libglog/windows-x86" name="platform/prebuilts/libglog/windows-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,windows" />
-  <project path="prebuilts/libprotobuf/darwin-x86" name="platform/prebuilts/libprotobuf/darwin-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/libprotobuf/linux-x86" name="platform/prebuilts/libprotobuf/linux-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/libprotobuf/windows-x86" name="platform/prebuilts/libprotobuf/windows-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,windows" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" clone-depth="1" revision="master" groups="gpu" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,platform-darwin" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,platform-linux" />
-  <project path="prebuilts/ninja/windows-x86" name="platform/prebuilts/ninja/windows-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,platform-cygwin_nt-6.1,platform-cygwin_nt-6.2,platform-cygwin_nt-6.3,platform-cygwin_nt-10.0" />
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,windows" />
-  <project path="prebuilts/studio/jdk" name="platform/prebuilts/studio/jdk" clone-depth="1" />
-  <project path="prebuilts/studio/layoutlib" name="platform/prebuilts/studio/layoutlib" clone-depth="1" />
-  <project path="prebuilts/swig/darwin-x86" name="platform/prebuilts/swig/darwin-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/swig/linux-x86" name="platform/prebuilts/swig/linux-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/swig/windows-x86" name="platform/prebuilts/swig/windows-x86" clone-depth="1" revision="lldb-master-dev" groups="lldb,notdefault,windows" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" revision="master" />
-  <project path="sdk" name="platform/sdk" />
-  <project path="tools/adt/idea" name="platform/tools/adt/idea" />
-  <project path="tools/base" name="platform/tools/base">
-    <copyfile src="bazel/tools.idea.BUILD" dest="tools/BUILD" />
-    <copyfile src="bazel/toplevel.WORKSPACE" dest="WORKSPACE" />
-  </project>
-  <project path="tools/data-binding" name="platform/frameworks/data-binding"/>
-  <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" revision="master" />
-  <project path="tools/gpu/src/android.googlesource.com/platform/tools/gpu" name="platform/tools/gpu" groups="gpu" />
-  <project path="tools/gradle" name="platform/tools/gradle" />
-  <project path="tools/idea" name="platform/tools/idea" />
-  <project path="tools/sherpa" name="platform/frameworks/opt/sherpa" />
-  <project path="tools/studio/google/cloud/tools" name="platform/tools/studio/google/cloud/tools" />
-  <project path="tools/studio/google/cloud/testing" name="platform/tools/studio/google/cloud/testing" />
-  <project path="tools/studio/google/login" name="platform/tools/studio/google/login" />
-  <project path="tools/studio/google/play" name="platform/tools/studio/google/play" />
-  <project path="tools/studio/google/samples" name="platform/tools/studio/google/samples" />
-  <project path="tools/studio/google/services" name="platform/tools/studio/google/services" />
-  <project path="tools/studio/google/appindexing" name="platform/tools/studio/google/appindexing" />
-  <project path="tools/swing-testing" name="platform/tools/swing-testing" />
-  <project path="tools/swt" name="platform/tools/swt" />
   <!-- END open-source projects -->
-
+ 
   <!-- BEGIN closed-source projects -->
-  <project path="tools/vendor/galvsoft" name="platform/tools/vendor/galvsoft" />
-  <project path="tools/vendor/google" name="platform/tools/vendor/google" />
-  <project path="tools/vendor/google3/blaze" name="platform/tools/vendor/google3/blaze" />
-  <project path="tools/vendor/intel" name="platform/tools/vendor/intel" revision="master" />
-  <project path="tools/vendor/intellij/cidr" name="platform/tools/vendor/intellij/cidr" />
-  <project path="tools/vendor/microsoft" name="platform/tools/vendor/microsoft" />
-  <project path="tools/vendor/adt_infra_internal" name="platform/tools/adt_infra_internal" revision="master" />
-  <!-- Contains the release scripts. So, we always track the latest one. -->
-  <project path="vendor/google" name="platform/vendor/google" groups="notdefault" revision="master" />
+ <project path="prebuilts/studio/sdk/darwin" name="platform/tools/vendor/google_prebuilts/studio/sdk/darwin" clone-depth="1" />
+  <project path="prebuilts/studio/sdk/linux" name="platform/tools/vendor/google_prebuilts/studio/sdk/linux" clone-depth="1" />
+  <project path="prebuilts/studio/sdk/windows" name="platform/tools/vendor/google_prebuilts/studio/sdk/windows" clone-depth="1" />
   <!-- END closed-source projects -->
 
 </manifest>
