@@ -4,51 +4,71 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="marshmallow-release"
+  <default revision="nougat-release"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" groups="pdk" >
+  <project path="art" name="platform/art" groups="pdk"/>
+  <project path="build" name="platform/build" groups="pdk">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
+  <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
+  <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs"/>
+
   <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
+
   <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
   <project path="external/clang" name="platform/external/clang" groups="pdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/dlmalloc" name="platform/external/dlmalloc" groups="pdk"/>
   <project path="external/expat" name="platform/external/expat" groups="pdk" />
+  <project path="external/gtest" name="platform/external/gtest" groups="pdk" />
   <project path="external/guava" name="platform/external/guava" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/icu" name="platform/external/icu" groups="pdk" />
-  <project path="external/jack" name="platform/external/jack" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/jarjar" name="platform/external/jarjar" groups="pdk" />
-  <project path="external/jpeg" name="platform/external/jpeg" groups="pdk" />
   <project path="external/jsr305" name="platform/external/jsr305" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/junit" name="platform/external/junit" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" />
   <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" />
   <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/libpng" name="platform/external/libpng" groups="pdk" />
+  <project path="external/libunwind" name="platform/external/libunwind" groups="pdk"/>
+  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk"/>
   <project path="external/lld" name="platform/external/lld" groups="pdk-fs" />
-  <project path="external/lldb" name="platform/external/lldb" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
+  <project path="external/lz4" name="platform/external/lz4" groups="pdk"/>
+  <project path="external/lzma" name="platform/external/lzma" groups="pdk"/>
   <project path="external/okhttp" name="platform/external/okhttp" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/protobuf" name="platform/external/protobuf" groups="pdk"/>
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
   <project path="external/srtp" name="platform/external/srtp" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/strace" name="platform/external/strace" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/tagsoup" name="platform/external/tagsoup" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/tcpdump" name="platform/external/tcpdump" groups="pdk,pdk-cw-fs,pdk-fs" />
+  <project path="external/valgrind" name="platform/external/valgrind" groups="pdk"/>
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs,pdk-fs" />
+
+  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk"/>
   <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" />
+
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
+
+  <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts"/>
+
   <project path="prebuilts/clang/darwin-x86/host/3.6" name="platform/prebuilts/clang/darwin-x86/host/3.6" groups="pdk,darwin" />
   <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="pdk,linux" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" groups="pdk,darwin" clone-depth="1" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" clone-depth="1" />
+
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="pdk,linux" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"  groups="pdk,linux" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" groups="pdk-fs" />
@@ -56,10 +76,17 @@
   <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" />
   <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" />
   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" />
+  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" groups="darwin,pdk,tradefed" clone-depth="1" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
-  <project path="system/core" name="platform/system/core" groups="pdk" />
 
-  <project path="test/AfwTestHarness" name="platform/test/AfwTestHarness" revision="marshmallow-dev" />
+  <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" />
+  <project path="system/core" name="platform/system/core" groups="pdk" />
+  <project path="system/netd" name="platform/system/netd" groups="pdk"/>
+  <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk"/>
+  <project path="system/update_engine" name="platform/system/update_engine" groups="pdk"/>
+
+  <project path="test/AfwTestHarness" name="platform/test/AfwTestHarness" revision="nougat-dev"/>
 
 </manifest>
