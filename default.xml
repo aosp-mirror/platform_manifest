@@ -106,6 +106,7 @@
   <project path="tools/gpu/src/android.googlesource.com/platform/tools/gpu" name="platform/tools/gpu" groups="gpu" />
   <project path="tools/gradle" name="platform/tools/gradle" />
   <project path="tools/idea" name="platform/tools/idea" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" revision="master" />
   <project path="tools/sherpa" name="platform/frameworks/opt/sherpa" />
   <project path="tools/studio/google/cloud/tools" name="platform/tools/studio/google/cloud/tools" />
   <project path="tools/studio/google/cloud/testing" name="platform/tools/studio/google/cloud/testing" />
@@ -132,5 +133,7 @@
   <!-- Contains the release scripts. So, we always track the latest one. -->
   <project path="vendor/google" name="platform/vendor/google" groups="notdefault" revision="master" />
   <!-- END closed-source projects -->
+
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
 </manifest>
