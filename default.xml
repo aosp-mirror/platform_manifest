@@ -64,9 +64,7 @@
   <project path="device/google/clockwork" name="device/google/clockwork" groups="device,pdk-cw" />
   <project path="device/google/dragon" name="device/google/dragon" groups="device,dragon,pdk" />
   <project path="device/google/dragon-kernel" name="device/google/dragon-kernel" groups="device,dragon,pdk" clone-depth="1" />
-  <project path="device/google/gce" name="device/google/gce" groups="device" />
   <project path="device/google/gce_x86" name="device/google/gce_x86" groups="device" />
-  <project path="device/google/gce_x86-kernel" name="device/google/gce_x86-kernel" groups="device" clone-depth="1" />
   <project path="device/google/guppy" name="device/google/guppy" groups="device" />
   <project path="device/google/guppy-kernel" name="device/google/guppy-kernel" groups="device" clone-depth="1" />
   <project path="device/google/marlin" name="device/google/marlin" groups="device,marlin" />
@@ -894,5 +892,14 @@
   <project path="vendor/widevine" name="platform/vendor/widevine" groups="vendor,widevine" />
   <project path="vendor/xts" name="platform/vendor/xts" groups="vendor" />
   <!-- END closed-source projects -->
+
+  <!-- AVDs are developed on the gce-dev branch, which is designed to compile
+       against multiple versions of the framework -->
+  <!-- BEGIN avd-nonbranched projects -->
+  <project path="device/google/gce" name="device/google/gce" groups="device" revision="gce-dev" />
+  <project path="device/google/gce_bt_test_vendor_lib" name="device/google/gce_bt_test_vendor_lib" groups="device,pdk" revision="gce-dev"/>
+  <project path="device/google/gce_x86-kernel" name="device/google/gce_x86-kernel" groups="device" clone-depth="1" revision="gce-dev"/>
+  <project path="vendor/google_devices/gce_x86" name="platform/vendor/google_devices/gce_x86" groups="vendor" revision="gce-dev"/>
+  <!-- END avd-nonbranched projects -->
 
 </manifest>
