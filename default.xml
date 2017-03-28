@@ -37,12 +37,12 @@
   <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
   <project path="device/asus/fugu" name="device/asus/fugu" groups="device,fugu,broadcom_pdk,pdk" />
   <project path="device/asus/fugu-kernel" name="device/asus/fugu-kernel" groups="device,fugu,broadcom_pdk,pdk" clone-depth="1" />
-  <project path="device/broadcom/common" name="device/broadcom/common" groups="device" />
-  <project path="device/broadcom/avko" name="device/broadcom/avko" groups="device" />
-  <project path="device/broadcom/banff" name="device/broadcom/banff" groups="device" />
-  <project path="device/broadcom/cypress" name="device/broadcom/cypress" groups="device" />
-  <project path="device/broadcom/dawson" name="device/broadcom/dawson" groups="device" />
-  <project path="device/broadcom/elfin" name="device/broadcom/elfin" groups="device" />
+  <project path="device/broadcom/common" name="device/broadcom/common" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="device/broadcom/avko" name="device/broadcom/avko" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="device/broadcom/banff" name="device/broadcom/banff" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="device/broadcom/cypress" name="device/broadcom/cypress" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="device/broadcom/dawson" name="device/broadcom/dawson" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="device/broadcom/elfin" name="device/broadcom/elfin" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
@@ -99,10 +99,10 @@
   <project path="device/linaro/bootloader/OpenPlatformPkg" name="device/linaro/bootloader/OpenPlatformPkg" />
   <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk" />
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" />
-  <project path="device/mediatek/archer" name="device/mediatek/archer" groups="device" />
-  <project path="device/mediatek/archer-kernel" name="device/mediatek/archer-kernel" />
-  <project path="device/mediatek/augie" name="device/mediatek/augie" groups="device" />
-  <project path="device/mediatek/augie-kernel" name="device/mediatek/augie-kernel" />
+  <project path="device/mediatek/archer" name="device/mediatek/archer" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="device/mediatek/archer-kernel" name="device/mediatek/archer-kernel" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
+  <project path="device/mediatek/augie" name="device/mediatek/augie" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="device/mediatek/augie-kernel" name="device/mediatek/augie-kernel" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
   <project path="device/panasonic/owl" name="device/panasonic/owl" groups="device,panasonic,owl" />
   <project path="device/panasonic/owl-kernel" name="device/panasonic/owl-kernel" groups="device,panasonic,owl" clone-depth="1" />
   <project path="device/qcom/bat" name="device/qcom/bat" groups="device,bat" />
@@ -462,7 +462,7 @@
   <project path="hardware/realtek/8723bs" name="platform/hardware/realtek/8723bs" groups="8723bs" />
   <project path="hardware/renesas/salvator" name="platform/hardware/renesas/salvator" groups="device,salvator" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
-  <project path="kernel/private/bcm-97xxx" name="kernel/private/bcm-97xxx" />
+  <project path="kernel/private/bcm-97xxx" name="kernel/private/bcm-97xxx" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
   <project path="kernel/tests" name="kernel/tests" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
@@ -656,6 +656,368 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="pdk,tradefed" />
   <!-- END open-source projects -->
+
+  <!-- BEGIN closed-source projects -->
+  <project path="developers/samples/vendor/google" name="platform/developers/samples/vendor/google" />
+  <project path="tools/vendor/ej-tech" name="platform/tools/vendor/ej-tech" groups="notdefault,tools,vendor" />
+  <project path="tools/vendor/google" name="platform/tools/vendor/google" groups="notdefault,tools,vendor" />
+  <project path="tools/vendor/intel" name="platform/tools/vendor/intel" groups="notdefault,tools,vendor" />
+  <project path="tools/vendor/jetbrains" name="platform/tools/vendor/jetbrains" groups="notdefault,tools,vendor" />
+  <project path="tools/vendor/microsoft" name="platform/tools/vendor/microsoft" groups="notdefault,tools,vendor" />
+  <project path="vendor/android/compatibility" name="platform/vendor/android/compatibility" groups="vendor" />
+  <project path="vendor/asus/fugu" name="platform/vendor/asus/fugu" groups="vendor,fugu" />
+  <project path="vendor/auto/embedded" name="platform/vendor/auto/embedded" groups="vendor" />
+  <project path="vendor/auto/projection_protocol" name="platform/vendor/auto/projection_protocol" groups="vendor" />
+  <project path="vendor/broadcom/bcm_platform" name="platform/vendor/broadcom/bcm_platform" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/broadcom/bolt" name="platform/vendor/broadcom/bolt" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/broadcom/common" name="platform/vendor/broadcom/common" groups="vendor,broadcom" />
+  <project path="vendor/broadcom/drivers" name="platform/vendor/broadcom/drivers" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/broadcom/nfc" name="platform/vendor/broadcom/nfc" groups="vendor,broadcom_nfc" />
+  <project path="vendor/broadcom/playready" name="platform/vendor/broadcom/playready" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
+  <project path="vendor/broadcom/prebuilts" name="platform/vendor/broadcom/prebuilts" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
+  <project path="vendor/broadcom/refsw" name="platform/vendor/broadcom/refsw" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/broadcom/release_prebuilts" name="platform/vendor/broadcom/release_prebuilts" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
+  <project path="vendor/broadcom/wlan" name="platform/vendor/broadcom/wlan" groups="vendor" />
+  <project path="vendor/eclipse" name="platform/vendor/eclipse" groups="vendor" />
+  <project path="vendor/esmertec" name="platform/vendor/esmertec" groups="vendor" />
+  <project path="vendor/fpc" name="platform/vendor/fpc" groups="vendor,fpc" />
+  <project path="vendor/fraunhofer/virtualizer" name="platform/vendor/fraunhofer/virtualizer" groups="vendor" />
+  <project path="vendor/gips" name="platform/vendor/gips" groups="vendor" />
+  <project path="vendor/google/apps/AtvCustomization" name="platform/vendor/google/apps/AtvCustomization" groups="vendor"/>
+  <project path="vendor/google/apps/AtvWidget" name="platform/vendor/google/apps/AtvWidget" groups="vendor"/>
+  <project path="vendor/google/apps/CarDock" name="platform/vendor/google/apps/CarDock" groups="vendor"/>
+  <project path="vendor/google/apps/ConnectivityMetrics" name="platform/vendor/google/apps/ConnectivityMetrics" groups="vendor"/>
+  <project path="vendor/google/apps/DontPanic" name="platform/vendor/google/apps/DontPanic" groups="vendor"/>
+  <project path="vendor/google/apps/DragonKeyboardFirmwareUpdater" name="platform/vendor/google/apps/DragonKeyboardFirmwareUpdater" groups="vendor"/>
+  <project path="vendor/google/apps/FmRadioTrampoline" name="platform/vendor/google/apps/FmRadioTrampoline" groups="vendor"/>
+  <project path="vendor/google/apps/FmRadioTrampoline2" name="platform/vendor/google/apps/FmRadioTrampoline2" groups="vendor"/>
+  <project path="vendor/google/apps/GoogleCarrierConfig" name="platform/vendor/google/apps/GoogleCarrierConfig" groups="vendor"/>
+  <project path="vendor/google/apps/GoogleExtServices" name="platform/vendor/google/apps/GoogleExtServices" groups="vendor"/>
+  <project path="vendor/google/apps/GoogleExtShared" name="platform/vendor/google/apps/GoogleExtShared" groups="vendor"/>
+  <project path="vendor/google/apps/GoogleFeedback" name="platform/vendor/google/apps/GoogleFeedback" groups="vendor"/>
+  <project path="vendor/google/apps/GooglePackageInstaller" name="platform/vendor/google/apps/GooglePackageInstaller" groups="vendor"/>
+  <project path="vendor/google/apps/GooglePrintRecommendationService" name="platform/vendor/google/apps/GooglePrintRecommendationService" groups="vendor"/>
+  <project path="vendor/google/apps/Maps" name="platform/vendor/google/apps/Maps" groups="vendor"/>
+  <project path="vendor/google/apps/MmsTrampoline" name="platform/vendor/google/apps/MmsTrampoline" groups="vendor"/>
+  <project path="vendor/google/apps/OTATester" name="platform/vendor/google/apps/OTATester" groups="vendor"/>
+  <project path="vendor/google/apps/OneTimeInitializer" name="platform/vendor/google/apps/OneTimeInitializer" groups="vendor"/>
+  <project path="vendor/google/apps/SDKLicenseChecker" name="platform/vendor/google/apps/SDKLicenseChecker" groups="vendor"/>
+  <project path="vendor/google/apps/SensorBatching" name="platform/vendor/google/apps/SensorBatching" groups="vendor"/>
+  <project path="vendor/google/apps/SetupWizard" name="platform/vendor/google/apps/SetupWizard" groups="vendor"/>
+  <project path="vendor/google/apps/SignificantMotionTest" name="platform/vendor/google/apps/SignificantMotionTest" groups="vendor"/>
+  <project path="vendor/google/apps/TagGoogle" name="platform/vendor/google/apps/TagGoogle" groups="vendor"/>
+  <project path="vendor/google/apps/Tutorial" name="platform/vendor/google/apps/Tutorial" groups="vendor"/>
+  <project path="vendor/google/apps/UserInfoWidget" name="platform/vendor/google/apps/UserInfoWidget" groups="vendor"/>
+  <project path="vendor/google/apps/WatchHome" name="platform/vendor/google/apps/WatchHome" groups="vendor"/>
+  <project path="vendor/google/apps/YadaYada" name="platform/vendor/google/apps/YadaYada" groups="vendor"/>
+  <project path="vendor/google/bootanimations" name="platform/vendor/google/bootanimations" groups="vendor"/>
+  <project path="vendor/google/build" name="platform/vendor/google/build" groups="vendor"/>
+  <project path="vendor/google/certs" name="platform/vendor/google/certs" groups="vendor"/>
+  <project path="vendor/google/cts" name="platform/vendor/google/cts" groups="vendor"/>
+  <project path="vendor/google/data/etc" name="platform/vendor/google/data/etc" groups="vendor"/>
+  <project path="vendor/google/data/media" name="platform/vendor/google/data/media" groups="vendor"/>
+  <project path="vendor/google/docs" name="platform/vendor/google/docs" groups="vendor"/>
+  <project path="vendor/google/dts" name="platform/vendor/google/dts" groups="vendor"/>
+  <project path="vendor/google/etc" name="platform/vendor/google/etc" groups="vendor"/>
+  <project path="vendor/google/frameworks/camera" name="platform/vendor/google/frameworks/camera" groups="vendor"/>
+  <project path="vendor/google/frameworks/maps" name="platform/vendor/google/frameworks/maps" groups="vendor"/>
+  <project path="vendor/google/gms" name="platform/vendor/google/gms" groups="vendor"/>
+  <project path="vendor/google/google_overlay" name="platform/vendor/google/google_overlay" groups="vendor"/>
+  <project path="vendor/google/libraries/actlib" name="platform/vendor/google/libraries/actlib" groups="vendor"/>
+  <project path="vendor/google/libraries/camera_eis" name="platform/vendor/google/libraries/camera_eis" groups="vendor"/>
+  <project path="vendor/google/libraries/gcam_ae" name="platform/vendor/google/libraries/gcam_ae" groups="vendor"/>
+  <project path="vendor/google/libraries/googleclient" name="platform/vendor/google/libraries/googleclient" groups="vendor"/>
+  <project path="vendor/google/libraries/google3_camera_tools" name="platform/vendor/google/libraries/google3_camera_tools" groups="vendor"/>
+  <project path="vendor/google/libraries/motiongesture" name="platform/vendor/google/libraries/motiongesture" groups="vendor"/>
+  <project path="vendor/google/media" name="platform/vendor/google/media" groups="vendor"/>
+  <project path="vendor/google/misc/dsphotwordmodel" name="platform/vendor/google/misc/dsphotwordmodel" groups="vendor"/>
+  <project path="vendor/google/misc/hotwordenrollment" name="platform/vendor/google/misc/hotwordenrollment" groups="vendor"/>
+  <project path="vendor/google/misc/recognitionservicedemo" name="platform/vendor/google/misc/recognitionservicedemo" groups="vendor"/>
+  <project path="vendor/google/native" name="platform/vendor/google/native" groups="vendor"/>
+  <project path="vendor/google/nexus_overlay" name="platform/vendor/google/nexus_overlay" groups="vendor"/>
+  <project path="vendor/google/products" name="platform/vendor/google/products" groups="vendor"/>
+  <project path="vendor/google/sdk" name="platform/vendor/google/sdk" groups="vendor"/>
+  <project path="vendor/google/security" name="platform/vendor/google/security" groups="vendor"/>
+  <project path="vendor/google/services/ConfigUpdater" name="platform/vendor/google/services/ConfigUpdater" groups="vendor"/>
+  <project path="vendor/google/services/GoogleBackupTransport" name="platform/vendor/google/services/GoogleBackupTransport" groups="vendor"/>
+  <project path="vendor/google/services/MotionGestureController" name="platform/vendor/google/services/MotionGestureController" groups="vendor"/>
+  <project path="vendor/google/sidewinder_overlay" name="platform/vendor/google/sidewinder_overlay" groups="vendor"/>
+  <project path="vendor/google/tests/AnTuTuUiAutomator" name="platform/vendor/google/tests/AnTuTuUiAutomator" groups="vendor"/>
+  <project path="vendor/google/tests/AppsUtils" name="platform/vendor/google/tests/AppsUtils" groups="vendor"/>
+  <project path="vendor/google/tests/AutoProfileTest" name="platform/vendor/google/tests/AutoProfileTest" groups="vendor"/>
+  <project path="vendor/google/tests/AutoTester" name="platform/vendor/google/tests/AutoTester" groups="vendor"/>
+  <project path="vendor/google/tests/BackupTestApp" name="platform/vendor/google/tests/BackupTestApp" groups="vendor"/>
+  <project path="vendor/google/tests/DabTest" name="platform/vendor/google/tests/DabTest" groups="vendor"/>
+  <project path="vendor/google/tests/DalvikPerf" name="platform/vendor/google/tests/DalvikPerf" groups="vendor"/>
+  <project path="vendor/google/tests/DrmMediaTest" name="platform/vendor/google/tests/DrmMediaTest" groups="vendor"/>
+  <project path="vendor/google/tests/GCBench" name="platform/vendor/google/tests/GCBench" groups="vendor"/>
+  <project path="vendor/google/tests/GCM" name="platform/vendor/google/tests/GCM" groups="vendor"/>
+  <project path="vendor/google/tests/GTalk" name="platform/vendor/google/tests/GTalk" groups="vendor"/>
+  <project path="vendor/google/tests/GTalkService" name="platform/vendor/google/tests/GTalkService" groups="vendor"/>
+  <project path="vendor/google/tests/GoogleFeedback" name="platform/vendor/google/tests/GoogleFeedback" groups="vendor"/>
+  <project path="vendor/google/tests/MarkTest" name="platform/vendor/google/tests/MarkTest" groups="vendor"/>
+  <project path="vendor/google/tests/MessagingTest" name="platform/vendor/google/tests/MessagingTest" groups="vendor"/>
+  <project path="vendor/google/tests/MikeApp" name="platform/vendor/google/tests/MikeApp" groups="vendor"/>
+  <project path="vendor/google/tests/MockitoTest" name="platform/vendor/google/tests/MockitoTest" groups="vendor"/>
+  <project path="vendor/google/tests/MoviesTest" name="platform/vendor/google/tests/MoviesTest" groups="vendor"/>
+  <project path="vendor/google/tests/NetSpeed" name="platform/vendor/google/tests/NetSpeed" groups="vendor"/>
+  <project path="vendor/google/tests/PageCycler" name="platform/vendor/google/tests/PageCycler" groups="vendor"/>
+  <project path="vendor/google/tests/Phone" name="platform/vendor/google/tests/Phone" groups="vendor"/>
+  <project path="vendor/google/tests/PhoneTestApp" name="platform/vendor/google/tests/PhoneTestApp" groups="vendor"/>
+  <project path="vendor/google/tests/Play" name="platform/vendor/google/tests/Play" groups="vendor"/>
+  <project path="vendor/google/tests/PowerTests" name="platform/vendor/google/tests/PowerTests" groups="vendor"/>
+  <project path="vendor/google/tests/PowerUtil" name="platform/vendor/google/tests/PowerUtil" groups="vendor"/>
+  <project path="vendor/google/tests/PowerWallpaper" name="platform/vendor/google/tests/PowerWallpaper" groups="vendor"/>
+  <project path="vendor/google/tests/RestrictionsProviderSample" name="platform/vendor/google/tests/RestrictionsProviderSample" groups="vendor"/>
+  <project path="vendor/google/tests/Shared1" name="platform/vendor/google/tests/Shared1" groups="vendor"/>
+  <project path="vendor/google/tests/Shared2" name="platform/vendor/google/tests/Shared2" groups="vendor"/>
+  <project path="vendor/google/tests/Speek2Search" name="platform/vendor/google/tests/Speek2Search" groups="vendor"/>
+  <project path="vendor/google/tests/SyncTestFramework" name="platform/vendor/google/tests/SyncTestFramework" groups="vendor"/>
+  <project path="vendor/google/tests/SystemUtils" name="platform/vendor/google/tests/SystemUtils" groups="vendor"/>
+  <project path="vendor/google/tests/Utils" name="platform/vendor/google/tests/Utils" groups="vendor"/>
+  <project path="vendor/google/tests/WebView" name="platform/vendor/google/tests/WebView" groups="vendor"/>
+  <project path="vendor/google/tests/WeiTest" name="platform/vendor/google/tests/WeiTest" groups="vendor"/>
+  <project path="vendor/google/tests/testinfo" name="platform/vendor/google/tests/testinfo" groups="vendor"/>
+  <project path="vendor/google/tools" name="platform/vendor/google/tools" groups="vendor"/>
+  <project path="vendor/google/usersplit_overlay" name="platform/vendor/google/usersplit_overlay" groups="vendor"/>
+  <project path="vendor/google/vts" name="platform/vendor/google/vts" groups="vendor"/>
+  <project path="vendor/google_athome" name="platform/vendor/google_athome" groups="vendor"/>
+  <project path="vendor/google_atv" name="platform/vendor/google_atv" groups="vendor"/>
+  <project path="vendor/google_chinook" name="platform/vendor/google_chinook" groups="vendor,google_chinook"/>
+  <project path="vendor/google_clockwork" name="platform/vendor/google_clockwork" groups="vendor,pdk-cw-fs-plus" clone-depth="100"/>
+  <project path="vendor/google_contexthub" name="platform/vendor/google_contexthub" groups="vendor"/>
+  <project path="vendor/google_data/art_profile" name="platform/vendor/google_data/art_profile" groups="vendor"/>
+  <project path="vendor/google_data/fdo_profile" name="platform/vendor/google_data/fdo_profile" groups="vendor"/>
+  <project path="vendor/google_devices/crosshatch" name="platform/vendor/google_devices/crosshatch" groups="vendor"/>
+  <project path="vendor/google_devices/dragon" name="platform/vendor/google_devices/dragon" groups="vendor,dragon"/>
+  <project path="vendor/google_devices/gce_x86" name="platform/vendor/google_devices/gce_x86" groups="vendor"/>
+  <project path="vendor/google_devices/marlin" name="platform/vendor/google_devices/marlin" groups="vendor,marlin"/>
+  <project path="vendor/google_devices/muskie" name="platform/vendor/google_devices/muskie" groups="vendor,muskie"/>
+  <project path="vendor/google_devices/taimen" name="platform/vendor/google_devices/taimen" groups="vendor,taimen"/>
+  <project path="vendor/google_devices/wahoo" name="platform/vendor/google_devices/wahoo" groups="vendor,wahoo"/>
+  <project path="vendor/google_experimental" name="platform/vendor/google_experimental" groups="vendor,notdefault,codesearch"/>
+  <project path="vendor/google_factory" name="platform/vendor/google_factory" groups="vendor"/>
+  <project path="vendor/google_mca_cw/gestures" name="platform/vendor/google_mca_cw/gestures" groups="vendor,presubmit,pdk-cw-fs-plus"/>
+  <project path="vendor/google_mhl" name="platform/vendor/google_mhl" groups="vendor"/>
+  <project path="vendor/google_newblue" name="platform/vendor/google_newblue" groups="vendor"/>
+  <project path="vendor/google_paintbox" name="platform/vendor/google_paintbox" groups="vendor,paintbox" />
+  <project path="vendor/google_pdk/clockwork" name="platform/vendor/google_pdk/clockwork" groups="vendor,pdk-cw"/>
+  <project path="vendor/google_pdk/tools" name="platform/vendor/google_pdk/tools" groups="vendor"/>
+  <project path="vendor/google_testing/comms" name="platform/vendor/google_testing/comms" groups="vendor,google_testing_comms"/>
+  <project path="vendor/google_testing/integration" name="platform/vendor/google_testing/integration" groups="vendor"/>
+  <project path="vendor/google_testing/pts" name="platform/vendor/google_testing/pts" groups="vendor"/>
+  <project path="vendor/google_tradefederation" name="platform/vendor/google_tradefederation" groups="pdk,tradefed"/>
+  <project path="vendor/google_vts" name="platform/vendor/google_vts" groups="vts,pdk"/>
+  <project path="vendor/harman/bee" name="platform/vendor/harman/bee" groups="vendor,bee"  />
+  <project path="vendor/htc/common" name="platform/vendor/htc/common" groups="vendor" />
+  <project path="vendor/htc/packages" name="platform/vendor/htc/packages" groups="vendor" />
+  <project path="vendor/htc/prebuilt" name="platform/vendor/htc/prebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/huawei/angler" name="platform/vendor/huawei/angler" groups="vendor,angler" />
+  <project path="vendor/huawei/tools" name="platform/vendor/huawei/tools" groups="vendor,angler" />
+  <project path="vendor/hulu" name="platform/vendor/hulu" groups="vendor" />
+  <project path="vendor/intel/coho" name="platform/vendor/intel/coho" groups="vendor,coho" />
+  <project path="vendor/intel/fw/sst" name="platform/vendor/intel/fw/sst" groups="vendor,fugu,intel_fw" />
+  <project path="vendor/intel/fw/video" name="platform/vendor/intel/fw/video" groups="vendor,fugu,intel_fw" />
+  <project path="vendor/intel/gordon_peak" name="platform/vendor/intel/gordon_peak" groups="vendor,gordon_peak"  />
+  <project path="vendor/intel/moorefield/prebuilts/hardware/DRM" name="platform/vendor/intel/moorefield/prebuilts/hardware/DRM" groups="vendor,fugu" clone-depth="1" />
+  <project path="vendor/intel/moorefield/prebuilts/hardware/libmediaparser" name="platform/vendor/intel/moorefield/prebuilts/hardware/libmediaparser" groups="vendor,fugu" clone-depth="1" />
+  <project path="vendor/intel/moorefield/prebuilts/hardware/mediasdk" name="platform/vendor/intel/moorefield/prebuilts/hardware/mediasdk" groups="vendor,fugu" clone-depth="1" />
+  <project path="vendor/intel/moorefield/prebuilts/hardware/rgx" name="platform/vendor/intel/moorefield/prebuilts/hardware/rgx" groups="vendor,fugu" clone-depth="1" />
+  <project path="vendor/intel/moorefield/prebuilts/houdini" name="platform/vendor/intel/moorefield/prebuilts/houdini" groups="vendor,fugu" clone-depth="1" />
+  <project path="vendor/lge/bullhead" name="platform/vendor/lge/bullhead" groups="vendor,bullhead" />
+  <project path="vendor/linaro/hikey" name="platform/vendor/linaro/hikey" groups="vendor" />
+  <project path="vendor/mediatek/archer" name="platform/vendor/mediatek/archer" groups="vendor,mediatek,archer" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
+  <project path="vendor/mediatek/augie" name="platform/vendor/mediatek/augie" groups="vendor,augie" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/moto/common" name="platform/vendor/moto/common" groups="vendor" />
+  <project path="vendor/moto/prebuilt" name="platform/vendor/moto/prebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/netflix" name="platform/vendor/netflix" groups="vendor" />
+  <project path="vendor/nvidia/build" name="platform/vendor/nvidia/build" groups="vendor,tegra132,dragon-tlk" />
+  <project path="vendor/nvidia/dragon" name="platform/vendor/nvidia/dragon" groups="vendor,dragon" />
+  <project path="vendor/nvidia/dragon-tlk/client" name="platform/vendor/nvidia/dragon-tlk/client" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/daemon" name="platform/vendor/nvidia/dragon-tlk/daemon" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/gatekeeper" name="platform/vendor/nvidia/dragon-tlk/gatekeeper" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/hdcp" name="platform/vendor/nvidia/dragon-tlk/hdcp" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/lib" name="platform/vendor/nvidia/dragon-tlk/lib" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/nvcrypto" name="platform/vendor/nvidia/dragon-tlk/nvcrypto" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/otf" name="platform/vendor/nvidia/dragon-tlk/otf" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/secure_rtc" name="platform/vendor/nvidia/dragon-tlk/secure_rtc" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/storage" name="platform/vendor/nvidia/dragon-tlk/storage" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/tlk" name="platform/vendor/nvidia/dragon-tlk/tlk" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/tsec" name="platform/vendor/nvidia/dragon-tlk/tsec" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nvidia/dragon-tlk/widevine" name="platform/vendor/nvidia/dragon-tlk/widevine" groups="vendor,dragon-tlk" revision="mirror-chrome-internal-firmware-smaug-7900" />
+  <project path="vendor/nxp" name="platform/vendor/nxp" groups="vendor" />
+  <project path="vendor/panasonic/owl" name="platform/vendor/panasonic/owl" groups="vendor,owl"  />
+  <project path="vendor/pdk/data/google" name="platform/vendor/pdk/data/google" groups="vendor" />
+  <project path="vendor/qcom/bat" name="platform/vendor/qcom/bat" groups="bat,vendor" />
+  <project path="vendor/qcom/gpu" name="platform/vendor/qcom/gpu" groups="vendor,qcom_gpu" />
+  <project path="vendor/qcom/media" name="platform/vendor/qcom/media" groups="vendor" />
+  <project path="vendor/qcom/msmcobalt" name="platform/vendor/qcom/msmcobalt" groups="vendor,msmcobalt" />
+  <project path="vendor/qcom/msm8998" name="platform/vendor/qcom/msm8998" groups="vendor,qcom_msm8998" />
+  <project path="vendor/qcom/telephony" name="platform/vendor/qcom/telephony" groups="vendor" />
+  <project path="vendor/renesas/salvator" name="platform/vendor/renesas/salvator" groups="vendor,salvator" />
+  <project path="vendor/sprint/OMA-DM" name="platform/vendor/sprint/OMA-DM" groups="vendor,oma_dm" />
+  <project path="vendor/stmicro/clockwork" name="platform/vendor/stmicro/clockwork" groups="vendor,anthias,platina" />
+  <project path="vendor/tmobile" name="platform/vendor/tmobile" groups="vendor" />
+  <project path="vendor/unbundled_google/installer_cd" name="platform/vendor/unbundled_google/installer_cd" groups="vendor" />
+  <project path="vendor/unbundled_google/libraries" name="platform/vendor/unbundled_google/libraries" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/ClockworkPrebuilt" name="platform/vendor/unbundled_google/libs/ClockworkPrebuilt" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/libs/ExoPlayer" name="platform/vendor/unbundled_google/libs/ExoPlayer" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/libs/Ink" name="platform/vendor/unbundled_google/libs/Ink" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/aah" name="platform/vendor/unbundled_google/libs/aah" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/accounts" name="platform/vendor/unbundled_google/libs/accounts" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/appdatasearchhelper" name="platform/vendor/unbundled_google/libs/appdatasearchhelper" groups="vendor" revision="ub-gcore-olivet" />
+  <project path="vendor/unbundled_google/libs/carouselgl" name="platform/vendor/unbundled_google/libs/carouselgl" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/glview" name="platform/vendor/unbundled_google/libs/glview" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/googledialer" name="platform/vendor/unbundled_google/libs/googledialer" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/googlehelp" name="platform/vendor/unbundled_google/libs/googlehelp" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/gcm" name="platform/vendor/unbundled_google/libs/gcm" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/hats20" name="platform/vendor/unbundled_google/libs/hats20" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/libs/leanback" name="platform/vendor/unbundled_google/libs/leanback" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/mediarouter" name="platform/vendor/unbundled_google/libs/mediarouter" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/owners" name="platform/vendor/unbundled_google/libs/owners" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/owners_gcore" name="platform/vendor/unbundled_google/libs/owners_gcore" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/playperf" name="platform/vendor/unbundled_google/libs/playperf" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/tachyon" name="platform/vendor/unbundled_google/libs/tachyon" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/Wearable" name="platform/vendor/unbundled_google/libs/Wearable" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/WearablePrebuilt" name="platform/vendor/unbundled_google/libs/WearablePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/AlloPrebuilt" name="platform/vendor/unbundled_google/packages/AlloPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/AmbientSensePrebuilt" name="platform/vendor/unbundled_google/packages/AmbientSensePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/AndroidMediaShell" name="platform/vendor/unbundled_google/packages/AndroidMediaShell" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/AndroidMigratePrebuilt" name="platform/vendor/unbundled_google/packages/AndroidMigratePrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/AndroidPlatformServicesPrebuilt" name="platform/vendor/unbundled_google/packages/AndroidPlatformServicesPrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/AndroidTVRemote" name="platform/vendor/unbundled_google/packages/AndroidTVRemote" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/BetterBug" name="platform/vendor/unbundled_google/packages/BetterBug" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/BrowserGoogle" name="platform/vendor/unbundled_google/packages/BrowserGoogle" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/CalculatorGooglePrebuilt" name="platform/vendor/unbundled_google/packages/CalculatorGooglePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/CalendarGooglePrebuilt" name="platform/vendor/unbundled_google/packages/CalendarGooglePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/CarrierEntitlement" name="platform/vendor/unbundled_google/packages/CarrierEntitlement" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Chrome" name="platform/vendor/unbundled_google/packages/Chrome" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkGsaPrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkGsaPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkHomePrebuilt2" name="platform/vendor/unbundled_google/packages/ClockworkHomePrebuilt2" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkPrebuilts" name="platform/vendor/unbundled_google/packages/ClockworkPrebuilts" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/CloudPrint2" name="platform/vendor/unbundled_google/packages/CloudPrint2" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/DevCameraGoogle" name="platform/vendor/unbundled_google/packages/DevCameraGoogle" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/DMAgent" name="platform/vendor/unbundled_google/packages/DMAgent" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Docs" name="platform/vendor/unbundled_google/packages/Docs" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/DocumentsUIGoogle" name="platform/vendor/unbundled_google/packages/DocumentsUIGoogle" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Drive" name="platform/vendor/unbundled_google/packages/Drive" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/DuoPrebuilt" name="platform/vendor/unbundled_google/packages/DuoPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/Ears" name="platform/vendor/unbundled_google/packages/Ears" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Earth" name="platform/vendor/unbundled_google/packages/Earth" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/EuiccGooglePrebuilt" name="platform/vendor/unbundled_google/packages/EuiccGooglePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/FaceLock" name="platform/vendor/unbundled_google/packages/FaceLock" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/FitnessPrebuilt" name="platform/vendor/unbundled_google/packages/FitnessPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/tests" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/tests" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/afc-dogfood" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/afc-dogfood" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v10" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v10" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v10_Next" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v10_Next" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v11" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v11" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v11_Next" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v11_Next" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v12" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v12" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v12_Next" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v12_Next" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v13" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v13" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v13_Next" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v13_Next" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v14" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v14" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v14_Next" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v14_Next" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v15" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v15" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v15_Next" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v15_Next" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v16" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v16" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/v16_Next" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/v16_Next" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GoogleCalendarSyncAdapterPrebuilt" name="platform/vendor/unbundled_google/packages/GoogleCalendarSyncAdapterPrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleContactsSyncAdapter" name="platform/vendor/unbundled_google/packages/GoogleContactsSyncAdapter" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleHindiIME" name="platform/vendor/unbundled_google/packages/GoogleHindiIME" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleJapaneseIME" name="platform/vendor/unbundled_google/packages/GoogleJapaneseIME" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleKeepPrebuilt" name="platform/vendor/unbundled_google/packages/GoogleKeepPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GoogleEmergencyContacts" name="platform/vendor/unbundled_google/packages/GoogleEmergencyContacts" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GooglePartnerSetup" name="platform/vendor/unbundled_google/packages/GooglePartnerSetup" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GooglePhone" name="platform/vendor/unbundled_google/packages/GooglePhone" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GooglePinyinIME" name="platform/vendor/unbundled_google/packages/GooglePinyinIME" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GooglePlus" name="platform/vendor/unbundled_google/packages/GooglePlus" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GooglePhotosPrebuilt" name="platform/vendor/unbundled_google/packages/GooglePhotosPrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleProvisioningService" name="platform/vendor/unbundled_google/packages/GoogleProvisioningService" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleSearchPrebuilt" name="platform/vendor/unbundled_google/packages/GoogleSearchPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GoogleSearchLangPacks" name="platform/vendor/unbundled_google/packages/GoogleSearchLangPacks" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleServicesFramework" name="platform/vendor/unbundled_google/packages/GoogleServicesFramework" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleSpeechServices" name="platform/vendor/unbundled_google/packages/GoogleSpeechServices" />
+  <project path="vendor/unbundled_google/packages/GoogleSpellChecker" name="platform/vendor/unbundled_google/packages/GoogleSpellChecker" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleTTS" name="platform/vendor/unbundled_google/packages/GoogleTTS" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/GoogleTTSPrebuilt" name="platform/vendor/unbundled_google/packages/GoogleTTSPrebuilt" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GoogleZhuyinIME" name="platform/vendor/unbundled_google/packages/GoogleZhuyinIME" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Hangouts" name="platform/vendor/unbundled_google/packages/Hangouts" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/HelpRtcPrebuilt" name="platform/vendor/unbundled_google/packages/HelpRtcPrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/KoreanIME" name="platform/vendor/unbundled_google/packages/KoreanIME" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/LatinIMEGoogle" name="platform/vendor/unbundled_google/packages/LatinIMEGoogle" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/LatinIMEGooglePrebuilt" name="platform/vendor/unbundled_google/packages/LatinIMEGooglePrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/LeanbackIme" name="platform/vendor/unbundled_google/packages/LeanbackIme" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/LeanbackLauncher" name="platform/vendor/unbundled_google/packages/LeanbackLauncher" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Maps" name="platform/vendor/unbundled_google/packages/Maps" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/NexusLauncherPrebuilt" name="platform/vendor/unbundled_google/packages/NexusLauncherPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/NexusUploaderPrebuilt" name="platform/vendor/unbundled_google/packages/NexusUploaderPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/NovaPrebuilts" name="platform/vendor/unbundled_google/packages/NovaPrebuilts" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/OobConfig" name="platform/vendor/unbundled_google/packages/OobConfig" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Phonesky" name="platform/vendor/unbundled_google/packages/Phonesky" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PhoneskyTV" name="platform/vendor/unbundled_google/packages/PhoneskyTV" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PittPatt" name="platform/vendor/unbundled_google/packages/PittPatt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/PixelCLauncherPrebuilt" name="platform/vendor/unbundled_google/packages/PixelCLauncherPrebuilt" groups="vendor" clone-depth="1"/>
+  <project path="vendor/unbundled_google/packages/PlayAutoInstallConfig" name="platform/vendor/unbundled_google/packages/PlayAutoInstallConfig" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PlayBooks" name="platform/vendor/unbundled_google/packages/PlayBooks" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PlayGames" name="platform/vendor/unbundled_google/packages/PlayGames" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PlayMusic" name="platform/vendor/unbundled_google/packages/PlayMusic" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PlayNewsstand" name="platform/vendor/unbundled_google/packages/PlayNewsstand" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PlayVideos" name="platform/vendor/unbundled_google/packages/PlayVideos" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltBugle" name="platform/vendor/unbundled_google/packages/PrebuiltBugle" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltDeskClock" name="platform/vendor/unbundled_google/packages/PrebuiltDeskClock" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltDeskClockMicroApp" name="platform/vendor/unbundled_google/packages/PrebuiltDeskClockMicroApp" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltGearHead" name="platform/vendor/unbundled_google/packages/PrebuiltGearHead" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltGmail" name="platform/vendor/unbundled_google/packages/PrebuiltGmail" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltGmsCore" name="platform/vendor/unbundled_google/packages/PrebuiltGmsCore" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltGoogleCamera" name="platform/vendor/unbundled_google/packages/PrebuiltGoogleCamera" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltGoogleVr" name="platform/vendor/unbundled_google/packages/PrebuiltGoogleVr" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltGoogleContacts" name="platform/vendor/unbundled_google/packages/PrebuiltGoogleContacts" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltGoogleDialer" name="platform/vendor/unbundled_google/packages/PrebuiltGoogleDialer" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltNewsWeather" name="platform/vendor/unbundled_google/packages/PrebuiltNewsWeather" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/RecommendationsService" name="platform/vendor/unbundled_google/packages/RecommendationsService" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/RemindersPrebuilt" name="platform/vendor/unbundled_google/packages/RemindersPrebuilt" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/SecondScreenSetup" name="platform/vendor/unbundled_google/packages/SecondScreenSetup" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/SesamePrebuilt" name="platform/vendor/unbundled_google/packages/SesamePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/SettingsGoogle" name="platform/vendor/unbundled_google/packages/SettingsGoogle" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/SprintHiddenMenu" name="platform/vendor/unbundled_google/packages/SprintHiddenMenu" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/StorageManagerGoogle" name="platform/vendor/unbundled_google/packages/StorageManagerGoogle" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/SyncAPI" name="platform/vendor/unbundled_google/packages/SyncAPI" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/SystemUIGoogle" name="platform/vendor/unbundled_google/packages/SystemUIGoogle" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/TV" name="platform/vendor/unbundled_google/packages/TV" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/TalkBack" name="platform/vendor/unbundled_google/packages/TalkBack" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/TalkbackWearPrebuilt" name="platform/vendor/unbundled_google/packages/TalkbackWearPrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/TouchCollector" name="platform/vendor/unbundled_google/packages/TouchCollector" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/TranslatePrebuilt" name="platform/vendor/unbundled_google/packages/TranslatePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/TVBackdrop" name="platform/vendor/unbundled_google/packages/TVBackdrop" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/TvSearch" name="platform/vendor/unbundled_google/packages/TvSearch" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/TVVoiceInput" name="platform/vendor/unbundled_google/packages/TVVoiceInput" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/Turbo" name="platform/vendor/unbundled_google/packages/Turbo" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/VerizonUnifiedSettings" name="platform/vendor/unbundled_google/packages/VerizonUnifiedSettings" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Volta" name="platform/vendor/unbundled_google/packages/Volta" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/Wallet" name="platform/vendor/unbundled_google/packages/Wallet" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/WallpaperPickerGooglePrebuilt" name="platform/vendor/unbundled_google/packages/WallpaperPickerGooglePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/WallpapersUsTwo" name="platform/vendor/unbundled_google/packages/WallpapersUsTwo" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/WallpapersBReel" name="platform/vendor/unbundled_google/packages/WallpapersBReel" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/WearHandwritingPrebuilt" name="platform/vendor/unbundled_google/packages/WearHandwritingPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/WearKeyboardPrebuilt" name="platform/vendor/unbundled_google/packages/WearKeyboardPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/WebViewGoogle" name="platform/vendor/unbundled_google/packages/WebViewGoogle" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/YouTube" name="platform/vendor/unbundled_google/packages/YouTube" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/YouTubeTV" name="platform/vendor/unbundled_google/packages/YouTubeTV" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/libs/ndk_translation" name="platform/vendor/unbundled_google/libs/ndk_translation" groups="vendor" />
+  <project path="vendor/verizon/APNLibPrebuilt" name="platform/vendor/verizon/APNLibPrebuilt" groups="vendor" />
+  <project path="vendor/verizon/AppDirectedSMSProxyPrebuilt" name="platform/vendor/verizon/AppDirectedSMSProxyPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/verizon/AvsPrebuilt" name="platform/vendor/verizon/AvsPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/verizon/LLKAgent" name="platform/vendor/verizon/LLKAgent" groups="vendor" />
+  <project path="vendor/verizon/Obdm" name="platform/vendor/verizon/Obdm" groups="vendor" />
+  <project path="vendor/verizon/OMA-DM" name="platform/vendor/verizon/OMA-DM" groups="vendor,oma_dm" />
+  <project path="vendor/verizon/ShowcasePrebuilt" name="platform/vendor/verizon/ShowcasePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/verizon/VZWLcClient" name="platform/vendor/verizon/VZWLcClient" groups="vendor" />
+  <project path="vendor/widevine" name="platform/vendor/widevine" groups="vendor,widevine" />
+  <project path="vendor/xts" name="platform/vendor/xts" groups="vendor" />
+  <!-- END closed-source projects -->
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
