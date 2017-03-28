@@ -4,7 +4,7 @@
   <remote  name="goog"
            fetch=".."
            review="sso://googleplex-android/" />
-  <default revision="master"
+  <default revision="oc-dev"
            remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
   <manifest-server url="https://android-build.corp.google.com/manifestserver" />
@@ -37,12 +37,12 @@
   <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
   <project path="device/asus/fugu" name="device/asus/fugu" groups="device,fugu,broadcom_pdk,pdk" />
   <project path="device/asus/fugu-kernel" name="device/asus/fugu-kernel" groups="device,fugu,broadcom_pdk,pdk" clone-depth="1" />
-  <project path="device/broadcom/common" name="device/broadcom/common" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="device/broadcom/avko" name="device/broadcom/avko" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="device/broadcom/banff" name="device/broadcom/banff" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="device/broadcom/cypress" name="device/broadcom/cypress" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="device/broadcom/dawson" name="device/broadcom/dawson" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="device/broadcom/elfin" name="device/broadcom/elfin" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="device/broadcom/common" name="device/broadcom/common" groups="device" />
+  <project path="device/broadcom/avko" name="device/broadcom/avko" groups="device" />
+  <project path="device/broadcom/banff" name="device/broadcom/banff" groups="device" />
+  <project path="device/broadcom/cypress" name="device/broadcom/cypress" groups="device" />
+  <project path="device/broadcom/dawson" name="device/broadcom/dawson" groups="device" />
+  <project path="device/broadcom/elfin" name="device/broadcom/elfin" groups="device" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
@@ -99,10 +99,10 @@
   <project path="device/linaro/bootloader/OpenPlatformPkg" name="device/linaro/bootloader/OpenPlatformPkg" />
   <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk" />
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" />
-  <project path="device/mediatek/archer" name="device/mediatek/archer" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="device/mediatek/archer-kernel" name="device/mediatek/archer-kernel" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
-  <project path="device/mediatek/augie" name="device/mediatek/augie" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="device/mediatek/augie-kernel" name="device/mediatek/augie-kernel" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
+  <project path="device/mediatek/archer" name="device/mediatek/archer" groups="device" />
+  <project path="device/mediatek/archer-kernel" name="device/mediatek/archer-kernel" />
+  <project path="device/mediatek/augie" name="device/mediatek/augie" groups="device" />
+  <project path="device/mediatek/augie-kernel" name="device/mediatek/augie-kernel" />
   <project path="device/panasonic/owl" name="device/panasonic/owl" groups="device,panasonic,owl" />
   <project path="device/panasonic/owl-kernel" name="device/panasonic/owl-kernel" groups="device,panasonic,owl" clone-depth="1" />
   <project path="device/qcom/bat" name="device/qcom/bat" groups="device,bat" />
@@ -462,7 +462,7 @@
   <project path="hardware/realtek/8723bs" name="platform/hardware/realtek/8723bs" groups="8723bs" />
   <project path="hardware/renesas/salvator" name="platform/hardware/renesas/salvator" groups="device,salvator" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
-  <project path="kernel/private/bcm-97xxx" name="kernel/private/bcm-97xxx" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="kernel/private/bcm-97xxx" name="kernel/private/bcm-97xxx" />
   <project path="kernel/tests" name="kernel/tests" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
@@ -668,15 +668,15 @@
   <project path="vendor/asus/fugu" name="platform/vendor/asus/fugu" groups="vendor,fugu" />
   <project path="vendor/auto/embedded" name="platform/vendor/auto/embedded" groups="vendor" />
   <project path="vendor/auto/projection_protocol" name="platform/vendor/auto/projection_protocol" groups="vendor" />
-  <project path="vendor/broadcom/bcm_platform" name="platform/vendor/broadcom/bcm_platform" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="vendor/broadcom/bolt" name="platform/vendor/broadcom/bolt" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/broadcom/bcm_platform" name="platform/vendor/broadcom/bcm_platform" groups="vendor,broadcom" />
+  <project path="vendor/broadcom/bolt" name="platform/vendor/broadcom/bolt" groups="vendor,broadcom" />
   <project path="vendor/broadcom/common" name="platform/vendor/broadcom/common" groups="vendor,broadcom" />
-  <project path="vendor/broadcom/drivers" name="platform/vendor/broadcom/drivers" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/broadcom/drivers" name="platform/vendor/broadcom/drivers" groups="vendor,broadcom" />
   <project path="vendor/broadcom/nfc" name="platform/vendor/broadcom/nfc" groups="vendor,broadcom_nfc" />
-  <project path="vendor/broadcom/playready" name="platform/vendor/broadcom/playready" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
-  <project path="vendor/broadcom/prebuilts" name="platform/vendor/broadcom/prebuilts" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
-  <project path="vendor/broadcom/refsw" name="platform/vendor/broadcom/refsw" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
-  <project path="vendor/broadcom/release_prebuilts" name="platform/vendor/broadcom/release_prebuilts" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
+  <project path="vendor/broadcom/playready" name="platform/vendor/broadcom/playready" groups="vendor,broadcom" />
+  <project path="vendor/broadcom/prebuilts" name="platform/vendor/broadcom/prebuilts" groups="vendor,broadcom" />
+  <project path="vendor/broadcom/refsw" name="platform/vendor/broadcom/refsw" groups="vendor,broadcom" />
+  <project path="vendor/broadcom/release_prebuilts" name="platform/vendor/broadcom/release_prebuilts" groups="vendor,broadcom" />
   <project path="vendor/broadcom/wlan" name="platform/vendor/broadcom/wlan" groups="vendor" />
   <project path="vendor/eclipse" name="platform/vendor/eclipse" groups="vendor" />
   <project path="vendor/esmertec" name="platform/vendor/esmertec" groups="vendor" />
@@ -826,8 +826,8 @@
   <project path="vendor/intel/moorefield/prebuilts/houdini" name="platform/vendor/intel/moorefield/prebuilts/houdini" groups="vendor,fugu" clone-depth="1" />
   <project path="vendor/lge/bullhead" name="platform/vendor/lge/bullhead" groups="vendor,bullhead" />
   <project path="vendor/linaro/hikey" name="platform/vendor/linaro/hikey" groups="vendor" />
-  <project path="vendor/mediatek/archer" name="platform/vendor/mediatek/archer" groups="vendor,mediatek,archer" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="1" />
-  <project path="vendor/mediatek/augie" name="platform/vendor/mediatek/augie" groups="vendor,augie" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/mediatek/archer" name="platform/vendor/mediatek/archer" groups="vendor,mediatek,archer" clone-depth="1" />
+  <project path="vendor/mediatek/augie" name="platform/vendor/mediatek/augie" groups="vendor,augie" />
   <project path="vendor/moto/common" name="platform/vendor/moto/common" groups="vendor" />
   <project path="vendor/moto/prebuilt" name="platform/vendor/moto/prebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/netflix" name="platform/vendor/netflix" groups="vendor" />
