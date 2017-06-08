@@ -10,13 +10,15 @@
 
   <!-- Core LLVM toolchain components -->
   <project path="bionic" name="platform/bionic" />
-  <project path="llvm" name="toolchain/llvm" />
-  <project path="llvm/tools/clang" name="toolchain/clang" />
-  <project path="llvm/projects/compiler-rt" name="toolchain/compiler-rt" />
-  <project path="llvm/projects/libcxx" name="toolchain/libcxx" />
-  <project path="llvm/projects/libcxxabi" name="toolchain/libcxxabi" />
-  <project path="llvm/projects/openmp" name="toolchain/openmp_llvm" />
-  <project path="llvm/tools/clang/tools/extra" name="toolchain/clang-tools-extra" />
+  <project path="toolchain/llvm" name="toolchain/llvm">
+    <linkfile dest="llvm" src="."/>
+  </project>
+  <project path="toolchain/llvm/tools/clang" name="toolchain/clang" />
+  <project path="toolchain/llvm/projects/compiler-rt" name="toolchain/compiler-rt" />
+  <project path="toolchain/llvm/projects/libcxx" name="toolchain/libcxx" />
+  <project path="toolchain/llvm/projects/libcxxabi" name="toolchain/libcxxabi" />
+  <project path="toolchain/llvm/projects/openmp" name="toolchain/openmp_llvm" />
+  <project path="toolchain/llvm/tools/clang/tools/extra" name="toolchain/clang-tools-extra" />
 
   <!-- Binutils/gcc toolchains -->
   <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,darwin,arm" />
