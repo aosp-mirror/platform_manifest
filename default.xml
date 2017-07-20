@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remote  name="github"
+          fetch="https://github.com" />
+  
+  <remote  name="soap"
+           fetch="https://github.com/sixopenandroidproject" />
+  
   <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="nougat-mr2-release"
+           fetch="https://android.googlesource.com"
+          review="android-review.googlesource.com" />
+  
+  <default revision="refs/tags/android-7.1.2_r17"
            remote="aosp"
+           sync-c="true"
            sync-j="4" />
 
   <project path="build" name="platform/build" groups="pdk" >
@@ -554,5 +562,9 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
+  
+   <!-- BEGIN SUBSTRATUM -->
+  <project name="substratum/interfacer" path="packages/apps/ThemeInterfacer" remote="github" revision="n-rootless" />
+  <!-- ENG SUBSTRATUM -->
 
 </manifest>
