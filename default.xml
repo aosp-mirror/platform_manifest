@@ -8,19 +8,25 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" groups="pdk,tradefed" >
+  <project path="build/make" name="platform/build" groups="pdk,tradefed" >
     <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
   <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
     <linkfile src="root.bp" dest="Android.bp" />
-    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="bionic" name="platform/bionic" groups="pdk" />
   <project path="external/clang" name="platform/external/clang" groups="pdk" revision="dev" />
   <project path="external/clang-tools-extra" name="platform/external/clang-tools-extra" revision="dev" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" revision="dev" />
+  <project path="external/golang-protobuf" name="platform/external/golang-protobuf" groups="pdk" />
   <project path="external/googletest" name="platform/external/googletest" groups="pdk" />
   <project path="external/jemalloc" name="platform/external/jemalloc" groups="pdk" />
   <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" />
@@ -52,8 +58,6 @@
   <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,tradefed" clone-depth="1" />
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,tradefed" clone-depth="1" />
   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux,pdk,tradefed" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" groups="darwin,pdk,tradefed" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" />
   <project path="system/core" name="platform/system/core" groups="pdk" />
   <project path="toolchain/binutils" name="toolchain/binutils" />
