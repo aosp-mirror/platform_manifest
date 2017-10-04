@@ -4,38 +4,69 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="android-live-tv"
+  <default revision="master"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" groups="pdk" >
+  <project path="build/make" name="platform/build" groups="pdk" clone-depth="1" >
     <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="external/apache-http" name="platform/external/apache-http" groups="pdk-cw-fs" />
-  <project path="external/dexmaker" name="platform/external/dexmaker" groups="pdk-cw-fs" />
-  <project path="external/guava" name="platform/external/guava" groups="pdk-cw-fs" />
-  <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk-cw-fs,tradefed" />
-  <project path="external/icu" name="platform/external/icu" groups="pdk-cw-fs" />
-  <project path="external/jsr305" name="platform/external/jsr305" groups="pdk-cw-fs" />
-  <project path="external/junit" name="platform/external/junit" groups="pdk-cw-fs,tradefed" />
-  <project path="external/mockito" name="platform/external/mockito" groups="pdk-cw-fs" />
-  <project path="external/objenesis" name="platform/external/objenesis" groups="pdk-cw-fs" />
-  <project path="external/proguard" name="platform/external/proguard" groups="pdk-java,tradefed" />
-  <project path="external/protobuf" name="platform/external/protobuf" groups="pdk-cw-fs" />
-  <project path="prebuilts/devtools" name="platform/prebuilts/devtools" />
-  <project path="prebuilts/clang/darwin-x86/host/3.6" name="platform/prebuilts/clang/darwin-x86/host/3.6" groups="pdk,darwin" />
-  <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="pdk,linux" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
-  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" />
-  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="pdk,linux" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" />
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" />
-  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk,tradefed" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk,tradefed" />
+  <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" clone-depth="1" />
+  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" clone-depth="1" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="build/kati" name="platform/build/kati" clone-depth="1" />
+  <project path="bionic" name="platform/bionic" groups="pdk" clone-depth="1" />
+  <project path="external/apache-http" name="platform/external/apache-http" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/clang" name="platform/external/clang" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/dexmaker" name="platform/external/dexmaker" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/guava" name="platform/external/guava" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk-cw-fs,tradefed" clone-depth="1" />
+  <project path="external/icu" name="platform/external/icu" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/jemalloc" name="platform/external/jemalloc" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/jsr305" name="platform/external/jsr305" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/junit" name="platform/external/junit" groups="pdk-cw-fs,tradefed" clone-depth="1" />
+  <project path="external/libcap" name="platform/external/libcap" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/libcxx" name="platform/external/libcxx" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/llvm" name="platform/external/llvm" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/minijail" name="platform/external/minijail" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/mockito" name="platform/external/mockito" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/objenesis" name="platform/external/objenesis" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/proguard" name="platform/external/proguard" groups="pdk-java,tradefed" clone-depth="1" />
+  <project path="external/protobuf" name="platform/external/protobuf" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="external/zlib" name="platform/external/zlib" groups="pdk-cw-fs" clone-depth="1" />
+  <project path="frameworks/ex" name="platform/frameworks/ex" groups="pdk-cw-fs,pdk-fs" clone-depth="1"/>
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
+  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/devtools" name="platform/prebuilts/devtools" clone-depth="1" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" groups="pdk,darwin" clone-depth="1" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk,linux" clone-depth="1" />
+  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" />
+  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" clone-depth="1" />
+  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" groups="pdk,linux" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" clone-depth="1" />
+  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,pdk,tradefed" clone-depth="1" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
+  <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" clone-depth="1" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" clone-depth="1" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk,tradefed" clone-depth="1" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk,tradefed" clone-depth="1" />
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1" />
+  <project path="system/core" name="platform/system/core" groups="pdk" clone-depth="1" />
+  <project path="tools/repohooks" name="platform/tools/repohooks"  clone-depth="1" />
 
-  <project path="packages/apps/TV" name="platform/packages/apps/TV" />
+  <project path="packages/apps/TV" name="platform/packages/apps/TV" revision="android-live-tv" />
 
 </manifest>
