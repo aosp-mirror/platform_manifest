@@ -37,6 +37,15 @@
   <project path="development" name="platform/development" groups="developers,pdk-cw-fs,pdk-fs" />
   <project path="device/asus/fugu" name="device/asus/fugu" groups="device,fugu,broadcom_pdk,pdk" />
   <project path="device/asus/fugu-kernel" name="device/asus/fugu-kernel" groups="device,fugu,broadcom_pdk,pdk" clone-depth="1" />
+  <!--
+        goog-and-upload-partner : During repo upload: sync from internal but upload to partner
+        revision="mirror-partner-master-tv-dev" :
+		Replication mirror to allow partner CLs submitted on partner gerrit to be replicated to internal master.
+		Also where to sync from.
+	dest-branch="partner-master-tv-dev" : where in partner it should upload to
+	clone-depth="2" : Don't clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
+   -->
+  <project path="device/broadcom/7xxx-kernel" name="device/broadcom/7xxx-kernel" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" clone-depth="2"/>
   <project path="device/broadcom/common" name="device/broadcom/common" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
   <project path="device/broadcom/avko" name="device/broadcom/avko" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
   <project path="device/broadcom/banff" name="device/broadcom/banff" groups="device" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
