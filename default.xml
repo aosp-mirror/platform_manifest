@@ -8,20 +8,36 @@
            remote="aosp"
            sync-j="4" />
 
-  <!-- Dependencies -->
-  <project path="build" name="platform/build" groups="pdk" />
-  <project path="external/doclava" name="platform/external/doclava" groups="pdk" clone-depth="1" />
-  <project path="external/jdiff" name="platform/external/jdiff" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk-fs" clone-depth="1" />
-  <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
+  <!-- BEGIN dependencies -->
+  <!-- External dependencies -->
+  <!-- Config: shallow + same revision -->
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" groups="pdk"
+    clone-depth="1" />
+  <project path="external/flatbuffers" name="platform/external/flatbuffers" groups="pdk"
+    clone-depth="1" />
+  <project path="external/doclava" name="platform/external/doclava" groups="pdk"
+    clone-depth="1" />
+  <project path="external/jdiff" name="platform/external/jdiff" groups="pdk"
+    clone-depth="1" />
+  
+  <!-- Tools dependencies -->
+  <!-- Config: shallow + master revision -->
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk-fs"
+    clone-depth="1" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" />
   <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools" revision="4.1" clone-depth="1" />
-  <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" />
 
-  <!-- Project -->
+  <!-- Gradle dependencies -->
+  <!-- Config: shallow + specific revision -->
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools"
+    revision="4.4" clone-depth="1" />
+
+  <!-- END dependencies -->
+
+  <!-- BEGIN target project -->
   <project path="frameworks/support" name="platform/frameworks/support" groups="pdk-cw-fs,pdk-fs" />
+  <!-- END target project -->
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
