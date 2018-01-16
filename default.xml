@@ -8,39 +8,56 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build/make" name="platform/build" groups="pdk" >
-    <copyfile src="core/root.mk" dest="Makefile" />
-    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
-    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
-    <linkfile src="core" dest="build/core" />
-    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
-    <linkfile src="target" dest="build/target" />
+  <!-- build projects -->
+  <project path="build/make" name="platform/build" >
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
-  <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
+  <project path="build/blueprint" name="platform/build/blueprint" />
+  <project path="build/kati" name="platform/build/kati" />
   <project path="build/soong" name="platform/build/soong" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/clang" name="platform/external/clang" groups="pdk" />
-  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
-  <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" />
-  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" />
-  <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
-  <project path="external/ninja" name="platform/external/ninja" groups="pdk" />
-  <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
-  <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" groups="pdk,darwin" clone-depth="1" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" clone-depth="1" />
-  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"  groups="pdk,linux" clone-depth="1" />
-  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,tradefed" clone-depth="1" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" groups="pdk" clone-depth="1" />
-  <project path="toolchain/go" name="toolchain/go" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
+  <project path="prebuilts/clang-tools" name="platform/prebuilts/clang-tools" clone-depth="3" />
 
+  <!-- toolchain linux prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="linux" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" clone-depth="1" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux" clone-depth="1" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux" clone-depth="1" />
+
+  <!-- toolchain darwin prebuilts -->
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" groups="darwin" clone-depth="1" />
+  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="darwin" clone-depth="1" />
+  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="darwin" clone-depth="1" />
+  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin" clone-depth="1" />
+  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" groups="darwin" clone-depth="1" />
+
+  <!-- toolchain jdk prebuilts -->
+  <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" clone-depth="1" />
+  <project path="prebuilts/jdk/jdk9" name="platform/prebuilts/jdk/jdk9" clone-depth="1" />
+
+  <!-- dependency prebuilts -->
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" clone-depth="1" />
+
+  <!-- dependency source -->
+  <project path="development" name="platform/development" />
+  <project path="external/clang" name="platform/external/clang" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" />
+  <project path="external/googletest" name="platform/external/googletest" />
+  <project path="external/libcxx" name="platform/external/libcxx" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" />
+  <project path="external/libunwind" name="platform/external/libunwind" />
+  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" />
+  <project path="external/llvm" name="platform/external/llvm" />
+  <project path="external/protobuf" name="platform/external/protobuf" />
+  <project path="external/zlib" name="platform/external/zlib" />
+  <project path="external/zopfli" name="platform/external/zopfli" />
+  <project path="system/core" name="platform/system/core" />
+
+  <!-- target projects -->
+  <project path="toolchain/go" name="toolchain/go" />
+  <project path="dalvik" name="platform/dalvik" />
+  <project path="external/ninja" name="platform/external/ninja" />
 </manifest>
