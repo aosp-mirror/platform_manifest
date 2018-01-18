@@ -19,14 +19,13 @@
     clone-depth="1" />
   <project path="external/jdiff" name="platform/external/jdiff" groups="pdk"
     clone-depth="1" />
-  
+
   <!-- Tools dependencies -->
   <!-- Config: shallow + master revision -->
   <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk-fs"
     clone-depth="1" />
   <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" />
   <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
-  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" />
 
   <!-- Gradle dependencies -->
   <!-- Config: shallow + specific revision -->
@@ -36,7 +35,9 @@
   <!-- END dependencies -->
 
   <!-- BEGIN target project -->
-  <project path="frameworks/support" name="platform/frameworks/support" groups="pdk-cw-fs,pdk-fs" />
+  <project path="frameworks/support" name="platform/frameworks/support" groups="pdk-cw-fs,pdk-fs">
+    <linkfile src="development/unbundled-build" dest="frameworks/support/unbundled-build" />
+  </project>
   <!-- END target project -->
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
