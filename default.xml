@@ -4,7 +4,7 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="n-iot-preview-4"
+  <default revision="nougat-iot-release"
            remote="aosp"
            sync-j="4" />
 
@@ -29,8 +29,6 @@
   <project path="developers/demos" name="platform/developers/demos" />
   <project path="developers/samples/android" name="platform/developers/samples/android" />
   <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
-  <project path="device/asus/fugu" name="device/asus/fugu" groups="device,fugu,broadcom_pdk,pdk" />
-  <project path="device/asus/fugu-kernel" name="device/asus/fugu-kernel" groups="device,fugu,broadcom_pdk,pdk" clone-depth="1" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
@@ -51,18 +49,6 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device,pdk" />
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs,pdk" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,pdk" />
-  <project path="device/google/dragon" name="device/google/dragon" groups="device,dragon,pdk" />
-  <project path="device/google/dragon-kernel" name="device/google/dragon-kernel" groups="device,dragon,pdk" clone-depth="1" />
-  <project path="device/htc/flounder" name="device/htc/flounder" groups="device,flounder,pdk" />
-  <project path="device/htc/flounder-kernel" name="device/htc/flounder-kernel" groups="device,flounder,pdk" clone-depth="1" />
-  <project path="device/huawei/angler" name="device/huawei/angler" groups="device,angler,broadcom_pdk,pdk" />
-  <project path="device/huawei/angler-kernel" name="device/huawei/angler-kernel" groups="device,angler,broadcom_pdk,pdk" clone-depth="1" />
-  <project path="device/lge/bullhead" name="device/lge/bullhead" groups="device,bullhead,pdk" />
-  <project path="device/lge/bullhead-kernel" name="device/lge/bullhead-kernel" groups="device,bullhead,pdk" clone-depth="1" />
-  <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk" />
-  <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" />
-  <project path="device/moto/shamu" name="device/moto/shamu" groups="device,shamu,broadcom_pdk,generic_fs,pdk" />
-  <project path="device/moto/shamu-kernel" name="device/moto/shamu-kernel" groups="device,shamu,broadcom_pdk,generic_fs,pdk" clone-depth="1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/aac" name="platform/external/aac" groups="pdk" />
@@ -531,7 +517,7 @@
   <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" />
   <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="nopresubmit,tools" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="nopresubmit,tools"/>
   <project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" />
   <project path="tools/loganalysis" name="platform/tools/loganalysis" groups="notdefault,tradefed" />
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
@@ -543,14 +529,8 @@
 
   <!-- BEGIN Android Things open-source projects -->
   <project path="external/u-boot" name="platform/external/u-boot" groups="iot" />
-  <project path="hardware/bsp/bootloader/intel/edison-u-boot" name="platform/hardware/bsp/bootloader/intel/edison-u-boot" groups="edison" />
-  <project path="hardware/bsp/bootloader/nxp/uboot-imx" name="platform/hardware/bsp/bootloader/nxp/uboot-imx" groups="imx6ul,imx7d" />
-  <project path="hardware/bsp/kernel/common/v4.4" name="platform/hardware/bsp/kernel/common/v4.4" />
-  <project path="hardware/bsp/kernel/intel/broxton-v4.4" name="platform/hardware/bsp/kernel/intel/broxton-v4.4" groups="joule" />
-  <project path="hardware/bsp/kernel/intel/edison-v3.10" name="platform/hardware/bsp/kernel/intel/edison-v3.10" groups="edison" />
-  <project path="hardware/bsp/kernel/intel/edison-v4.4" name="platform/hardware/bsp/kernel/intel/edison-v4.4" groups="edison" />
-  <project path="hardware/bsp/kernel/nxp/imx-v4.1" name="platform/hardware/bsp/kernel/nxp/imx-v4.1" groups="imx6ul,imx7d" />
-  <project path="hardware/bsp/kernel/raspberrypi/pi-v4.4" name="platform/hardware/bsp/kernel/raspberrypi/pi-v4.4" groups="rpi" />
+  <project path="hardware/bsp/kernel/common/v4.4" name="platform/hardware/bsp/kernel/common/v4.4" groups="rk3229,rk3399" />
+  <project path="hardware/bsp/kernel/qcom/qcom-msm8x09-v3.10" name="platform/hardware/bsp/kernel/qcom/qcom-msm8x09-v3.10" groups="msm8x09" />
   <!-- END Android Things open-source projects -->
 
 </manifest>
