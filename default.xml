@@ -4,10 +4,11 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="oreo-mr1-release"
+  <default revision="oreo-mr1-iot-release"
            remote="aosp"
            sync-j="4" />
 
+  <!-- BEGIN open-source projects -->
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -58,6 +59,9 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device,pdk" />
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs,pdk" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" />
+  <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device"/>
+  <project path="device/google/cuttlefish_common" name="device/google/cuttlefish_common" groups="device"/>
+  <project path="device/google/cuttlefish_kernel" name="device/google/cuttlefish_kernel" groups="device" clone-depth="1"/>
   <project path="device/google/dragon" name="device/google/dragon" groups="device,dragon,pdk" />
   <project path="device/google/dragon-kernel" name="device/google/dragon-kernel" groups="device,dragon,pdk" clone-depth="1" />
   <project path="device/google/marlin" name="device/google/marlin" groups="device,marlin" />
@@ -126,6 +130,7 @@
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="pdk" />
   <project path="external/doclava" name="platform/external/doclava" groups="pdk" />
   <project path="external/donuts" name="platform/external/donuts" groups="pdk" />
+  <project path="external/drm_gralloc" name="platform/external/drm_gralloc" groups="drm_gralloc,pdk-fs" />
   <project path="external/drm_hwcomposer" name="platform/external/drm_hwcomposer" groups="drm_hwcomposer,pdk-fs" />
   <project path="external/droiddriver" name="platform/external/droiddriver" groups="pdk" />
   <project path="external/drrickorang" name="platform/external/drrickorang" groups="pdk" />
@@ -231,6 +236,7 @@
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk" />
   <project path="external/libusb" name="platform/external/libusb" groups="pdk" />
   <project path="external/libusb-compat" name="platform/external/libusb-compat" groups="pdk" />
+  <project path="external/libutf" name="platform/external/libutf" groups="pdk" />
   <project path="external/libvncserver" name="platform/external/libvncserver" groups="pdk" />
   <project path="external/libvorbis" name="platform/external/libvorbis" groups="pdk" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="pdk" />
@@ -252,6 +258,7 @@
   <project path="external/mesa3d" name="platform/external/mesa3d" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/messageformat" name="platform/external/messageformat" groups="pdk" />
   <project path="external/Microsoft-GSL" name="platform/external/Microsoft-GSL" groups="pdk" />
+  <project path="external/minigbm" name="platform/external/minigbm" groups="pdk" />
   <project path="external/minijail" name="platform/external/minijail" groups="pdk" />
   <project path="external/mksh" name="platform/external/mksh" groups="pdk" />
   <project path="external/mmc-utils" name="platform/external/mmc-utils" groups="pdk" />
@@ -343,6 +350,7 @@
   <project path="external/webp" name="platform/external/webp" groups="pdk,qcom_msm8x26" />
   <project path="external/webrtc" name="platform/external/webrtc" groups="pdk" />
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="pdk" />
+  <project path="external/wpantund" name="platform/external/wpantund" groups="pdk" />
   <project path="external/wycheproof" name="platform/external/wycheproof" groups="pdk" />
   <project path="external/x264" name="platform/external/x264" groups="pdk" />
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="pdk" />
@@ -602,7 +610,12 @@
   <project path="test/vts-testcase/performance" name="platform/test/vts-testcase/performance" groups="vts,pdk-fs" />
   <project path="test/vts-testcase/security" name="platform/test/vts-testcase/security" groups="vts" />
   <project path="test/vts-testcase/vndk" name="platform/test/vts-testcase/vndk" groups="vtsi,pdk-fs" />
+  <project path="test/vti/alert" name="platform/test/vti/alert" groups="vts,pdk-fs" />
+  <project path="test/vti/dashboard" name="platform/test/vti/dashboard" groups="vts,pdk-fs" />
+  <project path="test/vti/fuzz_test_serving" name="platform/test/vti/fuzz_test_serving" groups="vts,pdk-fs" />
+  <project path="test/vti/test_serving" name="platform/test/vti/test_serving" groups="vts,pdk-fs" />
   <project path="toolchain/binutils" name="toolchain/binutils" groups="pdk" />
+  <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,pdk,tradefed" />
   <project path="test/sts" name="platform/test/sts" groups="sts,pdk" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
@@ -619,7 +632,14 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
   <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" />
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
+  <!-- END open-source projects -->
 
-  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+  <!-- BEGIN Android Things open-source projects -->
+  <project path="external/u-boot" name="platform/external/u-boot" groups="iot" />
+  <project path="hardware/bsp/bootloader/nxp/uboot-imx" name="platform/hardware/bsp/bootloader/nxp/uboot-imx" groups="imx7d" />
+  <project path="hardware/bsp/kernel/common/v4.4" name="platform/hardware/bsp/kernel/common/v4.4" />
+  <project path="hardware/bsp/kernel/nxp/imx-v4.9" name="platform/hardware/bsp/kernel/nxp/imx-v4.9" groups="imx7d" />
+  <project path="hardware/bsp/kernel/raspberrypi/pi-v4.4" name="platform/hardware/bsp/kernel/raspberrypi/pi-v4.4" groups="rpi" />
+  <!-- END Android Things open-source projects -->
 
 </manifest>
