@@ -34,25 +34,19 @@
   <project path="developers/samples/android" name="platform/developers/samples/android" groups="developers" />
   <project path="development" name="platform/development" groups="developers,pdk-cw-fs,pdk-fs" />
   <!--
-        goog-and-upload-partner : During repo upload: sync from internal but upload to partner
-         :
-		Replication mirror to allow partner CLs submitted on partner gerrit to be replicated to internal master.
-		Also where to sync from.
-	dest-branch="p-tv-dev" :  where in partner it should upload to
-        revision="mirror-partner-p-tv-dev" : where in partner it should copy/replicate from
 	clone-depth="2" : Don"t clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
    -->
-  <project path="device/broadcom/avko-kernel" name="device/broadcom/avko-kernel" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" clone-depth="2"/>
-  <project path="device/broadcom/banff-kernel" name="device/broadcom/banff-kernel" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" clone-depth="2"/>
-  <project path="device/broadcom/cypress-kernel" name="device/broadcom/cypress-kernel" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" clone-depth="2"/>
-  <project path="device/broadcom/dawson-kernel" name="device/broadcom/dawson-kernel" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" clone-depth="2"/>
-  <project path="device/broadcom/elfin-kernel" name="device/broadcom/elfin-kernel" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" clone-depth="2"/>
-  <project path="device/broadcom/common" name="device/broadcom/common" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
-  <project path="device/broadcom/avko" name="device/broadcom/avko" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
-  <project path="device/broadcom/banff" name="device/broadcom/banff" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
-  <project path="device/broadcom/cypress" name="device/broadcom/cypress" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
-  <project path="device/broadcom/dawson" name="device/broadcom/dawson" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
-  <project path="device/broadcom/elfin" name="device/broadcom/elfin" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
+  <project path="device/broadcom/avko-kernel" name="device/broadcom/avko-kernel" groups="device"  clone-depth="2"/>
+  <project path="device/broadcom/banff-kernel" name="device/broadcom/banff-kernel" groups="device"  clone-depth="2"/>
+  <project path="device/broadcom/cypress-kernel" name="device/broadcom/cypress-kernel" groups="device"  clone-depth="2"/>
+  <project path="device/broadcom/dawson-kernel" name="device/broadcom/dawson-kernel" groups="device"  clone-depth="2"/>
+  <project path="device/broadcom/elfin-kernel" name="device/broadcom/elfin-kernel" groups="device"  clone-depth="2"/>
+  <project path="device/broadcom/common" name="device/broadcom/common" groups="device"  />
+  <project path="device/broadcom/avko" name="device/broadcom/avko" groups="device"  />
+  <project path="device/broadcom/banff" name="device/broadcom/banff" groups="device"  />
+  <project path="device/broadcom/cypress" name="device/broadcom/cypress" groups="device"  />
+  <project path="device/broadcom/dawson" name="device/broadcom/dawson" groups="device"  />
+  <project path="device/broadcom/elfin" name="device/broadcom/elfin" groups="device"  />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
@@ -554,7 +548,7 @@
   <project path="hardware/samsung_slsi/exynos3250" name="platform/hardware/samsung_slsi/exynos3250" groups="exynos3250" />
   <project path="hardware/samsung_slsi/exynos7270" name="platform/hardware/samsung_slsi/exynos7270" groups="exynos7270" />
   <project path="kernel/configs" name="kernel/configs" groups="vts,pdk" />
-  <project path="kernel/private/bcm-97xxx" name="kernel/private/bcm-97xxx" groups="device" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
+  <project path="kernel/private/bcm-97xxx" name="kernel/private/bcm-97xxx" groups="device"  />
   <project path="kernel/tests" name="kernel/tests" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
@@ -780,15 +774,15 @@
   <project path="vendor/auto/embedded" name="platform/vendor/auto/embedded" groups="vendor" />
   <project path="vendor/auto/projection_protocol" name="platform/vendor/auto/projection_protocol" groups="vendor" />
   <project path="vendor/auto/vms" name="platform/vendor/auto/vms" groups="vendor,volvocars" />
-  <project path="vendor/broadcom/bcm_platform" name="platform/vendor/broadcom/bcm_platform" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
-  <project path="vendor/broadcom/bolt" name="platform/vendor/broadcom/bolt" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
+  <project path="vendor/broadcom/bcm_platform" name="platform/vendor/broadcom/bcm_platform" groups="vendor,broadcom"  />
+  <project path="vendor/broadcom/bolt" name="platform/vendor/broadcom/bolt" groups="vendor,broadcom"  />
   <project path="vendor/broadcom/common" name="platform/vendor/broadcom/common" groups="vendor,broadcom" />
-  <project path="vendor/broadcom/drivers" name="platform/vendor/broadcom/drivers" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
+  <project path="vendor/broadcom/drivers" name="platform/vendor/broadcom/drivers" groups="vendor,broadcom"  />
   <project path="vendor/broadcom/nfc" name="platform/vendor/broadcom/nfc" groups="vendor,broadcom_nfc" />
-  <project path="vendor/broadcom/playready" name="platform/vendor/broadcom/playready" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" clone-depth="1" />
-  <project path="vendor/broadcom/prebuilts" name="platform/vendor/broadcom/prebuilts" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" clone-depth="1" />
-  <project path="vendor/broadcom/refsw" name="platform/vendor/broadcom/refsw" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" />
-  <project path="vendor/broadcom/release_prebuilts" name="platform/vendor/broadcom/release_prebuilts" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="p-tv-dev" revision="mirror-partner-p-tv-dev" clone-depth="1" />
+  <project path="vendor/broadcom/playready" name="platform/vendor/broadcom/playready" groups="vendor,broadcom"  clone-depth="1" />
+  <project path="vendor/broadcom/prebuilts" name="platform/vendor/broadcom/prebuilts" groups="vendor,broadcom"  clone-depth="1" />
+  <project path="vendor/broadcom/refsw" name="platform/vendor/broadcom/refsw" groups="vendor,broadcom"  />
+  <project path="vendor/broadcom/release_prebuilts" name="platform/vendor/broadcom/release_prebuilts" groups="vendor,broadcom"  clone-depth="1" />
   <project path="vendor/broadcom/wlan" name="platform/vendor/broadcom/wlan" groups="vendor" />
   <project path="vendor/esmertec" name="platform/vendor/esmertec" groups="vendor" />
   <project path="vendor/fpc" name="platform/vendor/fpc" groups="vendor,fpc" />
