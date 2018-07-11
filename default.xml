@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="aosp"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+  <default revision="androidx-master-dev"
+           remote="aosp"
+           sync-j="4" />
+  <!-- BEGIN dependencies -->
+  <!-- External dependencies -->
+  <!-- Config: shallow + same revision -->
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" groups="pdk"
+    clone-depth="1" revision="master" />
+  <project path="external/flatbuffers" name="platform/external/flatbuffers" groups="pdk"
+    clone-depth="1" revision="master" />
+  <project path="external/doclava" name="platform/external/doclava" groups="pdk"
+    clone-depth="1" revision="master" />
+  <project path="external/jdiff" name="platform/external/jdiff" groups="pdk"
+    clone-depth="1" revision="master" />
+  <!-- Tools dependencies -->
+  <!-- Config: shallow + master revision -->
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk-fs"
+    clone-depth="1" revision="master" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" revision="master" />
+  <!-- Gradle dependencies -->
+  <!-- Config: shallow + specific revision -->
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools"
+    revision="4.4" clone-depth="1" />
+  <!-- END dependencies -->
+  <!-- BEGIN target project -->
+  <project path="frameworks/support" name="platform/frameworks/support" groups="pdk-cw-fs,pdk-fs">
+    <linkfile src="development/unbundled-build" dest="frameworks/support/unbundled-build" />
+  </project>
+  <!-- END target project -->
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+</manifest>
