@@ -69,6 +69,9 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device,pdk" />
   <project path="device/google/atv" name="device/google/atv" groups="device,broadcom_pdk,generic_fs,pdk" />
   <project path="device/google/bertha" name="device/google/bertha" groups="device" />
+  <project path="device/google/bonito" name="device/google/bonito" groups="device,bonito" />
+  <project path="device/google/bonito-kernel" name="device/google/bonito-kernel" groups="device,bonito" clone-depth="1" />
+  <project path="device/google/bonito-sepolicy" name="device/google/bonito-sepolicy" groups="device,bonito" />
   <project path="device/google/cheets2" name="device/google/cheets2" groups="device" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" />
   <project path="device/google/clockwork" name="device/google/clockwork" groups="device,pdk-cw" />
@@ -510,6 +513,11 @@
   <project path="hardware/qcom/msm8x84" name="platform/hardware/qcom/msm8x84" groups="qcom_msm8x84,pdk-qcom" />
   <project path="hardware/qcom/neuralnetworks/hvxservice" name="platform/hardware/qcom/neuralnetworks/hvxservice" groups="wahoo" />
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom,pdk-qcom" />
+  <project path="hardware/qcom/sdm710/display" name="platform/hardware/qcom/sdm710/display" groups="qcom_sdm710" />
+  <project path="hardware/qcom/sdm710/gps" name="platform/hardware/qcom/sdm710/gps" groups="qcom_sdm710" />
+  <project path="hardware/qcom/sdm710/media" name="platform/hardware/qcom/sdm710/media" groups="qcom_sdm710" />
+  <project path="hardware/qcom/sdm710/thermal" name="platform/hardware/qcom/sdm710/thermal" groups="qcom_sdm710" />
+  <project path="hardware/qcom/sdm710/vr" name="platform/hardware/qcom/sdm710/vr" groups="qcom_sdm710" />
   <project path="hardware/qcom/sdm845/bt" name="platform/hardware/qcom/sdm845/bt" groups="qcom_sdm845" />
   <project path="hardware/qcom/sdm845/data/ipacfg-mgr" name="platform/hardware/qcom/sdm845/data/ipacfg-mgr" groups="vendor,qcom_sdm845" >
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm845/Android.mk" />
@@ -890,6 +898,8 @@
   <project path="vendor/google_data/fdo_profile" name="platform/vendor/google_data/fdo_profile" groups="vendor"/>
   <project path="vendor/google_data/pgo_profile" name="platform/vendor/google_data/pgo_profile" groups="vendor"/>
   <project path="vendor/google_devices/bertha" name="platform/vendor/google_devices/bertha" groups="vendor"/>
+  <project path="vendor/google_devices/bonito/prebuilts" name="platform/vendor/google_devices/bonito/prebuilt" groups="vendor,bonito" clone-depth="1" />
+  <project path="vendor/google_devices/bonito/proprietary" name="platform/vendor/google_devices/bonito/proprietary" groups="vendor,bonito" />
   <project path="vendor/google_devices/cheets" name="platform/vendor/google_devices/cheets" groups="vendor"/>
   <project path="vendor/google_devices/common/proprietary/confirmatioui_hal" name="platform/vendor/google_devices/common/proprietary/confirmationui_hal" />
   <project path="vendor/google_devices/crosshatch/prebuilts" name="platform/vendor/google_devices/crosshatch/prebuilt" groups="vendor,crosshatch" clone-depth="1" />
@@ -1050,6 +1060,51 @@
   <project path="vendor/qcom/mtp8998" name="platform/vendor/qcom/mtp8998" groups="device,mtp8998" clone-depth="1" />
   <project path="vendor/qcom/proprietary/interfaces" name="platform/vendor/qcom/proprietary/interfaces" groups="vendor,qcom,qcom_proprietary_interfaces" />
   <project path="vendor/volvocars" name="platform/vendor/volvocars" groups="vendor,volvocars" />
+  <project path="vendor/qcom/sdm710/codeaurora/bluetooth" name="platform/vendor/qcom/sdm710/codeaurora/bluetooth" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/codeaurora/commonsys/telephony" name="platform/vendor/qcom/sdm710/codeaurora/telephony" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/codeaurora/dataservices" name="platform/vendor/qcom/sdm710/codeaurora/dataservices" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/codeaurora/location" name="platform/vendor/qcom/sdm710/codeaurora/location" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/codeaurora/softap" name="platform/vendor/qcom/sdm710/codeaurora/system/qcom" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/codeaurora/time-services" name="platform/vendor/qcom/sdm710/codeaurora/time-services" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/android-perf" name="platform/vendor/qcom/sdm710/proprietary/ship/android-perf" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/bluetooth" name="platform/vendor/qcom/sdm710/proprietary/bluetooth" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/bt/hci_qcomm_init" name="platform/vendor/qcom/sdm710/proprietary/ship/bt/hci_qcomm_init" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/chi-cdk" name="platform/vendor/qcom/sdm710/proprietary/mm-camerasdk" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/cne" name="platform/vendor/qcom/sdm710/proprietary/ship/cne" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/common" name="platform/vendor/qcom/sdm710/proprietary/ship/common" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/commonsys/android-perf" name="platform/vendor/qcom/sdm710/proprietary/ship/android-perf-commonsys" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/commonsys-intf/android-perf" name="platform/vendor/qcom/sdm710/proprietary/ship/android-perf-commonsys-intf" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/commonsys-intf/sensors-see" name="platform/vendor/qcom/sdm710/proprietary/ship/sensors-see-commonsys-intf" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/commonsys-intf/telephony" name="platform/vendor/qcom/sdm710/proprietary/telephony-commonsys-intf" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/commonsys/qcrilOemHook" name="platform/vendor/qcom/sdm710/proprietary/qcrilOemHook" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/commonsys/telephony-apps" name="platform/vendor/qcom/sdm710/proprietary/telephony-apps-commonsys" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/commonsys/telephony-fwk" name="platform/vendor/qcom/sdm710/proprietary/telephony-fwk" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/commonsys/uim_remote_service" name="platform/vendor/qcom/sdm710/proprietary/uim_remote_service" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/data" name="platform/vendor/qcom/sdm710/proprietary/ship/data" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/diag" name="platform/vendor/qcom/sdm710/proprietary/ship/diag" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/display" name="platform/vendor/qcom/sdm710/proprietary/ship/display" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/grease/utilities" name="platform/vendor/qcom/sdm710/proprietary/grease/utilities" groups="vendor,qcom_sdm710" clone-depth="1" />
+  <project path="vendor/qcom/sdm710/proprietary/ims-ship" name="platform/vendor/qcom/sdm710/proprietary/ship/ims-ship" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/mdm-helper" name="platform/vendor/qcom/sdm710/proprietary/mdm-helper" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/media" name="platform/vendor/qcom/sdm710/proprietary/ship/media" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/mm-audio-cal" name="platform/vendor/qcom/sdm710/proprietary/ship/mm-audio-cal" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/mm-audio" name="platform/vendor/qcom/sdm710/proprietary/ship/mm-audio" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/prebuilt_grease" name="platform/vendor/qcom/sdm710/prebuilts/grease" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/qcril-data-hal" name="platform/vendor/qcom/sdm710/proprietary/ship/qcril-data-hal" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/qcril-hal" name="platform/vendor/qcom/sdm710/proprietary/ship/qcril-hal" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/qcril" name="platform/vendor/qcom/sdm710/proprietary/ship/qcril" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/qcril-qmi-services" name="platform/vendor/qcom/sdm710/proprietary/ship/qmi-services" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/qmi-framework" name="platform/vendor/qcom/sdm710/proprietary/ship/qmi-framework" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/qmi" name="platform/vendor/qcom/sdm710/proprietary/ship/qmi" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/remotefs" name="platform/vendor/qcom/sdm710/proprietary/remotefs" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/securemsm" name="platform/vendor/qcom/sdm710/proprietary/ship/securemsm" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/sensors-see" name="platform/vendor/qcom/sdm710/proprietary/ship/sensors-see" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/ss-restart" name="platform/vendor/qcom/sdm710/proprietary/ss-restart" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/ss-services" name="platform/vendor/qcom/sdm710/proprietary/ss-services" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/tango_hal" name="platform/vendor/qcom/sdm710/proprietary/tango_hal" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/telephony-apps" name="platform/vendor/qcom/sdm710/proprietary/telephony-apps" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/thermal-engine" name="platform/vendor/qcom/sdm710/proprietary/thermal-engine" groups="vendor,qcom_sdm710" />
+  <project path="vendor/qcom/sdm710/proprietary/time-services" name="platform/vendor/qcom/sdm710/proprietary/ship/time-services" groups="vendor,qcom_sdm710" />
   <project path="vendor/qcom/sdm845/codeaurora/bluetooth" name="platform/vendor/qcom/sdm845/codeaurora/bluetooth" groups="vendor,qcom_sdm845" />
   <project path="vendor/qcom/sdm845/codeaurora/dataservices" name="platform/vendor/qcom/sdm845/codeaurora/dataservices" groups="vendor,qcom_sdm845" />
   <project path="vendor/qcom/sdm845/codeaurora/location" name="platform/vendor/qcom/sdm845/codeaurora/location" groups="vendor,qcom_sdm845" />
