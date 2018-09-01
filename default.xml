@@ -83,6 +83,9 @@
   <project path="device/google/cheets2" name="device/google/cheets2" groups="device" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" />
   <project path="device/google/clockwork" name="device/google/clockwork" groups="device,pdk-cw" />
+  <project path="device/google/coral" name="device/google/coral" groups="device,coral" />
+  <project path="device/google/coral-kernel" name="device/google/coral-kernel" groups="device,coral" clone-depth="1" />
+  <project path="device/google/coral-sepolicy" name="device/google/coral-sepolicy" groups="device,coral" />
   <project path="device/google/crosshatch" name="device/google/crosshatch" groups="device,crosshatch" />
   <project path="device/google/crosshatch-kernel" name="device/google/crosshatch-kernel" groups="device,crosshatch" clone-depth="1" />
   <project path="device/google/crosshatch-sepolicy" name="device/google/crosshatch-sepolicy" groups="device,crosshatch" />
@@ -559,6 +562,11 @@
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sm8150/Android.mk" />
     <linkfile src="os_pickup.bp" dest="hardware/qcom/sm8150/Android.bp" />
   </project>
+  <project path="hardware/qcom/sm8150/display" name="platform/hardware/qcom/sm8150/display" groups="qcom_sm8150" />
+  <project path="hardware/qcom/sm8150/gps" name="platform/hardware/qcom/sm8150/gps" groups="qcom_sm8150" />
+  <project path="hardware/qcom/sm8150/media" name="platform/hardware/qcom/sm8150/media" groups="qcom_sm8150" />
+  <project path="hardware/qcom/sm8150/thermal" name="platform/hardware/qcom/sm8150/thermal" groups="qcom_sm8150" />
+  <project path="hardware/qcom/sm8150/vr" name="platform/hardware/qcom/sm8150/vr" groups="qcom_sm8150" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk-qcom" />
   <project path="hardware/realtek/8723bs" name="platform/hardware/realtek/8723bs" groups="8723bs" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
@@ -940,6 +948,8 @@
   <project path="vendor/google_devices/bonito/proprietary" name="platform/vendor/google_devices/bonito/proprietary" groups="vendor,bonito" />
   <project path="vendor/google_devices/cheets" name="platform/vendor/google_devices/cheets" groups="vendor"/>
   <project path="vendor/google_devices/common/proprietary/confirmatioui_hal" name="platform/vendor/google_devices/common/proprietary/confirmationui_hal" />
+  <project path="vendor/google_devices/coral/prebuilts" name="platform/vendor/google_devices/coral/prebuilts" groups="vendor,coral" clone-depth="1" />
+  <project path="vendor/google_devices/coral/proprietary" name="platform/vendor/google_devices/coral/proprietary" groups="vendor,coral" />
   <project path="vendor/google_devices/crosshatch/prebuilts" name="platform/vendor/google_devices/crosshatch/prebuilt" groups="vendor,crosshatch" clone-depth="1" />
   <project path="vendor/google_devices/crosshatch/proprietary" name="platform/vendor/google_devices/crosshatch/proprietary" groups="vendor,crosshatch"/>
   <project path="vendor/google_devices/cuttlefish_common" name="platform/vendor/google_devices/cuttlefish_common" groups="vendor"/>
@@ -1101,10 +1111,75 @@
   <project path="vendor/qcom/sdm845/proprietary/wlan/common-tools" name="platform/vendor/qcom/sdm845/proprietary/wlan/common-tools" groups="vendor,qcom_sdm845" />
   <project path="vendor/qcom/sdm845/proprietary/wlan/utils" name="platform/vendor/qcom/sdm845/proprietary/ship/wlan/utils" groups="vendor,qcom_sdm845" />
   <project path="vendor/qcom/sidekickgraphics" name="platform/vendor/qcom/sidekickgraphics" groups="vendor,qcom_sidekickgraphics" clone-depth="1" />
+  <project path="vendor/qcom/sm8150/codeaurora/audio" name="platform/vendor/qcom/sm8150/codeaurora/audio" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/bluetooth" name="platform/vendor/qcom/sm8150/codeaurora/bluetooth" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/core-utils" name="platform/vendor/qcom/sm8150/codeaurora/core-utils" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/telephony" name="platform/vendor/qcom/sm8150/codeaurora/telephony" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/dataservices" name="platform/vendor/qcom/sm8150/codeaurora/dataservices" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/fst-manager" name="platform/vendor/qcom/sm8150/codeaurora/fst-manager" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/healthd-ext" name="platform/vendor/qcom/sm8150/codeaurora/healthd-ext" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/interfaces" name="platform/vendor/qcom/sm8150/codeaurora/interfaces" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/location" name="platform/vendor/qcom/sm8150/codeaurora/location" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/power" name="platform/vendor/qcom/sm8150/codeaurora/power" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/recovery-ext" name="platform/vendor/qcom/sm8150/codeaurora/recovery-ext" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/thermal-engine" name="platform/vendor/qcom/sm8150/codeaurora/thermal-engine" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/codeaurora/time-services" name="platform/vendor/qcom/sm8150/codeaurora/time-services" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/bluetooth" name="platform/vendor/qcom/sm8150/proprietary/bluetooth" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/bt/hci_qcomm_init" name="platform/vendor/qcom/sm8150/proprietary/ship/bt/hci_qcomm_init" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/cne" name="platform/vendor/qcom/sm8150/proprietary/cne" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/chi-cdk" name="platform/vendor/qcom/sm8150/proprietary/chi-cdk" groups="vendor,qcom_sm8150" />
+ 
   <project path="vendor/qcom/sm8150/proprietary/common" name="platform/vendor/qcom/sm8150/proprietary/common" groups="vendor,qcom_sm8150">
     <linkfile src="prop_pickup.mk" dest="vendor/qcom/sm8150/Android.mk" />
     <linkfile src="prop_pickup.bp" dest="vendor/qcom/sm8150/Android.bp" />
   </project>
+  <project path="vendor/qcom/sm8150/proprietary/commonsys-intf/diag" name="platform/vendor/qcom/sm8150/proprietary/commonsys-intf/diag" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/commonsys-intf/qmi-framework" name="platform/vendor/qcom/sm8150/proprietary/commonsys-intf/qmi-framework" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/commonsys-intf/sensors-see" name="platform/vendor/qcom/sm8150/proprietary/commonsys-intf/sensors-see" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/commonsys/fastmmi" name="platform/vendor/qcom/sm8150/proprietary/commonsys/fastmmi" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/commonsys/qcrilOemHook" name="platform/vendor/qcom/sm8150/proprietary/commonsys/qcrilOemHook" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/commonsys/telephony-fwk" name="platform/vendor/qcom/sm8150/proprietary/commonsys/telephony-fwk" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/commonsys/uim_remote_service" name="platform/vendor/qcom/sm8150/proprietary/commonsys/uim_remote_service" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/csm" name="platform/vendor/qcom/sm8150/proprietary/csm" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/data" name="platform/vendor/qcom/sm8150/proprietary/data" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/diag" name="platform/vendor/qcom/sm8150/proprietary/diag" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/display" name="platform/vendor/qcom/sm8150/proprietary/display" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/fastcv" name="platform/vendor/qcom/sm8150/proprietary/fastcv" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/fastmmi" name="platform/vendor/qcom/sm8150/proprietary/fastmmi" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/ftm" name="platform/vendor/qcom/sm8150/proprietary/ftm" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/gps" name="platform/vendor/qcom/sm8150/proprietary/gps" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/ims-ship" name="platform/vendor/qcom/sm8150/proprietary/ims-ship" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mdm-helper" name="platform/vendor/qcom/sm8150/proprietary/mdm-helper" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mm-audio" name="platform/vendor/qcom/sm8150/proprietary/mm-audio" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mm-audio-cal" name="platform/vendor/qcom/sm8150/proprietary/mm-audio-cal" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mm-audio-external" name="platform/vendor/qcom/sm8150/proprietary/mm-audio-external" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mm-core" name="platform/vendor/qcom/sm8150/proprietary/mm-core" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mm-osal" name="platform/vendor/qcom/sm8150/proprietary/mm-osal" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mm-parser" name="platform/vendor/qcom/sm8150/proprietary/mm-parser" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mm-video" name="platform/vendor/qcom/sm8150/proprietary/mm-video" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/mm-video-utils" name="platform/vendor/qcom/sm8150/proprietary/mm-video-utils" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/prebuilt_grease" name="platform/vendor/qcom/sm8150/proprietary/prebuilt-grease" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/qcril" name="platform/vendor/qcom/sm8150/proprietary/qcril" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/qcril-data-hal" name="platform/vendor/qcom/sm8150/proprietary/qcril-data-hal" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/qcril-hal" name="platform/vendor/qcom/sm8150/proprietary/qcril-hal" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/qcril-qmi-services" name="platform/vendor/qcom/sm8150/proprietary/qcril-qmi-services" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/qdssagent" name="platform/vendor/qcom/sm8150/proprietary/qdssagent" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/qmi" name="platform/vendor/qcom/sm8150/proprietary/qmi" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/qmi-framework" name="platform/vendor/qcom/sm8150/proprietary/qmi-framework" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/remotefs" name="platform/vendor/qcom/sm8150/proprietary/remotefs" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/resource-overlay" name="platform/vendor/qcom/sm8150/proprietary/resource-overlay" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/securemsm" name="platform/vendor/qcom/sm8150/proprietary/securemsm" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/sensors-see" name="platform/vendor/qcom/sm8150/proprietary/sensors-see" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/ss-restart" name="platform/vendor/qcom/sm8150/proprietary/ss-restart" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/ss-services" name="platform/vendor/qcom/sm8150/proprietary/ss-services" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/telephony-apps" name="platform/vendor/qcom/sm8150/proprietary/telephony-apps" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/thermal-engine" name="platform/vendor/qcom/sm8150/proprietary/thermal-engine" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/time-services" name="platform/vendor/qcom/sm8150/proprietary/time-services" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/vpp" name="platform/vendor/qcom/sm8150/proprietary/vpp" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/wlan/ath6kl-utils" name="platform/vendor/qcom/sm8150/proprietary/wlan/ath6kl-utils" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/wlan/common-tools" name="platform/vendor/qcom/sm8150/proprietary/wlan/common-tools" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/wlan/cnss-daemon" name="platform/vendor/qcom/sm8150/proprietary/wlan/cnss-daemon" groups="vendor,qcom_sm8150" />
+  <project path="vendor/qcom/sm8150/proprietary/wlan/utils" name="platform/vendor/qcom/sm8150/proprietary/wlan/utils" groups="vendor,qcom_sm8150" />
   <project path="vendor/qcom/telephony" name="platform/vendor/qcom/telephony" groups="vendor" />
   <project path="vendor/realtek/mir" name="platform/vendor/realtek/mir" groups="vendor" clone-depth="1"/>
   <project path="vendor/sprint/OMA-DM" name="platform/vendor/sprint/OMA-DM" groups="vendor,oma_dm" />
