@@ -1,56 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <manifest>
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="emu-3.0-release"
-           remote="aosp"
-           sync-j="4" />
-  <project path="build" name="platform/build" />
-  <project path="tools/buildSrc" name="platform/tools/buildSrc">
-    <copyfile src="base/build.gradle"      dest="tools/build.gradle" />
-    <copyfile src="base/settings.gradle"   dest="tools/settings.gradle" />
-    <copyfile src="base/gradlew"           dest="tools/gradlew" />
-    <copyfile src="base/gradlew.bat"       dest="tools/gradlew.bat" />
-    <copyfile src="base/gradle.properties" dest="tools/gradle.properties" />
+
+  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
+  <default remote="aosp" revision="emu-3.0-release" sync-j="4" />
+
+  <project name="platform/build" path="build" revision="c7ac0b8072c84c2e868dad10548b39c1c7839ae0" />
+  <project name="platform/tools/buildSrc" path="tools/buildSrc" revision="1be66a11ca2510fad0aed730821bfd1b96116ead">
+    <copyfile dest="tools/build.gradle" src="base/build.gradle" />
+    <copyfile dest="tools/settings.gradle" src="base/settings.gradle" />
+    <copyfile dest="tools/gradlew" src="base/gradlew" />
+    <copyfile dest="tools/gradlew.bat" src="base/gradlew.bat" />
+    <copyfile dest="tools/gradle.properties" src="base/gradle.properties" />
   </project>
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" />
-  <project path="external/angle" name="platform/external/angle" />
-  <project path="external/adt-infra" name="platform/external/adt-infra" />
-  <project path="external/astc-codec" name="platform/external/astc-codec"  />
-  <project path="external/googletest" name="platform/external/googletest"  />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark"  />
-  <project path="external/libyuv" name="platform/external/libyuv" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/qemu" name="platform/external/qemu">
-    <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
+
+  <project name="device/generic/goldfish-opengl" path="device/generic/goldfish-opengl" revision="aa8e6d25cbf54cfc4d26db7f489052fa0159a54a" />
+  <project name="platform/external/angle" path="external/angle" revision="b78a6aed115ad5cdd1a79ea16efbe3659d3c4549" />
+  <project name="platform/external/adt-infra" path="external/adt-infra" revision="d704219973bae12079eb9e6f645e0ab4a57fc476" />
+  <project name="platform/external/astc-codec" path="external/astc-codec" revision="9e8a46ebd61488e1b8be0df15e19c90e0395d7a9" />
+  <project name="platform/external/googletest" path="external/googletest" revision="ff1b400c270ffa063e55703daf3db211c20eda38" />
+  <project name="platform/external/google-benchmark" path="external/google-benchmark" revision="db1632fadc79df388a2a7248157c965ee40248a1" />
+  <project name="platform/external/libyuv" path="external/libyuv" revision="94a6f539e121313c3da9704e9ea5c02a65bda3f5" />
+  <project name="platform/external/protobuf" path="external/protobuf" revision="4353bbc88f513a3c8863cc5b30e765dd5530faa1" />
+  <project name="platform/external/qemu" path="external/qemu" revision="cc942723d82612ebfe6cc3d390f7064191009048">
+    <copyfile dest="emu.code-workspace" src="android/vscode/emu.code-workspace" />
   </project>
-  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" />
-  <project path="external/virglrenderer" name="platform/external/virglrenderer" />
-  <project path="frameworks/native" name="platform/frameworks/native"  />
-  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" />
-  <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/curl" name="platform/prebuilts/android-emulator-build/curl" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/protobuf" name="platform/prebuilts/android-emulator-build/protobuf" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"  />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"  />
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"  />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8"  />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" />
-  <project path="prebuilts/ninja/windows-x86" name="platform/prebuilts/ninja/windows-x86" clone-depth="1" />
-  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel"  />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools"  />
-  <project path="sdk" name="platform/sdk" />
-  <project path="tools/emulator" name="platform/tools/emulator" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle"/>
-  <project path="tools/gradle" name="platform/tools/gradle" />
+  <project name="platform/external/tinyobjloader" path="external/tinyobjloader" revision="d16a940067fbc191364fc1d3e2a2d907209c9320" />
+  <project name="platform/external/virglrenderer" path="external/virglrenderer" revision="bd5c36f38d005d34700b33c0cdff5c4dd8ed42c9" />
+  <project name="platform/frameworks/native" path="frameworks/native" revision="9094ee238458bf1e8a9e8335fd824acc4963d7f4" />
+  <project name="platform/prebuilts/android-emulator" path="prebuilts/android-emulator" revision="fb26612eb84576adb974fe7f18a49d263072116f" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/archive" path="prebuilts/android-emulator-build/archive" revision="f80799acd2ccb098b19e7c717f7f92e1daba7033" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/common" path="prebuilts/android-emulator-build/common" revision="e324854fd4628ee6d02ff83cc327dc290020e703" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/curl" path="prebuilts/android-emulator-build/curl" revision="95f56cc6a903e335d2e90ecce6b4db8d88491bf1" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/mesa" path="prebuilts/android-emulator-build/mesa" revision="710b112c8b1a6edf0dcea34d66e0d4f25b3d13d7" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/mesa-deps" path="prebuilts/android-emulator-build/mesa-deps" revision="17837fdb1889014fa01cbbbda56afc9b6034815f" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/protobuf" path="prebuilts/android-emulator-build/protobuf" revision="8e2a5472dd374e6c971d30eb3d00898a8c1a25c8" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/qemu-android-deps" path="prebuilts/android-emulator-build/qemu-android-deps" revision="fb8b2d34496c5fd2e78619af1653fbb0ff3b7ba3" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/qt" path="prebuilts/android-emulator-build/qt" revision="4bd8bfd7ff448330a6a11ef1536be9bf4374f7c9" />
+  <project clone-depth="1" name="platform/prebuilts/clang/host/darwin-x86" path="prebuilts/clang/host/darwin-x86" revision="0722929132665487877931d8991ebab55a82bdce" />
+  <project clone-depth="1" name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" revision="29a23fffd2da4c5545eca4599be42df54f96afbb" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/cmake/darwin-x86" revision="254cce6a1f79bd294d544b6ed4af9a4e3998c11f" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/cmake/linux-x86" revision="2558e7154fe7da69d90c6f99632a84b624a90a9a" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/windows-x86" path="prebuilts/cmake/windows-x86" revision="3a01d298dd6c3ef241b0dcb08182fbf30240f20d" />
+  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" revision="9706ca5f07f14a8fbcbc57d949b641064d1566e1" />
+  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" revision="07545767cb00c8b8a902c16640a28da4ab99ab5f" />
+  <project clone-depth="1" name="platform/prebuilts/ninja/darwin-x86" path="prebuilts/ninja/darwin-x86" revision="8e110eda03f1e908cad557286b8a80e961ff910e" />
+  <project clone-depth="1" name="platform/prebuilts/ninja/linux-x86" path="prebuilts/ninja/linux-x86" revision="7ef4cb95e1ed4305e99f03a8e8ad28d26134a45b" />
+  <project clone-depth="1" name="platform/prebuilts/ninja/windows-x86" path="prebuilts/ninja/windows-x86" revision="b88e85c90e260cfed1d5130499b8dfd7bb9dc02a" />
+  <project name="platform/prebuilts/qemu-kernel" path="prebuilts/qemu-kernel" revision="153e9e60b85d7fc85c45567d15cda832acd85690" />
+  <project name="platform/prebuilts/tools" path="prebuilts/tools" revision="2dcd185ddcddb8da8e08bcd0c11d3843c17e4a7b" />
+  <project name="platform/sdk" path="sdk" revision="315fb5b8a73df3f88c79a034968a87b461833a83" />
+  <project name="platform/tools/emulator" path="tools/emulator" revision="93a7010407cecb1df00a398b341ca3194e39c05c" />
+  <project name="platform/tools/external/gradle" path="tools/external/gradle" revision="eed722e5b870766798670fb406ca30e57f90a3f8" />
+  <project name="platform/tools/gradle" path="tools/gradle" revision="ee598f8798fdfda273aec644a258f37fb5033556" />
+
 </manifest>
