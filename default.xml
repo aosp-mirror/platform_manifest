@@ -3,17 +3,22 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/ndk-r19b"
+  <default revision="refs/tags/ndk-r20-beta1"
            remote="aosp"
            sync-j="4" />
   <project path="bionic" name="platform/bionic" groups="presubmit" />
   <project path="development" name="platform/development" groups="presubmit" />
+  <!-- Effcee is needed by tests in spirv-tools (in shader-tools) -->
+  <project path="external/effcee" name="platform/external/effcee"  />
+  <!-- RE2 is needed by Effcee -->
+  <project path="external/regex-re2" name="platform/external/regex-re2"  />
   <!-- For lit.py, needed by the libc++ tests. -->
   <project path="external/libcxx" name="platform/external/libcxx"  />
   <project path="external/libcxxabi" name="platform/external/libcxxabi"  />
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm"  />
   <project path="external/llvm" name="platform/external/llvm" />
   <project path="external/googletest" name="platform/external/googletest" groups="presubmit" />
+  <project path="external/python/cpython3" name="platform/external/python/cpython3"  groups="presubmit" />
   <project path="external/shaderc/glslang" name="platform/external/shaderc/glslang"  groups="presubmit" />
   <project path="external/shaderc/shaderc" name="platform/external/shaderc/shaderc"  groups="presubmit" />
   <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers"  groups="presubmit" />
