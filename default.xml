@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="emu-master-dev"
+  <default revision="emu-29.0-release"
            remote="aosp"
            sync-j="4" />
-
   <project path="build" name="platform/build" />
   <project path="tools/buildSrc" name="platform/tools/buildSrc">
     <copyfile src="base/build.gradle"      dest="tools/build.gradle" />
@@ -16,24 +14,23 @@
     <copyfile src="base/gradlew.bat"       dest="tools/gradlew.bat" />
     <copyfile src="base/gradle.properties" dest="tools/gradle.properties" />
   </project>
-
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="master"/>
+  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" />
   <project path="external/angle" name="platform/external/angle" />
   <project path="external/adt-infra" name="platform/external/adt-infra" />
-  <project path="external/astc-codec" name="platform/external/astc-codec" revision="master" />
+  <project path="external/astc-codec" name="platform/external/astc-codec"  />
   <project path="external/bluetooth/glib" name="platform/external/bluetooth/glib" />
-  <project path="external/boringssl" name="platform/external/boringssl" revision="master" clone-depth="1"/>
+  <project path="external/boringssl" name="platform/external/boringssl"  clone-depth="1"/>
   <project path="external/cares" name="platform/external/c-ares" />
   <project path="external/curl" name="platform/external/curl" />
-  <project path="external/deqp" name="platform/external/deqp" revision="master" />
+  <project path="external/deqp" name="platform/external/deqp"  />
   <project path="external/ffmpeg" name="platform/external/ffmpeg" />
-  <project path="external/googletest" name="platform/external/googletest" revision="master" />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark" revision="db1632fadc79df388a2a7248157c965ee40248a1" />
+  <project path="external/googletest" name="platform/external/googletest"  />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark"  />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" />
   <project path="external/grpc" name="platform/external/grpc-grpc" />
   <project path="external/libffi" name="platform/external/libffi" />
   <project path="external/libvpx" name="platform/external/libvpx" />
-  <project path="external/libyuv" name="platform/external/libyuv" revision="master"/>
+  <project path="external/libyuv" name="platform/external/libyuv" />
   <project path="external/libpng" name="platform/external/libpng" />
   <project path="external/lz4" name="platform/external/lz4" />
   <project path="external/openssl" name="platform/external/openssl" />
@@ -45,11 +42,11 @@
   <project path="external/qt" name="platform/external/qt" />
   <project path="external/sdl2" name="platform/external/sdl2" />
   <project path="external/swiftshader" name="platform/external/swiftshader"/>
-  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" revision="master"/>
+  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" />
   <project path="external/virglrenderer" name="platform/external/virglrenderer" />
   <project path="external/yasm" name="platform/external/chromium_org/third_party/yasm/source/patched-yasm" />
   <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/native" name="platform/frameworks/native" revision="lollipop-release" />
+  <project path="frameworks/native" name="platform/frameworks/native"  />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" />
   <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
@@ -59,24 +56,22 @@
   <project path="prebuilts/android-emulator-build/protobuf" name="platform/prebuilts/android-emulator-build/protobuf" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="master" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="master" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"  />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"  />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1"  />
   <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" />
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" />
   <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="master" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"  />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1"  />
   <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" />
   <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" />
   <project path="prebuilts/ninja/windows-x86" name="platform/prebuilts/ninja/windows-x86" clone-depth="1" />
-  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" clone-depth="1" revision="master" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1" revision="master" />
+  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" clone-depth="1"  />
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1"  />
   <project path="sdk" name="platform/sdk" />
   <project path="tools/emulator" name="platform/tools/emulator" />
-  <project path="tools/acloud" name="platform/tools/acloud" revision="master" />
+  <project path="tools/acloud" name="platform/tools/acloud"  />
   <project path="tools/external/gradle" name="platform/tools/external/gradle"/>
   <project path="tools/gradle" name="platform/tools/gradle" />
-
 </manifest>
