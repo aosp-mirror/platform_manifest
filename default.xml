@@ -51,6 +51,9 @@
   <project path="device/generic/x86" name="device/generic/x86" groups="pdk" />
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="pdk" />
   <project path="device/google/atv" name="device/google/atv" groups="device,broadcom_pdk,generic_fs,pdk" />
+  <project path="device/google/bonito" name="device/google/bonito" groups="device,bonito" />
+  <project path="device/google/bonito-kernel" name="device/google/bonito-kernel" groups="device,bonito" clone-depth="1" />
+  <project path="device/google/bonito-sepolicy" name="device/google/bonito-sepolicy" groups="device,bonito" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" />
   <project path="device/google/crosshatch" name="device/google/crosshatch" groups="device,crosshatch" />
   <project path="device/google/crosshatch-kernel" name="device/google/crosshatch-kernel" groups="device,crosshatch" clone-depth="1" />
@@ -463,9 +466,10 @@
   <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" groups="pdk,broadcom_wlan" />
   <project path="hardware/google/apf" name="platform/hardware/google/apf" groups="pdk" />
+  <project path="hardware/google/av" name="platform/hardware/google/av" groups="pdk" />
   <project path="hardware/google/easel" name="platform/hardware/google/easel" groups="pdk,easel" />
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk" />
-  <project path="hardware/google/av" name="platform/hardware/google/av" groups="pdk" />
+  <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="bonito,crosshatch" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
@@ -490,6 +494,16 @@
   <project path="hardware/qcom/msm8x27" name="platform/hardware/qcom/msm8x27" groups="qcom_msm8x27,pdk-qcom" />
   <project path="hardware/qcom/msm8x84" name="platform/hardware/qcom/msm8x84" groups="qcom_msm8x84,pdk-qcom" />
   <project path="hardware/qcom/neuralnetworks/hvxservice" name="platform/hardware/qcom/neuralnetworks/hvxservice" groups="wahoo" />
+  <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom,pdk-qcom" />
+  <project path="hardware/qcom/sdm710/data/ipacfg-mgr" name="platform/hardware/qcom/sdm710/data/ipacfg-mgr" groups="vendor,qcom_sdm710" />
+  <project path="hardware/qcom/sdm710/display" name="platform/hardware/qcom/sdm710/display" groups="qcom_sdm710" >
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm710/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom/sdm710/Android.bp" />
+  </project>
+  <project path="hardware/qcom/sdm710/gps" name="platform/hardware/qcom/sdm710/gps" groups="qcom_sdm710" />
+  <project path="hardware/qcom/sdm710/media" name="platform/hardware/qcom/sdm710/media" groups="qcom_sdm710" />
+  <project path="hardware/qcom/sdm710/thermal" name="platform/hardware/qcom/sdm710/thermal" groups="qcom_sdm710" />
+  <project path="hardware/qcom/sdm710/vr" name="platform/hardware/qcom/sdm710/vr" groups="qcom_sdm710" />
   <project path="hardware/qcom/sdm845/bt" name="platform/hardware/qcom/sdm845/bt" groups="qcom_sdm845" />
   <project path="hardware/qcom/sdm845/data/ipacfg-mgr" name="platform/hardware/qcom/sdm845/data/ipacfg-mgr" groups="vendor,qcom_sdm845" >
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm845/Android.mk" />
@@ -500,7 +514,6 @@
   <project path="hardware/qcom/sdm845/media" name="platform/hardware/qcom/sdm845/media" groups="qcom_sdm845" />
   <project path="hardware/qcom/sdm845/thermal" name="platform/hardware/qcom/sdm845/thermal" groups="qcom_sdm845" />
   <project path="hardware/qcom/sdm845/vr" name="platform/hardware/qcom/sdm845/vr" groups="qcom_sdm845" />
-  <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom,pdk-qcom" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk-qcom" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
   <project path="hardware/st/nfc" name="platform/hardware/st/nfc" groups="pdk" />
