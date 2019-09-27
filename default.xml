@@ -1,116 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <manifest>
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="androidx-autofill-release"
-           remote="aosp"
-           sync-j="8" />
-  <!-- BEGIN dependencies -->
-  <project path="build/make" name="platform/build" />
-  <!-- External dependencies -->
-  <!-- Config: shallow + same revision -->
-  <project path="external/noto-fonts" name="platform/external/noto-fonts" groups="pdk" clone-depth="1"  />
-  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" groups="pdk" clone-depth="1"  />
-  <project path="external/doclava" name="platform/external/doclava" groups="pdk" clone-depth="1"  />
-  <project path="external/dokka" name="platform/external/dokka" groups="pdk" clone-depth="1"  />
-  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/androidx/studio" name="platform/prebuilts/androidx/studio" groups="pdk" clone-depth="1" />
-  <!-- Tools dependencies -->
-  <!-- Config: shallow + master revision -->
-  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk-fs" clone-depth="1"  />
-  <project path="prebuilts/ktlint" name="platform/prebuilts/ktlint" groups="pdk-fs" clone-depth="1"  />
-  <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed"  />
-  <!-- Gradle dependencies -->
-  <!-- Config: shallow + specific revision -->
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools"  clone-depth="1" />
-  <!-- SDK dependencies (shared) -->
-  <!-- Config: shallow + master revision -->
-  <project
-    path="prebuilts/fullsdk-darwin/platforms/android-28"
-    name="platform/prebuilts/fullsdk/platforms/android-28"
-    clone-depth="1">
-    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-28" />
+  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
+  <default remote="aosp" revision="androidx-autofill-release" sync-j="8" />
+  
+  <project name="platform/build" path="build/make" revision="7d1079d4b7853819c0b8332d10a48c8815810de3" />
+  
+  
+  <project clone-depth="1" groups="pdk" name="platform/external/noto-fonts" path="external/noto-fonts" revision="c598fcc94680763089dbc1a882bf44adca778547" />
+  <project clone-depth="1" groups="pdk" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="15d52b98939d17ddc4ba34ed2f26479423906c3e" />
+  <project clone-depth="1" groups="pdk" name="platform/external/doclava" path="external/doclava" revision="59154d17d14d7417b50c91bcc6652031b27c77c7" />
+  <project clone-depth="1" groups="pdk" name="platform/external/dokka" path="external/dokka" revision="b60b96a6b1d0821e7e343d2e7af732be8bf50727" />
+  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="745370e91dfe365fd36da1b25f406de290c74265" />
+  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="456f1685b9e8c66fb405848b51c57144ecb26ba2" />
+  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="8759893b15627e09a76140ae550f478c782d3387" />
+  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/studio" path="prebuilts/androidx/studio" revision="cd8d8b65f54b73f8d9440cebffc4757077182bd8" />
+  
+  
+  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="7d6bb91e31d18eadfaf855a9fb7ad6ba81b8b6d9" />
+  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/ktlint" path="prebuilts/ktlint" revision="610ca1db29493fdcd3789d8093a6bc96f3bf000b" />
+  <project groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" name="platform/tools/repohooks" path="tools/repohooks" revision="481b8785fa4229bd66286540ee8309357e381350" />
+  
+  
+  <project clone-depth="1" groups="tools" name="platform/tools/external/gradle" path="tools/external/gradle" revision="448cb71f0ec0880da489a8307c2c3e69e0e58aae" />
+  
+  
+  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-28" path="prebuilts/fullsdk-darwin/platforms/android-28" revision="4d3b9933013818fdb154a6ecd226426680879a0b">
+    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-28" src="." />
   </project>
-  <project
-    path="prebuilts/fullsdk-darwin/platforms/android-29"
-    name="platform/prebuilts/fullsdk/platforms/android-29"
-    clone-depth="1">
-    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-29" />
+  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-29" path="prebuilts/fullsdk-darwin/platforms/android-29" revision="34cce39119d99ba076403687e8ea43526e22aabd">
+    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-29" src="." />
   </project>
-  <project
-    path="prebuilts/fullsdk-darwin/sources/android-28"
-    name="platform/prebuilts/fullsdk/sources/android-28"
-    clone-depth="1">
-    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-28" />
+  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-28" path="prebuilts/fullsdk-darwin/sources/android-28" revision="b8042fc9b036db0a6692ca853428fc6ab1e60892">
+    <linkfile dest="prebuilts/fullsdk-linux/sources/android-28" src="." />
   </project>
-  <project
-    path="prebuilts/fullsdk-darwin/sources/android-29"
-    name="platform/prebuilts/fullsdk/sources/android-29"
-    clone-depth="1">
-    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-29" />
+  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-29" path="prebuilts/fullsdk-darwin/sources/android-29" revision="31c5a00d2d9a1827383eb802d65c4f6133d3cb59">
+    <linkfile dest="prebuilts/fullsdk-linux/sources/android-29" src="." />
   </project>
-   <project
-    path="prebuilts/fullsdk-darwin/ndk"
-    name="toolchain/prebuilts/ndk/r20"
-    groups="pdk"
-    clone-depth="1">
-    <linkfile src="." dest="prebuilts/fullsdk-linux/ndk" />
+   <project clone-depth="1" groups="pdk" name="toolchain/prebuilts/ndk/r20" path="prebuilts/fullsdk-darwin/ndk" revision="090bbcaa361eb158e8bfc5e6950081cb9679e350">
+    <linkfile dest="prebuilts/fullsdk-linux/ndk" src="." />
   </project>
-  <!-- SDK dependencies (darwin) -->
-  <!-- Config: shallow + master revision -->
-  <project
-    path="prebuilts/fullsdk-darwin/build-tools/28.0.3"
-    name="platform/prebuilts/fullsdk-darwin/build-tools/28.0.3"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/platform-tools"
-    name="platform/prebuilts/fullsdk-darwin/platform-tools"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/tools"
-    name="platform/prebuilts/fullsdk-darwin/tools"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/cmake"
-    name="platform/prebuilts/cmake/darwin-x86"
-    groups="notdefault,platform-darwin"
-    clone-depth="1" />
-  <!-- SDK dependencies (linux) -->
-  <!-- Config: shallow + master revision -->
-  <project
-    path="prebuilts/fullsdk-linux/build-tools/28.0.3"
-    name="platform/prebuilts/fullsdk-linux/build-tools/28.0.3"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/fullsdk-linux/platform-tools"
-    name="platform/prebuilts/fullsdk-linux/platform-tools"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/fullsdk-linux/tools"
-    name="platform/prebuilts/fullsdk-linux/tools"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/jdk/jdk8"
-    name="platform/prebuilts/jdk/jdk8"
-    groups="pdk"
-    clone-depth="1" />
-  <project
-    path="prebuilts/fullsdk-linux/cmake"
-    name="platform/prebuilts/cmake/linux-x86"
-    groups="notdefault,platform-linux"
-    clone-depth="1" />
-  <!-- END dependencies -->
-  <!-- BEGIN target project -->
-  <project path="frameworks/support" name="platform/frameworks/support" groups="pdk-cw-fs,pdk-fs" />
-  <!-- END target project -->
-  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+  
+  
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/28.0.3" path="prebuilts/fullsdk-darwin/build-tools/28.0.3" revision="c2d3aa071e8156f1e1c01a606e924f7b2f259dfc" />
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="2bf6a315766501889923832064367be6c163f411" />
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" />
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="f3bfe547014d2d751b7547ad7847a51b0ea34dc8" />
+  
+  
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/28.0.3" path="prebuilts/fullsdk-linux/build-tools/28.0.3" revision="52f6ca4404ee1cee36f02594c9f15acf41c2f17b" />
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="3a6903d2cdd95ac04b7b79a07272447b694fe0c8" />
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" />
+  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="fe743aa0d39ef9bab51c612a957acdd4588d069c" />
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="da4b9cb08341185e002c8a8c5df73533cdb93b41" />
+  
+  
+  <project groups="pdk-cw-fs,pdk-fs" name="platform/frameworks/support" path="frameworks/support" revision="749596ac31c99cedc894200cd75965703b092da4" />
+  
+  <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
 </manifest>
