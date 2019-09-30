@@ -6,31 +6,29 @@
     project rule in google3 to ensure new projects get testing.
     See go/side-branch-testing for details.
 -->
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="master"
+  <default revision="ndk-release-r21"
            remote="aosp"
            sync-j="4" />
-
   <project path="bionic" name="platform/bionic" groups="presubmit" />
   <project path="development" name="platform/development" groups="presubmit" />
   <!-- Effcee is needed by tests in spirv-tools (in shader-tools) -->
-  <project path="external/effcee" name="platform/external/effcee" revision="master" />
+  <project path="external/effcee" name="platform/external/effcee"  />
   <!-- RE2 is needed by Effcee -->
-  <project path="external/regex-re2" name="platform/external/regex-re2" revision="master" />
+  <project path="external/regex-re2" name="platform/external/regex-re2"  />
   <!-- For lit.py, needed by the libc++ tests. -->
-  <project path="external/libcxx" name="platform/external/libcxx" revision="ndk" />
-  <project path="external/libcxxabi" name="platform/external/libcxxabi" revision="ndk" />
-  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" revision="ndk" />
+  <project path="external/libcxx" name="platform/external/libcxx"  />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi"  />
+  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm"  />
   <project path="external/llvm" name="platform/external/llvm" />
   <project path="external/googletest" name="platform/external/googletest" groups="presubmit" />
-  <project path="external/python/cpython3" name="platform/external/python/cpython3" revision="b0e85ca1ed410f0196f20f4c37d16dafd4878a3d" groups="presubmit" />
-  <project path="external/shaderc/glslang" name="platform/external/shaderc/glslang" revision="master-ndk" groups="presubmit" />
-  <project path="external/shaderc/shaderc" name="platform/external/shaderc/shaderc" revision="master-ndk" groups="presubmit" />
-  <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers" revision="master-ndk" groups="presubmit" />
-  <project path="external/shaderc/spirv-tools" name="platform/external/shaderc/spirv-tools" revision="master-ndk" groups="presubmit" />
+  <project path="external/python/cpython3" name="platform/external/python/cpython3"  groups="presubmit" />
+  <project path="external/shaderc/glslang" name="platform/external/shaderc/glslang"  groups="presubmit" />
+  <project path="external/shaderc/shaderc" name="platform/external/shaderc/shaderc"  groups="presubmit" />
+  <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers"  groups="presubmit" />
+  <project path="external/shaderc/spirv-tools" name="platform/external/shaderc/spirv-tools"  groups="presubmit" />
   <project path="external/vulkan-headers" name="platform/external/vulkan-headers" groups="presubmit" />
   <project path="external/vulkan-tools" name="platform/external/vulkan-tools" groups="presubmit" />
   <project path="external/vulkan-validation-layers" name="platform/external/vulkan-validation-layers" groups="presubmit" />
@@ -53,7 +51,7 @@
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="presubmit" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" groups="presubmit" />
   <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="presubmit,linux,x86" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" revision="dev" groups="presubmit" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk"  groups="presubmit" />
   <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" />
   <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="presubmit" />
   <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin" />
@@ -78,5 +76,4 @@
   <project path="toolchain/sed" name="toolchain/sed" groups="presubmit" />
   <project path="toolchain/xz" name="toolchain/xz" groups="presubmit" />
   <project path="toolchain/yasm" name="toolchain/yasm" groups="presubmit" />
-
 </manifest>
