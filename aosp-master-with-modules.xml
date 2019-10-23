@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<!--
+    This branch is a master side branch and is configured to have all project
+    specific rules. When updating this manifest file, please also update the
+    project rule in google3 to ensure new projects get testing.
+    See go/side-branch-testing for details.
+-->
+
+  <remote  name="goog"
+           fetch="https://googleplex-android.googlesource.com/"
+           revision="master" />
+
+  <!-- pull in the standard AOSP projects. -->
+    <include name="default.xml" />
+
+    <project path="vendor/google/build" name="platform/vendor/google/build" groups="vendor" remote="goog" />
+    <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore" revision="master" groups="vendor" remote="goog" />
+    <project path="vendor/google/products" name="platform/vendor/google/products" groups="vendor" remote="goog" />
+
+
+
+</manifest>
