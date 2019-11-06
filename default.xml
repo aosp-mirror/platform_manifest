@@ -4,8 +4,7 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="lldb-master-dev"
-           remote="aosp"
+  <default revision="lldb-master-dev" remote="aosp"
            sync-j="4" />
 
   <!-- BEGIN open-source projects -->
@@ -44,10 +43,19 @@
   <project path="prebuilts/swig/linux-x86" name="platform/prebuilts/swig/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/swig/windows-x86" name="platform/prebuilts/swig/windows-x86" clone-depth="1" />
 
+    <!-- Binutils/gcc toolchains -->
+    <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="notdefault,platform-darwin" revision="master" />
+    <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="notdefault,platform-darwin" revision="master" />
+    <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="notdefault,platform-linux" revision="master" />
+    <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" groups="notdefault,platform-linux" revision="master" />
+
   <!-- Sources for lldb prebuilts -->
   <project path="external/libedit" name="platform/external/libedit" revision="master" />
   <project path="external/swig" name="platform/external/swig" revision="master" />
   <project path="external/cpython3" name="platform/external/python/cpython3" revision="master" />
+  <!-- Swig don't support pcre2. Pin to the latest pcre we have. -->
+  <project path="external/pcre" name="platform/external/pcre" revision="a6a950ff7dfa93fd3edac334a4353fd5ce54971b" />
+  <project path="external/libffi" name="platform/external/libffi" revision="master" />
 
   <!-- END open-source projects -->
 </manifest>
