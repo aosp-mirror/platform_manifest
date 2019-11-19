@@ -6,14 +6,12 @@
     project rule in google3 to ensure new projects get testing.
     See go/side-branch-testing for details.
 -->
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="master"
+  <default revision="llvm-r353983"
            remote="aosp"
            sync-j="4" />
-
   <!-- Core LLVM toolchain components -->
   <project path="bionic" name="platform/bionic" />
   <project path="toolchain/binutils" name="toolchain/binutils" />
@@ -26,10 +24,8 @@
   <project path="toolchain/libcxxabi" name="toolchain/libcxxabi" />
   <project path="toolchain/openmp_llvm" name="toolchain/openmp_llvm" />
   <project path="toolchain/clang-tools-extra" name="toolchain/clang-tools-extra" />
-
   <!-- Android/ChromeOS shared toolchain-utils -->
-  <project path="external/toolchain-utils" name="platform/external/toolchain-utils" revision="master" />
-
+  <project path="external/toolchain-utils" name="platform/external/toolchain-utils"  />
   <!-- Binutils/gcc toolchains -->
   <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,darwin,arm" />
   <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
@@ -43,17 +39,14 @@
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" />
   <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" groups="pdk,linux,mips" />
   <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" />
-
   <!-- CMake prebuilts -->
   <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" />
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" />
-
   <!-- Prebuilts (for ease of updating) -->
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" />
   <project path="prebuilts/clang/host/windows-x86_32" name="platform/prebuilts/clang/host/windows-x86_32" />
-
   <!-- NDK headers/libraries -->
   <project path="toolchain/prebuilts/ndk/r16" name="toolchain/prebuilts/ndk/r16" />
 </manifest>
