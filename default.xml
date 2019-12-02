@@ -3,63 +3,58 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="androidx-master-dev"
+  <default revision="androidx-recyclerview-recyclerview-selection-release"
            remote="aosp"
            sync-j="8" />
   <!-- BEGIN dependencies -->
   <project path="build/make" name="platform/build" />
   <!-- External dependencies -->
   <!-- Config: shallow + same revision -->
-  <project path="external/noto-fonts" name="platform/external/noto-fonts" groups="pdk" clone-depth="1" revision="master" />
-  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" groups="pdk" clone-depth="1" revision="77b0f946f298d56f1b6d7e3b13d27c06f363714b" />
-  <project path="external/doclava" name="platform/external/doclava" groups="pdk" clone-depth="1" revision="master" />
-  <project path="external/dokka" name="platform/external/dokka" groups="pdk" clone-depth="1" revision="master" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" groups="pdk" clone-depth="1"  />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" groups="pdk" clone-depth="1"  />
+  <project path="external/doclava" name="platform/external/doclava" groups="pdk" clone-depth="1"  />
+  <project path="external/dokka" name="platform/external/dokka" groups="pdk" clone-depth="1"  />
   <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" groups="pdk" clone-depth="1" />
   <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" groups="pdk" clone-depth="1" />
   <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" groups="pdk" clone-depth="1" />
   <project path="prebuilts/androidx/studio" name="platform/prebuilts/androidx/studio" groups="pdk" clone-depth="1" />
   <!-- Tools dependencies -->
   <!-- Config: shallow + master revision -->
-  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk-fs" clone-depth="1" revision="master" />
-  <project path="prebuilts/ktlint" name="platform/prebuilts/ktlint" groups="pdk-fs" clone-depth="1" revision="master" />
-  <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" revision="master" />
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk-fs" clone-depth="1"  />
+  <project path="prebuilts/ktlint" name="platform/prebuilts/ktlint" groups="pdk-fs" clone-depth="1"  />
+  <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed"  />
   <!-- Gradle dependencies -->
   <!-- Config: shallow + specific revision -->
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools" revision="6.0" clone-depth="1" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools"  clone-depth="1" />
   <!-- SDK dependencies (shared) -->
   <!-- Config: shallow + master revision -->
   <project
     path="prebuilts/fullsdk-darwin/platforms/android-28"
     name="platform/prebuilts/fullsdk/platforms/android-28"
-    revision="master"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-28" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/platforms/android-29"
     name="platform/prebuilts/fullsdk/platforms/android-29"
-    revision="master"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-29" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/sources/android-28"
     name="platform/prebuilts/fullsdk/sources/android-28"
-    revision="master"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-28" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/sources/android-29"
     name="platform/prebuilts/fullsdk/sources/android-29"
-    revision="master"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-29" />
   </project>
    <project
     path="prebuilts/fullsdk-darwin/ndk"
     name="toolchain/prebuilts/ndk/r20"
-    revision="master"
     groups="pdk"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/ndk" />
@@ -69,31 +64,26 @@
   <project
     path="prebuilts/fullsdk-darwin/build-tools/28.0.3"
     name="platform/prebuilts/fullsdk-darwin/build-tools/28.0.3"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
   <project
     path="prebuilts/fullsdk-darwin/build-tools/29.0.0"
     name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.0"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
   <project
     path="prebuilts/fullsdk-darwin/platform-tools"
     name="platform/prebuilts/fullsdk-darwin/platform-tools"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
   <project
     path="prebuilts/fullsdk-darwin/tools"
     name="platform/prebuilts/fullsdk-darwin/tools"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
   <project
     path="prebuilts/fullsdk-darwin/cmake"
     name="platform/prebuilts/cmake/darwin-x86"
-    revision="master"
     groups="notdefault,platform-darwin"
     clone-depth="1" />
   <!-- SDK dependencies (linux) -->
@@ -101,37 +91,31 @@
   <project
     path="prebuilts/fullsdk-linux/build-tools/28.0.3"
     name="platform/prebuilts/fullsdk-linux/build-tools/28.0.3"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-linux" />
   <project
     path="prebuilts/fullsdk-linux/build-tools/29.0.0"
     name="platform/prebuilts/fullsdk-linux/build-tools/29.0.0"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-linux" />
   <project
     path="prebuilts/fullsdk-linux/platform-tools"
     name="platform/prebuilts/fullsdk-linux/platform-tools"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-linux" />
   <project
     path="prebuilts/fullsdk-linux/tools"
     name="platform/prebuilts/fullsdk-linux/tools"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-linux" />
   <project
     path="prebuilts/jdk/jdk8"
     name="platform/prebuilts/jdk/jdk8"
-    revision="androidx-master-dev"
     groups="pdk"
     clone-depth="1" />
   <project
     path="prebuilts/fullsdk-linux/cmake"
     name="platform/prebuilts/cmake/linux-x86"
-    revision="master"
     groups="notdefault,platform-linux"
     clone-depth="1" />
   <!-- END dependencies -->
