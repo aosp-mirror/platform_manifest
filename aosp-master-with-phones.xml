@@ -12,6 +12,11 @@
            review="https://googleplex-android-review.googlesource.com/"
            revision="mirror-aosp-master-with-vendor" />
 
+  <remote  name="partner"
+           fetch="https://partner-android.googlesource.com/"
+           review="https://partner-android-review.googlesource.com/"
+           revision="qt-gms-dev" />
+
   <!-- pull in the standard AOSP projects. -->
   <include name="default.xml" />
 
@@ -35,5 +40,7 @@
   <project path="vendor/qcom/sargo" name="platform/vendor/aosp/qcom/sargo" groups="vendor" remote="goog" />
   <project path="vendor/qcom/taimen" name="platform/vendor/aosp/qcom/taimen" groups="vendor" remote="goog" />
   <project path="vendor/qcom/walleye" name="platform/vendor/aosp/qcom/walleye" groups="vendor" remote="goog" />
+
+  <project path="vendor/partner_gms" name="platform/vendor/partner_gms" groups="vendor" remote="partner" clone-depth="1" />
 
 </manifest>
