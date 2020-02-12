@@ -144,7 +144,6 @@
   <project path="external/apache-harmony" name="platform/external/apache-harmony" groups="pdk" />
   <project path="external/apache-http" name="platform/external/apache-http" groups="pdk" />
   <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" />
-  <project path="external/archive-patcher" name="platform/external/archive-patcher" groups="pdk" />
   <project path="external/arm-neon-tests" name="platform/external/arm-neon-tests" groups="vendor" />
   <project path="external/arm-optimized-routines" name="platform/external/arm-optimized-routines" groups="pdk" />
   <project path="external/arm-trusted-firmware" name="platform/external/arm-trusted-firmware" groups="pdk" />
@@ -172,6 +171,7 @@
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk" />
   <project path="external/cpu_features" name="platform/external/cpu_features" groups="pdk" />
+  <project path="external/cpuinfo" name="platform/external/cpuinfo" groups="pdk" />
   <project path="external/crcalc" name="platform/external/crcalc" groups="pdk" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="pdk" />
   <project path="external/crosvm" name="platform/external/crosvm" groups="pdk" />
@@ -213,6 +213,8 @@
   <project path="external/freetype" name="platform/external/freetype" groups="pdk" />
   <project path="external/fsck_msdos" name="platform/external/fsck_msdos" groups="pdk" />
   <project path="external/fsverity-utils" name="platform/external/fsverity-utils" groups="pdk" />
+  <project path="external/FP16" name="platform/external/FP16" groups="pdk" />
+  <project path="external/FXdiv" name="platform/external/FXdiv" groups="pdk" />
   <project path="external/gemmlowp" name="platform/external/gemmlowp" groups="pdk" />
   <project path="external/gflags" name="platform/external/gflags" groups="pdk" />
   <project path="external/giflib" name="platform/external/giflib" groups="pdk,qcom_msm8x26" />
@@ -375,6 +377,8 @@
   <project path="external/ppp" name="platform/external/ppp" groups="pdk" />
   <project path="external/proguard" name="platform/external/proguard" groups="pdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
+  <project path="external/psimd" name="platform/external/psimd" groups="pdk" />
+  <project path="external/pthreadpool" name="platform/external/pthreadpool" groups="pdk" />
   <project path="external/puffin" name="platform/external/puffin" groups="pdk" />
   <project path="external/python/apitools" name="platform/external/python/apitools" groups="pdk" />
   <project path="external/python/asn1crypto" name="platform/external/python/asn1crypto" groups="pdk" />
@@ -474,6 +478,7 @@
   <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" groups="pdk" />
   <project path="external/xz-embedded" name="platform/external/xz-embedded" groups="pdk" />
   <project path="external/xz-java" name="platform/external/xz-java" groups="pdk" />
+  <project path="external/XNNPACK" name="platform/external/XNNPACK" groups="pdk" />
   <project path="external/yapf" name="platform/external/yapf" groups="vts,projectarch,pdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk" />
@@ -486,7 +491,7 @@
   <project path="frameworks/ex" name="platform/frameworks/ex" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/hardware/interfaces" name="platform/frameworks/hardware/interfaces" groups="pdk" />
   <project path="frameworks/layoutlib" name="platform/frameworks/layoutlib" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/lib/systemui" name="platform/frameworks/lib/systemui" groups="pdk-cw-fs,pdk-fs" />
+  <project path="frameworks/libs/systemui" name="platform/frameworks/lib/systemui" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/libs/net" name="platform/frameworks/libs/net" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/ml" name="platform/frameworks/ml" groups="pdk" />
@@ -935,6 +940,7 @@
   <project path="vendor/google/frameworks/maps" name="platform/vendor/google/frameworks/maps" groups="vendor"/>
   <project path="vendor/google/gms" name="platform/vendor/google/gms" groups="vendor"/>
   <project path="vendor/google/google_overlay" name="platform/vendor/google/google_overlay" groups="vendor"/>
+  <project path="vendor/google/input" name="platform/vendor/google/input" groups="vendor"/>
   <project path="vendor/google/interfaces" name="platform/vendor/google/interfaces" groups="vendor"/>
   <project path="vendor/google/libraries/barhopper_suw" name="platform/vendor/google/libraries/barhopper_suw" groups="vendor"/>
   <project path="vendor/google/libraries/consentlogging" name="platform/vendor/google/libraries/consentlogging" groups="vendor"/>
@@ -1032,6 +1038,7 @@
   <project path="vendor/google_testing/arcts" name="platform/vendor/google_testing/arcts" groups="vendor"/>
   <project path="vendor/google_testing/ats" name="platform/vendor/google_testing/ats" groups="vendor"/>
   <project path="vendor/google_testing/tvts" name="platform/vendor/google_testing/tvts" groups="vendor" />
+  <project path="vendor/google_testing/goats" name="platform/vendor/google_testing/goats" groups="vendor"/>
   <project path="vendor/google_tradefederation/core" name="platform/vendor/google_tradefederation" groups="tradefed"/>
   <project path="vendor/google_tradefederation/contrib" name="platform/vendor/google_tradefederation/contrib" groups="tradefed"/>
   <project path="vendor/google_vts" name="platform/vendor/google_vts" groups="vts,projectarch,pdk"/>
@@ -1679,10 +1686,8 @@
   <project path="vendor/unbundled_google/packages/GMailGoPrebuilt" name="platform/vendor/unbundled_google/packages/GMailGoPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/build" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt" groups="vendor" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/tests" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/tests" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w39" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w39" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w39_Next" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w39_Next" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w42" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w42" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w45" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w45" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w49" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2019w49" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2020m01" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2020m01" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2020m02" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2020m02" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2020m03" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2020m03" groups="vendor" clone-depth="1" />
