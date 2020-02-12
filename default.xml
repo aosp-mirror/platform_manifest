@@ -1,74 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <manifest>
-  <remote  name="goog"
-           fetch=".."
-           review="https://googleplex-android-review.googlesource.com/" />
-  <default revision="ndk-release-r20"
-           remote="goog"
-           sync-j="4" />
-  <project path="bionic" name="platform/bionic" groups="presubmit" />
-  <project path="development" name="platform/development" groups="presubmit" />
-  <!-- Effcee is needed by tests in spirv-tools (in shader-tools) -->
-  <project path="external/effcee" name="platform/external/effcee"  />
-  <!-- RE2 is needed by Effcee -->
-  <project path="external/regex-re2" name="platform/external/regex-re2"  />
-  <!-- For lit.py, needed by the libc++ tests. -->
-  <project path="external/libcxx" name="platform/external/libcxx"  />
-  <project path="external/libcxxabi" name="platform/external/libcxxabi"  />
-  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm"  />
-  <project path="external/llvm" name="platform/external/llvm" />
-  <project path="external/googletest" name="platform/external/googletest" groups="presubmit" />
-  <project path="external/python/cpython3" name="platform/external/python/cpython3"  groups="presubmit" />
-  <project path="external/shaderc/glslang" name="platform/external/shaderc/glslang"  groups="presubmit" />
-  <project path="external/shaderc/shaderc" name="platform/external/shaderc/shaderc"  groups="presubmit" />
-  <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers"  groups="presubmit" />
-  <project path="external/shaderc/spirv-tools" name="platform/external/shaderc/spirv-tools"  groups="presubmit" />
-  <project path="external/vulkan-headers" name="platform/external/vulkan-headers" groups="presubmit" />
-  <project path="external/vulkan-tools" name="platform/external/vulkan-tools" groups="presubmit" />
-  <project path="external/vulkan-validation-layers" name="platform/external/vulkan-validation-layers" groups="presubmit" />
-  <project path="ndk" name="platform/ndk" groups="presubmit" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="presubmit" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" />
-  <project path="prebuilts/clang/host/windows-x86_32" name="platform/prebuilts/clang/host/windows-x86_32" />
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" groups="presubmit" />
-  <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" groups="darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" groups="darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
-  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="darwin" />
-  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="darwin" />
-  <project path="prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" groups="darwin,mips" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" groups="darwin,x86" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="presubmit,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="presubmit,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="presubmit" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" groups="presubmit" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" groups="presubmit" />
-  <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" groups="presubmit,linux,mips" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="presubmit,linux,x86" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk"  groups="presubmit" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="presubmit" />
-  <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin" />
-  <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux,presubmit" />
-  <project path="prebuilts/renderscript/host/darwin-x86" name="platform/prebuilts/renderscript/host/darwin-x86" />
-  <project path="prebuilts/renderscript/host/linux-x86" name="platform/prebuilts/renderscript/host/linux-x86" groups="presubmit" />
-  <project path="prebuilts/renderscript/host/windows-x86" name="platform/prebuilts/renderscript/host/windows-x86" />
-  <project path="prebuilts/simpleperf" name="platform/prebuilts/simpleperf" groups="presubmit" />
-  <project path="toolchain/binutils" name="toolchain/binutils" groups="presubmit" />
-  <project path="toolchain/build" name="toolchain/build" groups="presubmit" />
-  <project path="toolchain/cloog" name="toolchain/cloog" groups="presubmit" />
-  <project path="toolchain/expat" name="toolchain/expat" groups="presubmit" />
-  <project path="toolchain/gcc" name="toolchain/gcc" groups="presubmit" />
-  <project path="toolchain/gdb" name="toolchain/gdb" groups="presubmit" />
-  <project path="toolchain/gmp" name="toolchain/gmp" groups="presubmit" />
-  <project path="toolchain/isl" name="toolchain/isl" groups="presubmit" />
-  <project path="toolchain/mpc" name="toolchain/mpc" groups="presubmit" />
-  <project path="toolchain/mpfr" name="toolchain/mpfr" groups="presubmit" />
-  <project path="toolchain/ppl" name="toolchain/ppl" groups="presubmit" />
-  <project path="toolchain/python" name="toolchain/python" groups="presubmit" />
-  <project path="toolchain/sed" name="toolchain/sed" groups="presubmit" />
-  <project path="toolchain/xz" name="toolchain/xz" groups="presubmit" />
-  <project path="toolchain/yasm" name="toolchain/yasm" groups="presubmit" />
+  <remote fetch=".." name="goog" review="https://googleplex-android-review.googlesource.com/" />
+  <default remote="goog" revision="ndk-release-r21" sync-j="4" />
+  <project groups="presubmit" name="platform/bionic" path="bionic"  />
+  <project groups="presubmit" name="platform/development" path="development"  />
+  
+  <project name="platform/external/effcee" path="external/effcee"  />
+  
+  <project name="platform/external/regex-re2" path="external/regex-re2"  />
+  
+  <project name="platform/external/libcxx" path="external/libcxx"  />
+  <project name="platform/external/libcxxabi" path="external/libcxxabi"  />
+  <project name="platform/external/libunwind_llvm" path="external/libunwind_llvm"  />
+  <project name="platform/external/llvm" path="external/llvm"  />
+  <project groups="presubmit" name="platform/external/googletest" path="external/googletest"  />
+  <project groups="presubmit" name="platform/external/python/cpython3" path="external/python/cpython3"  />
+  <project groups="presubmit" name="platform/external/shaderc/glslang" path="external/shaderc/glslang"  />
+  <project groups="presubmit" name="platform/external/shaderc/shaderc" path="external/shaderc/shaderc"  />
+  <project groups="presubmit" name="platform/external/shaderc/spirv-headers" path="external/shaderc/spirv-headers"  />
+  <project groups="presubmit" name="platform/external/shaderc/spirv-tools" path="external/shaderc/spirv-tools"  />
+  <project groups="presubmit" name="platform/external/vulkan-headers" path="external/vulkan-headers"  />
+  <project groups="presubmit" name="platform/external/vulkan-tools" path="external/vulkan-tools"  />
+  <project groups="presubmit" name="platform/external/vulkan-validation-layers" path="external/vulkan-validation-layers"  />
+  <project groups="presubmit" name="platform/ndk" path="ndk"  />
+  <project name="platform/prebuilts/clang/host/darwin-x86" path="prebuilts/clang/host/darwin-x86"  />
+  <project groups="presubmit" name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86"  />
+  <project name="platform/prebuilts/clang/host/windows-x86" path="prebuilts/clang/host/windows-x86"  />
+  <project name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/cmake/darwin-x86"  />
+  <project groups="presubmit" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/cmake/linux-x86"  />
+  <project groups="darwin,arm" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9"  />
+  <project groups="darwin,arm" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8"  />
+  <project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9"  />
+  <project groups="darwin" name="platform/prebuilts/gcc/darwin-x86/host/headers" path="prebuilts/gcc/darwin-x86/host/headers"  />
+  <project groups="darwin" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1"  />
+  <project groups="darwin,x86" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9"  />
+  <project groups="presubmit,linux,arm" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"  />
+  <project groups="presubmit,linux,arm" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8"  />
+  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"  />
+  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"  />
+  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8"  />
+  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8"  />
+  <project groups="presubmit,linux,x86" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9"  />
+  <project groups="presubmit" name="platform/prebuilts/ndk" path="prebuilts/ndk"  />
+  <project name="platform/prebuilts/ninja/darwin-x86" path="prebuilts/ninja/darwin-x86"  />
+  <project groups="presubmit" name="platform/prebuilts/ninja/linux-x86" path="prebuilts/ninja/linux-x86"  />
+  <project groups="darwin" name="platform/prebuilts/python/darwin-x86/2.7.5" path="prebuilts/python/darwin-x86/2.7.5"  />
+  <project groups="linux,presubmit" name="platform/prebuilts/python/linux-x86/2.7.5" path="prebuilts/python/linux-x86/2.7.5"  />
+  <project name="platform/prebuilts/renderscript/host/darwin-x86" path="prebuilts/renderscript/host/darwin-x86"  />
+  <project groups="presubmit" name="platform/prebuilts/renderscript/host/linux-x86" path="prebuilts/renderscript/host/linux-x86"  />
+  <project name="platform/prebuilts/renderscript/host/windows-x86" path="prebuilts/renderscript/host/windows-x86"  />
+  <project groups="presubmit" name="platform/prebuilts/simpleperf" path="prebuilts/simpleperf"  />
+  <project groups="presubmit" name="toolchain/binutils" path="toolchain/binutils"  />
+  <project groups="presubmit" name="toolchain/build" path="toolchain/build"  />
+  <project groups="presubmit" name="toolchain/cloog" path="toolchain/cloog"  />
+  <project groups="presubmit" name="toolchain/expat" path="toolchain/expat"  />
+  <project groups="presubmit" name="toolchain/gcc" path="toolchain/gcc"  />
+  <project groups="presubmit" name="toolchain/gdb" path="toolchain/gdb"  />
+  <project groups="presubmit" name="toolchain/gmp" path="toolchain/gmp"  />
+  <project groups="presubmit" name="toolchain/isl" path="toolchain/isl"  />
+  <project groups="presubmit" name="toolchain/make" path="toolchain/make"  />
+  <project groups="presubmit" name="toolchain/mpc" path="toolchain/mpc"  />
+  <project groups="presubmit" name="toolchain/mpfr" path="toolchain/mpfr"  />
+  <project groups="presubmit" name="toolchain/ppl" path="toolchain/ppl"  />
+  <project groups="presubmit" name="toolchain/python" path="toolchain/python"  />
+  <project groups="presubmit" name="toolchain/sed" path="toolchain/sed"  />
+  <project groups="presubmit" name="toolchain/xz" path="toolchain/xz"  />
+  <project groups="presubmit" name="toolchain/yasm" path="toolchain/yasm"  />
 </manifest>
