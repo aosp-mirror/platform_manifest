@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+<!-- Required header below, see http://go/side-branch-testing#set-up-treehugger-branch-config-rules -->
 <!--
     This branch is a master side branch and is configured to have all project
     specific rules. When updating this manifest file, please also update the
     project rule in google3 to ensure new projects get testing.
     See go/side-branch-testing for details.
+-->
+
+<!--
+    This is a manifest for building and testing the ART module.
 -->
 
   <remote  name="aosp"
@@ -14,6 +19,124 @@
            remote="aosp"
            sync-j="4" />
 
+<!--
+  ART module. These are the projects that are unique to ART.
+-->
+  <project path="art" name="platform/art" groups="pdk" >
+    <linkfile src=".vpython" dest=".vpython" />
+  </project>
+  <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" />
+  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" />
+  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
+  <project path="external/oj-libjdwp" name="platform/external/oj-libjdwp" groups="pdk" />
+  <project path="external/okhttp" name="platform/external/okhttp" groups="pdk" />
+  <project path="libcore" name="platform/libcore" groups="pdk" />
+  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
+
+<!--
+  ART internal dependencies. These are the projects the ART module will include
+  in its apex, but doesn't need to be unique to the ART module.
+-->
+  <project path="external/cpu_features" name="platform/external/cpu_features" groups="pdk" />
+  <project path="external/dlmalloc" name="platform/external/dlmalloc" groups="pdk" />
+  <project path="external/expat" name="platform/external/expat" groups="pdk" />
+  <project path="external/fdlibm" name="platform/external/fdlibm" groups="pdk" />
+  <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" />
+  <project path="external/lz4" name="platform/external/lz4" groups="pdk" />
+  <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
+  <project path="external/perfetto" name="platform/external/perfetto" groups="pdk" />
+  <project path="external/vixl" name="platform/external/vixl" groups="pdk" />
+  <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
+  <project path="system/core" name="platform/system/core" groups="pdk" />
+    <!-- Dependency of libziparchive -->
+    <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
+    <!-- Dependency of libbase -->
+    <project path="external/fmtlib" name="platform/external/fmtlib" groups="pdk" />
+  <!-- For imgdiag -->
+  <project path="system/memory/libmeminfo" name="platform/system/memory/libmeminfo" groups="pdk" />
+  <!-- For libnativeloader -->
+  <project path="system/libsysprop" name="platform/system/libsysprop" groups="pdk" />
+
+<!--
+  ART Module testing dependencies.
+  None of these projects should be included in the ART apex.
+-->
+
+  <!-- chroot support -->
+  <project path="device/generic/art" name="device/generic/art" groups="pdk" />
+  <project path="system/linkerconfig" name="platform/system/linkerconfig" groups="pdk" />
+  <project path="system/netd" name="platform/system/netd" groups="pdk" />
+    <!-- netd dependencies -->
+    <project path="packages/modules/DnsResolver" name="platform/packages/modules/DnsResolver" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/vndk" name="platform/packages/modules/vndk" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/mksh" name="platform/external/mksh" groups="pdk" />
+  <project path="external/toybox" name="platform/external/toybox" groups="pdk" />
+  <!-- to get /system/xbin/su -->
+  <project path="system/extras" name="platform/system/extras" groups="pdk" />
+
+  <!-- jdwp test location -->
+  <project path="external/apache-harmony" name="platform/external/apache-harmony" groups="pdk" />
+  <!-- jdwp tests dependencies -->
+  <project path="external/jarjar" name="platform/external/jarjar" groups="pdk" />
+
+  <!-- test runners -->
+  <project path="external/googletest" name="platform/external/googletest" groups="pdk" />
+  <project path="external/vogar" name="platform/external/vogar" groups="pdk" />
+    <!-- vogar dependencies -->
+    <project path="external/apache-commons-math" name="platform/external/apache-commons-math" groups="pdk" />
+    <project path="external/caliper" name="platform/external/caliper" groups="pdk" />
+    <project path="external/dagger2" name="platform/external/dagger2" groups="pdk" />
+    <project path="external/desugar" name="platform/external/desugar" groups="pdk" />
+    <project path="external/junit" name="platform/external/junit" groups="pdk" />
+
+  <!-- core-tests dependencies -->
+  <project path="external/dexmaker" name="platform/external/dexmaker" groups="pdk" />
+  <project path="external/junit-params" name="platform/external/junit-params" groups="pdk" />
+  <project path="external/mockftpserver" name="platform/external/mockftpserver" groups="pdk" />
+  <project path="external/mockito" name="platform/external/mockito" groups="pdk" />
+  <project path="external/mockwebserver" name="platform/external/mockwebserver" groups="pdk" />
+  <project path="external/nist-pkits" name="platform/external/nist-pkits" groups="pdk" />
+  <project path="external/slf4j" name="platform/external/slf4j" groups="pdk" />
+  <project path="external/javasqlite" name="platform/external/javasqlite" groups="pdk" />
+  <project path="external/javapoet" name="platform/external/javapoet" groups="pdk" />
+  <project path="external/smali" name="platform/external/smali" groups="pdk" />
+    <!-- smali dependencies -->
+    <project path="external/antlr" name="platform/external/antlr" groups="pdk" />
+    <project path="external/jcommander" name="platform/external/jcommander" groups="pdk" />
+    <!-- For commons-cli-1.2 -->
+    <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" clone-depth="1" />
+  <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk" />
+  <project path="external/objenesis" name="platform/external/objenesis" groups="pdk" />
+  <project path="external/turbine" name="platform/external/turbine" groups="pdk" />
+  <project path="external/libxml2" name="platform/external/libxml2" groups="pdk,libxml2" />
+
+  <!-- jvmti tests dependencies -->
+  <project path="tools/dexter" name="platform/tools/dexter" groups="tools" />
+
+  <!-- run-test dependency and debugging -->
+  <!-- for dx and jasmin -->
+  <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
+  <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
+
+  <!-- Tradefed support -->
+  <project path="external/easymock" name="platform/external/easymock" groups="pdk" />
+  <project path="external/guice" name="platform/external/guice" groups="pdk" />
+  <project path="external/jacoco" name="platform/external/jacoco" groups="pdk" />
+  <project path="external/jline" name="platform/external/jline" groups="pdk,tradefed,pdk-fs" />
+  <project path="external/jsr330" name="platform/external/jsr330" groups="pdk" />
+  <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts" />
+  <project path="prebuilts/asuite" name="platform/prebuilts/asuite" groups="pdk" clone-depth="1" />
+  <project path="test/suite_harness" name="platform/test/suite_harness" groups="cts,pdk-cw-fs,pdk-fs" />
+  <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" />
+  <project path="tools/loganalysis" name="platform/tools/loganalysis" groups="nopresubmit,pdk,tradefed" />
+  <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" />
+  <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
+
+<!--
+  Build system support.
+  None of these projects should be included in the ART apex.
+-->
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -29,160 +152,85 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="art" name="platform/art" groups="pdk" >
-    <linkfile src=".vpython" dest=".vpython" />
-  </project>
-  <project path="bionic" name="platform/bionic" groups="pdk" />
-  <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
-  <project path="device/generic/art" name="device/generic/art" groups="pdk" />
-  <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/annotation-tools" name="platform/external/annotation-tools" groups="pdk" />
-  <project path="external/antlr" name="platform/external/antlr" groups="pdk" />
-  <project path="external/apache-commons-bcel" name="platform/external/apache-commons-bcel" groups="pdk" />
-  <project path="external/apache-commons-math" name="platform/external/apache-commons-math" groups="pdk" />
-  <project path="external/apache-harmony" name="platform/external/apache-harmony" groups="pdk" />
-  <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" />
-  <project path="external/archive-patcher" name="platform/external/archive-patcher" groups="pdk" />
-  <project path="external/arm-optimized-routines" name="platform/external/arm-optimized-routines" groups="pdk" />
-  <project path="external/avb" name="platform/external/avb" groups="pdk" />
-  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" />
-  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
-  <project path="external/caliper" name="platform/external/caliper" groups="pdk" />
-  <project path="external/chromium-libpac" name="platform/external/chromium-libpac" groups="pdk" />
-  <project path="external/clang" name="platform/external/clang" groups="pdk" clone-depth="1" />
-  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
-  <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk" />
-  <project path="external/cpu_features" name="platform/external/cpu_features" groups="pdk" />
-  <project path="external/dagger2" name="platform/external/dagger2" groups="pdk" />
-  <project path="external/desugar" name="platform/external/desugar" groups="pdk" />
-  <project path="external/dexmaker" name="platform/external/dexmaker" groups="pdk" />
-  <project path="external/dlmalloc" name="platform/external/dlmalloc" groups="pdk" />
-  <project path="external/doclava" name="platform/external/doclava" groups="pdk" />
-  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" />
-  <project path="external/easymock" name="platform/external/easymock" groups="pdk" />
-  <project path="external/error_prone" name="platform/external/error_prone" groups="pdk" />
-  <project path="external/expat" name="platform/external/expat" groups="pdk" />
-  <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="pdk" />
-  <project path="external/fdlibm" name="platform/external/fdlibm" groups="pdk" />
-  <project path="external/fec" name="platform/external/fec" groups="pdk" />
-  <project path="external/fmtlib" name="platform/external/fmtlib" groups="pdk" />
   <project path="external/golang-protobuf" name="platform/external/golang-protobuf" groups="pdk" />
-  <project path="external/google-styleguide" name="platform/external/google-styleguide" groups="pdk" />
-  <project path="external/googletest" name="platform/external/googletest" groups="pdk" />
-  <project path="external/guava" name="platform/external/guava" groups="pdk" />
-  <project path="external/guice" name="platform/external/guice" groups="pdk" />
-  <project path="external/gwp_asan" name="platform/external/gwp_asan" groups="pdk" />
-  <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk" />
-  <project path="external/icu" name="platform/external/icu" groups="pdk" />
-  <project path="external/jacoco" name="platform/external/jacoco" groups="pdk" />
-  <project path="external/jarjar" name="platform/external/jarjar" groups="pdk" />
-  <project path="external/javapoet" name="platform/external/javapoet" groups="pdk" />
-  <project path="external/javasqlite" name="platform/external/javasqlite" groups="pdk" />
-  <project path="external/jcommander" name="platform/external/jcommander" groups="pdk" />
-  <project path="external/jemalloc" name="platform/external/jemalloc" groups="pdk" />
-  <project path="external/jemalloc_new" name="platform/external/jemalloc_new" groups="pdk" />
-  <project path="external/jline" name="platform/external/jline" groups="pdk,tradefed,pdk-fs" />
-  <project path="external/jsilver" name="platform/external/jsilver" groups="pdk" />
-  <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="pdk" />
-  <project path="external/jsr305" name="platform/external/jsr305" groups="pdk" />
-  <project path="external/jsr330" name="platform/external/jsr330" groups="pdk" />
-  <project path="external/junit" name="platform/external/junit" groups="pdk" />
-  <project path="external/junit-params" name="platform/external/junit-params" groups="pdk" />
-  <project path="external/kotlinc" name="platform/external/kotlinc" groups="pdk" />
-  <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" />
-  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" />
-  <project path="external/libunwind" name="platform/external/libunwind" groups="pdk" />
-  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk" />
-  <project path="external/libusb" name="platform/external/libusb" groups="pdk" />
-  <project path="external/libxml2" name="platform/external/libxml2" groups="pdk,libxml2" />
-  <project path="external/llvm" name="platform/external/llvm" groups="pdk" clone-depth="1" />
-  <project path="external/lz4" name="platform/external/lz4" groups="pdk" />
-  <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
-  <project path="external/mdnsresponder" name="platform/external/mdnsresponder" groups="pdk" />
-  <project path="external/mime-support" name="platform/external/mime-support" groups="pdk" />
-  <project path="external/mksh" name="platform/external/mksh" groups="pdk" />
-  <project path="external/mockftpserver" name="platform/external/mockftpserver" groups="pdk" />
-  <project path="external/mockito" name="platform/external/mockito" groups="pdk" />
-  <project path="external/mockwebserver" name="platform/external/mockwebserver" groups="pdk" />
-  <project path="external/nist-pkits" name="platform/external/nist-pkits" groups="pdk" />
-  <project path="external/objenesis" name="platform/external/objenesis" groups="pdk" />
-  <project path="external/oj-libjdwp" name="platform/external/oj-libjdwp" groups="pdk" />
-  <project path="external/okhttp" name="platform/external/okhttp" groups="pdk" />
-  <project path="external/pcre" name="platform/external/pcre" groups="pdk" />
-  <project path="external/perfetto" name="platform/external/perfetto" groups="pdk" />
-  <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
-  <project path="external/python/cpython2" name="platform/external/python/cpython2" groups="pdk" />
-  <project path="external/python/cpython3" name="platform/external/python/cpython3" groups="pdk" />
-  <project path="external/python/six" name="platform/external/python/six" groups="pdk" />
-  <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
-  <project path="external/scudo" name="platform/external/scudo" groups="pdk" />
-  <project path="external/selinux" name="platform/external/selinux" groups="pdk" />
-  <project path="external/slf4j" name="platform/external/slf4j" groups="pdk" />
-  <project path="external/smali" name="platform/external/smali" groups="pdk" />
-  <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
-  <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" />
-  <project path="external/tagsoup" name="platform/external/tagsoup" groups="pdk" />
-  <project path="external/toybox" name="platform/external/toybox" groups="pdk" />
-  <project path="external/turbine" name="platform/external/turbine" groups="pdk" />
-  <project path="external/v8" name="platform/external/v8" groups="pdk" />
-  <project path="external/vixl" name="platform/external/vixl" groups="pdk" />
-  <project path="external/vogar" name="platform/external/vogar" groups="pdk" />
-  <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
-  <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs,pdk-fs" />
-  <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
-  <project path="libcore" name="platform/libcore" groups="pdk" />
-  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
-  <project path="packages/modules/DnsResolver" name="platform/packages/modules/DnsResolver" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/modules/vndk" name="platform/packages/modules/vndk" groups="pdk-cw-fs,pdk-fs" />
-  <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts" />
-  <project path="prebuilts/asuite" name="platform/prebuilts/asuite" groups="pdk" clone-depth="1" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/clang-tools" name="platform/prebuilts/clang-tools" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,tradefed" clone-depth="1" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux,pdk,tradefed" />
+  <!-- Dependency of signapk -->
+  <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
+  <!-- Dependency of zipalign -->
+  <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs,pdk-fs" />
+
+<!--
+  Build dependencies.
+  None of these projects should be included in the ART apex.
+-->
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,linux,arm" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="pdk,linux,arm" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="pdk,linux" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" clone-depth="1" />
-  <project path="prebuilts/gdb/linux-x86" name="platform/prebuilts/gdb/linux-x86" groups="linux" clone-depth="1" />
-  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,tradefed" clone-depth="1" />
-  <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" clone-depth="1" />
   <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/jdk/jdk9" name="platform/prebuilts/jdk/jdk9" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux,pdk,tradefed" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" groups="pdk" clone-depth="1" />
   <project path="prebuilts/r8" name="platform/prebuilts/r8" groups="pdk"  clone-depth="1" />
-  <project path="prebuilts/runtime" name="platform/prebuilts/runtime" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" />
-  <project path="prebuilts/vndk/v28" name="platform/prebuilts/vndk/v28" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/vndk/v29" name="platform/prebuilts/vndk/v29" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux,pdk" clone-depth="1" />
-  <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" />
-  <project path="system/apex" name="platform/system/apex" groups="pdk" />
-  <project path="system/core" name="platform/system/core" groups="pdk" />
-  <project path="system/extras" name="platform/system/extras" groups="pdk" />
-  <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" />
-  <project path="system/libartpalette" name="platform/system/libartpalette" groups="pdk" />
-  <project path="system/libsysprop" name="platform/system/libsysprop" groups="pdk" />
-  <project path="system/linkerconfig" name="platform/system/linkerconfig" groups="pdk" />
-  <project path="system/memory/libmeminfo" name="platform/system/memory/libmeminfo" groups="pdk" />
-  <project path="system/netd" name="platform/system/netd" groups="pdk" />
-  <project path="system/security" name="platform/system/security" groups="pdk" />
-  <project path="system/sepolicy" name="platform/system/sepolicy" groups="pdk" />
-  <project path="system/timezone" name="platform/system/timezone" groups="pdk" />
-  <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk" />
-  <project path="system/tools/sysprop" name="platform/system/tools/sysprop" groups="pdk" />
-  <project path="test/suite_harness" name="platform/test/suite_harness" groups="cts,pdk-cw-fs,pdk-fs" />
-  <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" />
-  <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
-  <project path="tools/apkzlib" name="platform/tools/apkzlib" groups="pdk,tradefed" />
-  <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" />
-  <project path="tools/dexter" name="platform/tools/dexter" groups="tools" />
-  <project path="tools/loganalysis" name="platform/tools/loganalysis" groups="nopresubmit,pdk,tradefed" />
   <project path="tools/metalava" name="platform/tools/metalava" groups="tools" />
+    <!-- Dependency of metalava -->
+    <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
+    <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" />
+    <project path="external/kotlinc" name="platform/external/kotlinc" groups="pdk" />
   <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk" />
-  <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" />
-  <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
+    <!-- Dependency of platform-compat -->
+    <project path="external/guava" name="platform/external/guava" groups="pdk" />
+    <project path="external/error_prone" name="platform/external/error_prone" groups="pdk" />
+    <project path="external/jsr305" name="platform/external/jsr305" groups="pdk" />
+  <!-- For host build time checking of an apex -->
+  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" />
+  <project path="system/apex" name="platform/system/apex" groups="pdk" />
+    <!-- Dependency of apex -->
+    <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk" />
+    <project path="external/avb" name="platform/external/avb" groups="pdk" />
+    <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
+      <project path="external/python/six" name="platform/external/python/six" groups="pdk" />
+    <project path="external/python/cpython2" name="platform/external/python/cpython2" groups="pdk" />
+    <project path="external/selinux" name="platform/external/selinux" groups="pdk" />
+      <project path="external/pcre" name="platform/external/pcre" groups="pdk" />
+    <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
+    <!-- For aapt2 -->
+    <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" />
+  <!-- For selinux file in apex -->
+  <project path="system/sepolicy" name="platform/system/sepolicy" groups="pdk" />
+  <!-- For sysprop in apex -->
+  <project path="system/tools/sysprop" name="platform/system/tools/sysprop" groups="pdk" />
+
+<!--
+  ART Module build dependencies in prebuilts.
+  None of these prebuilts should be included in the ART apex.
+-->
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/runtime" name="platform/prebuilts/runtime" groups="pdk" clone-depth="1" />
+
+<!--
+  Sources of ART module dependencies. !TO BE REMOVED!
+-->
+
+  <!-- Bionic projects to be removed once using prebuilts -->
+  <project path="bionic" name="platform/bionic" groups="pdk" />
+  <project path="external/scudo" name="platform/external/scudo" groups="pdk" />
+  <project path="prebuilts/clang-tools" name="platform/prebuilts/clang-tools" groups="pdk" clone-depth="1" />
+  <project path="external/arm-optimized-routines" name="platform/external/arm-optimized-routines" groups="pdk" />
+  <project path="external/gwp_asan" name="platform/external/gwp_asan" groups="pdk" />
+
+  <!-- Palette projects to be removed once using prebuilts -->
+  <project path="system/libartpalette" name="platform/system/libartpalette" groups="pdk" />
+    <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="pdk" />
+
+  <!-- ICU projects to be removed once using prebuilts -->
+  <project path="external/chromium-libpac" name="platform/external/chromium-libpac" groups="pdk" />
+  <project path="external/icu" name="platform/external/icu" groups="pdk" />
+  <project path="external/v8" name="platform/external/v8" groups="pdk" />
+
+  <!-- Conscrypt projects to be removed once using prebuilts -->
+  <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk" />
+
+  <!-- Timezone projects to be removed once using prebuilts. Only used for tests. -->
+  <project path="system/timezone" name="platform/system/timezone" groups="pdk" />
 </manifest>
