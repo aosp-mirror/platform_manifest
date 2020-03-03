@@ -6,24 +6,20 @@
     project rule in google3 to ensure new projects get testing.
     See go/side-branch-testing for details.
 -->
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="master"
+  <default revision="llvm-r365631"
            remote="aosp"
            sync-j="4" />
-
   <!-- Core LLVM toolchain components -->
   <project path="bionic" name="platform/bionic" />
   <project path="toolchain/binutils" name="toolchain/binutils" />
   <project path="toolchain/llvm-project" name="toolchain/llvm-project"
-           revision="master-legacy" />
+            />
   <project path="toolchain/llvm_android" name="toolchain/llvm_android" />
-
   <!-- Android/ChromeOS shared toolchain-utils -->
-  <project path="external/toolchain-utils" name="platform/external/toolchain-utils" revision="master" />
-
+  <project path="external/toolchain-utils" name="platform/external/toolchain-utils"  />
   <!-- Binutils/gcc toolchains -->
   <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,darwin,arm" />
   <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
@@ -37,30 +33,24 @@
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" />
   <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" groups="pdk,linux,mips" />
   <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" />
-
   <!-- CMake prebuilts -->
   <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" />
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" />
-
   <!-- libedit prebuilts for lldb -->
-  <project path="prebuilts/libedit/linux-x86" name="platform/prebuilts/libedit/linux-x86" clone-depth="1" revision="f44e465b9aa39abafa921815ea697078e7cc7cab" />
-  <project path="prebuilts/libedit/darwin-x86" name="platform/prebuilts/libedit/darwin-x86" clone-depth="1" revision="74be96197bca7771d104b8643cfe46c6d2b97240"/>
-
+  <project path="prebuilts/libedit/linux-x86" name="platform/prebuilts/libedit/linux-x86" clone-depth="1"  />
+  <project path="prebuilts/libedit/darwin-x86" name="platform/prebuilts/libedit/darwin-x86" clone-depth="1" />
   <!-- swig prebuilts for lldb -->
-  <project path="prebuilts/swig/darwin-x86" name="platform/prebuilts/swig/darwin-x86" clone-depth="1" revision="1bc6fb86b85958ea55f8fc061acaa8f9e92231d9" />
-  <project path="prebuilts/swig/linux-x86" name="platform/prebuilts/swig/linux-x86" clone-depth="1" revision="76c2b6e8d94fd7980f7b2045eb56ba16dadaa3c8" />
-  <project path="prebuilts/swig/windows-x86" name="platform/prebuilts/swig/windows-x86" clone-depth="1" revision="e33760ce7e7f5f2cc5db29ca8424a8ddd8ce16b6" />
-
+  <project path="prebuilts/swig/darwin-x86" name="platform/prebuilts/swig/darwin-x86" clone-depth="1"  />
+  <project path="prebuilts/swig/linux-x86" name="platform/prebuilts/swig/linux-x86" clone-depth="1"  />
+  <project path="prebuilts/swig/windows-x86" name="platform/prebuilts/swig/windows-x86" clone-depth="1"  />
   <!-- Python prebuilts -->
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="bd5a711328e3301b4b46a5e539bab4ece36ef06c" />
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1"  />
   <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="b109ae5ae0420888c292ae4db68a6233e6420ddc" />
-
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1"  />
   <!-- Prebuilts (for ease of updating) -->
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" />
-
   <!-- NDK headers/libraries -->
   <project path="toolchain/prebuilts/ndk/r20" name="toolchain/prebuilts/ndk/r20" />
 </manifest>
