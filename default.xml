@@ -4,7 +4,7 @@
   <remote  name="goog"
            fetch=".."
            review="sso://googleplex-android/" />
-  <default revision="rvc-qpr-dev"
+  <default revision="mainline-prod"
            remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
@@ -40,7 +40,7 @@
 		Replication mirror to allow partner CLs submitted on partner gerrit to be replicated to internal master.
 		Also where to sync from.
 	dest-branch="partner-master-tv-dev" : where in partner it should upload to
-	clone-depth="2" : Don't clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
+	clone-depth="2" : Don"t clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
    -->
   <project path="device/amlogic/common" name="device/amlogic/common" groups="device,amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
   <project path="device/amlogic/yukawa" name="device/amlogic/yukawa" groups="device,yukawa,pdk" />
