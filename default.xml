@@ -4,7 +4,7 @@
   <remote  name="goog"
            fetch=".."
            review="sso://googleplex-android/" />
-  <default revision="master"
+  <default revision="sc-d1-dev"
            remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
@@ -40,7 +40,7 @@
 		Replication mirror to allow partner CLs submitted on partner gerrit to be replicated to internal master.
 		Also where to sync from.
 	dest-branch="partner-master-tv-dev" : where in partner it should upload to
-	clone-depth="2" : Don't clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
+	clone-depth="2" : Don"t clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
    -->
   <project path="device/amlogic/common" name="device/amlogic/common" groups="device,amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" />
   <project path="device/amlogic/yukawa" name="device/amlogic/yukawa" groups="device,yukawa,pdk" />
@@ -865,7 +865,7 @@
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
   <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk" />
   <project path="tools/ndkports" name="platform/tools/ndkports" groups="pdk" />
-  <project path="tools/repohooks" name="platform/tools/repohooks" revision="master" groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" revision="sc-d1-dev" groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed" />
   <project path="tools/security" name="platform/tools/security" groups="pdk,tools" />
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
@@ -881,7 +881,7 @@
   <project path="developers/samples/vendor/google" name="platform/developers/samples/vendor/google" />
   <project path="tools/vendor/ej-tech" name="platform/tools/vendor/ej-tech" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/google" name="platform/tools/vendor/google" groups="notdefault,tools,vendor" />
-  <project path="tools/vendor/google_prebuilts/arc" name="platform/tools/vendor/google_prebuilts/arc" groups="tools,vendor,pdk" revision="master"/>
+  <project path="tools/vendor/google_prebuilts/arc" name="platform/tools/vendor/google_prebuilts/arc" groups="tools,vendor,pdk" revision="sc-d1-dev"/>
   <project path="tools/vendor/google_prebuilts/rbe" name="platform/tools/vendor/google_prebuilts/rbe" groups="vendor" clone-depth="1" />
   <project path="tools/vendor/intel" name="platform/tools/vendor/intel" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/jetbrains" name="platform/tools/vendor/jetbrains" groups="notdefault,tools,vendor" />
@@ -942,7 +942,7 @@
   <project path="vendor/google/darwinn" name="platform/vendor/google/darwinn" groups="vendor"/>
   <project path="vendor/google/data/etc" name="platform/vendor/google/data/etc" groups="vendor"/>
   <project path="vendor/google/docs" name="platform/vendor/google/docs" groups="vendor"/>
-  <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore" revision="master" groups="vendor"/>
+  <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore" revision="sc-d1-dev" groups="vendor"/>
   <project path="vendor/google/elmyra" name="platform/vendor/google/elmyra" groups="vendor" />
   <project path="vendor/google/etc" name="platform/vendor/google/etc" groups="vendor"/>
   <project path="vendor/google/factoryota" name="platform/vendor/google/factoryota" groups="vendor"/>
