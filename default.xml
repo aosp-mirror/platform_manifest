@@ -33,9 +33,13 @@
   <project path="external/skia" name="platform/external/skia" />
   <project path="external/zlib" name="platform/external/zlib" />
   <project path="frameworks/layoutlib" name="platform/frameworks/layoutlib" groups="notdefault,layoutlib" />
+  <project name="platform/prebuilts/android-emulator" path="prebuilts/android-emulator" clone-depth="1" />
   <project path="prebuilts/google-breakpad/darwin-x86" name="platform/prebuilts/google-breakpad/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
   <project path="prebuilts/google-breakpad/linux-x86" name="platform/prebuilts/google-breakpad/linux-x86" clone-depth="1" groups="lldb,notdefault,linux" />
   <project path="prebuilts/google-breakpad/windows-x86" name="platform/prebuilts/google-breakpad/windows-x86" clone-depth="1" groups="lldb,notdefault,windows" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
   <project path="prebuilts/libedit/darwin-x86" name="platform/prebuilts/libedit/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
   <project path="prebuilts/libedit/linux-x86" name="platform/prebuilts/libedit/linux-x86" clone-depth="1" groups="lldb,notdefault,linux" />
   <project path="prebuilts/libglog/darwin-x86" name="platform/prebuilts/libglog/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
@@ -49,6 +53,7 @@
   <project path="prebuilts/r8" name="platform/prebuilts/r8" clone-depth="1" />
   <project path="prebuilts/studio/jdk" name="platform/prebuilts/studio/jdk" clone-depth="1" />
   <project path="prebuilts/studio/layoutlib" name="platform/prebuilts/studio/layoutlib" clone-depth="1" />
+  <project path="prebuilts/studio/sdk/remote" name="platform/tools/google_prebuilts/studio/sdk/remote" clone-depth="1" />
   <project path="prebuilts/swig/darwin-x86" name="platform/prebuilts/swig/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
   <project path="prebuilts/swig/linux-x86" name="platform/prebuilts/swig/linux-x86" clone-depth="1" groups="lldb,notdefault,linux" />
   <project path="prebuilts/swig/windows-x86" name="platform/prebuilts/swig/windows-x86" clone-depth="1" groups="lldb,notdefault,windows" />
@@ -60,16 +65,18 @@
   <project path="tools/assets" name="assets/android-studio-ux-assets" clone-depth="1" />
   <project path="tools/base" name="platform/tools/base">
     <linkfile src="bazel/toplevel.WORKSPACE" dest="WORKSPACE" />
+    <linkfile src="bazel/toplevel.bazelignore" dest=".bazelignore" />
     <linkfile src="bazel/sdk/prebuilts.studio.sdk.BUILD" dest="prebuilts/studio/sdk/BUILD" />
     <linkfile src="bazel/sdk/prebuilts.studio.sdk.README.md" dest="prebuilts/studio/sdk/README.md" />
-   </project>
+    <linkfile src="bazel/toolchains/darwin/wrapped_ar" dest="prebuilts/clang/studio-extra/wrapped_ar.darwin" />
+  </project>
   <project path="tools/data-binding" name="platform/frameworks/data-binding"/>
   <project path="tools/dx/dalvik" name="platform/dalvik" />
   <project path="tools/external/bazelbuild-rules-kotlin" name="platform/tools/external/bazelbuild-rules-kotlin" />
   <project path="tools/external/desugar" name="platform/external/desugar" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" />
-  <project path="tools/gradle" name="platform/tools/gradle" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" />
+  <project path="tools/gradle" name="platform/tools/gradle" clone-depth="1" />
   <project path="tools/idea" name="platform/tools/idea" />
   <project path="tools/repohooks" name="platform/tools/repohooks" />
   <project path="tools/sherpa" name="platform/frameworks/opt/sherpa" />
