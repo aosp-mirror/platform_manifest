@@ -4,7 +4,7 @@
   <remote  name="goog"
            fetch=".."
            review="sso://googleplex-android/" />
-  <default revision="rvc-dev"
+  <default revision="rvc-emu-dev"
            remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
@@ -40,7 +40,7 @@
 		Replication mirror to allow partner CLs submitted on partner gerrit to be replicated to internal master.
 		Also where to sync from.
 	dest-branch="partner-master-tv-dev" : where in partner it should upload to
-	clone-depth="2" : Don't clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
+	clone-depth="2" : Don"t clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
    -->
   <project path="device/amlogic/common" name="device/amlogic/common" groups="device,amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="r-tv-dev" revision="mirror-partner-r-tv-dev"  />
   <project path="device/amlogic/yukawa" name="device/amlogic/yukawa" groups="device,yukawa,pdk" />
@@ -96,8 +96,8 @@
   <project path="device/google/fuchsia" name="device/google/fuchsia" groups="device" />
   <project path="device/google/muskie" name="device/google/muskie" groups="device,generic_fs,muskie" />
   <project path="device/google/taimen" name="device/google/taimen" groups="device,taimen" />
-  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull" remote="goog-and-upload-partner" dest-branch="rvc-dev" revision="mirror-partner-rvc-dev" />
-  <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner" dest-branch="rvc-dev" revision="mirror-partner-rvc-dev" clone-depth="1" />
+  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull" remote="goog-and-upload-partner" dest-branch="rvc-emu-dev" revision="mirror-partner-rvc-dev" />
+  <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner" dest-branch="rvc-emu-dev" revision="mirror-partner-rvc-dev" clone-depth="1" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" />
   <project path="device/google/wahoo" name="device/google/wahoo" groups="device,generic_fs,wahoo" />
   <project path="device/google/wahoo-kernel" name="device/google/wahoo-kernel" groups="device,generic_fs,wahoo" clone-depth="1" />
@@ -115,8 +115,8 @@
   <project name="device/mediatek/wembley-sepolicy" path="device/mediatek/wembley-sepolicy" groups="device"/>
   <project path="device/panasonic/hawk" name="device/panasonic/hawk" groups="device,panasonic,hawk" />
   <project path="device/panasonic/hawk-kernel" name="device/panasonic/hawk-kernel" groups="device,panasonic,hawk" clone-depth="1" />
-  <project path="device/qcom/gull" name="device/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" dest-branch="rvc-dev" revision="mirror-partner-rvc-dev" />
-  <project path="device/qcom/gull-kernel" name="device/qcom/gull-kernel" groups="device,gull" clone-depth="1" remote="goog-and-upload-partner" dest-branch="rvc-dev" revision="mirror-partner-rvc-dev" />
+  <project path="device/qcom/gull" name="device/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" dest-branch="rvc-emu-dev" revision="mirror-partner-rvc-dev" />
+  <project path="device/qcom/gull-kernel" name="device/qcom/gull-kernel" groups="device,gull" clone-depth="1" remote="goog-and-upload-partner" dest-branch="rvc-emu-dev" revision="mirror-partner-rvc-dev" />
   <project path="device/qcom/mtp8998" name="device/qcom/mtp8998" groups="device,mtp8998" />
   <project path="device/qcom/mtp8998-kernel" name="device/qcom/mtp8998-kernel" groups="device,mtp8998" clone-depth="1" />
   <project path="device/qcom/osprey" name="device/qcom/osprey" groups="device,osprey" />
