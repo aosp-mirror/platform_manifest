@@ -1,104 +1,99 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="emu-master-dev"
-           remote="aosp"
-           sync-j="4" />
+  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
+  <default remote="aosp" revision="emu-30-release" sync-j="4" />
 
-  <project path="build" name="platform/build" />
-  <project path="tools/buildSrc" name="platform/tools/buildSrc">
-    <copyfile src="base/build.gradle"      dest="tools/build.gradle" />
-    <copyfile src="base/settings.gradle"   dest="tools/settings.gradle" />
-    <copyfile src="base/gradlew"           dest="tools/gradlew" />
-    <copyfile src="base/gradlew.bat"       dest="tools/gradlew.bat" />
-    <copyfile src="base/gradle.properties" dest="tools/gradle.properties" />
+  <project name="platform/build" path="build" revision="1cd0436857083706e06542fc8fdd999196083707" />
+  <project name="platform/tools/buildSrc" path="tools/buildSrc" revision="9377f5fc656188dcc42bc0b7f6ce53ab90dfca05">
+    <copyfile dest="tools/build.gradle" src="base/build.gradle" />
+    <copyfile dest="tools/settings.gradle" src="base/settings.gradle" />
+    <copyfile dest="tools/gradlew" src="base/gradlew" />
+    <copyfile dest="tools/gradlew.bat" src="base/gradlew.bat" />
+    <copyfile dest="tools/gradle.properties" src="base/gradle.properties" />
   </project>
 
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="master"/>
-  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" revision="master"/>
-  <project path="external/angle" name="platform/external/angle" />
-  <project path="external/adt-infra" name="platform/external/adt-infra" />
-  <project path="external/astc-codec" name="platform/external/astc-codec" revision="master" />
-  <project path="external/bluetooth/glib" name="platform/external/bluetooth/glib" />
-  <project path="external/boringssl" name="platform/external/boringssl" revision="master" clone-depth="1"/>
-  <project path="external/cares" name="platform/external/c-ares" />
-  <project path="external/curl" name="platform/external/curl" />
-  <project path="external/deqp" name="platform/external/deqp" revision="master" />
-  <project path="external/ffmpeg" name="platform/external/ffmpeg" />
-  <project path="external/googletest" name="platform/external/googletest" revision="master" />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark" revision="db1632fadc79df388a2a7248157c965ee40248a1" />
-  <project path="external/google-breakpad" name="platform/external/google-breakpad" />
-  <project path="external/grpc" name="platform/external/grpc-grpc" />
-  <project path="external/libffi" name="platform/external/libffi" />
-  <project path="external/libvpx" name="platform/external/libvpx" />
-  <project path="external/libyuv" name="platform/external/libyuv" revision="master"/>
-  <project path="external/libpng" name="platform/external/libpng" />
-  <project path="external/lz4" name="platform/external/lz4" />
-  <project path="external/openssl" name="platform/external/openssl" />
-  <project path="external/pixman" name="platform/external/pixman" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/qemu" name="platform/external/qemu">
-    <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
+  <project name="device/generic/goldfish-opengl" path="device/generic/goldfish-opengl" revision="6cc442ec6eea6fbbbbad781f745ca4773da093fa" />
+  <project name="device/generic/vulkan-cereal" path="device/generic/vulkan-cereal" revision="ea978cef5a41c292dd9bd0ce9bf08648e76ca030" />
+  <project name="platform/external/angle" path="external/angle" revision="92a68d247d78d401bd9cdf6b738c872316d36747" />
+  <project name="platform/external/adt-infra" path="external/adt-infra" revision="bcd7f0f45625fe1095d48ff91c629c36b842b9a1" />
+  <project name="platform/external/astc-codec" path="external/astc-codec" revision="17ae36822a8084f45ae51f9031e81f8318254f33" />
+  <project name="platform/external/bluetooth/glib" path="external/bluetooth/glib" revision="1143b9918eab068401b604eb11c3f651f4e38b25" />
+  <project clone-depth="1" name="platform/external/boringssl" path="external/boringssl" revision="2e925e97fef694474f6984c3edef8a9f348affa9" />
+  <project name="platform/external/c-ares" path="external/cares" revision="b88261c9132d21c234dfbf36db3c6c3f5780051a" />
+  <project name="platform/external/curl" path="external/curl" revision="1da4b04273638c8afe6f88bd7a7ccfb693640773" />
+  <project name="platform/external/deqp" path="external/deqp" revision="ee2101f344ad88ceee4e15ce4afcf2eab2df3c9d" />
+  <project name="platform/external/ffmpeg" path="external/ffmpeg" revision="5c6f92dd1b16590153367ce79ed9b098cace354f" />
+  <project name="platform/external/googletest" path="external/googletest" revision="de13bdb524c9d888b24a56490742227d9aabad12" />
+  <project name="platform/external/google-benchmark" path="external/google-benchmark" revision="db1632fadc79df388a2a7248157c965ee40248a1" />
+  <project name="platform/external/google-breakpad" path="external/google-breakpad" revision="a1414818b9f9810a3b45f1f55d9c00f5116ec7d9" />
+  <project name="platform/external/grpc-grpc" path="external/grpc" revision="0d80ea35ba09d0462ca13f236cc9ddc3fb749c57" />
+  <project name="platform/external/libffi" path="external/libffi" revision="30bc66eb2043d8434e94f29beda87001e58c2a34" />
+  <project name="platform/external/libvpx" path="external/libvpx" revision="62332cf39b0302e240acb10ed78d61d5ea282a39" />
+  <project name="platform/external/libyuv" path="external/libyuv" revision="2ee3028b36ac61abed29cbb379a411a98fe31677" />
+  <project name="platform/external/libpng" path="external/libpng" revision="5d19b1bb0f5694f2ae47b3cc2ccfeb571764b439" />
+  <project name="platform/external/lz4" path="external/lz4" revision="1a184fdeb99f4cc11b774ac5b0b824b38105ec6c" />
+  <project name="platform/external/openssl" path="external/openssl" revision="8953c287cf742a22411f75fab28a33772240e44f" />
+  <project name="platform/external/pixman" path="external/pixman" revision="07a4f67e39d921a0a44a09e2ee67449dcfd66614" />
+  <project name="platform/external/protobuf" path="external/protobuf" revision="ca15ad7fb89a626c0d2a98240b11a2523727f9be" />
+  <project name="platform/external/qemu" path="external/qemu" revision="1316f94463002f1c5789b3ccfb678e07fb010660">
+    <copyfile dest="emu.code-workspace" src="android/vscode/emu.code-workspace" />
   </project>
-  <project path="external/qt" name="platform/external/qt" />
-  <project path="external/sdl2" name="platform/external/sdl2" />
-  <project path="external/swiftshader" name="platform/external/swiftshader"/>
-  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" revision="master"/>
-  <project path="external/virglrenderer" name="platform/external/virglrenderer" revision="crosvm-master"/>
-  <project path="external/nasm" name="platform/external/nasm" />
-  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
-  <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/native" name="platform/frameworks/native" revision="lollipop-release" />
-  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" />
-  <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/curl" name="platform/prebuilts/android-emulator-build/curl" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/protobuf" name="platform/prebuilts/android-emulator-build/protobuf" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
+  <project name="platform/external/qt" path="external/qt" revision="989b587a7ee85e4afde01b866aae3457bc9122c7" />
+  <project name="platform/external/sdl2" path="external/sdl2" revision="a3ceb7dc2b5ec536915c83bf7b547002786fd8be" />
+  <project name="platform/external/swiftshader" path="external/swiftshader" revision="9759b180cf5b6687afc1f231b1b9fa230da1b261" />
+  <project name="platform/external/tinyobjloader" path="external/tinyobjloader" revision="d16a940067fbc191364fc1d3e2a2d907209c9320" />
+  <project name="platform/external/virglrenderer" path="external/virglrenderer" revision="f0c2fba5827abb3634b1992855264d7fe990b89d" />
+  <project name="platform/external/nasm" path="external/nasm" revision="645e4f02c622ba67eb754000cc00c9db8be31f85" />
+  <project name="platform/external/wpa_supplicant_8" path="external/wpa_supplicant_8" revision="f7bda1df43b7a0c583cb063968bc5a5515fbc6ce" />
+  <project name="platform/external/zlib" path="external/zlib" revision="7656f9eff09cc38244978773777ee64b7b31155d" />
+  <project name="platform/frameworks/native" path="frameworks/native" revision="9094ee238458bf1e8a9e8335fd824acc4963d7f4" />
+  <project name="platform/prebuilts/android-emulator" path="prebuilts/android-emulator" revision="fb26612eb84576adb974fe7f18a49d263072116f" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/archive" path="prebuilts/android-emulator-build/archive" revision="0545d85d4442d77841f8a81ecd2627aff175ce02" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/common" path="prebuilts/android-emulator-build/common" revision="180c9a42b79f9c22a38f902564ea3950d4460a96" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/curl" path="prebuilts/android-emulator-build/curl" revision="06f0905068b9ebfdd2d11b4d310c36b68c2fbe2f" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/mesa" path="prebuilts/android-emulator-build/mesa" revision="be7c00f399b415511d73308f0af0c0310512aced" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/mesa-deps" path="prebuilts/android-emulator-build/mesa-deps" revision="17837fdb1889014fa01cbbbda56afc9b6034815f" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/protobuf" path="prebuilts/android-emulator-build/protobuf" revision="8e2a5472dd374e6c971d30eb3d00898a8c1a25c8" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/qemu-android-deps" path="prebuilts/android-emulator-build/qemu-android-deps" revision="715d3bed0a3dc4f9980528c9bfb81469f2d3cbab" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/qt" path="prebuilts/android-emulator-build/qt" revision="23cbd79e9db666af535e2cefcb23fcdf0ff0c123" />
 
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="master" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="master" />
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="master" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" />
-  <project path="prebuilts/ninja/windows-x86" name="platform/prebuilts/ninja/windows-x86" clone-depth="1" />
-  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" clone-depth="1" revision="master" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1" revision="master" />
-  <project path="sdk" name="platform/sdk" />
-  <project path="tools/emulator" name="platform/tools/emulator" />
-  <project path="tools/acloud" name="platform/tools/acloud" revision="master" />
-  <project path="tools/external/gradle" name="platform/tools/external/gradle"/>
-  <project path="tools/gradle" name="platform/tools/gradle" />
+  <project clone-depth="1" name="platform/prebuilts/clang/host/darwin-x86" path="prebuilts/clang/host/darwin-x86" revision="7434df2b454c69325ab8bd9dae86c2b73bfdc1c5" />
+  <project clone-depth="1" name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" revision="4114ce222c83ba93e9c12c91c6ced2541b28f88c" />
+  <project clone-depth="1" name="platform/prebuilts/clang/host/windows-x86" path="prebuilts/clang/host/windows-x86" revision="13a179646c4a8e9ee21edbf8d75f092c17840ebe" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/cmake/darwin-x86" revision="1d4c2556dbbf86c502cf70f3bf339612c0aa8577" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/cmake/linux-x86" revision="40dcb6f55bd2e8731e3e4f1a1721f7ff0fb83cb1" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/windows-x86" path="prebuilts/cmake/windows-x86" revision="d7c516df2fff90b7583ea2c4b4e7a3bff5cf2492" />
+  <project clone-depth="1" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" revision="90e45fec56fdeac84c9eb174c63fa6e748c6faa9" />
+  <project clone-depth="1" name="platform/prebuilts/ninja/darwin-x86" path="prebuilts/ninja/darwin-x86" revision="8e110eda03f1e908cad557286b8a80e961ff910e" />
+  <project clone-depth="1" name="platform/prebuilts/ninja/linux-x86" path="prebuilts/ninja/linux-x86" revision="7ef4cb95e1ed4305e99f03a8e8ad28d26134a45b" />
+  <project clone-depth="1" name="platform/prebuilts/ninja/windows-x86" path="prebuilts/ninja/windows-x86" revision="b88e85c90e260cfed1d5130499b8dfd7bb9dc02a" />
+  <project clone-depth="1" name="platform/prebuilts/qemu-kernel" path="prebuilts/qemu-kernel" revision="d6b05ef097ca380653b5ec040d25314f95736225" />
+  <project clone-depth="1" name="platform/prebuilts/tools" path="prebuilts/tools" revision="8aec3d9132bf1f0f142c0221496cc76811b7ad4c" />
+  <project name="platform/sdk" path="sdk" revision="315fb5b8a73df3f88c79a034968a87b461833a83" />
+  <project name="platform/tools/emulator" path="tools/emulator" revision="93a7010407cecb1df00a398b341ca3194e39c05c" />
+  <project name="platform/tools/acloud" path="tools/acloud" revision="164ca720d12f3e9420ae5d79e2f4e43ef04771d6" />
+  <project name="platform/tools/external/gradle" path="tools/external/gradle" revision="eed722e5b870766798670fb406ca30e57f90a3f8" />
+  <project name="platform/tools/gradle" path="tools/gradle" revision="ee598f8798fdfda273aec644a258f37fb5033556" />
 
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="master" />
-  <project path="external/rust/crates/bitflags" name="platform/external/rust/crates/bitflags" revision="master" />
-  <project path="external/rust/crates/byteorder" name="platform/external/rust/crates/byteorder" revision="master" />
-  <project path="external/rust/crates/libc" name="platform/external/rust/crates/libc" revision="master" />
-  <project path="external/rust/crates/proc-macro2" name="platform/external/rust/crates/proc-macro2" revision="master" />
-  <project path="external/rust/crates/quote" name="platform/external/rust/crates/quote" revision="master" />
-  <project path="external/rust/crates/remain" name="platform/external/rust/crates/remain" revision="master" />
-  <project path="external/rust/crates/syn" name="platform/external/rust/crates/syn" revision="master" />
-  <project path="external/rust/crates/unicode-xid" name="platform/external/rust/crates/unicode-xid" revision="master" />
+  <project clone-depth="1" name="platform/prebuilts/rust" path="prebuilts/rust" revision="c1e529419f6528854edc696fecafe6e9433f8461" />
+  <project name="platform/external/rust/crates/bitflags" path="external/rust/crates/bitflags" revision="4bf8ff97c216dbd84033a05d33ac515a3ad445db" />
+  <project name="platform/external/rust/crates/byteorder" path="external/rust/crates/byteorder" revision="38c3e288c6aae8e4fa4682a40f85bcf97eaa8f8e" />
+  <project name="platform/external/rust/crates/libc" path="external/rust/crates/libc" revision="df60ee8fa2660f85e97f42d212bcd9485f77eb29" />
+  <project name="platform/external/rust/crates/proc-macro2" path="external/rust/crates/proc-macro2" revision="962d301f33607c4d68b4596f273d48798c5bf817" />
+  <project name="platform/external/rust/crates/quote" path="external/rust/crates/quote" revision="0fd496fa286bf5dd7e545da5b88dbfd9ba8c8a11" />
+  <project name="platform/external/rust/crates/remain" path="external/rust/crates/remain" revision="53d2f11df48277a6dbb3312b5100bc94bb5582a8" />
+  <project name="platform/external/rust/crates/syn" path="external/rust/crates/syn" revision="62de5e50c9199bed18111720a0429e879c28445a" />
+  <project name="platform/external/rust/crates/unicode-xid" path="external/rust/crates/unicode-xid" revision="11f33051c20ec4919e54c94e118a186c3cb28db0" />
 
-  <project name="platform/external/adhd" path="third_party/adhd" revision="crosvm-master"/>
-  <project name="platform/external/crosvm" path="platform/crosvm" revision="crosvm-master"/>
-  <project name="platform/external/libepoxy" path="third_party/libepoxy" revision="crosvm-master"/>
-  <project name="platform/external/minigbm" path="third_party/minigbm" revision="crosvm-master"/>
+  <project name="platform/external/adhd" path="third_party/adhd" revision="805e83ebf5f4bca7a0092a7c042f6db10e6bf2cc" />
+  <project name="platform/external/crosvm" path="platform/crosvm" revision="4d62f326c90c0e99c1c82166399b591b64caf3b3" />
+  <project name="platform/external/libepoxy" path="third_party/libepoxy" revision="199985a9b74aa5610a2ce75be2997e7a272dd9fe" />
+  <project name="platform/external/minigbm" path="third_party/minigbm" revision="82e37a6c196d089140bf71a83dc0f6042d22ffd2" />
 
-  <project name="platform/external/minijail" path="aosp/external/minijail" revision="master"/>
-  <project name="platform/external/libcap" path="external/libcap" revision="master"/>
-  <project name="platform/external/libdrm" path="external/libdrm" revision="master"/>
+  <project name="platform/external/minijail" path="aosp/external/minijail" revision="afb7a139a6090944f10b4c4a1d71da21af6f4bcb" />
+  <project name="platform/external/libcap" path="external/libcap" revision="5a87f0eda987b08f70b40ca7d52ac0235388d1af" />
+  <project name="platform/external/libdrm" path="external/libdrm" revision="06b698c2b81637b803c3467f57ab511d44fe8090" />
 
-  <project name="device/google/cuttlefish_vmm" path="device/google/cuttlefish_vmm" revision="master"/>
-  <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="master"/>
+  <project name="device/google/cuttlefish_vmm" path="device/google/cuttlefish_vmm" revision="b93775b0d9209656ddbccd7e3b3d0fa665bd7a8f" />
+  <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="7ecba0da0b7e6ef8d78d09b8e1282ffe07028e41" />
 </manifest>
