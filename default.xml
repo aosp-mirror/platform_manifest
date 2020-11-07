@@ -93,6 +93,9 @@
   <project path="device/google/redbull-sepolicy" name="device/google/redbull-sepolicy" groups="device,redbull" />
   <project path="device/google/redfin" name="device/google/redfin" groups="device,redfin" />
   <project path="device/google/redfin-sepolicy" name="device/google/redfin-sepolicy" groups="device,redfin" />
+  <project path="device/google/slider" name="device/google/slider" groups="device,slider" />
+  <project path="device/google/slider-sepolicy" name="device/google/slider-sepolicy" groups="device,slider" />
+  <project path="device/google/slider-kernel" name="device/google/slider-kernel" groups="device,slider" clone-depth="1" />
   <project path="device/google/redfin_udfps" name="device/google/redfin_udfps" groups="device,redfin_udfps" />
   <project path="device/google/redfin_udfps-kernel" name="device/google/redfin_udfps-kernel" groups="device,redfin_udfps" clone-depth="1" />
   <project path="device/google/sunfish" name="device/google/sunfish" groups="device,sunfish" />
@@ -108,6 +111,8 @@
   <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" />
   <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" clone-depth="1" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" />
+  <project path="device/google/zebu" name="device/google/zebu" groups="device,slider" />
+  <project path="device/google/zebu-kernel" name="device/google/zebu-kernel" groups="device,slider" clone-depth="1" />
   <project path="device/google_car" name="device/google_car" groups="pdk" />
   <project path="device/linaro/dragonboard" name="device/linaro/dragonboard" groups="device,dragonboard,pdk" />
   <project path="device/linaro/dragonboard-kernel" name="device/linaro/dragonboard-kernel" groups="device,dragonboard,pdk" clone-depth="1" />
@@ -659,6 +664,9 @@
   <project path="hardware/google/av" name="platform/hardware/google/av" groups="pdk" />
   <project path="hardware/google/camera" name="platform/hardware/google/camera" groups="pdk" />
   <project path="hardware/google/easel" name="platform/hardware/google/easel" groups="pdk,easel" />
+  <project path="hardware/google/gchips" name="platform/hardware/google/gchips" groups="pdk-lassen" />
+  <project path="hardware/google/graphics/common" name="platform/hardware/google/graphics/common" groups="pdk-lassen" />
+  <project path="hardware/google/graphics/gs101" name="platform/hardware/google/graphics/gs101" groups="pdk-lassen" />
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk" />
   <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="generic_fs,pixel" />
   <project path="hardware/google/pixel-sepolicy" name="platform/hardware/google/pixel-sepolicy" groups="generic_fs,pixel" />
@@ -924,7 +932,7 @@
   <project path="system/bpf" name="platform/system/bpf" groups="pdk" />
   <project path="system/bpfprogs" name="platform/system/bpfprogs" groups="pdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" />
-  <project path="system/chre" name="platform/system/chre" groups="pdk" />
+  <project path="system/chre" name="platform/system/chre" revision="master" groups="pdk" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" />
   <project path="system/connectivity/wifilogd" name="platform/system/connectivity/wifilogd" groups="pdk" />
   <project path="system/core" name="platform/system/core" groups="pdk" />
@@ -1032,12 +1040,14 @@
   <project path="developers/samples/vendor/google" name="platform/developers/samples/vendor/google" />
   <project path="tools/vendor/ej-tech" name="platform/tools/vendor/ej-tech" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/google" name="platform/tools/vendor/google" groups="notdefault,tools,vendor" />
-  <project path="tools/vendor/google_prebuilts/arc" name="platform/tools/vendor/google_prebuilts/arc" groups="tools,vendor,pdk" revision="master"/>
+  <project path="tools/vendor/google_prebuilts/arc" name="platform/tools/vendor/google_prebuilts/arc" groups="tools,vendor,pdk" />
   <project path="tools/vendor/google_prebuilts/rbe" name="platform/tools/vendor/google_prebuilts/rbe" groups="vendor" clone-depth="1" />
   <project path="tools/vendor/intel" name="platform/tools/vendor/intel" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/jetbrains" name="platform/tools/vendor/jetbrains" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/microsoft" name="platform/tools/vendor/microsoft" groups="notdefault,tools,vendor" />
   <project path="vendor/amlogic/common" name="platform/vendor/amlogic/common" groups="vendor,amlogic,ampere,atom,beast,harman,sei" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" />
+  <project path="vendor/arm/mali/bob" name="platform/vendor/arm/mali/bob" groups="vendor" />
+  <project path="vendor/arm/mali/valhall" name="platform/vendor/arm/mali/valhall" groups="vendor" />
   <project path="vendor/askey/deadpool" name="platform/vendor/askey/deadpool" groups="vendor,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" />
   <project path="vendor/auto/embedded" name="platform/vendor/auto/embedded" groups="vendor" />
   <project path="vendor/auto/embedded_board" name="platform/vendor/auto/embedded_board" groups="vendor" />
@@ -1086,6 +1096,7 @@
   <project path="vendor/google/certs" name="platform/vendor/google/certs" groups="vendor"/>
   <project path="vendor/google/cts" name="platform/vendor/google/cts" groups="vendor"/>
   <project path="vendor/google/darwinn" name="platform/vendor/google/darwinn" groups="vendor"/>
+  <project path="vendor/google/darwinn2" name="platform/vendor/google/darwinn2" groups="vendor"/>
   <project path="vendor/google/data/etc" name="platform/vendor/google/data/etc" groups="vendor"/>
   <project path="vendor/google/docs" name="platform/vendor/google/docs" groups="vendor"/>
   <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore" revision="master" groups="vendor"/>
@@ -1097,6 +1108,7 @@
   <project path="vendor/google/frameworks/maps" name="platform/vendor/google/frameworks/maps" groups="vendor"/>
   <project path="vendor/google/gms" name="platform/vendor/google/gms" groups="vendor"/>
   <project path="vendor/google/google_overlay" name="platform/vendor/google/google_overlay" groups="vendor"/>
+  <project path="vendor/google/gs/display" name="platform/vendor/google/gs/display" groups="vendor" />
   <project path="vendor/google/input" name="platform/vendor/google/input" groups="vendor"/>
   <project path="vendor/google/interfaces" name="platform/vendor/google/interfaces" groups="vendor"/>
   <project path="vendor/google/libraries/consentlogging" name="platform/vendor/google/libraries/consentlogging" groups="vendor"/>
@@ -1105,7 +1117,9 @@
   <project path="vendor/google/libraries/neuralnetworks/hvxdriverprebuilt" name="platform/vendor/google/libraries/neuralnetworks/hvxdriverprebuilt" groups="vendor,wahoo" clone-depth="1"/>
   <project path="vendor/google/libraries/pixelatoms" name="platform/vendor/google/libraries/pixelatoms" groups="vendor,qcom_sdm710,qcom_sdm845,qcom_sm8150,qcom_sm7150,qcom_sm7250"/>
   <project path="vendor/google/libraries/RadioConfigLib" name="platform/vendor/google/libraries/RadioConfigLib" groups="vendor"/>
+  <project path="vendor/google/libraries/rilaudio" name="platform/vendor/google/libraries/rilaudio" groups="vendor,pdk-lassen"/>
   <project path="vendor/google/camera" name="platform/vendor/google/camera" groups="vendor"/>
+  <project path="vendor/google/media/bigocean" name="platform/vendor/google/media/bigocean" groups="vendor"/>
   <project path="vendor/google/media/mca" name="platform/vendor/google/media/mca" groups="vendor"/>
   <project path="vendor/google/misc/hotwordenrollment" name="platform/vendor/google/misc/hotwordenrollment" groups="vendor"/>
   <project path="vendor/google/misc/metrics_uploader_prebuilt" name="platform/vendor/google/misc/metrics_uploader_prebuilt" groups="vendor" clone-depth="1"/>
@@ -1131,9 +1145,11 @@
   <project path="vendor/google/products" name="platform/vendor/google/products" groups="vendor"/>
   <project path="vendor/google/sdk" name="platform/vendor/google/sdk" groups="vendor"/>
   <project path="vendor/google/security" name="platform/vendor/google/security" groups="vendor"/>
+  <project path="vendor/google/sensors/usf" name="platform/vendor/google/sensors/usf" groups="vendor"/>
   <project path="vendor/google/services/ConfigUpdater" name="platform/vendor/google/services/ConfigUpdater" groups="vendor"/>
   <project path="vendor/google/services/GoogleRil" name="platform/vendor/google/services/GoogleRil" groups="vendor"/>
-  <project path="vendor/google/services/iwlan" name="platform/vendor/google/services/iwlan" groups="vendor"/>
+  <project path="vendor/google/services/LyricCameraHAL/src" name="platform/vendor/google/services/LyricCameraHAL/src" groups="vendor, pdk-lassen"/>
+  <project path="vendor/google/services/iwlan" name="platform/vendor/google/services/iwlan" groups="vendor,pdk-lassen"/>
   <project path="vendor/google/tests/AnTuTuUiAutomator" name="platform/vendor/google/tests/AnTuTuUiAutomator" groups="vendor"/>
   <project path="vendor/google/tests/AppsUtils" name="platform/vendor/google/tests/AppsUtils" groups="vendor"/>
   <project path="vendor/google/tests/AutoTester" name="platform/vendor/google/tests/AutoTester" groups="vendor"/>
@@ -1157,6 +1173,13 @@
   <project path="vendor/google/tests/testinfo" name="platform/vendor/google/tests/testinfo" groups="vendor"/>
   <project path="vendor/google/tools" name="platform/vendor/google/tools" groups="vendor"/>
   <project path="vendor/google/usersplit_overlay" name="platform/vendor/google/usersplit_overlay" groups="vendor"/>
+  <project path="vendor/google/whitechapel/aoc" name="platform/vendor/google/whitechapel/aoc" groups="vendor"/>
+  <project path="vendor/google/whitechapel/apps/ModemDiagnosticSystem" name="platform/vendor/google/whitechapel/apps/ModemDiagnosticSystem" groups="vendor" />
+  <project path="vendor/google/whitechapel/apps/PixelLogger" name="platform/vendor/google/whitechapel/apps/PixelLogger" groups="vendor" />
+  <project path="vendor/google/whitechapel/apps/ModemService" name="platform/vendor/google/whitechapel/apps/ModemService" groups="vendor" />
+  <project path="vendor/google/whitechapel/services/GoogleRil" name="platform/vendor/google/whitechapel/services/GoogleRil" groups="vendor" />
+  <project path="vendor/google/whitechapel/audio" name="platform/vendor/google/whitechapel/audio" groups="vendor,slider" />
+  <project path="vendor/google/whitechapel/tools" name="platform/vendor/google/whitechapel/tools" groups="vendor,slider" />
   <project path="vendor/google/vts" name="platform/vendor/google/vts" groups="vendor"/>
   <project path="vendor/google_arc" name="platform/vendor/google_arc" groups="vendor"/>
   <project path="vendor/google_athome" name="platform/vendor/google_athome" groups="vendor"/>
@@ -1173,9 +1196,10 @@
   <project path="vendor/google_devices/bonito/proprietary" name="platform/vendor/google_devices/bonito/proprietary" groups="vendor,bonito" />
   <project path="vendor/google_devices/bramble/prebuilts" name="platform/vendor/google_devices/bramble/prebuilts" groups="vendor,bramble" clone-depth="1" />
   <project path="vendor/google_devices/bramble/proprietary" name="platform/vendor/google_devices/bramble/proprietary" groups="vendor,bramble" />
-  <project path="vendor/google_devices/common/chre" name="platform/vendor/google_devices/common/chre" groups="pdk_lassen" />
+  <project path="vendor/google_devices/common/chre" name="platform/vendor/google_devices/common/chre" groups="pdk-lassen" />
   <project path="vendor/google_devices/common/proprietary/confirmatioui_hal" name="platform/vendor/google_devices/common/proprietary/confirmationui_hal" groups="vendor,qcom_only,qcom_teeui" />
   <project path="vendor/google_devices/common/proprietary/keymaster_hal" name="platform/vendor/google_devices/common/proprietary/keymaster_hal" />
+  <project path="vendor/google_devices/common/powertools" name="platform/vendor/google_devices/common/powertools" groups="vendor,slider" />
   <project path="vendor/google_devices/coral/prebuilts" name="platform/vendor/google_devices/coral/prebuilts" groups="vendor,coral" clone-depth="1" />
   <project path="vendor/google_devices/coral/proprietary" name="platform/vendor/google_devices/coral/proprietary" groups="vendor,coral" />
   <project path="vendor/google_devices/crosshatch/prebuilts" name="platform/vendor/google_devices/crosshatch/prebuilt" groups="vendor,crosshatch" clone-depth="1" />
@@ -1187,9 +1211,15 @@
   <project path="vendor/google_devices/redbull/proprietary" name="platform/vendor/google_devices/redbull/proprietary" groups="vendor,redbull" />
   <project path="vendor/google_devices/redfin/prebuilts" name="platform/vendor/google_devices/redfin/prebuilts" groups="vendor,redfin" clone-depth="1" />
   <project path="vendor/google_devices/redfin/proprietary" name="platform/vendor/google_devices/redfin/proprietary" groups="vendor,redfin" />
+  <project path="vendor/google_devices/slider/factory" name="platform/vendor/google_devices/slider/factory" groups="vendor" />
+  <project path="vendor/google_devices/slider/factory_pdk" name="platform/vendor/google_devices/slider/factory_pdk" groups="vendor,slider" />
+  <project path="vendor/google_devices/slider/prebuilts" name="platform/vendor/google_devices/slider/prebuilts" groups="vendor,slider" clone-depth="1"/>
+  <project path="vendor/google_devices/slider/proprietary" name="platform/vendor/google_devices/slider/proprietary" groups="vendor,slider" />
   <project path="vendor/google_devices/redfin_udfps/prebuilts" name="platform/vendor/google_devices/redfin_udfps/prebuilts" groups="vendor,redfin_udfps" clone-depth="1" />
   <project path="vendor/google_devices/sunfish/prebuilts" name="platform/vendor/google_devices/sunfish/prebuilts" groups="vendor,sunfish" clone-depth="1" />
   <project path="vendor/google_devices/sunfish/proprietary" name="platform/vendor/google_devices/sunfish/proprietary" groups="vendor,sunfish" />
+  <project path="vendor/google_devices/zebu/prebuilts" name="platform/vendor/google_devices/zebu/prebuilts" groups="vendor,slider" clone-depth="1" />
+  <project path="vendor/google_devices/zebu/proprietary" name="platform/vendor/google_devices/zebu/proprietary" groups="vendor,slider" />
   <project path="vendor/google_elmyra" name="platform/vendor/google_elmyra" groups="vendor,elmyra" />
   <project path="vendor/google_mhl" name="platform/vendor/google_mhl" groups="vendor"/>
   <project path="vendor/google_nos/host/android" name="platform/vendor/google_nos/host/android" groups="vendor,nos_pdk" />
@@ -1201,7 +1231,7 @@
   <project path="vendor/google_pdk/tools" name="platform/vendor/google_pdk/tools" groups="vendor"/>
   <project path="vendor/google_shared/ndk_translation_prebuilt" name="platform/vendor/google_shared/ndk_translation_prebuilt" groups="vendor" />
   <project path="vendor/google_testing/comms" name="platform/vendor/google_testing/comms" groups="vendor,google_testing_comms"/>
-  <project path="vendor/google_testing/gfx-tools" name="platform/vendor/google_testing/gfx-tools" groups="vendor"/>
+  <project path="vendor/google_testing/gfx-tools" name="platform/vendor/google_testing/gfx-tools" groups="vendor,slider"/>
   <project path="vendor/google_testing/integration" name="platform/vendor/google_testing/integration" groups="vendor"/>
   <project path="vendor/google_testing/acts_power" name="platform/vendor/google_testing/acts_power" groups="vendor"/>
   <project path="vendor/google_testing/packages/SaladFingersWaltPrebuilt" name="platform/vendor/google_testing/packages/SaladFingersWaltPrebuilt" groups="vendor" clone-depth="1"/>
@@ -1750,6 +1780,17 @@
     <linkfile src="prop_pickup.bp" dest="vendor/qcom/sm8250/Android.bp" />
   </project>
   <project path="vendor/qcom/system/teeui" name="platform/vendor/qcom/system/teeui" groups="vendor,qcom_only,qcom_teeui" />
+  <project path="vendor/samsung_slsi/camera/gs101/core" name="platform/vendor/samsung_slsi/camera/gs101/core" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/camera/gs101/ddk" name="platform/vendor/samsung_slsi/camera/gs101/ddk" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/camera/gs101/hal3" name="platform/vendor/samsung_slsi/camera/gs101/hal3" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/codec2" name="platform/vendor/samsung_slsi/codec2" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/telephony/common" name="platform/vendor/samsung_slsi/telephony/common" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/telephony/exynos-ril" name="platform/vendor/samsung_slsi/telephony/exynos-ril" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/telephony/google" name="platform/vendor/samsung_slsi/telephony/google" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/telephony/packetrouter" name="platform/vendor/samsung_slsi/telephony/packetrouter" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/telephony/shannon-ims" name="platform/vendor/samsung_slsi/telephony/shannon-ims" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/telephony/shannon-iwlan" name="platform/vendor/samsung_slsi/telephony/shannon-iwlan" groups="vendor,slider" />
+  <project path="vendor/samsung_slsi/telephony/shannon-rcs" name="platform/vendor/samsung_slsi/telephony/shannon-rcs" groups="vendor,slider" />
   <project path="vendor/sprint/OMA-DM" name="platform/vendor/sprint/OMA-DM" groups="vendor,oma_dm" />
   <project path="vendor/tmobile" name="platform/vendor/tmobile" groups="vendor" />
   <project path="vendor/unbundled_google/libraries" name="platform/vendor/unbundled_google/libraries" groups="vendor" />
