@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="goog"
            fetch=".."
            review="sso://googleplex-android/" />
-  <default revision="master"
+  <default revision="sc-dev"
            remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
-
   <!-- BEGIN open-source projects -->
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -41,17 +39,17 @@
   <project path="development" name="platform/development" groups="developers,pdk-cw-fs,pdk-fs" />
   <!--
         goog-and-upload-partner : During repo upload: sync from internal but upload to partner
-        revision="mirror-partner-master-tv-dev" :
+         :
 		Replication mirror to allow partner CLs submitted on partner gerrit to be replicated to internal master.
 		Also where to sync from.
 	dest-branch="partner-master-tv-dev" : where in partner it should upload to
-	clone-depth="2" : Don't clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
+	clone-depth="2" : Don"t clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
    -->
-  <project path="device/amlogic/common" name="device/amlogic/common" groups="device,amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" />
+  <project path="device/amlogic/common" name="device/amlogic/common" groups="device,amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
   <project path="device/amlogic/yukawa" name="device/amlogic/yukawa" groups="device,yukawa,pdk" />
   <project path="device/amlogic/yukawa-kernel" name="device/amlogic/yukawa-kernel" groups="device,yukawa,pdk" clone-depth="2" />
-  <project path="device/askey/deadpool" name="device/askey/deadpool" groups="device,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" />
-  <project path="device/askey/deadpool-kernel" name="device/askey/deadpool-kernel" groups="device,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" clone-depth="2" />
+  <project path="device/askey/deadpool" name="device/askey/deadpool" groups="device,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
+  <project path="device/askey/deadpool-kernel" name="device/askey/deadpool-kernel" groups="device,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  clone-depth="2" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
@@ -108,8 +106,8 @@
   <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device,pdk" />
   <project path="device/google/cuttlefish_prebuilts" name="device/google/cuttlefish_prebuilts" groups="device,pdk" clone-depth="1" />
   <project path="device/google/fuchsia" name="device/google/fuchsia" groups="device" />
-  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" />
-  <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" clone-depth="1" />
+  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" remote="goog-and-upload-partner" dest-branch="master"  />
+  <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner" dest-branch="master"  clone-depth="1" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" />
   <project path="device/google/zebu" name="device/google/zebu" groups="device,slider" />
   <project path="device/google/zebu-kernel" name="device/google/zebu-kernel" groups="device,slider" clone-depth="1" />
@@ -124,10 +122,10 @@
   <project name="device/mediatek/wembley-sepolicy" path="device/mediatek/wembley-sepolicy" groups="device"/>
   <project path="device/panasonic/hawk" name="device/panasonic/hawk" groups="device,panasonic,hawk" />
   <project path="device/panasonic/hawk-kernel" name="device/panasonic/hawk-kernel" groups="device,panasonic,hawk" clone-depth="1" />
-  <project path="device/panasonic/seahawk" name="device/panasonic/seahawk" groups="device,panasonic,seahawk" remote="goog-and-upload-partner" revision="mirror-partner-master" dest-branch="master" />
-  <project path="device/panasonic/seahawk-kernel" name="device/panasonic/seahawk-kernel" groups="device,panasonic,seahawk" clone-depth="1" remote="goog-and-upload-partner" revision="mirror-partner-master" dest-branch="master" />
-  <project path="device/qcom/gull" name="device/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" />
-  <project path="device/qcom/gull-kernel" name="device/qcom/gull-kernel" groups="device,gull" clone-depth="1" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" />
+  <project path="device/panasonic/seahawk" name="device/panasonic/seahawk" groups="device,panasonic,seahawk" remote="goog-and-upload-partner"  dest-branch="master" />
+  <project path="device/panasonic/seahawk-kernel" name="device/panasonic/seahawk-kernel" groups="device,panasonic,seahawk" clone-depth="1" remote="goog-and-upload-partner"  dest-branch="master" />
+  <project path="device/qcom/gull" name="device/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" dest-branch="master"  />
+  <project path="device/qcom/gull-kernel" name="device/qcom/gull-kernel" groups="device,gull" clone-depth="1" remote="goog-and-upload-partner" dest-branch="master"  />
   <project path="device/qcom/osprey" name="device/qcom/osprey" groups="device,osprey" />
   <project path="device/qcom/sa8155/common" name="device/qcom/sa8155/common" groups="device,qcom_sa8155" />
   <project path="device/qcom/sa8155/sepolicy_vndr" name="device/qcom/sa8155/sepolicy_vndr" groups="device,qcom_sa8155" />
@@ -367,7 +365,7 @@
   <project path="external/lua" name="platform/external/lua" groups="pdk" />
   <project path="external/ltp" name="platform/external/ltp" groups="vts,pdk" />
   <project path="external/lz4" name="platform/external/lz4" groups="pdk" />
-  <project path="external/llvm-project" name="toolchain/llvm-project" revision="main" groups="pdk" />
+  <project path="external/llvm-project" name="toolchain/llvm-project"  groups="pdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
   <project path="external/marisa-trie" name="platform/external/marisa-trie" groups="pdk" />
   <project path="external/markdown" name="platform/external/markdown" groups="pdk" />
@@ -692,7 +690,7 @@
   <project path="frameworks/proto_logging" name="platform/frameworks/proto_logging" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs,pdk-fs" />
-  <project path="hardware/amlogic" name="platform/hardware/amlogic" groups="amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" />
+  <project path="hardware/amlogic" name="platform/hardware/amlogic" groups="amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
   <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" groups="pdk,broadcom_wlan" />
   <project path="hardware/google/apf" name="platform/hardware/google/apf" groups="pdk" />
@@ -862,7 +860,7 @@
   <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="pdk-fs" />
   <project path="packages/apps/TV" name="platform/packages/apps/TV" groups="pdk" />
   <project path="packages/apps/UniversalMediaPlayer" name="platform/packages/apps/UniversalMediaPlayer" />
-  <project path="packages/apps/WallpaperPicker" name="platform/packages/apps/WallpaperPicker" groups="pdk-fs" revision="ub-launcher3-calgary" />
+  <project path="packages/apps/WallpaperPicker" name="platform/packages/apps/WallpaperPicker" groups="pdk-fs"  />
   <project path="packages/apps/WallpaperPicker2" name="platform/packages/apps/WallpaperPicker2" groups="pdk-fs" />
   <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" groups="pdk-fs" />
   <project path="packages/inputmethods/LeanbackIME" name="platform/packages/inputmethods/LeanbackIME" groups="pdk-fs" />
@@ -974,7 +972,7 @@
   <project path="system/bpf" name="platform/system/bpf" groups="pdk" />
   <project path="system/bpfprogs" name="platform/system/bpfprogs" groups="pdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" />
-  <project path="system/chre" name="platform/system/chre" revision="master" groups="pdk" />
+  <project path="system/chre" name="platform/system/chre"  groups="pdk" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" />
   <project path="system/core" name="platform/system/core" groups="pdk" />
   <project path="system/extras" name="platform/system/extras" groups="pdk" />
@@ -1065,7 +1063,7 @@
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
   <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk" />
   <project path="tools/ndkports" name="platform/tools/ndkports" groups="pdk" />
-  <project path="tools/repohooks" name="platform/tools/repohooks" revision="master" groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed" />
+  <project path="tools/repohooks" name="platform/tools/repohooks"  groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed" />
   <project path="tools/security" name="platform/tools/security" groups="pdk,tools" />
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
@@ -1078,7 +1076,6 @@
   <project path="tools/treble" name="platform/tools/treble" groups="tools,pdk" />
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" />
   <!-- END open-source projects -->
-
   <!-- BEGIN closed-source projects -->
   <project path="developers/samples/vendor/google" name="platform/developers/samples/vendor/google" />
   <project path="tools/vendor/ej-tech" name="platform/tools/vendor/ej-tech" groups="notdefault,tools,vendor" />
@@ -1088,17 +1085,17 @@
   <project path="tools/vendor/intel" name="platform/tools/vendor/intel" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/jetbrains" name="platform/tools/vendor/jetbrains" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/microsoft" name="platform/tools/vendor/microsoft" groups="notdefault,tools,vendor" />
-  <project path="vendor/amlogic/common" name="platform/vendor/amlogic/common" groups="vendor,amlogic,ampere,atom,beast,harman,sei" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" />
+  <project path="vendor/amlogic/common" name="platform/vendor/amlogic/common" groups="vendor,amlogic,ampere,atom,beast,harman,sei" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
   <project path="vendor/arm/mali/bob" name="platform/vendor/arm/mali/bob" groups="vendor" />
   <project path="vendor/arm/mali/valhall" name="platform/vendor/arm/mali/valhall" groups="vendor" />
-  <project path="vendor/askey/deadpool" name="platform/vendor/askey/deadpool" groups="vendor,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev" revision="mirror-partner-master-tv-dev" />
+  <project path="vendor/askey/deadpool" name="platform/vendor/askey/deadpool" groups="vendor,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
   <project path="vendor/auto/embedded" name="platform/vendor/auto/embedded" groups="vendor" />
   <project path="vendor/auto/embedded_board" name="platform/vendor/auto/embedded_board" groups="vendor" />
   <project path="vendor/auto/projection_protocol" name="platform/vendor/auto/projection_protocol" groups="vendor" />
   <project path="vendor/broadcom/common" name="platform/vendor/broadcom/common" groups="vendor,broadcom" />
   <project path="vendor/broadcom/wlan" name="platform/vendor/broadcom/wlan" groups="vendor" />
   <project path="vendor/broadcom/bluetooth" name="platform/vendor/broadcom/bluetooth" groups="vendor" />
-  <project path="vendor/dolby/msd" name="platform/vendor/dolby/msd" groups="vendor,broadcom" remote="goog-and-upload-partner" revision="mirror-partner-master-tv-dev" dest-branch="partner-master-tv-dev" />
+  <project path="vendor/dolby/msd" name="platform/vendor/dolby/msd" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="partner-master-tv-dev" />
   <project path="vendor/dolby/msdPrebuilt" name="platform/vendor/dolby/msdPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/fpc" name="platform/vendor/fpc" groups="vendor,fpc" />
   <project path="vendor/fraunhofer/virtualizer" name="platform/vendor/fraunhofer/virtualizer" groups="vendor" />
@@ -1141,7 +1138,7 @@
   <project path="vendor/google/darwinn2" name="platform/vendor/google/darwinn2" groups="vendor"/>
   <project path="vendor/google/data/etc" name="platform/vendor/google/data/etc" groups="vendor"/>
   <project path="vendor/google/docs" name="platform/vendor/google/docs" groups="vendor"/>
-  <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore" revision="master" groups="vendor"/>
+  <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore"  groups="vendor"/>
   <project path="vendor/google/elmyra" name="platform/vendor/google/elmyra" groups="vendor" />
   <project path="vendor/google/etc" name="platform/vendor/google/etc" groups="vendor"/>
   <project path="vendor/google/factoryota" name="platform/vendor/google/factoryota" groups="vendor"/>
@@ -1227,7 +1224,7 @@
   <project path="vendor/google_arc" name="platform/vendor/google_arc" groups="vendor"/>
   <project path="vendor/google_athome" name="platform/vendor/google_athome" groups="vendor"/>
   <project path="vendor/google_atv" name="platform/vendor/google_atv" groups="vendor"/>
-  <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner" revision="mirror-partner-master" groups="vendor" />
+  <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner"  groups="vendor" />
   <project path="vendor/google_contexthub" name="platform/vendor/google_contexthub" groups="vendor"/>
   <project path="vendor/google_data/art_profile" name="platform/vendor/google_data/art_profile" groups="vendor"/>
   <!-- The PGO profile contains privacy sensitive data, DO NOT SHARE with vendors, DO NOT ADD vendor or pdk to groups. -->
@@ -1470,13 +1467,13 @@
   <project path="vendor/mediatek/wembley/proprietary/trustzone/custom" name="platform/vendor/mediatek/wembley/proprietary/trustzone/custom" groups="vendor"/>
   <project path="vendor/netflix" name="platform/vendor/netflix" groups="vendor" />
   <project path="vendor/panasonic/hawk" name="platform/vendor/panasonic/hawk" groups="vendor,hawk"  />
-  <project path="vendor/panasonic/seahawk" name="platform/vendor/panasonic/seahawk" groups="device,panasonic,seahawk" remote="goog-and-upload-partner" revision="mirror-partner-master" dest-branch="master" />
+  <project path="vendor/panasonic/seahawk" name="platform/vendor/panasonic/seahawk" groups="device,panasonic,seahawk" remote="goog-and-upload-partner"  dest-branch="master" />
   <project path="vendor/partner_testing/app_compat" name="platform/vendor/partner_testing/app_compat"  />
   <project path="vendor/pdk/data/google" name="platform/vendor/pdk/data/google" groups="vendor" />
   <project path="vendor/qcom/codeaurora/interfaces" name="platform/vendor/qcom/codeaurora/interfaces" groups="vendor,qcom,qcom_codeaurora_interfaces" />
   <project path="vendor/qcom/codeaurora/audio-hal/primary-hal" name="platform/vendor/qcom/codeaurora/audio-hal/primary-hal" groups="vendor,qcom,qcom_audio,qcom_sm8150,qcom_sm8150p" />
   <project path="vendor/qcom/gpu" name="platform/vendor/qcom/gpu" groups="vendor,qcom_gpu" />
-  <project path="vendor/qcom/gull" name="platform/vendor/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" />
+  <project path="vendor/qcom/gull" name="platform/vendor/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" dest-branch="master"  />
   <project path="vendor/qcom/osprey" name="platform/vendor/qcom/osprey" groups="vendor,osprey" />
   <project path="vendor/qcom/proprietary/interfaces" name="platform/vendor/qcom/proprietary/interfaces" groups="vendor,qcom,qcom_proprietary_interfaces" />
   <project path="vendor/qcom/proprietary/bluetooth" name="platform/vendor/qcom/proprietary/bluetooth" groups="vendor,qcom,qcom_proprietary_bluetooth,qcom_sdm845,qcom_msm8996,qcom_sdm710,qcom_sm8150,qcom_sm7150,qcom_sm7250" />
@@ -2055,7 +2052,5 @@
   <project path="vendor/widevine" name="platform/vendor/widevine" groups="vendor,widevine" />
   <project path="vendor/xts" name="platform/vendor/xts" groups="vendor" />
   <!-- END closed-source projects -->
-
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
-
 </manifest>
