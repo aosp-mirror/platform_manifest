@@ -6,25 +6,23 @@
     project rule in google3 to ensure new projects get testing.
     See go/side-branch-testing for details.
 -->
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="master"
+  <default revision="ndk-release-r23"
            remote="aosp"
            sync-j="4" />
-
   <project path="bionic" name="platform/bionic" groups="presubmit" />
   <project path="development" name="platform/development" groups="presubmit" />
   <!-- Effcee is needed by tests in spirv-tools (in shader-tools) -->
-  <project path="external/effcee" name="platform/external/effcee" revision="master" />
+  <project path="external/effcee" name="platform/external/effcee"  />
   <!-- RE2 is needed by Effcee -->
-  <project path="external/regex-re2" name="platform/external/regex-re2" revision="master" />
+  <project path="external/regex-re2" name="platform/external/regex-re2"  />
   <project path="external/googletest" name="platform/external/googletest" groups="presubmit" />
-  <project path="external/shaderc/glslang" name="platform/external/shaderc/glslang" revision="master-ndk" groups="presubmit" />
-  <project path="external/shaderc/shaderc" name="platform/external/shaderc/shaderc" revision="master-ndk" groups="presubmit" />
-  <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers" revision="master-ndk" groups="presubmit" />
-  <project path="external/shaderc/spirv-tools" name="platform/external/shaderc/spirv-tools" revision="master-ndk" groups="presubmit" />
+  <project path="external/shaderc/glslang" name="platform/external/shaderc/glslang"  groups="presubmit" />
+  <project path="external/shaderc/shaderc" name="platform/external/shaderc/shaderc"  groups="presubmit" />
+  <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers"  groups="presubmit" />
+  <project path="external/shaderc/spirv-tools" name="platform/external/shaderc/spirv-tools"  groups="presubmit" />
   <project path="external/vulkan-headers" name="platform/external/vulkan-headers" groups="presubmit" />
   <project path="external/vulkan-tools" name="platform/external/vulkan-tools" groups="presubmit" />
   <project path="external/vulkan-validation-layers" name="platform/external/vulkan-validation-layers" groups="presubmit" />
@@ -47,11 +45,11 @@
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="presubmit" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" groups="presubmit" />
   <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="presubmit,linux,x86" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" revision="dev" groups="presubmit" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk"  groups="presubmit" />
   <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" />
   <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="presubmit" />
-  <project path="prebuilts/python3/darwin" name="platform/prebuilts/python/darwin-x86" groups="darwin" clone-depth="1" revision="llvm-toolchain" />
-  <project path="prebuilts/python3/linux" name="platform/prebuilts/python/linux-x86" groups="linux,presubmit" clone-depth="1" revision="llvm-toolchain" />
+  <project path="prebuilts/python3/darwin" name="platform/prebuilts/python/darwin-x86" groups="darwin" clone-depth="1"  />
+  <project path="prebuilts/python3/linux" name="platform/prebuilts/python/linux-x86" groups="linux,presubmit" clone-depth="1"  />
   <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin" />
   <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux,presubmit" />
   <project path="prebuilts/renderscript/host/darwin-x86" name="platform/prebuilts/renderscript/host/darwin-x86" />
@@ -66,7 +64,7 @@
   <project path="toolchain/gdb" name="toolchain/gdb" groups="presubmit" />
   <project path="toolchain/gmp" name="toolchain/gmp" groups="presubmit" />
   <project path="toolchain/isl" name="toolchain/isl" groups="presubmit" />
-  <project path="toolchain/llvm-project" name="toolchain/llvm-project" revision="ndk" groups="presubmit" />
+  <project path="toolchain/llvm-project" name="toolchain/llvm-project"  groups="presubmit" />
   <project path="toolchain/make" name="toolchain/make" groups="presubmit" />
   <project path="toolchain/mpc" name="toolchain/mpc" groups="presubmit" />
   <project path="toolchain/mpfr" name="toolchain/mpfr" groups="presubmit" />
@@ -74,5 +72,4 @@
   <project path="toolchain/python" name="toolchain/python" groups="presubmit" />
   <project path="toolchain/xz" name="toolchain/xz" groups="presubmit" />
   <project path="toolchain/yasm" name="toolchain/yasm" groups="presubmit" />
-
 </manifest>
