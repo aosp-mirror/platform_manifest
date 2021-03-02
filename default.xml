@@ -90,6 +90,7 @@
   <project path="device/google/bramble-sepolicy" name="device/google/bramble-sepolicy" groups="device,bramble" />
   <project path="device/google/cheets2" name="device/google/cheets2" groups="device" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,pdk" />
+  <project path="device/google/clockwork" name="device/google/clockwork" groups="device,pdk-cw" />
   <project path="device/google/cloudripper" name="device/google/cloudripper" groups="device,cloudripper" />
   <project path="device/google/cloudripper-sepolicy" name="device/google/cloudripper-sepolicy" groups="device,cloudripper" />
   <project path="device/google/cloudripper-kernel" name="device/google/cloudripper-kernel" groups="device,cloudripper" clone-depth="1" />
@@ -100,6 +101,8 @@
   <project path="device/google/gs101-sepolicy" name="device/google/gs101-sepolicy" groups="device,slider,blueport" />
   <project path="device/google/jumbojack" name="device/google/jumbojack" groups="device,jumbojack" />
   <project path="device/google/jumbojack-kernel" name="device/google/jumbojack-kernel" groups="device,jumbojack" clone-depth="1" />
+  <project path="device/google/r11" name="device/google/r11" groups="device,r11" remote="goog-and-upload-partner" revision="mirror-partner-master" dest-branch="master" />
+  <project path="device/google/r11-kernel" name="device/google/r11-kernel" groups="device,r11" clone-depth="1" remote="goog-and-upload-partner" revision="mirror-partner-master" dest-branch="master" />
   <project path="device/google/raviole" name="device/google/raviole" groups="device,slider" />
   <project path="device/google/raviole-kernel" name="device/google/raviole-kernel" groups="device,slider" clone-depth="1" />
   <project path="device/google/redbull" name="device/google/redbull" groups="device,redbull" />
@@ -726,6 +729,7 @@
   <project path="frameworks/opt/timezonepicker" name="platform/frameworks/opt/timezonepicker" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/tv/tvsystem" name="platform/frameworks/opt/tv/tvsystem" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/vcard" name="platform/frameworks/opt/vcard" groups="pdk-cw-fs,pdk-fs" />
+  <project path="frameworks/opt/wear" name="platform/frameworks/opt/wear" groups="presubmit,pdk-cw-fs" />
   <project path="frameworks/proto_logging" name="platform/frameworks/proto_logging" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs,pdk-fs" />
@@ -813,6 +817,11 @@
   </project>
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk-qcom" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
+  <project path="hardware/samsung_slsi/exynos" name="platform/hardware/samsung_slsi/exynos" groups="exynos" />
+  <project path="hardware/samsung_slsi/exynos5" name="platform/hardware/samsung_slsi/exynos5" groups="exynos5" />
+  <project path="hardware/samsung_slsi/exynos9110" name="platform/hardware/samsung_slsi/exynos9110" groups="exynos9110" />
+  <project path="hardware/samsung_slsi/graphics/base" name="platform/hardware/samsung_slsi/graphics/base" groups="exynos" />
+  <project path="hardware/samsung_slsi/graphics/exynos9110" name="platform/hardware/samsung_slsi/graphics/exynos9110" groups="exynos9110" />
   <project path="hardware/st/nfc" name="platform/hardware/st/nfc" groups="pdk" />
   <project path="hardware/st/secure_element" name="platform/hardware/st/secure_element" groups="pdk" />
   <project path="hardware/st/secure_element2" name="platform/hardware/st/secure_element2" groups="pdk" />
@@ -1195,6 +1204,7 @@
   <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore" revision="master" groups="vendor"/>
   <project path="vendor/google/elmyra" name="platform/vendor/google/elmyra" groups="vendor" />
   <project path="vendor/google/etc" name="platform/vendor/google/etc" groups="vendor"/>
+  <project path="vendor/google/external/eskia" name="platform/vendor/google/external/eskia" groups="vendor"/>
   <project path="vendor/google/factoryota" name="platform/vendor/google/factoryota" groups="vendor"/>
   <project path="vendor/google/fonts/google-sans" name="platform/vendor/google/fonts/google-sans" groups="vendor,pdk-cw-fs" clone-depth="1"/>
   <project path="vendor/google/frameworks/camera" name="platform/vendor/google/frameworks/camera" groups="vendor"/>
@@ -1280,6 +1290,12 @@
   <project path="vendor/google_athome" name="platform/vendor/google_athome" groups="vendor"/>
   <project path="vendor/google_atv" name="platform/vendor/google_atv" groups="vendor"/>
   <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner" revision="mirror-partner-master" groups="vendor" />
+  <project path="vendor/google_clockwork" name="platform/vendor/google_clockwork" groups="vendor,presubmit,pdk-cw-fs-plus" />
+  <project path="vendor/google_clockwork_partners/libs/ClockworkCommonLibs" name="platform/vendor/google_clockwork_partners/libs/ClockworkCommonLibs" groups="vendor,presubmit,pdk-cw-fs-w1" />
+  <project path="vendor/google_clockwork_partners/libs/ClockworkPrivateLibsPrebuilt" name="platform/vendor/google_clockwork_partners/libs/ClockworkPrivateLibsPrebuilt" groups="vendor,presubmit,pdk-cw-fs-w1" />
+  <project path="vendor/google_clockwork_partners/packages/ClockworkSysUiPrebuilt" name="platform/vendor/google_clockwork_partners/packages/ClockworkSysUiPrebuilt" groups="vendor,presubmit,pdk-cw-fs-w1" />
+  <project path="vendor/google_clockwork_partners/packages/ClockworkWcsPrebuilt" name="platform/vendor/google_clockwork_partners/packages/ClockworkWcsPrebuilt" groups="vendor,presubmit,pdk-cw-fs-w1" />
+  <project path="vendor/google_clockwork_partners/packages/ClockworkSysUi" name="platform/vendor/google_clockwork_partners/packages/ClockworkSysUi" groups="vendor,presubmit,pdk-cw-fs-w1" />
   <project path="vendor/google_contexthub" name="platform/vendor/google_contexthub" groups="vendor"/>
   <project path="vendor/google_data/art_profile" name="platform/vendor/google_data/art_profile" groups="vendor"/>
   <!-- The PGO profile contains privacy sensitive data, DO NOT SHARE with vendors, DO NOT ADD vendor or pdk to groups. -->
@@ -1308,6 +1324,7 @@
   <project path="vendor/google_devices/gs101/prebuilts" name="platform/vendor/google_devices/gs101/prebuilts" groups="vendor,slider,blueport" clone-depth="1"/>
   <project path="vendor/google_devices/gs101/proprietary" name="platform/vendor/google_devices/gs101/proprietary" groups="vendor,slider,blueport" />
   <project path="vendor/google_devices/jumbojack" name="platform/vendor/google_devices/jumbojack" groups="vendor,jumbojack" />
+  <project path="vendor/google_devices/r11" name="platform/vendor/google_devices/r11" groups="vendor,r11" remote="goog-and-upload-partner" revision="mirror-partner-master" dest-branch="master" />
   <project path="vendor/google_devices/raviole/prebuilts" name="platform/vendor/google_devices/raviole/prebuilts" groups="vendor,slider" clone-depth="1"/>
   <project path="vendor/google_devices/raviole/proprietary" name="platform/vendor/google_devices/raviole/proprietary" groups="vendor,slider" clone-depth="1"/>
   <project path="vendor/google_devices/redbull/prebuilts" name="platform/vendor/google_devices/redbull/prebuilts" groups="vendor,redbull" clone-depth="1" />
@@ -1328,6 +1345,7 @@
   <project path="vendor/google_devices/zebu201/prebuilts" name="platform/vendor/google_devices/zebu201/prebuilts" groups="vendor,cloudripper" clone-depth="1" />
   <project path="vendor/google_devices/zebu201/proprietary" name="platform/vendor/google_devices/zebu201/proprietary" groups="vendor,cloudripper" />
   <project path="vendor/google_elmyra" name="platform/vendor/google_elmyra" groups="vendor,elmyra" />
+  <project path="vendor/google_mca_cw/gestures" name="platform/vendor/google_mca_cw/gestures" groups="vendor,presubmit,pdk-cw-fs-plus" />
   <project path="vendor/google_mhl" name="platform/vendor/google_mhl" groups="vendor"/>
   <project path="vendor/google_nos/host/android" name="platform/vendor/google_nos/host/android" groups="vendor,nos_pdk" />
   <project path="vendor/google_nos/init" name="platform/vendor/google_nos/init" groups="vendor,nos_pdk" />
@@ -1335,6 +1353,7 @@
   <project path="vendor/google_nos/provision" name="platform/vendor/google_nos/provision" groups="vendor" />
   <project path="vendor/google_nos/test/system-test-harness" name="platform/vendor/google_nos/test/system-test-harness" groups="vendor" />
   <project path="vendor/google_paintbox" name="platform/vendor/google_paintbox" groups="vendor,easel" />
+  <project path="vendor/google_pdk/clockwork" name="platform/vendor/google_pdk/clockwork" groups="vendor,pdk-cw" />
   <project path="vendor/google_pdk/tools" name="platform/vendor/google_pdk/tools" groups="vendor"/>
   <project path="vendor/google_shared/ndk_translation_prebuilt" name="platform/vendor/google_shared/ndk_translation_prebuilt" groups="vendor" />
   <project path="vendor/google_testing/comms" name="platform/vendor/google_testing/comms" groups="vendor,google_testing_comms"/>
@@ -1899,13 +1918,17 @@
   <project path="vendor/samsung_slsi/telephony/shannon-iwlan" name="platform/vendor/samsung_slsi/telephony/shannon-iwlan" groups="vendor,slider" />
   <project path="vendor/samsung_slsi/telephony/shannon-rcs" name="platform/vendor/samsung_slsi/telephony/shannon-rcs" groups="vendor,slider" />
   <project path="vendor/sprint/OMA-DM" name="platform/vendor/sprint/OMA-DM" groups="vendor,oma_dm" />
+  <project path="vendor/stmicro/clockwork" name="platform/vendor/stmicro/clockwork" groups="vendor" />
   <project path="vendor/tmobile" name="platform/vendor/tmobile" groups="vendor" />
   <project path="vendor/unbundled_google/libraries" name="platform/vendor/unbundled_google/libraries" groups="vendor" />
   <project path="vendor/unbundled_google/libs/aah" name="platform/vendor/unbundled_google/libs/aah" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/ClockworkPrebuilt" name="platform/vendor/unbundled_google/libs/ClockworkPrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
   <project path="vendor/unbundled_google/libs/googledialer" name="platform/vendor/unbundled_google/libs/googledialer" groups="vendor" />
   <project path="vendor/unbundled_google/libs/gcm" name="platform/vendor/unbundled_google/libs/gcm" groups="vendor" />
   <project path="vendor/unbundled_google/libs/hats20" name="platform/vendor/unbundled_google/libs/hats20" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/libs/ndk_translation" name="platform/vendor/unbundled_google/libs/ndk_translation" groups="vendor" />
+  <project path="vendor/unbundled_google/libs/Wearable" name="platform/vendor/unbundled_google/libs/Wearable" groups="vendor,presubmit,pdk-cw-fs-plus" />
+  <project path="vendor/unbundled_google/libs/WearablePrebuilt" name="platform/vendor/unbundled_google/libs/WearablePrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
   <project path="vendor/unbundled_google/modules/AdbdGooglePrebuilt" name="platform/vendor/unbundled_google/modules/AdbdGooglePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/modules/ANGLE" name="platform/vendor/unbundled_google/modules/ANGLE" groups="vendor" />
   <project path="vendor/unbundled_google/modules/ArtGooglePrebuilt" name="platform/vendor/unbundled_google/modules/ArtGooglePrebuilt" groups="vendor" clone-depth="1" />
@@ -1942,6 +1965,8 @@
   <project path="vendor/unbundled_google/packages/AndroidTVRemote" name="platform/vendor/unbundled_google/packages/AndroidTVRemote" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/ANGLEPrebuilt" name="platform/vendor/unbundled_google/packages/ANGLEPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/AssistantGoPrebuilt" name="platform/vendor/unbundled_google/packages/AssistantGoPrebuilt" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/AssistantWearPrebuilt" name="platform/vendor/unbundled_google/packages/AssistantWearPrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/BatteryServicesWearPrebuilt" name="platform/vendor/unbundled_google/packages/BatteryServicesWearPrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/BetaFeedback" name="platform/vendor/unbundled_google/packages/BetaFeedback" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/BetterBug" name="platform/vendor/unbundled_google/packages/BetterBug" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/BrowserGoogle" name="platform/vendor/unbundled_google/packages/BrowserGoogle" groups="vendor" />
@@ -1955,6 +1980,19 @@
   <project path="vendor/unbundled_google/packages/CbrsNetworkMonitorPrebuilt" name="platform/vendor/unbundled_google/packages/CbrsNetworkMonitorPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/CellBroadcastReceiverMTS" name="platform/vendor/unbundled_google/packages/CellBroadcastReceiverMTS" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/Chrome" name="platform/vendor/unbundled_google/packages/Chrome" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkElementsPrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkElementsPrebuilt" groups="vendor,presubmit" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkEsimLePrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkEsimLePrebuilt" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkGsaPrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkGsaPrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkHomeDailyPrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkHomeDailyPrebuilt" groups="vendor,presubmit" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkHomePrebuilt2" name="platform/vendor/unbundled_google/packages/ClockworkHomePrebuilt2" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkHomeStewardLePrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkHomeStewardLePrebuilt" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkHomeWeeklyPrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkHomeWeeklyPrebuilt" groups="vendor,presubmit" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkHotwordLePrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkHotwordLePrebuilt" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkPowerTestsPrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkPowerTestsPrebuilt" groups="vendor,presubmit" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkPrebuilts" name="platform/vendor/unbundled_google/packages/ClockworkPrebuilts" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkRemindersLePrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkRemindersLePrebuilt" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkSysUiGooglePrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkSysUiGooglePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/ClockworkWatchFacesGooglePrebuilt" name="platform/vendor/unbundled_google/packages/ClockworkWatchFacesGooglePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/CloudPrint2" name="platform/vendor/unbundled_google/packages/CloudPrint2" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/ComposePrebuilt" name="platform/vendor/unbundled_google/packages/ComposePrebuilt" groups="vendor" />
   <project path="vendor/unbundled_google/packages/DevCameraGoogle" name="platform/vendor/unbundled_google/packages/DevCameraGoogle" groups="vendor" />
@@ -1971,6 +2009,7 @@
   <project path="vendor/unbundled_google/packages/EmergencyInfoGoogle" name="platform/vendor/unbundled_google/packages/EmergencyInfoGoogle" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/EuiccGooglePrebuilt" name="platform/vendor/unbundled_google/packages/EuiccGooglePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/EuiccSupportPixelPrebuilt" name="platform/vendor/unbundled_google/packages/EuiccSupportPixelPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/EuiccWearPrebuilt" name="platform/vendor/unbundled_google/packages/EuiccWearPrebuilt" groups="vendor,pdk-cw-fs-plus" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/ExoPrebuilt" name="platform/vendor/unbundled_google/packages/ExoPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/FactoryOtaPrebuilt" name="platform/vendor/unbundled_google/packages/FactoryOtaPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/FilesGoPrebuilt" name="platform/vendor/unbundled_google/packages/FilesGoPrebuilt" groups="vendor" clone-depth="1" />
@@ -2069,6 +2108,7 @@
   <project path="vendor/unbundled_google/packages/PlayVideos" name="platform/vendor/unbundled_google/packages/PlayVideos" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltBugle" name="platform/vendor/unbundled_google/packages/PrebuiltBugle" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltDeskClock" name="platform/vendor/unbundled_google/packages/PrebuiltDeskClock" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/PrebuiltDeskClockMicroApp" name="platform/vendor/unbundled_google/packages/PrebuiltDeskClockMicroApp" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltGmail" name="platform/vendor/unbundled_google/packages/PrebuiltGmail" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltGmsCore" name="platform/vendor/unbundled_google/packages/PrebuiltGmsCore" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/PrebuiltGoogleCamera" name="platform/vendor/unbundled_google/packages/PrebuiltGoogleCamera" groups="vendor" clone-depth="1" />
@@ -2078,6 +2118,7 @@
   <project path="vendor/unbundled_google/packages/ARCorePrebuilt" name="platform/vendor/unbundled_google/packages/ARCorePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/RecommendationsService" name="platform/vendor/unbundled_google/packages/RecommendationsService" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/RecorderPrebuilt" name="platform/vendor/unbundled_google/packages/RecorderPrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/RemindersPrebuilt" name="platform/vendor/unbundled_google/packages/RemindersPrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1"/>
   <project path="vendor/unbundled_google/packages/GoogleRestorePrebuilt" name="platform/vendor/unbundled_google/packages/GoogleRestorePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/SafetyHubPrebuilt" name="platform/vendor/unbundled_google/packages/SafetyHubPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/SconePrebuilt" name="platform/vendor/unbundled_google/packages/SconePrebuilt" groups="vendor" clone-depth="1" />
@@ -2096,6 +2137,7 @@
   <project path="vendor/unbundled_google/packages/SprintHiddenMenu" name="platform/vendor/unbundled_google/packages/SprintHiddenMenu" groups="vendor" />
   <project path="vendor/unbundled_google/packages/StorageManagerGoogle" name="platform/vendor/unbundled_google/packages/StorageManagerGoogle" groups="vendor" />
   <project path="vendor/unbundled_google/packages/SystemUIGoogle" name="platform/vendor/unbundled_google/packages/SystemUIGoogle" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/TalkbackWearPrebuilt" name="platform/vendor/unbundled_google/packages/TalkbackWearPrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/TV" name="platform/vendor/unbundled_google/packages/TV" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/TVAxel" name="platform/vendor/unbundled_google/packages/TVAxel" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/TVDreamXPrebuilt" name="platform/vendor/unbundled_google/packages/TVDreamXPrebuilt" groups="vendor" clone-depth="1" />
@@ -2120,6 +2162,8 @@
   <project path="vendor/unbundled_google/packages/WallpaperPickerGoogle" name="platform/vendor/unbundled_google/packages/WallpaperPickerGoogle" groups="vendor" />
   <project path="vendor/unbundled_google/packages/WallpaperPickerGooglePrebuilt" name="platform/vendor/unbundled_google/packages/WallpaperPickerGooglePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/WallpapersBReel" name="platform/vendor/unbundled_google/packages/WallpapersBReel" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/WearHandwritingPrebuilt" name="platform/vendor/unbundled_google/packages/WearHandwritingPrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/WearKeyboardPrebuilt" name="platform/vendor/unbundled_google/packages/WearKeyboardPrebuilt" groups="vendor,presubmit,pdk-cw-fs-plus" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/WebViewGoogle" name="platform/vendor/unbundled_google/packages/WebViewGoogle" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/WellbeingPrebuilt" name="platform/vendor/unbundled_google/packages/WellbeingPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/WfcActivationPrebuilt" name="platform/vendor/unbundled_google/packages/WfcActivationPrebuilt" groups="vendor" clone-depth="1" />
@@ -2137,6 +2181,12 @@
   <project path="vendor/verizon/Obdm" name="platform/vendor/verizon/Obdm" groups="vendor" />
   <project path="vendor/verizon/OMA-DM" name="platform/vendor/verizon/OMA-DM" groups="vendor,oma_dm" />
   <project path="vendor/verizon/ShowcasePrebuilt" name="platform/vendor/verizon/ShowcasePrebuilt" groups="vendor" clone-depth="1" />
+  <project path="vendor/wear_3p/alibaba/AlipayPrebuilt" name="platform/vendor/wear_3p/alibaba/AlipayPrebuilt" clone-depth="1" groups="vendor" />
+  <project path="vendor/wear_3p/amber/AmberWeatherPrebuilt" name="platform/vendor/wear_3p/amber/AmberWeatherPrebuilt" clone-depth="1" groups="vendor" />
+  <project path="vendor/wear_3p/calorie/KeepPrebuilt" name="platform/vendor/wear_3p/calorie/KeepPrebuilt" clone-depth="1" groups="vendor" />
+  <project path="vendor/wear_3p/hanhai/DianpingPrebuilt" name="platform/vendor/wear_3p/hanhai/DianpingPrebuilt" clone-depth="1" groups="vendor" />
+  <project path="vendor/wear_3p/hucheng/CtripPrebuilt" name="platform/vendor/wear_3p/hucheng/CtripPrebuilt" clone-depth="1" groups="vendor" />
+  <project path="vendor/wear_3p/xiaoju/DidiPrebuilt" name="platform/vendor/wear_3p/xiaoju/DidiPrebuilt" clone-depth="1" groups="vendor" />
   <project path="vendor/widevine" name="platform/vendor/widevine" groups="vendor,widevine" />
   <project path="vendor/xts" name="platform/vendor/xts" groups="vendor" />
   <!-- END closed-source projects -->
