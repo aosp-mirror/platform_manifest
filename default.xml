@@ -41,7 +41,7 @@
   <project path="external/openssl" name="platform/external/openssl" />
   <project path="external/pixman" name="platform/external/pixman" />
   <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/perfetto" name="platform/external/perfetto" revision="88c194fccd3bfdcff22b4dfd0987230a433b5e96"/>
+  <project path="external/perfetto" name="platform/external/perfetto" revision="37518c39e3db120322359090db3d54f6ac100078"/>
   <project path="external/qemu" name="platform/external/qemu">
     <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
   </project>
@@ -82,4 +82,14 @@
   <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" />
   <project path="tools/gradle" name="platform/tools/gradle" />
   <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="master"/>
+
+  <!-- Bring in the root-canal, bluetooth dependencies -->
+  <project path="system/bt" name="platform/system/bt"  groups="pdk" revision="master"/>
+  <project path="external/libchrome" name="platform/external/libchrome" groups="pdk" revision="emu-master-dev"/>
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" groups="pdk" />
+
+  <!-- toolchain requirements for root-canal -->
+  <project path="external/bison" name="platform/external/bison" groups="pdk" revision="master"/>
+  <project path="external/flex" name="platform/external/flex" groups="pdk" revision="master"/>
+  <project path="external/m4" name="toolchain/m4" groups="pdk" revision="master"/>
 </manifest>
