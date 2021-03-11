@@ -1,29 +1,32 @@
 <manifest>
   <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
   <default remote="aosp" revision="androidx-room-release" sync-j="8" />
+
+  <superproject name="platform/superproject" remote="aosp" />
+
   
-  <project name="platform/build" path="build/make" revision="d531c11871b018706dcabbd1e950bfc3e5e916ab" />
-  <project name="platform/manifest" path="manifest" revision="7e141739a03c2d208244a0ec719ab8b23b5ae6d1" />
+  <project name="platform/build" path="build/make" revision="b02f516bf514b6bda97b019976f0920cfcd90a89" />
+  <project name="platform/manifest" path="manifest" revision="db144478e100a15b06c616d63c72a940e13fedc2" />
   
   
-  <project clone-depth="1" groups="pdk" name="platform/external/noto-fonts" path="external/noto-fonts" revision="642cb08967fd7d79dd0118b240bc423206ac346d" />
+  <project clone-depth="1" groups="pdk" name="platform/external/noto-fonts" path="external/noto-fonts" revision="a86520f854a419e4535db1f1f76ae0556d6c5286" />
   <project clone-depth="1" groups="pdk" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="ca6f7b03018a55b4445654ba5b6b90fe18a3fadc" />
-  <project clone-depth="1" groups="pdk" name="platform/external/doclava" path="external/doclava" revision="6fa9aab563a06bfc796301423344e9185dc04533" />
-  <project clone-depth="1" groups="pdk" name="platform/external/dokka" path="external/dokka" revision="7e2bc61508c79f48f029f7429c859444594c1d35" />
+  <project clone-depth="1" groups="pdk" name="platform/external/doclava" path="external/doclava" revision="cf5922dbd4e640dbfe5b9347fb8ecfc79c01c22d" />
+  <project clone-depth="1" groups="pdk" name="platform/external/dokka" path="external/dokka" revision="1b2956e534ad1930c611a3bdb79c00b6d3e90e5b" />
   <project groups="pdk" name="platform/external/icing" path="external/icing" revision="bef3c12e4486a2ebf5dcb305ce399085f0d1200a" />
-  <project clone-depth="1" groups="pdk" name="platform/external/icu" path="external/icu" revision="5913e0373ec14e47310a77483e0e3f3349a91557" />
+  <project clone-depth="1" groups="pdk" name="platform/external/icu" path="external/icu" revision="33d469aaad426d8ab4daefe9d52e17d1412f3e19" />
   
-  <project clone-depth="1" groups="pdk" name="platform/external/protobuf" path="external/protobuf" revision="b0e0d998d2f175a586e48b01d39761e4fceaf662" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="efabe288c099533f31f36c4b2e8a3299ff83c7dc" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="17b55375f5ab96ac2dba6cf87ea0d6f228bd0802" />
+  <project clone-depth="1" groups="pdk" name="platform/external/protobuf" path="external/protobuf" revision="6042b015b0f0e2bcca7b8e466563f1083f6f7ccc" />
+  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="b22204b1c6b33a447d11f8fdb6af945b6ec0ddf6" />
+  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="aeb728e9489ed61147fc02143e8548f4a617174d" />
   <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="2cba2c45950db2fbf41da1bee3cbb16e452e354f" />
   <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/traceprocessor" path="prebuilts/androidx/traceprocessor" revision="4d42d0ec3aa0feddcf07ca829467ba7eb3aaa165" />
   
   
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="5259b638ef515de0e10b896d9890e7553f1beca5" />
+  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="32aa6d619bd91b3abd5f9fcfb1c3b60408a3f5d1" />
   
   <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/protobuf" path="prebuilts/protobuf" revision="7f770bcfc83d43216b156d29c38a833a51e4c7e6" />
-  <project groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" name="platform/tools/repohooks" path="tools/repohooks" revision="828db27552f162852931c3131872d591a00664e6" />
+  <project groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" name="platform/tools/repohooks" path="tools/repohooks" revision="a62c56f5940ceb6256b42ddb872820a9867f609e" />
   
   
   <project clone-depth="1" groups="tools" name="platform/tools/external/gradle" path="tools/external/gradle" revision="3dca7b804f94a9419ecb12816bf24bf6ee1d428e" />
@@ -37,7 +40,7 @@
   </project>
   <project clone-depth="1" groups="notdefault,platform-darwin" name="toolchain/prebuilts/ndk-darwin/r21" path="prebuilts/fullsdk-darwin/ndk" revision="1c4977f21886e391f7a2105c218fc9de9ac49b31">
   </project>
-  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r21" path="prebuilts/fullsdk-linux/ndk" revision="01c46f37e7a0ce88be386708d2a911b5e3505e79">
+  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r21" path="prebuilts/fullsdk-linux/ndk" revision="629ad374c1f4b3f80c6d7e39d7581533721ccd8a">
   </project>
   
   
@@ -53,13 +56,13 @@
   <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="121c8bd6b22cb8cac1e65b2d41b9ed9a7948a4f4" />
   <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" />
   <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="ad44044c66d164af061069731f9e6499ec4771ff" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="aac7c9dfe35464cb37b422d2691fb472bb555652" />
+  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="3efd808343b53979c5ed166abf52f912209e7b8f" />
   <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="e4502fabe1224af321a0aa589a8fb10088e19e7a" />
   
-  <project clone-depth="1" groups="pdk" name="platform/frameworks/support-golden" path="golden" revision="1ef9c9ad12ee3b1c52472c76d4961c711e639daf" />
+  <project clone-depth="1" groups="pdk" name="platform/frameworks/support-golden" path="golden" revision="6c8b85914fd49c0331a1f79dc348aa0acdf90194" />
   
   
-  <project groups="pdk-cw-fs,pdk-fs" name="platform/frameworks/support" path="frameworks/support" revision="4e27db1d053e9f4e806c2beadd42c9e15c9b6500" />
+  <project groups="pdk-cw-fs,pdk-fs" name="platform/frameworks/support" path="frameworks/support" revision="397f2e84b0c11fc85dcce30dfcf1535fda160db2" />
   
   <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
 </manifest>
