@@ -4,7 +4,7 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/android-platform-11.0.0_r4"
+  <default revision="refs/tags/android-platform-11.0.0_r5"
            remote="aosp"
            sync-j="4" />
 
@@ -53,32 +53,10 @@
   <project path="device/generic/x86" name="device/generic/x86" groups="pdk" />
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="pdk" />
   <project path="device/google/atv" name="device/google/atv" groups="device,broadcom_pdk,generic_fs,pdk" />
-  <project path="device/google/bonito" name="device/google/bonito" groups="device,bonito" />
-  <project path="device/google/bonito-kernel" name="device/google/bonito-kernel" groups="device,bonito" clone-depth="1" />
-  <project path="device/google/bonito-sepolicy" name="device/google/bonito-sepolicy" groups="device,bonito" />
-  <project path="device/google/bramble" name="device/google/bramble" groups="device,bramble" />
-  <project path="device/google/bramble-kernel" name="device/google/bramble-kernel" groups="device,bramble" clone-depth="1" />
-  <project path="device/google/bramble-sepolicy" name="device/google/bramble-sepolicy" groups="device,bramble" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,pdk" />
-  <project path="device/google/coral" name="device/google/coral" groups="device,coral,generic_fs" />
-  <project path="device/google/coral-kernel" name="device/google/coral-kernel" groups="device,coral,generic_fs" clone-depth="1" />
-  <project path="device/google/coral-sepolicy" name="device/google/coral-sepolicy" groups="device,coral,generic_fs" />
-  <project path="device/google/redbull" name="device/google/redbull" groups="device,redbull" />
-  <project path="device/google/redbull-sepolicy" name="device/google/redbull-sepolicy" groups="device,redbull" />
-  <project path="device/google/redfin" name="device/google/redfin" groups="device,redfin" />
-  <project path="device/google/redfin-kernel" name="device/google/redfin-kernel" groups="device,redfin" clone-depth="1" />
-  <project path="device/google/redfin-sepolicy" name="device/google/redfin-sepolicy" groups="device,redfin" />
-  <project path="device/google/sunfish" name="device/google/sunfish" groups="device,sunfish" />
-  <project path="device/google/sunfish-kernel" name="device/google/sunfish-kernel" groups="device,sunfish" clone-depth="1" />
-  <project path="device/google/sunfish-sepolicy" name="device/google/sunfish-sepolicy" groups="device,sunfish" />
-  <project path="device/google/crosshatch" name="device/google/crosshatch" groups="device,crosshatch,generic_fs" />
-  <project path="device/google/crosshatch-kernel" name="device/google/crosshatch-kernel" groups="device,crosshatch,generic_fs" clone-depth="1" />
-  <project path="device/google/crosshatch-sepolicy" name="device/google/crosshatch-sepolicy" groups="device,crosshatch,generic_fs" />
   <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device,pdk" />
   <project path="device/google/cuttlefish_kernel" name="device/google/cuttlefish_kernel" groups="device,pdk" clone-depth="1" />
   <project path="device/google/cuttlefish_vmm" name="device/google/cuttlefish_vmm" groups="device,pdk" clone-depth="1" />
-  <project path="device/google/fuchsia" name="device/google/fuchsia" groups="device" />
-  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" />
   <project path="device/google_car" name="device/google_car" groups="pdk" />
   <project path="device/linaro/bootloader/arm-trusted-firmware" name="device/linaro/bootloader/arm-trusted-firmware" />
@@ -90,7 +68,6 @@
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" />
   <project path="device/linaro/poplar" name="device/linaro/poplar" groups="device,poplar,pdk" />
   <project path="device/linaro/poplar-kernel" name="device/linaro/poplar-kernel" groups="device,poplar,pdk" clone-depth="1" />
-  <project name="device/mediatek/wembley-sepolicy" path="device/mediatek/wembley-sepolicy" groups="device"/>
   <project path="device/sample" name="device/sample" groups="pdk" />
   <project path="device/ti/beagle_x15" name="device/ti/beagle-x15" groups="device,beagle_x15,pdk" />
   <project path="device/ti/beagle_x15-kernel" name="device/ti/beagle-x15-kernel" groups="device,beagle_x15,pdk" clone-depth="1" />
@@ -333,7 +310,7 @@
   <project path="external/okhttp" name="platform/external/okhttp" groups="pdk" />
   <project path="external/one-true-awk" name="platform/external/one-true-awk" groups="pdk" />
   <project path="external/opencensus-java" name="platform/external/opencensus-java" groups="pdk,tradefed" />
-  <project path="external/OpenCL-CTS" name="platform/external/OpenCL-CTS" />
+  <project path="external/OpenCL-CTS" name="platform/external/OpenCL-CTS" groups="pdk" />
   <project path="external/OpenCSD" name="platform/external/OpenCSD" groups="pdk" />
   <project path="external/openssh" name="platform/external/openssh" groups="pdk" />
   <project path="external/oss-fuzz" name="platform/external/oss-fuzz" groups="pdk" />
@@ -536,12 +513,6 @@
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sm7150/Android.mk" />
     <linkfile src="os_pickup.bp" dest="hardware/qcom/sm7150/Android.bp" />
   </project>
-  <project path="hardware/qcom/sm7250/display" name="platform/hardware/qcom/sm7250/display" groups="qcom_sm7250" />
-  <project path="hardware/qcom/sm7250/gps" name="platform/hardware/qcom/sm7250/gps" groups="qcom_sm7250" >
-    <linkfile src="os_pickup.mk" dest="hardware/qcom/sm7250/Android.mk" />
-    <linkfile src="os_pickup.bp" dest="hardware/qcom/sm7250/Android.bp" />
-  </project>
-  <project path="hardware/qcom/sm7250/media" name="platform/hardware/qcom/sm7250/media" groups="qcom_sm7250" />
   <project path="hardware/qcom/sm8150/data/ipacfg-mgr" name="platform/hardware/qcom/sm8150/data/ipacfg-mgr" groups="qcom_sm8150" >
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sm8150/Android.mk" />
     <linkfile src="os_pickup.bp" dest="hardware/qcom/sm8150/Android.bp" />
