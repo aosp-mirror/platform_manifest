@@ -6,9 +6,8 @@
   <default revision="sc-v2-dev"
            remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
-  <remote  name="superproject-remote" fetch="sso://googleplex-android" />
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
-  <superproject name="platform/superproject" remote="superproject-remote"/>
+  <superproject name="platform/superproject" remote="goog"/>
   <!-- BEGIN open-source projects -->
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -32,6 +31,7 @@
   <project path="art" name="platform/art" groups="pdk" />
   <project path="bionic" name="platform/bionic" groups="pdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
+  <project path="bootable/libbootloader" name="platform/bootable/libbootloader" groups="vts,pdk" />
   <project path="compatibility/cdd" name="platform/compatibility/cdd" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
@@ -47,11 +47,11 @@
 	dest-branch="partner-master-tv-dev" : where in partner it should upload to
 	clone-depth="2" : Don"t clog up git with lots of binaries but allow to revert single kernel revision to help diagnose issues.
    -->
-  <project path="device/amlogic/common" name="device/amlogic/common" groups="device,amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
+  <project path="device/amlogic/common" name="device/amlogic/common" groups="device,amlogic,amlogic-core" />
   <project path="device/amlogic/yukawa" name="device/amlogic/yukawa" groups="device,yukawa,pdk" />
   <project path="device/amlogic/yukawa-kernel" name="device/amlogic/yukawa-kernel" groups="device,yukawa,pdk" clone-depth="2" />
-  <project path="device/askey/deadpool" name="device/askey/deadpool" groups="device,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
-  <project path="device/askey/deadpool-kernel" name="device/askey/deadpool-kernel" groups="device,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  clone-depth="2" />
+  <project path="device/askey/deadpool" name="device/askey/deadpool" groups="device,deadpool,askey" />
+  <project path="device/askey/deadpool-kernel" name="device/askey/deadpool-kernel" groups="device,deadpool,askey" clone-depth="2" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
@@ -77,6 +77,8 @@
   <project path="device/google/barbet-kernel" name="device/google/barbet-kernel" groups="device,barbet" clone-depth="1" />
   <project path="device/google/barbet-sepolicy" name="device/google/barbet-sepolicy" groups="device,barbet" />
   <project path="device/google/bertha" name="device/google/bertha" groups="device" />
+  <project path="device/google/blueport" name="device/google/blueport" groups="device,blueport" />
+  <project path="device/google/blueport-kernel" name="device/google/blueport-kernel" groups="device,blueport" clone-depth="1" />
   <project path="device/google/bonito" name="device/google/bonito" groups="device,bonito" />
   <project path="device/google/bonito-kernel" name="device/google/bonito-kernel" groups="device,bonito" clone-depth="1" />
   <project path="device/google/bonito-sepolicy" name="device/google/bonito-sepolicy" groups="device,bonito" />
@@ -90,8 +92,12 @@
   <project path="device/google/coral" name="device/google/coral" groups="device,coral,generic_fs" />
   <project path="device/google/coral-kernel" name="device/google/coral-kernel" groups="device,coral,generic_fs" clone-depth="1" />
   <project path="device/google/coral-sepolicy" name="device/google/coral-sepolicy" groups="device,coral,generic_fs" />
+  <project path="device/google/gs101" name="device/google/gs101" groups="device,slider,blueport,pdk-gs-arm" />
+  <project path="device/google/gs101-sepolicy" name="device/google/gs101-sepolicy" groups="device,slider,blueport,pdk-gs-arm" />
   <project path="device/google/jumbojack" name="device/google/jumbojack" groups="device,jumbojack" />
   <project path="device/google/jumbojack-kernel" name="device/google/jumbojack-kernel" groups="device,jumbojack" clone-depth="1" />
+  <project path="device/google/raviole" name="device/google/raviole" groups="device,slider,pdk-gs-arm" />
+  <project path="device/google/raviole-kernel" name="device/google/raviole-kernel" groups="device,slider,pdk-gs-arm" clone-depth="1" />
   <project path="device/google/redbull" name="device/google/redbull" groups="device,redbull" />
   <project path="device/google/redbull-kernel" name="device/google/redbull-kernel" groups="device,bramble,redfin" clone-depth="1" />
   <project path="device/google/redbull-sepolicy" name="device/google/redbull-sepolicy" groups="device,redbull" />
@@ -100,6 +106,8 @@
   <project path="device/google/slider" name="device/google/slider" groups="device,slider" />
   <project path="device/google/slider-sepolicy" name="device/google/slider-sepolicy" groups="device,slider" />
   <project path="device/google/slider-kernel" name="device/google/slider-kernel" groups="device,slider" clone-depth="1" />
+  <project path="device/google/tangotron" name="device/google/tangotron" groups="device,tangotron" />
+  <project path="device/google/tangotron-kernel" name="device/google/tangotron-kernel" groups="device,tangotron" clone-depth="1" />
   <project path="device/google/redfin_udfps" name="device/google/redfin_udfps" groups="device,redfin_udfps" />
   <project path="device/google/redfin_udfps-kernel" name="device/google/redfin_udfps-kernel" groups="device,redfin_udfps" clone-depth="1" />
   <project path="device/google/sunfish" name="device/google/sunfish" groups="device,sunfish" />
@@ -111,8 +119,8 @@
   <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device,pdk" />
   <project path="device/google/cuttlefish_prebuilts" name="device/google/cuttlefish_prebuilts" groups="device,pdk" clone-depth="1" />
   <project path="device/google/fuchsia" name="device/google/fuchsia" groups="device" />
-  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" remote="goog-and-upload-partner" dest-branch="master"  />
-  <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner" dest-branch="master"  clone-depth="1" />
+  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" remote="goog-and-upload-partner"  dest-branch="sc-dev"  />
+  <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner"  dest-branch="sc-dev"  clone-depth="1" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" />
   <project path="device/google/zebu" name="device/google/zebu" groups="device,slider" />
   <project path="device/google/zebu-kernel" name="device/google/zebu-kernel" groups="device,slider" clone-depth="1" />
@@ -131,8 +139,8 @@
   <project path="device/panasonic/hawk-kernel" name="device/panasonic/hawk-kernel" groups="device,panasonic,hawk" clone-depth="1" />
   <project path="device/panasonic/seahawk" name="device/panasonic/seahawk" groups="device,panasonic,seahawk" remote="goog-and-upload-partner"  dest-branch="s-dev" />
   <project path="device/panasonic/seahawk-kernel" name="device/panasonic/seahawk-kernel" groups="device,panasonic,seahawk" clone-depth="1" remote="goog-and-upload-partner"  dest-branch="s-dev" />
-  <project path="device/qcom/gull" name="device/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" dest-branch="master"  />
-  <project path="device/qcom/gull-kernel" name="device/qcom/gull-kernel" groups="device,gull" clone-depth="1" remote="goog-and-upload-partner" dest-branch="master"  />
+  <project path="device/qcom/gull" name="device/qcom/gull" groups="device,gull" remote="goog-and-upload-partner"  dest-branch="sc-dev"  />
+  <project path="device/qcom/gull-kernel" name="device/qcom/gull-kernel" groups="device,gull" clone-depth="1" remote="goog-and-upload-partner"  dest-branch="sc-dev"  />
   <project path="device/qcom/osprey" name="device/qcom/osprey" groups="device,osprey" />
   <project path="device/qcom/sa8155/common" name="device/qcom/sa8155/common" groups="device,qcom_sa8155" />
   <project path="device/qcom/sa8155/sepolicy_vndr" name="device/qcom/sa8155/sepolicy_vndr" groups="device,qcom_sa8155" />
@@ -165,9 +173,10 @@
   <project path="external/arm-trusted-firmware" name="platform/external/arm-trusted-firmware" groups="pdk" />
   <project path="external/auto" name="platform/external/auto" groups="pdk" />
   <project path="external/autotest" name="platform/external/autotest" groups="pdk-fs" />
-  <project path="external/android-nn-driver" name="platform/external/android-nn-driver" groups="pdk-lassen" />
-  <project path="external/armnn" name="platform/external/armnn" groups="pdk-lassen" />
+  <project path="external/android-nn-driver" name="platform/external/android-nn-driver" groups="pdk-lassen,pdk-gs-arm" />
+  <project path="external/armnn" name="platform/external/armnn" groups="pdk-lassen,pdk-gs-arm" />
   <project path="external/avb" name="platform/external/avb" groups="pdk" />
+  <project path="external/bazelbuild-rules_android" name="platform/external/bazelbuild-rules_android" groups="pdk" />
   <project path="external/bc" name="platform/external/bc" groups="pdk" />
   <project path="external/bcc" name="platform/external/bcc" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk" />
@@ -187,7 +196,7 @@
   <project path="external/cldr" name="platform/external/cldr" groups="pdk" />
   <project path="external/cn-cbor" name="platform/external/cn-cbor" groups="pdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
-  <project path="external/ComputeLibrary" name="platform/external/ComputeLibrary" groups="pdk-lassen" />
+  <project path="external/ComputeLibrary" name="platform/external/ComputeLibrary" groups="pdk-lassen,pdk-gs-arm" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk" />
   <project path="external/cpu_features" name="platform/external/cpu_features" groups="pdk" />
   <project path="external/cpuinfo" name="platform/external/cpuinfo" groups="pdk" />
@@ -208,6 +217,7 @@
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="pdk" />
   <project path="external/doclava" name="platform/external/doclava" groups="pdk" />
   <project path="external/dokka" name="platform/external/dokka" groups="pdk" />
+  <project path="external/downloader" name="platform/external/downloader" groups="pdk" />
   <project path="external/drm_hwcomposer" name="platform/external/drm_hwcomposer" groups="drm_hwcomposer,pdk-fs" />
   <project path="external/drrickorang" name="platform/external/drrickorang" groups="pdk" />
   <project path="external/dtc" name="platform/external/dtc" groups="pdk"/>
@@ -227,6 +237,8 @@
   <project path="external/fastrpc" name="platform/external/fastrpc" groups="pdk" />
   <project path="external/fdlibm" name="platform/external/fdlibm" groups="pdk" />
   <project path="external/fec" name="platform/external/fec" groups="pdk" />
+  <project path="external/fft2d" name="platform/external/fft2d" groups="pdk" />
+  <project path="external/firebase-messaging" name="platform/external/firebase-messaging" groups="pdk"/>
   <project path="external/flac" name="platform/external/flac" groups="pdk" />
   <project path="external/flatbuffers" name="platform/external/flatbuffers" groups="pdk" />
   <project path="external/fonttools" name="platform/external/fonttools" groups="pdk" />
@@ -272,7 +284,6 @@
   <project path="external/gwp_asan" name="platform/external/gwp_asan" groups="pdk" />
   <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk" />
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk,qcom_msm8x26" />
-  <project path="external/honggfuzz" name="platform/external/honggfuzz" groups="pdk" />
   <project path="external/hyphenation-patterns" name="platform/external/hyphenation-patterns" groups="pdk" />
   <project path="external/icing" name="platform/external/icing" groups="pdk" />
   <project path="external/icu" name="platform/external/icu" groups="pdk" />
@@ -360,7 +371,6 @@
   <project path="external/libusb" name="platform/external/libusb" groups="pdk" />
   <project path="external/libutf" name="platform/external/libutf" groups="pdk" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="pdk" />
-  <project path="external/libvterm" name="platform/external/libvterm" groups="pdk" />
   <project path="external/libwebm" name="platform/external/libwebm" groups="pdk" />
   <project path="external/libwebsockets" name="platform/external/libwebsockets" groups="pdk" />
   <project path="external/libxaac" name="platform/external/libxaac" groups="pdk" />
@@ -370,6 +380,7 @@
   <project path="external/linux-kselftest" name="platform/external/linux-kselftest" groups="vts,pdk" clone-depth="1" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
   <project path="external/lmfit" name="platform/external/lmfit" groups="pdk" />
+  <project path="external/lottie" name="platform/external/lottie" groups="pdk" />
   <project path="external/lua" name="platform/external/lua" groups="pdk" />
   <project path="external/ltp" name="platform/external/ltp" groups="vts,pdk" />
   <project path="external/lz4" name="platform/external/lz4" groups="pdk" />
@@ -389,6 +400,7 @@
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="pdk" />
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="pdk" />
   <project path="external/ms-tpm-20-ref" name="platform/external/ms-tpm-20-ref" groups="pdk" />
+  <project path="external/mtools" name="platform/external/mtools" groups="pdk" />
   <project path="external/mtpd" name="platform/external/mtpd" groups="pdk" />
   <project path="external/nanohttpd" name="platform/external/nanohttpd" groups="pdk" />
   <project path="external/nanopb-c" name="platform/external/nanopb-c" groups="pdk" />
@@ -405,6 +417,7 @@
   <project path="external/oboe" name="platform/external/oboe" groups="pdk" />
   <project path="external/oj-libjdwp" name="platform/external/oj-libjdwp" groups="pdk" />
   <project path="external/okhttp" name="platform/external/okhttp" groups="pdk" />
+  <project path="external/okhttp4" name="platform/external/okhttp4" groups="pdk" />
   <project path="external/one-true-awk" name="platform/external/one-true-awk" groups="pdk" />
   <project path="external/opencensus-java" name="platform/external/opencensus-java" groups="pdk,tradefed" />
   <project path="external/OpenCL-CTS" name="platform/external/OpenCL-CTS" />
@@ -469,18 +482,37 @@
   <project path="external/rust/crates/android_log-sys" name="platform/external/rust/crates/android_log-sys" groups="pdk" />
   <project path="external/rust/crates/anyhow" name="platform/external/rust/crates/anyhow" groups="pdk" />
   <project path="external/rust/crates/arbitrary" name="platform/external/rust/crates/arbitrary" groups="pdk" />
+  <project path="external/rust/crates/async-stream" name="platform/external/rust/crates/async-stream" groups="pdk" />
+  <project path="external/rust/crates/async-stream-impl" name="platform/external/rust/crates/async-stream-impl" groups="pdk" />
+  <project path="external/rust/crates/async-task" name="platform/external/rust/crates/async-task" groups="pdk" />
   <project path="external/rust/crates/async-trait" name="platform/external/rust/crates/async-trait" groups="pdk" />
+  <project path="external/rust/crates/atty" name="platform/external/rust/crates/atty" groups="pdk" />
   <project path="external/rust/crates/bencher" name="platform/external/rust/crates/bencher" groups="pdk" />
   <project path="external/rust/crates/bindgen" name="platform/external/rust/crates/bindgen" groups="pdk" />
   <project path="external/rust/crates/bitflags" name="platform/external/rust/crates/bitflags" groups="pdk" />
+  <project path="external/rust/crates/bstr" name="platform/external/rust/crates/bstr" groups="pdk" />
+  <project path="external/rust/crates/byteorder" name="platform/external/rust/crates/byteorder" groups="pdk" />
   <project path="external/rust/crates/bytes" name="platform/external/rust/crates/bytes" groups="pdk" />
+  <project path="external/rust/crates/cast" name="platform/external/rust/crates/cast" groups="pdk" />
   <project path="external/rust/crates/cexpr" name="platform/external/rust/crates/cexpr" groups="pdk" />
   <project path="external/rust/crates/cfg-if" name="platform/external/rust/crates/cfg-if" groups="pdk" />
+  <project path="external/rust/crates/chrono" name="platform/external/rust/crates/chrono" groups="pdk" />
   <project path="external/rust/crates/clang-sys" name="platform/external/rust/crates/clang-sys" groups="pdk" />
   <project path="external/rust/crates/clap" name="platform/external/rust/crates/clap" groups="pdk" />
+  <project path="external/rust/crates/crc32fast" name="platform/external/rust/crates/crc32fast" groups="pdk" />
   <project path="external/rust/crates/codespan-reporting" name="platform/external/rust/crates/codespan-reporting" groups="pdk" />
+  <project path="external/rust/crates/const_fn" name="platform/external/rust/crates/const_fn" groups="pdk" />
+  <project path="external/rust/crates/criterion" name="platform/external/rust/crates/criterion" groups="pdk" />
+  <project path="external/rust/crates/criterion-plot" name="platform/external/rust/crates/criterion-plot" groups="pdk" />
+  <project path="external/rust/crates/crossbeam-channel" name="platform/external/rust/crates/crossbeam-channel" groups="pdk" />
+  <project path="external/rust/crates/crossbeam-deque" name="platform/external/rust/crates/crossbeam-deque" groups="pdk" />
+  <project path="external/rust/crates/crossbeam-epoch" name="platform/external/rust/crates/crossbeam-epoch" groups="pdk" />
+  <project path="external/rust/crates/crossbeam-utils" name="platform/external/rust/crates/crossbeam-utils" groups="pdk" />
+  <project path="external/rust/crates/csv" name="platform/external/rust/crates/csv" groups="pdk" />
+  <project path="external/rust/crates/csv-core" name="platform/external/rust/crates/csv-core" groups="pdk" />
   <project path="external/rust/crates/derive_arbitrary" name="platform/external/rust/crates/derive_arbitrary" groups="pdk" />
   <project path="external/rust/crates/downcast-rs" name="platform/external/rust/crates/downcast-rs" groups="pdk" />
+  <project path="external/rust/crates/either" name="platform/external/rust/crates/either" groups="pdk" />
   <project path="external/rust/crates/env_logger" name="platform/external/rust/crates/env_logger" groups="pdk" />
   <project path="external/rust/crates/fallible-iterator" name="platform/external/rust/crates/fallible-iterator" groups="pdk" />
   <project path="external/rust/crates/fallible-streaming-iterator" name="platform/external/rust/crates/fallible-streaming-iterator" groups="pdk" />
@@ -495,17 +527,20 @@
   <project path="external/rust/crates/futures-sink" name="platform/external/rust/crates/futures-sink" groups="pdk" />
   <project path="external/rust/crates/futures-task" name="platform/external/rust/crates/futures-task" groups="pdk" />
   <project path="external/rust/crates/futures-util" name="platform/external/rust/crates/futures-util" groups="pdk" />
+  <project path="external/rust/crates/gdbstub" name="platform/external/rust/crates/gdbstub" groups="pdk" />
   <project path="external/rust/crates/getrandom" name="platform/external/rust/crates/getrandom" groups="pdk" />
   <project path="external/rust/crates/glob" name="platform/external/rust/crates/glob" groups="pdk" />
   <project path="external/rust/crates/grpcio" name="platform/external/rust/crates/grpcio" groups="pdk" />
   <project path="external/rust/crates/grpcio-compiler" name="platform/external/rust/crates/grpcio-compiler" groups="pdk" />
   <project path="external/rust/crates/grpcio-sys" name="platform/external/rust/crates/grpcio-sys" groups="pdk" />
+  <project path="external/rust/crates/half" name="platform/external/rust/crates/half" groups="pdk" />
   <project path="external/rust/crates/hashbrown" name="platform/external/rust/crates/hashbrown" groups="pdk" />
   <project path="external/rust/crates/hashlink" name="platform/external/rust/crates/hashlink" groups="pdk" />
   <project path="external/rust/crates/heck" name="platform/external/rust/crates/heck" groups="pdk" />
   <project path="external/rust/crates/idna" name="platform/external/rust/crates/idna" groups="pdk" />
   <project path="external/rust/crates/instant" name="platform/external/rust/crates/instant" groups="pdk" />
   <project path="external/rust/crates/intrusive-collections" name="platform/external/rust/crates/intrusive-collections" groups="pdk" />
+  <project path="external/rust/crates/itertools" name="platform/external/rust/crates/itertools" groups="pdk" />
   <project path="external/rust/crates/itoa" name="platform/external/rust/crates/itoa" groups="pdk" />
   <project path="external/rust/crates/lazy_static" name="platform/external/rust/crates/lazy_static" groups="pdk" />
   <project path="external/rust/crates/lazycell" name="platform/external/rust/crates/lazycell" groups="pdk" />
@@ -519,6 +554,8 @@
   <project path="external/rust/crates/lock_api" name="platform/external/rust/crates/lock_api" groups="pdk" />
   <project path="external/rust/crates/log" name="platform/external/rust/crates/log" groups="pdk" />
   <project path="external/rust/crates/lru-cache" name="platform/external/rust/crates/lru-cache" groups="pdk" />
+  <project path="external/rust/crates/macaddr" name="platform/external/rust/crates/macaddr" groups="pdk" />
+  <project path="external/rust/crates/managed" name="platform/external/rust/crates/managed" groups="pdk" />
   <project path="external/rust/crates/matches" name="platform/external/rust/crates/matches" groups="pdk" />
   <project path="external/rust/crates/memchr" name="platform/external/rust/crates/memchr" groups="pdk" />
   <project path="external/rust/crates/memoffset" name="platform/external/rust/crates/memoffset" groups="pdk" />
@@ -527,18 +564,23 @@
   <project path="external/rust/crates/no-panic" name="platform/external/rust/crates/no-panic" groups="pdk" />
   <project path="external/rust/crates/nom" name="platform/external/rust/crates/nom" groups="pdk" />
   <project path="external/rust/crates/num-derive" name="platform/external/rust/crates/num-derive" groups="pdk" />
+  <project path="external/rust/crates/num-integer" name="platform/external/rust/crates/num-integer" groups="pdk" />
   <project path="external/rust/crates/num-traits" name="platform/external/rust/crates/num-traits" groups="pdk" />
   <project path="external/rust/crates/num_cpus" name="platform/external/rust/crates/num_cpus" groups="pdk" />
   <project path="external/rust/crates/once_cell" name="platform/external/rust/crates/once_cell" groups="pdk" />
+  <project path="external/rust/crates/oorandom" name="platform/external/rust/crates/oorandom" groups="pdk" />
   <project path="external/rust/crates/parking_lot" name="platform/external/rust/crates/parking_lot" groups="pdk" />
   <project path="external/rust/crates/parking_lot_core" name="platform/external/rust/crates/parking_lot_core" groups="pdk" />
+  <project path="external/rust/crates/paste" name="platform/external/rust/crates/paste" groups="pdk" />
+  <project path="external/rust/crates/peeking_take_while" name="platform/external/rust/crates/peeking_take_while" groups="pdk" />
   <project path="external/rust/crates/percent-encoding" name="platform/external/rust/crates/percent-encoding" groups="pdk" />
   <project path="external/rust/crates/pin-project" name="platform/external/rust/crates/pin-project" groups="pdk" />
   <project path="external/rust/crates/pin-project-internal" name="platform/external/rust/crates/pin-project-internal" groups="pdk" />
   <project path="external/rust/crates/pin-project-lite" name="platform/external/rust/crates/pin-project-lite" groups="pdk" />
   <project path="external/rust/crates/pin-utils" name="platform/external/rust/crates/pin-utils" groups="pdk" />
-  <project path="external/rust/crates/paste" name="platform/external/rust/crates/paste" groups="pdk" />
-  <project path="external/rust/crates/peeking_take_while" name="platform/external/rust/crates/peeking_take_while" groups="pdk" />
+  <project path="external/rust/crates/plotters" name="platform/external/rust/crates/plotters" groups="pdk" />
+  <project path="external/rust/crates/plotters-backend" name="platform/external/rust/crates/plotters-backend" groups="pdk" />
+  <project path="external/rust/crates/plotters-svg" name="platform/external/rust/crates/plotters-svg" groups="pdk" />
   <project path="external/rust/crates/ppv-lite86" name="platform/external/rust/crates/ppv-lite86" groups="pdk" />
   <project path="external/rust/crates/proc-macro-error" name="platform/external/rust/crates/proc-macro-error" groups="pdk" />
   <project path="external/rust/crates/proc-macro-error-attr" name="platform/external/rust/crates/proc-macro-error-attr" groups="pdk" />
@@ -553,18 +595,25 @@
   <project path="external/rust/crates/rand_chacha" name="platform/external/rust/crates/rand_chacha" groups="pdk" />
   <project path="external/rust/crates/rand_core" name="platform/external/rust/crates/rand_core" groups="pdk" />
   <project path="external/rust/crates/rand_xorshift" name="platform/external/rust/crates/rand_xorshift" groups="pdk" />
+  <project path="external/rust/crates/rayon" name="platform/external/rust/crates/rayon" groups="pdk" />
+  <project path="external/rust/crates/rayon-core" name="platform/external/rust/crates/rayon-core" groups="pdk" />
   <project path="external/rust/crates/regex" name="platform/external/rust/crates/regex" groups="pdk" />
+  <project path="external/rust/crates/regex-automata" name="platform/external/rust/crates/regex-automata" groups="pdk" />
   <project path="external/rust/crates/regex-syntax" name="platform/external/rust/crates/regex-syntax" groups="pdk" />
   <project path="external/rust/crates/remain" name="platform/external/rust/crates/remain" groups="pdk" />
   <project path="external/rust/crates/ring" name="platform/external/rust/crates/ring" groups="pdk" />
-  <project path="external/rust/crates/rustc-hash" name="platform/external/rust/crates/rustc-hash" groups="pdk" />
   <project path="external/rust/crates/rusqlite" name="platform/external/rust/crates/rusqlite" groups="pdk" />
+  <project path="external/rust/crates/rustc-hash" name="platform/external/rust/crates/rustc-hash" groups="pdk" />
+  <project path="external/rust/crates/rustversion" name="platform/external/rust/crates/rustversion" groups="pdk" />
   <project path="external/rust/crates/ryu" name="platform/external/rust/crates/ryu" groups="pdk" />
+  <project path="external/rust/crates/same-file" name="platform/external/rust/crates/same-file" groups="pdk" />
   <project path="external/rust/crates/scopeguard" name="platform/external/rust/crates/scopeguard" groups="pdk" />
   <project path="external/rust/crates/serde" name="platform/external/rust/crates/serde" groups="pdk" />
-  <project path="external/rust/crates/serde_json" name="platform/external/rust/crates/serde_json" groups="pdk" />
+  <project path="external/rust/crates/serde_cbor" name="platform/external/rust/crates/serde_cbor" groups="pdk" />
   <project path="external/rust/crates/serde_derive" name="platform/external/rust/crates/serde_derive" groups="pdk" />
+  <project path="external/rust/crates/serde_json" name="platform/external/rust/crates/serde_json" groups="pdk" />
   <project path="external/rust/crates/serde_test" name="platform/external/rust/crates/serde_test" groups="pdk" />
+  <project path="external/rust/crates/shared_child" name="platform/external/rust/crates/shared_child" groups="pdk" />
   <project path="external/rust/crates/shlex" name="platform/external/rust/crates/shlex" groups="pdk" />
   <project path="external/rust/crates/slab" name="platform/external/rust/crates/slab" groups="pdk" />
   <project path="external/rust/crates/smallvec" name="platform/external/rust/crates/smallvec" groups="pdk" />
@@ -578,11 +627,13 @@
   <project path="external/rust/crates/thiserror" name="platform/external/rust/crates/thiserror" groups="pdk" />
   <project path="external/rust/crates/thiserror-impl" name="platform/external/rust/crates/thiserror-impl" groups="pdk" />
   <project path="external/rust/crates/thread_local" name="platform/external/rust/crates/thread_local" groups="pdk" />
+  <project path="external/rust/crates/tinytemplate" name="platform/external/rust/crates/tinytemplate" groups="pdk" />
   <project path="external/rust/crates/tinyvec" name="platform/external/rust/crates/tinyvec" groups="pdk" />
   <project path="external/rust/crates/tinyvec_macros" name="platform/external/rust/crates/tinyvec_macros" groups="pdk" />
   <project path="external/rust/crates/tokio" name="platform/external/rust/crates/tokio" groups="pdk" />
   <project path="external/rust/crates/tokio-macros" name="platform/external/rust/crates/tokio-macros" groups="pdk" />
   <project path="external/rust/crates/tokio-stream" name="platform/external/rust/crates/tokio-stream" groups="pdk" />
+  <project path="external/rust/crates/tokio-test" name="platform/external/rust/crates/tokio-test" groups="pdk" />
   <project path="external/rust/crates/unicode-bidi" name="platform/external/rust/crates/unicode-bidi" groups="pdk" />
   <project path="external/rust/crates/unicode-normalization" name="platform/external/rust/crates/unicode-normalization" groups="pdk" />
   <project path="external/rust/crates/unicode-segmentation" name="platform/external/rust/crates/unicode-segmentation" groups="pdk" />
@@ -590,10 +641,14 @@
   <project path="external/rust/crates/unicode-xid" name="platform/external/rust/crates/unicode-xid" groups="pdk" />
   <project path="external/rust/crates/untrusted" name="platform/external/rust/crates/untrusted" groups="pdk" />
   <project path="external/rust/crates/url" name="platform/external/rust/crates/url" groups="pdk" />
+  <project path="external/rust/crates/uuid" name="platform/external/rust/crates/uuid" groups="pdk" />
   <project path="external/rust/crates/vsock" name="platform/external/rust/crates/vsock" groups="pdk" />
+  <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir" groups="pdk" />
   <project path="external/rust/crates/weak-table" name="platform/external/rust/crates/weak-table" groups="pdk" />
   <project path="external/rust/crates/which" name="platform/external/rust/crates/which" groups="pdk" />
+  <project path="external/rust/crates/zip" name="platform/external/rust/crates/zip" groups="pdk" />
   <project path="external/rust/cxx" name="platform/external/rust/cxx" groups="pdk" />
+  <project path="external/ruy" name="platform/external/ruy" groups="pdk" />
   <project path="external/s2-geometry-library-java" name="platform/external/s2-geometry-library-java" groups="pdk" />
   <project path="external/scapy" name="platform/external/scapy" groups="pdk-fs" />
   <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" />
@@ -616,6 +671,7 @@
   <project path="external/speex" name="platform/external/speex" groups="pdk" />
   <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
   <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" />
+  <project path="external/starlark-go" name="platform/external/starlark-go" groups="pdk" />
   <project path="external/strace" name="platform/external/strace" groups="pdk" />
   <project path="external/stressapptest" name="platform/external/stressapptest" groups="pdk" />
   <project path="external/subsampling-scale-image-view" name="platform/external/subsampling-scale-image-view" groups="pdk" clone-depth="1" />
@@ -624,6 +680,7 @@
   <project path="external/tcpdump" name="platform/external/tcpdump" groups="pdk" />
   <project path="external/tensorflow" name="platform/external/tensorflow" groups="pdk" />
   <project path="external/testng" name="platform/external/testng" groups="pdk" />
+  <project path="external/tflite-support" name="platform/external/tflite-support" groups="pdk" />
   <project path="external/timezone-boundary-builder" name="platform/external/timezone-boundary-builder" groups="pdk" clone-depth="2" />
   <project path="external/tinyalsa" name="platform/external/tinyalsa" groups="pdk" />
   <project path="external/tinyalsa_new" name="platform/external/tinyalsa_new" groups="pdk" />
@@ -699,16 +756,16 @@
   <project path="frameworks/proto_logging" name="platform/frameworks/proto_logging" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs,pdk-fs" />
-  <project path="hardware/amlogic" name="platform/hardware/amlogic" groups="amlogic,amlogic-core" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
+  <project path="hardware/amlogic" name="platform/hardware/amlogic" groups="amlogic,amlogic-core" />
   <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" groups="pdk,broadcom_wlan" />
   <project path="hardware/google/apf" name="platform/hardware/google/apf" groups="pdk" />
   <project path="hardware/google/av" name="platform/hardware/google/av" groups="pdk" />
   <project path="hardware/google/camera" name="platform/hardware/google/camera" groups="pdk" />
   <project path="hardware/google/easel" name="platform/hardware/google/easel" groups="pdk,easel" />
-  <project path="hardware/google/gchips" name="platform/hardware/google/gchips" groups="pdk-lassen" />
-  <project path="hardware/google/graphics/common" name="platform/hardware/google/graphics/common" groups="pdk-lassen" />
-  <project path="hardware/google/graphics/gs101" name="platform/hardware/google/graphics/gs101" groups="pdk-lassen" />
+  <project path="hardware/google/gchips" name="platform/hardware/google/gchips" groups="pdk-lassen,pdk-gs-arm" />
+  <project path="hardware/google/graphics/common" name="platform/hardware/google/graphics/common" groups="pdk-lassen,pdk-gs-arm" />
+  <project path="hardware/google/graphics/gs101" name="platform/hardware/google/graphics/gs101" groups="pdk-lassen,pdk-gs-arm" />
   <project path="hardware/google/graphics/gs201" name="platform/hardware/google/graphics/gs201" groups="cloudripper" />
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk" />
   <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="generic_fs,pixel" />
@@ -786,6 +843,7 @@
   <project path="hardware/st/nfc" name="platform/hardware/st/nfc" groups="pdk" />
   <project path="hardware/st/secure_element" name="platform/hardware/st/secure_element" groups="pdk" />
   <project path="hardware/st/secure_element2" name="platform/hardware/st/secure_element2" groups="pdk" />
+  <project path="hardware/samsung/nfc" name="platform/hardware/samsung/nfc" groups="pdk" />
   <project path="hardware/ti/am57x" name="platform/hardware/ti/am57x" groups="pdk" />
   <project path="kernel/configs" name="kernel/configs" groups="vts,pdk" />
   <project path="kernel/prebuilts/4.19/arm64" name="kernel/prebuilts/4.19/arm64" groups="pdk" clone-depth="1" />
@@ -794,6 +852,14 @@
   <project path="kernel/prebuilts/5.10/arm64" name="kernel/prebuilts/5.10/arm64" groups="pdk" clone-depth="1" />
   <project path="kernel/prebuilts/5.10/x86_64" name="kernel/prebuilts/5.10/x86-64" groups="pdk" clone-depth="1" />
   <project path="kernel/prebuilts/mainline/arm64" name="kernel/prebuilts/mainline/arm64" groups="pdk" clone-depth="1" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/4.19/arm64" name="kernel/prebuilts/common-modules/virtual-device/4.19/arm64" groups="pdk" clone-depth="1" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/4.19/x86-64" name="kernel/prebuilts/common-modules/virtual-device/4.19/x86-64" groups="pdk" clone-depth="1" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/5.10/arm64" name="kernel/prebuilts/common-modules/virtual-device/5.10/arm64" groups="pdk" clone-depth="1" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/5.10/x86-64" name="kernel/prebuilts/common-modules/virtual-device/5.10/x86-64" groups="pdk" clone-depth="1" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/5.4/arm64" name="kernel/prebuilts/common-modules/virtual-device/5.4/arm64" groups="pdk" clone-depth="1" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/5.4/x86-64" name="kernel/prebuilts/common-modules/virtual-device/5.4/x86-64" groups="pdk" clone-depth="1" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" name="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" groups="pdk" clone-depth="1" />
+  <project path="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" name="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" groups="pdk" clone-depth="1" />
   <project path="kernel/tests" name="kernel/tests" groups="vts,pdk" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
@@ -819,6 +885,7 @@
   <project path="packages/apps/Car/Radio" name="platform/packages/apps/Car/Radio" groups="pdk-fs" />
   <project path="packages/apps/Car/RotaryController" name="platform/packages/apps/Car/RotaryController" groups="pdk-fs" />
   <project path="packages/apps/Car/Settings" name="platform/packages/apps/Car/Settings" groups="pdk-fs" />
+  <project path="packages/apps/Car/SettingsIntelligence" name="platform/packages/apps/Car/SettingsIntelligence" groups="pdk-fs" />
   <project path="packages/apps/Car/SystemUpdater" name="platform/packages/apps/Car/SystemUpdater" groups="pdk-fs" />
   <project path="packages/apps/Car/libs" name="platform/packages/apps/Car/libs" groups="pdk-fs" />
   <project path="packages/apps/Car/tests" name="platform/packages/apps/Car/tests" groups="pdk-fs" />
@@ -846,12 +913,12 @@
   <project path="packages/apps/OnDeviceAppPrediction" name="platform/packages/apps/OnDeviceAppPrediction" groups="pdk-fs" />
   <project path="packages/apps/OMA-DM" name="platform/packages/apps/OMA-DM" groups="oma_dm" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" groups="pdk-fs" />
-  <project path="packages/apps/PermissionController" name="platform/packages/apps/PackageInstaller" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" groups="pdk-fs" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" groups="pdk-fs" />
   <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" groups="pdk-fs" />
   <project path="packages/apps/QuickAccessWallet" name="platform/packages/apps/QuickAccessWallet" groups="pdk-fs" />
+  <project path="packages/apps/RemoteProvisioner" name="platform/packages/apps/RemoteProvisioner" groups="pdk-fs" />
   <project path="packages/apps/SafetyRegulatoryInfo" name="platform/packages/apps/SafetyRegulatoryInfo" groups="pdk-fs" />
   <project path="packages/apps/SampleLocationAttribution" name="platform/packages/apps/SampleLocationAttribution" groups="pdk-fs" />
   <project path="packages/apps/SecureElement" name="platform/packages/apps/SecureElement" groups="apps_se,pdk-fs" />
@@ -861,7 +928,6 @@
   <project path="packages/apps/Stk" name="platform/packages/apps/Stk" groups="apps_stk,pdk-fs" />
   <project path="packages/apps/StorageManager" name="platform/packages/apps/StorageManager" groups="pdk-fs" />
   <project path="packages/apps/Tag" name="platform/packages/apps/Tag" groups="pdk-fs" />
-  <project path="packages/apps/Terminal" name="platform/packages/apps/Terminal" groups="pdk-fs" />
   <project path="packages/apps/Test/connectivity" name="platform/packages/apps/Test/connectivity" groups="pdk" />
   <project path="packages/apps/TimeZoneData" name="platform/packages/apps/TimeZoneData" groups="pdk" />
   <project path="packages/apps/TimeZoneUpdater" name="platform/packages/apps/TimeZoneUpdater" groups="pdk" />
@@ -1017,7 +1083,6 @@
   <project path="system/memory/libmemtrack" name="platform/system/memory/libmemtrack" groups="pdk" />
   <project path="system/memory/libmemunreachable" name="platform/system/memory/libmemunreachable" groups="pdk" />
   <project path="system/memory/lmkd" name="platform/system/memory/lmkd" groups="pdk" />
-  <project path="system/memory/mm_eventsd" name="platform/system/memory/mm_eventsd" groups="pdk" />
   <project path="system/netd" name="platform/system/netd" groups="pdk" />
   <project path="system/nfc" name="platform/system/nfc" groups="pdk" />
   <project path="system/nvram" name="platform/system/nvram" groups="pdk" />
@@ -1102,24 +1167,24 @@
   <project path="tools/vendor/intel" name="platform/tools/vendor/intel" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/jetbrains" name="platform/tools/vendor/jetbrains" groups="notdefault,tools,vendor" />
   <project path="tools/vendor/microsoft" name="platform/tools/vendor/microsoft" groups="notdefault,tools,vendor" />
-  <project path="vendor/amlogic/common" name="platform/vendor/amlogic/common" groups="vendor,amlogic,ampere,atom,beast,harman,sei" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
-  <project path="vendor/arm/mali/bob" name="platform/vendor/arm/mali/bob" groups="vendor" />
-  <project path="vendor/arm/mali/valhall" name="platform/vendor/arm/mali/valhall" groups="vendor" />
-  <project path="vendor/askey/deadpool" name="platform/vendor/askey/deadpool" groups="vendor,deadpool,askey" remote="goog-and-upload-partner" dest-branch="partner-master-tv-dev"  />
+  <project path="vendor/amlogic/common" name="platform/vendor/amlogic/common" groups="vendor,amlogic,ampere,atom,beast,harman,sei" />
+  <project path="vendor/arm/mali/bob" name="platform/vendor/arm/mali/bob" groups="vendor,pdk-gs-arm" />
+  <project path="vendor/arm/mali/valhall" name="platform/vendor/arm/mali/valhall" groups="vendor,pdk-gs-arm" />
+  <project path="vendor/askey/deadpool" name="platform/vendor/askey/deadpool" groups="vendor,deadpool,askey" />
   <project path="vendor/auto/embedded" name="platform/vendor/auto/embedded" groups="vendor" />
   <project path="vendor/auto/embedded_board" name="platform/vendor/auto/embedded_board" groups="vendor" />
   <project path="vendor/auto/projection_protocol" name="platform/vendor/auto/projection_protocol" groups="vendor" />
   <project path="vendor/broadcom/common" name="platform/vendor/broadcom/common" groups="vendor,broadcom" />
   <project path="vendor/broadcom/wlan" name="platform/vendor/broadcom/wlan" groups="vendor" />
   <project path="vendor/broadcom/bluetooth" name="platform/vendor/broadcom/bluetooth" groups="vendor" />
-  <project path="vendor/dolby/msd" name="platform/vendor/dolby/msd" groups="vendor,broadcom" remote="goog-and-upload-partner"  dest-branch="partner-master-tv-dev" />
+  <project path="vendor/dolby/msd" name="platform/vendor/dolby/msd" groups="vendor,broadcom" />
   <project path="vendor/dolby/msdPrebuilt" name="platform/vendor/dolby/msdPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/fpc" name="platform/vendor/fpc" groups="vendor,fpc" />
   <project path="vendor/fraunhofer/virtualizer" name="platform/vendor/fraunhofer/virtualizer" groups="vendor" />
   <project path="vendor/goodix/udfps" name="platform/vendor/goodix/udfps" groups="vendor,goodix" />
   <project path="vendor/google/airbrush/floral" name="platform/vendor/google/airbrush/floral" groups="vendor" />
   <project path="vendor/google/apps/CarDock" name="platform/vendor/google/apps/CarDock" groups="vendor"/>
-  <project path="vendor/google/apps/CarrierSettingsUpdater" name="platform/vendor/google/apps/CarrierSettingsUpdater" groups="vendor"/>
+  <project path="vendor/google/apps/CarrierSettingsUpdater" name="platform/vendor/google/apps/CarrierSettingsUpdater" groups="vendor,pdk-lassen"/>
   <project path="vendor/google/apps/DreamlinerUpdater" name="platform/vendor/google/apps/DreamlinerUpdater" groups="vendor"/>
   <project path="vendor/google/apps/Exo" name="platform/vendor/google/apps/Exo" groups="vendor"/>
   <project path="vendor/google/apps/ExtremeBatterySaver" name="platform/vendor/google/apps/ExtremeBatterySaver" groups="vendor"/>
@@ -1131,7 +1196,7 @@
   <project path="vendor/google/apps/GooglePrintRecommendationService" name="platform/vendor/google/apps/GooglePrintRecommendationService" groups="vendor"/>
   <project path="vendor/google/apps/HardwareInfo" name="platform/vendor/google/apps/HardwareInfo" groups="vendor"/>
   <project path="vendor/google/apps/MmsTrampoline" name="platform/vendor/google/apps/MmsTrampoline" groups="vendor"/>
-  <project path="vendor/google/apps/ModemDiagnosticSystem" name="platform/vendor/google/apps/ModemDiagnosticSystem" groups="vendor"/>
+  <project path="vendor/google/apps/ModemDiagnosticSystem" name="platform/vendor/google/apps/ModemDiagnosticSystem" groups="vendor" clone-depth="1"/>
   <project path="vendor/google/apps/ModemService" name="platform/vendor/google/apps/ModemService" groups="vendor"/>
   <project path="vendor/google/apps/OTATester" name="platform/vendor/google/apps/OTATester" groups="vendor"/>
   <project path="vendor/google/apps/OneTimeInitializer" name="platform/vendor/google/apps/OneTimeInitializer" groups="vendor"/>
@@ -1155,7 +1220,7 @@
   <project path="vendor/google/darwinn2" name="platform/vendor/google/darwinn2" groups="vendor"/>
   <project path="vendor/google/data/etc" name="platform/vendor/google/data/etc" groups="vendor"/>
   <project path="vendor/google/docs" name="platform/vendor/google/docs" groups="vendor"/>
-  <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore"  groups="vendor"/>
+  <project path="vendor/google/dev-keystore" name="platform/vendor/google/dev-keystore"  groups="vendor"  />
   <project path="vendor/google/elmyra" name="platform/vendor/google/elmyra" groups="vendor" />
   <project path="vendor/google/etc" name="platform/vendor/google/etc" groups="vendor"/>
   <project path="vendor/google/factoryota" name="platform/vendor/google/factoryota" groups="vendor"/>
@@ -1191,6 +1256,7 @@
   <project path="vendor/google/modules/NeuralNetworksGoogle" name="platform/vendor/google/modules/NeuralNetworksGoogle" groups="vendor"/>
   <project path="vendor/google/modules/TelemetryGoogle" name="platform/vendor/google/modules/TelemetryGoogle" groups="vendor"/>
   <project path="vendor/google/modules/DnsResolverGoogle" name="platform/vendor/google/modules/DnsResolverGoogle" groups="vendor"/>
+  <project path="vendor/google/modules/SchedulingGoogle" name="platform/vendor/google/modules/SchedulingGoogle" groups="vendor"/>
   <project path="vendor/google/modules/SdkExtensionsGoogle" name="platform/vendor/google/modules/SdkExtensionsGoogle" groups="vendor"/>
   <project path="vendor/google/modules/TelephonyGoogle" name="platform/vendor/google/modules/TelephonyGoogle" groups="vendor"/>
   <project path="vendor/google/modules/TetheringGoogle" name="platform/vendor/google/modules/TetheringGoogle" groups="vendor"/>
@@ -1229,6 +1295,7 @@
   <project path="vendor/google/tests/mlts/models" name="platform/vendor/google/tests/mlts/models" groups="vendor"/>
   <project path="vendor/google/tests/testinfo" name="platform/vendor/google/tests/testinfo" groups="vendor"/>
   <project path="vendor/google/tools" name="platform/vendor/google/tools" groups="vendor"/>
+  <project path="vendor/google/tv/chromecast" name="platform/vendor/google/tv/chromecast" groups="vendor,boreal,sabrina"/>
   <project path="vendor/google/usersplit_overlay" name="platform/vendor/google/usersplit_overlay" groups="vendor"/>
   <project path="vendor/google/whitechapel/aoc" name="platform/vendor/google/whitechapel/aoc" groups="vendor"/>
   <project path="vendor/google/whitechapel/apps/ModemDiagnosticSystem" name="platform/vendor/google/whitechapel/apps/ModemDiagnosticSystem" groups="vendor" />
@@ -1241,7 +1308,7 @@
   <project path="vendor/google_arc" name="platform/vendor/google_arc" groups="vendor"/>
   <project path="vendor/google_athome" name="platform/vendor/google_athome" groups="vendor"/>
   <project path="vendor/google_atv" name="platform/vendor/google_atv" groups="vendor"/>
-  <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner"  groups="vendor" />
+  <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner"   dest-branch="master" groups="vendor" />
   <project path="vendor/google_contexthub" name="platform/vendor/google_contexthub" groups="vendor"/>
   <project path="vendor/google_data/art_profile" name="platform/vendor/google_data/art_profile" groups="vendor"/>
   <!-- The PGO profile contains privacy sensitive data, DO NOT SHARE with vendors, DO NOT ADD vendor or pdk to groups. -->
@@ -1249,6 +1316,8 @@
   <project path="vendor/google_devices/barbet/prebuilts" name="platform/vendor/google_devices/barbet/prebuilts" groups="vendor,barbet" clone-depth="1" />
   <project path="vendor/google_devices/barbet/proprietary" name="platform/vendor/google_devices/barbet/proprietary" groups="vendor,barbet" />
   <project path="vendor/google_devices/bertha" name="platform/vendor/google_devices/bertha" groups="vendor"/>
+  <project path="vendor/google_devices/blueport/prebuilts" name="platform/vendor/google_devices/blueport/prebuilts" groups="vendor,blueport" clone-depth="1"/>
+  <project path="vendor/google_devices/blueport/proprietary" name="platform/vendor/google_devices/blueport/proprietary" groups="vendor,blueport" clone-depth="1"/>
   <project path="vendor/google_devices/bonito/prebuilts" name="platform/vendor/google_devices/bonito/prebuilt" groups="vendor,bonito" clone-depth="1" />
   <project path="vendor/google_devices/bonito/proprietary" name="platform/vendor/google_devices/bonito/proprietary" groups="vendor,bonito" />
   <project path="vendor/google_devices/bramble/prebuilts" name="platform/vendor/google_devices/bramble/prebuilts" groups="vendor,bramble" clone-depth="1" />
@@ -1265,7 +1334,13 @@
   <project path="vendor/google_devices/crosshatch/proprietary" name="platform/vendor/google_devices/crosshatch/proprietary" groups="vendor,crosshatch"/>
   <project path="vendor/google_devices/cuttlefish_common" name="platform/vendor/google_devices/cuttlefish_common" groups="vendor"/>
   <project path="vendor/google_devices/easel" name="platform/vendor/google_devices/easel" groups="vendor,crosshatch"/>
+  <project path="vendor/google_devices/gs101/factory" name="platform/vendor/google_devices/gs101/factory" groups="vendor" />
+  <project path="vendor/google_devices/gs101/factory_pdk" name="platform/vendor/google_devices/gs101/factory_pdk" groups="vendor,slider" />
+  <project path="vendor/google_devices/gs101/prebuilts" name="platform/vendor/google_devices/gs101/prebuilts" groups="vendor,slider,blueport" clone-depth="1"/>
+  <project path="vendor/google_devices/gs101/proprietary" name="platform/vendor/google_devices/gs101/proprietary" groups="vendor,slider,blueport" />
   <project path="vendor/google_devices/jumbojack" name="platform/vendor/google_devices/jumbojack" groups="vendor,jumbojack" />
+  <project path="vendor/google_devices/raviole/prebuilts" name="platform/vendor/google_devices/raviole/prebuilts" groups="vendor,slider" clone-depth="1"/>
+  <project path="vendor/google_devices/raviole/proprietary" name="platform/vendor/google_devices/raviole/proprietary" groups="vendor,slider" clone-depth="1"/>
   <project path="vendor/google_devices/redbull/prebuilts" name="platform/vendor/google_devices/redbull/prebuilts" groups="vendor,redbull" clone-depth="1" />
   <project path="vendor/google_devices/redbull/proprietary" name="platform/vendor/google_devices/redbull/proprietary" groups="vendor,redbull" />
   <project path="vendor/google_devices/redfin/prebuilts" name="platform/vendor/google_devices/redfin/prebuilts" groups="vendor,redfin" clone-depth="1" />
@@ -1274,6 +1349,8 @@
   <project path="vendor/google_devices/slider/factory_pdk" name="platform/vendor/google_devices/slider/factory_pdk" groups="vendor,slider" />
   <project path="vendor/google_devices/slider/prebuilts" name="platform/vendor/google_devices/slider/prebuilts" groups="vendor,slider" clone-depth="1"/>
   <project path="vendor/google_devices/slider/proprietary" name="platform/vendor/google_devices/slider/proprietary" groups="vendor,slider" />
+  <project path="vendor/google_devices/tangotron/prebuilts" name="platform/vendor/google_devices/tangotron/prebuilts" groups="vendor,tangotron" clone-depth="1"/>
+  <project path="vendor/google_devices/tangotron/proprietary" name="platform/vendor/google_devices/tangotron/proprietary" groups="vendor,tangotron" />
   <project path="vendor/google_devices/redfin_udfps/prebuilts" name="platform/vendor/google_devices/redfin_udfps/prebuilts" groups="vendor,redfin_udfps" clone-depth="1" />
   <project path="vendor/google_devices/sunfish/prebuilts" name="platform/vendor/google_devices/sunfish/prebuilts" groups="vendor,sunfish" clone-depth="1" />
   <project path="vendor/google_devices/sunfish/proprietary" name="platform/vendor/google_devices/sunfish/proprietary" groups="vendor,sunfish" />
@@ -1291,6 +1368,7 @@
   <project path="vendor/google_paintbox" name="platform/vendor/google_paintbox" groups="vendor,easel" />
   <project path="vendor/google_pdk/tools" name="platform/vendor/google_pdk/tools" groups="vendor"/>
   <project path="vendor/google_shared/ndk_translation_prebuilt" name="platform/vendor/google_shared/ndk_translation_prebuilt" groups="vendor" />
+  <project path="vendor/google_shared/packages/OpenRoamingSettings" name="platform/vendor/google_shared/packages/OpenRoamingSettings" groups="vendor" />
   <project path="vendor/google_testing/comms" name="platform/vendor/google_testing/comms" groups="vendor,google_testing_comms"/>
   <project path="vendor/google_testing/gfx-tools" name="platform/vendor/google_testing/gfx-tools" groups="vendor,slider"/>
   <project path="vendor/google_testing/integration" name="platform/vendor/google_testing/integration" groups="vendor"/>
@@ -1303,6 +1381,8 @@
   <project path="vendor/google_testing/ats" name="platform/vendor/google_testing/ats" groups="vendor"/>
   <project path="vendor/google_testing/tvts" name="platform/vendor/google_testing/tvts" groups="vendor" />
   <project path="vendor/google_testing/goats" name="platform/vendor/google_testing/goats" groups="vendor"/>
+  <project path="vendor/google_testing/catbox/src" name="platform/vendor/google_testing/catbox/src" groups="vendor" />
+  <project path="vendor/google_testing/catbox/prebuilts" name="platform/vendor/google_testing/catbox/prebuilts" groups="vendor" />
   <project path="vendor/google_tradefederation/core" name="platform/vendor/google_tradefederation" groups="tradefed"/>
   <project path="vendor/google_tradefederation/contrib" name="platform/vendor/google_tradefederation/contrib" groups="tradefed"/>
   <project path="vendor/google_tradefederation/prebuilts" name="platform/vendor/google_tradefederation/prebuilts" groups="tradefed"/>
@@ -1843,6 +1923,7 @@
     <linkfile src="prop_pickup.bp" dest="vendor/qcom/sm8250/Android.bp" />
   </project>
   <project path="vendor/qcom/system/teeui" name="platform/vendor/qcom/system/teeui" groups="vendor,qcom_only,qcom_teeui" />
+  <project path="vendor/qorvo/uwb" name="platform/vendor/qorvo/uwb" groups="vendor" />
   <project path="vendor/samsung_slsi/codec2" name="platform/vendor/samsung_slsi/codec2" groups="vendor,slider" />
   <project path="vendor/samsung_slsi/telephony/common" name="platform/vendor/samsung_slsi/telephony/common" groups="vendor,slider" />
   <project path="vendor/samsung_slsi/telephony/exynos-ril" name="platform/vendor/samsung_slsi/telephony/exynos-ril" groups="vendor,slider" />
@@ -1852,6 +1933,7 @@
   <project path="vendor/samsung_slsi/telephony/shannon-iwlan" name="platform/vendor/samsung_slsi/telephony/shannon-iwlan" groups="vendor,slider" />
   <project path="vendor/samsung_slsi/telephony/shannon-rcs" name="platform/vendor/samsung_slsi/telephony/shannon-rcs" groups="vendor,slider" />
   <project path="vendor/sprint/OMA-DM" name="platform/vendor/sprint/OMA-DM" groups="vendor,oma_dm" />
+  <project path="vendor/thales/ThalesBasicCOSUpgrade" name="platform/vendor/thales/ThalesBasicCOSUpgrade" groups="vendor" />
   <project path="vendor/tmobile" name="platform/vendor/tmobile" groups="vendor" />
   <project path="vendor/unbundled_google/libraries" name="platform/vendor/unbundled_google/libraries" groups="vendor" />
   <project path="vendor/unbundled_google/libs/aah" name="platform/vendor/unbundled_google/libs/aah" groups="vendor" />
@@ -1861,6 +1943,7 @@
   <project path="vendor/unbundled_google/libs/ndk_translation" name="platform/vendor/unbundled_google/libs/ndk_translation" groups="vendor" />
   <project path="vendor/unbundled_google/modules/AdbdGooglePrebuilt" name="platform/vendor/unbundled_google/modules/AdbdGooglePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/modules/ANGLE" name="platform/vendor/unbundled_google/modules/ANGLE" groups="vendor" />
+  <project path="vendor/unbundled_google/modules/ArtGooglePrebuilt" name="platform/vendor/unbundled_google/modules/ArtGooglePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/modules/CaptivePortalLoginPrebuilt" name="platform/vendor/unbundled_google/modules/CaptivePortalLoginPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/modules/CellBroadcastGooglePrebuilt" name="platform/vendor/unbundled_google/modules/CellBroadcastGooglePrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/modules/ConscryptPrebuilt" name="platform/vendor/unbundled_google/modules/ConscryptPrebuilt" groups="vendor" clone-depth="1" />
@@ -1933,21 +2016,8 @@
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/battlestar" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/battlestar" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/build" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt" groups="vendor" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/tests" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/tests" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2020m04" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2020m04" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2020w42" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2020w42" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2020w45" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2020w45" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2020w47" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2020w47" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2020w50" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2020w50" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w02" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w02" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w03" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w03" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w04" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w04" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w05" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w05" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w06" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w06" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w07" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w07" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w08" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w08" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w09" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w09" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w10" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w10" groups="vendor" clone-depth="1" />
-  <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w11" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w11" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w12" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w12" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w13" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w13" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w14" name="platform/vendor/unbundled_google/packages/GmsCorePrebuilt/y2021w14" groups="vendor" clone-depth="1" />
@@ -2052,6 +2122,7 @@
   <project path="vendor/unbundled_google/packages/StorageManagerGoogle" name="platform/vendor/unbundled_google/packages/StorageManagerGoogle" groups="vendor" />
   <project path="vendor/unbundled_google/packages/SystemUIGoogle" name="platform/vendor/unbundled_google/packages/SystemUIGoogle" groups="vendor" />
   <project path="vendor/unbundled_google/packages/TV" name="platform/vendor/unbundled_google/packages/TV" groups="vendor" clone-depth="1" />
+  <project path="vendor/unbundled_google/packages/TVAxel" name="platform/vendor/unbundled_google/packages/TVAxel" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/TVDreamXPrebuilt" name="platform/vendor/unbundled_google/packages/TVDreamXPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/TVLauncher" name="platform/vendor/unbundled_google/packages/TVLauncher" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/TVLauncherXPrebuilt" name="platform/vendor/unbundled_google/packages/TVLauncherXPrebuilt" groups="vendor" clone-depth="1" />
@@ -2069,6 +2140,7 @@
   <project path="vendor/unbundled_google/packages/TurboAdapter" name="platform/vendor/unbundled_google/packages/TurboAdapter" groups="vendor" />
   <project path="vendor/unbundled_google/packages/TurboPrebuilt" name="platform/vendor/unbundled_google/packages/TurboPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/VerizonVendorLogging" name="platform/vendor/unbundled_google/packages/VerizonVendorLogging" groups="vendor" />
+  <project path="vendor/unbundled_google/packages/VoiceAccessPrebuilt" name="platform/vendor/unbundled_google/packages/VoiceAccessPrebuilt" groups="vendor" clone-depth="1" />
   <project path="vendor/unbundled_google/packages/Volta" name="platform/vendor/unbundled_google/packages/Volta" groups="vendor" />
   <project path="vendor/unbundled_google/packages/WallpaperPickerGoogle" name="platform/vendor/unbundled_google/packages/WallpaperPickerGoogle" groups="vendor" />
   <project path="vendor/unbundled_google/packages/WallpaperPickerGooglePrebuilt" name="platform/vendor/unbundled_google/packages/WallpaperPickerGooglePrebuilt" groups="vendor" clone-depth="1" />
