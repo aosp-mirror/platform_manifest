@@ -2,10 +2,10 @@
 <manifest>
 
   <remote  name="goog"
-           fetch=".."
-           review="sso://googleplex-android/" />
+	   fetch=".."
+	   review="sso://googleplex-android/" />
   <default revision="rvc-car-dev"
-           remote="goog" />
+	   remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
 
@@ -37,8 +37,8 @@
   <project path="developers/samples/android" name="platform/developers/samples/android" groups="developers" />
   <project path="development" name="platform/development" groups="developers,pdk-cw-fs,pdk-fs" />
   <!--
-        goog-and-upload-partner : During repo upload: sync from internal but upload to partner
-         :
+	goog-and-upload-partner : During repo upload: sync from internal but upload to partner
+	 :
 		Replication mirror to allow partner CLs submitted on partner gerrit to be replicated to internal master.
 		Also where to sync from.
 	dest-branch="partner-master-tv-dev" : where in partner it should upload to
@@ -1033,6 +1033,7 @@
   <project path="vendor/google_athome" name="platform/vendor/google_athome" groups="vendor"/>
   <project path="vendor/google_atv" name="platform/vendor/google_atv" groups="vendor"/>
   <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner"   revision="mirror-partner-master" groups="vendor" />
+  <project path="vendor/google_auto/tools" name="platform/vendor/google_auto/tools" remote="goog-and-upload-partner" revision="mirror-partner-main" dest-branch="main" groups="vendor" />
   <project path="vendor/google_contexthub" name="platform/vendor/google_contexthub" groups="vendor"/>
   <project path="vendor/google_data/art_profile" name="platform/vendor/google_data/art_profile" groups="vendor"/>
   <project path="vendor/google_devices/barbet/prebuilts" name="platform/vendor/google_devices/barbet/prebuilts" groups="vendor,barbet" clone-depth="1" />
