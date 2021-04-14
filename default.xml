@@ -7,7 +7,9 @@
            remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
+
   <superproject name="platform/superproject" remote="goog"/>
+
   <!-- BEGIN open-source projects -->
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -78,6 +80,7 @@
   <project path="device/google/barbet-sepolicy" name="device/google/barbet-sepolicy" groups="device,barbet" />
   <project path="device/google/bertha" name="device/google/bertha" groups="device" />
   <project path="device/google/blueport" name="device/google/blueport" groups="device,blueport" />
+  <project path="device/google/blueport-sepolicy" name="device/google/blueport-sepolicy" groups="device,blueport" />
   <project path="device/google/blueport-kernel" name="device/google/blueport-kernel" groups="device,blueport" clone-depth="1" />
   <project path="device/google/bonito" name="device/google/bonito" groups="device,bonito" />
   <project path="device/google/bonito-kernel" name="device/google/bonito-kernel" groups="device,bonito" clone-depth="1" />
@@ -119,8 +122,8 @@
   <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device,pdk" />
   <project path="device/google/cuttlefish_prebuilts" name="device/google/cuttlefish_prebuilts" groups="device,pdk" clone-depth="1" />
   <project path="device/google/fuchsia" name="device/google/fuchsia" groups="device" />
-  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" remote="goog-and-upload-partner"  dest-branch="sc-dev"  />
-  <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner"  dest-branch="sc-dev"  clone-depth="1" />
+  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" remote="goog-and-upload-partner" revision="mirror-partner-sc-dev" dest-branch="sc-dev"  />
+  <project path="device/google/trout-kernel" name="device/google/trout-kernel" groups="device,trout,gull" remote="goog-and-upload-partner" revision="mirror-partner-sc-dev" dest-branch="sc-dev"  clone-depth="1" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" />
   <project path="device/google/zebu" name="device/google/zebu" groups="device,slider" />
   <project path="device/google/zebu-kernel" name="device/google/zebu-kernel" groups="device,slider" clone-depth="1" />
@@ -139,8 +142,8 @@
   <project path="device/panasonic/hawk-kernel" name="device/panasonic/hawk-kernel" groups="device,panasonic,hawk" clone-depth="1" />
   <project path="device/panasonic/seahawk" name="device/panasonic/seahawk" groups="device,panasonic,seahawk" remote="goog-and-upload-partner" revision="mirror-partner-s-dev" dest-branch="s-dev" />
   <project path="device/panasonic/seahawk-kernel" name="device/panasonic/seahawk-kernel" groups="device,panasonic,seahawk" clone-depth="1" remote="goog-and-upload-partner" revision="mirror-partner-s-dev" dest-branch="s-dev" />
-  <project path="device/qcom/gull" name="device/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" dest-branch="master"  />
-  <project path="device/qcom/gull-kernel" name="device/qcom/gull-kernel" groups="device,gull" clone-depth="1" remote="goog-and-upload-partner" dest-branch="master"  />
+  <project path="device/qcom/gull" name="device/qcom/gull" groups="device,gull" remote="goog-and-upload-partner" revision="mirror-partner-sc-dev" dest-branch="sc-dev"  />
+  <project path="device/qcom/gull-kernel" name="device/qcom/gull-kernel" groups="device,gull" clone-depth="1" remote="goog-and-upload-partner" revision="mirror-partner-sc-dev" dest-branch="sc-dev"  />
   <project path="device/qcom/osprey" name="device/qcom/osprey" groups="device,osprey" />
   <project path="device/qcom/sa8155/common" name="device/qcom/sa8155/common" groups="device,qcom_sa8155" />
   <project path="device/qcom/sa8155/sepolicy_vndr" name="device/qcom/sa8155/sepolicy_vndr" groups="device,qcom_sa8155" />
@@ -365,7 +368,6 @@
   <project path="external/libprotobuf-mutator" name="platform/external/libprotobuf-mutator" groups="pdk" />
   <project path="external/libsrtp2" name="platform/external/libsrtp2" groups="pdk" />
   <project path="external/libtextclassifier" name="platform/external/libtextclassifier" groups="pdk" />
-  <project path="external/libunwind" name="platform/external/libunwind" groups="pdk" />
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk" />
   <project path="external/libusb" name="platform/external/libusb" groups="pdk" />
   <project path="external/libutf" name="platform/external/libutf" groups="pdk" />
@@ -1307,7 +1309,7 @@
   <project path="vendor/google_arc" name="platform/vendor/google_arc" groups="vendor"/>
   <project path="vendor/google_athome" name="platform/vendor/google_athome" groups="vendor"/>
   <project path="vendor/google_atv" name="platform/vendor/google_atv" groups="vendor"/>
-  <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner"   dest-branch="master" groups="vendor" />
+  <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner"  revision="mirror-partner-master" dest-branch="master" groups="vendor" />
   <project path="vendor/google_contexthub" name="platform/vendor/google_contexthub" groups="vendor"/>
   <project path="vendor/google_data/art_profile" name="platform/vendor/google_data/art_profile" groups="vendor"/>
   <!-- The PGO profile contains privacy sensitive data, DO NOT SHARE with vendors, DO NOT ADD vendor or pdk to groups. -->
