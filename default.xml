@@ -2,10 +2,10 @@
 <manifest>
 
   <remote  name="goog"
-           fetch=".."
-           review="sso://googleplex-android/" />
+	   fetch=".."
+	   review="sso://googleplex-android/" />
   <default revision="master"
-           remote="goog" />
+	   remote="goog" />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
 
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
@@ -44,8 +44,8 @@
   <project path="developers/samples/android" name="platform/developers/samples/android" groups="developers" />
   <project path="development" name="platform/development" groups="developers,pdk-cw-fs,pdk-fs" />
   <!--
-        goog-and-upload-partner : During repo upload: sync from internal but upload to partner
-        revision="mirror-partner-master-tv-dev" :
+	goog-and-upload-partner : During repo upload: sync from internal but upload to partner
+	revision="mirror-partner-master-tv-dev" :
 		Replication mirror to allow partner CLs submitted on partner gerrit to be replicated to internal master.
 		Also where to sync from.
 	dest-branch="partner-master-tv-dev" : where in partner it should upload to
@@ -1323,6 +1323,7 @@
   <project path="vendor/google_athome" name="platform/vendor/google_athome" groups="vendor"/>
   <project path="vendor/google_atv" name="platform/vendor/google_atv" groups="vendor"/>
   <project path="vendor/google_auto/vms" name="platform/vendor/google_auto/vms" remote="goog-and-upload-partner" revision="mirror-partner-master" dest-branch="master" groups="vendor" />
+  <project path="vendor/google_auto/tools" name="platform/vendor/google_auto/tools" remote="goog-and-upload-partner" revision="mirror-partner-main" dest-branch="main" groups="vendor" />
   <project path="vendor/google_clockwork" name="platform/vendor/google_clockwork" groups="vendor,presubmit,pdk-cw-fs-plus" />
   <project path="vendor/google_clockwork_partners/libs/ClockworkCommonLibs" name="platform/vendor/google_clockwork_partners/libs/ClockworkCommonLibs" groups="vendor,presubmit,pdk-cw-fs-w1" />
   <project path="vendor/google_clockwork_partners/libs/ClockworkPrivateLibsPrebuilt" name="platform/vendor/google_clockwork_partners/libs/ClockworkPrivateLibsPrebuilt" groups="vendor,presubmit,pdk-cw-fs-w1" />
