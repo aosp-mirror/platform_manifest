@@ -9,13 +9,7 @@
            sync-j="4" />
 
   <project path="build" name="platform/build" />
-  <project path="tools/buildSrc" name="platform/tools/buildSrc">
-    <copyfile src="base/build.gradle"      dest="tools/build.gradle" />
-    <copyfile src="base/settings.gradle"   dest="tools/settings.gradle" />
-    <copyfile src="base/gradlew"           dest="tools/gradlew" />
-    <copyfile src="base/gradlew.bat"       dest="tools/gradlew.bat" />
-    <copyfile src="base/gradle.properties" dest="tools/gradle.properties" />
-  </project>
+  <project path="tools/buildSrc" name="platform/tools/buildSrc" />
 
   <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="master"/>
   <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" revision="master"/>
@@ -38,8 +32,6 @@
   <project path="external/qemu" name="platform/external/qemu">
     <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
   </project>
-  <project path="external/qt" name="platform/external/qt" />
-  <project path="external/swiftshader" name="platform/external/swiftshader"/>
   <project path="external/tinyobjloader" name="platform/external/tinyobjloader" revision="master"/>
   <project path="external/virglrenderer" name="platform/external/virglrenderer" revision="crosvm-master"/>
   <project path="external/nasm" name="platform/external/nasm" />
@@ -49,10 +41,8 @@
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/curl" name="platform/prebuilts/android-emulator-build/curl" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/protobuf" name="platform/prebuilts/android-emulator-build/protobuf" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
 
@@ -75,8 +65,6 @@
   <!-- Bring in the root-canal, bluetooth dependencies -->
   <project path="system/bt" name="platform/system/bt"  groups="pdk" revision="master"/>
   <project path="external/libchrome" name="platform/external/libchrome" groups="pdk" revision="emu-master-dev"/>
-  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" groups="pdk" />
-
 
   <!-- toolchain requirements for root-canal -->
   <project path="external/bison" name="platform/external/bison" groups="pdk" revision="master"/>
