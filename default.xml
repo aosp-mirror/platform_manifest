@@ -4,7 +4,7 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="studio-master-dev"
+  <default revision="studio-main"
            remote="aosp"
            sync-j="4" />
 
@@ -20,7 +20,7 @@
 
   <project path="external/dexter" name="platform/tools/dexter" />
   <project path="external/doclava" name="platform/external/doclava" />
-  <project path="external/dokka" name="platform/external/dokka" groups="pdk" />
+  <project path="external/dokka" name="platform/external/dokka" groups="pdk" clone-depth="1" />
   <project path="external/freetype" name="platform/external/freetype" />
   <project path="external/gflags" name="platform/external/gflags" />
   <project path="external/googletest" name="platform/external/googletest" />
@@ -32,29 +32,16 @@
   <project path="external/protobuf" name="platform/external/protobuf" />
   <project path="external/skia" name="platform/external/skia" />
   <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/layoutlib" name="platform/frameworks/layoutlib" clone-depth="1" groups="notdefault,layoutlib" />
-  <project path="prebuilts/google-breakpad/darwin-x86" name="platform/prebuilts/google-breakpad/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/google-breakpad/linux-x86" name="platform/prebuilts/google-breakpad/linux-x86" clone-depth="1" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/google-breakpad/windows-x86" name="platform/prebuilts/google-breakpad/windows-x86" clone-depth="1" groups="lldb,notdefault,windows" />
+  <project path="frameworks/layoutlib" name="platform/frameworks/layoutlib" clone-depth="1" />
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
-  <project path="prebuilts/libedit/darwin-x86" name="platform/prebuilts/libedit/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/libedit/linux-x86" name="platform/prebuilts/libedit/linux-x86" clone-depth="1" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/libglog/darwin-x86" name="platform/prebuilts/libglog/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/libglog/linux-x86" name="platform/prebuilts/libglog/linux-x86" clone-depth="1" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/libglog/windows-x86" name="platform/prebuilts/libglog/windows-x86" clone-depth="1" groups="lldb,notdefault,windows" />
-  <project path="prebuilts/libprotobuf/darwin-x86" name="platform/prebuilts/libprotobuf/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/libprotobuf/linux-x86" name="platform/prebuilts/libprotobuf/linux-x86" clone-depth="1" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/libprotobuf/windows-x86" name="platform/prebuilts/libprotobuf/windows-x86" clone-depth="1" groups="lldb,notdefault,windows" />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" />
   <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" />
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" />
   <project path="prebuilts/r8" name="platform/prebuilts/r8" clone-depth="1" />
   <project path="prebuilts/studio/jdk" name="platform/prebuilts/studio/jdk" clone-depth="1" />
   <project path="prebuilts/studio/layoutlib" name="platform/prebuilts/studio/layoutlib" clone-depth="1" />
-  <project path="prebuilts/swig/darwin-x86" name="platform/prebuilts/swig/darwin-x86" clone-depth="1" groups="lldb,notdefault,darwin" />
-  <project path="prebuilts/swig/linux-x86" name="platform/prebuilts/swig/linux-x86" clone-depth="1" groups="lldb,notdefault,linux" />
-  <project path="prebuilts/swig/windows-x86" name="platform/prebuilts/swig/windows-x86" clone-depth="1" groups="lldb,notdefault,windows" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" />
   <project path="tools/analytics-library" name="platform/tools/analytics-library" />
@@ -75,6 +62,7 @@
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" />
   <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" />
   <project path="tools/gradle" name="platform/tools/gradle" />
+  <project path="tools/gradle-recipes" name="platform/tools/gradle-recipes" />
   <project path="tools/idea" name="platform/tools/idea" />
   <project path="tools/repohooks" name="platform/tools/repohooks" />
   <project path="tools/sherpa" name="platform/frameworks/opt/sherpa" />
@@ -83,6 +71,8 @@
   <project path="tools/studio/google/cloud/tools" name="platform/tools/studio/google/cloud/tools" />
   <project path="tools/studio/google/samples" name="platform/tools/studio/google/samples" />
   <project path="tools/swing-testing" name="platform/tools/swing-testing" />
+  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
+  <project path="prebuilts/studio/sdk/remote" name="platform/tools/google_prebuilts/studio/sdk/remote" clone-depth="1" />
   <!-- END open-source projects -->
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
