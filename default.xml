@@ -1168,6 +1168,18 @@
   <project path="tools/treble" name="platform/tools/treble" groups="tools,pdk" />
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" />
   <!-- END open-source projects -->
+
+
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" revision="master" />
+
+
+  <!--
+    Merge marker to make it easier for git to merge AOSP-only manifest
+    changes to a custom manifest.  Please keep this marker here and
+    refrain from making changes on or below it.
+  -->
+
+
   <!-- BEGIN closed-source projects -->
   <project path="developers/samples/vendor/google" name="platform/developers/samples/vendor/google" />
   <project path="tools/vendor/ej-tech" name="platform/tools/vendor/ej-tech" groups="notdefault,tools,vendor" />
@@ -2170,5 +2182,4 @@
   <project path="vendor/widevine" name="platform/vendor/widevine" groups="vendor,widevine" />
   <project path="vendor/xts" name="platform/vendor/xts" groups="vendor" />
   <!-- END closed-source projects -->
-  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" revision="master" />
 </manifest>
