@@ -1080,6 +1080,16 @@
   <project path="tools/treble" name="platform/tools/treble" groups="tools,pdk" />
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" />
 
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
+
+  <!--
+    Merge marker to make it easier for git to merge AOSP-only manifest
+    changes to a custom manifest.  Please keep this marker here and
+    refrain from making changes on or below it.
+  -->
+
+
   <project path="toolchain/binutils" name="toolchain/binutils" />
   <project path="toolchain/llvm-project" name="toolchain/llvm-project"
            revision="master-legacy" />
@@ -1105,6 +1115,4 @@
 
   <!-- NDK headers/libraries -->
   <project path="toolchain/prebuilts/ndk/r23" name="toolchain/prebuilts/ndk/r23" />
-
-  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
