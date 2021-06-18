@@ -6,24 +6,20 @@
     project rule in google3 to ensure new projects get testing.
     See go/side-branch-testing for details.
 -->
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="master"
+  <default revision="llvm-r416183"
            remote="aosp"
            sync-j="4" />
-
   <!-- Core LLVM toolchain components -->
   <project path="bionic" name="platform/bionic" />
   <project path="toolchain/binutils" name="toolchain/binutils" />
   <project path="toolchain/llvm-project" name="toolchain/llvm-project"
-           revision="master-legacy" />
+            />
   <project path="toolchain/llvm_android" name="toolchain/llvm_android" />
-
   <!-- Android/ChromeOS shared toolchain-utils -->
-  <project path="external/toolchain-utils" name="platform/external/toolchain-utils" revision="master" />
-
+  <project path="external/toolchain-utils" name="platform/external/toolchain-utils"  />
   <!-- Binutils/gcc toolchains -->
   <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,darwin,arm" clone-depth="1" />
   <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" />
@@ -35,35 +31,28 @@
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" clone-depth="1" />
-
   <!-- CMake prebuilts -->
   <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" />
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" />
-
   <!-- build-tools prebuilts (includes ninja) -->
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
-
   <!-- Go prebuilts -->
   <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,pdk,tradefed" clone-depth="1" />
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
-
   <!-- Dependencies for lldb -->
   <project path="external/libedit" name="platform/external/libedit" />
   <project path="external/swig" name="platform/external/swig" />
   <project path="toolchain/xz" name="toolchain/xz" />
   <project path="external/libxml2" name="platform/external/libxml2" />
   <project path="external/libncurses" name="platform/external/ncurses" />
-
   <!-- Python prebuilts -->
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="llvm-toolchain" />
-  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="llvm-toolchain" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="llvm-toolchain" />
-
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1"  />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1"  />
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1"  />
   <!-- Prebuilts (for ease of updating) -->
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" />
-
   <!-- NDK headers/libraries -->
   <project path="toolchain/prebuilts/ndk/r23" name="toolchain/prebuilts/ndk/r23" />
 </manifest>
