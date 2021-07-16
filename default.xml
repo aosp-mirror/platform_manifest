@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="aosp"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+  <default revision="multitest-transport-dev"
+           remote="aosp"
+           sync-j="4" />
+
+  <!-- BEGIN open-source projects -->
+  <project path="multitest_transport" name="platform/tools/multitest_transport" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" revision="master"/>
+  <project path="tradefed_cluster" name="platform/tools/tradefed_cluster" />
+  <!-- END open-source projects -->
+
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+</manifest>
