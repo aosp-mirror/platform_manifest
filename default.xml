@@ -1,6 +1,10 @@
 <manifest>
-  <remote fetch=".." name="goog" review="https://googleplex-android-review.googlesource.com/" />
-  <default remote="goog" revision="refs/tags/ndk-r23-beta5" sync-j="4" />
+  <remote fetch=".." name="aosp" />
+  <default remote="aosp" revision="refs/tags/ndk-r23-beta6" sync-j="4" />
+
+  <superproject name="platform/superproject" remote="aosp"/>
+  <contactinfo bugurl="go/repo-bug" />
+
   <project groups="presubmit" name="platform/bionic" path="bionic" />
   <project groups="presubmit" name="platform/development" path="development" />
   
