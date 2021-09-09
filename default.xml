@@ -14,7 +14,11 @@
            remote="aosp"
            sync-j="4" />
 
-  <superproject name="platform/superproject" remote="aosp"/>
+  <remote  name="aospsuperproject"
+           fetch=".."
+           review="https://android-review.googlesource.com/"
+           revision="master-ndk" />
+  <superproject name="platform/superproject" remote="aospsuperproject"/>
 
   <project path="bionic" name="platform/bionic" groups="presubmit" />
   <project path="development" name="platform/development" groups="presubmit" />
