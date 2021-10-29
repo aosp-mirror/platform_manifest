@@ -2,48 +2,43 @@
 
 
   <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="refs/tags/ndk-r23" sync-j="4" />
+  <default remote="aosp" revision="refs/tags/ndk-r24-beta1" sync-j="4" />
 
-  <superproject name="platform/superproject" remote="aosp" />
+  <superproject name="platform/superproject" remote="aosp" revision="ndk-r24-beta1" />
 
-  <project groups="presubmit" name="platform/bionic" path="bionic" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/development" path="development" upstream="ndk-release-r23" />
+  <project groups="presubmit" name="platform/bionic" path="bionic" />
+  <project groups="presubmit" name="platform/development" path="development" />
   
-  <project name="platform/external/effcee" path="external/effcee" upstream="ndk-release-r23" />
+  <project name="platform/external/effcee" path="external/effcee" />
   
-  <project name="platform/external/regex-re2" path="external/regex-re2" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/external/googletest" path="external/googletest" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/external/shaderc/glslang" path="external/shaderc/glslang" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/external/shaderc/shaderc" path="external/shaderc/shaderc" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/external/shaderc/spirv-headers" path="external/shaderc/spirv-headers" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/external/shaderc/spirv-tools" path="external/shaderc/spirv-tools" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/external/vulkan-headers" path="external/vulkan-headers" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/ndk" path="ndk" upstream="ndk-release-r23" />
-  <project name="platform/prebuilts/clang/host/darwin-x86" path="prebuilts/clang/host/darwin-x86" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" upstream="ndk-release-r23" />
-  <project name="platform/prebuilts/clang/host/windows-x86" path="prebuilts/clang/host/windows-x86" upstream="ndk-release-r23" />
-  <project name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/cmake/darwin-x86" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/cmake/linux-x86" upstream="ndk-release-r23" />
-  <project groups="darwin" name="platform/prebuilts/gcc/darwin-x86/host/headers" path="prebuilts/gcc/darwin-x86/host/headers" upstream="ndk-release-r23" />
-  <project groups="darwin" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/ndk" path="prebuilts/ndk" upstream="ndk-release-r23" />
-  <project name="platform/prebuilts/ninja/darwin-x86" path="prebuilts/ninja/darwin-x86" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/ninja/linux-x86" path="prebuilts/ninja/linux-x86" upstream="ndk-release-r23" />
-  <project clone-depth="1" groups="darwin" name="platform/prebuilts/python/darwin-x86" path="prebuilts/python3/darwin" upstream="ndk-release-r23" />
-  <project clone-depth="1" groups="linux,presubmit" name="platform/prebuilts/python/linux-x86" path="prebuilts/python3/linux" upstream="ndk-release-r23" />
-  <project groups="darwin" name="platform/prebuilts/python/darwin-x86/2.7.5" path="prebuilts/python/darwin-x86/2.7.5" upstream="ndk-release-r23" />
-  <project groups="linux,presubmit" name="platform/prebuilts/python/linux-x86/2.7.5" path="prebuilts/python/linux-x86/2.7.5" upstream="ndk-release-r23" />
-  <project name="platform/prebuilts/renderscript/host/darwin-x86" path="prebuilts/renderscript/host/darwin-x86" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/renderscript/host/linux-x86" path="prebuilts/renderscript/host/linux-x86" upstream="ndk-release-r23" />
-  <project name="platform/prebuilts/renderscript/host/windows-x86" path="prebuilts/renderscript/host/windows-x86" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="platform/prebuilts/simpleperf" path="prebuilts/simpleperf" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="toolchain/binutils" path="toolchain/binutils" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="toolchain/llvm-project" path="toolchain/llvm-project" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="toolchain/make" path="toolchain/make" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="toolchain/python" path="toolchain/python" upstream="ndk-release-r23" />
-  <project groups="presubmit" name="toolchain/yasm" path="toolchain/yasm" upstream="ndk-release-r23" />
-
+  <project name="platform/external/regex-re2" path="external/regex-re2" />
+  <project groups="presubmit" name="platform/external/googletest" path="external/googletest" />
+  <project groups="presubmit" name="platform/external/shaderc/glslang" path="external/shaderc/glslang" />
+  <project groups="presubmit" name="platform/external/shaderc/shaderc" path="external/shaderc/shaderc" />
+  <project groups="presubmit" name="platform/external/shaderc/spirv-headers" path="external/shaderc/spirv-headers" />
+  <project groups="presubmit" name="platform/external/shaderc/spirv-tools" path="external/shaderc/spirv-tools" />
+  <project groups="presubmit" name="platform/external/vulkan-headers" path="external/vulkan-headers" />
+  <project groups="presubmit" name="platform/ndk" path="ndk" />
+  <project name="platform/prebuilts/clang/host/darwin-x86" path="prebuilts/clang/host/darwin-x86" />
+  <project groups="presubmit" name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" />
+  <project name="platform/prebuilts/clang/host/windows-x86" path="prebuilts/clang/host/windows-x86" />
+  <project name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/cmake/darwin-x86" />
+  <project groups="presubmit" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/cmake/linux-x86" />
+  <project groups="darwin" name="platform/prebuilts/gcc/darwin-x86/host/headers" path="prebuilts/gcc/darwin-x86/host/headers" />
+  <project groups="darwin" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" />
+  <project groups="presubmit" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" />
+  <project groups="presubmit" name="platform/prebuilts/ndk" path="prebuilts/ndk" />
+  <project name="platform/prebuilts/ninja/darwin-x86" path="prebuilts/ninja/darwin-x86" />
+  <project groups="presubmit" name="platform/prebuilts/ninja/linux-x86" path="prebuilts/ninja/linux-x86" />
+  <project groups="darwin" name="platform/prebuilts/python/darwin-x86" path="prebuilts/python/darwin-x86" />
+  <project groups="linux,presubmit" name="platform/prebuilts/python/linux-x86" path="prebuilts/python/linux-x86" />
+  <project name="platform/prebuilts/renderscript/host/darwin-x86" path="prebuilts/renderscript/host/darwin-x86" />
+  <project groups="presubmit" name="platform/prebuilts/renderscript/host/linux-x86" path="prebuilts/renderscript/host/linux-x86" />
+  <project name="platform/prebuilts/renderscript/host/windows-x86" path="prebuilts/renderscript/host/windows-x86" />
+  <project groups="presubmit" name="platform/prebuilts/simpleperf" path="prebuilts/simpleperf" />
+  <project groups="presubmit" name="toolchain/binutils" path="toolchain/binutils" />
+  <project groups="presubmit" name="toolchain/llvm-project" path="toolchain/llvm-project" />
+  <project groups="presubmit" name="toolchain/make" path="toolchain/make" />
+  <project groups="presubmit" name="toolchain/yasm" path="toolchain/yasm" />
 </manifest>
