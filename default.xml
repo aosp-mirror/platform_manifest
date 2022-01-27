@@ -1,71 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="emu-31-stable-release"
-           remote="aosp"
-           sync-j="4" />
-  <superproject name="platform/superproject" remote="aosp"/>
+
+  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
+  <default remote="aosp" revision="emu-31-stable-release" sync-j="4" />
+
+  <superproject name="platform/superproject" remote="aosp" />
   <contactinfo bugurl="go/repo-bug" />
-  <project path="build" name="platform/build" />
-  <project path="tools/buildSrc" name="platform/tools/buildSrc" />
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" />
-  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" />
-  <project path="external/adt-infra" name="platform/external/adt-infra" />
-  <project path="external/astc-codec" name="platform/external/astc-codec"  />
-  <project path="external/boringssl" name="platform/external/boringssl"  clone-depth="1"/>
-  <project path="external/cares" name="platform/external/c-ares" />
-  <project path="external/curl" name="platform/external/curl" />
-  <project path="external/deqp" name="platform/external/deqp"  />
-  <project path="external/googletest" name="platform/external/googletest"  />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark"  />
-  <project path="external/google-breakpad" name="platform/external/google-breakpad" />
-  <project path="external/grpc" name="platform/external/grpc-grpc" />
-  <project path="external/libusb" name="platform/external/libusb" />
-  <project path="external/libyuv" name="platform/external/libyuv" />
-  <project path="external/libpng" name="platform/external/libpng" />
-  <project path="external/lz4" name="platform/external/lz4" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/perfetto" name="platform/external/perfetto" />
-  <project path="external/qemu" name="platform/external/qemu">
-    <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
+
+  <project name="platform/build" path="build" revision="04f9aa84af81e4a92a83782e37e3d141ab572936" upstream="emu-31-stable-release" />
+  <project name="platform/tools/buildSrc" path="tools/buildSrc" revision="804d3c1037c7b023b826271b561dc7da49636d72" upstream="emu-31-stable-release" />
+
+  <project name="device/generic/goldfish-opengl" path="device/generic/goldfish-opengl" revision="eee1f534b1d09c021378fe190b7567e05f3bf5a8" upstream="emu-31-stable-release" />
+  <project name="device/generic/vulkan-cereal" path="device/generic/vulkan-cereal" revision="f604e1f7d634f3ce5466c6c8520839cf05830c44" upstream="emu-31-stable-release" />
+  <project name="platform/external/adt-infra" path="external/adt-infra" revision="3369bddc9b1dbb2d7070bcbb183dbfe3898d167b" upstream="emu-31-stable-release" />
+  <project name="platform/external/angle" path="external/angle" revision="73e052fb93a40c50c8ad997b282ce46fdc373007" upstream="emu-31-stable-release" />
+  <project name="platform/external/astc-codec" path="external/astc-codec" revision="17ae36822a8084f45ae51f9031e81f8318254f33" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/external/boringssl" path="external/boringssl" revision="ab1e4a48030bd5f81337933977203883e9f52f58" upstream="emu-31-stable-release" />
+  <project name="platform/external/c-ares" path="external/cares" revision="0affb0ffe65c3e0db4d7c3fedbe506bc731d542c" upstream="emu-31-stable-release" />
+  <project name="platform/external/curl" path="external/curl" revision="1da4b04273638c8afe6f88bd7a7ccfb693640773" upstream="emu-31-stable-release" />
+  <project name="platform/external/deqp" path="external/deqp" revision="26fe72f7a6df9298949a50dfb8ea2d7349aef471" upstream="emu-31-stable-release" />
+  <project name="platform/external/googletest" path="external/googletest" revision="c8fdf1cf27c8c3a34efa9d5eac96994a588bb0fc" upstream="emu-31-stable-release" />
+  <project name="platform/external/google-benchmark" path="external/google-benchmark" revision="db1632fadc79df388a2a7248157c965ee40248a1" upstream="emu-31-stable-release" />
+  <project name="platform/external/google-breakpad" path="external/google-breakpad" revision="d1e7acbb1935a6177a3942a19e8677544341261f" upstream="emu-31-stable-release" />
+  <project name="platform/external/grpc-grpc" path="external/grpc" revision="40b994d7a88ac8f28ea1b8d4d4c66328d7a4cbaf" upstream="emu-31-stable-release" />
+  <project name="platform/external/libusb" path="external/libusb" revision="23f123a3f531572d14a253db3451c950e21d2447" upstream="emu-31-stable-release" />
+  <project name="platform/external/libyuv" path="external/libyuv" revision="8cf53b3d4cb9ff7964fff8dfa924578b69172a68" upstream="emu-31-stable-release" />
+  <project name="platform/external/libpng" path="external/libpng" revision="5d19b1bb0f5694f2ae47b3cc2ccfeb571764b439" upstream="emu-31-stable-release" />
+  <project name="platform/external/lz4" path="external/lz4" revision="1a184fdeb99f4cc11b774ac5b0b824b38105ec6c" upstream="emu-31-stable-release" />
+  <project name="platform/external/protobuf" path="external/protobuf" revision="13db073c8c49853a771254948da4d84ef0193aaf" upstream="emu-31-stable-release" />
+  <project name="platform/external/perfetto" path="external/perfetto" revision="37518c39e3db120322359090db3d54f6ac100078" upstream="emu-31-stable-release" />
+  <project name="platform/external/qemu" path="external/qemu" revision="b9445145361683c96f8704e5b1d5101eadb2d38a" upstream="emu-31-stable-release">
+    <copyfile dest="emu.code-workspace" src="android/vscode/emu.code-workspace" />
   </project>
-  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" />
-  <project path="external/virglrenderer" name="platform/external/virglrenderer" />
-  <project path="external/nasm" name="platform/external/nasm" />
-  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
-  <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/native" name="platform/frameworks/native"  />
-  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"  />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"  />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1"  />
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"  />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" />
-  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" clone-depth="1"  />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1"  />
-  <project path="sdk" name="platform/sdk" />
-  <project path="tools/emulator" name="platform/tools/emulator" />
-  <project path="tools/acloud" name="platform/tools/acloud"  />
-  <project name="device/google/cuttlefish" path="device/google/cuttlefish" />
-  <!-- Bring in the root-canal, bluetooth dependencies -->
-  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" />
-  <project path="external/libchrome" name="platform/external/libchrome" groups="pdk" />
-  <!-- toolchain requirements for root-canal -->
-  <project path="external/bison" name="platform/external/bison" groups="pdk" />
-  <project path="external/flex" name="platform/external/flex" groups="pdk" />
-  <project path="external/m4" name="toolchain/m4" groups="pdk" />
-  <!-- Webrtc for the goldfish-webrtc-videobridge -->
-  <project path="external/webrtc" name="platform/external/webrtc" />
+  <project name="platform/external/tinyobjloader" path="external/tinyobjloader" revision="d16a940067fbc191364fc1d3e2a2d907209c9320" upstream="emu-31-stable-release" />
+  <project name="platform/external/virglrenderer" path="external/virglrenderer" revision="f0c2fba5827abb3634b1992855264d7fe990b89d" upstream="emu-31-stable-release" />
+  <project name="platform/external/nasm" path="external/nasm" revision="645e4f02c622ba67eb754000cc00c9db8be31f85" upstream="emu-31-stable-release" />
+  <project name="platform/external/wpa_supplicant_8" path="external/wpa_supplicant_8" revision="96c72fd65978b33ad11ade596a5b514cf94506ec" upstream="emu-31-stable-release" />
+  <project name="platform/external/zlib" path="external/zlib" revision="7656f9eff09cc38244978773777ee64b7b31155d" upstream="emu-31-stable-release" />
+  <project name="platform/frameworks/native" path="frameworks/native" revision="9094ee238458bf1e8a9e8335fd824acc4963d7f4" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator" path="prebuilts/android-emulator" revision="fb26612eb84576adb974fe7f18a49d263072116f" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/archive" path="prebuilts/android-emulator-build/archive" revision="210de84258a82f4c557f32919ea145ba3f97c632" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/common" path="prebuilts/android-emulator-build/common" revision="2f2ba1bf2fefdef04d4df1f8ddebe2310306a268" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/mesa" path="prebuilts/android-emulator-build/mesa" revision="be7c00f399b415511d73308f0af0c0310512aced" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/mesa-deps" path="prebuilts/android-emulator-build/mesa-deps" revision="17837fdb1889014fa01cbbbda56afc9b6034815f" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/qemu-android-deps" path="prebuilts/android-emulator-build/qemu-android-deps" revision="b06aee625002d0738c5576bbf437b9378229bef0" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/android-emulator-build/qt" path="prebuilts/android-emulator-build/qt" revision="86f745747372884f73b1b8e249522e2cfe296377" upstream="emu-31-stable-release" />
+
+  <project clone-depth="1" name="platform/prebuilts/clang/host/darwin-x86" path="prebuilts/clang/host/darwin-x86" revision="2055899630dae247f6fec8705fe790fb987fe2f5" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" revision="625344866398aee1b96ad154ad5eb371af6d990d" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/clang/host/windows-x86" path="prebuilts/clang/host/windows-x86" revision="7712678909fcd7f15146820e23ae0049c04fbd6e" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/cmake/darwin-x86" revision="d957bb16a826e137e31d2d0ec76ea77e81dfc65a" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/cmake/linux-x86" revision="ce14a4713a7cd773ead2de76bca27dbe7d7b5b52" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/cmake/windows-x86" path="prebuilts/cmake/windows-x86" revision="cb802379fb5294ecaac6e0ed50ba8f725d38fb8b" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" revision="fef594c879815801b8c5c6d2f11d44f8a3bdd761" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/ninja/darwin-x86" path="prebuilts/ninja/darwin-x86" revision="8e110eda03f1e908cad557286b8a80e961ff910e" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/ninja/linux-x86" path="prebuilts/ninja/linux-x86" revision="7ef4cb95e1ed4305e99f03a8e8ad28d26134a45b" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/qemu-kernel" path="prebuilts/qemu-kernel" revision="e97c7a8ef51bc4669b09d7aaf587c98207c60eee" upstream="emu-31-stable-release" />
+  <project clone-depth="1" name="platform/prebuilts/tools" path="prebuilts/tools" revision="6b3ec7425c4a63cbe963e160898727050c8dc0c7" upstream="emu-31-stable-release" />
+  <project name="platform/sdk" path="sdk" revision="315fb5b8a73df3f88c79a034968a87b461833a83" upstream="emu-31-stable-release" />
+  <project name="platform/tools/emulator" path="tools/emulator" revision="93a7010407cecb1df00a398b341ca3194e39c05c" upstream="emu-31-stable-release" />
+  <project name="platform/tools/acloud" path="tools/acloud" revision="dd0e33520fdc3ec99c9efe7297b3ae3345ebf672" upstream="emu-31-stable-release" />
+  <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="e486d95b5a3af9a452f7d51fe18582a95f9c3b2d" upstream="emu-31-stable-release" />
+
+  
+  <project groups="pdk" name="platform/packages/modules/Bluetooth" path="packages/modules/Bluetooth" revision="999d876825ff6fb483611b22f9e3da5498defa8e" upstream="emu-31-stable-release" />
+  <project groups="pdk" name="platform/external/libchrome" path="external/libchrome" revision="47b4413a7413456640f3c46dd5127a9075af53fc" upstream="emu-31-stable-release" />
+
+  
+  <project groups="pdk" name="platform/external/bison" path="external/bison" revision="6c7da9e1f76d7d62d3387f0863f2b89f068f9be0" upstream="emu-31-stable-release" />
+  <project groups="pdk" name="platform/external/flex" path="external/flex" revision="90a4022e091f39d3534a30bbb9d02986f2f5ad9b" upstream="emu-31-stable-release" />
+  <project groups="pdk" name="toolchain/m4" path="external/m4" revision="a41dd3ba30d74cdaa946f453d0fe4035c3e2575d" upstream="emu-31-stable-release" />
+
+  
+  <project name="platform/external/webrtc" path="external/webrtc" revision="059cdc5996938f5f6b5343b6c969c12098275587" upstream="emu-31-stable-release" />
 </manifest>
