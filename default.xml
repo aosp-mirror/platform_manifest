@@ -10,10 +10,10 @@
 
   <manifest-server url="http://android-smartsync.corp.google.com/android.googlesource.com/manifestserver" />
 
-  <superproject name="platform/superproject" remote="aosp"/>
+  <superproject name="platform/superproject" remote="aosp" revision="main-plus-java-next-dev"/>
   <contactinfo bugurl="go/repo-bug" />
 
-  <project path="build/make" name="platform/build" groups="pdk" >
+  <project path="build/make" name="platform/build" groups="pdk" revision="main-plus-java-next-dev">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
     <linkfile src="core" dest="build/core" />
@@ -29,16 +29,16 @@
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="pdk" />
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/pesto" name="platform/build/pesto" groups="pdk" />
-  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
+  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" revision="main-plus-java-next-dev" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="art" name="platform/art" groups="pdk" />
+  <project path="art" name="platform/art" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="bionic" name="platform/bionic" groups="pdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="bootable/libbootloader" name="platform/bootable/libbootloader" groups="vts,pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
-  <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
+  <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" revision="main-plus-java-next-dev" />
   <project path="developers/build" name="platform/developers/build" groups="developers,pdk" />
   <project path="developers/demos" name="platform/developers/demos" groups="developers" />
   <project path="developers/samples/android" name="platform/developers/samples/android" groups="developers" />
@@ -116,9 +116,9 @@
   <project path="external/apache-commons-bcel" name="platform/external/apache-commons-bcel" groups="pdk" />
   <project path="external/apache-commons-compress" name="platform/external/apache-commons-compress" groups="pdk" />
   <project path="external/apache-commons-math" name="platform/external/apache-commons-math" groups="pdk" />
-  <project path="external/apache-harmony" name="platform/external/apache-harmony" groups="pdk" />
-  <project path="external/apache-http" name="platform/external/apache-http" groups="pdk" />
-  <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" />
+  <project path="external/apache-harmony" name="platform/external/apache-harmony" groups="pdk" revision="main-plus-java-next-dev" />
+  <project path="external/apache-http" name="platform/external/apache-http" groups="pdk" revision="main-plus-java-next-dev" />
+  <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/arm-neon-tests" name="platform/external/arm-neon-tests" groups="vendor" />
   <project path="external/arm-optimized-routines" name="platform/external/arm-optimized-routines" groups="pdk" />
   <project path="external/arm-trusted-firmware" name="platform/external/arm-trusted-firmware" groups="pdk" />
@@ -132,8 +132,8 @@
   <project path="external/bc" name="platform/external/bc" groups="pdk" />
   <project path="external/bcc" name="platform/external/bcc" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk" />
-  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" />
-  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
+  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" revision="main-plus-java-next-dev" />
+  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/brotli" name="platform/external/brotli" groups="pdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="pdk" />
@@ -145,12 +145,12 @@
   <project path="external/chromium-trace" name="platform/external/chromium-trace" groups="pdk" />
   <project path="external/chromium-webview" name="platform/external/chromium-webview" groups="pdk" clone-depth="1" />
   <project path="external/clang" name="platform/external/clang" groups="pdk" />
-  <project path="external/cldr" name="platform/external/cldr" groups="pdk" />
+  <project path="external/cldr" name="platform/external/cldr" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/cn-cbor" name="platform/external/cn-cbor" groups="pdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
   <project path="external/ComputeLibrary" name="platform/external/ComputeLibrary" groups="pdk-lassen" />
   <project path="external/connectedappssdk" name="platform/external/connectedappssdk" groups="pdk" />
-  <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk" />
+  <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/cpu_features" name="platform/external/cpu_features" groups="pdk" />
   <project path="external/cpuinfo" name="platform/external/cpuinfo" groups="pdk" />
   <project path="external/crcalc" name="platform/external/crcalc" groups="pdk" />
@@ -241,7 +241,7 @@
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk,qcom_msm8x26" />
   <project path="external/hyphenation-patterns" name="platform/external/hyphenation-patterns" groups="pdk" />
   <project path="external/icing" name="platform/external/icing" groups="pdk" />
-  <project path="external/icu" name="platform/external/icu" groups="pdk" />
+  <project path="external/icu" name="platform/external/icu" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/igt-gpu-tools" name="platform/external/igt-gpu-tools" groups="pdk" />
   <project path="external/ImageMagick" name="platform/external/ImageMagick" groups="pdk" />
   <project path="external/image_io" name="platform/external/image_io" groups="pdk" />
@@ -352,9 +352,9 @@
   <project path="external/mobly" name="platform/external/python/mobly" groups="pdk" />
   <project path="external/mobly-bundled-snippets" name="platform/external/mobly-bundled-snippets" groups="pdk" />
   <project path="external/mobly-snippet-lib" name="platform/external/mobly-snippet-lib" groups="pdk" />
-  <project path="external/mockftpserver" name="platform/external/mockftpserver" groups="pdk" />
+  <project path="external/mockftpserver" name="platform/external/mockftpserver" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/mockito" name="platform/external/mockito" groups="pdk" />
-  <project path="external/mockwebserver" name="platform/external/mockwebserver" groups="pdk" />
+  <project path="external/mockwebserver" name="platform/external/mockwebserver" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="pdk" />
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="pdk" />
   <project path="external/ms-tpm-20-ref" name="platform/external/ms-tpm-20-ref" groups="pdk" />
@@ -376,10 +376,10 @@
   <project path="external/objenesis" name="platform/external/objenesis" groups="pdk" />
   <project path="external/oboe" name="platform/external/oboe" groups="pdk" />
   <project path="external/obstack" name="platform/external/obstack" groups="pdk" />
-  <project path="external/oj-libjdwp" name="platform/external/oj-libjdwp" groups="pdk" />
-  <project path="external/okhttp" name="platform/external/okhttp" groups="pdk" />
-  <project path="external/okhttp4" name="platform/external/okhttp4" groups="pdk" />
-  <project path="external/okio" name="platform/external/okio" groups="pdk" />
+  <project path="external/oj-libjdwp" name="platform/external/oj-libjdwp" groups="pdk" revision="main-plus-java-next-dev" />
+  <project path="external/okhttp" name="platform/external/okhttp" groups="pdk" revision="main-plus-java-next-dev" />
+  <project path="external/okhttp4" name="platform/external/okhttp4" groups="pdk" revision="main-plus-java-next-dev" />
+  <project path="external/okio" name="platform/external/okio" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/one-true-awk" name="platform/external/one-true-awk" groups="pdk" />
   <project path="external/opencensus-java" name="platform/external/opencensus-java" groups="pdk,tradefed" />
   <project path="external/OpenCL-CTS" name="platform/external/OpenCL-CTS" />
@@ -701,7 +701,7 @@
   <project path="external/vboot_reference" name="platform/external/vboot_reference" groups="vboot,pdk-fs" />
   <project path="external/virglrenderer" name="platform/external/virglrenderer" groups="pdk" />
   <project path="external/vixl" name="platform/external/vixl" groups="pdk" />
-  <project path="external/vogar" name="platform/external/vogar" groups="pdk" />
+  <project path="external/vogar" name="platform/external/vogar" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/volley" name="platform/external/volley" groups="pdk" />
   <project path="external/vulkan-headers" name="platform/external/vulkan-headers" groups="pdk" />
   <project path="external/vulkan-validation-layers" name="platform/external/vulkan-validation-layers" groups="pdk" />
@@ -713,7 +713,7 @@
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="pdk" />
   <project path="external/wmediumd" name="platform/external/wmediumd" groups="pdk" />
   <project path="external/wuffs-mirror-release-c" name="platform/external/wuffs-mirror-release-c" groups="pdk,qcom_msm8x26" />
-  <project path="external/wycheproof" name="platform/external/wycheproof" groups="pdk" />
+  <project path="external/wycheproof" name="platform/external/wycheproof" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" groups="pdk" />
   <project path="external/xz-embedded" name="platform/external/xz-embedded" groups="pdk" />
   <project path="external/xz-java" name="platform/external/xz-java" groups="pdk" />
@@ -857,8 +857,8 @@
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" name="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" groups="pdk" clone-depth="1" />
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" name="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" groups="pdk" clone-depth="1" />
   <project path="kernel/tests" name="kernel/tests" groups="vts,pdk" />
-  <project path="libcore" name="platform/libcore" groups="pdk" />
-  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
+  <project path="libcore" name="platform/libcore" groups="pdk" revision="main-plus-java-next-dev" />
+  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Browser2" name="platform/packages/apps/Browser2" groups="pdk-fs" />
   <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" groups="pdk-fs" />
@@ -1011,7 +1011,7 @@
   <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,pdk,tradefed" clone-depth="1" />
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
   <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" groups="pdk,pdk-cw-fs,pdk-fs" clone-depth="1" />
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" groups="pdk" clone-depth="1" revision="main-plus-java-next-dev" />
   <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" groups="pdk" clone-depth="1" />
   <project path="prebuilts/jdk/jdk9" name="platform/prebuilts/jdk/jdk9" groups="pdk" clone-depth="1" />
   <project path="prebuilts/manifest-merger" name="platform/prebuilts/manifest-merger" groups="pdk" clone-depth="1" />
@@ -1087,7 +1087,7 @@
   <project path="system/server_configurable_flags" name="platform/system/server_configurable_flags" groups="pdk"/>
   <project path="system/teeui" name="platform/system/teeui" groups="pdk" />
   <project path="system/testing/gtest_extras" name="platform/system/testing/gtest_extras" groups="pdk" />
-  <project path="system/timezone" name="platform/system/timezone" groups="pdk" />
+  <project path="system/timezone" name="platform/system/timezone" groups="pdk" revision="main-plus-java-next-dev" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk" />
   <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="pdk" />
   <project path="system/tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="pdk" />
