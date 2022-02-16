@@ -4,9 +4,12 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/android-mainline-12.0.0_r21"
+  <default revision="refs/tags/android-mainline-12.0.0_r41"
            remote="aosp"
            sync-j="4" />
+
+  <superproject name="platform/superproject" remote="aosp" revision="android-mainline-12.0.0_r41" />
+  <contactinfo bugurl="go/repo-bug" />
 
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -376,6 +379,7 @@
   <project path="external/rust/crates/async-task" name="platform/external/rust/crates/async-task" groups="pdk" />
   <project path="external/rust/crates/async-trait" name="platform/external/rust/crates/async-trait" groups="pdk" />
   <project path="external/rust/crates/atty" name="platform/external/rust/crates/atty" groups="pdk" />
+  <project groups="pdk" name="platform/external/rust/crates/base64" path="external/rust/crates/base64" />
   <project path="external/rust/crates/bencher" name="platform/external/rust/crates/bencher" groups="pdk" />
   <project path="external/rust/crates/bindgen" name="platform/external/rust/crates/bindgen" groups="pdk" />
   <project path="external/rust/crates/bitflags" name="platform/external/rust/crates/bitflags" groups="pdk" />
