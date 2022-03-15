@@ -1,62 +1,97 @@
 <manifest>
   <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="androidx-mediarouter-release" sync-j="8" />
+  <default remote="aosp" revision="androidx-mediarouter-release" />
+  <superproject name="platform/superproject" remote="aosp" />
+
   
-  <project name="platform/build" path="build/make" revision="1984ff0dd030537848e31d09f043def8a688f7f1" upstream="androidx-mediarouter-release" />
-  <project name="platform/manifest" path="manifest" revision="21a2976fc55d10235ce43618554b40055f49aa7b" upstream="androidx-mediarouter-release" />
-  
-  
-  <project clone-depth="1" groups="pdk" name="platform/external/noto-fonts" path="external/noto-fonts" revision="0340e3c7a12f2062ededc12585fa8cc78e27c6b7" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="d49bd26b8e6db8a8a8f8e4edb52755f3cb6c29d9" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/external/doclava" path="external/doclava" revision="d08742d64d7e2b84eb348ab599ee49f74715f54c" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/external/dokka" path="external/dokka" revision="3325742e10dceb2c005ee8aebbfe704460334e0a" upstream="androidx-mediarouter-release" />
-  <project groups="pdk" name="platform/external/icing" path="external/icing" revision="04d376669226fc7bc4bf32c64e753b53de8f1b68" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/external/icu" path="external/icu" revision="019a008f800dcabfa8419554ad60ee06ea927c86" upstream="androidx-mediarouter-release" />
-  
-  <project clone-depth="1" groups="pdk" name="platform/external/protobuf" path="external/protobuf" revision="b0e0d998d2f175a586e48b01d39761e4fceaf662" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="12cee79dc6f2cf18ec93422c20c423a06325549c" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="19733fe30fe1906376acbb90b3217bde860ef706" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="57bd56d3d85e111a8e76bd757edc6c6a86af4390" upstream="androidx-mediarouter-release" />
+  <project name="platform/build" path="build/make" revision="b14c9dc758b5283dc763a51e32b23abb5a22e348" upstream="androidx-mediarouter-release" />
+
   
   
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="265fb5e7466a361c0aed8b79e9af0dc7d3a61f09" upstream="androidx-mediarouter-release" />
+  <project name="platform/tools/dexter" path="external/dexter" revision="74c2cf6b983956ac8e9a23422a4d6a08c0019bf5" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/external/noto-fonts" path="external/noto-fonts" revision="42d16b47cf156d793f6984f13cfb3c91add74642" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="aa13c23e3fa4da75021a2dd996868e458049f29a" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/external/icing" path="external/icing" revision="6cddd75453205d8099b42ce5a928185b5d1f5283" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/external/icu" path="external/icu" revision="fe68f890ce9549c13ecccd4e7219046a476e14c7" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/external/google-benchmark" path="external/google-benchmark" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-mediarouter-release" />
   
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/protobuf" path="prebuilts/protobuf" revision="7f770bcfc83d43216b156d29c38a833a51e4c7e6" upstream="androidx-mediarouter-release" />
-  <project groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" name="platform/tools/repohooks" path="tools/repohooks" revision="b838049651dcdd0e445e533239600a330cd8711c" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/external/protobuf" path="external/protobuf" revision="5eed72a47f7d6dbc51dd7ba89eabdc96249d79b7" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="067b4934c2b8d6a5ba6efa38d1c93ecae40c69f0" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="ef78dc4fc3b53526d7be6211b04b1c49f23bd874" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="57bd56d3d85e111a8e76bd757edc6c6a86af4390" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/prebuilts/androidx/traceprocessor" path="prebuilts/androidx/traceprocessor" revision="394264246206c49571178e5fa0a3dea9b85ec147" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/prebuilts/androidx/konan" path="prebuilts/androidx/konan" revision="6915887f97cdbc2c41cd5d11a38849681687ec39" upstream="androidx-mediarouter-release" />
+
+  
+  <project clone-depth="1" name="platform/external/doclava" path="external/doclava" revision="096a0ec7ec4bc4abf45e99080854ba15932d8a89" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/external/dokka" path="external/dokka" revision="b31a9b5bbd5e36b1a91f716e88e1a2622b228736" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/external/libyuv" path="external/libyuv" revision="327eb3ad1cb791ed76c8248cfb9a2d62adc6f55f" upstream="androidx-mediarouter-release" />
+
   
   
-  <project clone-depth="1" groups="tools" name="platform/tools/external/gradle" path="tools/external/gradle" revision="b21cd4159b629d0b7d0f291d2e61a0d7f0da21f8" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="2c511b1045a24ed4d05285ac76cca1f9fef56f9e" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/tools/repohooks" path="tools/repohooks" revision="12ea53da3cd70f6000abecda5a24b1b5b9ce7ac6" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="tools/fetch_artifact" path="tools/fetch_artifact" revision="7d5d8c7e36eb15d8a5389ca19e3b0aeb1daa1326" upstream="androidx-mediarouter-release" />
   
   
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-30" path="prebuilts/fullsdk-darwin/platforms/android-30" revision="03d553bc2b9890601943a4e04e02202337eb1af7" upstream="androidx-mediarouter-release">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-30" src="." />
+  <project clone-depth="1" name="platform/prebuilts/protobuf" path="prebuilts/protobuf" revision="71fd7bf34fe837adf3d6d2f817524bd94739c2af" upstream="androidx-mediarouter-release" />
+
+  
+  
+  <project clone-depth="1" name="platform/tools/external/gradle" path="tools/external/gradle" revision="a40de614dd297ff40fb43510a68aee380f2b6be6" upstream="androidx-mediarouter-release" />
+
+  
+  
+  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-31" path="prebuilts/fullsdk-darwin/platforms/android-31" revision="200e64779106cf6738f7c2cf02c9f23b683b5ac1" upstream="androidx-mediarouter-release">
+    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-31" src="." />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-30" path="prebuilts/fullsdk-darwin/sources/android-30" revision="de53a04b553b721f937d6d9dcbe8ab0dee7fc23f" upstream="androidx-mediarouter-release">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-30" src="." />
+  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-31" path="prebuilts/fullsdk-darwin/sources/android-31" revision="75c718b2434a9003e34cb2fa3c89a1acf7449cc1" upstream="androidx-mediarouter-release">
+    <linkfile dest="prebuilts/fullsdk-linux/sources/android-31" src="." />
   </project>
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="toolchain/prebuilts/ndk-darwin/r21" path="prebuilts/fullsdk-darwin/ndk" revision="1c4977f21886e391f7a2105c218fc9de9ac49b31" upstream="androidx-mediarouter-release">
-  </project>
-  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r21" path="prebuilts/fullsdk-linux/ndk" revision="01c46f37e7a0ce88be386708d2a911b5e3505e79" upstream="androidx-mediarouter-release">
-  </project>
+  <project clone-depth="1" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="07f5db27439c2990b01d0a0548bd11417e154f00" upstream="androidx-mediarouter-release" />
   
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3" path="prebuilts/fullsdk-darwin/build-tools/29.0.3" revision="f597735774e931d682fb10e0d0590392f4a69c38" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="311e13ed5d7446f46855a52e55a238d16dfee953" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="358eb57602069a8e0c334572703001543cd836ac" upstream="androidx-mediarouter-release" />
+
+  
+  
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/30.0.3" path="prebuilts/fullsdk-darwin/build-tools/30.0.3" revision="17cc286169eb2246fe626f1e6ee907be0495521e" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/32.1.0" path="prebuilts/fullsdk-darwin/build-tools/32.1.0" revision="3ccd5420a82d0874f87257d2a7f16a56b7eca706" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="toolchain/prebuilts/ndk-darwin/r23" path="prebuilts/fullsdk-darwin/ndk" revision="9a1b3e229631d81c086ffb3a631fd1da29afd039" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="7b00556a239e75c1efbc58b55ca917d8c53211cd" upstream="androidx-mediarouter-release" />
   <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="fc59035d8c856055f2a263dc8a2f9de96c959cc2" upstream="androidx-mediarouter-release" />
+  
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="20e63e484be4bb9f01580070fb99eaf6d4975a4f" upstream="androidx-mediarouter-release">
+    <linkfile dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" src="bin/cmake" />
+  </project>
+  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/ninja/darwin-x86" path="prebuilts/fullsdk-darwin/ninja" revision="f321e197944c19d273cec788b9a3e8ca94331248" upstream="androidx-mediarouter-release">
+    <linkfile dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" src="ninja" />
+  </project>
+
   
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3" path="prebuilts/fullsdk-linux/build-tools/29.0.3" revision="2d89707a7cc994d40bd4c20b3cb42cf5a87e983a" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="9b5a5cc2c8a42b97c20eaf16d205894acd668e5a" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/30.0.3" path="prebuilts/fullsdk-linux/build-tools/30.0.3" revision="5074774ea2223b32b73717896c2e722df523c67b" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/32.1.0" path="prebuilts/fullsdk-linux/build-tools/32.1.0" revision="da2420b3a40b96a2edcaf54c8954c149ee0e4dd3" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r23" path="prebuilts/fullsdk-linux/ndk" revision="c99c7c9153e9b2f02e6b05dd852b150ab0dded0e" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="d4b5aec88251fdabe27ce603b886b05c760c8edc" upstream="androidx-mediarouter-release" />
   <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="af2d05e845393bb3adda6a13b16e87b9b3c2abb3" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="e4fb089b45a6633baf0233e2c524d614ed7355f1" upstream="androidx-mediarouter-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="de5fa1c66d3bdcbf2bbc62d2504ec6b0b0fb74e1" upstream="androidx-mediarouter-release" />
   
-  <project clone-depth="1" groups="pdk" name="platform/frameworks/support-golden" path="golden" revision="a54b4340ab636725413e597b11c26a082ef79668" upstream="androidx-mediarouter-release" />
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="cb6640d1b09e4d8fa6be0fc41d6a8593027caff4" upstream="androidx-mediarouter-release">
+    <linkfile dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" src="bin/cmake" />
+  </project>
+  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/ninja/linux-x86" path="prebuilts/fullsdk-linux/ninja" revision="8a10824f74fe0e22af9bf314a837f5b70e2bb67f" upstream="androidx-mediarouter-release">
+    <linkfile dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" src="ninja" />
+  </project>
+  <project clone-depth="1" groups="notdefault,platform-linux" name="kernel/prebuilts/build-tools" path="prebuilts/fullsdk-linux/kernel-build-tools" revision="72df26d03da6f5cd2536f7495dd12076aa7fc44d" upstream="androidx-mediarouter-release" />
+
   
+  <project clone-depth="1" name="platform/frameworks/support-golden" path="golden" revision="0e8f07bd5458cafd367fed7eaf40679cc479d0aa" upstream="androidx-mediarouter-release" />
+
   
-  <project groups="pdk-cw-fs,pdk-fs" name="platform/frameworks/support" path="frameworks/support" revision="c44347ad7a55af0ca375f8121c3025d553887d55" upstream="androidx-mediarouter-release" />
+
   
+  <project name="platform/frameworks/support" path="frameworks/support" revision="12acc25951dc5eaff563943c1178b5b75f4b2b6b" upstream="androidx-mediarouter-release" />
+  
+
   <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
 </manifest>
