@@ -1,154 +1,100 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="androidx-draganddrop-release"
-           remote="aosp" />
-  <superproject name="platform/superproject" remote="aosp"/>
-  <!-- BEGIN dependencies -->
-  <project path="build/make" name="platform/build" />
-  <!-- External dependencies -->
-  <!-- Config: shallow + same revision -->
-  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" />
-  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" />
-  <project path="external/icing" name="platform/external/icing" clone-depth="1" />
-  <project path="external/icu" name="platform/external/icu" clone-depth="1" />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark" clone-depth="1" />
-  <!-- The contents of external/protobuf must be kept in sync with the contents of prebuilts/protobuf -->
-  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" />
-  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" />
-  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" />
-  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" />
-  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" />
-  <!-- Config: shallow + master revision -->
-  <project path="external/doclava" name="platform/external/doclava" clone-depth="1"  />
-  <project path="external/dokka" name="platform/external/dokka" clone-depth="1"  />
-  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1"  />
-  <!-- Tools dependencies -->
-  <!-- Config: shallow + master revision -->
-  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1"  />
-  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1"  />
-  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1"  />
-  <!-- Config: shallow + same revision -->
-  <!-- The contents of external/protobuf must be kept in sync with the contents of prebuilts/protobuf -->
-  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" />
-  <!-- Gradle dependencies -->
-  <!-- Config: shallow + same revision -->
-  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" />
-  <!-- SDK dependencies (shared) -->
-  <!-- Config: shallow + master revision -->
-  <project
-    path="prebuilts/fullsdk-darwin/platforms/android-31"
-    name="platform/prebuilts/fullsdk/platforms/android-31"
-    clone-depth="1">
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="androidx-draganddrop-release" remote="aosp" />
+  <superproject name="platform/superproject" remote="aosp" />
+
+  
+  <project path="build/make" name="platform/build" revision="d41ad15ac38f4d7b2278b69f7ae95d2ce7c0f171" upstream="androidx-draganddrop-release" />
+
+  
+  
+  <project path="external/dexter" name="platform/tools/dexter" revision="74c2cf6b983956ac8e9a23422a4d6a08c0019bf5" upstream="androidx-draganddrop-release" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" revision="6568be49b9ead2156b6b1dec671b44063357b1a7" upstream="androidx-draganddrop-release" />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" revision="6c238a7b6c139c34c629d09e7f97a0ea4a17ed1e" upstream="androidx-draganddrop-release" />
+  <project path="external/icing" name="platform/external/icing" clone-depth="1" revision="8f16167c39d77866a213b0ef042058e858255d47" upstream="androidx-draganddrop-release" />
+  <project path="external/icu" name="platform/external/icu" clone-depth="1" revision="304410e63a5426aa480a450f7386b3e1ff240096" upstream="androidx-draganddrop-release" />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark" clone-depth="1" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-draganddrop-release" />
+  
+  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" revision="d9868039b40b1995f75c8d7ece9df29c7ab3f54d" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" revision="b77a59315851d285595c256b4860233d4dedba0d" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" revision="417998867c030cb8e537e49e07bd765460247992" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" revision="8759893b15627e09a76140ae550f478c782d3387" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" revision="1c54500537c290c894ada2a4b420c8554239a300" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" revision="6915887f97cdbc2c41cd5d11a38849681687ec39" upstream="androidx-draganddrop-release" />
+
+  
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" revision="e4f465dcc1794b0ecd231749e2cee1d383766114" upstream="androidx-draganddrop-release" />
+  <project path="external/doclava" name="platform/external/doclava" clone-depth="1" revision="ebfd5a4ce5c2b19d7fe1b6b6c3d5d8a1f59370c8" upstream="androidx-draganddrop-release" />
+  <project path="external/dokka" name="platform/external/dokka" clone-depth="1" revision="ffae98f00124e2276221e01698e0e85d80843e87" upstream="androidx-draganddrop-release" />
+  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" revision="a67638b93aea7dcd4ed889bc2a6a98b68ba3b448" upstream="androidx-draganddrop-release" />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="e84770779056be180e52534db29a1b7dc531d237" upstream="androidx-draganddrop-release" />
+
+  
+  
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" revision="77d45c94201ea5a5e872eceee3d4eeb780a24b5b" upstream="androidx-draganddrop-release" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" revision="20140a08a25be30c59fd5c68719c09214cf9e55d" upstream="androidx-draganddrop-release" />
+  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1" revision="7d5d8c7e36eb15d8a5389ca19e3b0aeb1daa1326" upstream="androidx-draganddrop-release" />
+  
+  
+  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" revision="1032661b632ef1325de4c4829008dab8571c346e" upstream="androidx-draganddrop-release" />
+
+  
+  
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" revision="d72b27a8163e110332548eecc475f5aa5cc2caeb" upstream="androidx-draganddrop-release" />
+
+  
+  
+  <project path="prebuilts/fullsdk-darwin/platforms/android-31" name="platform/prebuilts/fullsdk/platforms/android-31" revision="200e64779106cf6738f7c2cf02c9f23b683b5ac1" clone-depth="1" upstream="androidx-draganddrop-release">
     <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-31" />
   </project>
-  <project
-    path="prebuilts/fullsdk-darwin/sources/android-31"
-    name="platform/prebuilts/fullsdk/sources/android-31"
-    clone-depth="1">
+  <project path="prebuilts/fullsdk-darwin/sources/android-31" name="platform/prebuilts/fullsdk/sources/android-31" revision="75c718b2434a9003e34cb2fa3c89a1acf7449cc1" clone-depth="1" upstream="androidx-draganddrop-release">
     <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-31" />
   </project>
-  <project
-    path="prebuilts/jdk/jdk11"
-    name="platform/prebuilts/jdk/jdk11"
-    clone-depth="1" />
-  <!-- Config: shallow + same revision -->
-  <!-- This branch of JDK 8 contains only the tools JAR required for Compose tests and Doclava. -->
-  <project
-    path="prebuilts/jdk/jdk8"
-    name="platform/prebuilts/jdk/jdk8"
-    clone-depth="1" />
-  <!-- SDK dependencies (darwin) -->
-  <!-- Config: shallow + master revision -->
-  <project
-    path="prebuilts/fullsdk-darwin/build-tools/29.0.3"
-    name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/build-tools/30.0.3"
-    name="platform/prebuilts/fullsdk-darwin/build-tools/30.0.3"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/ndk"
-    name="toolchain/prebuilts/ndk-darwin/r23"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/platform-tools"
-    name="platform/prebuilts/fullsdk-darwin/platform-tools"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/tools"
-    name="platform/prebuilts/fullsdk-darwin/tools"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <!-- Config: shallow + explicit revision -->
-  <project
-    path="prebuilts/fullsdk-darwin/cmake"
-    name="platform/prebuilts/cmake/darwin-x86"
-    groups="notdefault,platform-darwin"
-    clone-depth="1">
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" revision="6e2a3ab996ddee2fe3efcc9bbbc204f3e2f94184" clone-depth="1" upstream="androidx-draganddrop-release" />
+  
+  
+  <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" clone-depth="1" revision="b4ad6ebe55e333089df61ed0ff3203e866696c31" upstream="androidx-draganddrop-release" />
+
+  
+  
+  <project path="prebuilts/fullsdk-darwin/build-tools/30.0.3" name="platform/prebuilts/fullsdk-darwin/build-tools/30.0.3" revision="17cc286169eb2246fe626f1e6ee907be0495521e" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/fullsdk-darwin/build-tools/32.1.0" name="platform/prebuilts/fullsdk-darwin/build-tools/32.1.0" revision="3ccd5420a82d0874f87257d2a7f16a56b7eca706" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/fullsdk-darwin/ndk" name="toolchain/prebuilts/ndk-darwin/r23" revision="9a1b3e229631d81c086ffb3a631fd1da29afd039" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools" revision="c35e6257eaa9aeee0086eac001da0776ed7301f4" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/fullsdk-darwin/tools" name="platform/prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-draganddrop-release" />
+  
+  <project path="prebuilts/fullsdk-darwin/cmake" name="platform/prebuilts/cmake/darwin-x86" revision="24da946597257b67c7b8da2e6d7a2de05db4fa9d" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-draganddrop-release">
     <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
   </project>
-  <project
-      path="prebuilts/fullsdk-darwin/ninja"
-      name="platform/prebuilts/ninja/darwin-x86"
-      groups="notdefault,platform-darwin"
-      clone-depth="1" >
+  <project path="prebuilts/fullsdk-darwin/ninja" name="platform/prebuilts/ninja/darwin-x86" revision="f321e197944c19d273cec788b9a3e8ca94331248" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-draganddrop-release">
     <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
   </project>
-  <!-- SDK dependencies (linux) -->
-  <!-- Config: shallow + master revision -->
-  <project
-    path="prebuilts/fullsdk-linux/build-tools/29.0.3"
-    name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/fullsdk-linux/build-tools/30.0.3"
-    name="platform/prebuilts/fullsdk-linux/build-tools/30.0.3"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/fullsdk-linux/ndk"
-    name="toolchain/prebuilts/ndk/r23"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/fullsdk-linux/platform-tools"
-    name="platform/prebuilts/fullsdk-linux/platform-tools"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/fullsdk-linux/tools"
-    name="platform/prebuilts/fullsdk-linux/tools"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <!-- Config: shallow + explicit revision -->
-  <project
-    path="prebuilts/fullsdk-linux/cmake"
-    name="platform/prebuilts/cmake/linux-x86"
-    groups="notdefault,platform-linux"
-    clone-depth="1">
+
+  
+  
+  <project path="prebuilts/fullsdk-linux/build-tools/30.0.3" name="platform/prebuilts/fullsdk-linux/build-tools/30.0.3" revision="5074774ea2223b32b73717896c2e722df523c67b" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/fullsdk-linux/build-tools/32.1.0" name="platform/prebuilts/fullsdk-linux/build-tools/32.1.0" revision="da2420b3a40b96a2edcaf54c8954c149ee0e4dd3" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/fullsdk-linux/ndk" name="toolchain/prebuilts/ndk/r23" revision="c5cf664cd62868da505ed7feb92e545c9975a427" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools" revision="b0e577325424ca1e5a5bbb6176601453170245fc" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/fullsdk-linux/tools" name="platform/prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-draganddrop-release" />
+  
+  <project path="prebuilts/fullsdk-linux/cmake" name="platform/prebuilts/cmake/linux-x86" revision="fd1152253d79323e36298bbd0241f2159e3cab6e" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-draganddrop-release">
     <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
   </project>
-  <project
-    path="prebuilts/fullsdk-linux/ninja"
-    name="platform/prebuilts/ninja/linux-x86"
-    groups="notdefault,platform-linux"
-    clone-depth="1" >
+  <project path="prebuilts/fullsdk-linux/ninja" name="platform/prebuilts/ninja/linux-x86" revision="8a10824f74fe0e22af9bf314a837f5b70e2bb67f" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-draganddrop-release">
     <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
   </project>
-  <!-- Golden images -->
-  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" />
-  <!-- END dependencies -->
-  <!-- BEGIN target project -->
-  <project path="frameworks/support" name="platform/frameworks/support" />
-  <!-- END target project -->
+  <project path="prebuilts/fullsdk-linux/kernel-build-tools" name="kernel/prebuilts/build-tools" revision="39a8ce1951d13b0f31996ae153865729e831d0f9" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-draganddrop-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" revision="f1e15ee3498c00a329ce89d2758a5542368c209a" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-draganddrop-release" />
+
+  
+  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" revision="9300cc005904230367cd652884af806a0bfd2ca4" upstream="androidx-draganddrop-release" />
+
+  
+
+  
+  <project path="frameworks/support" name="platform/frameworks/support" revision="792d15289c94ffb5121f8e0ea664cc758926ff49" upstream="androidx-draganddrop-release" />
+  
+
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
