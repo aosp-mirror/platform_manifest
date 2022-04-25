@@ -1,82 +1,105 @@
 <manifest>
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="androidx-lifecycle-release" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="androidx-lifecycle-release" remote="aosp" />
   <superproject name="platform/superproject" remote="aosp" />
 
   
-  <project name="platform/build" path="build/make" revision="416922f7130482f413e1984a0739117602401fff" upstream="androidx-lifecycle-release" />
+  <project path="build/make" name="platform/build" revision="ef7dd203e48066050b1de197308a10aebd922f16" upstream="androidx-lifecycle-release" />
 
   
   
-  <project clone-depth="1" name="platform/external/noto-fonts" path="external/noto-fonts" revision="d7e5ddd4b2355611a6c5cfeff8b7f7457881bd0d" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="48a7af6ca6df75c9e565db139d1c089c258c2ded" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/external/icing" path="external/icing" revision="b286085566256074e0cfdcb27b4269062c0a5983" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/external/icu" path="external/icu" revision="413a44d82a1584bbb9d8bbac5aa8cfb4b8c7baf6" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/external/google-benchmark" path="external/google-benchmark" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-lifecycle-release" />
+  <project path="external/dexter" name="platform/tools/dexter" revision="74c2cf6b983956ac8e9a23422a4d6a08c0019bf5" upstream="androidx-lifecycle-release" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" revision="4c2365b73089bd3a9e490bd85449222afe8882d1" upstream="androidx-lifecycle-release" />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" revision="3dab83ec54876dd5f1bc3bbdd606a0d0f0e96d98" upstream="androidx-lifecycle-release" />
+  <project path="external/icing" name="platform/external/icing" clone-depth="1" revision="23635f5fbee92bf718df6499af4e690497a11189" upstream="androidx-lifecycle-release" />
+  <project path="external/icu" name="platform/external/icu" clone-depth="1" revision="413a44d82a1584bbb9d8bbac5aa8cfb4b8c7baf6" upstream="androidx-lifecycle-release" />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark" clone-depth="1" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-lifecycle-release" />
   
-  <project clone-depth="1" name="platform/external/protobuf" path="external/protobuf" revision="b3aa39ca34998ffb5a5eacae8c29ec034e023695" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="5c22915ce37eb6385f570e4ae2d016481ca39134" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="d5ecb1c970a164f065997a6f0771c7fc497415b1" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="bff65283d9c2ce3ce06517aff965b7b63ee5ee38" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/traceprocessor" path="prebuilts/androidx/traceprocessor" revision="f8717d5228ee00177c0114c28b7530b864c7c28b" upstream="androidx-lifecycle-release" />
+  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" revision="b3aa39ca34998ffb5a5eacae8c29ec034e023695" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" revision="8020979f2cf6df773bf3797db746866b30bfaabe" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" revision="059d900e21205a94c1eae4c577fab9d66ecc1298" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" revision="bff65283d9c2ce3ce06517aff965b7b63ee5ee38" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" revision="0e30d70dcc0fea4bb61b3ea8678717c4cab4493d" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" revision="6915887f97cdbc2c41cd5d11a38849681687ec39" upstream="androidx-lifecycle-release" />
+
   
-  <project clone-depth="1" name="platform/external/doclava" path="external/doclava" revision="d9047844a5310fba9b1e3c7858fca15aa3e2ed62" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/external/dokka" path="external/dokka" revision="724b514886faccd505fb7792f1c1776288ceeb06" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" name="platform/external/libyuv" path="external/libyuv" revision="aa858a9636b88e56bc0ad5150524c8a2314f3b97" upstream="androidx-lifecycle-release" />
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" revision="e4f465dcc1794b0ecd231749e2cee1d383766114" upstream="androidx-lifecycle-release" />
+  <project path="external/doclava" name="platform/external/doclava" clone-depth="1" revision="19592cca7ea59db824ba445478b6fd07bc90bc99" upstream="androidx-lifecycle-release" />
+  <project path="external/dokka" name="platform/external/dokka" clone-depth="1" revision="f6131514e5b5842ddb1e1274b4e5759e982845c5" upstream="androidx-lifecycle-release" />
+  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" revision="2a7a122b5c5b145a9e967b69ed8c3b02f8514f73" upstream="androidx-lifecycle-release" />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="5354e8fb3c22dd60f526d9d4c1f907abfa905f3b" upstream="androidx-lifecycle-release" />
 
   
   
-  <project clone-depth="1" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="4e636ee314a013ad1dfe285e0acc71c692c37140" upstream="androidx-lifecycle-release" />
-  <project name="platform/tools/repohooks" path="tools/repohooks" revision="d1e10d11a287a32bf6747c68c349c34e1d8b9000" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" revision="6365d9b966a6056425d13dc7138e4ddf8dacfb12" upstream="androidx-lifecycle-release" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" revision="8c8424c57e090db566bb490529193460331a4069" upstream="androidx-lifecycle-release" />
+  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1" revision="7d5d8c7e36eb15d8a5389ca19e3b0aeb1daa1326" upstream="androidx-lifecycle-release" />
+  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1" revision="d994da788dd54f39830cbae70f16c26921d8e7d2" upstream="androidx-lifecycle-release" />
   
   
-  <project clone-depth="1" name="platform/prebuilts/protobuf" path="prebuilts/protobuf" revision="6b278d6917af09743fdb6078ad5ef63983b29b70" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" revision="6b278d6917af09743fdb6078ad5ef63983b29b70" upstream="androidx-lifecycle-release" />
 
   
   
-  <project clone-depth="1" name="platform/tools/external/gradle" path="tools/external/gradle" revision="fc68b1dea99e27e59401182dec0bab7491fb1e56" upstream="androidx-lifecycle-release" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" revision="a1e36660613fce48424ce06427736c51debea00b" upstream="androidx-lifecycle-release" />
 
   
   
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-31" path="prebuilts/fullsdk-darwin/platforms/android-31" revision="200e64779106cf6738f7c2cf02c9f23b683b5ac1" upstream="androidx-lifecycle-release">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-31" src="." />
+  <project path="prebuilts/fullsdk-darwin/platforms/android-31" name="platform/prebuilts/fullsdk/platforms/android-31" revision="200e64779106cf6738f7c2cf02c9f23b683b5ac1" clone-depth="1" upstream="androidx-lifecycle-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-31" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-31" path="prebuilts/fullsdk-darwin/sources/android-31" revision="75c718b2434a9003e34cb2fa3c89a1acf7449cc1" upstream="androidx-lifecycle-release">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-31" src="." />
+  <project path="prebuilts/fullsdk-darwin/sources/android-31" name="platform/prebuilts/fullsdk/sources/android-31" revision="c6ac78be906ddd281f9f78006122c1611da760a6" clone-depth="1" upstream="androidx-lifecycle-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-31" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="07873a8820f485c6e96fc0c68181dd75e836101b" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-darwin/platforms/android-33" name="platform/prebuilts/fullsdk/platforms/android-33" revision="88b765a9009180e027ee41709ea23eac653601a0" clone-depth="1" upstream="androidx-lifecycle-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-33" />
+  </project>
+  <project path="prebuilts/fullsdk-darwin/sources/android-33" name="platform/prebuilts/fullsdk/sources/android-33" revision="f6a7f5e4d4d85ea656535f4696c53610328a0b1a" clone-depth="1" upstream="androidx-lifecycle-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-33" />
+  </project>
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" revision="f97d54dc063129cfdd53abd6d75cc31c9672cc33" clone-depth="1" upstream="androidx-lifecycle-release" />
   
   
-  <project clone-depth="1" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="95971bcd63efc99a4baca6378d26f6d9cfd8c602" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" clone-depth="1" revision="95971bcd63efc99a4baca6378d26f6d9cfd8c602" upstream="androidx-lifecycle-release" />
 
   
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3" path="prebuilts/fullsdk-darwin/build-tools/29.0.3" revision="f597735774e931d682fb10e0d0590392f4a69c38" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/30.0.3" path="prebuilts/fullsdk-darwin/build-tools/30.0.3" revision="17cc286169eb2246fe626f1e6ee907be0495521e" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="toolchain/prebuilts/ndk-darwin/r21" path="prebuilts/fullsdk-darwin/ndk" revision="1c4977f21886e391f7a2105c218fc9de9ac49b31" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="5a54f06071bebb4dc42e3b759c5f0ac1e88e3b05" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-darwin/build-tools" name="platform/prebuilts/fullsdk-darwin/build-tools" revision="7308a1ea7444f14058eebb29da6143e994893a2f" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-darwin/ndk" name="toolchain/prebuilts/ndk-darwin/r23" revision="9a1b3e229631d81c086ffb3a631fd1da29afd039" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools" revision="b08b8aadb1bb7a2e78d431bfb7ee2e293be20a19" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-darwin/tools" name="platform/prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-lifecycle-release" />
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="34fca3ae001aac891ec34236684c520ac4f94637" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-darwin/cmake" name="platform/prebuilts/cmake/darwin-x86" revision="3d93adb8dadc4f008402491ad1e2ae6b4453b2b6" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-lifecycle-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-darwin/ninja" name="platform/prebuilts/ninja/darwin-x86" revision="f321e197944c19d273cec788b9a3e8ca94331248" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-lifecycle-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
+  </project>
 
   
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3" path="prebuilts/fullsdk-linux/build-tools/29.0.3" revision="2d89707a7cc994d40bd4c20b3cb42cf5a87e983a" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/30.0.3" path="prebuilts/fullsdk-linux/build-tools/30.0.3" revision="5074774ea2223b32b73717896c2e722df523c67b" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r21" path="prebuilts/fullsdk-linux/ndk" revision="08d13d16402ef212eb9976a5140062e88c82ca6f" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="e369abfa8e02f9a6439cbcdf0ae874ff5f2e878f" upstream="androidx-lifecycle-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-linux/build-tools" name="platform/prebuilts/fullsdk-linux/build-tools" revision="18279b46d673459160877007fedddfaa0fe1c33d" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-linux/ndk" name="toolchain/prebuilts/ndk/r23" revision="93532f3052c14fbb337ff57d5732128dc7481ee6" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools" revision="5fe3a92528f92372ef08f70e0aa853c3431f6405" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-linux/tools" name="platform/prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-lifecycle-release" />
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="6c2428e6b4eae85d34911b5659694492ddb1aafb" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/fullsdk-linux/cmake" name="platform/prebuilts/cmake/linux-x86" revision="f3e66ec9669aa5b1b963a26d7d494b18fe0f2b93" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-lifecycle-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/ninja" name="platform/prebuilts/ninja/linux-x86" revision="8a10824f74fe0e22af9bf314a837f5b70e2bb67f" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-lifecycle-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/kernel-build-tools" name="kernel/prebuilts/build-tools" revision="de8c538ee2d06eb72741a5378b61a03ab3c4c6d0" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-lifecycle-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" revision="f1e15ee3498c00a329ce89d2758a5542368c209a" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-lifecycle-release" />
 
   
-  <project clone-depth="1" name="platform/frameworks/support-golden" path="golden" revision="76efcaf7b475076832eb2e18944d081878b7ff31" upstream="androidx-lifecycle-release" />
+  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" revision="126e9b2cea10f998855a612e5c91ef5c84ee86f3" upstream="androidx-lifecycle-release" />
 
   
 
   
-  <project name="platform/frameworks/support" path="frameworks/support" revision="63613904616700da7012d574896bd0227ef7ef5e" upstream="androidx-lifecycle-release" />
+  <project path="frameworks/support" name="platform/frameworks/support" revision="f4fd4f162e996eb24b0e57b4655d36e9379ca303" upstream="androidx-lifecycle-release" />
   
 
-  <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
