@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="aosp"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+  <default revision="metalava-main"
+           remote="aosp"
+           sync-j="8" />
+  <project path="tools/metalava" name="platform/tools/metalava" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" clone-depth="1" revision="master" />
+  <project path="prebuilts/jdk/jdk11"
+           name="platform/prebuilts/jdk/jdk11"
+           revision="master"
+           clone-depth="1" />
+  <project path="tools/repohooks"
+           name="platform/tools/repohooks"
+           groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed"
+           revision="master" />
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+</manifest>
