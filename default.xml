@@ -47,89 +47,92 @@
   <!-- Config: shallow + same revision -->
   <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" />
 
-  <!-- SDK dependencies (shared) -->
-  <!-- Config: shallow + master revision -->
+  <!-- SDK dependencies -->
+  <!-- Config: shallow + same revision -->
   <project
     path="prebuilts/fullsdk-darwin/platforms/android-31"
     name="platform/prebuilts/fullsdk/platforms/android-31"
-    revision="master"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-31" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/sources/android-31"
     name="platform/prebuilts/fullsdk/sources/android-31"
-    revision="master"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-31" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/platforms/android-32"
     name="platform/prebuilts/fullsdk/platforms/android-32"
-    revision="androidx-main"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-32" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/sources/android-32"
     name="platform/prebuilts/fullsdk/sources/android-32"
-    revision="androidx-main"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-32" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/platforms/android-33"
     name="platform/prebuilts/fullsdk/platforms/android-33"
-    revision="master"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-33" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/sources/android-33"
     name="platform/prebuilts/fullsdk/sources/android-33"
-    revision="master"
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-33" />
   </project>
-  <project
-    path="prebuilts/jdk/jdk11"
-    name="platform/prebuilts/jdk/jdk11"
-    revision="master"
-    clone-depth="1" />
-  <!-- Config: shallow + same revision -->
-  <!-- This branch of JDK 8 contains only the tools JAR required for Compose tests and Doclava. -->
-  <project
-    path="prebuilts/jdk/jdk8"
-    name="platform/prebuilts/jdk/jdk8"
-    clone-depth="1" />
 
-  <!-- SDK dependencies (darwin) -->
-  <!-- Config: shallow + master revision -->
+  <!-- darwin specific -->
   <project
     path="prebuilts/fullsdk-darwin/build-tools"
     name="platform/prebuilts/fullsdk-darwin/build-tools"
-    revision="master"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
+  <project
+    path="prebuilts/fullsdk-darwin/platform-tools"
+    name="platform/prebuilts/fullsdk-darwin/platform-tools"
+    clone-depth="1"
+    groups="notdefault,platform-darwin" />
+  <project
+    path="prebuilts/fullsdk-darwin/tools"
+    name="platform/prebuilts/fullsdk-darwin/tools"
+    clone-depth="1"
+    groups="notdefault,platform-darwin" />
+
+  <!-- linux specific -->
+  <project
+    path="prebuilts/fullsdk-linux/build-tools"
+    name="platform/prebuilts/fullsdk-linux/build-tools"
+    clone-depth="1"
+    groups="notdefault,platform-linux" />
+  <project
+    path="prebuilts/fullsdk-linux/platform-tools"
+    name="platform/prebuilts/fullsdk-linux/platform-tools"
+    clone-depth="1"
+    groups="notdefault,platform-linux" />
+  <project
+    path="prebuilts/fullsdk-linux/tools"
+    name="platform/prebuilts/fullsdk-linux/tools"
+    clone-depth="1"
+    groups="notdefault,platform-linux" />
+  <project
+    path="prebuilts/build-tools"
+    name="platform/prebuilts/build-tools"
+    groups="notdefault,platform-linux"
+    clone-depth="1" />
+
+  <!-- NDK dependencies -->
+  <!-- Config: shallow + master revision -->
   <project
     path="prebuilts/fullsdk-darwin/ndk-bundle"
     name="toolchain/prebuilts/ndk-darwin/r23"
     revision="master"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/platform-tools"
-    name="platform/prebuilts/fullsdk-darwin/platform-tools"
-    revision="master"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <project
-    path="prebuilts/fullsdk-darwin/tools"
-    name="platform/prebuilts/fullsdk-darwin/tools"
-    revision="master"
-    clone-depth="1"
-    groups="notdefault,platform-darwin" />
-  <!-- Config: shallow + explicit revision -->
   <project
     path="prebuilts/fullsdk-darwin/cmake"
     name="platform/prebuilts/cmake/darwin-x86"
@@ -146,34 +149,12 @@
       clone-depth="1" >
     <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
   </project>
-
-  <!-- SDK dependencies (linux) -->
-  <!-- Config: shallow + master revision -->
-  <project
-    path="prebuilts/fullsdk-linux/build-tools"
-    name="platform/prebuilts/fullsdk-linux/build-tools"
-    revision="master"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
   <project
     path="prebuilts/fullsdk-linux/ndk-bundle"
     name="toolchain/prebuilts/ndk/r23"
     revision="master"
     clone-depth="1"
     groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/fullsdk-linux/platform-tools"
-    name="platform/prebuilts/fullsdk-linux/platform-tools"
-    revision="master"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <project
-    path="prebuilts/fullsdk-linux/tools"
-    name="platform/prebuilts/fullsdk-linux/tools"
-    revision="master"
-    clone-depth="1"
-    groups="notdefault,platform-linux" />
-  <!-- Config: shallow + explicit revision -->
   <project
     path="prebuilts/fullsdk-linux/cmake"
     name="platform/prebuilts/cmake/linux-x86"
@@ -196,13 +177,21 @@
     revision="master"
     groups="notdefault,platform-linux"
     clone-depth="1" />
+  
+  <!-- JDK dependencies -->
+  <!-- Config: shallow + master revision -->
   <project
-    path="prebuilts/build-tools"
-    name="platform/prebuilts/build-tools"
-    revision="androidx-main"
-    groups="notdefault,platform-linux"
+    path="prebuilts/jdk/jdk11"
+    name="platform/prebuilts/jdk/jdk11"
+    revision="master"
     clone-depth="1" />
-
+  <!-- This branch of JDK 8 contains only the tools JAR required for Compose tests and Doclava. -->
+  <!-- Config: shallow + same revision -->
+  <project
+    path="prebuilts/jdk/jdk8"
+    name="platform/prebuilts/jdk/jdk8"
+    clone-depth="1" />
+  
   <!-- Golden images -->
   <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" />
 
