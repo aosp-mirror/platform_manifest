@@ -96,6 +96,9 @@
   <project path="device/google/coral" name="device/google/coral" groups="device,coral,generic_fs" />
   <project path="device/google/coral-kernel" name="device/google/coral-kernel" groups="device,coral,generic_fs" clone-depth="1" />
   <project path="device/google/coral-sepolicy" name="device/google/coral-sepolicy" groups="device,coral,generic_fs" />
+  <project path="device/google/eos" name="device/google/eos" groups="device,eos" />
+  <project path="device/google/eos-kernel" name="device/google/eos-kernel" groups="device,eos" clone-depth="1" />
+  <project path="device/google/eos-sepolicy" name="device/google/eos-sepolicy" groups="device,eos" />
   <project path="device/google/felix" name="device/google/felix" groups="device,felix" />
   <project path="device/google/felix-sepolicy" name="device/google/felix-sepolicy" groups="device,felix" />
   <project path="device/google/felix-kernel" name="device/google/felix-kernel" groups="device,felix" clone-depth="1" />
@@ -174,6 +177,11 @@
   <project path="device/qcom/sa8155/wlan" name="device/qcom/sa8155/wlan" groups="device,qcom_sa8155" />
   <project path="device/qcom/sa8155/seccomp" name="device/qcom/sa8155/seccomp" groups="device,qcom_sa8155" />
   <project path="device/qcom/sa8155/json-c" name="device/qcom/sa8155/json-c" groups="device,qcom_sa8155" />
+  <project path="device/qcom/sw5100/common" name="device/qcom/sw5100/common" groups="device,qcom_sw5100" />
+  <project path="device/qcom/sw5100/json-c" name="device/qcom/sw5100/json-c" groups="device,qcom_sw5100" />
+  <project path="device/qcom/sw5100/sepolicy" name="device/qcom/sw5100/sepolicy" groups="device,qcom_sw5100" />
+  <project path="device/qcom/sw5100/vendor-common" name="device/qcom/sw5100/vendor-common" groups="device,qcom_sw5100" />
+  <project path="device/qcom/sw5100/wlan" name="device/qcom/sw5100/wlan" groups="device,qcom_sw5100" />
   <project path="device/qcom/osprey-kernel" name="device/qcom/osprey-kernel" groups="device,osprey" clone-depth="1" />
   <project path="device/qnx/warbler" name="device/qnx/warbler" groups="device,qnx,warbler" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" />
   <project path="device/volvocars" name="device/volvocars" groups="device,volvocars" />
@@ -953,6 +961,12 @@
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sm8250/Android.mk" />
     <linkfile src="os_pickup.bp" dest="hardware/qcom/sm8250/Android.bp" />
   </project>
+  <project path="hardware/qcom/sw5100/bootctrl" name="platform/hardware/qcom/sw5100/bootctrl" groups="qcom_sw5100" />
+  <project path="hardware/qcom/sw5100/display" name="platform/hardware/qcom/sw5100/display" groups="qcom_sw5100" />
+  <project path="hardware/qcom/sw5100/gps" name="platform/hardware/qcom/sw5100/gps" groups="qcom_sw5100" />
+  <project path="hardware/qcom/sw5100/media" name="platform/hardware/qcom/sw5100/media" groups="qcom_sw5100" />
+  <project path="hardware/qcom/sw5100/thermal" name="platform/hardware/qcom/sw5100/thermal" groups="qcom_sw5100" />
+  <project path="hardware/qcom/sw5100/wlan" name="platform/hardware/qcom/sw5100/wlan" groups="qcom_sw5100" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk-qcom" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
   <project path="hardware/samsung_slsi/exynos" name="platform/hardware/samsung_slsi/exynos" groups="exynos" />
@@ -1515,6 +1529,10 @@
   <project path="vendor/google_devices/coral/prebuilts" name="platform/vendor/google_devices/coral/prebuilts" groups="vendor,coral" clone-depth="1" />
   <project path="vendor/google_devices/coral/proprietary" name="platform/vendor/google_devices/coral/proprietary" groups="vendor,coral" />
   <project path="vendor/google_devices/cuttlefish_common" name="platform/vendor/google_devices/cuttlefish_common" groups="vendor"/>
+  <project path="vendor/google_devices/eos/factory" name="platform/vendor/google_devices/eos/factory" groups="vendor" />
+  <project path="vendor/google_devices/eos/factory_pdk" name="platform/vendor/google_devices/eos/factory_pdk" groups="vendor,eos" />
+  <project path="vendor/google_devices/eos/prebuilts" name="platform/vendor/google_devices/eos/prebuilts" groups="vendor,eos" clone-depth="1" />
+  <project path="vendor/google_devices/eos/proprietary" name="platform/vendor/google_devices/eos/proprietary" groups="vendor,eos" />
   <project path="vendor/google_devices/felix/prebuilts" name="platform/vendor/google_devices/felix/prebuilts" groups="vendor,felix" clone-depth="1"/>
   <project path="vendor/google_devices/felix/proprietary" name="platform/vendor/google_devices/felix/proprietary" groups="vendor,felix" clone-depth="1"/>
   <project path="vendor/google_devices/gs101/factory" name="platform/vendor/google_devices/gs101/factory" groups="vendor" />
@@ -2125,6 +2143,33 @@
     <linkfile src="prop_pickup.mk" dest="vendor/qcom/sm8250/Android.mk" />
     <linkfile src="prop_pickup.bp" dest="vendor/qcom/sm8250/Android.bp" />
   </project>
+  <project path="vendor/qcom/sw5100/codeaurora/agm" name="platform/vendor/qcom/sw5100/codeaurora/agm" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/audio-hal/primary-hal" name="platform/vendor/qcom/sw5100/codeaurora/audio-hal/primary-hal" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/audio-hal/st-hal" name="platform/vendor/qcom/sw5100/codeaurora/audio-hal/st-hal" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/bluetooth" name="platform/vendor/qcom/sw5100/codeaurora/bluetooth" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/commonsys-intf/bluetooth" name="platform/vendor/qcom/sw5100/codeaurora/commonsys-intf/bluetooth" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/commonsys-intf/display" name="platform/vendor/qcom/sw5100/codeaurora/commonsys-intf/display" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/commonsys/dataservices" name="platform/vendor/qcom/sw5100/codeaurora/commonsys/dataservices" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/commonsys/dpm" name="platform/vendor/qcom/sw5100/codeaurora/commonsys/dpm" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/core-utils" name="platform/vendor/qcom/sw5100/codeaurora/core-utils" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/data-ipa-cfg-mgr" name="platform/vendor/qcom/sw5100/codeaurora/data-ipa-cfg-mgr" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/dataservices" name="platform/vendor/qcom/sw5100/codeaurora/dataservices" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/healthd-ext" name="platform/vendor/qcom/sw5100/codeaurora/healthd-ext" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/interfaces" name="platform/vendor/qcom/sw5100/codeaurora/interfaces" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/location" name="platform/vendor/qcom/sw5100/codeaurora/location" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/mmc-utils" name="platform/vendor/qcom/sw5100/codeaurora/mmc-utils" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/pal" name="platform/vendor/qcom/sw5100/codeaurora/pal" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/power" name="platform/vendor/qcom/sw5100/codeaurora/power" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/recovery-ext" name="platform/vendor/qcom/sw5100/codeaurora/recovery-ext" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/telephony" name="platform/vendor/qcom/sw5100/codeaurora/telephony" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/thermal-engine" name="platform/vendor/qcom/sw5100/codeaurora/thermal-engine" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/time-services" name="platform/vendor/qcom/sw5100/codeaurora/time-services" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/tinyalsa" name="platform/vendor/qcom/sw5100/codeaurora/tinyalsa" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/tinycompress" name="platform/vendor/qcom/sw5100/codeaurora/tinycompress" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/usb" name="platform/vendor/qcom/sw5100/codeaurora/usb" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/vibrator" name="platform/vendor/qcom/sw5100/codeaurora/vibrator" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/codeaurora/wlan/utils/sigma-dut" name="platform/vendor/qcom/sw5100/codeaurora/wlan/utils/sigma-dut" groups="vendor,qcom_sw5100" />
+  <project path="vendor/qcom/sw5100/proprietary" name="platform/vendor/qcom/sw5100/proprietary" groups="vendor,qcom_sw5100" />
   <project path="vendor/qcom/system/teeui" name="platform/vendor/qcom/system/teeui" groups="vendor,qcom_only,qcom_teeui" />
   <project path="vendor/qnx/warbler" name="platform/vendor/qnx/warbler" groups="device,qnx,warbler" remote="goog-and-upload-partner" dest-branch="master" revision="mirror-partner-master" />
   <project path="vendor/qorvo/uwb" name="platform/vendor/qorvo/uwb" groups="vendor" />
