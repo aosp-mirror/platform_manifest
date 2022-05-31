@@ -50,35 +50,39 @@
   <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="master" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="master" />
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="master" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" />
-  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" clone-depth="1" revision="master" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1" revision="master" />
-  <project path="sdk" name="platform/sdk" />
-  <project path="tools/emulator" name="platform/tools/emulator" />
-  <project path="tools/acloud" name="platform/tools/acloud" revision="master" />
   <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="master"/>
 
-  <!-- Tink security library and dependencies, we use upstream so we automatically get the latest security fixes -->
+
+  <!-- Linux is using libevent, which is currently coming from libchrome.. -->
+  <project path="external/libchrome" name="platform/external/libchrome"  revision="emu-master-dev" groups="notdefault,platform-linux"/>
+
+  <!-- Linux only toolchain dependencies -->
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
+  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
+
+  <!-- Windows only toolchain dependencies -->
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="master" groups="notdefault,platform-windows" />
+  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
+
+  <!-- Darwin (macos) only toolchain dependencies -->
+  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
+  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="master" groups="notdefault,platform-darwin" />
+
+  <!-- Tink security library and dependencies -->
   <project path="external/tink" name="platform/external/tink" />
   <project path="external/rapidjson" name="platform/external/rapidjson"  revision="master"/>
 
   <!-- Bring in the root-canal, bluetooth dependencies -->
   <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" revision="master"/>
-  <project path="external/libchrome" name="platform/external/libchrome" groups="pdk" revision="emu-master-dev"/>
 
-  <!-- toolchain requirements for root-canal -->
-  <project path="external/bison" name="platform/external/bison" groups="pdk" revision="master"/>
-  <project path="external/flex" name="platform/external/flex" groups="pdk" revision="master"/>
-  <project path="external/m4" name="toolchain/m4" groups="pdk" revision="master"/>
+  <!-- toolchain requirements for root-canal without prebuilts, only supported on linux/darwin -->
+  <project path="external/bison" name="platform/external/bison" revision="master" groups="notdefault,platform-linux" />
+  <project path="external/flex" name="platform/external/flex" revision="master" groups="notdefault,platform-linux,platform-darwin" />
+  <project path="external/m4" name="toolchain/m4" revision="master" groups="notdefault,platform-linux,platform-darwin" />
 
   <!-- Webrtc for the goldfish-webrtc-videobridge -->
   <project path="external/webrtc" name="platform/external/webrtc" />
