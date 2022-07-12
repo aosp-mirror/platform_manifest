@@ -4,7 +4,7 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="studio-main"
+  <default revision="studio-beta"
            remote="aosp"
            sync-j="4" />
 
@@ -34,7 +34,7 @@
   <project path="external/protobuf" name="platform/external/protobuf" />
   <project path="external/skia" name="platform/external/skia" />
   <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/layoutlib" name="platform/frameworks/layoutlib" clone-depth="1" />
+  <project path="frameworks/layoutlib" name="platform/frameworks/layoutlib" clone-depth="1" groups="notdefault,layoutlib" />
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
@@ -51,8 +51,10 @@
   <project path="tools/apkzlib" name="platform/tools/apkzlib" />
   <project path="tools/assets" name="assets/android-studio-ux-assets" clone-depth="1" />
   <project path="tools/base" name="platform/tools/base">
+    <linkfile src="bazel/tools.BUILD.bazel" dest="tools/BUILD.bazel" />
     <linkfile src="bazel/toplevel.WORKSPACE" dest="WORKSPACE" />
     <linkfile src="bazel/toplevel.bazelignore" dest=".bazelignore" />
+    <linkfile src="bazel/toplevel.bazelversion" dest=".bazelversion" />
     <linkfile src="bazel/sdk/prebuilts.studio.sdk.BUILD" dest="prebuilts/studio/sdk/BUILD" />
     <linkfile src="bazel/sdk/prebuilts.studio.sdk.README.md" dest="prebuilts/studio/sdk/README.md" />
     <linkfile src="bazel/toolchains/darwin/wrapped_ar" dest="prebuilts/clang/studio-extra/wrapped_ar.darwin" />
