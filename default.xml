@@ -1,82 +1,113 @@
 <manifest>
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="androidx-appcompat-release" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="androidx-appcompat-release" remote="aosp" />
   <superproject name="platform/superproject" remote="aosp" />
 
   
-  <project name="platform/build" path="build/make" revision="dabd640c1ac18453c45e673fbf09d57c485b8994" upstream="androidx-appcompat-release" />
+  <project path="build/make" name="platform/build" revision="2491a4dc36ceb68dcb5bc962aa9f4d08985a402d" upstream="androidx-appcompat-release" />
 
   
   
-  <project clone-depth="1" name="platform/external/noto-fonts" path="external/noto-fonts" revision="f3b4b16c661c74e9d14697e7fbe5d8d1485c796f" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="0f28b3effcab55c5ce70b11ea5b2e8220e1775a2" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/external/icing" path="external/icing" revision="14b7dbcff61f59f5bb3307eebed90e7ebc6e743d" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/external/icu" path="external/icu" revision="818052d0ab2de20a4eb2be740461d8003299aeb6" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/external/google-benchmark" path="external/google-benchmark" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-appcompat-release" />
+  <project path="external/dexter" name="platform/tools/dexter" revision="74c2cf6b983956ac8e9a23422a4d6a08c0019bf5" upstream="androidx-appcompat-release" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" revision="170c4ba8820c070670891da4b37dcbd8f96580e4" upstream="androidx-appcompat-release" />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" revision="db28406a23ef0fec3ad399eef21c584d5303fa22" upstream="androidx-appcompat-release" />
+  <project path="external/icing" name="platform/external/icing" clone-depth="1" revision="5d2ab89c772ffbf4a9b72ba1d5e0bfd434ca6500" upstream="androidx-appcompat-release" />
+  <project path="external/icu" name="platform/external/icu" clone-depth="1" revision="818052d0ab2de20a4eb2be740461d8003299aeb6" upstream="androidx-appcompat-release" />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark" clone-depth="1" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-appcompat-release" />
   
-  <project clone-depth="1" name="platform/external/protobuf" path="external/protobuf" revision="b15fd70c0fa759aa0a1146d1ba5ec6e906c647f3" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="7db3cdae6096bd89b65d152d20356399f0369d05" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="804723338c8d0f55095b508cab0e1e4509317ca4" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="a20cf9fce3a76407821257fc18432a64e3134420" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/traceprocessor" path="prebuilts/androidx/traceprocessor" revision="5a799b0e97e31210b1832470896b68e48a436565" upstream="androidx-appcompat-release" />
+  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" revision="b15fd70c0fa759aa0a1146d1ba5ec6e906c647f3" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" revision="811c055ee8ee44144e2ef2d2df303af47ce1b7a2" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" revision="717404fda44636fee82a2c15e61e41fdc987e5ac" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" revision="a20cf9fce3a76407821257fc18432a64e3134420" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" revision="5b63377af222fcb4b7646d9e3bbbb170d0ebf524" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" revision="66fc33b34b13a4f3853d40eda97bdce8e5398851" upstream="androidx-appcompat-release" />
+
   
-  <project clone-depth="1" name="platform/external/doclava" path="external/doclava" revision="002331e91d3e0b9fd6486317f251e9599436b0d0" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/external/dokka" path="external/dokka" revision="6a089f693f93b70551febfcbd14f03aa0e731007" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" name="platform/external/libyuv" path="external/libyuv" revision="cc6610ad280a03592699fd682e97781ddfd715ab" upstream="androidx-appcompat-release" />
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" revision="e4f465dcc1794b0ecd231749e2cee1d383766114" upstream="androidx-appcompat-release" />
+  <project path="external/doclava" name="platform/external/doclava" clone-depth="1" revision="e292599312d99022093f5fe190f5961c0f832088" upstream="androidx-appcompat-release" />
+  <project path="external/dokka" name="platform/external/dokka" clone-depth="1" revision="6a089f693f93b70551febfcbd14f03aa0e731007" upstream="androidx-appcompat-release" />
+  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" revision="2a7a122b5c5b145a9e967b69ed8c3b02f8514f73" upstream="androidx-appcompat-release" />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="d206b90d0d4ebc1a5fa27c3b0f9dc8fd8dc4162f" upstream="androidx-appcompat-release" />
 
   
   
-  <project clone-depth="1" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="09e97dd74230764a74063aa64a5d11dfb2c7fdeb" upstream="androidx-appcompat-release" />
-  <project name="platform/tools/repohooks" path="tools/repohooks" revision="22f185e85114e019eeb866a28f3feeb0cc864cde" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" revision="80268a1c25db114c04aca67be7bb9ca0a99985be" upstream="androidx-appcompat-release" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" revision="e06a97745d73ce4b915a107c2c4f65a2ae1c24e2" upstream="androidx-appcompat-release" />
+  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1" revision="7d5d8c7e36eb15d8a5389ca19e3b0aeb1daa1326" upstream="androidx-appcompat-release" />
+  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1" revision="ed5856157504d2be9ac8075ee38a5f5a310c1512" upstream="androidx-appcompat-release" />
   
   
-  <project clone-depth="1" name="platform/prebuilts/protobuf" path="prebuilts/protobuf" revision="abbf41bf9f4352f05d6433e44a774bdd9baea190" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" revision="abbf41bf9f4352f05d6433e44a774bdd9baea190" upstream="androidx-appcompat-release" />
 
   
   
-  <project clone-depth="1" name="platform/tools/external/gradle" path="tools/external/gradle" revision="8b2f0f1b4a16a62a3ba46c225e8fe301b79bfebe" upstream="androidx-appcompat-release" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" revision="220d8ef915ae8429e8765a89baa4581ffe842242" upstream="androidx-appcompat-release" />
 
   
   
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-31" path="prebuilts/fullsdk-darwin/platforms/android-31" revision="200e64779106cf6738f7c2cf02c9f23b683b5ac1" upstream="androidx-appcompat-release">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-31" src="." />
+  <project path="prebuilts/fullsdk-darwin/platforms/android-31" name="platform/prebuilts/fullsdk/platforms/android-31" clone-depth="1" revision="3b4e95bbf26ccc7735d541a6f0d67d70c8787359" upstream="androidx-appcompat-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-31" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-31" path="prebuilts/fullsdk-darwin/sources/android-31" revision="75c718b2434a9003e34cb2fa3c89a1acf7449cc1" upstream="androidx-appcompat-release">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-31" src="." />
+  <project path="prebuilts/fullsdk-darwin/sources/android-31" name="platform/prebuilts/fullsdk/sources/android-31" clone-depth="1" revision="a46b2bb2d26162b1cfb26e2053c2c774ebb163d6" upstream="androidx-appcompat-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-31" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="747b70c2f652a799430470a48bb23619038b9418" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-darwin/platforms/android-32" name="platform/prebuilts/fullsdk/platforms/android-32" clone-depth="1" revision="4276c6d4f761a4ad624a470fee9453be36193646" upstream="androidx-appcompat-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-32" />
+  </project>
+  <project path="prebuilts/fullsdk-darwin/sources/android-32" name="platform/prebuilts/fullsdk/sources/android-32" clone-depth="1" revision="0c5f0233e7bd8e3cae75fde3393d7f08ada6b63f" upstream="androidx-appcompat-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-32" />
+  </project>
+  <project path="prebuilts/fullsdk-darwin/platforms/android-33" name="platform/prebuilts/fullsdk/platforms/android-33" clone-depth="1" revision="eed06b698740fd6fc005c66dbca1c9b9b26fe474" upstream="androidx-appcompat-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-33" />
+  </project>
+  <project path="prebuilts/fullsdk-darwin/sources/android-33" name="platform/prebuilts/fullsdk/sources/android-33" clone-depth="1" revision="f6a7f5e4d4d85ea656535f4696c53610328a0b1a" upstream="androidx-appcompat-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-33" />
+  </project>
+
   
+  <project path="prebuilts/fullsdk-darwin/build-tools" name="platform/prebuilts/fullsdk-darwin/build-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="254f7d48b266f3fa9c1214a7a0ba6928234782b0" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="39d881ce857ebbec07824a20da4ed159d066f56b" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-darwin/tools" name="platform/prebuilts/fullsdk-darwin/tools" clone-depth="1" groups="notdefault,platform-darwin" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-appcompat-release" />
+
   
-  <project clone-depth="1" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="8c2e6c00ea1bf81593baf46e311174c072c02bf9" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-linux/build-tools" name="platform/prebuilts/fullsdk-linux/build-tools" clone-depth="1" groups="notdefault,platform-linux" revision="90f8c607699f35842cdc2220b43ea1c195d37ba4" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools" clone-depth="1" groups="notdefault,platform-linux" revision="4d88518a9c42a559191b6f5fe33d7fd783fcfbc5" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-linux/tools" name="platform/prebuilts/fullsdk-linux/tools" clone-depth="1" groups="notdefault,platform-linux" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="notdefault,platform-linux" clone-depth="1" revision="f1e15ee3498c00a329ce89d2758a5542368c209a" upstream="androidx-appcompat-release" />
 
   
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3" path="prebuilts/fullsdk-darwin/build-tools/29.0.3" revision="f597735774e931d682fb10e0d0590392f4a69c38" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/30.0.3" path="prebuilts/fullsdk-darwin/build-tools/30.0.3" revision="17cc286169eb2246fe626f1e6ee907be0495521e" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="toolchain/prebuilts/ndk-darwin/r21" path="prebuilts/fullsdk-darwin/ndk" revision="1c4977f21886e391f7a2105c218fc9de9ac49b31" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="a010064fceb91f669ec25206914bc5fe48bc8352" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-darwin/ndk-bundle" name="toolchain/prebuilts/ndk-darwin/r23" revision="9a1b3e229631d81c086ffb3a631fd1da29afd039" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-darwin/cmake" name="platform/prebuilts/cmake/darwin-x86" revision="c4f1c2318c8970ae9f5fb037cc5767e44af844c6" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-appcompat-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-darwin/ninja" name="platform/prebuilts/ninja/darwin-x86" revision="f321e197944c19d273cec788b9a3e8ca94331248" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-appcompat-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/ndk-bundle" name="toolchain/prebuilts/ndk/r23" revision="93532f3052c14fbb337ff57d5732128dc7481ee6" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-appcompat-release" />
+  <project path="prebuilts/fullsdk-linux/cmake" name="platform/prebuilts/cmake/linux-x86" revision="e3f7d528a6f117b04aff185ba0fa2a7174ad2766" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-appcompat-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/ninja" name="platform/prebuilts/ninja/linux-x86" revision="8a10824f74fe0e22af9bf314a837f5b70e2bb67f" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-appcompat-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/kernel-build-tools" name="kernel/prebuilts/build-tools" revision="cdeb8abef0201f8351abf9597b1c979df52d6c25" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-appcompat-release" />
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="fc59035d8c856055f2a263dc8a2f9de96c959cc2" upstream="androidx-appcompat-release" />
+  
+  
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" revision="5339142888e5a6a6befd44c673dee15c06b48a8d" clone-depth="1" upstream="androidx-appcompat-release" />
+  
+  
+  <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" clone-depth="1" revision="8c2e6c00ea1bf81593baf46e311174c072c02bf9" upstream="androidx-appcompat-release" />
+  
+  
+  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" revision="1da453ef695d82958537ca9777a39e0edfb071f7" upstream="androidx-appcompat-release" />
 
   
-  
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3" path="prebuilts/fullsdk-linux/build-tools/29.0.3" revision="2d89707a7cc994d40bd4c20b3cb42cf5a87e983a" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/30.0.3" path="prebuilts/fullsdk-linux/build-tools/30.0.3" revision="5074774ea2223b32b73717896c2e722df523c67b" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r21" path="prebuilts/fullsdk-linux/ndk" revision="be518ef4272ce61fd6dad9db73e9be74853b3974" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="2c69da254834b58767ff42b1e622a0d24590cff4" upstream="androidx-appcompat-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-appcompat-release" />
-  
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="de5fa1c66d3bdcbf2bbc62d2504ec6b0b0fb74e1" upstream="androidx-appcompat-release" />
 
   
-  <project clone-depth="1" name="platform/frameworks/support-golden" path="golden" revision="8b8c736b393996b1b3d298fbcd2d3fbebcd29710" upstream="androidx-appcompat-release" />
-
+  <project path="frameworks/support" name="platform/frameworks/support" revision="71ab221c54bf76de697abac2295ff43e5b41dd83" upstream="androidx-appcompat-release" />
   
 
-  
-  <project name="platform/frameworks/support" path="frameworks/support" revision="4705a5489eecc3113638dbe3fe3112e1a555b0ee" upstream="androidx-appcompat-release" />
-  
-
-  <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
