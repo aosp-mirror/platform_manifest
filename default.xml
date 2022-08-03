@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="emu-master-dev"
+  <default revision="emu-32-release"
            remote="aosp"
            sync-j="4" />
-
   <superproject name="platform/superproject" remote="aosp"/>
   <contactinfo bugurl="go/repo-bug" />
-
   <project path="build" name="platform/build" />
   <project path="tools/buildSrc" name="platform/tools/buildSrc" />
-
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="master"/>
-  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" revision="master"/>
+  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" />
+  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" />
   <project path="external/adt-infra" name="platform/external/adt-infra" />
   <project path="external/angle" name="platform/external/angle" />
-  <project path="external/astc-codec" name="platform/external/astc-codec" revision="master" />
-  <project path="external/boringssl" name="platform/external/boringssl" revision="master" clone-depth="1"/>
+  <project path="external/astc-codec" name="platform/external/astc-codec"  />
+  <project path="external/boringssl" name="platform/external/boringssl"  clone-depth="1"/>
   <project path="external/cares" name="platform/external/c-ares" />
   <project path="external/curl" name="platform/external/curl" />
-  <project path="external/deqp" name="platform/external/deqp" revision="master" />
-  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" revision="master" />
-  <project path="external/googletest" name="platform/external/googletest" revision="master" />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark" revision="db1632fadc79df388a2a7248157c965ee40248a1" />
+  <project path="external/deqp" name="platform/external/deqp"  />
+  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols"  />
+  <project path="external/googletest" name="platform/external/googletest"  />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark"  />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" />
   <project path="external/grpc" name="platform/external/grpc-grpc" />
   <project path="external/libusb" name="platform/external/libusb" />
@@ -33,17 +29,17 @@
   <project path="external/libpng" name="platform/external/libpng" />
   <project path="external/lz4" name="platform/external/lz4" />
   <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/perfetto" name="platform/external/perfetto" revision="37518c39e3db120322359090db3d54f6ac100078"/>
+  <project path="external/perfetto" name="platform/external/perfetto" />
   <project path="external/qemu" name="platform/external/qemu">
     <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
   </project>
-  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" revision="master"/>
-  <project path="external/virglrenderer" name="platform/external/virglrenderer" revision="crosvm-master"/>
+  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" />
+  <project path="external/virglrenderer" name="platform/external/virglrenderer" />
   <project path="external/nasm" name="platform/external/nasm" />
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
   <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/native" name="platform/frameworks/native" revision="lollipop-release" />
-  <project path="hardware/google/aemu" name="platform/hardware/google/aemu"  groups="pdk" revision="master" />
+  <project path="frameworks/native" name="platform/frameworks/native"  />
+  <project path="hardware/google/aemu" name="platform/hardware/google/aemu"  groups="pdk"  />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
@@ -51,43 +47,33 @@
   <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1" revision="master" />
-  <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="master"/>
-
-
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1"  />
+  <project name="device/google/cuttlefish" path="device/google/cuttlefish" />
   <!-- Linux is using libevent, which is currently coming from libchrome.. -->
-  <project path="external/libchrome" name="platform/external/libchrome"  revision="emu-master-dev" groups="notdefault,platform-linux"/>
-
+  <project path="external/libchrome" name="platform/external/libchrome"   groups="notdefault,platform-linux"/>
   <!-- Linux only toolchain dependencies -->
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"  groups="notdefault,platform-linux" />
   <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-
   <!-- Windows only toolchain dependencies -->
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="master" groups="notdefault,platform-windows" />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
   <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
-
   <!-- Darwin (macos) only toolchain dependencies -->
   <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="master" groups="notdefault,platform-darwin" />
-
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
   <!-- Tink security library and dependencies -->
   <project path="external/tink" name="platform/external/tink" />
-  <project path="external/rapidjson" name="platform/external/rapidjson"  revision="master"/>
-
+  <project path="external/rapidjson" name="platform/external/rapidjson"  />
   <!-- Bring in the root-canal, bluetooth dependencies -->
-  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" revision="master"/>
-
+  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" />
   <!-- toolchain requirements for root-canal without prebuilts, only supported on linux/darwin -->
-  <project path="external/bison" name="platform/external/bison" revision="master" groups="notdefault,platform-linux" />
-  <project path="external/flex" name="platform/external/flex" revision="master" groups="notdefault,platform-linux,platform-darwin" />
-  <project path="external/m4" name="toolchain/m4" revision="master" groups="notdefault,platform-linux,platform-darwin" />
-
+  <project path="external/bison" name="platform/external/bison"  groups="notdefault,platform-linux" />
+  <project path="external/flex" name="platform/external/flex"  groups="notdefault,platform-linux,platform-darwin" />
+  <project path="external/m4" name="toolchain/m4"  groups="notdefault,platform-linux,platform-darwin" />
   <!-- Webrtc for the goldfish-webrtc-videobridge -->
   <project path="external/webrtc" name="platform/external/webrtc" />
-
   <!-- flatbuffers for the gfxstream-protocols -->
-  <project path="external/flatbuffers" name="platform/external/flatbuffers" revision="master" />
+  <project path="external/flatbuffers" name="platform/external/flatbuffers"  />
 </manifest>
