@@ -8,7 +8,7 @@
   <superproject name="platform/superproject" remote="aosp" />
   <contactinfo bugurl="go/repo-bug" />
 
-  <project path="build/make" name="platform/build" groups="pdk" revision="edf38e41566fc98ecd78fd2611e8a9531c256c64" upstream="gki13-boot-release">
+  <project path="build/make" name="platform/build" groups="pdk" revision="223cdc1a6c00002d014c3fdaedde38b6ea6f7dc9" upstream="gki13-boot-release">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
     <linkfile src="core" dest="build/core" />
@@ -16,23 +16,24 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/bazel" name="platform/build/bazel" groups="pdk" revision="3aa6db22dd1e1bde610f9dd0eb29086595af04dd" upstream="gki13-boot-release">
+  <project path="build/orchestrator" name="platform/build/orchestrator" groups="pdk" revision="b513bb3b6f5d872ad7eca8894929e59b1be61fd0" upstream="gki13-boot-release" />
+  <project path="build/bazel" name="platform/build/bazel" groups="pdk" revision="1f6e6bc8c49250d06a10f6ee996db1c835868181" upstream="gki13-boot-release">
     <linkfile src="bazel.WORKSPACE" dest="WORKSPACE" />
     <linkfile src="bazel.sh" dest="tools/bazel" />
     <linkfile src="bazel.BUILD" dest="BUILD" />
   </project>
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="pdk" revision="2fd35ba1c51d8b4c42a8c2c7cd3bba75e43c85f0" upstream="gki13-boot-release" />
-  <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" revision="7bd4a08bef28df2e48b138e08ee796d2498309f1" upstream="gki13-boot-release" />
+  <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" revision="ebe6bf75bc662b9599c9cebf6579c97f72ad79ec" upstream="gki13-boot-release" />
   <project path="build/pesto" name="platform/build/pesto" groups="pdk" revision="4e255f9e74a0b4aef5b7fd002a0cadb3d181274d" upstream="gki13-boot-release" />
-  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" revision="cb465481f4298c94e11a62a14bba02b4aac28617" upstream="gki13-boot-release">
+  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" revision="ecbab8bfd82b2ec56c81fe009b08e534d1fe2b57" upstream="gki13-boot-release">
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="art" name="platform/art" groups="pdk" revision="9fde61c022642d4965447a9157e4c251391d52e8" upstream="gki13-boot-release" />
-  <project path="bionic" name="platform/bionic" groups="pdk" revision="06c697a56dee5db66385f5bd8abbf6d0b7013ff7" upstream="gki13-boot-release" />
-  <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" revision="2e3f10011d33ef6f7ac92c9ff5a8be473a1d16b7" upstream="gki13-boot-release" />
+  <project path="art" name="platform/art" groups="pdk" revision="b29b9a928830a3bb4c736ed9b5c766f9905cad7d" upstream="gki13-boot-release" />
+  <project path="bionic" name="platform/bionic" groups="pdk" revision="4d113920a45d201eebeb7c221e0dd733b5113433" upstream="gki13-boot-release" />
+  <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" revision="0774dfb317512ac72f6363ed1a38ab71da70ffeb" upstream="gki13-boot-release" />
   <project path="bootable/libbootloader" name="platform/bootable/libbootloader" groups="vts,pdk" revision="6c217b6457068bc3770f88ac02647ea3bca8c162" upstream="gki13-boot-release" />
-  <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" revision="292d7922d5c4a406b3ae5099038f657866c12522" upstream="gki13-boot-release" />
+  <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" revision="826431d316b586dfb14ebdbf22c6cf9029be244b" upstream="gki13-boot-release" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" revision="a023915de432ca5cfd83132cf60089a05e46892f" upstream="gki13-boot-release" />
   <project path="developers/build" name="platform/developers/build" groups="developers,pdk" revision="437f8e456d00bbda31f90e9cce91171057777b89" upstream="gki13-boot-release" />
   <project path="developers/demos" name="platform/developers/demos" groups="developers" revision="03814c35b8ee0a1284c667556260124d97466b28" upstream="gki13-boot-release" />
@@ -46,8 +47,8 @@
   <project path="device/generic/art" name="device/generic/art" groups="pdk" revision="8747f14d227d855fc772ed97b0e602b42b6d992b" upstream="gki13-boot-release" />
   <project path="device/generic/car" name="device/generic/car" groups="pdk" revision="5566d7520766c2de8d0ca7335dc334114fdf9c9e" upstream="gki13-boot-release" />
   <project path="device/generic/common" name="device/generic/common" groups="pdk" revision="9f26d31dbd873a2fb1c7eca102d60bce85fe4c9d" upstream="gki13-boot-release" />
-  <project path="device/generic/goldfish" name="device/generic/goldfish" groups="pdk" revision="8dc14f2886adf39f555827ff7eed37d4cb07fa4c" upstream="gki13-boot-release" />
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" groups="pdk" revision="ca0d7623d311aff54a382c33ecc07540368b87c3" upstream="gki13-boot-release" />
+  <project path="device/generic/goldfish" name="device/generic/goldfish" groups="pdk" revision="07778332d8a3a461db81a9705b057eb177b51b03" upstream="gki13-boot-release" />
+  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" groups="pdk" revision="288b20a184a7e71489c87425c486139ace8c89e4" upstream="gki13-boot-release" />
   <project path="device/generic/mini-emulator-arm64" name="device/generic/mini-emulator-arm64" groups="pdk" revision="3b24236047b36f026be87400f19dc98d99633580" upstream="gki13-boot-release" />
   <project path="device/generic/mini-emulator-armv7-a-neon" name="device/generic/mini-emulator-armv7-a-neon" groups="pdk" revision="976cab503dd390085bffa7d6fe3c03827f691074" upstream="gki13-boot-release" />
   <project path="device/generic/mini-emulator-x86" name="device/generic/mini-emulator-x86" groups="pdk" revision="6cc4f90392cb5c2f4589231124dbf8e111a6ac79" upstream="gki13-boot-release" />
@@ -58,7 +59,7 @@
   <project path="device/generic/uml" name="device/generic/uml" groups="device,pdk" revision="bbe4867e1be122db9f28c748d39f865c0d6e6bae" upstream="gki13-boot-release" />
   <project path="device/generic/x86" name="device/generic/x86" groups="pdk" revision="4394cdf90094161d5caf4f7237c883ab2862c2f2" upstream="gki13-boot-release" />
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="pdk" revision="2d32bcd931d54c48dd1ef4b581d0a082c67efc5c" upstream="gki13-boot-release" />
-  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" groups="pdk" revision="a8161499b16ecb082cb909a6b70d912494400aea" upstream="gki13-boot-release" />
+  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" groups="pdk" revision="290faf0f7a9783afa8ee78af3f028486243a803e" upstream="gki13-boot-release" />
   <project path="device/google/atv" name="device/google/atv" groups="device,broadcom_pdk,generic_fs,pdk" revision="284c06e0b84ac7c53db694ed3bdd91b0f6dc98bf" upstream="gki13-boot-release" />
   <project path="device/google/barbet" name="device/google/barbet" groups="device,barbet" revision="f216499f3c258fb1e6b23ab57d8a6a462dd50666" upstream="gki13-boot-release" />
   <project path="device/google/barbet-kernel" name="device/google/barbet-kernel" groups="device,barbet" clone-depth="1" revision="d9ca44e414c61309eac03eae34c25dabe62802d1" upstream="gki13-boot-release" />
@@ -82,14 +83,14 @@
   <project path="device/google/sunfish" name="device/google/sunfish" groups="device,sunfish" revision="572542451308e6f2787a9bd70e3a8518d18f5e7c" upstream="gki13-boot-release" />
   <project path="device/google/sunfish-kernel" name="device/google/sunfish-kernel" groups="device,sunfish" clone-depth="1" revision="367dce24ab3aae5e29ffddaab7f7c0692e2e5a1e" upstream="gki13-boot-release" />
   <project path="device/google/sunfish-sepolicy" name="device/google/sunfish-sepolicy" groups="device,sunfish" revision="1749ee7b6ffbfafbbca6b3f00c1172ff4dbb24e8" upstream="gki13-boot-release" />
-  <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device,pdk" revision="3db8203a6bd7e421864daeda44480f782fb16d8b" upstream="gki13-boot-release" />
+  <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device,pdk" revision="d831644315f152d73709e6db73c91fb8aa89efff" upstream="gki13-boot-release" />
   <project path="device/google/cuttlefish_prebuilts" name="device/google/cuttlefish_prebuilts" groups="device,pdk" clone-depth="1" revision="10d5463762e38ae3663019bbeeea377b34c41d1c" upstream="gki13-boot-release" />
   <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull" revision="e56342291e01040ba43205d9b0c4e59296d76dd6" upstream="gki13-boot-release" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" revision="fa28205d5fc0ef7a296cc8d6cc51e341efe8367b" upstream="gki13-boot-release" />
   <project path="device/google_car" name="device/google_car" groups="pdk" revision="3dc25dab43a8dca5883de92e7bc937d69382dbf1" upstream="gki13-boot-release" />
   <project path="device/linaro/dragonboard" name="device/linaro/dragonboard" groups="device,dragonboard,pdk" revision="3373ea02b7bd2627a7f29963b6d3536fc3801a51" upstream="gki13-boot-release" />
   <project path="device/linaro/dragonboard-kernel" name="device/linaro/dragonboard-kernel" groups="device,dragonboard,pdk" clone-depth="1" revision="5aacf065b29de32687652f1066989056c9cefe1f" upstream="gki13-boot-release" />
-  <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk" revision="6840613d71863f8032afb7bb8e985c469d90cbc6" upstream="gki13-boot-release" />
+  <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk" revision="d3d7e7ffb2413ebc65af1ed8be0a1c890f9a69e8" upstream="gki13-boot-release" />
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" revision="0b30c5555dbb254cb21f80e6632268e45ebfe499" upstream="gki13-boot-release" />
   <project path="device/linaro/poplar" name="device/linaro/poplar" groups="device,poplar,pdk" revision="688608ca702273c8aae28612abe38773697c3169" upstream="gki13-boot-release" />
   <project path="device/linaro/poplar-kernel" name="device/linaro/poplar-kernel" groups="device,poplar,pdk" clone-depth="1" revision="e495c704b7a6fade74a0049d47a66614bec4a0b8" upstream="gki13-boot-release" />
@@ -103,7 +104,7 @@
   <project path="external/AFLplusplus" name="platform/external/AFLplusplus" revision="c99e61b5e5b1c7da7eb26565614e043545c99a2c" upstream="gki13-boot-release" />
   <project path="external/android-clat" name="platform/external/android-clat" groups="pdk" revision="45f11023f6d60919920c4850025953c48229bee4" upstream="gki13-boot-release" />
   <project path="external/androidplot" name="platform/external/androidplot" groups="pdk" revision="162b53f9d2f4ea8d09ac420a2d1af2cb69ecd195" upstream="gki13-boot-release" />
-  <project path="external/angle" name="platform/external/angle" groups="pdk" revision="ac05fd241022bd6edbe0e2e62c24e309eba47ef2" upstream="gki13-boot-release" />
+  <project path="external/angle" name="platform/external/angle" groups="pdk" revision="239f25c4887df8273ed02808c6b0bac986158afe" upstream="gki13-boot-release" />
   <project path="external/ant-glob" name="platform/external/ant-glob" groups="pdk" revision="23ca0f5c971e8d302628b34a3f51d09e1f63081c" upstream="gki13-boot-release" />
   <project path="external/antlr" name="platform/external/antlr" groups="pdk" revision="902b35e307c860b3360c2e8ada43fe4417a9b881" upstream="gki13-boot-release" />
   <project path="external/apache-commons-bcel" name="platform/external/apache-commons-bcel" groups="pdk" revision="54df63affa1e609083900cfa53301920b4631cdc" upstream="gki13-boot-release" />
@@ -125,7 +126,7 @@
   <project path="external/bc" name="platform/external/bc" groups="pdk" revision="70ee90a3122fe71920c81d55dd1375d0103a4617" upstream="gki13-boot-release" />
   <project path="external/bcc" name="platform/external/bcc" groups="pdk" revision="3ff779fbf46f4f835b6bb80b0d22c615992d864d" upstream="gki13-boot-release" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk" revision="858aff25aa5dbaf5cdde29498fcdda3860831854" upstream="gki13-boot-release" />
-  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" revision="9d8aa97af4aeea5b7641182c2b262f2334c4ae7e" upstream="gki13-boot-release" />
+  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" revision="66376cc974bee14a5d51e7c278734d5836996653" upstream="gki13-boot-release" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" revision="ccb6afd5293ee6fef59fcec1e523ae2bc5f231cd" upstream="gki13-boot-release" />
   <project path="external/bpftool" name="platform/external/bpftool" groups="pdk" revision="fdccb1066ee36f624fa30a77ee586b24293206ea" upstream="gki13-boot-release" />
   <project path="external/brotli" name="platform/external/brotli" groups="pdk" revision="2bfddaeba0134eb8079a9e173f95dee3bab4faf7" upstream="gki13-boot-release" />
@@ -138,7 +139,7 @@
   <project path="external/cbor-java" name="platform/external/cbor-java" groups="pdk" revision="13552bfde3e8461e1873c3feefabc676f3a704da" upstream="gki13-boot-release" />
   <project path="external/chromium-trace" name="platform/external/chromium-trace" groups="pdk" revision="79cb7505749d9b6788a5e5615f54675299692935" upstream="gki13-boot-release" />
   <project path="external/chromium-webview" name="platform/external/chromium-webview" groups="pdk" clone-depth="1" revision="0b7f53753136a4abb8460a285a970fff0aa9968c" upstream="gki13-boot-release" />
-  <project path="external/clang" name="platform/external/clang" groups="pdk" revision="b5cb9e59085268a171dfca009e88ca62c12d8e26" upstream="gki13-boot-release" />
+  <project path="external/clang" name="platform/external/clang" groups="pdk" revision="0e7a53a5c87757ea13880eb1424ffb48bcb73090" upstream="gki13-boot-release" />
   <project path="external/cldr" name="platform/external/cldr" groups="pdk" revision="2968a477a8fb0a387257a22bf4699b01d1952786" upstream="gki13-boot-release" />
   <project path="external/cn-cbor" name="platform/external/cn-cbor" groups="pdk" revision="6a0f6a5375b8cd9b495e91c11d21ed257ec9a905" upstream="gki13-boot-release" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" revision="c4b55a3176985b7f286984ab1972f9efbf25a5ac" upstream="gki13-boot-release" />
@@ -149,7 +150,7 @@
   <project path="external/cpuinfo" name="platform/external/cpuinfo" groups="pdk" revision="d87c4f03191d6d6641a0660bacb125d98a0133f5" upstream="gki13-boot-release" />
   <project path="external/crcalc" name="platform/external/crcalc" groups="pdk" revision="c34d4375c04ebda3c40402581518deae34c805e8" upstream="gki13-boot-release" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="pdk" revision="2a8a2d44c70472770d0b4349aae4c51087f89f8f" upstream="gki13-boot-release" />
-  <project path="external/crosvm" name="platform/external/crosvm" groups="pdk" revision="01dce65e200a02c8e69ad5399d00c8b0abdae9b9" upstream="gki13-boot-release" />
+  <project path="external/crosvm" name="platform/external/crosvm" groups="pdk" revision="707977622d0bd7a891870bd12d3935a429063ffc" upstream="gki13-boot-release" />
   <project path="external/curl" name="platform/external/curl" groups="pdk" revision="64e2c6b8844bd3a240da43b22d037c1eced64168" upstream="gki13-boot-release" />
   <project path="external/dagger2" name="platform/external/dagger2" groups="pdk" revision="7dbe381ae97a66db7813d6548634bc9d94be1006" upstream="gki13-boot-release" />
   <project path="external/deqp" name="platform/external/deqp" groups="pdk-fs" revision="384cb17cf14c8a04fe0ccef57fd8a4b24c8aba6f" upstream="gki13-boot-release" />
@@ -168,7 +169,7 @@
   <project path="external/drm_hwcomposer" name="platform/external/drm_hwcomposer" groups="drm_hwcomposer,pdk-fs" revision="db814160500b69f3de4c2ce6b158f159f4902ebf" upstream="gki13-boot-release" />
   <project path="external/dtc" name="platform/external/dtc" groups="pdk" revision="0b0b507acccf7009b48d63a412fcb6ac576aae10" upstream="gki13-boot-release" />
   <project path="external/dynamic_depth" name="platform/external/dynamic_depth" groups="pdk" revision="88e329e5413f30830789205b42d7a4ff78e39bae" upstream="gki13-boot-release" />
-  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" revision="8ae8e530e1f375653df757151c4a8a3a39cbd3db" upstream="gki13-boot-release" />
+  <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" revision="ba10a986cf00196fe48d8c500524bcc263e6a071" upstream="gki13-boot-release" />
   <project path="external/easymock" name="platform/external/easymock" groups="pdk" revision="9371ddc5aaf79e80c20ab29aa34552cdfc588cf7" upstream="gki13-boot-release" />
   <project path="external/eigen" name="platform/external/eigen" groups="pdk" revision="2670e0c686b0bf1cbc06611a1a35cbcf06d9c31d" upstream="gki13-boot-release" />
   <project path="external/elfutils" name="platform/external/elfutils" groups="pdk" revision="465986911c0eb7b74f0bea1d706c8e271875bd33" upstream="gki13-boot-release" />
@@ -199,7 +200,7 @@
   <project path="external/geojson-jackson" name="platform/external/geojson-jackson" groups="pdk" revision="27ec3d6c9ccd50c172fe29326a92d7da5e546248" upstream="gki13-boot-release" />
   <project path="external/geonames" name="platform/external/geonames" groups="pdk" revision="e88ec41079d84c7adb8e02da90015022cd08a8ad" upstream="gki13-boot-release" />
   <project path="external/gflags" name="platform/external/gflags" groups="pdk" revision="f932b1878644c2f2c74ca4b8978254099038c719" upstream="gki13-boot-release" />
-  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" groups="pdk" revision="03d1566f3c8712313fbc0ceffe90d0d1bcfdfdcb" upstream="gki13-boot-release" />
+  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" groups="pdk" revision="41bbc2c6665e05a0a8bd9ea7bc3b79fc42c2f5d5" upstream="gki13-boot-release" />
   <project path="external/giflib" name="platform/external/giflib" groups="pdk,qcom_msm8x26" revision="a353df2aa00b8600d2207e904d652fb15fcfc183" upstream="gki13-boot-release" />
   <project path="external/glide" name="platform/external/glide" groups="pdk" revision="f60a0e6511eea99a470354b657c1633fa4453906" upstream="gki13-boot-release" />
   <project path="external/go-cmp" name="platform/external/go-cmp" groups="pdk" revision="4772d3f0efc8b4b1537571570e1d3351846329e8" upstream="gki13-boot-release" />
@@ -226,7 +227,7 @@
   <project path="external/google-styleguide" name="platform/external/google-styleguide" groups="pdk" revision="b72dc1cc671e70b5cba6a5e72283a7705b90dee4" upstream="gki13-boot-release" />
   <project path="external/googletest" name="platform/external/googletest" groups="pdk" revision="d69c97edca33e0576928e5a403ec3c8c8e065047" upstream="gki13-boot-release" />
   <project path="external/gptfdisk" name="platform/external/gptfdisk" groups="pdk" revision="37cbc0cb970fe7b848dd8365f9456470cd581187" upstream="gki13-boot-release" />
-  <project path="external/grpc-grpc" name="platform/external/grpc-grpc" groups="pdk,tradefed" revision="e90068325c455052973b33405f559fa00bb6449c" upstream="gki13-boot-release" />
+  <project path="external/grpc-grpc" name="platform/external/grpc-grpc" groups="pdk,tradefed" revision="ffd587cc6f6e6dd14ef55a6d90f86311024e11c4" upstream="gki13-boot-release" />
   <project path="external/grpc-grpc-java" name="platform/external/grpc-grpc-java" groups="pdk,tradefed" revision="4cf4d90a2e6a3cc5825f4a9b2683c63f116f2157" upstream="gki13-boot-release" />
   <project path="external/guava" name="platform/external/guava" groups="pdk" revision="676bf7f696c9af926ec229ed21b3dd730c2ffc82" upstream="gki13-boot-release" />
   <project path="external/guice" name="platform/external/guice" groups="pdk" revision="b0b345db967f4f775a9f8c3fb5c4b03ea13b5349" upstream="gki13-boot-release" />
@@ -235,7 +236,7 @@
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk,qcom_msm8x26" revision="c4db41ef2f128888e49b5181c525b1622ca8232c" upstream="gki13-boot-release" />
   <project path="external/hyphenation-patterns" name="platform/external/hyphenation-patterns" groups="pdk" revision="a9c63f3801430bf6e5fe2c4c92aede3b4320e385" upstream="gki13-boot-release" />
   <project path="external/icing" name="platform/external/icing" groups="pdk" revision="6462b0884776a70905e249ecd92050489652539c" upstream="gki13-boot-release" />
-  <project path="external/icu" name="platform/external/icu" groups="pdk" revision="91e92e5d6d2da49dabdb1c6c30cc6ed8a2ca93c9" upstream="gki13-boot-release" />
+  <project path="external/icu" name="platform/external/icu" groups="pdk" revision="e1175464892369e65f3e77bf5bead09ecbad0d27" upstream="gki13-boot-release" />
   <project path="external/igt-gpu-tools" name="platform/external/igt-gpu-tools" groups="pdk" revision="667ea6836c925655ab7581509edebbdfcf3562c0" upstream="gki13-boot-release" />
   <project path="external/ImageMagick" name="platform/external/ImageMagick" groups="pdk" revision="194a2743597e3b5fb02190ba6661dd4e67fb5fc6" upstream="gki13-boot-release" />
   <project path="external/image_io" name="platform/external/image_io" groups="pdk" revision="1f3f4e9b4099f988d520ae9fc85fb125f4572dd8" upstream="gki13-boot-release" />
@@ -299,7 +300,7 @@
   <project path="external/libgav1" name="platform/external/libgav1" groups="pdk" revision="0871ebc3b9c8031be78d2ca1e1e06f94577f9209" upstream="gki13-boot-release" />
   <project path="external/libfuse" name="platform/external/libfuse" groups="pdk" revision="df1ba7dd65daee35a4fb8c441fb755b519568674" upstream="gki13-boot-release" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" revision="adddffd5e296d4ce5cad8dd5bcfab4c80f1e17af" upstream="gki13-boot-release" />
-  <project path="external/libhevc" name="platform/external/libhevc" groups="pdk" revision="a7353d3592db364b64a569b78c858ec07a4de3d5" upstream="gki13-boot-release" />
+  <project path="external/libhevc" name="platform/external/libhevc" groups="pdk" revision="2d8dedde9441c5c781cdb3fd616b93b665110d80" upstream="gki13-boot-release" />
   <project path="external/libiio" name="platform/external/libiio" groups="pdk" revision="be3617adc28b9127007a01fc81fdfe261e1aea47" upstream="gki13-boot-release" />
   <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="pdk" revision="da74b5ec6bff1b5fd9e52b3c334221e5a3371447" upstream="gki13-boot-release" />
   <project path="external/libkmsxx" name="platform/external/libkmsxx" groups="pdk" revision="9bebdd0ad5932d3e6f4304629e5cebdcea39ac04" upstream="gki13-boot-release" />
@@ -311,7 +312,7 @@
   <project path="external/libogg" name="platform/external/libogg" groups="pdk" revision="432034e7a42ceb5579b5d795c79bc68f6a2268b6" upstream="gki13-boot-release" />
   <project path="external/libopus" name="platform/external/libopus" groups="pdk" revision="e7c99a47aa76931fcb1625f4708aab81430c6dce" upstream="gki13-boot-release" />
   <project path="external/libpcap" name="platform/external/libpcap" groups="pdk" revision="cf8ada32b249b44aa4d6491adedfea78676bbe76" upstream="gki13-boot-release" />
-  <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="pdk" revision="dcb4df5d38f4adf3bf9509ec6022c01f4abb8927" upstream="gki13-boot-release" />
+  <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="pdk" revision="9895564284ca6141ce67ca9fa9a746ea42368cd6" upstream="gki13-boot-release" />
   <project path="external/libpng" name="platform/external/libpng" groups="pdk" revision="82710c6aa1a92da5e6364278f6067593533905b1" upstream="gki13-boot-release" />
   <project path="external/libprotobuf-mutator" name="platform/external/libprotobuf-mutator" groups="pdk" revision="22628ae9587aa1339b6d103aaca0aeea46707382" upstream="gki13-boot-release" />
   <project path="external/libsrtp2" name="platform/external/libsrtp2" groups="pdk" revision="63937cec5ce3a78a16deabc783886af01adc4bae" upstream="gki13-boot-release" />
@@ -333,7 +334,7 @@
   <project path="external/lmfit" name="platform/external/lmfit" groups="pdk" revision="25d0719fbfdee7fb7f499c35c54e96257ce38946" upstream="gki13-boot-release" />
   <project path="external/lottie" name="platform/external/lottie" groups="pdk" revision="404dd3d4b146ae9941a00930f82eb51a7121cfef" upstream="gki13-boot-release" />
   <project path="external/lua" name="platform/external/lua" groups="pdk" revision="a422082964784ce744d683ed03db3daa460c6da1" upstream="gki13-boot-release" />
-  <project path="external/ltp" name="platform/external/ltp" groups="vts,pdk" revision="b7f8a88803f3ea3de64cf602a00dc415fd0cf774" upstream="gki13-boot-release" />
+  <project path="external/ltp" name="platform/external/ltp" groups="vts,pdk" revision="5ad1a8c22a96d2579911e12ed257f54c039fc8fe" upstream="gki13-boot-release" />
   <project path="external/lz4" name="platform/external/lz4" groups="pdk" revision="d4811018feba29d0f18e48133fa0e73d161c41bc" upstream="gki13-boot-release" />
   <project path="external/lzma" name="platform/external/lzma" groups="pdk" revision="346b91ab2ac30445641a29ab02fc76baa40d4299" upstream="gki13-boot-release" />
   <project path="external/marisa-trie" name="platform/external/marisa-trie" groups="pdk" revision="5a80b296638299b394535c7909bb6958feee3c1a" upstream="gki13-boot-release" />
@@ -392,7 +393,7 @@
   <project path="external/parameter-framework" name="platform/external/parameter-framework" groups="pdk" revision="a37e314fdbc1f6ef6a947d4ca406a52464519bea" upstream="gki13-boot-release" />
   <project path="external/pcre" name="platform/external/pcre" groups="pdk" revision="cb6bab3be5bd689d61bc3dbd46cdf5ddb67ee55b" upstream="gki13-boot-release" />
   <project path="external/pdfium" name="platform/external/pdfium" groups="pdk" revision="83c2791d3a0b8bf0edb88e4b16b30eb25af218f4" upstream="gki13-boot-release" />
-  <project path="external/perfetto" name="platform/external/perfetto" groups="pdk" revision="2b529164c6a4f5998559d492598c17cc5884734f" upstream="gki13-boot-release" />
+  <project path="external/perfetto" name="platform/external/perfetto" groups="pdk" revision="97211acf597cda04a2b8b5bb21d3e9da2e0caf00" upstream="gki13-boot-release" />
   <project path="external/piex" name="platform/external/piex" groups="pdk" revision="64e7856f704663f8d701e3f8b7693b8eaa2258d0" upstream="gki13-boot-release" />
   <project path="external/pigweed" name="platform/external/pigweed" groups="pdk" revision="050b7cc0f7e419d59240ab939d5ebb3074b93c21" upstream="gki13-boot-release" />
   <project path="external/ply" name="platform/external/ply" groups="pdk" revision="be54bc627dd71baada1f45e15a12724acb2c3f60" upstream="gki13-boot-release" />
@@ -701,7 +702,7 @@
   <project path="external/strace" name="platform/external/strace" groups="pdk" revision="8d64a81c424da2a3ecf594f93be00579947a9baa" upstream="gki13-boot-release" />
   <project path="external/stressapptest" name="platform/external/stressapptest" groups="pdk" revision="0503d9edde1162c6b12a246cb09e6b90bce24d51" upstream="gki13-boot-release" />
   <project path="external/subsampling-scale-image-view" name="platform/external/subsampling-scale-image-view" groups="pdk" clone-depth="1" revision="4876bb1f3152333580387c74236ea60c501e1472" upstream="gki13-boot-release" />
-  <project path="external/swiftshader" name="platform/external/swiftshader" groups="pdk" revision="ead1c0f893e39ed7d5af60943a0c45dde1f1f0e6" upstream="gki13-boot-release" />
+  <project path="external/swiftshader" name="platform/external/swiftshader" groups="pdk" revision="127b26324eb2e52fbd3bdd48917bbc4caeb1f86c" upstream="gki13-boot-release" />
   <project path="external/tagsoup" name="platform/external/tagsoup" groups="pdk" revision="49d335c9032faeec602e0e8f5401caaf4a85a23f" upstream="gki13-boot-release" />
   <project path="external/tcpdump" name="platform/external/tcpdump" groups="pdk" revision="853bb1bce13ffd79c115ad0c34ffe40f41b9507a" upstream="gki13-boot-release" />
   <project path="external/tensorflow" name="platform/external/tensorflow" groups="pdk" revision="c767714b08348ee80506efbf209e657221d5cee9" upstream="gki13-boot-release" />
@@ -751,8 +752,8 @@
   <project path="external/zstd" name="platform/external/zstd" groups="pdk" revision="dfa8c831a5c18c4ede7fd0e9ca213eb036baa677" upstream="gki13-boot-release" />
   <project path="external/zucchini" name="platform/external/zucchini" groups="pdk" revision="049b66521abecf6023fd4c39680846c982cb54d1" upstream="gki13-boot-release" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" revision="c52e3ef5b428edbd4d4b2d51f67e673fe04ce09e" upstream="gki13-boot-release" />
-  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" revision="2e65fa4510c006081b759362403ea7948e0e9167" upstream="gki13-boot-release" />
-  <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs" revision="e367053429b8e3d5b7616f7d4ec7f5fb28213c72" upstream="gki13-boot-release" />
+  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" revision="8849d19c98744a2f64a19b05d15f694cfc12f310" upstream="gki13-boot-release" />
+  <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs" revision="1f3040a0bcd61b72fdb0bc91f0e63487ca9831aa" upstream="gki13-boot-release" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" revision="ea63b1e83ccafea74e786b4803e5f7afa97c6759" upstream="gki13-boot-release" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" revision="687e5cdf0191e9a88696a0d0dd44a1e1250348a6" upstream="gki13-boot-release" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" revision="f9aa7639dd966cc2bf176f265e393bd1b621c36f" upstream="gki13-boot-release" />
@@ -761,12 +762,12 @@
   <project path="frameworks/layoutlib" name="platform/frameworks/layoutlib" groups="pdk-cw-fs,pdk-fs" revision="b0a17aab857633a06484c59c8bd0967993384d93" upstream="gki13-boot-release" />
   <project path="frameworks/libs/systemui" name="platform/frameworks/libs/systemui" groups="pdk-cw-fs,pdk-fs" revision="6cc8ec5dac068f2038569c10cb25aca1e4ab4bd6" upstream="gki13-boot-release" />
   <project path="frameworks/libs/modules-utils" name="platform/frameworks/libs/modules-utils" groups="pdk-cw-fs,pdk-fs" revision="11a0e867771177faf8788f5f29523e138d46bad4" upstream="gki13-boot-release" />
-  <project path="frameworks/libs/net" name="platform/frameworks/libs/net" groups="pdk-cw-fs,pdk-fs" revision="20e6871858b8a278377ef176bc5109b885951369" upstream="gki13-boot-release" />
+  <project path="frameworks/libs/net" name="platform/frameworks/libs/net" groups="pdk-cw-fs,pdk-fs" revision="f2506aa69f791659d1fcb51ec327df930f41d65d" upstream="gki13-boot-release" />
   <project path="frameworks/libs/native_bridge_support" name="platform/frameworks/libs/native_bridge_support" groups="pdk" revision="21d2cabf89d440ef0517c49047d9e8c3d5c78f04" upstream="gki13-boot-release" />
   <project path="frameworks/libs/service_entitlement" name="platform/frameworks/libs/service_entitlement" groups="pdk" revision="b96b36c484ba431060f8852baa73a6928c83e6c1" upstream="gki13-boot-release" />
   <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs,pdk-fs" revision="396494022f7cae4639fab2d7c7202ed0746eebca" upstream="gki13-boot-release" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="pdk-cw-fs,pdk-fs" revision="8e5212d883b0b75e73e784119f0c053ad270f85f" upstream="gki13-boot-release" />
-  <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" revision="4b5b239fc5b1ca18604426cd3005809bfe905945" upstream="gki13-boot-release" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" revision="178e2d761fafb84e4ffba81872d13b5fbb1bf678" upstream="gki13-boot-release" />
   <project path="frameworks/opt/bitmap" name="platform/frameworks/opt/bitmap" groups="pdk-fs" revision="327367f5a963b9c1724d364560877b393d3a9e55" upstream="gki13-boot-release" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" groups="pdk-cw-fs,pdk-fs" revision="81e699d21a29d2fb5bafb6204de6811e182773d3" upstream="gki13-boot-release" />
   <project path="frameworks/opt/car/services" name="platform/frameworks/opt/car/services" groups="pdk-fs" revision="94203723e38183870aa9c0a8da7f2caac7022221" upstream="gki13-boot-release" />
@@ -800,7 +801,7 @@
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk" revision="947b014942de10aba7f5e6943ac4420e27d78c30" upstream="gki13-boot-release" />
   <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="generic_fs,pixel" revision="50bf70298cdbb76d40fccb47960e3b3a64986d86" upstream="gki13-boot-release" />
   <project path="hardware/google/pixel-sepolicy" name="platform/hardware/google/pixel-sepolicy" groups="generic_fs,pixel" revision="9835006c63d7981aea7e203506ef7963200d66dc" upstream="gki13-boot-release" />
-  <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk" revision="c6f37c26231c8eacfcd345bc2c85b2bb4fd14de7" upstream="gki13-boot-release" />
+  <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk" revision="9e0167c8f18abe2ae0389a6a42cf9a37ea83b93e" upstream="gki13-boot-release" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk" revision="7d532bcefd6c7000211b09ce3d8df976fdd1bfbd" upstream="gki13-boot-release" />
   <project path="hardware/knowles/athletico/sound_trigger_hal" name="platform/hardware/knowles/athletico/sound_trigger_hal" groups="coral,generic_fs" revision="2c99c916421b3690f78d82f8e89b6327924a621c" upstream="gki13-boot-release" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" revision="1670b9aa5c947a89241fb197eb27da3dd4f3d1c4" upstream="gki13-boot-release" />
@@ -885,7 +886,7 @@
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" name="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" groups="pdk" clone-depth="1" revision="9c7a4d24dcf665af6475117aa79f0354f875b792" upstream="gki13-boot-release" />
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" name="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" groups="pdk" clone-depth="1" revision="69b1d674729591c17004d6b7dcb84850c24f318d" upstream="gki13-boot-release" />
   <project path="kernel/tests" name="kernel/tests" groups="vts,pdk" revision="679bb7be72215ea8623f3cc7c934cd7bcc87bd52" upstream="gki13-boot-release" />
-  <project path="libcore" name="platform/libcore" groups="pdk" revision="edf2a1f4b2e4db7ef9e7feb2d36cefc496b8d83f" upstream="gki13-boot-release" />
+  <project path="libcore" name="platform/libcore" groups="pdk" revision="ddb5f8a9c5e707fe885994c7451269e877a68c79" upstream="gki13-boot-release" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" revision="66d95a547c0b4284759b599343428ed9a0cd6799" upstream="gki13-boot-release" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" revision="e1219058e02155c112ce772b4918103e672c7255" upstream="gki13-boot-release" />
   <project path="packages/apps/Browser2" name="platform/packages/apps/Browser2" groups="pdk-fs" revision="d8c285e99dd95e27f2ea028545af38163cec78b3" upstream="gki13-boot-release" />
@@ -939,7 +940,7 @@
   <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" groups="pdk-cw-fs,pdk-fs" revision="b55e80f06644a0a1ce627004479ff9f775e7d1bd" upstream="gki13-boot-release" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" groups="pdk-fs" revision="f163f8f78f0005a669157110186b1c89bc4b5f16" upstream="gki13-boot-release" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" groups="pdk-fs" revision="114c9e019b1b381dd3a93cb4847dae9b57fe3538" upstream="gki13-boot-release" />
-  <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" groups="pdk-fs" revision="ffb6b1f2bf9b886d55ab3890dc5cb349ab8b80c5" upstream="gki13-boot-release" />
+  <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" groups="pdk-fs" revision="a1c60683746266a2055fc461c89a1bcf58bccd22" upstream="gki13-boot-release" />
   <project path="packages/apps/QuickAccessWallet" name="platform/packages/apps/QuickAccessWallet" groups="pdk-fs" revision="c9f9c87c8b486f8086be53613c76b6f3c323fad3" upstream="gki13-boot-release" />
   <project path="packages/apps/RemoteProvisioner" name="platform/packages/apps/RemoteProvisioner" groups="pdk-fs" revision="fc25b8249fe50f1fb970841b1527eac0de038868" upstream="gki13-boot-release" />
   <project path="packages/apps/SafetyRegulatoryInfo" name="platform/packages/apps/SafetyRegulatoryInfo" groups="pdk-fs" revision="da7a91c944906a37c34080a634415dd54b89deff" upstream="gki13-boot-release" />
@@ -961,26 +962,26 @@
   <project path="packages/apps/WallpaperPicker2" name="platform/packages/apps/WallpaperPicker2" groups="pdk-fs" revision="37090e3054229675adbabb3344a0a4c0c8119dc8" upstream="gki13-boot-release" />
   <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" groups="pdk-fs" revision="68e5986b9ff9bcc249540af48bbfa45ca42e8a3d" upstream="gki13-boot-release" />
   <project path="packages/inputmethods/LeanbackIME" name="platform/packages/inputmethods/LeanbackIME" groups="pdk-fs" revision="6e52094a6496c663161e9539e3bb6899bda67190" upstream="gki13-boot-release" />
-  <project path="packages/modules/adb" name="platform/packages/modules/adb" groups="pdk" revision="5719e0474580e22614471807bae8e3f6f8c273fc" upstream="gki13-boot-release" />
+  <project path="packages/modules/adb" name="platform/packages/modules/adb" groups="pdk" revision="7075a9eca6ca136fbb02f94b5715e86398d9122c" upstream="gki13-boot-release" />
   <project path="packages/modules/AppSearch" name="platform/packages/modules/AppSearch" groups="pdk" revision="83cd1f67fb1ed4071d1c47bc00604650e0240a12" upstream="gki13-boot-release" />
   <project path="packages/modules/ArtPrebuilt" name="platform/packages/modules/ArtPrebuilt" groups="pdk" clone-depth="1" revision="0adb7c243974f27c9d34012751113f8e7e0f7528" upstream="gki13-boot-release" />
-  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth" groups="pdk" revision="588901cad499fb934051248139cab6cb0538a327" upstream="gki13-boot-release" />
+  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth" groups="pdk" revision="f10051181fc91fb4dd76cb43a4e69a89ba91cc11" upstream="gki13-boot-release" />
   <project path="packages/modules/BootPrebuilt/5.4/arm64" name="platform/packages/modules/BootPrebuilt/5.4/arm64" groups="pdk" clone-depth="1" revision="8b790581dd3b7bf6c8d7c8fafb31281ad7396008" upstream="gki13-boot-release" />
   <project path="packages/modules/BootPrebuilt/5.10/arm64" name="platform/packages/modules/BootPrebuilt/5.10/arm64" groups="pdk" clone-depth="1" revision="95cfa206c00dd5fcc72991f80ddfe383e76095ad" upstream="gki13-boot-release" />
   <project path="packages/modules/CaptivePortalLogin" name="platform/packages/modules/CaptivePortalLogin" groups="pdk-cw-fs,pdk-fs" revision="12881ff56c94a3a772340893741f9ceaa70a8e68" upstream="gki13-boot-release" />
   <project path="packages/modules/CellBroadcastService" name="platform/packages/modules/CellBroadcastService" groups="pdk" revision="ff36130b7e45242fc04e96fab4284ea40c6ba38c" upstream="gki13-boot-release" />
   <project path="packages/modules/common" name="platform/packages/modules/common" groups="pdk-cw-fs,pdk-fs" revision="73cc24f15e2d370b7a0edbb217a77318b8eafeb9" upstream="gki13-boot-release" />
-  <project path="packages/modules/Connectivity" name="platform/packages/modules/Connectivity" groups="pdk-cw-fs,pdk-fs" revision="8529b7b482de6968b4143a286c58098a8588ea13" upstream="gki13-boot-release" />
+  <project path="packages/modules/Connectivity" name="platform/packages/modules/Connectivity" groups="pdk-cw-fs,pdk-fs" revision="8fa5fb84639c9b5f6e385c79715e7f535cc13bbc" upstream="gki13-boot-release" />
   <project path="packages/modules/Cronet" name="platform/packages/modules/Cronet" groups="pdk-cw-fs,pdk-fs" revision="4a550e52206d96a154af7440fca97c2d4eee1f75" upstream="gki13-boot-release" />
   <project path="packages/modules/ExtServices" name="platform/packages/modules/ExtServices" groups="pdk-cw-fs,pdk-fs" revision="da45cdd1bbb0c00dc4698fd2cf485204f847a04b" upstream="gki13-boot-release" />
   <project path="packages/modules/GeoTZ" name="platform/packages/modules/GeoTZ" groups="pdk-cw-fs,pdk-fs" revision="ca6e9342531bb383535dcfcf0ff444a04bc6305d" upstream="gki13-boot-release" />
   <project path="packages/modules/Gki" name="platform/packages/modules/Gki" groups="pdk-cw-fs,pdk-fs" revision="3a779e160a10cf0467269e4977e23562203abc94" upstream="gki13-boot-release" />
   <project path="packages/modules/IPsec" name="platform/packages/modules/IPsec" groups="pdk" revision="0c0ef95f349579398c1dcde8deac5866900805ea" upstream="gki13-boot-release" />
-  <project path="packages/modules/DnsResolver" name="platform/packages/modules/DnsResolver" groups="pdk-cw-fs,pdk-fs" revision="662c6fc9bebd572da43246cdfbd333a7713f9aa8" upstream="gki13-boot-release" />
+  <project path="packages/modules/DnsResolver" name="platform/packages/modules/DnsResolver" groups="pdk-cw-fs,pdk-fs" revision="8fd66a4fdfcbd2fcc25e0353c8dbff3578651641" upstream="gki13-boot-release" />
   <project path="packages/modules/Media" name="platform/packages/modules/Media" groups="pdk" revision="e8164b13d9adf10fe7109875218a937d8c089b34" upstream="gki13-boot-release" />
   <project path="packages/modules/ModuleMetadata" name="platform/packages/modules/ModuleMetadata" groups="pdk" revision="fa0653d07720c05f1075a7c338cf9836736ad206" upstream="gki13-boot-release" />
   <project path="packages/modules/NetworkPermissionConfig" name="platform/packages/modules/NetworkPermissionConfig" groups="pdk-cw-fs,pdk-fs" revision="90ae0075767d2da18b43f57b0487735c3aeaa290" upstream="gki13-boot-release" />
-  <project path="packages/modules/NetworkStack" name="platform/packages/modules/NetworkStack" groups="pdk-cw-fs,pdk-fs" revision="e77a69c002289171108af46377dc3c872b1a54f5" upstream="gki13-boot-release" />
+  <project path="packages/modules/NetworkStack" name="platform/packages/modules/NetworkStack" groups="pdk-cw-fs,pdk-fs" revision="755bb26c20affbd6627487240edbdd82f7809156" upstream="gki13-boot-release" />
   <project path="packages/modules/NeuralNetworks" name="platform/packages/modules/NeuralNetworks" groups="pdk-cw-fs,pdk-fs" revision="2507f9cf69b349877769b9b6a3c71ea32a66e875" upstream="gki13-boot-release" />
   <project path="packages/modules/Permission" name="platform/packages/modules/Permission" groups="pdk-cw-fs,pdk-fs" revision="1e231affed0f0731b1c023133ab642fbad16cf77" upstream="gki13-boot-release" />
   <project path="packages/modules/RuntimeI18n" name="platform/packages/modules/RuntimeI18n" groups="pdk-cw-fs,pdk-fs" revision="296fe05c20e09e5aebc9b6a38536bf15c9c81b27" upstream="gki13-boot-release" />
@@ -990,7 +991,7 @@
   <project path="packages/modules/StatsD" name="platform/packages/modules/StatsD" groups="pdk-cw-fs,pdk-fs" revision="c1e981038fd30173b18c47d2e21a8339b5624861" upstream="gki13-boot-release" />
   <project path="packages/modules/TestModule" name="platform/packages/modules/TestModule" revision="3523a2f0f9b12d4e60374af63aae14f75a2b4c10" upstream="gki13-boot-release" />
   <project path="packages/modules/Uwb" name="platform/packages/modules/Uwb" groups="pdk-cw-fs,pdk-fs" revision="7cbc2d0c0a0ef1a6b1353c1cb326a03ad504ced9" upstream="gki13-boot-release" />
-  <project path="packages/modules/Virtualization" name="platform/packages/modules/Virtualization" groups="pdk" revision="3df929297779039d934610c1ae70eb1e29649f6a" upstream="gki13-boot-release" />
+  <project path="packages/modules/Virtualization" name="platform/packages/modules/Virtualization" groups="pdk" revision="b7b4f80603b7c558e88e1c6b472873501e6da6a7" upstream="gki13-boot-release" />
   <project path="packages/modules/vndk" name="platform/packages/modules/vndk" groups="pdk-cw-fs,pdk-fs" revision="04bea7b988690ed6b792b69957dc9c1fa0769b33" upstream="gki13-boot-release" />
   <project path="packages/modules/Wifi" name="platform/packages/modules/Wifi" groups="pdk-cw-fs,pdk-fs" revision="4ad12e52b8c16a203d64e466401ee8a228b60540" upstream="gki13-boot-release" />
   <project path="packages/providers/BlockedNumberProvider" name="platform/packages/providers/BlockedNumberProvider" groups="pdk-fs" revision="cd8e672b2b3064c573bfd320db0efb5e153fc01d" upstream="gki13-boot-release" />
@@ -1009,7 +1010,7 @@
   <project path="packages/services/BuiltInPrintService" name="platform/packages/services/BuiltInPrintService" groups="pdk-cw-fs,pdk-fs" revision="43316289afd8da250f73622c8b69ab563ed203d1" upstream="gki13-boot-release" />
   <project path="packages/services/AlternativeNetworkAccess" name="platform/packages/services/AlternativeNetworkAccess" groups="pdk-cw-fs,pdk-fs" revision="715b948e8d3a207e93681d5f5cf7a7a8ae34e8d8" upstream="gki13-boot-release" />
   <project path="packages/services/Car" name="platform/packages/services/Car" groups="pdk-cw-fs,pdk-fs" revision="4ef11762f71e1ae26ce4e6c397deba5c606cb944" upstream="gki13-boot-release" />
-  <project path="packages/services/Iwlan" name="platform/packages/services/Iwlan" groups="pdk-cw-fs,pdk-fs" revision="2e8fef91ff442324aea03a3f9bac4522f16b5dc3" upstream="gki13-boot-release" />
+  <project path="packages/services/Iwlan" name="platform/packages/services/Iwlan" groups="pdk-cw-fs,pdk-fs" revision="dc7e699932ff7b57f6bcd50ab7c9847497f05e0e" upstream="gki13-boot-release" />
   <project path="packages/services/Mms" name="platform/packages/services/Mms" groups="pdk-cw-fs,pdk-fs" revision="7fa338d6c3c6f88804c8a1a685c4a032d47e60f4" upstream="gki13-boot-release" />
   <project path="packages/services/Mtp" name="platform/packages/services/Mtp" groups="pdk-cw-fs,pdk-fs" revision="df97aba5b3b2e5adb5f5310f77f61776aaecc625" upstream="gki13-boot-release" />
   <project path="packages/services/Telecomm" name="platform/packages/services/Telecomm" groups="pdk-cw-fs,pdk-fs" revision="ba9307f0e6293e8f5061fa8526619bf9f02f5d0c" upstream="gki13-boot-release" />
@@ -1017,7 +1018,7 @@
   <project path="packages/wallpapers/ImageWallpaper" name="platform/packages/wallpapers/ImageWallpaper" groups="pdk-fs" revision="0a1680f07b09889c7642a775b6bb69d1b27f9b09" upstream="gki13-boot-release" />
   <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" groups="pdk-fs" revision="3c499891f6e95e93ffa36b31c50416897aed8297" upstream="gki13-boot-release" />
   <project path="pdk" name="platform/pdk" groups="pdk" revision="d7f014e72dfc686a61fb7f99737570a675bea28b" upstream="gki13-boot-release" />
-  <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts" revision="83417408f0da8896181cf6f27c37642fa61b03b8" upstream="gki13-boot-release" />
+  <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts" revision="9641930c1dbd29c188769b29fca6fb2ac5a6e5ad" upstream="gki13-boot-release" />
   <project path="prebuilts/abi-dumps/ndk" name="platform/prebuilts/abi-dumps/ndk" groups="pdk-fs" clone-depth="1" revision="0456c07f759b62e326b4a4b2150288ab1d981857" upstream="gki13-boot-release" />
   <project path="prebuilts/abi-dumps/platform" name="platform/prebuilts/abi-dumps/platform" groups="pdk-fs" clone-depth="1" revision="7beb79fc899b79e0937249cb30d5a4c768d6ee5b" upstream="gki13-boot-release" />
   <project path="prebuilts/abi-dumps/vndk" name="platform/prebuilts/abi-dumps/vndk" groups="pdk-fs" clone-depth="1" revision="869c002c18b73a8db749baf313bc8d7207042cf7" upstream="gki13-boot-release" />
@@ -1026,14 +1027,14 @@
   <project path="prebuilts/bazel/common" name="platform/prebuilts/bazel/common" groups="pdk" clone-depth="1" revision="e47716ede6250356d26adcaf6905934b5b1732e2" upstream="gki13-boot-release" />
   <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" groups="darwin,pdk" clone-depth="1" revision="797f59284c6addfd5cb832b33bd3ff7966ff240b" upstream="gki13-boot-release" />
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" groups="linux,pdk" clone-depth="1" revision="d58c2cc9bf707fa962c38c11e83664b24cd93be1" upstream="gki13-boot-release" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="pdk" clone-depth="1" revision="06c1a3cc86317c0e38ea175c2dbfdb83cffbecd1" upstream="gki13-boot-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="pdk" clone-depth="1" revision="d77943d2030c356055269f9f8411c34398ba566a" upstream="gki13-boot-release" />
   <project path="prebuilts/bundletool" name="platform/prebuilts/bundletool" groups="pdk" clone-depth="1" revision="0c47207ded72b58c05416c9d04ceb18983b836dc" upstream="gki13-boot-release" />
   <project path="prebuilts/checkcolor" name="platform/prebuilts/checkcolor" groups="pdk" clone-depth="1" revision="ef273f5913cf26541c8b26fd2d55a0b39f08bb72" upstream="gki13-boot-release" />
   <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk" clone-depth="1" revision="9eeb742f1a381638d5382a23f6c2c0343365bf8a" upstream="gki13-boot-release" />
   <project path="prebuilts/clang-tools" name="platform/prebuilts/clang-tools" groups="pdk" clone-depth="1" revision="094369c1b990ae9447224d8e7d945a20d229912c" upstream="gki13-boot-release" />
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" groups="pdk,darwin" clone-depth="1" revision="9d4696e61e460eb4d8638d010ee81f5c2a51cb5c" upstream="gki13-boot-release" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" clone-depth="1" revision="c3a5b3e281bc993bef688c798533ffa81765d823" upstream="gki13-boot-release" />
-  <project path="prebuilts/cmdline-tools" name="platform/prebuilts/cmdline-tools" groups="pdk-fs" clone-depth="1" revision="6e303e663b5e2ed66d20c7c8c838c25c72f66c3d" upstream="gki13-boot-release" />
+  <project path="prebuilts/cmdline-tools" name="platform/prebuilts/cmdline-tools" groups="pdk-fs" clone-depth="1" revision="36513beb4abe13d3b8a5e148f61967c84fc7e7ae" upstream="gki13-boot-release" />
   <project path="prebuilts/devtools" name="platform/prebuilts/devtools" groups="pdk-fs" clone-depth="1" revision="7880027af1a44ffe1c2b4ef8c874ff9c3a414b69" upstream="gki13-boot-release" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="pdk,linux" clone-depth="1" revision="d1bad58a50a684386be8dd27ac97b15d8e12dba5" upstream="gki13-boot-release" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" groups="pdk-fs" clone-depth="1" revision="e419cdf0f1c2108c213438c84546c5d5e79a9aff" upstream="gki13-boot-release" />
@@ -1047,7 +1048,7 @@
   <project path="prebuilts/manifest-merger" name="platform/prebuilts/manifest-merger" groups="pdk" clone-depth="1" revision="b96c5749be96372c63d72f884d288aec8331c419" upstream="gki13-boot-release" />
   <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" groups="pdk-cw-fs,pdk-fs" clone-depth="1" revision="1057296cf7d4af15eb504ffdf6a1791aca1dce7b" upstream="gki13-boot-release" />
   <project path="prebuilts/maven_repo/bumptech" name="platform/prebuilts/maven_repo/bumptech" groups="pdk-cw-fs,pdk-fs" clone-depth="1" revision="5b3ce2355eabbd9e2ce201050abe067f257d6b60" upstream="gki13-boot-release" />
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" clone-depth="1" revision="24841da414f7f62318182a6c25534bebb9bd87e3" upstream="gki13-boot-release" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" clone-depth="1" revision="d44336dc3babd26cd9dfcd05ce208511f10112a1" upstream="gki13-boot-release" />
   <project path="prebuilts/module_sdk/art" name="platform/prebuilts/module_sdk/art" groups="pdk" clone-depth="1" revision="10c16462b1bfc4212d6b17aefe06e53f08890cf5" upstream="gki13-boot-release" />
   <project path="prebuilts/module_sdk/Bluetooth" name="platform/prebuilts/module_sdk/Bluetooth" groups="pdk" clone-depth="1" revision="0dea0ed75f6fcf9a6c81c1dbca66daf4a9de1051" upstream="gki13-boot-release" />
   <project path="prebuilts/module_sdk/conscrypt" name="platform/prebuilts/module_sdk/conscrypt" groups="pdk" clone-depth="1" revision="12989d4d23d0f909d716835a5e583abd66cfe780" upstream="gki13-boot-release" />
@@ -1067,7 +1068,7 @@
   <project path="prebuilts/runtime" name="platform/prebuilts/runtime" groups="pdk" clone-depth="1" revision="7365dda9ebcf61ac89363dc34d2c8de654784972" upstream="gki13-boot-release" />
   <project path="prebuilts/rust" name="platform/prebuilts/rust" groups="pdk" clone-depth="1" revision="9a6a99b411ba934d5d6397be0a98aabae5d36f33" upstream="gki13-boot-release" />
   <project path="prebuilts/r8" name="platform/prebuilts/r8" groups="pdk" clone-depth="1" revision="6d637608582f5bd6c961547168055fad85ccce1c" upstream="gki13-boot-release" />
-  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" revision="687dcf613179c0507edc7baf5f1e9bb89c615ffc" upstream="gki13-boot-release" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" revision="e6403b453328550038c2b4b5d61d275a4ae7bf12" upstream="gki13-boot-release" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" revision="e6b35b1e4b79132ea7f3baa22765e6177d8bf4c8" upstream="gki13-boot-release" />
   <project path="prebuilts/vndk/v28" name="platform/prebuilts/vndk/v28" groups="pdk" clone-depth="1" revision="caef62d1a919dd367d116e461886d553a54a5a08" upstream="gki13-boot-release" />
   <project path="prebuilts/vndk/v29" name="platform/prebuilts/vndk/v29" groups="pdk" clone-depth="1" revision="b2ff2f1bbfdf6099e657101caf47295249069d6f" upstream="gki13-boot-release" />
@@ -1075,17 +1076,17 @@
   <project path="prebuilts/vndk/v31" name="platform/prebuilts/vndk/v31" groups="pdk" clone-depth="1" revision="7a00166c8e3d5c6924978e889674e5430b64ea6f" upstream="gki13-boot-release" />
   <project path="prebuilts/vndk/v32" name="platform/prebuilts/vndk/v32" groups="pdk" clone-depth="1" revision="9dd31a29e7391ee454d8c6040056c5cbb37a06c8" upstream="gki13-boot-release" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" revision="9e771495f987c414a7dba1c24e9298ea1aa9e82b" upstream="gki13-boot-release" />
-  <project path="system/apex" name="platform/system/apex" groups="pdk" revision="fe25061b740b14e21afc5a2e13f2bfddacad86a4" upstream="gki13-boot-release" />
+  <project path="system/apex" name="platform/system/apex" groups="pdk" revision="209d1fa86f15ffa1f487a0d680c9ba042a1b227a" upstream="gki13-boot-release" />
   <project path="system/bpf" name="platform/system/bpf" groups="pdk" revision="5f0cb5063e82302b65ebcd70ab0114cfb79b6edd" upstream="gki13-boot-release" />
   <project path="system/bpfprogs" name="platform/system/bpfprogs" groups="pdk" revision="af0fcda6a3cc94bda497a8e2b2b787a52a7027df" upstream="gki13-boot-release" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" revision="4df754fb693937fbe399cb7d3df3c5ac6e5b9b14" upstream="gki13-boot-release" />
-  <project path="system/chre" name="platform/system/chre" groups="pdk" revision="7b4683861d7a553095c19fa13e0e4ea4aa73fbdf" upstream="gki13-boot-release" />
+  <project path="system/chre" name="platform/system/chre" groups="pdk" revision="f5fcc9bbe54a5821158568b17dfef70d4a7a5f82" upstream="gki13-boot-release" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" revision="7500fb17804e39a7356e361903555c581ca42849" upstream="gki13-boot-release" />
-  <project path="system/core" name="platform/system/core" groups="pdk" revision="74b4a7d74d22d16b09c7700e5411738d8eaeb47f" upstream="gki13-boot-release" />
+  <project path="system/core" name="platform/system/core" groups="pdk" revision="4895d85e986c019acfb40c0e45334b544c299abb" upstream="gki13-boot-release" />
   <project path="system/dmesgd" name="platform/system/dmesgd" groups="pdk" revision="64ed537dbf929d96b9fbb868eadbdd8bf97ecee1" upstream="gki13-boot-release" />
   <project path="system/extras" name="platform/system/extras" groups="pdk" revision="09180dc235b3d26853f7c356a10e7b9694b8ea61" upstream="gki13-boot-release" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" revision="fde70183b53fcf19c04f5f81c5cf36a91d6ddc83" upstream="gki13-boot-release" />
-  <project path="system/gsid" name="platform/system/gsid" groups="pdk" revision="97dd1aba6dcdabc6520e15205dc60ba86460ae30" upstream="gki13-boot-release" />
+  <project path="system/gsid" name="platform/system/gsid" groups="pdk" revision="65289efc717d5acba085cd949d371294f016330c" upstream="gki13-boot-release" />
   <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" groups="pdk" revision="6e1ffb3b29791a611270e5372b6ca4ae77500ceb" upstream="gki13-boot-release" />
   <project path="system/hwservicemanager" name="platform/system/hwservicemanager" groups="pdk" revision="83e98a16a46cc2ce5f1b5022cea46dc41bc574d2" upstream="gki13-boot-release" />
   <project path="system/incremental_delivery" name="platform/system/incremental_delivery" groups="pdk" revision="b0bfe745d17a9daae70a9705177323f48b18cffa" upstream="gki13-boot-release" />
@@ -1093,7 +1094,7 @@
   <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" revision="a62067f4fa54e8c699a29f56f4a1da39a5063117" upstream="gki13-boot-release" />
   <project path="system/keymint" name="platform/system/keymint" groups="pdk" revision="38709845d809760ac8a64c3b2aebfd2ed448cdc4" upstream="gki13-boot-release" />
   <project path="system/libartpalette" name="platform/system/libartpalette" groups="pdk" revision="f1b50a8429ef0e5e02adeeb0673b3ed874731f86" upstream="gki13-boot-release" />
-  <project path="system/libbase" name="platform/system/libbase" groups="pdk" revision="9cd7baca5b54fcfc260d236a3858166933e6a58b" upstream="gki13-boot-release" />
+  <project path="system/libbase" name="platform/system/libbase" groups="pdk" revision="c3cbfdd7d00beffad7ac9e2ff5f3516e419cbcef" upstream="gki13-boot-release" />
   <project path="system/libcppbor" name="platform/system/libcppbor" groups="pdk" revision="073b445ed3d124e519e7a15c15d55453106cf02a" upstream="gki13-boot-release" />
   <project path="system/libfmq" name="platform/system/libfmq" groups="pdk" revision="b499730737cf2e64b1f2c1d999a088214f15668b" upstream="gki13-boot-release" />
   <project path="system/libhidl" name="platform/system/libhidl" groups="pdk" revision="1b4b4f74dee550065b93b62e4b7a78ea3d9fd821" upstream="gki13-boot-release" />
@@ -1109,31 +1110,31 @@
   <project path="system/media" name="platform/system/media" groups="pdk" revision="9f2db29405a161f43458d3d0a3e5ef42d5874b5b" upstream="gki13-boot-release" />
   <project path="system/memory/libion" name="platform/system/memory/libion" groups="pdk" revision="2f2e2dee06d660f03a6c76abf17c1a0185b4c2a2" upstream="gki13-boot-release" />
   <project path="system/memory/libdmabufheap" name="platform/system/memory/libdmabufheap" groups="pdk" revision="3250378d5b1686ece6ffb8fd92e29de950f13452" upstream="gki13-boot-release" />
-  <project path="system/memory/libmeminfo" name="platform/system/memory/libmeminfo" groups="pdk" revision="64ac1c7478ab2b268da3de172be453dee3c30df2" upstream="gki13-boot-release" />
+  <project path="system/memory/libmeminfo" name="platform/system/memory/libmeminfo" groups="pdk" revision="4c1de27ae31be08a851afd45da8919fc3a8b68d9" upstream="gki13-boot-release" />
   <project path="system/memory/libmemtrack" name="platform/system/memory/libmemtrack" groups="pdk" revision="e3784a2c3b7492512897db70c0e5e0d37b9a4e37" upstream="gki13-boot-release" />
   <project path="system/memory/libmemunreachable" name="platform/system/memory/libmemunreachable" groups="pdk" revision="6e62febc35893003a39071cc0213333189a4769e" upstream="gki13-boot-release" />
   <project path="system/memory/lmkd" name="platform/system/memory/lmkd" groups="pdk" revision="fc84f6301284c718f428c513ed4510e86f17bfd5" upstream="gki13-boot-release" />
   <project path="system/netd" name="platform/system/netd" groups="pdk" revision="aad287033b4c2b00cf99006fd9c29a553a65f33f" upstream="gki13-boot-release" />
   <project path="system/nfc" name="platform/system/nfc" groups="pdk" revision="16d4d4c6a9cafbd3a5e8c2d8bbf3c5d96fa4edd5" upstream="gki13-boot-release" />
   <project path="system/nvram" name="platform/system/nvram" groups="pdk" revision="89bf8de9e99467afacb6bef1d26d44bb53373e48" upstream="gki13-boot-release" />
-  <project path="system/security" name="platform/system/security" groups="pdk" revision="130edbf45a526b14ef3d7e7b1a0ae88bad2c3265" upstream="gki13-boot-release" />
-  <project path="system/sepolicy" name="platform/system/sepolicy" groups="pdk" revision="37c958870ab36401ed33444abb27e44bf8ddf927" upstream="gki13-boot-release" />
+  <project path="system/security" name="platform/system/security" groups="pdk" revision="319e63113637333285f4e69b573494200c004bfb" upstream="gki13-boot-release" />
+  <project path="system/sepolicy" name="platform/system/sepolicy" groups="pdk" revision="7abb6ba8b40b259ff22d81bc4153caeabbf73d22" upstream="gki13-boot-release" />
   <project path="system/server_configurable_flags" name="platform/system/server_configurable_flags" groups="pdk" revision="ce966b6df33d25ef3832c7bf5356854e036ecfb6" upstream="gki13-boot-release" />
   <project path="system/teeui" name="platform/system/teeui" groups="pdk" revision="2663cab240bb88d51e76ef728f06768fe5f3c745" upstream="gki13-boot-release" />
   <project path="system/testing/gtest_extras" name="platform/system/testing/gtest_extras" groups="pdk" revision="9d74b6de996856e9412a94f2e39eca30b2926696" upstream="gki13-boot-release" />
   <project path="system/timezone" name="platform/system/timezone" groups="pdk" revision="761637f44e26663dbfbe87a71b730ae434910083" upstream="gki13-boot-release" />
-  <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk" revision="7aa53fca73496a92f44a379e01511ffdd434c360" upstream="gki13-boot-release" />
+  <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk" revision="e54a92aa6a22a23f174c557578b30bb713db048c" upstream="gki13-boot-release" />
   <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="pdk" revision="9cb57db9269438a07fc500c2eabb2509ca4f0b0f" upstream="gki13-boot-release" />
   <project path="system/tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="pdk" revision="2f2dc5cfa37264376c266c05112a4b823c84c19d" upstream="gki13-boot-release" />
   <project path="system/tools/sysprop" name="platform/system/tools/sysprop" groups="pdk" revision="585ad4f65556a2447568c49a5dd023c9b14ee36a" upstream="gki13-boot-release" />
   <project path="system/tools/xsdc" name="platform/system/tools/xsdc" groups="pdk" revision="46bd39b92e1e0b56a5e9b98f0094cb0e75965c0b" upstream="gki13-boot-release" />
   <project path="system/unwinding" name="platform/system/unwinding" groups="pdk" revision="f6f374c72559331979bd79b3b800abc576fc43f4" upstream="gki13-boot-release" />
-  <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" revision="622dcac0e94c440489c93c08640e01cb40afb1da" upstream="gki13-boot-release" />
+  <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" revision="fc01e7fb90606647e8ae25ea9740ef0e03a9a7d4" upstream="gki13-boot-release" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" revision="4fe934b8333d33b3e1f3b3a4688ad621366733db" upstream="gki13-boot-release" />
   <project path="test/framework" name="platform/test/framework" groups="vts,projectarch,pdk" revision="a797f2f798a2488c68f9569c0fde756125401b0c" upstream="gki13-boot-release" />
   <project path="test/mlts/benchmark" name="platform/test/mlts/benchmark" groups="pdk" revision="19ba99baf04ad0fb864eb5a9f879937bff328380" upstream="gki13-boot-release" />
   <project path="test/mlts/models" name="platform/test/mlts/models" groups="pdk" revision="3396f6ad7744e4987767151cb5e751bfa1677cf0" upstream="gki13-boot-release" />
-  <project path="test/app_compat/csuite" name="platform/test/app_compat/csuite" groups="pdk" revision="ac0e03c64cd1c8d21080eb053ee180b869c21aaa" upstream="gki13-boot-release" />
+  <project path="test/app_compat/csuite" name="platform/test/app_compat/csuite" groups="pdk" revision="363e7fe397d16bad22ebb919e4591ef41b979ab2" upstream="gki13-boot-release" />
   <project path="test/cts-root" name="platform/test/cts-root" revision="d8ca488ad5c2238f01b0107e70702ae18cfb1c55" upstream="gki13-boot-release" />
   <project path="test/mts" name="platform/test/mts" revision="b73c897da9a577834fbe9cba021226ff28764d9c" upstream="gki13-boot-release" />
   <project path="test/suite_harness" name="platform/test/suite_harness" groups="cts,pdk-cw-fs,pdk-fs" revision="a84b69de6fc44726b8d7a54787b8940cb8c704a1" upstream="gki13-boot-release" />
@@ -1150,12 +1151,12 @@
   <project path="toolchain/benchmark" name="toolchain/benchmark" revision="8865b07dcd100bf8e90d4f24b9b44a93270ed047" upstream="gki13-boot-release" />
   <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" groups="pdk" revision="dbc91d2d141d0e413bac0c8c317989b6bc0193f8" upstream="gki13-boot-release" />
   <project path="tools/aadevtools" name="platform/tools/aadevtools" groups="pdk" revision="9c1887a60361955623131eef0d4e5f64a155caf8" upstream="gki13-boot-release" />
-  <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,projectarch,pdk,tradefed" revision="fade7a92a70507cccba606edbad9ce25e8797c92" upstream="gki13-boot-release" />
+  <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,projectarch,pdk,tradefed" revision="c10d4b4910368033bbac737908882568a87eb01e" upstream="gki13-boot-release" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" revision="29aa94d12528701b7008e241e6acc2e5d1d6a127" upstream="gki13-boot-release" />
   <project path="tools/apifinder" name="platform/tools/apifinder" groups="pdk,tools" revision="68ca7f3896ec0e5490b7ca8f04e74190624e0a3f" upstream="gki13-boot-release" />
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" revision="da15f1a63dd5f0c1fcf028d74f4ddaba958649d1" upstream="gki13-boot-release" />
   <project path="tools/apkzlib" name="platform/tools/apkzlib" groups="pdk,tradefed" revision="542282925c7de0b05eeb56016bc7faf6b0056196" upstream="gki13-boot-release" />
-  <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" revision="8c5ff00d9a918c4daed0bd342b0f505aba6139a3" upstream="gki13-boot-release" />
+  <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" revision="9bf28dcc68cdabb4a19723e70d549ce8b3dcfa74" upstream="gki13-boot-release" />
   <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" revision="e28cdbc4562a2a4d5cc8ed33992452d1ba228975" upstream="gki13-boot-release" />
   <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" revision="703ba11fd2cee2ff6aa79ee3e28a22e1ae5118ba" upstream="gki13-boot-release" />
   <project path="tools/carrier_settings" name="platform/tools/carrier_settings" groups="tools" revision="23e138559aa74c380884e7a5582326d06dd060cf" upstream="gki13-boot-release" />
@@ -1171,16 +1172,16 @@
   <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk" revision="b09886034167c9f8bb215c061ac92dd3a5b9f323" upstream="gki13-boot-release" />
   <project path="tools/ndkports" name="platform/tools/ndkports" groups="pdk" revision="b714102f58253613aba3d665838f30372aece90d" upstream="gki13-boot-release" />
   <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed" revision="dfa8669375f0a735b258397c9bb50dfdee468e57" upstream="gki13-boot-release" />
-  <project path="tools/security" name="platform/tools/security" groups="pdk,tools" revision="60c05e19f428a14b5e16abed182b0ffb2673e288" upstream="gki13-boot-release" />
+  <project path="tools/security" name="platform/tools/security" groups="pdk,tools" revision="0e6240f8d66273679e3d5b2e00683e0db5fe4c6d" upstream="gki13-boot-release" />
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" revision="58f06e77e051fff3903adabca7acdaa9dd12ec2d" upstream="gki13-boot-release" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" revision="3448fc231b43c217092218baaf57fc8d29bbf051" upstream="gki13-boot-release" />
-  <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" revision="f011019cbd7eee638207f6c0f5371ef126109c16" upstream="gki13-boot-release" />
+  <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" revision="b1ad3d65638be3cd6ca18e6dc3ddbaaf35577a38" upstream="gki13-boot-release" />
   <project path="tools/test/graphicsbenchmark" name="platform/tools/test/graphicsbenchmark" groups="pdk" revision="117fb8f8508ecb496dbfc5cc083bebf3c8fa5be5" upstream="gki13-boot-release" />
   <project path="tools/test/mobly_snippets" name="platform/tools/test/mobly_snippets" groups="pdk" revision="9a559fe2a4e25e1418db4cb9a70c8d08cda0ced2" upstream="gki13-boot-release" />
   <project path="tools/test/openhst" name="platform/tools/test/openhst" groups="tools" revision="f7b2e0c6e7d321e3d859f4de6dff13ad13df7c11" upstream="gki13-boot-release" />
-  <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" revision="14708feb614e91f4fec491223d5e6e54c698e920" upstream="gki13-boot-release" />
+  <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" revision="9abe1957f48dbde518bf8817a352f999a151d07d" upstream="gki13-boot-release" />
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" revision="3de78fb4efb95c4b82c532f0efc3b475f8422d67" upstream="gki13-boot-release" />
-  <project path="tools/tradefederation/prebuilts" name="platform/tools/tradefederation/prebuilts" groups="pdk,tradefed" revision="d5e15e438eaecc8097c63b1184b791a4f312534e" upstream="gki13-boot-release" />
+  <project path="tools/tradefederation/prebuilts" name="platform/tools/tradefederation/prebuilts" groups="pdk,tradefed" revision="623a4b98dee6fe355f4063fbec9640edaea63fc0" upstream="gki13-boot-release" />
   <project path="tools/treble" name="platform/tools/treble" groups="tools,pdk" revision="1286d15cb6fa808b1ff627e2344fdb5ccb9e15ed" upstream="gki13-boot-release" />
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" revision="c97acafb93bd95fa8597b6e3f246f9f6dc10a980" upstream="gki13-boot-release" />
 
