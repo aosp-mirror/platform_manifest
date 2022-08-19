@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="android13-release"
+  <default revision="android13-tests-release"
            remote="aosp"
            sync-j="4" />
-
-  <superproject name="platform/superproject" remote="aosp" revision="android13-tests-dev" />
+  <superproject name="platform/superproject" remote="aosp"  />
   <contactinfo bugurl="go/repo-bug" />
   <!-- BEGIN open-source projects -->
-  <project path="build/make" name="platform/build" revision="android13-tests-dev" groups="pdk" >
+  <project path="build/make" name="platform/build"  groups="pdk" >
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
     <linkfile src="core" dest="build/core" />
@@ -31,11 +29,11 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="art" name="platform/art" revision="android13-tests-dev" groups="pdk" />
-  <project path="bionic" name="platform/bionic" revision="android13-tests-dev" groups="pdk" />
+  <project path="art" name="platform/art"  groups="pdk" />
+  <project path="bionic" name="platform/bionic"  groups="pdk" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="bootable/libbootloader" name="platform/bootable/libbootloader" groups="vts,pdk" />
-  <project path="cts" name="platform/cts" revision="android13-tests-dev" groups="cts,pdk-cw-fs,pdk-fs" />
+  <project path="cts" name="platform/cts"  groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
   <project path="developers/build" name="platform/developers/build" groups="developers,pdk" />
   <project path="developers/demos" name="platform/developers/demos" groups="developers" />
@@ -147,8 +145,8 @@
   <project path="external/cn-cbor" name="platform/external/cn-cbor" groups="pdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
   <project path="external/ComputeLibrary" name="platform/external/ComputeLibrary" groups="pdk-lassen,pdk-gs-arm" />
-  <project path="external/connectedappssdk" name="platform/external/connectedappssdk" revision="android13-tests-dev" groups="pdk" />
-  <project path="external/conscrypt" name="platform/external/conscrypt" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/connectedappssdk" name="platform/external/connectedappssdk"  groups="pdk" />
+  <project path="external/conscrypt" name="platform/external/conscrypt"  groups="pdk" />
   <project path="external/cpu_features" name="platform/external/cpu_features" groups="pdk" />
   <project path="external/cpuinfo" name="platform/external/cpuinfo" groups="pdk" />
   <project path="external/crcalc" name="platform/external/crcalc" groups="pdk" />
@@ -156,13 +154,13 @@
   <project path="external/crosvm" name="platform/external/crosvm" groups="pdk" />
   <project path="external/curl" name="platform/external/curl" groups="pdk" />
   <project path="external/dagger2" name="platform/external/dagger2" groups="pdk" />
-  <project path="external/deqp" name="platform/external/deqp" revision="android13-tests-dev" groups="pdk-fs" />
-  <project path="external/deqp-deps/SPIRV-Headers" name="platform/external/deqp-deps/SPIRV-Headers" revision="android13-tests-dev" groups="pdk-fs" />
-  <project path="external/deqp-deps/SPIRV-Tools" name="platform/external/deqp-deps/SPIRV-Tools" revision="android13-tests-dev" groups="pdk-fs" />
-  <project path="external/deqp-deps/glslang" name="platform/external/deqp-deps/glslang" revision="android13-tests-dev" groups="pdk-fs" />
+  <project path="external/deqp" name="platform/external/deqp"  groups="pdk-fs" />
+  <project path="external/deqp-deps/SPIRV-Headers" name="platform/external/deqp-deps/SPIRV-Headers"  groups="pdk-fs" />
+  <project path="external/deqp-deps/SPIRV-Tools" name="platform/external/deqp-deps/SPIRV-Tools"  groups="pdk-fs" />
+  <project path="external/deqp-deps/glslang" name="platform/external/deqp-deps/glslang"  groups="pdk-fs" />
   <project path="external/deqp-deps/amber" name="platform/external/deqp-deps/amber" groups="pdk-fs" />
   <project path="external/desugar" name="platform/external/desugar" groups="pdk" />
-  <project path="external/dexmaker" name="platform/external/dexmaker" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/dexmaker" name="platform/external/dexmaker"  groups="pdk" />
   <project path="external/dlmalloc" name="platform/external/dlmalloc" groups="pdk" />
   <project path="external/dng_sdk" name="platform/external/dng_sdk" groups="pdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="pdk" />
@@ -174,7 +172,7 @@
   <project path="external/dynamic_depth" name="platform/external/dynamic_depth" groups="pdk" />
   <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" />
   <project path="external/easymock" name="platform/external/easymock" groups="pdk" />
-  <project path="external/eigen" name="platform/external/eigen" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/eigen" name="platform/external/eigen"  groups="pdk" />
   <project path="external/elfutils" name="platform/external/elfutils" groups="pdk" />
   <project path="external/emma" name="platform/external/emma" groups="pdk" />
   <project path="external/erofs-utils" name="platform/external/erofs-utils" groups="pdk" />
@@ -197,9 +195,9 @@
   <project path="external/freetype" name="platform/external/freetype" groups="pdk" />
   <project path="external/fsck_msdos" name="platform/external/fsck_msdos" groups="pdk" />
   <project path="external/fsverity-utils" name="platform/external/fsverity-utils" groups="pdk" />
-  <project path="external/FP16" name="platform/external/FP16" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/FP16" name="platform/external/FP16"  groups="pdk" />
   <project path="external/FXdiv" name="platform/external/FXdiv" groups="pdk" />
-  <project path="external/gemmlowp" name="platform/external/gemmlowp" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/gemmlowp" name="platform/external/gemmlowp"  groups="pdk" />
   <project path="external/geojson-jackson" name="platform/external/geojson-jackson" groups="pdk" />
   <project path="external/geonames" name="platform/external/geonames" groups="pdk" />
   <project path="external/gflags" name="platform/external/gflags" groups="pdk" />
@@ -239,7 +237,7 @@
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk,qcom_msm8x26" />
   <project path="external/hyphenation-patterns" name="platform/external/hyphenation-patterns" groups="pdk" />
   <project path="external/icing" name="platform/external/icing" groups="pdk" />
-  <project path="external/icu" name="platform/external/icu" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/icu" name="platform/external/icu"  groups="pdk" />
   <project path="external/igt-gpu-tools" name="platform/external/igt-gpu-tools" groups="pdk" />
   <project path="external/ImageMagick" name="platform/external/ImageMagick" groups="pdk" />
   <project path="external/image_io" name="platform/external/image_io" groups="pdk" />
@@ -334,12 +332,12 @@
   <project path="external/libxkbcommon" name="platform/external/libxkbcommon" groups="pdk" />
   <project path="external/libxml2" name="platform/external/libxml2" groups="pdk,libxml2" />
   <project path="external/libyuv" name="platform/external/libyuv" groups="pdk,libyuv" />
-  <project path="external/linux-kselftest" name="platform/external/linux-kselftest" revision="android13-tests-dev" groups="vts,pdk" clone-depth="1" />
+  <project path="external/linux-kselftest" name="platform/external/linux-kselftest"  groups="vts,pdk" clone-depth="1" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
   <project path="external/lmfit" name="platform/external/lmfit" groups="pdk" />
   <project path="external/lottie" name="platform/external/lottie" groups="pdk" />
   <project path="external/lua" name="platform/external/lua" groups="pdk" />
-  <project path="external/ltp" name="platform/external/ltp" revision="android13-tests-dev" groups="vts,pdk" />
+  <project path="external/ltp" name="platform/external/ltp"  groups="vts,pdk" />
   <project path="external/lz4" name="platform/external/lz4" groups="pdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
   <project path="external/marisa-trie" name="platform/external/marisa-trie" groups="pdk" />
@@ -379,7 +377,7 @@
   <project path="external/oboe" name="platform/external/oboe" groups="pdk" />
   <project path="external/obstack" name="platform/external/obstack" groups="pdk" />
   <project path="external/oj-libjdwp" name="platform/external/oj-libjdwp" groups="pdk" />
-  <project path="external/okhttp" name="platform/external/okhttp" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/okhttp" name="platform/external/okhttp"  groups="pdk" />
   <project path="external/okhttp4" name="platform/external/okhttp4" groups="pdk" />
   <project path="external/okio" name="platform/external/okio" groups="pdk" />
   <project path="external/one-true-awk" name="platform/external/one-true-awk" groups="pdk" />
@@ -395,7 +393,7 @@
   <project path="external/parameter-framework" name="platform/external/parameter-framework" groups="pdk" />
   <project path="external/pcre" name="platform/external/pcre" groups="pdk" />
   <project path="external/pdfium" name="platform/external/pdfium" groups="pdk" />
-  <project path="external/perfetto" name="platform/external/perfetto" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/perfetto" name="platform/external/perfetto"  groups="pdk" />
   <project path="external/piex" name="platform/external/piex" groups="pdk" />
   <project path="external/pigweed" name="platform/external/pigweed" groups="pdk" />
   <project path="external/ply" name="platform/external/ply" groups="pdk" />
@@ -662,7 +660,7 @@
   <project path="external/rust/crates/xml-rs" name="platform/external/rust/crates/xml-rs" groups="pdk" />
   <project path="external/rust/crates/zip" name="platform/external/rust/crates/zip" groups="pdk" />
   <project path="external/rust/cxx" name="platform/external/rust/cxx" groups="pdk" />
-  <project path="external/ruy" name="platform/external/ruy" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/ruy" name="platform/external/ruy"  groups="pdk" />
   <project path="external/s2-geometry-library-java" name="platform/external/s2-geometry-library-java" groups="pdk" />
   <project path="external/scapy" name="platform/external/scapy" groups="pdk-fs" />
   <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" />
@@ -674,7 +672,7 @@
   <project path="external/sfntly" name="platform/external/sfntly" groups="pdk,qcom_msm8x26" />
   <project path="external/shaderc/spirv-headers" name="platform/external/shaderc/spirv-headers" groups="pdk" />
   <project path="external/shflags" name="platform/external/shflags" groups="pdk" />
-  <project path="external/skia" name="platform/external/skia" groups="pdk,qcom_msm8x26" revision="android13-tests-dev" />
+  <project path="external/skia" name="platform/external/skia" groups="pdk,qcom_msm8x26"  />
   <project path="external/sl4a" name="platform/external/sl4a" groups="pdk" />
   <project path="external/slf4j" name="platform/external/slf4j" groups="pdk" />
   <project path="external/smali" name="platform/external/smali" groups="pdk" />
@@ -692,7 +690,7 @@
   <project path="external/swiftshader" name="platform/external/swiftshader" groups="pdk" />
   <project path="external/tagsoup" name="platform/external/tagsoup" groups="pdk" />
   <project path="external/tcpdump" name="platform/external/tcpdump" groups="pdk" />
-  <project path="external/tensorflow" name="platform/external/tensorflow" revision="android13-tests-dev" groups="pdk" />
+  <project path="external/tensorflow" name="platform/external/tensorflow"  groups="pdk" />
   <project path="external/TestParameterInjector" name="platform/external/TestParameterInjector" groups="pdk" />
   <project path="external/testng" name="platform/external/testng" groups="pdk" />
   <project path="external/tflite-support" name="platform/external/tflite-support" groups="pdk" />
@@ -739,13 +737,13 @@
   <project path="external/zstd" name="platform/external/zstd" groups="pdk" />
   <project path="external/zucchini" name="platform/external/zucchini" groups="pdk" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" />
-  <project path="frameworks/av" name="platform/frameworks/av" revision="android13-tests-dev" groups="pdk" />
-  <project path="frameworks/base" name="platform/frameworks/base" revision="android13-tests-dev" groups="pdk-cw-fs,pdk-fs" />
+  <project path="frameworks/av" name="platform/frameworks/av"  groups="pdk" />
+  <project path="frameworks/base" name="platform/frameworks/base"  groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
   <project path="frameworks/ex" name="platform/frameworks/ex" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/hardware/interfaces" name="platform/frameworks/hardware/interfaces" revision="android13-tests-dev" groups="pdk" />
+  <project path="frameworks/hardware/interfaces" name="platform/frameworks/hardware/interfaces"  groups="pdk" />
   <project path="frameworks/layoutlib" name="platform/frameworks/layoutlib" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/libs/systemui" name="platform/frameworks/libs/systemui" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/libs/modules-utils" name="platform/frameworks/libs/modules-utils" groups="pdk-cw-fs,pdk-fs" />
@@ -754,7 +752,7 @@
   <project path="frameworks/libs/service_entitlement" name="platform/frameworks/libs/service_entitlement" groups="pdk" />
   <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/native" name="platform/frameworks/native" revision="android13-tests-dev" groups="pdk" />
+  <project path="frameworks/native" name="platform/frameworks/native"  groups="pdk" />
   <project path="frameworks/opt/bitmap" name="platform/frameworks/opt/bitmap" groups="pdk-fs" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/car/services" name="platform/frameworks/opt/car/services" groups="pdk-fs" />
@@ -787,7 +785,7 @@
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk" />
   <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="generic_fs,pixel" />
   <project path="hardware/google/pixel-sepolicy" name="platform/hardware/google/pixel-sepolicy" groups="generic_fs,pixel" />
-  <project path="hardware/interfaces" name="platform/hardware/interfaces" revision="android13-tests-dev" groups="pdk" />
+  <project path="hardware/interfaces" name="platform/hardware/interfaces"  groups="pdk" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk" />
   <project path="hardware/knowles/athletico/sound_trigger_hal" name="platform/hardware/knowles/athletico/sound_trigger_hal" groups="coral,generic_fs" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
@@ -851,7 +849,7 @@
   <project path="hardware/st/secure_element2" name="platform/hardware/st/secure_element2" groups="pdk" />
   <project path="hardware/samsung/nfc" name="platform/hardware/samsung/nfc" groups="pdk" />
   <project path="hardware/ti/am57x" name="platform/hardware/ti/am57x" groups="pdk" />
-  <project path="kernel/configs" name="kernel/configs" revision="android13-tests-dev" groups="vts,pdk" />
+  <project path="kernel/configs" name="kernel/configs"  groups="vts,pdk" />
   <project path="kernel/prebuilts/4.19/arm64" name="kernel/prebuilts/4.19/arm64" groups="pdk" clone-depth="1" />
   <project path="kernel/prebuilts/5.4/arm64" name="kernel/prebuilts/5.4/arm64" groups="pdk" clone-depth="1" />
   <project path="kernel/prebuilts/5.4/x86_64" name="kernel/prebuilts/5.4/x86-64" groups="pdk" clone-depth="1" />
@@ -871,8 +869,8 @@
   <project path="kernel/prebuilts/common-modules/virtual-device/5.4/x86-64" name="kernel/prebuilts/common-modules/virtual-device/5.4/x86-64" groups="pdk" clone-depth="1" />
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" name="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" groups="pdk" clone-depth="1" />
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" name="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" groups="pdk" clone-depth="1" />
-  <project path="kernel/tests" name="kernel/tests" revision="android13-tests-dev" groups="vts,pdk" />
-  <project path="libcore" name="platform/libcore" revision="android13-tests-dev" groups="pdk" />
+  <project path="kernel/tests" name="kernel/tests"  groups="vts,pdk" />
+  <project path="libcore" name="platform/libcore"  groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Browser2" name="platform/packages/apps/Browser2" groups="pdk-fs" />
@@ -956,29 +954,29 @@
   <project path="packages/modules/CaptivePortalLogin" name="platform/packages/modules/CaptivePortalLogin" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/CellBroadcastService" name="platform/packages/modules/CellBroadcastService" groups="pdk" />
   <project path="packages/modules/common" name="platform/packages/modules/common" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/modules/Connectivity" name="platform/packages/modules/Connectivity" revision="android13-tests-dev" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/Connectivity" name="platform/packages/modules/Connectivity"  groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/ExtServices" name="platform/packages/modules/ExtServices" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/GeoTZ" name="platform/packages/modules/GeoTZ" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/Gki" name="platform/packages/modules/Gki" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/modules/IPsec" name="platform/packages/modules/IPsec" revision="android13-tests-dev" groups="pdk" />
+  <project path="packages/modules/IPsec" name="platform/packages/modules/IPsec"  groups="pdk" />
   <project path="packages/modules/DnsResolver" name="platform/packages/modules/DnsResolver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/Media" name="platform/packages/modules/Media" groups="pdk" />
   <project path="packages/modules/ModuleMetadata" name="platform/packages/modules/ModuleMetadata" groups="pdk" />
   <project path="packages/modules/NetworkPermissionConfig" name="platform/packages/modules/NetworkPermissionConfig" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/NetworkStack" name="platform/packages/modules/NetworkStack" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/modules/NeuralNetworks" name="platform/packages/modules/NeuralNetworks" revision="android13-tests-dev" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/NeuralNetworks" name="platform/packages/modules/NeuralNetworks"  groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/OnDevicePersonalization" name="platform/packages/modules/OnDevicePersonalization" groups="pdk-fs" />
-  <project path="packages/modules/Permission" name="platform/packages/modules/Permission" revision="android13-tests-dev" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/Permission" name="platform/packages/modules/Permission"  groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/RuntimeI18n" name="platform/packages/modules/RuntimeI18n" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/Scheduling" name="platform/packages/modules/Scheduling" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/SEPolicy" name="platform/packages/modules/SEPolicy" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/modules/SdkExtensions" name="platform/packages/modules/SdkExtensions" revision="android13-tests-dev" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/modules/StatsD" name="platform/packages/modules/StatsD" revision="android13-tests-dev" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/SdkExtensions" name="platform/packages/modules/SdkExtensions"  groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/StatsD" name="platform/packages/modules/StatsD"  groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/TestModule" name="platform/packages/modules/TestModule" />
   <project path="packages/modules/Uwb" name="platform/packages/modules/Uwb" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/Virtualization" name="platform/packages/modules/Virtualization" groups="pdk" />
   <project path="packages/modules/vndk" name="platform/packages/modules/vndk" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/modules/Wifi" name="platform/packages/modules/Wifi" revision="android13-tests-dev" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/Wifi" name="platform/packages/modules/Wifi"  groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/BlockedNumberProvider" name="platform/packages/providers/BlockedNumberProvider" groups="pdk-fs" />
   <project path="packages/providers/BookmarkProvider" name="platform/packages/providers/BookmarkProvider" groups="pdk-fs" />
   <project path="packages/providers/CalendarProvider" name="platform/packages/providers/CalendarProvider" groups="pdk-cw-fs,pdk-fs" />
@@ -1003,7 +1001,7 @@
   <project path="packages/wallpapers/ImageWallpaper" name="platform/packages/wallpapers/ImageWallpaper" groups="pdk-fs" />
   <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" groups="pdk-fs" />
   <project path="pdk" name="platform/pdk" groups="pdk" />
-  <project path="platform_testing" name="platform/platform_testing" revision="android13-tests-dev" groups="pdk-fs,pdk-cw-fs,cts" />
+  <project path="platform_testing" name="platform/platform_testing"  groups="pdk-fs,pdk-cw-fs,cts" />
   <project path="prebuilts/abi-dumps/ndk" name="platform/prebuilts/abi-dumps/ndk" groups="pdk-fs" clone-depth="1" />
   <project path="prebuilts/abi-dumps/platform" name="platform/prebuilts/abi-dumps/platform" groups="pdk-fs" clone-depth="1" />
   <project path="prebuilts/abi-dumps/vndk" name="platform/prebuilts/abi-dumps/vndk" groups="pdk-fs" clone-depth="1" />
@@ -1032,7 +1030,7 @@
   <project path="prebuilts/manifest-merger" name="platform/prebuilts/manifest-merger" groups="pdk" clone-depth="1" />
   <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
   <project path="prebuilts/maven_repo/bumptech" name="platform/prebuilts/maven_repo/bumptech" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" revision="android13-tests-dev" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc"  groups="pdk" clone-depth="1" />
   <project path="prebuilts/module_sdk/art" name="platform/prebuilts/module_sdk/art" groups="pdk" clone-depth="1" />
   <project path="prebuilts/module_sdk/AdServices" name="platform/prebuilts/module_sdk/AdServices" groups="pdk" clone-depth="1" />
   <project path="prebuilts/module_sdk/AppSearch" name="platform/prebuilts/module_sdk/AppSearch" groups="pdk" clone-depth="1" />
@@ -1064,47 +1062,47 @@
   <project path="prebuilts/vndk/v31" name="platform/prebuilts/vndk/v31" groups="pdk" clone-depth="1" />
   <project path="prebuilts/vndk/v32" name="platform/prebuilts/vndk/v32" groups="pdk" clone-depth="1" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" />
-  <project path="system/apex" name="platform/system/apex" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/apex" name="platform/system/apex"  groups="pdk" />
   <project path="system/bpf" name="platform/system/bpf" groups="pdk" />
   <project path="system/bpfprogs" name="platform/system/bpfprogs" groups="pdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" />
   <project path="system/chre" name="platform/system/chre"  groups="pdk" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" />
-  <project path="system/core" name="platform/system/core" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/core" name="platform/system/core"  groups="pdk" />
   <project path="system/dmesgd" name="platform/system/dmesgd" groups="pdk" />
-  <project path="system/extras" name="platform/system/extras" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/extras" name="platform/system/extras"  groups="pdk" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" />
-  <project path="system/gsid" name="platform/system/gsid" revision="android13-tests-dev" groups="pdk" />
-  <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/gsid" name="platform/system/gsid"  groups="pdk" />
+  <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces"  groups="pdk" />
   <project path="system/hwservicemanager" name="platform/system/hwservicemanager" groups="pdk" />
   <project path="system/incremental_delivery" name="platform/system/incremental_delivery" groups="pdk" />
   <project path="system/iorap" name="platform/system/iorap" groups="pdk" />
-  <project path="system/keymaster" name="platform/system/keymaster" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/keymaster" name="platform/system/keymaster"  groups="pdk" />
   <project path="system/libartpalette" name="platform/system/libartpalette" groups="pdk" />
   <project path="system/libbase" name="platform/system/libbase" groups="pdk" />
-  <project path="system/libfmq" name="platform/system/libfmq" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/libfmq" name="platform/system/libfmq"  groups="pdk" />
   <project path="system/libhidl" name="platform/system/libhidl" groups="pdk" />
-  <project path="system/libhwbinder" name="platform/system/libhwbinder" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/libhwbinder" name="platform/system/libhwbinder"  groups="pdk" />
   <project path="system/libprocinfo" name="platform/system/libprocinfo" groups="pdk" />
   <project path="system/librustutils" name="platform/system/librustutils" groups="pdk" />
   <project path="system/libsysprop" name="platform/system/libsysprop" groups="pdk" />
-  <project path="system/libufdt" name="platform/system/libufdt" revision="android13-tests-dev" groups="pdk" />
-  <project path="system/libvintf" name="platform/system/libvintf" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/libufdt" name="platform/system/libufdt"  groups="pdk" />
+  <project path="system/libvintf" name="platform/system/libvintf"  groups="pdk" />
   <project path="system/libziparchive" name="platform/system/libziparchive" groups="pdk" />
   <project path="system/linkerconfig" name="platform/system/linkerconfig" groups="pdk" />
   <project path="system/logging" name="platform/system/logging" groups="pdk" />
   <project path="system/media" name="platform/system/media" groups="pdk" />
   <project path="system/memory/libion" name="platform/system/memory/libion" groups="pdk" />
   <project path="system/memory/libdmabufheap" name="platform/system/memory/libdmabufheap" groups="pdk" />
-  <project path="system/memory/libmeminfo" name="platform/system/memory/libmeminfo" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/memory/libmeminfo" name="platform/system/memory/libmeminfo"  groups="pdk" />
   <project path="system/memory/libmemtrack" name="platform/system/memory/libmemtrack" groups="pdk" />
   <project path="system/memory/libmemunreachable" name="platform/system/memory/libmemunreachable" groups="pdk" />
   <project path="system/memory/lmkd" name="platform/system/memory/lmkd" groups="pdk" />
-  <project path="system/netd" name="platform/system/netd" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/netd" name="platform/system/netd"  groups="pdk" />
   <project path="system/nfc" name="platform/system/nfc" groups="pdk" />
   <project path="system/nvram" name="platform/system/nvram" groups="pdk" />
   <project path="system/security" name="platform/system/security" groups="pdk" />
-  <project path="system/sepolicy" name="platform/system/sepolicy" revision="android13-tests-dev" groups="pdk" />
+  <project path="system/sepolicy" name="platform/system/sepolicy"  groups="pdk" />
   <project path="system/server_configurable_flags" name="platform/system/server_configurable_flags" groups="pdk"/>
   <project path="system/teeui" name="platform/system/teeui" groups="pdk" />
   <project path="system/testing/gtest_extras" name="platform/system/testing/gtest_extras" groups="pdk" />
@@ -1117,26 +1115,26 @@
   <project path="system/unwinding" name="platform/system/unwinding" groups="pdk" />
   <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" />
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
-  <project path="test/framework" name="platform/test/framework" revision="android13-tests-dev" groups="vts,projectarch,pdk" />
-  <project path="test/mlts/benchmark" name="platform/test/mlts/benchmark" revision="android13-tests-dev" groups="pdk" />
+  <project path="test/framework" name="platform/test/framework"  groups="vts,projectarch,pdk" />
+  <project path="test/mlts/benchmark" name="platform/test/mlts/benchmark"  groups="pdk" />
   <project path="test/mlts/models" name="platform/test/mlts/models" groups="pdk" />
   <project path="test/app_compat/csuite" name="platform/test/app_compat/csuite" groups="pdk" />
   <project path="test/cts-root" name="platform/test/cts-root" />
   <project path="test/mts" name="platform/test/mts" />
-  <project path="test/vts" name="platform/test/vts" revision="android13-tests-dev" groups="vts,pdk" />
-  <project path="test/vts-testcase/fuzz" name="platform/test/vts-testcase/fuzz" revision="android13-tests-dev" groups="vts,projectarch,pdk" />
-  <project path="test/vts-testcase/hal" name="platform/test/vts-testcase/hal" revision="android13-tests-dev" groups="vts,pdk" />
-  <project path="test/vts-testcase/hal-trace" name="platform/test/vts-testcase/hal-trace" revision="android13-tests-dev" groups="vts,pdk" />
-  <project path="test/vts-testcase/kernel" name="platform/test/vts-testcase/kernel" revision="android13-tests-dev" groups="vts,pdk" />
-  <project path="test/vts-testcase/nbu" name="platform/test/vts-testcase/nbu" revision="android13-tests-dev" groups="vts,projectarch,pdk" />
-  <project path="test/vts-testcase/performance" name="platform/test/vts-testcase/performance" revision="android13-tests-dev" groups="vts,projectarch,pdk" />
-  <project path="test/vts-testcase/security" name="platform/test/vts-testcase/security" revision="android13-tests-dev" groups="vts,projectarch,pdk" />
-  <project path="test/vts-testcase/vndk" name="platform/test/vts-testcase/vndk" revision="android13-tests-dev" groups="vts,pdk" />
+  <project path="test/vts" name="platform/test/vts"  groups="vts,pdk" />
+  <project path="test/vts-testcase/fuzz" name="platform/test/vts-testcase/fuzz"  groups="vts,projectarch,pdk" />
+  <project path="test/vts-testcase/hal" name="platform/test/vts-testcase/hal"  groups="vts,pdk" />
+  <project path="test/vts-testcase/hal-trace" name="platform/test/vts-testcase/hal-trace"  groups="vts,pdk" />
+  <project path="test/vts-testcase/kernel" name="platform/test/vts-testcase/kernel"  groups="vts,pdk" />
+  <project path="test/vts-testcase/nbu" name="platform/test/vts-testcase/nbu"  groups="vts,projectarch,pdk" />
+  <project path="test/vts-testcase/performance" name="platform/test/vts-testcase/performance"  groups="vts,projectarch,pdk" />
+  <project path="test/vts-testcase/security" name="platform/test/vts-testcase/security"  groups="vts,projectarch,pdk" />
+  <project path="test/vts-testcase/vndk" name="platform/test/vts-testcase/vndk"  groups="vts,pdk" />
   <project path="test/catbox" name="platform/test/catbox" />
   <project path="toolchain/benchmark" name="toolchain/benchmark" />
   <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" groups="pdk" />
   <project path="tools/aadevtools" name="platform/tools/aadevtools" groups="pdk" />
-  <project path="tools/acloud" name="platform/tools/acloud" revision="android13-tests-dev" groups="tools,vts,projectarch,pdk,tradefed" />
+  <project path="tools/acloud" name="platform/tools/acloud"  groups="tools,vts,projectarch,pdk,tradefed" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
   <project path="tools/apifinder" name="platform/tools/apifinder" groups="pdk,tools" />
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
@@ -1151,12 +1149,12 @@
   <project path="tools/external_updater" name="platform/tools/external_updater" groups="tools" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" />
   <project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" />
-  <project path="tools/loganalysis" name="platform/tools/loganalysis" revision="android13-tests-dev" groups="nopresubmit,pdk,tradefed" />
+  <project path="tools/loganalysis" name="platform/tools/loganalysis"  groups="nopresubmit,pdk,tradefed" />
   <project path="tools/metalava" name="platform/tools/metalava" groups="pdk,tools" />
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
-  <project path="tools/platform-compat" name="tools/platform-compat" revision="android13-tests-dev" groups="pdk-cw-fs,pdk-fs,pdk" />
+  <project path="tools/platform-compat" name="tools/platform-compat"  groups="pdk-cw-fs,pdk-fs,pdk" />
   <project path="tools/ndkports" name="platform/tools/ndkports" groups="pdk" />
-  <project path="tools/repohooks" name="platform/tools/repohooks"  groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed" revision="master" />
+  <project path="tools/repohooks" name="platform/tools/repohooks"  groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed"  />
   <project path="tools/security" name="platform/tools/security" groups="pdk,tools" />
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
@@ -1164,9 +1162,9 @@
   <project path="tools/test/graphicsbenchmark" name="platform/tools/test/graphicsbenchmark" groups="pdk" />
   <project path="tools/test/mobly_snippets" name="platform/tools/test/mobly_snippets" groups="pdk" />
   <project path="tools/test/openhst" name="platform/tools/test/openhst" groups="tools" />
-  <project path="tools/tradefederation/prebuilts" name="platform/tools/tradefederation/prebuilts" revision="android13-tests-dev" groups="pdk,tradefed" clone-depth="1" />
+  <project path="tools/tradefederation/prebuilts" name="platform/tools/tradefederation/prebuilts"  groups="pdk,tradefed" clone-depth="1" />
   <project path="tools/treble" name="platform/tools/treble" groups="tools,pdk" />
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" />
   <!-- END open-source projects -->
-  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" revision="master" />
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload"  />
 </manifest>
