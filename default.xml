@@ -11,7 +11,7 @@
   <superproject name="platform/superproject" remote="aosp"/>
   <contactinfo bugurl="go/repo-bug" />
 
-  <project path="build" name="platform/build" />
+  <project path="build/bazel" name="platform/build/bazel" />
   <project path="tools/buildSrc" name="platform/tools/buildSrc" />
 
   <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="master"/>
@@ -51,7 +51,6 @@
   <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" clone-depth="1" revision="studio-main" />
   <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="master"/>
   <project path="tools/netsim" name="platform/tools/netsim" revision="master" />
 
@@ -60,6 +59,7 @@
   <project path="external/libchrome" name="platform/external/libchrome"  revision="emu-master-dev" groups="notdefault,platform-linux"/>
 
   <!-- Linux only toolchain dependencies -->
+  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
@@ -67,11 +67,13 @@
   <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="llvm-toolchain" groups="notdefault,platform-linux" />
 
   <!-- Windows only toolchain dependencies -->
+  <project path="prebuilts/bazel/windows-x86_64" name="platform/prebuilts/bazel/windows-x86_64" clone-depth="1" groups="notdefault,platform-windows" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="master" groups="notdefault,platform-windows" />
   <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="llvm-toolchain" groups="notdefault,platform-windows" />
 
   <!-- Darwin (macos) only toolchain dependencies -->
+  <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="master" groups="notdefault,platform-darwin" />
