@@ -168,6 +168,8 @@
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" />
   <project path="device/linaro/poplar" name="device/linaro/poplar" groups="device,poplar,pdk" />
   <project path="device/linaro/poplar-kernel" name="device/linaro/poplar-kernel" groups="device,poplar,pdk" clone-depth="1" />
+  <project name="device/mediatek/mokey-kernel" path="device/mediatek/mokey-kernel" groups="device" clone-depth="2"/>
+  <project name="device/mediatek/mokey-sepolicy" path="device/mediatek/mokey-sepolicy" groups="device"/>
   <project name="device/mediatek/wembley-kernel" path="device/mediatek/wembley-kernel" groups="device" clone-depth="2"/>
   <project name="device/mediatek/wembley-sepolicy" path="device/mediatek/wembley-sepolicy" groups="device"/>
   <project path="device/panasonic/hawk" name="device/panasonic/hawk" groups="device,panasonic,hawk" />
@@ -1658,11 +1660,194 @@
   <project path="vendor/mediatek/common" name="platform/vendor/mediatek/common" groups="vendor">
     <copyfile dest="vendor/mediatek/wembley/Android.bp" src="addon/vendor/mediatek/wembleyAndroid.bp"/>
     <copyfile dest="vendor/mediatek/wembley/proprietary/Android.bp" src="addon/vendor/mediatek/proprietary/srcAndroid.bp"/>
-    <copyfile dest="vendor/mediatek/Android.mk" src="addon/vendor/mediatek/srcAndroid.mk"/>
   </project>
   <project path="vendor/mediatek/config" name="platform/vendor/mediatek/config" groups="vendor"/>
+  <project path="vendor/mediatek/k69v1_64_g85_basic_ref" name="platform/vendor/mediatek/k69v1_64_g85_basic_ref" groups="vendor"/>
   <project path="vendor/mediatek/k61v1_basic_ref" name="platform/vendor/mediatek/k61v1_basic_ref" groups="vendor"/>
   <project path="vendor/mediatek/libs/wembley" name="platform/vendor/mediatek/libs/wembley" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/build" name="platform/vendor/mediatek/mokey/build" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/common" name="platform/vendor/mediatek/mokey/common" groups="vendor">
+    <linkfile src="addon/vendor/mediatek/mokeyAndroid.bp" dest="vendor/mediatek/mokey/Android.bp"/>
+    <linkfile src="addon/vendor/mediatek/mokeyAndroid.mk" dest="vendor/mediatek/mokey/Android.mk"/>
+    <linkfile src="addon/vendor/mediatek/srcAndroid.mk" dest="vendor/mediatek/Android.mk"/>
+  </project>
+  <project path="vendor/mediatek/mokey/config" name="platform/vendor/mediatek/mokey/config" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/libs/k69v1_64_g85_basic_ref" name="platform/vendor/mediatek/mokey/libs/k69v1_64_g85_basic_ref" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/mt6768" name="platform/vendor/mediatek/mokey/mt6768" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/opensource/external/rapidjson" name="platform/vendor/mediatek/mokey/opensource/external/rapidjson" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/opensource/external/XMP-Toolkit-SDK" name="platform/vendor/mediatek/mokey/opensource/external/XMP-Toolkit-SDK" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/prebuilts" name="platform/vendor/mediatek/mokey/prebuilts" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/bootable/bootloader/lk" name="platform/vendor/mediatek/mokey/proprietary/bootable/bootloader/lk" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/bootable/bootloader/preloader" name="platform/vendor/mediatek/mokey/proprietary/bootable/bootloader/preloader" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/bootable/recovery/utils" name="platform/vendor/mediatek/mokey/proprietary/bootable/recovery/utils" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/custom" name="platform/vendor/mediatek/mokey/proprietary/custom" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/aee" name="platform/vendor/mediatek/mokey/proprietary/external/aee" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/aihub/NeuronSdk" name="platform/vendor/mediatek/mokey/proprietary/external/aihub/NeuronSdk" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/AudioCompensationFilter" name="platform/vendor/mediatek/mokey/proprietary/external/AudioCompensationFilter" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/AudioComponentEngine" name="platform/vendor/mediatek/mokey/proprietary/external/AudioComponentEngine" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/audiocustparam" name="platform/vendor/mediatek/mokey/proprietary/external/audiocustparam" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/audiodcremoveflt" name="platform/vendor/mediatek/mokey/proprietary/external/audiodcremoveflt" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/AudioParamParser" name="platform/vendor/mediatek/mokey/proprietary/external/AudioParamParser" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/audio_preprocessing_mtk" name="platform/vendor/mediatek/mokey/proprietary/external/audio_preprocessing_mtk" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/AudioSpeechEnhancement" name="platform/vendor/mediatek/mokey/proprietary/external/AudioSpeechEnhancement" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/audio_utils" name="platform/vendor/mediatek/mokey/proprietary/external/audio_utils" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/aurisys" name="platform/vendor/mediatek/mokey/proprietary/external/aurisys" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/bessound_HD" name="platform/vendor/mediatek/mokey/proprietary/external/bessound_HD" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/blisrc" name="platform/vendor/mediatek/mokey/proprietary/external/blisrc" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/ccci_mdinit_src" name="platform/vendor/mediatek/mokey/proprietary/external/ccci_mdinit_src" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/ccci_rpcd_com" name="platform/vendor/mediatek/mokey/proprietary/external/ccci_rpcd_com" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/charger" name="platform/vendor/mediatek/mokey/proprietary/external/charger" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/cvsd_plc_codec" name="platform/vendor/mediatek/mokey/proprietary/external/cvsd_plc_codec" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/doeapp_lib" name="platform/vendor/mediatek/mokey/proprietary/external/doeapp_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/doeapp-service" name="platform/vendor/mediatek/mokey/proprietary/external/doeapp-service" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/fft" name="platform/vendor/mediatek/mokey/proprietary/external/fft" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/fuelgauged" name="platform/vendor/mediatek/mokey/proprietary/external/fuelgauged" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libc-ares-naptr" name="platform/vendor/mediatek/mokey/proprietary/external/libc-ares-naptr" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libdynamiclog_lib" name="platform/vendor/mediatek/mokey/proprietary/external/libdynamiclog_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libion_mtk" name="platform/vendor/mediatek/mokey/proprietary/external/libion_mtk" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libipsec_ims" name="platform/vendor/mediatek/mokey/proprietary/external/libipsec_ims" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libjpeg-alpha_vendor" name="platform/vendor/mediatek/mokey/proprietary/external/libjpeg-alpha_vendor" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libnvram" name="platform/vendor/mediatek/mokey/proprietary/external/libnvram" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libnvram_ext" name="platform/vendor/mediatek/mokey/proprietary/external/libnvram_ext" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libshowlogo" name="platform/vendor/mediatek/mokey/proprietary/external/libshowlogo" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libstorage_otp" name="platform/vendor/mediatek/mokey/proprietary/external/libstorage_otp" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libsysenv" name="platform/vendor/mediatek/mokey/proprietary/external/libsysenv" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/libudf" name="platform/vendor/mediatek/mokey/proprietary/external/libudf" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/limiter" name="platform/vendor/mediatek/mokey/proprietary/external/limiter" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/mdmi" name="platform/vendor/mediatek/mokey/proprietary/external/mdmi" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/mrdump" name="platform/vendor/mediatek/mokey/proprietary/external/mrdump" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/msbc_codec" name="platform/vendor/mediatek/mokey/proprietary/external/msbc_codec" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/NetworkLogD" name="platform/vendor/mediatek/mokey/proprietary/external/NetworkLogD" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/nvram" name="platform/vendor/mediatek/mokey/proprietary/external/nvram" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/sensor-tools" name="platform/vendor/mediatek/mokey/proprietary/external/sensor-tools" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/shifter" name="platform/vendor/mediatek/mokey/proprietary/external/shifter" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/thermalalgolib" name="platform/vendor/mediatek/mokey/proprietary/external/thermalalgolib" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/thermal_managerlib" name="platform/vendor/mediatek/mokey/proprietary/external/thermal_managerlib" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/external/wlan_assistant" name="platform/vendor/mediatek/mokey/proprietary/external/wlan_assistant" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/factory" name="platform/vendor/mediatek/mokey/proprietary/factory" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/av/drm" name="platform/vendor/mediatek/mokey/proprietary/frameworks/av/drm" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/native/include" name="platform/vendor/mediatek/mokey/proprietary/frameworks/native/include" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/neuropilot/np_core" name="platform/vendor/mediatek/mokey/proprietary/frameworks/neuropilot/np_core" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/opt/agps_lib" name="platform/vendor/mediatek/mokey/proprietary/frameworks/opt/agps_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/opt/ims-base" name="platform/vendor/mediatek/mokey/proprietary/frameworks/opt/ims-base" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/opt/libimsma" name="platform/vendor/mediatek/mokey/proprietary/frameworks/opt/libimsma" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/opt/libimsma_bin_lib" name="platform/vendor/mediatek/mokey/proprietary/frameworks/opt/libimsma_bin_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/opt/mdm_lib" name="platform/vendor/mediatek/mokey/proprietary/frameworks/opt/mdm_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/frameworks/opt/vtservice" name="platform/vendor/mediatek/mokey/proprietary/frameworks/opt/vtservice" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/apusys" name="platform/vendor/mediatek/mokey/proprietary/hardware/apusys" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/audio" name="platform/vendor/mediatek/mokey/proprietary/hardware/audio" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/bootctrl" name="platform/vendor/mediatek/mokey/proprietary/hardware/bootctrl" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/bwc" name="platform/vendor/mediatek/mokey/proprietary/hardware/bwc" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/ccci" name="platform/vendor/mediatek/mokey/proprietary/hardware/ccci" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/ccci_sys" name="platform/vendor/mediatek/mokey/proprietary/hardware/ccci_sys" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/bluetooth/driver/mt66xx" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/bluetooth/driver/mt66xx" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/bluetooth/service" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/bluetooth/service" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/combo_tool" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/combo_tool" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/connfem" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/connfem" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/firmware/rom_patch" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/firmware/rom_patch" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/firmware/wlan" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/firmware/wlan" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/fmradio" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/fmradio" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/gps" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/gps" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/gps_sys" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/gps_sys" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/sigma" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/sigma" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/connectivity/wlan" name="platform/vendor/mediatek/mokey/proprietary/hardware/connectivity/wlan" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/consumerir" name="platform/vendor/mediatek/mokey/proprietary/hardware/consumerir" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/contexthub" name="platform/vendor/mediatek/mokey/proprietary/hardware/contexthub" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/cpu_nn_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/cpu_nn_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/dpframework" name="platform/vendor/mediatek/mokey/proprietary/hardware/dpframework" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/dpframework_prot_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/dpframework_prot_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/drvb_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/drvb_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/fastbootd" name="platform/vendor/mediatek/mokey/proprietary/hardware/fastbootd" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/formatter" name="platform/vendor/mediatek/mokey/proprietary/hardware/formatter" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/fstab" name="platform/vendor/mediatek/mokey/proprietary/hardware/fstab" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/gatekeeper" name="platform/vendor/mediatek/mokey/proprietary/hardware/gatekeeper" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/gift_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/gift_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/gpu_aux" name="platform/vendor/mediatek/mokey/proprietary/hardware/gpu_aux" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/gpu_ext_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/gpu_ext_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/gpu_mali_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/gpu_mali_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/gralloc_extra" name="platform/vendor/mediatek/mokey/proprietary/hardware/gralloc_extra" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/gsm0710muxd" name="platform/vendor/mediatek/mokey/proprietary/hardware/gsm0710muxd" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/hwcomposer" name="platform/vendor/mediatek/mokey/proprietary/hardware/hwcomposer" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/ims" name="platform/vendor/mediatek/mokey/proprietary/hardware/ims" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/imsa" name="platform/vendor/mediatek/mokey/proprietary/hardware/imsa" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/interfaces" name="platform/vendor/mediatek/mokey/proprietary/hardware/interfaces" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/jpeg" name="platform/vendor/mediatek/mokey/proprietary/hardware/jpeg" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libc2/audio" name="platform/vendor/mediatek/mokey/proprietary/hardware/libc2/audio" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libc2/service" name="platform/vendor/mediatek/mokey/proprietary/hardware/libc2/service" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libc2/video" name="platform/vendor/mediatek/mokey/proprietary/hardware/libc2/video" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libae_core_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libae_core_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libae_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libae_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libaf_core_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libaf_core_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libaf_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libaf_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libawb_core_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libawb_core_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libawb_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libawb_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libccu_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libccu_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libflash_v2_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libflash_v2_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libgma_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/libgma_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/liblce_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_3a/liblce_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_drv_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_drv_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_ext" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_ext" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/lib3dnr_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/lib3dnr_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libabf_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libabf_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libdngop_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libdngop_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libeis_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libeis_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libfdft_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libfdft_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libflicker_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libflicker_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libfsc_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libfsc_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libgyro_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libgyro_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libispfeature_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libispfeature_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/liblsc_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/liblsc_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libmfnr_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libmfnr_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libnr_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libnr_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libplatform_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libplatform_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libvainr_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libcamera_feature/libvainr_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libdnn_feature" name="platform/vendor/mediatek/mokey/proprietary/hardware/libdnn_feature" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libgem" name="platform/vendor/mediatek/mokey/proprietary/hardware/libgem" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libheichal" name="platform/vendor/mediatek/mokey/proprietary/hardware/libheichal" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libhwcomposer" name="platform/vendor/mediatek/mokey/proprietary/hardware/libhwcomposer" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/liblights" name="platform/vendor/mediatek/mokey/proprietary/hardware/liblights" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libmtk_bsg" name="platform/vendor/mediatek/mokey/proprietary/hardware/libmtk_bsg" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libpq_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libpq_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libvcodec_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libvcodec_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libvcodec_v3_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/libvcodec_v3_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/libvibrator" name="platform/vendor/mediatek/mokey/proprietary/hardware/libvibrator" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/m4u" name="platform/vendor/mediatek/mokey/proprietary/hardware/m4u" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/mdlasys_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/mdlasys_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/memtrack" name="platform/vendor/mediatek/mokey/proprietary/hardware/memtrack" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/meow_lib" name="platform/vendor/mediatek/mokey/proprietary/hardware/meow_lib" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/meta" name="platform/vendor/mediatek/mokey/proprietary/hardware/meta" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/MMAgent" name="platform/vendor/mediatek/mokey/proprietary/hardware/MMAgent" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/mtkcam" name="platform/vendor/mediatek/mokey/proprietary/hardware/mtkcam" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/mtkcam3" name="platform/vendor/mediatek/mokey/proprietary/hardware/mtkcam3" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/muxreport" name="platform/vendor/mediatek/mokey/proprietary/hardware/muxreport" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/netagent" name="platform/vendor/mediatek/mokey/proprietary/hardware/netagent" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/omx" name="platform/vendor/mediatek/mokey/proprietary/hardware/omx" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/power" name="platform/vendor/mediatek/mokey/proprietary/hardware/power" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/power_util" name="platform/vendor/mediatek/mokey/proprietary/hardware/power_util" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/pq" name="platform/vendor/mediatek/mokey/proprietary/hardware/pq" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/pqframework" name="platform/vendor/mediatek/mokey/proprietary/hardware/pqframework" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/ril" name="platform/vendor/mediatek/mokey/proprietary/hardware/ril" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/sensor" name="platform/vendor/mediatek/mokey/proprietary/hardware/sensor" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/spmfw/build" name="platform/vendor/mediatek/mokey/proprietary/hardware/spmfw/build" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/spmfw/mt6768" name="platform/vendor/mediatek/mokey/proprietary/hardware/spmfw/mt6768" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/thermal" name="platform/vendor/mediatek/mokey/proprietary/hardware/thermal" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/usb" name="platform/vendor/mediatek/mokey/proprietary/hardware/usb" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/vcodec" name="platform/vendor/mediatek/mokey/proprietary/hardware/vcodec" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/vpu" name="platform/vendor/mediatek/mokey/proprietary/hardware/vpu" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/hardware/wpfa" name="platform/vendor/mediatek/mokey/proprietary/hardware/wpfa" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/modem" name="platform/vendor/mediatek/mokey/proprietary/modem" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/mokey/proprietary/packages/apps/MTKLogger" name="platform/vendor/mediatek/mokey/proprietary/packages/apps/MTKLogger" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/packages/overlay/vendor" name="platform/vendor/mediatek/mokey/proprietary/packages/overlay/vendor" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/packages/services/apm_service" name="platform/vendor/mediatek/mokey/proprietary/packages/services/apm_service" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/packages/services/CapCtrl" name="platform/vendor/mediatek/mokey/proprietary/packages/services/CapCtrl" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/scripts" name="platform/vendor/mediatek/mokey/proprietary/scripts" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/system/netdagent" name="platform/vendor/mediatek/mokey/proprietary/system/netdagent" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/tools/dct" name="platform/vendor/mediatek/mokey/proprietary/tools/dct" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/proprietary/tools/ptgen" name="platform/vendor/mediatek/mokey/proprietary/tools/ptgen" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/system/common" name="platform/vendor/mediatek/mokey/system/common" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/system/mssi_64_basic" name="platform/vendor/mediatek/mokey/system/mssi_64_basic" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/vendor/common" name="platform/vendor/mediatek/mokey/vendor/common" groups="vendor"/>
+  <project path="vendor/mediatek/mokey/widevine_lib" name="platform/vendor/mediatek/mokey/widevine_lib" groups="vendor" copy-depth="2"/>
   <project path="vendor/mediatek/mt6761" name="platform/vendor/mediatek/mt6761" groups="vendor"/>
   <project path="vendor/mediatek/system/common" name="platform/vendor/mediatek/system/common" groups="vendor"/>
   <project path="vendor/mediatek/system/mssi_32_ago_basic" name="platform/vendor/mediatek/system/mssi_32_ago_basic" groups="vendor"/>
@@ -1719,7 +1904,7 @@
   <project path="vendor/mediatek/wembley/proprietary/frameworks/opt/libimsma" name="platform/vendor/mediatek/wembley/proprietary/frameworks/opt/libimsma" groups="vendor"/>
   <project path="vendor/mediatek/wembley/proprietary/frameworks/opt/libimsma_bin_lib" name="platform/vendor/mediatek/wembley/proprietary/frameworks/opt/libimsma_bin_lib" groups="vendor"/>
   <project path="vendor/mediatek/wembley/proprietary/frameworks/opt/mdlogger_lib" name="platform/vendor/mediatek/wembley/proprietary/frameworks/opt/mdlogger_lib" groups="vendor"/>
-  <project path="vendor/mediatek/wembley/proprietary/frameworks/opt/mdm_lib" name="platform/vendor/mediatek/wembley/proprietary/frameworks/opt/mdm_lib" groups="vendor"/>
+  <project path="vendor/mediatek/wembley/proprietary/frameworks/opt/mdm_lib" name="platform/vendor/mediatek/wembley/proprietary/frameworks/opt/mdm_lib" groups="vendor" clone-depth="2"/>
   <project path="vendor/mediatek/wembley/proprietary/frameworks/opt/memoryDumpEncoder_lib" name="platform/vendor/mediatek/wembley/proprietary/frameworks/opt/memoryDumpEncoder_lib" groups="vendor"/>
   <project path="vendor/mediatek/wembley/proprietary/frameworks/opt/vtservice" name="platform/vendor/mediatek/wembley/proprietary/frameworks/opt/vtservice" groups="vendor"/>
   <project path="vendor/mediatek/wembley/proprietary/geniezone/external/gp" name="platform/vendor/mediatek/wembley/proprietary/geniezone/external/gp" groups="vendor"/>
@@ -1733,8 +1918,8 @@
   <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/bluetooth/driver/mt66xx" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/bluetooth/driver/mt66xx" groups="vendor"/>
   <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/bluetooth/service" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/bluetooth/service" groups="vendor"/>
   <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/combo_tool" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/combo_tool" groups="vendor"/>
-  <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/firmware/rom_patch" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/firmware/rom_patch" groups="vendor"/>
-  <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/firmware/wlan" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/firmware/wlan" groups="vendor"/>
+  <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/firmware/rom_patch" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/firmware/rom_patch" groups="vendor" clone-depth="2"/>
+  <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/firmware/wlan" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/firmware/wlan" groups="vendor" clone-depth="2"/>
   <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/fmradio" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/fmradio" groups="vendor"/>
   <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/gps" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/gps" groups="vendor"/>
   <project path="vendor/mediatek/wembley/proprietary/hardware/connectivity/sigma" name="platform/vendor/mediatek/wembley/proprietary/hardware/connectivity/sigma" groups="vendor"/>
