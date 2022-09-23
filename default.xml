@@ -11,7 +11,11 @@
   <superproject name="platform/superproject" remote="aosp"/>
   <contactinfo bugurl="go/repo-bug" />
 
-  <project path="build/bazel" name="platform/build/bazel" />
+  <project path="build/bazel" name="platform/build/bazel">
+    <linkfile src="toplevel.WORKSPACE" dest="WORKSPACE" />
+    <linkfile src="toplevel.bazelrc" dest=".bazelrc" />
+    <linkfile src="toplevel.bazelversion" dest=".bazelversion" />
+  </project>
   <project path="tools/buildSrc" name="platform/tools/buildSrc" />
 
   <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="master"/>
