@@ -1,93 +1,100 @@
 <manifest>
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="androidx-sqlite-release" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="androidx-sqlite-release" remote="aosp" />
   <superproject name="platform/superproject" remote="aosp" />
 
   
-  <project name="platform/build" path="build/make" revision="651316e0e3631cea47b7e2f1a1bf9bdbf814702a" upstream="androidx-sqlite-release" />
+  <project path="build/make" name="platform/build" revision="9559928844a0e9d86f8709724a7cc45bc2646889" upstream="androidx-sqlite-release" />
 
   
   
-  <project clone-depth="1" name="platform/external/noto-fonts" path="external/noto-fonts" revision="30f8ecf677f5b24f2926a87d9917f0c222e4a0d0" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="7970541a5afd8000d3eb0f8ce4eb70b75e376f8d" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/external/icing" path="external/icing" revision="6b50f63a09a5587afa6e78cd521d82bd607d0042" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/external/icu" path="external/icu" revision="d4da47a04626908f94c84fc097fc1fbc33dff328" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/external/google-benchmark" path="external/google-benchmark" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-sqlite-release" />
+  <project path="external/dexter" name="platform/tools/dexter" revision="74c2cf6b983956ac8e9a23422a4d6a08c0019bf5" upstream="androidx-sqlite-release" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" revision="7222bd712a64b7a7dada293bcd896c0dfa1aeff0" upstream="androidx-sqlite-release" />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" revision="43260e5bb805304b6385649f51bf28864cccc796" upstream="androidx-sqlite-release" />
+  <project path="external/icing" name="platform/external/icing" clone-depth="1" revision="128be80198cd200baa581007a0aa10636fea5e17" upstream="androidx-sqlite-release" />
+  <project path="external/icu" name="platform/external/icu" clone-depth="1" revision="d4da47a04626908f94c84fc097fc1fbc33dff328" upstream="androidx-sqlite-release" />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark" clone-depth="1" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-sqlite-release" />
   
-  <project clone-depth="1" name="platform/external/protobuf" path="external/protobuf" revision="b97ec20480ce7aaf4f360638694e3e849f076aa0" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="0d9d7a34c19b50ffe3bad06112038e601e2e2c52" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="3f00b4ae9b1b125b694ba24a4662e089f1866833" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="8759893b15627e09a76140ae550f478c782d3387" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/traceprocessor" path="prebuilts/androidx/traceprocessor" revision="8d3424af681ac8e000661b057c6bce29c67b09bf" upstream="androidx-sqlite-release" />
+  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" revision="b97ec20480ce7aaf4f360638694e3e849f076aa0" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" revision="a6087fa53d9772e11dbc4850f1282e63227dce2d" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" revision="15d8b9aeaeb784811c7830d8f68d67de2abd9056" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" revision="8759893b15627e09a76140ae550f478c782d3387" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" revision="df9aed9214a748e89f99b2fe26e6d4d94ec72d35" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" revision="d38df0270877279aaaa32a8bb01a80344f0af0dd" upstream="androidx-sqlite-release" />
+
   
-  <project clone-depth="1" name="platform/external/doclava" path="external/doclava" revision="65a5da5054cc54f99ec7b052358247113ba7589f" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/external/dokka" path="external/dokka" revision="ce23488ec325d0d3f0c396061f013af4f63c3ac4" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/external/libyuv" path="external/libyuv" revision="cc6610ad280a03592699fd682e97781ddfd715ab" upstream="androidx-sqlite-release" />
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" revision="8414c50ffda145ee5dd3636f7b352cc09cfa729e" upstream="androidx-sqlite-release" />
+  <project path="external/dokka" name="platform/external/dokka" clone-depth="1" revision="7748cfb1f74a805f9a121626dd91d012811cbdc3" upstream="androidx-sqlite-release" />
+  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" revision="2a7a122b5c5b145a9e967b69ed8c3b02f8514f73" upstream="androidx-sqlite-release" />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="d067fe439c7ea113c64663f367bf724a9f18dab7" upstream="androidx-sqlite-release" />
 
   
   
-  <project clone-depth="1" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="cf3735642e88e6f6254215681953d8f623292e5b" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="platform/tools/repohooks" path="tools/repohooks" revision="d659565677d4704645ec7757dcb21d11435b3aa4" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" name="tools/fetch_artifact" path="tools/fetch_artifact" revision="7d5d8c7e36eb15d8a5389ca19e3b0aeb1daa1326" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" revision="0e38b0514d90db5a29037a894e1ababe1fbaa18b" upstream="androidx-sqlite-release" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" revision="2da1df010d0ff97d54ae1211579f343867bc6979" upstream="androidx-sqlite-release" />
+  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1" revision="7d5d8c7e36eb15d8a5389ca19e3b0aeb1daa1326" upstream="androidx-sqlite-release" />
+  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1" revision="739163f12a29514e0e472920efc287e7bb9c272c" upstream="androidx-sqlite-release" />
   
   
-  <project clone-depth="1" name="platform/prebuilts/protobuf" path="prebuilts/protobuf" revision="1032661b632ef1325de4c4829008dab8571c346e" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" revision="1032661b632ef1325de4c4829008dab8571c346e" upstream="androidx-sqlite-release" />
 
   
   
-  <project clone-depth="1" name="platform/tools/external/gradle" path="tools/external/gradle" revision="7f16b92d46035c67c29d2535e3f7ec8646c6f458" upstream="androidx-sqlite-release" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" revision="91bbd3a5ba30ff1a0d3c14118180c7ac4a986d13" upstream="androidx-sqlite-release" />
 
   
   
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-31" path="prebuilts/fullsdk-darwin/platforms/android-31" revision="200e64779106cf6738f7c2cf02c9f23b683b5ac1" upstream="androidx-sqlite-release">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-31" src="." />
+  <project path="prebuilts/fullsdk-darwin/platforms/android-33" name="platform/prebuilts/fullsdk/platforms/android-33" clone-depth="1" revision="71ceb3933d49f67f18ac666f11810ee37235f943" upstream="androidx-sqlite-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-33" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-31" path="prebuilts/fullsdk-darwin/sources/android-31" revision="75c718b2434a9003e34cb2fa3c89a1acf7449cc1" upstream="androidx-sqlite-release">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-31" src="." />
-  </project>
-  <project clone-depth="1" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="86510c8289bdb3ae582fe12709aec618d5009982" upstream="androidx-sqlite-release" />
-  
-  
-  <project clone-depth="1" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="a139f38987dcac0e26fb8ab4d35c7eb724e35b6d" upstream="androidx-sqlite-release" />
-
-  
-  
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3" path="prebuilts/fullsdk-darwin/build-tools/29.0.3" revision="f597735774e931d682fb10e0d0590392f4a69c38" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/30.0.3" path="prebuilts/fullsdk-darwin/build-tools/30.0.3" revision="17cc286169eb2246fe626f1e6ee907be0495521e" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="toolchain/prebuilts/ndk-darwin/r23" path="prebuilts/fullsdk-darwin/ndk" revision="9a1b3e229631d81c086ffb3a631fd1da29afd039" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="c24fd557ddfee6a8edc0a04bd5a7f066f7159996" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-sqlite-release" />
-  
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="d9b3320eedd1835a627b2bd8d8b20e8a4d35e241" upstream="androidx-sqlite-release">
-    <linkfile dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" src="bin/cmake" />
-  </project>
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/ninja/darwin-x86" path="prebuilts/fullsdk-darwin/ninja" revision="5bb73154a383eaedcfde384b9dd336e2b25f7419" upstream="androidx-sqlite-release">
-    <linkfile dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" src="ninja" />
+  <project path="prebuilts/fullsdk-darwin/sources/android-33" name="platform/prebuilts/fullsdk/sources/android-33" clone-depth="1" revision="f6a7f5e4d4d85ea656535f4696c53610328a0b1a" upstream="androidx-sqlite-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-33" />
   </project>
 
   
+  <project path="prebuilts/fullsdk-darwin/build-tools" name="platform/prebuilts/fullsdk-darwin/build-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="254f7d48b266f3fa9c1214a7a0ba6928234782b0" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="73a5d0f30c468eae761d384f13c4e788b16e451a" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/fullsdk-darwin/tools" name="platform/prebuilts/fullsdk-darwin/tools" clone-depth="1" groups="notdefault,platform-darwin" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-sqlite-release" />
+
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3" path="prebuilts/fullsdk-linux/build-tools/29.0.3" revision="2d89707a7cc994d40bd4c20b3cb42cf5a87e983a" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/30.0.3" path="prebuilts/fullsdk-linux/build-tools/30.0.3" revision="5074774ea2223b32b73717896c2e722df523c67b" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r23" path="prebuilts/fullsdk-linux/ndk" revision="c99c7c9153e9b2f02e6b05dd852b150ab0dded0e" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="d40aa2475abe0dd4a3daf26c9e1f76ec05017e01" upstream="androidx-sqlite-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/fullsdk-linux/build-tools" name="platform/prebuilts/fullsdk-linux/build-tools" clone-depth="1" groups="notdefault,platform-linux" revision="cf83540c397d87ac583388bdbba7d293f4fcf7e5" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools" clone-depth="1" groups="notdefault,platform-linux" revision="0f51585e3a319b4b80fac155f93faafd1ac716d0" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/fullsdk-linux/tools" name="platform/prebuilts/fullsdk-linux/tools" clone-depth="1" groups="notdefault,platform-linux" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="notdefault,platform-linux" clone-depth="1" revision="f1e15ee3498c00a329ce89d2758a5542368c209a" upstream="androidx-sqlite-release" />
+
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="9c09e827964074f0e07381e98efe9469e1a1b127" upstream="androidx-sqlite-release">
-    <linkfile dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" src="bin/cmake" />
+  
+  <project path="prebuilts/fullsdk-darwin/ndk-bundle" name="toolchain/prebuilts/ndk-darwin/r23" revision="9a1b3e229631d81c086ffb3a631fd1da29afd039" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/fullsdk-darwin/cmake" name="platform/prebuilts/cmake/darwin-x86" revision="7fa50dccbc5d61c99c0f57b825f37a3b03f06688" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-sqlite-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
   </project>
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/ninja/linux-x86" path="prebuilts/fullsdk-linux/ninja" revision="7f4c04ae4ac73ae0b7e96348f2360ed90226cc67" upstream="androidx-sqlite-release">
-    <linkfile dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" src="ninja" />
+  <project path="prebuilts/fullsdk-darwin/ninja" name="platform/prebuilts/ninja/darwin-x86" revision="5bb73154a383eaedcfde384b9dd336e2b25f7419" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-sqlite-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
   </project>
+  <project path="prebuilts/fullsdk-linux/ndk-bundle" name="toolchain/prebuilts/ndk/r23" revision="e9243e6190cfeff151014293cc2ba878eaace83d" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-sqlite-release" />
+  <project path="prebuilts/fullsdk-linux/cmake" name="platform/prebuilts/cmake/linux-x86" revision="28529d039beec4de4e4929722aacd4f8f9b1a4f5" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-sqlite-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/ninja" name="platform/prebuilts/ninja/linux-x86" revision="7f4c04ae4ac73ae0b7e96348f2360ed90226cc67" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-sqlite-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/kernel-build-tools" name="kernel/prebuilts/build-tools" revision="fb2b8615411a4e3804646a244ce526216024a4cf" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-sqlite-release" />
+  
+  
+  
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" revision="dda615f78b748f8fb4a0f5dc2a5865f360b9f371" clone-depth="1" upstream="androidx-sqlite-release" />
+  
+  
+  <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" clone-depth="1" revision="a139f38987dcac0e26fb8ab4d35c7eb724e35b6d" upstream="androidx-sqlite-release" />
+  
+  
+  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" revision="fea5e5d2968b2bd7caab147e17387e856c2ba793" upstream="androidx-sqlite-release" />
 
   
-  <project clone-depth="1" name="platform/frameworks/support-golden" path="golden" revision="d809a1fb9d1023724ff84982feecf8b64c99ca1b" upstream="androidx-sqlite-release" />
 
   
-
-  
-  <project name="platform/frameworks/support" path="frameworks/support" revision="e4e4d75af03670d16a7b961c5260ef841c34a9f6" upstream="androidx-sqlite-release" />
+  <project path="frameworks/support" name="platform/frameworks/support" revision="6bd677143e61fa730d6da700e3a214e9fae26347" upstream="androidx-sqlite-release" />
   
 
-  <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
