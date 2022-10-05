@@ -4,14 +4,15 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/android-t-qpr1-beta-1-gpl"
+  <default revision="refs/tags/android-t-qpr1-beta-2-gpl"
            remote="aosp"
            sync-j="4" />
 
   <manifest-server url="http://android-smartsync.corp.google.com/android.googlesource.com/manifestserver" />
 
-  <superproject name="platform/superproject" remote="aosp" revision="android-t-qpr1-beta-1-gpl" />
+  <superproject name="platform/superproject" remote="aosp" revision="android-t-qpr1-beta-2-gpl" />
 
+  <project path="art" name="platform/art" groups="pdk" />
   <project path="external/autotest" name="platform/external/autotest" groups="pdk-fs" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk" />
   <project path="external/dnsmasq" name="platform/external/dnsmasq" groups="pdk" />
@@ -47,6 +48,7 @@
   <project path="external/selinux" name="platform/external/selinux" groups="pdk" />
   <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
+  <project path="packages/modules/NeuralNetworks" name="platform/packages/modules/NeuralNetworks" groups="pdk-cw-fs,pdk-fs" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" />
 
