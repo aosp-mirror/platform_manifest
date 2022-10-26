@@ -106,4 +106,23 @@
 
   <!-- Rust compiler toolchain, note that we will use the system one on windows! -->
   <project path="prebuilts/rust" name="platform/prebuilts/rust" revision="master" clone-depth="1" groups="notdefault,platform-linux,platform-darwin" />
+
+  <!-- Rust crate dependencies, we use a mix of what chromium has to offer, vs AOSP crates. -->
+  <!-- In general when using rust try to use AOSP crates first by overriding them in you cargo workspace -->
+  <project path="external/rust/crates/bindgen" name="platform/external/rust/crates/bindgen" revision="master" />
+  <project path="external/rust/crates/bytes" name="platform/external/rust/crates/bytes" revision="master" />
+  <project path="external/rust/crates/clang-sys" name="platform/external/rust/crates/clang-sys" revision="master" />
+  <project path="external/rust/crates/num-bigint" name="platform/external/rust/crates/num-bigint" revision="master" />
+  <project path="external/rust/crates/num-derive" name="platform/external/rust/crates/num-derive" revision="master" />
+  <project path="external/rust/crates/num-integer" name="platform/external/rust/crates/num-integer" revision="master" />
+  <project path="external/rust/crates/num-traits" name="platform/external/rust/crates/num-traits" revision="master" />
+  <project path="external/rust/crates/pin-utils" name="platform/external/rust/crates/pin-utils" revision="master" />
+  <project path="external/rust/crates/rand" name="platform/external/rust/crates/rand" revision="master" />
+  <project path="external/rust/crates/thiserror" name="platform/external/rust/crates/thiserror" revision="master" />
+  <project path="external/rust/crates/thiserror-impl" name="platform/external/rust/crates/thiserror-impl" revision="master" />
+  <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir" revision="master" />
+
+  <remote  name="chromium" fetch="https://chromium.googlesource.com/" />
+
+  <project path="external/rust/chromium/crates" name="chromiumos/third_party/rust_crates" remote="chromium" revision="70439c67fa61f074eb50fd2a498ff8ea0999db1c" clone-depth="1" />
 </manifest>
