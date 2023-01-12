@@ -1,58 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="master"
+  <default revision="android-games-sdk-games-memory-advice-release"
            remote="aosp"
            sync-j="4" />
-
-  <superproject name="platform/superproject" remote="aosp" revision="android-games-sdk"/>
+  <superproject name="platform/superproject" remote="aosp" />
   <contactinfo bugurl="go/repo-bug" />
-
   <!-- platform/build is required by Coastguard -->
-  <project path="build"                              name="platform/build" revision="android-games-sdk"/>
-
+  <project path="build"                              name="platform/build" />
   <!-- The SDK repository itself + external code dependencies -->
   <project path="gamesdk"                             name="platform/frameworks/opt/gamesdk"/>
   <project path="external/protobuf"                   name="platform/external/protobuf"
-    revision="fb6f8da08b60b6beb5bb360d79dd3feda0147da7" />
+     />
   <project path="external/nanopb-c"                   name="platform/external/nanopb-c"/>
   <project path="external/modp_b64"                   name="platform/external/modp_b64"/>
   <project path="external/googletest"                 name="platform/external/googletest"/>
   <project path="external/six"                        name="platform/external/python/six"/>
   <project path="external/tensorflow"                 name="platform/external/tensorflow"
-    revision="80586fdc64759207f64e6f63e0b107a6b2421357" />
+     />
   <project path="external/cpuinfo"                    name="platform/external/cpuinfo"
-    revision="7c831673275ad137f81749388bed19ef74788903" />
+     />
   <project path="external/pthreadpool"                name="platform/external/pthreadpool"
-    revision="08bcb1538635dbffaf1b5d460fc5132c8b95f532" />
+     />
   <project path="external/FP16"                       name="platform/external/FP16"
-    revision="e22b19eb0cfaa40394d1d70eaa84cdff6a1ef67b" />
+     />
   <project path="external/FXdiv"                      name="platform/external/FXdiv"
-    revision="908fa57b9943d8c70dab270ec7f1ec970a42dff0" />
+     />
   <project path="external/psimd"                      name="platform/external/psimd"
-    revision="98508813e7d9f42eac52b5cc09c87d3b16e5cc08" />
+     />
   <project path="external/abseil-cpp"                 name="platform/external/abseil-cpp"
-    revision="7ba826e50dff1878e6ecc6b9af44097c040c8968" />
+     />
   <project path="external/eigen"                      name="platform/external/eigen"
-    revision="10f298fc4175c1b8537c674f654a070c871960e5" />
+     />
   <project path="external/xnnpack"                    name="platform/external/XNNPACK"
-    revision="b10cef7997988439aeb02330ba9e165022cecdaf" />
+     />
   <project path="external/flatbuffers"                name="platform/external/flatbuffers"
-    revision="b933abb908bb02eb77b2e8cb48b3961b27e77da7" />
+     />
   <project path="external/neon2sse"                   name="platform/external/neon_2_sse"
-    revision="80a68eefdccd99baeea4880baa1b4c25f2618725" />
+     />
   <project path="external/fft2d"                      name="platform/external/fft2d"
-    revision="e6aed768e754af0ed23e656444a58ad533e7f81f" />
+     />
   <project path="external/ruy"                        name="platform/external/ruy"
-    revision="4377b97cf0850e0a61caa191586ebe68ccbc2abf" />
+     />
   <project path="external/gemmlowp"                   name="platform/external/gemmlowp"
-    revision="689c69e88b91e7bff068e33396f74c0a5b17390e" />
+     />
   <project path="external/libtextclassifier"          name="platform/external/libtextclassifier"
-    revision="c19a0d46b331db3442b4ba44265577dd4661fdc8" />
-
+     />
   <!-- All the required releases of the Android NDK -->
   <project path="prebuilts/ndk/r13"                   name="toolchain/prebuilts/ndk/r13" />
   <project path="prebuilts/ndk/r14"                   name="toolchain/prebuilts/ndk/r14" />
@@ -64,7 +59,6 @@
   <project path="prebuilts/ndk/r20"                   name="toolchain/prebuilts/ndk/r20" />
   <project path="prebuilts/ndk/r21"                   name="toolchain/prebuilts/ndk/r21" />
   <project path="prebuilts/ndk/r23"                   name="toolchain/prebuilts/ndk/r23" />
-
   <!-- All the pre-built components of releases of the Android SDK -->
   <project path="prebuilts/sdk/build-tools/26.0.1"    name="platform/prebuilts/fullsdk-linux/build-tools/26.0.1"/>
   <project path="prebuilts/sdk/platforms/android-26"  name="platform/prebuilts/fullsdk/platforms/android-26"/>
@@ -75,41 +69,33 @@
   <project path="prebuilts/sdk/platforms/android-29"  name="platform/prebuilts/fullsdk/platforms/android-29"/>
   <project path="prebuilts/sdk/build-tools/31.0.0"    name="platform/prebuilts/fullsdk-linux/build-tools/31.0.0"/>
   <project path="prebuilts/sdk/platforms/android-31"  name="platform/prebuilts/fullsdk/platforms/android-31"/>
-
   <project path="prebuilts/libprotobuf/linux"  	      name="platform/prebuilts/libprotobuf/linux"   />
   <project path="prebuilts/libprotobuf/darwin" 	      name="platform/prebuilts/libprotobuf/darwin"  />
   <project path="prebuilts/libprotobuf/windows"       name="platform/prebuilts/libprotobuf/windows" />
-
   <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11"
-    clone-depth="1" revision="aee26c8cd89b9abb428f676caba168699cd8662f" />
-
+    clone-depth="1"  />
   <!-- Other tool packages required by the build system -->
   <project path="prebuilts/cmake/linux-x86"           name="platform/prebuilts/cmake/linux-x86"
-    clone-depth="1" revision="001ed46e3703c78cbc3838adfe4c14ba279f9ff7" />
+    clone-depth="1"  />
   <project path="prebuilts/cmake/darwin-x86"          name="platform/prebuilts/cmake/darwin-x86"
-    clone-depth="1" revision="7aea7e9880110799088cd1de509886871078306f" />
+    clone-depth="1"  />
   <project path="prebuilts/cmake/windows-x86"         name="platform/prebuilts/cmake/windows-x86"
-    clone-depth="1" revision="f6283abb0a655968016437be07d04370fd815e6c" />
-
+    clone-depth="1"  />
   <project path="prebuilts/cmake_old/linux-x86"           name="platform/prebuilts/cmake/linux-x86"
-    clone-depth="1" revision="5c9b19360d246af47c29deecc1899f564d602d0b" />
-
+    clone-depth="1"  />
   <project path="prebuilts/python/linux-x86"           name="platform/prebuilts/python/linux-x86"
-    clone-depth="1" revision="f01be9c357118e6a807f7330c832fe375c5f2c4f" />
+    clone-depth="1"  />
   <project path="prebuilts/python/windows-x86"         name="platform/prebuilts/python/windows-x86"
-    clone-depth="1" revision="4f4fd4ec3d82655a8de035dc9f1dda51587ef50c" />
+    clone-depth="1"  />
   <project path="prebuilts/python/darwin-x86"         name="platform/prebuilts/python/darwin-x86"
-    clone-depth="1" revision="2b3e46a51fcc845e806a6ce64acfe467a4ce33bd" />
-
+    clone-depth="1"  />
   <project path="prebuilts/ninja/linux-x86"           name="platform/prebuilts/ninja/linux-x86"
-    clone-depth="1" revision="6369b19fc3fbe765636af75d394627e2b92599ed" />
+    clone-depth="1"  />
   <project path="prebuilts/ninja/darwin-x86"          name="platform/prebuilts/ninja/darwin-x86"
-    clone-depth="1" revision="00f798346dedb4a7a6a6dcc9ad32ff09d66ee0db" />
+    clone-depth="1"  />
   <project path="prebuilts/ninja/windows-x86"         name="platform/prebuilts/ninja/windows-x86"
-    clone-depth="1" revision="b88e85c90e260cfed1d5130499b8dfd7bb9dc02a" />
-
+    clone-depth="1"  />
   <!-- Repo hooks -->
   <project path="tools/repohooks"                     name="platform/tools/repohooks" />
   <repo-hooks in-project="platform/tools/repohooks"   enabled-list="pre-upload" />
-
 </manifest>
