@@ -1,53 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="emu-master-dev"
+  <default revision="emu-33-release"
            remote="aosp"
            sync-j="4" />
-
   <superproject name="platform/superproject" remote="aosp"/>
   <contactinfo bugurl="go/repo-bug" />
-
   <project path="build/bazel" name="platform/build/bazel">
     <linkfile src="toplevel.WORKSPACE" dest="WORKSPACE" />
     <linkfile src="toplevel.bazelrc" dest=".bazelrc" />
     <linkfile src="toplevel.bazelversion" dest=".bazelversion" />
   </project>
   <project path="tools/buildSrc" name="platform/tools/buildSrc" />
-
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="master"/>
-  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" revision="master"/>
+  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" />
+  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" />
   <project path="external/adt-infra" name="platform/external/adt-infra" />
   <project path="external/angle" name="platform/external/angle" />
-  <project path="external/astc-codec" name="platform/external/astc-codec" revision="master" />
-  <project path="external/boringssl" name="platform/external/boringssl" revision="master" clone-depth="1"/>
+  <project path="external/astc-codec" name="platform/external/astc-codec"  />
+  <project path="external/boringssl" name="platform/external/boringssl"  clone-depth="1"/>
   <project path="external/cares" name="platform/external/c-ares" />
   <project path="external/curl" name="platform/external/curl" />
-  <project path="external/deqp" name="platform/external/deqp" revision="master" />
-  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" revision="master" />
-  <project path="external/googletest" name="platform/external/googletest" revision="master" />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark" revision="db1632fadc79df388a2a7248157c965ee40248a1" />
+  <project path="external/deqp" name="platform/external/deqp"  />
+  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols"  />
+  <project path="external/googletest" name="platform/external/googletest"  />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark"  />
   <project path="external/google-breakpad" name="platform/external/google-breakpad" />
   <project path="external/grpc" name="platform/external/grpc-grpc" />
   <project path="external/libusb" name="platform/external/libusb" />
   <project path="external/libyuv" name="platform/external/libyuv" />
   <project path="external/libpng" name="platform/external/libpng" />
-  <project path="external/lz4" name="platform/external/lz4" revision="master"/>
+  <project path="external/lz4" name="platform/external/lz4" />
   <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/perfetto" name="platform/external/perfetto" revision="37518c39e3db120322359090db3d54f6ac100078"/>
+  <project path="external/perfetto" name="platform/external/perfetto" />
   <project path="external/qemu" name="platform/external/qemu">
     <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
   </project>
-  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" revision="master"/>
-  <project path="external/virglrenderer" name="platform/external/virglrenderer" revision="crosvm-master"/>
+  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" />
+  <project path="external/virglrenderer" name="platform/external/virglrenderer" />
   <project path="external/nasm" name="platform/external/nasm" />
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
   <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/native" name="platform/frameworks/native" revision="lollipop-release" />
-  <project path="hardware/google/aemu" name="platform/hardware/google/aemu"  groups="pdk" revision="master" />
+  <project path="frameworks/native" name="platform/frameworks/native"  />
+  <project path="hardware/google/aemu" name="platform/hardware/google/aemu"  groups="pdk"  />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
@@ -55,80 +51,65 @@
   <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
   <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-  <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="master"/>
-  <project path="tools/netsim" name="platform/tools/netsim" revision="master" />
-
-
+  <project name="device/google/cuttlefish" path="device/google/cuttlefish" />
+  <project path="tools/netsim" name="platform/tools/netsim"  />
   <!-- Linux is using libevent, which is currently coming from libchrome.. -->
-  <project path="external/libchrome" name="platform/external/libchrome"  revision="emu-master-dev" groups="notdefault,platform-linux"/>
-
+  <project path="external/libchrome" name="platform/external/libchrome"   groups="notdefault,platform-linux"/>
   <!-- Linux only toolchain dependencies -->
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="master" groups="notdefault,platform-linux" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"  groups="notdefault,platform-linux" />
   <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="llvm-toolchain" groups="notdefault,platform-linux" />
-
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
   <!-- Windows only toolchain dependencies -->
   <project path="prebuilts/bazel/windows-x86_64" name="platform/prebuilts/bazel/windows-x86_64" clone-depth="1" groups="notdefault,platform-windows" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="master" groups="notdefault,platform-windows" />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
   <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="llvm-toolchain" groups="notdefault,platform-windows" />
-
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
   <!-- Darwin (macos) only toolchain dependencies -->
   <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="master" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="llvm-toolchain" groups="notdefault,platform-darwin" />
-
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
   <!-- Tink security library and dependencies -->
   <project path="external/tink" name="platform/external/tink" />
-  <project path="external/rapidjson" name="platform/external/rapidjson"  revision="master"/>
-
+  <project path="external/rapidjson" name="platform/external/rapidjson"  />
   <!-- Bring in the root-canal, bluetooth dependencies -->
-  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" revision="master"/>
-
+  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" />
   <!-- toolchain requirements for root-canal without prebuilts, only supported on linux/darwin -->
-  <project path="external/bison" name="platform/external/bison" revision="master" groups="notdefault,platform-linux" />
-  <project path="external/flex" name="platform/external/flex" revision="master" groups="notdefault,platform-linux,platform-darwin" />
-  <project path="external/m4" name="toolchain/m4" revision="master" groups="notdefault,platform-linux,platform-darwin" />
-
+  <project path="external/bison" name="platform/external/bison"  groups="notdefault,platform-linux" />
+  <project path="external/flex" name="platform/external/flex"  groups="notdefault,platform-linux,platform-darwin" />
+  <project path="external/m4" name="toolchain/m4"  groups="notdefault,platform-linux,platform-darwin" />
   <!-- Webrtc for the goldfish-webrtc-videobridge -->
   <project path="external/webrtc" name="platform/external/webrtc" />
-
   <!-- flatbuffers for the gfxstream-protocols -->
-  <project path="external/flatbuffers" name="platform/external/flatbuffers" revision="master" />
-
+  <project path="external/flatbuffers" name="platform/external/flatbuffers"  />
   <!-- Test infrastructure uses these -->
-  <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images" revision="master" />
-
+  <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images"  />
   <!-- Rust compiler toolchain, note that we will use the system one on windows! -->
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" revision="master" clone-depth="1" groups="notdefault,platform-linux,platform-darwin" />
-
+  <project path="prebuilts/rust" name="platform/prebuilts/rust"  clone-depth="1" groups="notdefault,platform-linux,platform-darwin" />
   <!-- Rust crate dependencies, we use a mix of what chromium has to offer, vs AOSP crates. -->
   <!-- In general when using rust try to use AOSP crates first by overriding them in you cargo workspace -->
-  <project path="external/rust/crates/bindgen" name="platform/external/rust/crates/bindgen" revision="master" />
-  <project path="external/rust/crates/bytes" name="platform/external/rust/crates/bytes" revision="master" />
-  <project path="external/rust/crates/clang-sys" name="platform/external/rust/crates/clang-sys" revision="master" />
-  <project path="external/rust/crates/num-bigint" name="platform/external/rust/crates/num-bigint" revision="master" />
-  <project path="external/rust/crates/num-derive" name="platform/external/rust/crates/num-derive" revision="master" />
-  <project path="external/rust/crates/num-integer" name="platform/external/rust/crates/num-integer" revision="master" />
-  <project path="external/rust/crates/num-traits" name="platform/external/rust/crates/num-traits" revision="master" />
-  <project path="external/rust/crates/pin-utils" name="platform/external/rust/crates/pin-utils" revision="master" />
-  <project path="external/rust/crates/rand" name="platform/external/rust/crates/rand" revision="master" />
-  <project path="external/rust/crates/thiserror" name="platform/external/rust/crates/thiserror" revision="master" />
-  <project path="external/rust/crates/thiserror-impl" name="platform/external/rust/crates/thiserror-impl" revision="master" />
-  <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir" revision="master" />
-
+  <project path="external/rust/crates/bindgen" name="platform/external/rust/crates/bindgen"  />
+  <project path="external/rust/crates/bytes" name="platform/external/rust/crates/bytes"  />
+  <project path="external/rust/crates/clang-sys" name="platform/external/rust/crates/clang-sys"  />
+  <project path="external/rust/crates/num-bigint" name="platform/external/rust/crates/num-bigint"  />
+  <project path="external/rust/crates/num-derive" name="platform/external/rust/crates/num-derive"  />
+  <project path="external/rust/crates/num-integer" name="platform/external/rust/crates/num-integer"  />
+  <project path="external/rust/crates/num-traits" name="platform/external/rust/crates/num-traits"  />
+  <project path="external/rust/crates/pin-utils" name="platform/external/rust/crates/pin-utils"  />
+  <project path="external/rust/crates/rand" name="platform/external/rust/crates/rand"  />
+  <project path="external/rust/crates/thiserror" name="platform/external/rust/crates/thiserror"  />
+  <project path="external/rust/crates/thiserror-impl" name="platform/external/rust/crates/thiserror-impl"  />
+  <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir"  />
   <!-- Temporarily disabled See: b/266452325, add this section to a local_manifest if you need rust
     i.e. add this to $AOSP_ROOT/.repo/local_manfiests/chromium.xml
-
   <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
   <remote  name="chromium" fetch="https://chromium.googlesource.com/" />
-  <project path="external/rust/chromium/crates" name="chromiumos/third_party/rust_crates" remote="chromium" revision="70439c67fa61f074eb50fd2a498ff8ea0999db1c" clone-depth="1" />
+  <project path="external/rust/chromium/crates" name="chromiumos/third_party/rust_crates" remote="chromium"  clone-depth="1" />
   </manifest>
   -->
 </manifest>
