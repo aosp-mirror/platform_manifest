@@ -103,8 +103,11 @@
   <!-- Test infrastructure uses these -->
   <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images" revision="master" />
 
-  <!-- Rust compiler toolchain, note that we will use the system one on windows! -->
+  <!-- Rust compiler toolchain -->
   <project path="prebuilts/rust" name="platform/prebuilts/rust" revision="master" clone-depth="1" />
+
+  <!-- Rust toolchain needs a set of dlls from mingw on windows -->
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" revision="master" clone-depth="1" groups="notdefault,platform-windows" />
 
   <!-- Rust crate dependencies, we use a mix of what chromium has to offer, vs AOSP crates. -->
   <!-- In general when using rust try to use AOSP crates first by overriding them in you cargo workspace -->
