@@ -1,53 +1,79 @@
 <manifest>
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="androidx-vectordrawable-release" sync-j="8" />
-  
-  <project name="platform/build" path="build/make" revision="074890645bdd88c2b7f5205b7f65c4089e2784d6" />
-  
-  
-  <project clone-depth="1" groups="pdk" name="platform/external/noto-fonts" path="external/noto-fonts" revision="45565ad40606384e35d034cfe8aece0602a5fbfc" />
-  <project clone-depth="1" groups="pdk" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="2e8b9b6ba018303475d25a227aecc08a08280fb9" />
-  <project clone-depth="1" groups="pdk" name="platform/external/doclava" path="external/doclava" revision="08bc827b428b81ce79c3592a9bd8cd1edc36e78b" />
-  <project clone-depth="1" groups="pdk" name="platform/external/dokka" path="external/dokka" revision="f1827c37b50434598d91e7df414f985343e2e740" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="4689319287ea2125f616f1ae4108b6ca4f55b3ad" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="59356a5b12fdb0ad992386ea94b2b848ded34c63" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="8de993f32decdf1eb35e82df1448b929bbddd951" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="androidx-vectordrawable-release" remote="aosp" />
+  <project path="build/make" name="platform/build" revision="2dc95e0dac2c5dda7dfc050c313d8c7900263818" upstream="androidx-vectordrawable-release" />
+
   
   
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="cca7ecaa5d8c398f41bfec7938cc6a526803579b" />
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/ktlint" path="prebuilts/ktlint" revision="ddaa13e7fb7329c7e7682580cf8dd2379daebc12" />
-  <project groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" name="platform/tools/repohooks" path="tools/repohooks" revision="139217d6aaf038502c2a8322a4405bd74bdf5763" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" revision="848b24ae7cd643c4ebb78eb0c2b6b140b80bdd5e" upstream="androidx-vectordrawable-release" />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" revision="e83b8356cc67057d7a92427f14b5ad2f9ca72f5c" upstream="androidx-vectordrawable-release" />
+  <project path="external/icing" name="platform/external/icing" clone-depth="1" revision="d258329b11f75c8ca7c1b671582c53e521b799d8" upstream="androidx-vectordrawable-release" />
+  <project path="external/icu" name="platform/external/icu" clone-depth="1" revision="304410e63a5426aa480a450f7386b3e1ff240096" upstream="androidx-vectordrawable-release" />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark" clone-depth="1" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-vectordrawable-release" />
+  
+  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" revision="d9868039b40b1995f75c8d7ece9df29c7ab3f54d" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" revision="6051efff6d6070e8054fd240d60a81dd24c65ce4" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" revision="a7c5a54d32dc0dbec10ea901eaaba073d0fcfaa6" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" revision="6765ff630c39b57640da70d64c889659e0bc4c4b" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" revision="ec26737238c7de55e0e8f98482a7bb90e8c1beaa" upstream="androidx-vectordrawable-release" />
+  
+  <project path="external/doclava" name="platform/external/doclava" clone-depth="1" revision="3c770db575bad2713fbeb8424d9c57ab25f50590" upstream="androidx-vectordrawable-release" />
+  <project path="external/dokka" name="platform/external/dokka" clone-depth="1" revision="44f484d0c562c155c6fd452484b664501941dda6" upstream="androidx-vectordrawable-release" />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="0e115ee009ff670c11bc345fbf4312a4f64e9dab" upstream="androidx-vectordrawable-release" />
+
   
   
-  <project clone-depth="1" groups="tools" name="platform/tools/external/gradle" path="tools/external/gradle" revision="76ea7f3298b142086d20e3af089c9cb152d96b86" />
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" revision="5ac1eb7d400028b83fa7d2b4709512de7d776f7d" upstream="androidx-vectordrawable-release" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" revision="24c356588a88a44d48367b9a52a941185fc036b5" upstream="androidx-vectordrawable-release" />
   
   
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-28" path="prebuilts/fullsdk-darwin/platforms/android-28" revision="4d3b9933013818fdb154a6ecd226426680879a0b">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-28" src="." />
+  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" revision="1032661b632ef1325de4c4829008dab8571c346e" upstream="androidx-vectordrawable-release" />
+
+  
+  
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" revision="67aa0b54bc5f5bd529fafe5b63583fd3bbcd27dc" upstream="androidx-vectordrawable-release" />
+
+  
+  
+  <project path="prebuilts/fullsdk-darwin/platforms/android-31" name="platform/prebuilts/fullsdk/platforms/android-31" revision="200e64779106cf6738f7c2cf02c9f23b683b5ac1" clone-depth="1" upstream="androidx-vectordrawable-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms/android-31" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-29" path="prebuilts/fullsdk-darwin/platforms/android-29" revision="34cce39119d99ba076403687e8ea43526e22aabd">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-29" src="." />
+  <project path="prebuilts/fullsdk-darwin/sources/android-31" name="platform/prebuilts/fullsdk/sources/android-31" revision="75c718b2434a9003e34cb2fa3c89a1acf7449cc1" clone-depth="1" upstream="androidx-vectordrawable-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources/android-31" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-28" path="prebuilts/fullsdk-darwin/sources/android-28" revision="b8042fc9b036db0a6692ca853428fc6ab1e60892">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-28" src="." />
-  </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-29" path="prebuilts/fullsdk-darwin/sources/android-29" revision="31c5a00d2d9a1827383eb802d65c4f6133d3cb59">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-29" src="." />
-  </project>
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" revision="37e56d10bfd0afb98b4810b2fdb31cda05adaa37" clone-depth="1" upstream="androidx-vectordrawable-release" />
   
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/28.0.3" path="prebuilts/fullsdk-darwin/build-tools/28.0.3" revision="c2d3aa071e8156f1e1c01a606e924f7b2f259dfc" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="2bf6a315766501889923832064367be6c163f411" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" />
+  <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" clone-depth="1" revision="b7dc2aa11dcbdf5f112a2ff2f1f99f4f4ead1125" upstream="androidx-vectordrawable-release" />
+
   
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/28.0.3" path="prebuilts/fullsdk-linux/build-tools/28.0.3" revision="52f6ca4404ee1cee36f02594c9f15acf41c2f17b" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="3a6903d2cdd95ac04b7b79a07272447b694fe0c8" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="ca7461f83a34e8978c68b61ad9a619b2b9b933a0" />
+  <project path="prebuilts/fullsdk-darwin/build-tools/29.0.3" name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3" revision="f597735774e931d682fb10e0d0590392f4a69c38" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/fullsdk-darwin/build-tools/30.0.3" name="platform/prebuilts/fullsdk-darwin/build-tools/30.0.3" revision="17cc286169eb2246fe626f1e6ee907be0495521e" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/fullsdk-darwin/ndk" name="toolchain/prebuilts/ndk-darwin/r21" revision="1c4977f21886e391f7a2105c218fc9de9ac49b31" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools" revision="e2f08b6b5e711010a2dc738b513fb5e69cdf5a19" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/fullsdk-darwin/tools" name="platform/prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-vectordrawable-release" />
+  
+  <project path="prebuilts/fullsdk-darwin/cmake" name="platform/prebuilts/cmake/darwin-x86" revision="d4d0527d33b37c2391fc5aa6c01a98164302d899" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-vectordrawable-release" />
+
   
   
-  <project groups="pdk-cw-fs,pdk-fs" name="platform/frameworks/support" path="frameworks/support" revision="c85159948c79fd12711a20bc7f527650234f4e87" />
+  <project path="prebuilts/fullsdk-linux/build-tools/29.0.3" name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3" revision="2d89707a7cc994d40bd4c20b3cb42cf5a87e983a" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/fullsdk-linux/build-tools/30.0.3" name="platform/prebuilts/fullsdk-linux/build-tools/30.0.3" revision="5074774ea2223b32b73717896c2e722df523c67b" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/fullsdk-linux/ndk" name="toolchain/prebuilts/ndk/r21" revision="be518ef4272ce61fd6dad9db73e9be74853b3974" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools" revision="02db8f2528af3790a1e829c818dbf56448672fa6" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-vectordrawable-release" />
+  <project path="prebuilts/fullsdk-linux/tools" name="platform/prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-vectordrawable-release" />
   
-  <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
+  <project path="prebuilts/fullsdk-linux/cmake" name="platform/prebuilts/cmake/linux-x86" revision="437a4f6eef07fce85cbf197b28ae51ff2e5651c0" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-vectordrawable-release" />
+
+  
+  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" revision="5af1d09c13b789d8b520c0d7ee3104f0244fd9ca" upstream="androidx-vectordrawable-release" />
+
+  
+
+  
+  <project path="frameworks/support" name="platform/frameworks/support" revision="53bfdc5eac7d46b5582d9235e74e1ebc9fe98ab4" upstream="androidx-vectordrawable-release" />
+  
+
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
