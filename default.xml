@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
   <default revision="emu-33-dev"
            remote="aosp"
            sync-j="4" />
-
   <superproject name="platform/superproject" remote="aosp"/>
   <contactinfo bugurl="go/repo-bug" />
-
   <project path="build/make" name="platform/build" />
   <project path="build/bazel" name="platform/build/bazel">
     <linkfile src="toplevel.WORKSPACE" dest="WORKSPACE" />
@@ -18,7 +15,6 @@
     <linkfile src="toplevel.bazelversion" dest=".bazelversion" />
   </project>
   <project path="tools/buildSrc" name="platform/tools/buildSrc" />
-
   <project path="external/libslirp" name="trusty/external/qemu-libslirp"/>
   <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" />
   <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" />
@@ -43,12 +39,13 @@
   <project path="external/qemu" name="platform/external/qemu">
     <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
   </project>
+  <project path="external/glib" name="platform/external/bluetooth/glib" />
   <project path="external/tinyobjloader" name="platform/external/tinyobjloader" />
   <project path="external/virglrenderer" name="platform/external/virglrenderer" />
   <project path="external/nasm" name="platform/external/nasm" />
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
   <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/native" name="platform/frameworks/native" />
+  <project path="frameworks/native" name="platform/frameworks/native"  />
   <project path="hardware/google/aemu" name="platform/hardware/google/aemu"  groups="pdk"  />
   <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream"  groups="pdk"  />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
@@ -60,55 +57,43 @@
   <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
   <project name="device/google/cuttlefish" path="device/google/cuttlefish" />
   <project path="tools/netsim" name="platform/tools/netsim"  />
-
   <!-- Linux only toolchain dependencies -->
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"  groups="notdefault,platform-linux" />
   <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
   <!-- Windows only toolchain dependencies -->
   <project path="prebuilts/bazel/windows-x86_64" name="platform/prebuilts/bazel/windows-x86_64" clone-depth="1" groups="notdefault,platform-windows" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
   <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
-
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
   <!-- Darwin (macos) only toolchain dependencies -->
   <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
-  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
-
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
   <!-- Tink security library and dependencies -->
   <project path="external/tink" name="platform/external/tink" />
   <project path="external/rapidjson" name="platform/external/rapidjson"  />
-
   <!-- Bring in the root-canal, bluetooth dependencies -->
   <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" />
-
   <!-- toolchain requirements for root-canal without prebuilts, only supported on linux/darwin -->
   <project path="external/bison" name="platform/external/bison"  groups="notdefault,platform-linux" />
   <project path="external/flex" name="platform/external/flex"  groups="notdefault,platform-linux,platform-darwin" />
   <project path="external/m4" name="toolchain/m4"  groups="notdefault,platform-linux,platform-darwin" />
-
   <!-- Webrtc for the goldfish-webrtc-videobridge -->
   <project path="external/webrtc" name="platform/external/webrtc" />
-
   <!-- flatbuffers for the gfxstream-protocols -->
   <project path="external/flatbuffers" name="platform/external/flatbuffers"  />
-
   <!-- Test infrastructure uses these -->
   <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images"  />
-
-  <!-- Rust compiler toolchain, pinned to 1.69.0 -->
+  <!-- Rust compiler toolchain -->
   <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" />
-
   <!-- Rust toolchain needs a set of dlls from mingw on windows -->
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8"  clone-depth="1" groups="notdefault,platform-windows" />
-
   <!-- Rust crate dependencies, we use a mix of what chromium has to offer, vs AOSP crates. -->
   <!-- In general when using rust try to use AOSP crates first by overriding them in you cargo workspace -->
   <project path="external/rust/crates/aho-corasick" name="platform/external/rust/crates/aho-corasick"  />
@@ -223,14 +208,12 @@
   <project path="external/rust/crates/utf-8" name="platform/external/rust/crates/utf-8"  />
   <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir"  />
   <project path="external/rust/crates/which" name="platform/external/rust/crates/which"  />
-
   <!-- Temporarily disabled See: b/266452325, add this section to a local_manifest if you need rust
     i.e. add this to $AOSP_ROOT/.repo/local_manfiests/chromium.xml
-
   <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
   <remote  name="chromium" fetch="https://chromium.googlesource.com/" />
-  <project path="external/rust/chromium/crates" name="chromiumos/third_party/rust_crates" remote="chromium" revision="70439c67fa61f074eb50fd2a498ff8ea0999db1c" clone-depth="1" />
+  <project path="external/rust/chromium/crates" name="chromiumos/third_party/rust_crates" remote="chromium"  clone-depth="1" />
   </manifest>
   -->
 </manifest>
