@@ -3,13 +3,13 @@
   <remote  name="goog"
 	   fetch=".."
 	   review="sso://googleplex-android/" />
-  <default revision="stage-aosp-udc-release"
+  <default revision="stage-aosp-udc-d1-release"
            remote="goog"
            sync-j="8"
     />
   <remote  name="goog-and-upload-partner" fetch=".." review="sso://partner-android/" />
   <manifest-server url="http://android-smartsync.corp.google.com/googleplex-android.googlesource.com/manifestserver" />
-  <superproject name="platform/superproject/udc" remote="goog" revision="stage-aosp-udc-release"/>
+  <superproject name="platform/superproject/udc" remote="goog" revision="stage-aosp-udc-d1-release"/>
   <contactinfo bugurl="go/repo-bug" />
   <!-- BEGIN open-source projects -->
   <project path="build/make" name="platform/build" groups="pdk" >
@@ -107,6 +107,9 @@
   <project path="device/google/tangorpro" name="device/google/tangorpro" groups="device,tangorpro" />
   <project path="device/google/tangorpro-sepolicy" name="device/google/tangorpro-sepolicy" groups="device,tangorpro" />
   <project path="device/google/tangorpro-kernel" name="device/google/tangorpro-kernel" groups="device,tangorpro" clone-depth="1" />
+  <project path="device/google/shusky" name="device/google/shusky" groups="device,ripcurrent" />
+  <project path="device/google/shusky-kernel" name="device/google/shusky-kernel" groups="device,ripcurrent" clone-depth="1" />
+  <project path="device/google/shusky-sepolicy" name="device/google/shusky-sepolicy" groups="device,ripcurrent" />
   <project path="device/google/sunfish" name="device/google/sunfish" groups="device,sunfish" />
   <project path="device/google/sunfish-kernel" name="device/google/sunfish-kernel" groups="device,sunfish" clone-depth="1" />
   <project path="device/google/sunfish-sepolicy" name="device/google/sunfish-sepolicy" groups="device,sunfish" />
