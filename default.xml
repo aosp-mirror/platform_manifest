@@ -1,228 +1,234 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="emu-34-2-release"
-           remote="aosp"
-           sync-j="4" />
-  <superproject name="platform/superproject" remote="aosp"/>
+
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="emu-34-2-release" remote="aosp" sync-j="4" />
+
   <contactinfo bugurl="go/repo-bug" />
-  <project path="build/make" name="platform/build" />
-  <project path="build/bazel" name="platform/build/bazel">
+
+  <project path="build/make" name="platform/build" revision="5472474714bff841a7496941ed7569671aabac61" upstream="emu-34-2-release" />
+  <project path="build/bazel" name="platform/build/bazel" revision="63553bdf1972f043ea0b9e0f77b07964d7b33611" upstream="emu-34-2-release">
     <linkfile src="toplevel.WORKSPACE" dest="WORKSPACE" />
     <linkfile src="toplevel.bazelrc" dest=".bazelrc" />
     <linkfile src="toplevel.bazelversion" dest=".bazelversion" />
   </project>
-  <project path="tools/buildSrc" name="platform/tools/buildSrc" />
-  <project path="external/libslirp" name="trusty/external/qemu-libslirp"/>
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" />
-  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" />
-  <project path="external/adt-infra" name="platform/external/adt-infra" />
-  <project path="external/mobly-bundled-snippets" name="platform/external/mobly-bundled-snippets"  />
-  <project path="external/angle" name="platform/external/angle" />
-  <project path="external/astc-codec" name="platform/external/astc-codec"  />
-  <project path="external/boringssl" name="platform/external/boringssl"  clone-depth="1"/>
-  <project path="external/cares" name="platform/external/c-ares" />
-  <project path="external/curl" name="platform/external/curl" />
-  <project path="external/dtc" name="platform/external/dtc"  />
-  <project path="external/deqp" name="platform/external/deqp"  />
-  <project path="external/fmtlib" name="platform/external/fmtlib"  />
-  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols"  />
-  <project path="external/googletest" name="platform/external/googletest"  />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark"  />
-  <project path="external/google-breakpad" name="platform/external/google-breakpad" />
-  <project path="external/grpc" name="platform/external/grpc-grpc" />
-  <project path="external/libusb" name="platform/external/libusb" />
-  <project path="external/libpng" name="platform/external/libpng" />
-  <project path="external/libxml2" name="platform/external/libxml2" />
-  <project path="external/lz4" name="platform/external/lz4" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/perfetto" name="platform/external/perfetto" />
-  <project path="external/qemu" name="platform/external/qemu">
-    <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
+  <project path="tools/buildSrc" name="platform/tools/buildSrc" revision="effb9f2f8009a899310c2293188f12bebb031df8" upstream="emu-34-2-release" />
+
+  <project path="external/libslirp" name="trusty/external/qemu-libslirp" revision="527c0ad35c887a5c514932eb265d92458e1a5433" upstream="emu-34-2-release" />
+  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="3502ff5021d73dee45f045b1354592933a8d172b" upstream="emu-34-2-release" />
+  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" revision="664362a37ed3871e5519a26f6f0ab50d408edba8" upstream="emu-34-2-release" />
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" revision="fd30bf9a4b179e3206c3f3d2c8e54e4b15bd3866" upstream="emu-34-2-release" />
+  <project path="external/adt-infra" name="platform/external/adt-infra" revision="32990c9919ef31939e408a444f38ef50ffd5d91b" upstream="emu-34-2-release" />
+  <project path="external/mobly-bundled-snippets" name="platform/external/mobly-bundled-snippets" revision="f192a37de2f5d0b809e5d6aa2ab07ca90ae38269" upstream="emu-34-2-release" />
+  <project path="external/angle" name="platform/external/angle" revision="5fa2e61da947d268512c2ac5523588e0a75f9c33" upstream="emu-34-2-release" />
+  <project path="external/astc-codec" name="platform/external/astc-codec" revision="17ae36822a8084f45ae51f9031e81f8318254f33" upstream="emu-34-2-release" />
+  <project path="external/boringssl" name="platform/external/boringssl" revision="9febe5b41c4ce4503cb1fb36edeb816b659c6ac8" clone-depth="1" upstream="emu-34-2-release" />
+  <project path="external/cares" name="platform/external/c-ares" revision="42cf8dee534419f1826f474d2f5fd67ac94a1706" upstream="emu-34-2-release" />
+  <project path="external/curl" name="platform/external/curl" revision="1da4b04273638c8afe6f88bd7a7ccfb693640773" upstream="emu-34-2-release" />
+  <project path="external/dtc" name="platform/external/dtc" revision="5ec1ec09d03945cfde95c5c018c23b2e94552089" upstream="emu-34-2-release" />
+  <project path="external/deqp" name="platform/external/deqp" revision="0be615abbd5bfdd61c854f24d038ce0c132c9909" upstream="emu-34-2-release" />
+  <project path="external/fmtlib" name="platform/external/fmtlib" revision="44490d866da1297527a6762b8e5064c2d81e54ab" upstream="emu-34-2-release" />
+  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" revision="a21a42e20ecc4e9d25ae71d9343b73e679cc81ad" upstream="emu-34-2-release" />
+  <project path="external/googletest" name="platform/external/googletest" revision="890e5b7689cd635b2ee9a97b77f4e1aab55adbeb" upstream="emu-34-2-release" />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark" revision="78697961c5e2fdefaf7f88d705e3a743b8f14168" upstream="emu-34-2-release" />
+  <project path="external/google-breakpad" name="platform/external/google-breakpad" revision="dbe52e2e00172fe95e1c3c0de2637d968bfda387" upstream="emu-34-2-release" />
+  <project path="external/grpc" name="platform/external/grpc-grpc" revision="3a2fee7afb7602f9a33a968b4423813ae36c8c14" upstream="emu-34-2-release" />
+  <project path="external/libusb" name="platform/external/libusb" revision="23f123a3f531572d14a253db3451c950e21d2447" upstream="emu-34-2-release" />
+  <project path="external/libpng" name="platform/external/libpng" revision="5d19b1bb0f5694f2ae47b3cc2ccfeb571764b439" upstream="emu-34-2-release" />
+  <project path="external/libxml2" name="platform/external/libxml2" revision="27570c2a5b96dc5aea1a0085f610f37ab744f643" upstream="emu-34-2-release" />
+  <project path="external/lz4" name="platform/external/lz4" revision="67d4e528982ffacb160815817afdd3c17e809834" upstream="emu-34-2-release" />
+  <project path="external/protobuf" name="platform/external/protobuf" revision="30fff2931f11aa3c4f216161ef009586748f3a29" upstream="emu-34-2-release" />
+  <project path="external/perfetto" name="platform/external/perfetto" revision="37518c39e3db120322359090db3d54f6ac100078" upstream="emu-34-2-release" />
+  <project path="external/qemu" name="platform/external/qemu" revision="1d3c48a661a7581924c2918e8fe6cfee7998c7b5" upstream="emu-34-2-release">
+    <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace" />
   </project>
-  <project path="external/regex-re2" name="platform/external/regex-re2"  />
-  <project path="external/glib" name="platform/external/bluetooth/glib" />
-  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" />
-  <project path="external/virglrenderer" name="platform/external/virglrenderer" />
-  <project path="external/nasm" name="platform/external/nasm" />
-  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
-  <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/native" name="platform/frameworks/native"  />
-  <project path="hardware/google/aemu" name="platform/hardware/google/aemu"  groups="pdk"  />
-  <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream"  groups="pdk"  />
-  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-  <project name="device/google/cuttlefish" path="device/google/cuttlefish" />
-  <project path="tools/netsim" name="platform/tools/netsim"  />
-  <!-- Linux only toolchain dependencies -->
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"  groups="notdefault,platform-linux" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
-  <!-- Windows only toolchain dependencies -->
-  <project path="prebuilts/bazel/windows-x86_64" name="platform/prebuilts/bazel/windows-x86_64" clone-depth="1" groups="notdefault,platform-windows" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
-  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
-  <!-- Darwin (macos) only toolchain dependencies -->
-  <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" clone-depth="1" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
-  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
-  <!-- Java JDK, we will use the one maintained by android studio -->
-  <project path="prebuilts/studio/jdk" name="platform/prebuilts/studio/jdk" clone-depth="1" />
-  <!-- Tink security library and dependencies -->
-  <project path="external/tink" name="platform/external/tink" />
-  <project path="external/rapidjson" name="platform/external/rapidjson"  />
-  <!-- Bring in the root-canal, bluetooth dependencies -->
-  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" />
-  <!-- toolchain requirements for root-canal without prebuilts, only supported on linux/darwin -->
-  <project path="external/bison" name="platform/external/bison"  groups="notdefault,platform-linux" />
-  <project path="external/flex" name="platform/external/flex"  groups="notdefault,platform-linux,platform-darwin" />
-  <project path="external/m4" name="toolchain/m4"  groups="notdefault,platform-linux,platform-darwin" />
-  <!-- Webrtc for the goldfish-webrtc-videobridge -->
-  <project path="external/webrtc" name="platform/external/webrtc" />
-  <!-- flatbuffers for the gfxstream-protocols -->
-  <project path="external/flatbuffers" name="platform/external/flatbuffers"  />
-  <!-- Test infrastructure uses these -->
-  <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images"  />
-  <!-- Rust compiler toolchain -->
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" />
-  <!-- Rust toolchain needs a set of dlls from mingw on windows -->
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8"  clone-depth="1" groups="notdefault,platform-windows" />
-  <!-- Rust crate dependencies, we use a mix of what chromium has to offer, vs AOSP crates. -->
-  <!-- In general when using rust try to use AOSP crates first by overriding them in you cargo workspace -->
-  <project path="external/rust/crates/aho-corasick" name="platform/external/rust/crates/aho-corasick"  />
-  <project path="external/rust/crates/anyhow" name="platform/external/rust/crates/anyhow"  />
-  <project path="external/rust/crates/argh" name="platform/external/rust/crates/argh"  />
-  <project path="external/rust/crates/argh_derive" name="platform/external/rust/crates/argh_derive"  />
-  <project path="external/rust/crates/argh_shared" name="platform/external/rust/crates/argh_shared"  />
-  <project path="external/rust/crates/atty" name="platform/external/rust/crates/atty"  />
-  <project path="external/rust/crates/bindgen" name="platform/external/rust/crates/bindgen"  />
-  <project path="external/rust/crates/bitflags" name="platform/external/rust/crates/bitflags"  />
-  <project path="external/rust/crates/bytes" name="platform/external/rust/crates/bytes"  />
-  <project path="external/rust/crates/byteorder" name="platform/external/rust/crates/byteorder"  />
-  <project path="external/rust/crates/cexpr" name="platform/external/rust/crates/cexpr"  />
-  <project path="external/rust/crates/cfg-if" name="platform/external/rust/crates/cfg-if"  />
-  <project path="external/rust/crates/chrono" name="platform/external/rust/crates/chrono"  />
-  <project path="external/rust/crates/clang-sys" name="platform/external/rust/crates/clang-sys"  />
-  <project path="external/rust/crates/clap_derive" name="platform/external/rust/crates/clap_derive"  />
-  <project path="external/rust/crates/clap_lex" name="platform/external/rust/crates/clap_lex"  />
-  <project path="external/rust/crates/clap" name="platform/external/rust/crates/clap"  />
-  <project path="external/rust/crates/codespan-reporting" name="platform/external/rust/crates/codespan-reporting"  />
-  <project path="external/rust/crates/crc32fast" name="platform/external/rust/crates/crc32fast"  />
-  <project path="external/rust/crates/crossbeam-channel" name="platform/external/rust/crates/crossbeam-channel"  />
-  <project path="external/rust/crates/crossbeam-deque" name="platform/external/rust/crates/crossbeam-deque"  />
-  <project path="external/rust/crates/crossbeam-epoch" name="platform/external/rust/crates/crossbeam-epoch"  />
-  <project path="external/rust/crates/crossbeam-utils" name="platform/external/rust/crates/crossbeam-utils"  />
-  <project path="external/rust/crates/cxx" name="platform/external/rust/cxx"  />
-  <project path="external/rust/crates/data-encoding" name="platform/external/rust/crates/data-encoding"  />
-  <project path="external/rust/crates/either" name="platform/external/rust/crates/either"  />
-  <project path="external/rust/crates/env_logger" name="platform/external/rust/crates/env_logger"  />
-  <project path="external/rust/crates/fastrand" name="platform/external/rust/crates/fastrand"  />
-  <project path="external/rust/crates/fnv" name="platform/external/rust/crates/fnv"  />
-  <project path="external/rust/crates/futures-core" name="platform/external/rust/crates/futures-core"  />
-  <project path="external/rust/crates/futures-sink" name="platform/external/rust/crates/futures-sink"  />
-  <project path="external/rust/crates/getrandom" name="platform/external/rust/crates/getrandom"  />
-  <project path="external/rust/crates/glam" name="platform/external/rust/crates/glam"  />
-  <project path="external/rust/crates/glob" name="platform/external/rust/crates/glob"  />
-  <project path="external/rust/crates/hashbrown" name="platform/external/rust/crates/hashbrown"  />
-  <project path="external/rust/crates/heck" name="platform/external/rust/crates/heck"  />
-  <project path="external/rust/crates/hex" name="platform/external/rust/crates/hex"  />
-  <project path="external/rust/crates/http" name="platform/external/rust/crates/http"  />
-  <project path="external/rust/crates/httparse" name="platform/external/rust/crates/httparse"  />
-  <project path="external/rust/crates/indexmap" name="platform/external/rust/crates/indexmap"  />
-  <project path="external/rust/crates/instant" name="platform/external/rust/crates/instant"  />
-  <project path="external/rust/crates/itoa" name="platform/external/rust/crates/itoa"  />
-  <project path="external/rust/crates/lazy_static" name="platform/external/rust/crates/lazy_static"  />
-  <project path="external/rust/crates/lazycell" name="platform/external/rust/crates/lazycell"  />
-  <project path="external/rust/crates/libc" name="platform/external/rust/crates/libc"  />
-  <project path="external/rust/crates/libloading" name="platform/external/rust/crates/libloading"  />
-  <project path="external/rust/crates/log" name="platform/external/rust/crates/log"  />
-  <project path="external/rust/crates/memchr" name="platform/external/rust/crates/memchr"  />
-  <project path="external/rust/crates/memoffset" name="platform/external/rust/crates/memoffset"  />
-  <project path="external/rust/crates/minimal-lexical" name="platform/external/rust/crates/minimal-lexical"  />
-  <project path="external/rust/crates/mio" name="platform/external/rust/crates/mio"  />
-  <project path="external/rust/crates/nom" name="platform/external/rust/crates/nom"  />
-  <project path="external/rust/crates/num_cpus" name="platform/external/rust/crates/num_cpus"  />
-  <project path="external/rust/crates/num-bigint" name="platform/external/rust/crates/num-bigint"  />
-  <project path="external/rust/crates/num-derive" name="platform/external/rust/crates/num-derive"  />
-  <project path="external/rust/crates/num-integer" name="platform/external/rust/crates/num-integer"  />
-  <project path="external/rust/crates/num-traits" name="platform/external/rust/crates/num-traits"  />
-  <project path="external/rust/crates/once_cell" name="platform/external/rust/crates/once_cell"  />
-  <project path="external/rust/crates/os_str_bytes" name="platform/external/rust/crates/os_str_bytes"  />
-  <project path="external/rust/crates/paste" name="platform/external/rust/crates/paste"  />
-  <project path="external/rust/crates/pdl-compiler" name="platform/external/rust/crates/pdl-compiler"  />
-  <project path="external/rust/crates/pdl-runtime" name="platform/external/rust/crates/pdl-runtime"  />
-  <project path="external/rust/crates/peeking_take_while" name="platform/external/rust/crates/peeking_take_while"  />
-  <project path="external/rust/crates/pest" name="platform/external/rust/crates/pest"  />
-  <project path="external/rust/crates/pest_derive" name="platform/external/rust/crates/pest_derive"  />
-  <project path="external/rust/crates/pest_generator" name="platform/external/rust/crates/pest_generator"  />
-  <project path="external/rust/crates/pest_meta" name="platform/external/rust/crates/pest_meta"  />
-  <project path="external/rust/crates/pica" name="platform/external/rust/pica"  />
-  <project path="external/rust/crates/pin-project-lite" name="platform/external/rust/crates/pin-project-lite"  />
-  <project path="external/rust/crates/pin-utils" name="platform/external/rust/crates/pin-utils"  />
-  <project path="external/rust/crates/ppv-lite86" name="platform/external/rust/crates/ppv-lite86"  />
-  <project path="external/rust/crates/prettyplease" name="platform/external/rust/crates/prettyplease"  />
-  <project path="external/rust/crates/proc-macro-error-attr" name="platform/external/rust/crates/proc-macro-error-attr"  />
-  <project path="external/rust/crates/proc-macro-error" name="platform/external/rust/crates/proc-macro-error"  />
-  <project path="external/rust/crates/proc-macro2" name="platform/external/rust/crates/proc-macro2"  />
-  <project path="external/rust/crates/protobuf" name="platform/external/rust/crates/protobuf"  />
-  <project path="external/rust/crates/protobuf-codegen" name="platform/external/rust/crates/protobuf-codegen"  />
-  <project path="external/rust/crates/protobuf-json-mapping" name="platform/external/rust/crates/protobuf-json-mapping"  />
-  <project path="external/rust/crates/protobuf-parse" name="platform/external/rust/crates/protobuf-parse"  />
-  <project path="external/rust/crates/protobuf-support" name="platform/external/rust/crates/protobuf-support"  />
-  <project path="external/rust/crates/quote" name="platform/external/rust/crates/quote"  />
-  <project path="external/rust/crates/rand_chacha" name="platform/external/rust/crates/rand_chacha"  />
-  <project path="external/rust/crates/rand_core" name="platform/external/rust/crates/rand_core"  />
-  <project path="external/rust/crates/rand" name="platform/external/rust/crates/rand"  />
-  <project path="external/rust/crates/rayon" name="platform/external/rust/crates/rayon"  />
-  <project path="external/rust/crates/rayon-core" name="platform/external/rust/crates/rayon-core"  />
-  <project path="external/rust/crates/regex-syntax" name="platform/external/rust/crates/regex-syntax"  />
-  <project path="external/rust/crates/regex" name="platform/external/rust/crates/regex"  />
-  <project path="external/rust/crates/rustc-hash" name="platform/external/rust/crates/rustc-hash"  />
-  <project path="external/rust/crates/ryu" name="platform/external/rust/crates/ryu"  />
-  <project path="external/rust/crates/same-file" name="platform/external/rust/crates/same-file"  />
-  <project path="external/rust/crates/scopeguard" name="platform/external/rust/crates/scopeguard"  />
-  <project path="external/rust/crates/serde_derive" name="platform/external/rust/crates/serde_derive"  />
-  <project path="external/rust/crates/serde_json" name="platform/external/rust/crates/serde_json"  />
-  <project path="external/rust/crates/serde" name="platform/external/rust/crates/serde"  />
-  <project path="external/rust/crates/shlex" name="platform/external/rust/crates/shlex"  />
-  <project path="external/rust/crates/socket2" name="platform/external/rust/crates/socket2"  />
-  <project path="external/rust/crates/syn" name="platform/external/rust/crates/syn"  />
-  <project path="external/rust/crates/tempfile" name="platform/external/rust/crates/tempfile"  />
-  <project path="external/rust/crates/termcolor" name="platform/external/rust/crates/termcolor"  />
-  <project path="external/rust/crates/textwrap" name="platform/external/rust/crates/textwrap"  />
-  <project path="external/rust/crates/thiserror-impl" name="platform/external/rust/crates/thiserror-impl"  />
-  <project path="external/rust/crates/thiserror" name="platform/external/rust/crates/thiserror"  />
-  <project path="external/rust/crates/tungstenite" name="platform/external/rust/crates/tungstenite"  />
-  <project path="external/rust/crates/tokio-macros" name="platform/external/rust/crates/tokio-macros"  />
-  <project path="external/rust/crates/tokio-stream" name="platform/external/rust/crates/tokio-stream"  />
-  <project path="external/rust/crates/tokio-util" name="platform/external/rust/crates/tokio-util"  />
-  <project path="external/rust/crates/tokio" name="platform/external/rust/crates/tokio"  />
-  <project path="external/rust/crates/ucd-trie" name="platform/external/rust/crates/ucd-trie"  />
-  <project path="external/rust/crates/unicode-ident" name="platform/external/rust/crates/unicode-ident"  />
-  <project path="external/rust/crates/unicode-width" name="platform/external/rust/crates/unicode-width"  />
-  <project path="external/rust/crates/utf-8" name="platform/external/rust/crates/utf-8"  />
-  <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir"  />
-  <project path="external/rust/crates/which" name="platform/external/rust/crates/which"  />
-  <project path="external/rust/crates/zip" name="platform/external/rust/crates/zip"  />
-  <!-- Temporarily disabled See: b/266452325, add this section to a local_manifest if you need rust
-    i.e. add this to $AOSP_ROOT/.repo/local_manfiests/chromium.xml
-  <?xml version="1.0" encoding="UTF-8"?>
-  <manifest>
-  <remote  name="chromium" fetch="https://chromium.googlesource.com/" />
-  <project path="external/rust/chromium/crates" name="chromiumos/third_party/rust_crates" remote="chromium"  clone-depth="1" />
-  </manifest>
-  -->
+  <project path="external/regex-re2" name="platform/external/regex-re2" revision="af2f19a4bfc9c9da49169f460d3a8826de5d6e64" upstream="emu-34-2-release" />
+  <project path="external/glib" name="platform/external/bluetooth/glib" revision="86cfa9a19dfde6cd3b40118a2fa9cc5fd42f8451" upstream="emu-34-2-release" />
+  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" revision="d16a940067fbc191364fc1d3e2a2d907209c9320" upstream="emu-34-2-release" />
+  <project path="external/virglrenderer" name="platform/external/virglrenderer" revision="f0c2fba5827abb3634b1992855264d7fe990b89d" upstream="emu-34-2-release" />
+  <project path="external/nasm" name="platform/external/nasm" revision="645e4f02c622ba67eb754000cc00c9db8be31f85" upstream="emu-34-2-release" />
+  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" revision="1475a12601d9ace9a80ca47d5ce7ed2b02dfb201" upstream="emu-34-2-release" />
+  <project path="external/zlib" name="platform/external/zlib" revision="a25229d7fdaa2efaac0c01bae20b4790b563cc20" upstream="emu-34-2-release" />
+  <project path="frameworks/native" name="platform/frameworks/native" revision="9094ee238458bf1e8a9e8335fd824acc4963d7f4" upstream="emu-34-2-release" />
+  <project path="hardware/google/aemu" name="platform/hardware/google/aemu" groups="pdk" revision="eae9c70e76bf5023d01798da587812b45d2ffe3b" upstream="emu-34-2-release" />
+  <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream" groups="pdk" revision="1ad9052051bba0338aefd0ddc5f049fa587ee98b" upstream="emu-34-2-release" />
+  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" revision="fb26612eb84576adb974fe7f18a49d263072116f" upstream="emu-34-2-release" />
+  <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" revision="9b0bdade8b09267282fb901d21219ab6af013c60" upstream="emu-34-2-release" />
+  <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" revision="cf5e86edaef19b143bf665fe5dccc0da46d4875e" upstream="emu-34-2-release" />
+  <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" revision="be7c00f399b415511d73308f0af0c0310512aced" upstream="emu-34-2-release" />
+  <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" revision="17837fdb1889014fa01cbbbda56afc9b6034815f" upstream="emu-34-2-release" />
+  <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" revision="b06aee625002d0738c5576bbf437b9378229bef0" upstream="emu-34-2-release" />
+  <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" revision="658acaaf2c14c05b81f9b27b604e2ffc45dc0ceb" upstream="emu-34-2-release" />
+  <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="5208afce30bb95ffbc0726899c5c86fd828e4b6d" upstream="emu-34-2-release" />
+  <project path="tools/netsim" name="platform/tools/netsim" revision="8b32790cb9dc7236fde77edd2d8f4db8e3a627de" upstream="emu-34-2-release" />
+
+  
+  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" revision="acd99925b5880e97d2dee249d39a93a6e5794f9d" upstream="emu-34-2-release" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="17f860bd1b989b2b7f2b89a0f197a8d50b7dd203" groups="notdefault,platform-linux" upstream="emu-34-2-release" />
+  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" revision="31612ec58d4ad61d3e9b460551cfca9e05106cbe" upstream="emu-34-2-release" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="e62c67a739cb9c70c0345f0ac0f56324661bb8c2" groups="notdefault,platform-linux" upstream="emu-34-2-release" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" revision="7ef4cb95e1ed4305e99f03a8e8ad28d26134a45b" upstream="emu-34-2-release" />
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="3665e3a3bd0cd0d93f6247eb596938cea48268be" groups="notdefault,platform-linux" upstream="emu-34-2-release" />
+
+  
+  <project path="prebuilts/bazel/windows-x86_64" name="platform/prebuilts/bazel/windows-x86_64" clone-depth="1" groups="notdefault,platform-windows" revision="440ea8d1ada8d6ad09fb55c51bc1e154abfa324f" upstream="emu-34-2-release" />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="8328301a36e6f56e85ba5c812c8691b81de9ede6" groups="notdefault,platform-windows" upstream="emu-34-2-release" />
+  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" revision="050d3148f1f2420653cc69f93fb0861d68874803" upstream="emu-34-2-release" />
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="7119932cd3cea23f16db62e683b69c23e415ff09" groups="notdefault,platform-windows" upstream="emu-34-2-release" />
+
+  
+  <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" clone-depth="1" groups="notdefault,platform-darwin" revision="020c822b27a1bfeb47f83aa2ce664760d394f946" upstream="emu-34-2-release" />
+  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" revision="8e110eda03f1e908cad557286b8a80e961ff910e" upstream="emu-34-2-release" />
+  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" revision="f8a4461c7c527cc4b208e3ca475d4e9d128ef862" upstream="emu-34-2-release" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="878f9940501f93bc46e0e26ea898c965093245c2" groups="notdefault,platform-darwin" upstream="emu-34-2-release" />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="8a7b323c92153acc4390bf71392dec2dbb10f4f5" groups="notdefault,platform-darwin" upstream="emu-34-2-release" />
+
+  
+  <project path="prebuilts/studio/jdk" name="platform/prebuilts/studio/jdk" clone-depth="1" revision="19bb0ce48675d57d347262320f70ffb47c4fe899" upstream="emu-34-2-release" />
+
+  
+  <project path="external/tink" name="platform/external/tink" revision="cb814f1e1b69caf6211046bee083a730625a3cf9" upstream="emu-34-2-release" />
+  <project path="external/rapidjson" name="platform/external/rapidjson" revision="9fa2a3d9e356a1f42a6184dcf1e0508ddfa9dbfb" upstream="emu-34-2-release" />
+
+  
+  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth" groups="pdk" revision="4de58e205976e87e5cc0ec2f0bfbfe95cb0f25ce" upstream="emu-34-2-release" />
+
+  
+  <project path="external/bison" name="platform/external/bison" revision="9d6b3cea352fd68d9bfb4782794593b352e49829" groups="notdefault,platform-linux" upstream="emu-34-2-release" />
+  <project path="external/flex" name="platform/external/flex" revision="90a4022e091f39d3534a30bbb9d02986f2f5ad9b" groups="notdefault,platform-linux,platform-darwin" upstream="emu-34-2-release" />
+  <project path="external/m4" name="toolchain/m4" revision="027f7afa228990e5f5c3c31833697a6f64e990fa" groups="notdefault,platform-linux,platform-darwin" upstream="emu-34-2-release" />
+
+  
+  <project path="external/webrtc" name="platform/external/webrtc" revision="2e193428ef15044a87e19d542c7c43444571935e" upstream="emu-34-2-release" />
+
+  
+  <project path="external/flatbuffers" name="platform/external/flatbuffers" revision="eb52555aba2323b4fa1fc9bea8d64d73d9cf6974" upstream="emu-34-2-release" />
+
+  
+  <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images" revision="8799dd2079c336042f1a9eb888fe5cbb3f841479" upstream="emu-34-2-release" />
+
+  
+  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="ed6633c7a96144bebd982e15da76295d7d6e2de9" upstream="emu-34-2-release" />
+
+  
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" revision="e0f72e00557b09796a33ee72424c6bdadcc92153" clone-depth="1" groups="notdefault,platform-windows" upstream="emu-34-2-release" />
+
+  
+  
+  <project path="external/rust/crates/aho-corasick" name="platform/external/rust/crates/aho-corasick" revision="ca53f258b4488e796e1bc25297dac5edc339b03b" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/anyhow" name="platform/external/rust/crates/anyhow" revision="ad7ff24b6df27f3d6603c0859ad10a504bdf1724" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/argh" name="platform/external/rust/crates/argh" revision="d641a4086ee22d810dd7e33371482e37d12258aa" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/argh_derive" name="platform/external/rust/crates/argh_derive" revision="96c4f671055f426876cf4e0ed57e226f949806a1" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/argh_shared" name="platform/external/rust/crates/argh_shared" revision="15e3120029c128a54acbfded1b0e8274ebb97106" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/atty" name="platform/external/rust/crates/atty" revision="85614217d0f7114c6a2facb7c4fc24b5155f7366" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/bindgen" name="platform/external/rust/crates/bindgen" revision="e992ceba9ce375f0e0d925d5c872fe8ebda4e4ce" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/bitflags" name="platform/external/rust/crates/bitflags" revision="6e7aa0fc8666c81ab39fb52c65e784e233200b55" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/bytes" name="platform/external/rust/crates/bytes" revision="b903f9786b0184cca6314692446873fed70f8bdc" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/byteorder" name="platform/external/rust/crates/byteorder" revision="a39ca4202f12578b7fd0b6ea3a8195b5e9388913" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/cexpr" name="platform/external/rust/crates/cexpr" revision="60d782f8d6e915a3e6d857327866f86dd8e3bfa2" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/cfg-if" name="platform/external/rust/crates/cfg-if" revision="fb376feb4b96727cfffae8f0e645fb0025b61521" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/chrono" name="platform/external/rust/crates/chrono" revision="650ec3b6046eaa9cf424cc4ef690aee48f1359de" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/clang-sys" name="platform/external/rust/crates/clang-sys" revision="681fe3b8958a358c1e2d4a4f977225a04b94482d" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/clap_derive" name="platform/external/rust/crates/clap_derive" revision="a0389664ccd112c1bed3f4df431f7cf1671077e1" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/clap_lex" name="platform/external/rust/crates/clap_lex" revision="44b511d4f0dd4a1d64da3cb7ab3a7fb52693c39e" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/clap" name="platform/external/rust/crates/clap" revision="319eff57c023c8f856c797ca70a46e830a735111" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/codespan-reporting" name="platform/external/rust/crates/codespan-reporting" revision="77db7dff0fd2b9fdc86a0faebc79916d542e4df2" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/crc32fast" name="platform/external/rust/crates/crc32fast" revision="0de2057494815cc63b2a07dcf442bc8d39910abd" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/crossbeam-channel" name="platform/external/rust/crates/crossbeam-channel" revision="89e2452e4830ec17786ea9b04fda7a72812b2d58" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/crossbeam-deque" name="platform/external/rust/crates/crossbeam-deque" revision="442571ce6886d0947e97cd0508aed60223e926c1" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/crossbeam-epoch" name="platform/external/rust/crates/crossbeam-epoch" revision="fbe8cc2a02a01ba549cf289b39dbf650fc3aae62" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/crossbeam-utils" name="platform/external/rust/crates/crossbeam-utils" revision="ad9b4ae9ce709a7b98207ab8bfc08929c91d0446" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/cxx" name="platform/external/rust/cxx" revision="ba9711392cc3b81e67cff5948075536b4ba567cc" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/data-encoding" name="platform/external/rust/crates/data-encoding" revision="c553af622d36ecd7962eecdadaf0edca60002200" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/either" name="platform/external/rust/crates/either" revision="b4f83899c6bf798407b652cab57fb6624a450166" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/env_logger" name="platform/external/rust/crates/env_logger" revision="7f0950551cf22518fb1e22d0d314c8ea7d04400a" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/fastrand" name="platform/external/rust/crates/fastrand" revision="60d73396dcfd2c5d84c400b85e7a67bf5b0ece64" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/fnv" name="platform/external/rust/crates/fnv" revision="8f5a27a241b255e6cd86b17d6dc09c08dc64a983" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/futures-core" name="platform/external/rust/crates/futures-core" revision="82289c187c113c26b15deb1c436cfd3ccc01620b" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/futures-sink" name="platform/external/rust/crates/futures-sink" revision="bc7b9aa67580f14141a6bd52b7a977f1928a7e1b" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/getrandom" name="platform/external/rust/crates/getrandom" revision="e36f979e2841ec713b9962fe188d04185a1b198c" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/glam" name="platform/external/rust/crates/glam" revision="0bf86242008d76598185df084b1ae31da5b5faeb" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/glob" name="platform/external/rust/crates/glob" revision="36b3dc0e14b83d1fd526e91e98b79def524d6b00" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/hashbrown" name="platform/external/rust/crates/hashbrown" revision="8ccaf136282f62ef83690ebd33e73e8df5e0ff79" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/heck" name="platform/external/rust/crates/heck" revision="e8a05f8b22cf3f52d8d2f17420ab1ac343c95f0f" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/hex" name="platform/external/rust/crates/hex" revision="13258ba725c209ed3764aa7afdd29231a8185b5a" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/http" name="platform/external/rust/crates/http" revision="a0b48da8ef2af466d58dd6deabe85eb593500b64" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/httparse" name="platform/external/rust/crates/httparse" revision="bdca24b46eadd07c4d8f89444f92464cd5a659de" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/indexmap" name="platform/external/rust/crates/indexmap" revision="5313c1f9b3b7f8be843001bc550d994a6a52ad3d" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/instant" name="platform/external/rust/crates/instant" revision="ebf0bc6a003b9520bcd9d5e24c9fa0d4610aaab4" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/itoa" name="platform/external/rust/crates/itoa" revision="841462450deefe12a5e1a5db61aa618d697d9d72" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/lazy_static" name="platform/external/rust/crates/lazy_static" revision="9174a122cfb6702ee7bfbe98b83fc9eec78c2dfe" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/lazycell" name="platform/external/rust/crates/lazycell" revision="cb5714996f3cf9c09ce99cecfb70300d4d00dab4" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/libc" name="platform/external/rust/crates/libc" revision="55759f886349ea1fcf6ba3218db6646a2695be00" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/libloading" name="platform/external/rust/crates/libloading" revision="7fd07ea45fe86513943ae55e028a4d2f223238a8" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/log" name="platform/external/rust/crates/log" revision="57b584d56887940773a8cbbc9cfb8b8a1d2c1a8b" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/memchr" name="platform/external/rust/crates/memchr" revision="d0ed6caee12388591a28b2c65db69bdfd1a795de" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/memoffset" name="platform/external/rust/crates/memoffset" revision="edd31b89a754961ab976753350ffe6a4f12e8118" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/minimal-lexical" name="platform/external/rust/crates/minimal-lexical" revision="333ff38cb61cad6c6c013cfe09dd7c28f6456cde" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/mio" name="platform/external/rust/crates/mio" revision="b50b6a3a148a32ec2d197df5f7dcbfb504b3b0e2" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/nom" name="platform/external/rust/crates/nom" revision="8427f73c71adee56c3bff2a548f20c67db52f40e" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/num_cpus" name="platform/external/rust/crates/num_cpus" revision="d41ac629adce558dfe1e0c01287b800938287eab" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/num-bigint" name="platform/external/rust/crates/num-bigint" revision="c8abab27370894a09bd44c77a20423713b184a05" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/num-derive" name="platform/external/rust/crates/num-derive" revision="c8db8b1c6e6c17abaf361e57881d63fd92de08a0" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/num-integer" name="platform/external/rust/crates/num-integer" revision="2c975dcef3f84357f13231565207be77effcd4f5" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/num-traits" name="platform/external/rust/crates/num-traits" revision="99ac0512be134cdb0cbd20f7f0e800d41152cb53" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/once_cell" name="platform/external/rust/crates/once_cell" revision="04a4b2360ab5c43cba2dfdb6aee889622f898ad4" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/os_str_bytes" name="platform/external/rust/crates/os_str_bytes" revision="5f10413b13cb22f3e9dacf855aaa187c96501571" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/paste" name="platform/external/rust/crates/paste" revision="9589cc91e96f869ffa8d8d3d244e3d2260ae6b82" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pdl-compiler" name="platform/external/rust/crates/pdl-compiler" revision="d64dbb98d73fd0b5c7887dfd48fca1942902e894" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pdl-runtime" name="platform/external/rust/crates/pdl-runtime" revision="e1405e9915629423871c489c6b833c9790200bdf" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/peeking_take_while" name="platform/external/rust/crates/peeking_take_while" revision="5834ea87d8b6cbe354565fd80e284cd4945a4f28" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pest" name="platform/external/rust/crates/pest" revision="c76cc6ca3ad7e98cfedb929c8d2c053d09e7d234" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pest_derive" name="platform/external/rust/crates/pest_derive" revision="d440b696f3b5d44e95daa7cce55b99c57988d08d" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pest_generator" name="platform/external/rust/crates/pest_generator" revision="489b1370855bead88f438e232f516f3a72f9f7d3" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pest_meta" name="platform/external/rust/crates/pest_meta" revision="f42209363c0020e262b1b0e63cc3eb232de98ca2" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pica" name="platform/external/rust/pica" revision="0c2c06bd6c8c85668bdbf505f5ab7caeb93778d1" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pin-project-lite" name="platform/external/rust/crates/pin-project-lite" revision="8bb35a7f0d558a63f4619250a45bf1e0520cee0d" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/pin-utils" name="platform/external/rust/crates/pin-utils" revision="70195fd776a1da91ebd58df7d6a01c90a7dc34c4" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/ppv-lite86" name="platform/external/rust/crates/ppv-lite86" revision="84dd190994a19af8ca206701247f9bdbc9c1e7e1" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/prettyplease" name="platform/external/rust/crates/prettyplease" revision="70ce26e3dc3ea28d7cfb06c5519f7ad82acb3579" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/proc-macro-error-attr" name="platform/external/rust/crates/proc-macro-error-attr" revision="2415d991babd0fe23078829224c989d3d0f6f3c6" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/proc-macro-error" name="platform/external/rust/crates/proc-macro-error" revision="c30bfd0017f78f5b4a962a45cf448eb6a0e05f23" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/proc-macro2" name="platform/external/rust/crates/proc-macro2" revision="f2a2bd22ce8aafe47df20f69b4b72b8822c3ff42" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/protobuf" name="platform/external/rust/crates/protobuf" revision="6f102d68a94700e5100cf70f7e58c046fd26ae56" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/protobuf-codegen" name="platform/external/rust/crates/protobuf-codegen" revision="34d3546c25442b4989885ba169a6949d6da25c92" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/protobuf-json-mapping" name="platform/external/rust/crates/protobuf-json-mapping" revision="016fa9a5326d5bd385ba82d1e70e622e81087677" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/protobuf-parse" name="platform/external/rust/crates/protobuf-parse" revision="3fdbacdf26f223229334ba6e1ec203493c42837e" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/protobuf-support" name="platform/external/rust/crates/protobuf-support" revision="d0317daa936c7defee5754966e6eed3e4d4bcaac" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/quote" name="platform/external/rust/crates/quote" revision="83f5f28eb7d04dbde60135b14a8bd428dcc78fd7" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/rand_chacha" name="platform/external/rust/crates/rand_chacha" revision="76964361b145d5dc806340a6c635cc2cae73a7e6" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/rand_core" name="platform/external/rust/crates/rand_core" revision="7010d0dfda163d3d6909a5641449751e3b427925" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/rand" name="platform/external/rust/crates/rand" revision="2e8e85a7bb2913ea54c9a0c965bd6f247832b098" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/rayon" name="platform/external/rust/crates/rayon" revision="92ac8a27d6a2a711f9dba4501d1c470393f0ec4b" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/rayon-core" name="platform/external/rust/crates/rayon-core" revision="76cd97482d403c63d42bbd4e31bfba39442db1d1" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/regex-syntax" name="platform/external/rust/crates/regex-syntax" revision="85c1995fc7503174dd46c566deca89fdfb32d8bb" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/regex" name="platform/external/rust/crates/regex" revision="2946fb6a1bb4ff81ded4297f837d5fb2b3560c56" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/rustc-hash" name="platform/external/rust/crates/rustc-hash" revision="8293b5ba65512a0950454f803a32a48af7325c42" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/ryu" name="platform/external/rust/crates/ryu" revision="97447161bc1c2daed43c6ccff922d3a261155f0a" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/same-file" name="platform/external/rust/crates/same-file" revision="8e676cb494cfcf956822ca0cf9f033771431003f" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/scopeguard" name="platform/external/rust/crates/scopeguard" revision="5097bb25949d90053b9be02dbc787a286308c08e" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/serde_derive" name="platform/external/rust/crates/serde_derive" revision="2d2754ad8fe418f6b5eee74b9eee3e13ec438039" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/serde_json" name="platform/external/rust/crates/serde_json" revision="46d0d70012c6bdca02a001d825a69bfcfcc321a9" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/serde" name="platform/external/rust/crates/serde" revision="564d36be1b739aadf5f5088026499365e719530a" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/shlex" name="platform/external/rust/crates/shlex" revision="37dca1dbc5b53b9f60574c8995f1e62483f0dd6e" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/socket2" name="platform/external/rust/crates/socket2" revision="c659a3cc4711746b2b887113005b9ffc207d03c9" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/syn" name="platform/external/rust/crates/syn" revision="10d9340ef9241fddb8cd768ca99c45b908f52e1f" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/tempfile" name="platform/external/rust/crates/tempfile" revision="74d14093757606a68fdc0369bad9b7b04691f7fe" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/termcolor" name="platform/external/rust/crates/termcolor" revision="e523f567c3c22ceebdc206c6ab2e0db439699ab9" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/textwrap" name="platform/external/rust/crates/textwrap" revision="01e4618fb481aaf8352ec5a331e115448e0dc11b" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/thiserror-impl" name="platform/external/rust/crates/thiserror-impl" revision="450ff5d2b2624f50fb59f9b2bca5ed92ae8f6c3f" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/thiserror" name="platform/external/rust/crates/thiserror" revision="6782b6c6599dc4456aeb1f33a53675202f9abaf6" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/tungstenite" name="platform/external/rust/crates/tungstenite" revision="10e570387dc96959645b5a9b443e07c4fd8a3909" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/tokio-macros" name="platform/external/rust/crates/tokio-macros" revision="e1eb798b6fc3e822f80b7e226ffbb6bd86fa9fc5" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/tokio-stream" name="platform/external/rust/crates/tokio-stream" revision="3855d14388ef8a197bd07b1092bece0925fad3ae" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/tokio-util" name="platform/external/rust/crates/tokio-util" revision="95367cb21fc8db087932e69f763904e32f80c6e6" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/tokio" name="platform/external/rust/crates/tokio" revision="f272aaeb717cecb4e428e854fef24a1f6ee8ae7c" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/ucd-trie" name="platform/external/rust/crates/ucd-trie" revision="1bfbc7a39d41ca3900b7718f8a5489d568e4a774" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/unicode-ident" name="platform/external/rust/crates/unicode-ident" revision="56480aaddbc1c0200ffb9b574f7516930af1126a" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/unicode-width" name="platform/external/rust/crates/unicode-width" revision="6b4947a082ca961998bfedf303d3118d7b8ba19e" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/utf-8" name="platform/external/rust/crates/utf-8" revision="fc7c8987d516e8f1bd555daf22054b27732ba979" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir" revision="6765496a2cb6a27a0b2075686bc000c777d0461a" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/which" name="platform/external/rust/crates/which" revision="16317c523c500710850fb408e048996f2ddea72d" upstream="emu-34-2-release" />
+  <project path="external/rust/crates/zip" name="platform/external/rust/crates/zip" revision="99470abf006d30ce5d56c1f9cd90a96e44ec2e64" upstream="emu-34-2-release" />
+
+  
 </manifest>
