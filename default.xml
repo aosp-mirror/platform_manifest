@@ -20,6 +20,7 @@
   <project path="external/pixman" name="platform/external/pixman" />
   <project path="external/qemu" name="platform/external/qemu" />
   <project path="external/zlib" name="platform/external/zlib" />
+  <project path="external/lz4" name="platform/external/lz4" />
 
   <!-- Qemu Rutabaga -->
   <project path="external/crosvm" name="platform/external/crosvm" />
@@ -28,11 +29,11 @@
   <project path="external/virglrenderer" name="platform/external/virglrenderer" revision="main" />
 
   <!-- GFXstream -->
-  <project path="external/lz4" name="platform/external/lz4" />
   <project path="hardware/google/aemu" name="platform/hardware/google/aemu" revision="main" />
   <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream" revision="main" />
-  <project path="external/libdrm" name="platform/external/libdrm"  groups="notdefault,platform-linux"/>
-  <project path="external/libpciaccess" name="platform/external/libpciaccess"  groups="notdefault,platform-linux"/>
+  <project path="external/libdrm" name="platform/external/libdrm" />
+  <project path="external/libpciaccess" name="platform/external/libpciaccess" />
+  <project path="external/flatbuffers" name="platform/external/flatbuffers" revision="main" />
 
   <!-- Android Emulator shared library plugin -->
   <project path="hardware/generic/goldfish" name="platform/hardware/generic/goldfish"/>
@@ -53,16 +54,19 @@
   <!-- Linux only toolchain dependencies -->
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="main" groups="notdefault,platform-linux" />
+  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="main" groups="notdefault,platform-linux" />
   <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="llvm-toolchain" groups="notdefault,platform-linux" />
 
   <!-- Windows only toolchain dependencies -->
   <project path="prebuilts/bazel/windows-x86_64" name="platform/prebuilts/bazel/windows-x86_64" clone-depth="1" groups="notdefault,platform-windows" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="main" groups="notdefault,platform-windows" />
+  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="llvm-toolchain" groups="notdefault,platform-windows" />
 
   <!-- Darwin (macos) only toolchain dependencies -->
   <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="main" groups="notdefault,platform-darwin" />
+  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="llvm-toolchain" groups="notdefault,platform-darwin" />
 </manifest>
