@@ -4,7 +4,7 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="android14-release"
+  <default revision="android14-qpr1-release"
            remote="aosp"
            sync-j="4" />
 
@@ -98,6 +98,9 @@
   <project path="device/google/tangorpro" name="device/google/tangorpro" groups="device,tangorpro" />
   <project path="device/google/tangorpro-sepolicy" name="device/google/tangorpro-sepolicy" groups="device,tangorpro" />
   <project path="device/google/tangorpro-kernel" name="device/google/tangorpro-kernel" groups="device,tangorpro" clone-depth="1" />
+  <project path="device/google/shusky" name="device/google/shusky" groups="device,ripcurrent" />
+  <project path="device/google/shusky-kernel" name="device/google/shusky-kernel" groups="device,ripcurrent" />
+  <project path="device/google/shusky-sepolicy" name="device/google/shusky-sepolicy" groups="device,ripcurrent" />
   <project path="device/google/sunfish" name="device/google/sunfish" groups="device,sunfish" />
   <project path="device/google/sunfish-kernel" name="device/google/sunfish-kernel" groups="device,sunfish" clone-depth="1" />
   <project path="device/google/sunfish-sepolicy" name="device/google/sunfish-sepolicy" groups="device,sunfish" />
@@ -105,6 +108,8 @@
   <project path="device/google/cuttlefish_prebuilts" name="device/google/cuttlefish_prebuilts" groups="device,pdk" clone-depth="1" />
   <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" />
+  <project path="device/google/zuma" name="device/google/zuma" groups="device,ripcurrent" />
+  <project path="device/google/zuma-sepolicy" name="device/google/zuma-sepolicy" groups="device,ripcurrent" />
   <project path="device/google_car" name="device/google_car" groups="pdk" />
   <project path="device/linaro/dragonboard" name="device/linaro/dragonboard" groups="device,dragonboard,pdk" />
   <project path="device/linaro/dragonboard-kernel" name="device/linaro/dragonboard-kernel" groups="device,dragonboard,pdk" clone-depth="1" />
@@ -335,6 +340,7 @@
   <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" groups="pdk" />
   <project path="external/libkmsxx" name="platform/external/libkmsxx" groups="pdk" />
   <project path="external/libldac" name="platform/external/libldac" groups="pdk" />
+  <project path="external/libmonet" name="platform/external/libmonet" groups="pdk,sysui-studio" />
   <project path="external/libmpeg2" name="platform/external/libmpeg2" groups="pdk" />
   <project path="external/libnetfilter_conntrack" name="platform/external/libnetfilter_conntrack" groups="pdk" />
   <project path="external/libnfnetlink" name="platform/external/libnfnetlink" groups="pdk" />
@@ -384,6 +390,7 @@
   <project path="external/mobly-snippet-lib" name="platform/external/mobly-snippet-lib" groups="pdk" />
   <project path="external/mockftpserver" name="platform/external/mockftpserver" groups="pdk" />
   <project path="external/mockito" name="platform/external/mockito" groups="pdk" />
+  <project path="external/mockito-kotlin" name="platform/external/mockito-kotlin" groups="pdk" />
   <project path="external/mockwebserver" name="platform/external/mockwebserver" groups="pdk" />
   <project path="external/modp_b64" name="platform/external/modp_b64" groups="pdk" />
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="pdk" />
@@ -881,6 +888,7 @@
   <project path="hardware/google/graphics/common" name="platform/hardware/google/graphics/common" groups="pdk-lassen,pdk-gs-arm" />
   <project path="hardware/google/graphics/gs101" name="platform/hardware/google/graphics/gs101" groups="pdk-lassen,pdk-gs-arm" />
   <project path="hardware/google/graphics/gs201" name="platform/hardware/google/graphics/gs201" groups="cloudripper" />
+  <project path="hardware/google/graphics/zuma" name="platform/hardware/google/graphics/zuma" groups="ripcurrent" />
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk" />
   <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="generic_fs,pixel" />
   <project path="hardware/google/pixel-sepolicy" name="platform/hardware/google/pixel-sepolicy" groups="generic_fs,pixel" />
@@ -964,7 +972,6 @@
   <project path="packages/apps/Browser2" name="platform/packages/apps/Browser2" groups="pdk-fs" />
   <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" groups="pdk-fs" />
   <project path="packages/apps/Camera2" name="platform/packages/apps/Camera2" groups="pdk-fs" />
-  <project path="packages/apps/Car/Calendar" name="platform/packages/apps/Car/Calendar" groups="pdk-fs" />
   <project path="packages/apps/Car/SystemUI" name="platform/packages/apps/Car/SystemUI" groups="pdk-fs" />
   <project path="packages/apps/Car/Cluster" name="platform/packages/apps/Car/Cluster" groups="pdk-fs" />
   <project path="packages/apps/Car/DebuggingRestrictionController" name="platform/packages/apps/Car/DebuggingRestrictionController" groups="pdk-fs" />
@@ -1024,6 +1031,7 @@
   <project path="packages/apps/ThemePicker" name="platform/packages/apps/ThemePicker" groups="pdk-fs" />
   <project path="packages/apps/Traceur" name="platform/packages/apps/Traceur" groups="pdk-fs" />
   <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="pdk-fs" />
+  <project path="packages/apps/TvSystemUI" name="platform/packages/apps/TvSystemUI" groups="pdk-fs" />
   <project path="packages/apps/TV" name="platform/packages/apps/TV" groups="pdk" />
   <project path="packages/apps/UniversalMediaPlayer" name="platform/packages/apps/UniversalMediaPlayer" />
   <project path="packages/apps/WallpaperPicker" name="platform/packages/apps/WallpaperPicker" groups="pdk-fs"  />
@@ -1251,6 +1259,7 @@
   <project path="tools/netsim" name="platform/tools/netsim" groups="pdk" />
   <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk" />
   <project path="tools/ndkports" name="platform/tools/ndkports" groups="pdk" />
+  <project path="tools/repohooks" name="platform/tools/repohooks"  groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed,sysui-studio" />
   <project path="tools/security" name="platform/tools/security" groups="pdk,tools" />
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
   <project path="tools/test/graphicsbenchmark" name="platform/tools/test/graphicsbenchmark" groups="pdk" />
