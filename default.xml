@@ -9,33 +9,28 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/"/>
-  <default revision="main"
+  <default revision="rust-1.73.0"
            remote="aosp"
            sync-j="4"/>
-
-  <superproject name="platform/superproject" remote="aosp" revision="rust-toolchain"/>
+  <superproject name="platform/superproject" remote="aosp" />
   <contactinfo bugurl="go/repo-bug" />
-
   <!-- Rust Toolchain Components -->
   <project path="toolchain/rustc" name="toolchain/rustc"/>
   <project path="toolchain/android_rust" name="toolchain/android_rust"/>
   <project path="toolchain/common" name="toolchain/common"/>
   <project path="toolchain/cargo-deny" name="toolchain/cargo-deny"/>
   <project path="toolchain/cargo-vet" name="toolchain/cargo-vet"/>
-
   <!-- Other Toolchains -->
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"/>
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"/>
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1"/>
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"/>
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1"/>
-
   <!-- libgcc for device -->
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" clone-depth="1"/>
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" clone-depth="1"/>
   <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" clone-depth="1"/>
   <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" clone-depth="1"/>
-
   <!-- Tool prebuilts -->
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1"/>
   <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1"/>
@@ -44,22 +39,17 @@
   <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1"/>
   <project path="prebuilts/ninja/windows-x86" name="platform/prebuilts/ninja/windows-x86" clone-depth="1"/>
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1"/>
-
   <!-- Python prebuilts -->
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="llvm-toolchain" />
-  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="llvm-toolchain" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="llvm-toolchain" />
-
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1"  />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1"  />
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1"  />
   <!-- Our Prebuilts -->
   <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1"/>
-
   <!-- NDK - Needed until in-tree sysroot is available -->
   <project path="toolchain/prebuilts/ndk/r25" name="toolchain/prebuilts/ndk/r25" clone-depth="1"/>
-
   <!-- Build System Components -->
   <project path="build/soong" name="platform/build/soong" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
 </manifest>
-
