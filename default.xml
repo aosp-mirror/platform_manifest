@@ -1,112 +1,116 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="emu-35-2-release"
-           remote="aosp"
-           sync-j="4" />
-  <superproject name="platform/superproject" remote="aosp"/>
+
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="emu-35-2-release" remote="aosp" sync-j="4" />
+
   <contactinfo bugurl="go/repo-bug" />
-  <project path="build/make" name="platform/build" />
-  <project path="build/bazel" name="platform/build/bazel">
+
+  <project path="build/make" name="platform/build" revision="0984226dbac1a947ad34490e0647cf7e5c5e6d14" upstream="emu-35-2-release" />
+  <project path="build/bazel" name="platform/build/bazel" revision="63553bdf1972f043ea0b9e0f77b07964d7b33611" upstream="emu-35-2-release">
     <linkfile src="toplevel.WORKSPACE" dest="WORKSPACE" />
     <linkfile src="toplevel.bazelrc" dest=".bazelrc" />
     <linkfile src="toplevel.bazelversion" dest=".bazelversion" />
   </project>
-  <project path="tools/buildSrc" name="platform/tools/buildSrc" />
-  <project path="external/libslirp" name="trusty/external/qemu-libslirp"/>
-  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" />
-  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" />
-  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" />
-  <project path="external/adt-infra" name="platform/external/adt-infra" />
-  <project path="external/mobly-bundled-snippets" name="platform/external/mobly-bundled-snippets"  />
-  <project path="external/angle" name="platform/external/angle" />
-  <project path="external/astc-codec" name="platform/external/astc-codec"  />
-  <project path="external/boringssl" name="platform/external/boringssl"  clone-depth="1"/>
-  <project path="external/cares" name="platform/external/c-ares" />
-  <project path="external/curl" name="platform/external/curl" />
-  <project path="external/dtc" name="platform/external/dtc"  />
-  <project path="external/deqp" name="platform/external/deqp"  />
-  <project path="external/fmtlib" name="platform/external/fmtlib"  />
-  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols"  />
-  <project path="external/googletest" name="platform/external/googletest"  />
-  <project path="external/google-benchmark" name="platform/external/google-benchmark"  />
-  <project path="external/google-breakpad" name="platform/external/google-breakpad" />
-  <project path="external/grpc" name="platform/external/grpc-grpc" />
-  <project path="external/libusb" name="platform/external/libusb" />
-  <project path="external/libpng" name="platform/external/libpng"  />
-  <project path="external/libxml2" name="platform/external/libxml2" />
-  <project path="external/lz4" name="platform/external/lz4" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/perfetto" name="platform/external/perfetto" />
-  <project path="external/qemu" name="platform/external/qemu">
-    <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace"/>
+  <project path="tools/buildSrc" name="platform/tools/buildSrc" revision="f9e79b16756aff8be7e93d2cb9382da8077e659e" upstream="emu-35-2-release" />
+
+  <project path="external/libslirp" name="trusty/external/qemu-libslirp" revision="2a12cdc19c8c6bb66bcb8e2e48ca9efccee157d9" upstream="emu-35-2-release" />
+  <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" revision="8add0e78903b178acf713d293d50a5f609505691" upstream="emu-35-2-release" />
+  <project path="device/generic/vulkan-cereal" name="device/generic/vulkan-cereal" revision="6c322e407dfdf34a73949ad36883caf7c8be61ac" upstream="emu-35-2-release" />
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" revision="49c61725a3bdf388fb538b83bb7b3351acbe9f0c" upstream="emu-35-2-release" />
+  <project path="external/adt-infra" name="platform/external/adt-infra" revision="d8ab2b9fbdc58782a061f26576ec3fdf65fce011" upstream="emu-35-2-release" />
+  <project path="external/mobly-bundled-snippets" name="platform/external/mobly-bundled-snippets" revision="800951d0b64f7f8f6b4082907e4b5a5baf3a017a" upstream="emu-35-2-release" />
+  <project path="external/angle" name="platform/external/angle" revision="4e59c8158379c8e1c805c0cc1f40f3d6e69dd204" upstream="emu-35-2-release" />
+  <project path="external/astc-codec" name="platform/external/astc-codec" revision="17ae36822a8084f45ae51f9031e81f8318254f33" upstream="emu-35-2-release" />
+  <project path="external/boringssl" name="platform/external/boringssl" revision="f99c9c44668a25b3e4a641195e471f05640ea92f" clone-depth="1" upstream="emu-35-2-release" />
+  <project path="external/cares" name="platform/external/c-ares" revision="42cf8dee534419f1826f474d2f5fd67ac94a1706" upstream="emu-35-2-release" />
+  <project path="external/curl" name="platform/external/curl" revision="1da4b04273638c8afe6f88bd7a7ccfb693640773" upstream="emu-35-2-release" />
+  <project path="external/dtc" name="platform/external/dtc" revision="2140b1d82bf95e4269cd878671d24107cc465980" upstream="emu-35-2-release" />
+  <project path="external/deqp" name="platform/external/deqp" revision="2ec3d6555c2782de5cb3f666d6b426364b7503bd" upstream="emu-35-2-release" />
+  <project path="external/fmtlib" name="platform/external/fmtlib" revision="a57f17b30efbacd0644cd12cb5a73561b51e3e43" upstream="emu-35-2-release" />
+  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" revision="a21a42e20ecc4e9d25ae71d9343b73e679cc81ad" upstream="emu-35-2-release" />
+  <project path="external/googletest" name="platform/external/googletest" revision="13dd749ee188132bfd22b0e7ae68769603097879" upstream="emu-35-2-release" />
+  <project path="external/google-benchmark" name="platform/external/google-benchmark" revision="bc4bc185811a446c7130b13ffde265493b91ae0b" upstream="emu-35-2-release" />
+  <project path="external/google-breakpad" name="platform/external/google-breakpad" revision="dbe52e2e00172fe95e1c3c0de2637d968bfda387" upstream="emu-35-2-release" />
+  <project path="external/grpc" name="platform/external/grpc-grpc" revision="da21d5dd011db0d0e33c1e8f56f650bac16f545c" upstream="emu-35-2-release" />
+  <project path="external/libusb" name="platform/external/libusb" revision="23f123a3f531572d14a253db3451c950e21d2447" upstream="emu-35-2-release" />
+  <project path="external/libpng" name="platform/external/libpng" revision="72682c829fac8c16dbd6db9695b5620e59ca2c31" upstream="emu-35-2-release" />
+  <project path="external/libxml2" name="platform/external/libxml2" revision="27570c2a5b96dc5aea1a0085f610f37ab744f643" upstream="emu-35-2-release" />
+  <project path="external/lz4" name="platform/external/lz4" revision="0ce5524c6cecdd0df1ec712f14b1da5789a8b861" upstream="emu-35-2-release" />
+  <project path="external/protobuf" name="platform/external/protobuf" revision="30fff2931f11aa3c4f216161ef009586748f3a29" upstream="emu-35-2-release" />
+  <project path="external/perfetto" name="platform/external/perfetto" revision="37518c39e3db120322359090db3d54f6ac100078" upstream="emu-35-2-release" />
+  <project path="external/qemu" name="platform/external/qemu" revision="2dc84aadd253e214bffa57c61f94103744eb42a7" upstream="emu-35-2-release">
+    <copyfile src="android/vscode/emu.code-workspace" dest="emu.code-workspace" />
   </project>
-  <project path="external/regex-re2" name="platform/external/regex-re2"  />
-  <project path="external/glib" name="platform/external/bluetooth/glib" />
-  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" />
-  <project path="external/virglrenderer" name="platform/external/virglrenderer" />
-  <project path="external/nasm" name="platform/external/nasm" />
-  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
-  <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/native" name="platform/frameworks/native"  />
-  <project path="hardware/google/aemu" name="platform/hardware/google/aemu"  groups="pdk"  />
-  <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream"  groups="pdk"  />
-  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" />
-  <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
-  <project name="device/google/cuttlefish" path="device/google/cuttlefish" />
-  <project path="tools/netsim" name="platform/tools/netsim"  />
-  <!-- Linux only toolchain dependencies -->
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"  groups="notdefault,platform-linux" />
-  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1"  groups="notdefault,platform-linux" />
-  <!-- Windows only toolchain dependencies -->
-  <project path="prebuilts/bazel/windows-x86_64" name="platform/prebuilts/bazel/windows-x86_64" clone-depth="1" groups="notdefault,platform-windows" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
-  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1"  groups="notdefault,platform-windows" />
-  <!-- Darwin (macos) only toolchain dependencies -->
-  <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" clone-depth="1" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
-  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1"  groups="notdefault,platform-darwin" />
-  <!-- Java JDK, we will use the one maintained by android studio -->
-  <project path="prebuilts/studio/jdk" name="platform/prebuilts/studio/jdk" clone-depth="1" />
-  <!-- Tink security library and dependencies -->
-  <project path="external/tink" name="platform/external/tink" />
-  <project path="external/rapidjson" name="platform/external/rapidjson"  />
-  <!-- Bring in the root-canal, bluetooth dependencies -->
-  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth"  groups="pdk" />
-  <!-- toolchain requirements for root-canal without prebuilts, only supported on linux/darwin -->
-  <project path="external/bison" name="platform/external/bison"  groups="notdefault,platform-linux" />
-  <project path="external/flex" name="platform/external/flex"  groups="notdefault,platform-linux,platform-darwin" />
-  <project path="external/m4" name="toolchain/m4"  groups="notdefault,platform-linux,platform-darwin" />
-  <!-- Webrtc for the goldfish-webrtc-videobridge -->
-  <project path="external/webrtc" name="platform/external/webrtc" />
-  <!-- flatbuffers for the gfxstream-protocols -->
-  <project path="external/flatbuffers" name="platform/external/flatbuffers"  />
-  <!-- Test infrastructure uses these -->
-  <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images"  clone-depth="1" />
-  <!-- Rust compiler toolchain -->
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" />
-  <!-- Rust toolchain needs a set of dlls from mingw on windows -->
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8"  clone-depth="1" groups="notdefault,platform-windows" />
-  <!-- Temporarily disabled See: b/266452325, add this section to a local_manifest if you need rust
-    i.e. add this to $AOSP_ROOT/.repo/local_manfiests/chromium.xml
-  <?xml version="1.0" encoding="UTF-8"?>
-  <manifest>
-  <remote  name="chromium" fetch="https://chromium.googlesource.com/" />
-  <project path="external/rust/chromium/crates" name="chromiumos/third_party/rust_crates" remote="chromium"  clone-depth="1" />
-  </manifest>
-  -->
+  <project path="external/regex-re2" name="platform/external/regex-re2" revision="4a8473386d25858eefab6a326a142b7268352e3f" upstream="emu-35-2-release" />
+  <project path="external/glib" name="platform/external/bluetooth/glib" revision="344d1ffcd0f7a69d4c09318443904e3cb3cba873" upstream="emu-35-2-release" />
+  <project path="external/tinyobjloader" name="platform/external/tinyobjloader" revision="d16a940067fbc191364fc1d3e2a2d907209c9320" upstream="emu-35-2-release" />
+  <project path="external/virglrenderer" name="platform/external/virglrenderer" revision="f0c2fba5827abb3634b1992855264d7fe990b89d" upstream="emu-35-2-release" />
+  <project path="external/nasm" name="platform/external/nasm" revision="645e4f02c622ba67eb754000cc00c9db8be31f85" upstream="emu-35-2-release" />
+  <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" revision="1475a12601d9ace9a80ca47d5ce7ed2b02dfb201" upstream="emu-35-2-release" />
+  <project path="external/zlib" name="platform/external/zlib" revision="a25229d7fdaa2efaac0c01bae20b4790b563cc20" upstream="emu-35-2-release" />
+  <project path="frameworks/native" name="platform/frameworks/native" revision="9094ee238458bf1e8a9e8335fd824acc4963d7f4" upstream="emu-35-2-release" />
+  <project path="hardware/google/aemu" name="platform/hardware/google/aemu" groups="pdk" revision="239b0f1a2ca4890cb213291c8d1fe436e17a4efe" upstream="emu-35-2-release" />
+  <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream" groups="pdk" revision="2900f25f5654eb133eb2ffe21c1cb5c9a15b9106" upstream="emu-35-2-release" />
+  <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" revision="fb26612eb84576adb974fe7f18a49d263072116f" upstream="emu-35-2-release" />
+  <project path="prebuilts/android-emulator-build/archive" name="platform/prebuilts/android-emulator-build/archive" clone-depth="1" revision="9b0bdade8b09267282fb901d21219ab6af013c60" upstream="emu-35-2-release" />
+  <project path="prebuilts/android-emulator-build/common" name="platform/prebuilts/android-emulator-build/common" clone-depth="1" revision="e5ba261d8df9cf82964e1f3b0462cc656101a6fc" upstream="emu-35-2-release" />
+  <project path="prebuilts/android-emulator-build/mesa" name="platform/prebuilts/android-emulator-build/mesa" clone-depth="1" revision="be7c00f399b415511d73308f0af0c0310512aced" upstream="emu-35-2-release" />
+  <project path="prebuilts/android-emulator-build/mesa-deps" name="platform/prebuilts/android-emulator-build/mesa-deps" clone-depth="1" revision="17837fdb1889014fa01cbbbda56afc9b6034815f" upstream="emu-35-2-release" />
+  <project path="prebuilts/android-emulator-build/qemu-android-deps" name="platform/prebuilts/android-emulator-build/qemu-android-deps" clone-depth="1" revision="b06aee625002d0738c5576bbf437b9378229bef0" upstream="emu-35-2-release" />
+  <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" revision="7d360214a0308888671cd5b672fe5d2747d8a228" upstream="emu-35-2-release" />
+  <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="f36866314774e0fec918743ae0128f61e9d3c23a" upstream="emu-35-2-release" />
+  <project path="tools/netsim" name="platform/tools/netsim" revision="e6a3ccdf72919bb0a2e6c7cdde1388da64d4718a" upstream="emu-35-2-release" />
+
+  
+  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" revision="acd99925b5880e97d2dee249d39a93a6e5794f9d" upstream="emu-35-2-release" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="82a0369807739c10536b1c9934b35be71e617244" groups="notdefault,platform-linux" upstream="emu-35-2-release" />
+  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" groups="notdefault,platform-linux" revision="31612ec58d4ad61d3e9b460551cfca9e05106cbe" upstream="emu-35-2-release" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="bb59d92fffb0f04a4dcf4c41b1c61dbff2b8dac4" groups="notdefault,platform-linux" upstream="emu-35-2-release" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" groups="notdefault,platform-linux" revision="7ef4cb95e1ed4305e99f03a8e8ad28d26134a45b" upstream="emu-35-2-release" />
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="3665e3a3bd0cd0d93f6247eb596938cea48268be" groups="notdefault,platform-linux" upstream="emu-35-2-release" />
+
+  
+  <project path="prebuilts/bazel/windows-x86_64" name="platform/prebuilts/bazel/windows-x86_64" clone-depth="1" groups="notdefault,platform-windows" revision="440ea8d1ada8d6ad09fb55c51bc1e154abfa324f" upstream="emu-35-2-release" />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="48c3f93d6670384503cb185277cb825cda99e226" groups="notdefault,platform-windows" upstream="emu-35-2-release" />
+  <project path="prebuilts/cmake/windows-x86" name="platform/prebuilts/cmake/windows-x86" clone-depth="1" groups="notdefault,platform-windows" revision="050d3148f1f2420653cc69f93fb0861d68874803" upstream="emu-35-2-release" />
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="7119932cd3cea23f16db62e683b69c23e415ff09" groups="notdefault,platform-windows" upstream="emu-35-2-release" />
+
+  
+  <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" clone-depth="1" groups="notdefault,platform-darwin" revision="020c822b27a1bfeb47f83aa2ce664760d394f946" upstream="emu-35-2-release" />
+  <project path="prebuilts/ninja/darwin-x86" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" revision="8e110eda03f1e908cad557286b8a80e961ff910e" upstream="emu-35-2-release" />
+  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" revision="f8a4461c7c527cc4b208e3ca475d4e9d128ef862" upstream="emu-35-2-release" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="c30e51fe01fe0b1bb4cb0f20e7f7c1697660f61d" groups="notdefault,platform-darwin" upstream="emu-35-2-release" />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="8a7b323c92153acc4390bf71392dec2dbb10f4f5" groups="notdefault,platform-darwin" upstream="emu-35-2-release" />
+
+  
+  <project path="prebuilts/studio/jdk" name="platform/prebuilts/studio/jdk" clone-depth="1" revision="19bb0ce48675d57d347262320f70ffb47c4fe899" upstream="emu-35-2-release" />
+
+  
+  <project path="external/tink" name="platform/external/tink" revision="15e705cbf687a9554fc7f7bf291a53746b5db096" upstream="emu-35-2-release" />
+  <project path="external/rapidjson" name="platform/external/rapidjson" revision="9fa2a3d9e356a1f42a6184dcf1e0508ddfa9dbfb" upstream="emu-35-2-release" />
+
+  
+  <project path="packages/modules/Bluetooth" name="platform/packages/modules/Bluetooth" groups="pdk" revision="378f7ffd585c1b83b7f5e23bcac25834cc16dc8c" upstream="emu-35-2-release" />
+
+  
+  <project path="external/bison" name="platform/external/bison" revision="9d6b3cea352fd68d9bfb4782794593b352e49829" groups="notdefault,platform-linux" upstream="emu-35-2-release" />
+  <project path="external/flex" name="platform/external/flex" revision="90a4022e091f39d3534a30bbb9d02986f2f5ad9b" groups="notdefault,platform-linux,platform-darwin" upstream="emu-35-2-release" />
+  <project path="external/m4" name="toolchain/m4" revision="027f7afa228990e5f5c3c31833697a6f64e990fa" groups="notdefault,platform-linux,platform-darwin" upstream="emu-35-2-release" />
+
+  
+  <project path="external/webrtc" name="platform/external/webrtc" revision="833f6e49cebd53145bd3acbf881a96b74e400954" upstream="emu-35-2-release" />
+
+  
+  <project path="external/flatbuffers" name="platform/external/flatbuffers" revision="dd3ef1774403fd1a1f80484738cf5812285a45f9" upstream="emu-35-2-release" />
+
+  
+  <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images" revision="bef9560be52750facc18938c14154d17ea99f744" clone-depth="1" upstream="emu-35-2-release" />
+
+  
+  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="b56574afd74707ab2f7bc2ce537ccf69aa242a2f" upstream="emu-35-2-release" />
+
+  
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" revision="54c8410ade95e313e892745f14312f5e97c7bedc" clone-depth="1" groups="notdefault,platform-windows" upstream="emu-35-2-release" />
+
+  
 </manifest>
