@@ -111,20 +111,4 @@
 
   <!-- Test infrastructure uses these -->
   <project path="prebuilts/android-emulator-build/system-images" name="platform/prebuilts/android-emulator-build/system-images" revision="main" clone-depth="1" />
-
-  <!-- Rust compiler toolchain -->
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="b56574afd74707ab2f7bc2ce537ccf69aa242a2f"/>
-
-  <!-- Rust toolchain needs a set of dlls from mingw on windows -->
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" revision="main" clone-depth="1" groups="notdefault,platform-windows" />
-
-  <!-- Temporarily disabled See: b/266452325, add this section to a local_manifest if you need rust
-    i.e. add this to $AOSP_ROOT/.repo/local_manfiests/chromium.xml
-
-  <?xml version="1.0" encoding="UTF-8"?>
-  <manifest>
-  <remote  name="chromium" fetch="https://chromium.googlesource.com/" />
-  <project path="external/rust/chromium/crates" name="chromiumos/third_party/rust_crates" remote="chromium" revision="70439c67fa61f074eb50fd2a498ff8ea0999db1c" clone-depth="1" />
-  </manifest>
-  -->
 </manifest>
