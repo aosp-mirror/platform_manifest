@@ -5,16 +5,16 @@
   <default revision="build-tools-release" remote="aosp" sync-j="4" />
 
   
-  <project path="build/make" name="platform/build" revision="c3d8a6ddab2aff3814602312bb5ff0fea52c5851" upstream="build-tools-release">
+  <project path="build/make" name="platform/build" revision="8906640904c719d5d959dde4c101d7c7dca38131" upstream="build-tools-release">
     <linkfile src="tools" dest="build/tools" />
   </project>
   <project path="build/bazel" name="platform/build/bazel" groups="pdk" revision="c811ed11e5aee1983b5076059f6d3721dff5d1f0" upstream="build-tools-release">
     <linkfile src="bazel.WORKSPACE" dest="WORKSPACE" />
     <linkfile src="bazel.BUILD" dest="BUILD" />
   </project>
-  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="pdk" revision="667fec22bf52dfa6c8a08d1f2a76c2abdada6e8f" upstream="build-tools-release" />
+  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="pdk" revision="eb4a9c48d0f8811f53bb7715498e55419c784d5f" upstream="build-tools-release" />
   <project path="build/blueprint" name="platform/build/blueprint" revision="4ca1567e42b90c8619c08845943da346906b4b22" upstream="build-tools-release" />
-  <project path="build/soong" name="platform/build/soong" revision="d80bb25a13101a214b1c9481cb571e77dce091e5" upstream="build-tools-release">
+  <project path="build/soong" name="platform/build/soong" revision="aaa019754c3d62e965726937882c2f0eb72200fb" upstream="build-tools-release">
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
@@ -24,7 +24,7 @@
   <project path="prebuilts/bazel/common" name="platform/prebuilts/bazel/common" groups="pdk" clone-depth="1" revision="9e400cf4af270706fb507662ac2317368668034a" upstream="build-tools-release" />
   <project path="prebuilts/bazel/darwin-x86_64" name="platform/prebuilts/bazel/darwin-x86_64" groups="notdefault,platform-darwin,pdk" clone-depth="1" revision="3dbbb8125341365b35bb39d9da475b542b267b7e" upstream="build-tools-release" />
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" groups="linux,pdk" clone-depth="1" revision="9c66d08770b0d0c91670b41f1e192d82a2f2ad33" upstream="build-tools-release" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="d59cee15e9af195246fe9ad31b7eea69be12fc3b" upstream="build-tools-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="c6b85da1e79d22c06e560768ba08d9e69deb92b4" upstream="build-tools-release" />
   <project path="prebuilts/remoteexecution-client" name="platform/prebuilts/remoteexecution-client" groups="pdk" clone-depth="1" revision="bb86ffe165f46b8d54db9df211692947c3ab5632" upstream="build-tools-release" />
 
   
@@ -135,7 +135,7 @@
   <project path="external/kotlinc" name="platform/external/kotlinc" revision="c82f6a825ea3331518a5630411145ed30560ab3c" upstream="build-tools-release" />
   <project path="external/kotlinx.metadata" name="platform/external/kotlinx.metadata" revision="99b31c32736511516fbe1b56411d1aecf05c3efe" upstream="build-tools-release" />
   <project path="external/ktfmt" name="platform/external/ktfmt" revision="4362d77d3b63ea472e5eb4b322cbfca3541a10eb" upstream="build-tools-release" />
-  <project path="external/n2" name="platform/external/n2" revision="6d22d3a8258c834cfce676df90846490854f0c93" upstream="build-tools-release" />
+  <project path="external/n2" name="platform/external/n2" revision="1aa932dabc91b262a26699952780f2e3c0dc4d60" upstream="build-tools-release" />
   <project path="external/ninja" name="platform/external/ninja" revision="a597503981221a9b4aec1082c2bc78777f13e3c6" upstream="build-tools-release" />
   <project path="external/nsjail" name="platform/external/nsjail" revision="52fd46b555cb427199d5d44e49287151244a4cd8" upstream="build-tools-release" />
   <project path="external/one-true-awk" name="platform/external/one-true-awk" revision="18800220c7bf5d9c06a0798293a4ee05ed7b8b40" upstream="build-tools-release" />
@@ -246,10 +246,10 @@
   <project path="external/rust/crates/fxhash" name="platform/external/rust/crates/fxhash" groups="pdk" revision="1a733374c92a4b831523f985f3a48113d8412030" upstream="build-tools-release" />
   <project path="external/rust/crates/gdbstub" name="platform/external/rust/crates/gdbstub" groups="pdk" revision="0ee1dcaf72de3b300c6bba2c3d37fec1505aa250" upstream="build-tools-release" />
   <project path="external/rust/crates/gdbstub_arch" name="platform/external/rust/crates/gdbstub_arch" groups="pdk" revision="72774f2df7f9c21e71428491a13195a54628994c" upstream="build-tools-release" />
-  <project path="external/rust/crates/getrandom" name="platform/external/rust/crates/getrandom" groups="pdk" revision="b1e260ef7f2245c82545fe06accc7a109a436cb0" upstream="build-tools-release" />
-  <project path="external/rust/crates/glam" name="platform/external/rust/crates/glam" groups="pdk" revision="0b3206f4e3cc3d21adfaa17704cffe9421e242de" upstream="build-tools-release" />
-  <project path="external/rust/crates/glob" name="platform/external/rust/crates/glob" groups="pdk" revision="a59894d97f50892b9f984d8016fe78b29953d983" upstream="build-tools-release" />
-  <project path="external/rust/crates/googletest" name="platform/external/rust/crates/googletest" groups="pdk" revision="bd0b17cc109729887b993449f73a6b6500d89752" upstream="build-tools-release" />
+  <project path="external/rust/crates/getrandom" name="platform/external/rust/crates/getrandom" groups="pdk" revision="61fab5837dd96684260817f30a8a968fa9216fe9" upstream="build-tools-release" />
+  <project path="external/rust/crates/glam" name="platform/external/rust/crates/glam" groups="pdk" revision="26497bd8e628198cfb1e90e59cdd95429d3835e4" upstream="build-tools-release" />
+  <project path="external/rust/crates/glob" name="platform/external/rust/crates/glob" groups="pdk" revision="a4d65abbd30ddf1891848f7dfa11091b4f1ffeb9" upstream="build-tools-release" />
+  <project path="external/rust/crates/googletest" name="platform/external/rust/crates/googletest" groups="pdk" revision="9fedb8d176ea83b2ff4ee64b9defb05e6a77a63a" upstream="build-tools-release" />
   <project path="external/rust/crates/grpcio" name="platform/external/rust/crates/grpcio" groups="pdk" revision="e17178c59dca1d92b76dc5c4023ca9e506b9324f" upstream="build-tools-release" />
   <project path="external/rust/crates/grpcio-compiler" name="platform/external/rust/crates/grpcio-compiler" groups="pdk" revision="878e6f41a42cfbac1564b9f25abd63e037d774a9" upstream="build-tools-release" />
   <project path="external/rust/crates/grpcio-sys" name="platform/external/rust/crates/grpcio-sys" groups="pdk" revision="2d3a3499a8156122b0f60bf7cb15341afbee9ece" upstream="build-tools-release" />
@@ -430,15 +430,15 @@
   <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir" groups="pdk" revision="f638f082d7a886178c1174cd3376329dec823b9d" upstream="build-tools-release" />
   <project path="external/rust/crates/weak-table" name="platform/external/rust/crates/weak-table" groups="pdk" revision="8c9a50496da55b683dc28a59220c9576610325a6" upstream="build-tools-release" />
   <project path="external/rust/crates/webpki" name="platform/external/rust/crates/webpki" groups="pdk" revision="5f623891b8e1e78e4fcf59285fc0dbb653ba28ed" upstream="build-tools-release" />
-  <project path="external/rust/crates/which" name="platform/external/rust/crates/which" groups="pdk" revision="de2599d126a5e1807f04cd625a02a01c9508f125" upstream="build-tools-release" />
-  <project path="external/rust/crates/x509-cert" name="platform/external/rust/crates/x509-cert" groups="pdk" revision="d3006306b60d317225d2d6565fc75844459344ac" upstream="build-tools-release" />
+  <project path="external/rust/crates/which" name="platform/external/rust/crates/which" groups="pdk" revision="90f020a402f4333f02b6a9fe3606d808c2ab6a13" upstream="build-tools-release" />
+  <project path="external/rust/crates/x509-cert" name="platform/external/rust/crates/x509-cert" groups="pdk" revision="611f2ea3d6354cf6d5034ea63d568dee4c50d868" upstream="build-tools-release" />
   <project path="external/rust/crates/x509-parser" name="platform/external/rust/crates/x509-parser" groups="pdk" revision="99efee4c50a235fcfdefcac83bd9e282e4bd52e7" upstream="build-tools-release" />
-  <project path="external/rust/crates/xml-rs" name="platform/external/rust/crates/xml-rs" groups="pdk" revision="27ffb0692cb862ced5cc5a71117fbaf2ef4f2d19" upstream="build-tools-release" />
+  <project path="external/rust/crates/xml-rs" name="platform/external/rust/crates/xml-rs" groups="pdk" revision="601c792a60e2b384a3ae18b53d63ec30db0ba7ce" upstream="build-tools-release" />
   <project path="external/rust/crates/zerocopy" name="platform/external/rust/crates/zerocopy" groups="pdk" revision="dfb3c166a56e248a88e4919c339de5b588ca59fa" upstream="build-tools-release" />
   <project path="external/rust/crates/zerocopy-derive" name="platform/external/rust/crates/zerocopy-derive" groups="pdk" revision="181bbed494c6bcb54675541a0f9acbf834f6401b" upstream="build-tools-release" />
-  <project path="external/rust/crates/zeroize" name="platform/external/rust/crates/zeroize" groups="pdk" revision="dc2c52efce4edbae2e983d7ecdab0b7321ef9097" upstream="build-tools-release" />
-  <project path="external/rust/crates/zeroize_derive" name="platform/external/rust/crates/zeroize_derive" groups="pdk" revision="814674cbb6ef6e7ff5d51d8b03cd2ee93b990e53" upstream="build-tools-release" />
-  <project path="external/rust/crates/zip" name="platform/external/rust/crates/zip" groups="pdk" revision="64d9ebb4d372185ca4870185342c3b08218d95e5" upstream="build-tools-release" />
+  <project path="external/rust/crates/zeroize" name="platform/external/rust/crates/zeroize" groups="pdk" revision="657af774feb6405c8684c7c0451064a90d602b75" upstream="build-tools-release" />
+  <project path="external/rust/crates/zeroize_derive" name="platform/external/rust/crates/zeroize_derive" groups="pdk" revision="08cdddc5ab2cfdd91c783d993197d01c1391eaeb" upstream="build-tools-release" />
+  <project path="external/rust/crates/zip" name="platform/external/rust/crates/zip" groups="pdk" revision="44eb9a97c60a08cdb863f5e762fdfcc846088425" upstream="build-tools-release" />
   <project path="external/rust/cxx" name="platform/external/rust/cxx" groups="pdk" revision="4fbd4fbf883df31cdedeb9c4478bfd7f54623687" upstream="build-tools-release" />
   <project path="external/rust/autocxx" name="platform/external/rust/autocxx" groups="pdk" revision="07cee73ed86e736981a806f6d1354935963e1529" upstream="build-tools-release" />
   <project path="external/rust/pica" name="platform/external/rust/pica" groups="pdk" revision="cda49b3829a18ba60f6630c8abaf4fb9ff1c4306" upstream="build-tools-release" />
