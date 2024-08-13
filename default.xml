@@ -97,7 +97,11 @@
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" revision="main" clone-depth="1" groups="notdefault,platform-linux,platform-darwin"/>
   <project path="tools/buildSrc" name="platform/tools/buildSrc" />
 
-   <!-- Rust compiler toolchain -->
+  <!-- Repo hooks -->
+  <project path="tools/repohooks" name="platform/tools/repohooks" groups="developers,tools" />
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
+  <!-- Rust compiler toolchain -->
   <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="main"/>
 
   <!-- Linux only toolchain dependencies -->
