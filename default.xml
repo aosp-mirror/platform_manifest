@@ -4,11 +4,11 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/studio-2024.2.2-alpha03"
+  <default revision="refs/tags/studio-2024.2.2-alpha05"
            remote="aosp"
            sync-j="4" />
 
-  <superproject name="platform/superproject" remote="aosp" revision="studio-2024.2.2-alpha03" />
+  <superproject name="platform/superproject" remote="aosp" revision="studio-2024.2.2-alpha05" />
   <contactinfo bugurl="go/repo-bug" />
 
   <!-- BEGIN open-source projects -->
@@ -21,6 +21,7 @@
     <linkfile src="base/gradle.properties" dest="tools/gradle.properties" />
   </project>
 
+  <project path="build/bazel" name="platform/build/bazel" />
   <project path="external/dexter" name="platform/tools/dexter" />
   <project path="external/doclava" name="platform/external/doclava" />
   <project path="external/dokka" name="platform/external/dokka" groups="pdk" clone-depth="1" />
@@ -42,6 +43,7 @@
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" groups="notdefault,platform-darwin" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" groups="notdefault,platform-windows" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="notdefault,platform-linux" />
   <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" />
   <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" />
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" />
