@@ -73,7 +73,7 @@
   <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1"/>
   <project path="external/tink" name="platform/external/tink" clone-depth="1"/>
 
-  ,!-- Webrtc and dependencies -->
+  <!-- Webrtc and dependencies -->
   <project path="external/jsoncpp" name="platform/external/jsoncpp" clone-depth="1" revision="main" />
   <project path="external/libaom" name="platform/external/libaom" clone-depth="1"/>
   <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" clone-depth="1"/>
@@ -92,6 +92,8 @@
 
   <!-- Toolchain and build related definitions -->
   <project path="build/bazel" name="platform/build/bazel">
+    <linkfile src="toplevel.MODULE.bazel" dest="MODULE.bazel" />
+    <linkfile src="toplevel.MODULE.bazel.lock" dest="MODULE.bazel.lock" />
     <linkfile src="toplevel.WORKSPACE" dest="WORKSPACE" />
     <linkfile src="toplevel.bazelrc" dest=".bazelrc" />
     <linkfile src="toplevel.bazelversion" dest=".bazelversion" />
