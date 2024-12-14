@@ -12,8 +12,8 @@
 
   <superproject name="platform/superproject" remote="aosp" revision="master-plus-rust" />
   <contactinfo bugurl="go/repo-bug" />
-
-  <project path="build/make" name="platform/build" groups="pdk" >
+  <!-- BEGIN open-source projects -->
+  <project path="build/make" name="platform/build" groups="pdk,sysui-studio" >
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
     <linkfile src="core" dest="build/core" />
@@ -28,7 +28,7 @@
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="pdk" />
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/pesto" name="platform/build/pesto" groups="pdk" />
-  <project path="build/release" name="platform/build/release" groups="pdk,tradefed" />
+  <project path="build/release" name="platform/build/release" groups="pdk,tradefed,sysui-studio" />
   <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
@@ -42,7 +42,7 @@
   <project path="developers/build" name="platform/developers/build" groups="developers,pdk" />
   <project path="developers/demos" name="platform/developers/demos" groups="developers" />
   <project path="developers/samples/android" name="platform/developers/samples/android" groups="developers" />
-  <project path="development" name="platform/development" groups="developers,pdk-cw-fs,pdk-fs" />
+  <project path="development" name="platform/development" groups="developers,pdk-cw-fs,pdk-fs,sysui-studio" />
   <project path="device/amlogic/yukawa" name="device/amlogic/yukawa" groups="device,yukawa,pdk" />
   <project path="device/amlogic/yukawa-kernel" name="device/amlogic/yukawa-kernel" groups="device,yukawa,pdk" clone-depth="2" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" />
@@ -63,56 +63,51 @@
   <project path="device/google/akita" name="device/google/akita" groups="device,akita" />
   <project path="device/google/akita-sepolicy" name="device/google/akita-sepolicy" groups="device,akita" />
   <project path="device/google/akita-kernels/5.15" name="device/google/akita-kernels/5.15" groups="device,akita" clone-depth="1" />
+  <project path="device/google/akita-kernels/6.1" name="device/google/akita-kernels/6.1" groups="device,akita" clone-depth="1" />
   <project path="device/google/atv" name="device/google/atv" groups="device,broadcom_pdk,generic_fs,pdk" />
-  <project path="device/google/barbet" name="device/google/barbet" groups="device,barbet" />
-  <project path="device/google/barbet-sepolicy" name="device/google/barbet-sepolicy" groups="device,barbet" />
   <project path="device/google/bluejay" name="device/google/bluejay" groups="device,bluejay" />
   <project path="device/google/bluejay-sepolicy" name="device/google/bluejay-sepolicy" groups="device,bluejay" />
   <project path="device/google/bluejay-kernels/5.10" name="device/google/bluejay-kernels/5.10" groups="device,bluejay" clone-depth="1" />
+  <project path="device/google/bluejay-kernels/6.1" name="device/google/bluejay-kernels/6.1" groups="device,bluejay" clone-depth="1" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,pdk" />
   <project path="device/google/caimito" name="device/google/caimito" groups="device,caimito" />
   <project path="device/google/caimito-kernels/6.1" name="device/google/caimito-kernels/6.1" groups="device,caimito" clone-depth="1" />
   <project path="device/google/caimito-sepolicy" name="device/google/caimito-sepolicy" groups="device,caimito" />
-  <project path="device/google/coral" name="device/google/coral" groups="device,coral,generic_fs" />
-  <project path="device/google/coral-kernel" name="device/google/coral-kernel" groups="device,coral,generic_fs" clone-depth="1" />
-  <project path="device/google/coral-sepolicy" name="device/google/coral-sepolicy" groups="device,coral,generic_fs" />
   <project path="device/google/comet" name="device/google/comet" groups="device,comet" />
   <project path="device/google/comet-kernels/6.1" name="device/google/comet-kernels/6.1" groups="device,comet" clone-depth="1" />
   <project path="device/google/comet-sepolicy" name="device/google/comet-sepolicy" groups="device,comet" />
   <project path="device/google/felix" name="device/google/felix" groups="device,felix" />
   <project path="device/google/felix-sepolicy" name="device/google/felix-sepolicy" groups="device,felix" />
   <project path="device/google/felix-kernels/5.10" name="device/google/felix-kernels/5.10" groups="device,felix" clone-depth="1" />
+  <project path="device/google/felix-kernels/6.1" name="device/google/felix-kernels/6.1" groups="device,felix" clone-depth="1" />
   <project path="device/google/gs101" name="device/google/gs101" groups="device,slider,bluejay,pdk-gs-arm" />
   <project path="device/google/gs101-sepolicy" name="device/google/gs101-sepolicy" groups="device,slider,bluejay,pdk-gs-arm" />
   <project path="device/google/gs201" name="device/google/gs201" groups="device,cloudripper,pdk-gs-arm" />
   <project path="device/google/gs201-sepolicy" name="device/google/gs201-sepolicy" groups="device,cloudripper,pdk-gs-arm" />
-  <project path="device/google/gs-common" name="device/google/gs-common" groups="device,slider,bluejay,cloudripper,pdk-gs-arm" />
+  <project path="device/google/gs-common" name="device/google/gs-common" groups="device,slider,bluejay,cloudripper,pdk-gs-arm,pdk-cw-tvc" />
   <project path="device/google/lynx" name="device/google/lynx" groups="device,lynx" />
   <project path="device/google/lynx-sepolicy" name="device/google/lynx-sepolicy" groups="device,lynx" />
   <project path="device/google/lynx-kernels/5.10" name="device/google/lynx-kernels/5.10" groups="device,lynx" clone-depth="1" />
+  <project path="device/google/lynx-kernels/6.1" name="device/google/lynx-kernels/6.1" groups="device,lynx" clone-depth="1" />
   <project path="device/google/pantah" name="device/google/pantah" groups="device,cloudripper,pdk-gs-arm" />
   <project path="device/google/pantah-sepolicy" name="device/google/pantah-sepolicy" groups="device,cloudripper,pdk-gs-arm" />
   <project path="device/google/pantah-kernels/5.10" name="device/google/pantah-kernels/5.10" groups="device,cloudripper,pdk-gs-arm" clone-depth="1" />
+  <project path="device/google/pantah-kernels/6.1" name="device/google/pantah-kernels/6.1" groups="device,cloudripper" clone-depth="1" />
   <project path="device/google/raviole" name="device/google/raviole" groups="device,slider,pdk-gs-arm" />
   <project path="device/google/raviole-kernels/5.10" name="device/google/raviole-kernels/5.10" groups="device,slider,pdk-gs-arm" clone-depth="1" />
-  <project path="device/google/redbull" name="device/google/redbull" groups="device,redbull" />
-  <project path="device/google/redbull-kernel" name="device/google/redbull-kernel" groups="device,bramble,redfin" clone-depth="1" />
-  <project path="device/google/redbull-sepolicy" name="device/google/redbull-sepolicy" groups="device,redbull" />
-  <project path="device/google/redfin" name="device/google/redfin" groups="device,redfin" />
-  <project path="device/google/redfin-sepolicy" name="device/google/redfin-sepolicy" groups="device,redfin" />
-  <project path="device/google/shusky" name="device/google/shusky" groups="device,ripcurrent,pdk-gs-arm" />
-  <project path="device/google/shusky-kernels/5.15" name="device/google/shusky-kernels/5.15" groups="device,ripcurrent,pdk-gs-arm" clone-depth="1" />
-  <project path="device/google/shusky-sepolicy" name="device/google/shusky-sepolicy" groups="device,ripcurrent,pdk-gs-arm" />
-  <project path="device/google/sunfish" name="device/google/sunfish" groups="device,sunfish" />
-  <project path="device/google/sunfish-kernel" name="device/google/sunfish-kernel" groups="device,sunfish" clone-depth="1" />
-  <project path="device/google/sunfish-sepolicy" name="device/google/sunfish-sepolicy" groups="device,sunfish" />
+  <project path="device/google/raviole-kernels/6.1" name="device/google/raviole-kernels/6.1" groups="device,slider" clone-depth="1" />
   <project path="device/google/tangorpro" name="device/google/tangorpro" groups="device,tangorpro" />
   <project path="device/google/tangorpro-sepolicy" name="device/google/tangorpro-sepolicy" groups="device,tangorpro" />
   <project path="device/google/tangorpro-kernels/5.10" name="device/google/tangorpro-kernels/5.10" groups="device,tangorpro" clone-depth="1" />
+  <project path="device/google/tangorpro-kernels/6.1" name="device/google/tangorpro-kernels/6.1" groups="device,tangorpro" clone-depth="1" />
+  <project path="device/google/shusky" name="device/google/shusky" groups="device,ripcurrent,pdk-gs-arm" />
+  <project path="device/google/shusky-kernels/5.15" name="device/google/shusky-kernels/5.15" groups="device,ripcurrent,pdk-gs-arm" clone-depth="1" />
+  <project path="device/google/shusky-kernels/6.1" name="device/google/shusky-kernels/6.1" groups="device,ripcurrent" clone-depth="1" />
+  <project path="device/google/shusky-sepolicy" name="device/google/shusky-sepolicy" groups="device,ripcurrent,pdk-gs-arm" />
   <project path="device/google/cuttlefish" name="device/google/cuttlefish" groups="device,pdk" />
   <project path="device/google/cuttlefish_prebuilts" name="device/google/cuttlefish_prebuilts" groups="device,pdk" clone-depth="1" />
   <project path="device/google/cuttlefish_vmm" name="device/google/cuttlefish_vmm" groups="device,pdk" clone-depth="1" />
-  <project path="device/google/trout" name="device/google/trout" groups="device,trout,gull,pdk" />
+  <project path="device/google/trout" name="device/google/trout" groups="device,pdk" clone-depth="1"/>
   <project path="device/google/zuma" name="device/google/zuma" groups="device,ripcurrent,pdk-gs-arm" />
   <project path="device/google/zuma-sepolicy" name="device/google/zuma-sepolicy" groups="device,ripcurrent,pdk-gs-arm" />
   <project path="device/google/zumapro" name="device/google/zumapro" groups="device,ripcurrentpro" />
@@ -185,11 +180,13 @@
   <project path="external/chromium-webview" name="platform/external/chromium-webview" groups="pdk" clone-depth="1" />
   <project path="external/clang" name="platform/external/clang" groups="pdk" />
   <project path="external/cldr" name="platform/external/cldr" groups="pdk" />
+  <project path="external/clpeak" name="platform/external/clpeak" />
   <project path="external/cn-cbor" name="platform/external/cn-cbor" groups="pdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
   <project path="external/ComputeLibrary" name="platform/external/ComputeLibrary" groups="pdk-lassen,pdk-gs-arm" />
   <project path="external/connectedappssdk" name="platform/external/connectedappssdk" groups="pdk" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk" />
+  <project path="external/coreboot" name="platform/external/coreboot" groups="pdk"/>
   <project path="external/cpu_features" name="platform/external/cpu_features" groups="pdk" />
   <project path="external/cpuinfo" name="platform/external/cpuinfo" groups="pdk" />
   <project path="external/crcalc" name="platform/external/crcalc" groups="pdk" />
@@ -218,6 +215,7 @@
   <project path="external/edid-decode" name="platform/external/edid-decode" groups="pdk" />
   <project path="external/eigen" name="platform/external/eigen" groups="pdk" />
   <project path="external/elfutils" name="platform/external/elfutils" groups="pdk" />
+  <project path="external/emboss" name="platform/external/emboss" groups="pdk" />
   <project path="external/emma" name="platform/external/emma" groups="pdk" />
   <project path="external/erofs-utils" name="platform/external/erofs-utils" groups="pdk" />
   <project path="external/error_prone" name="platform/external/error_prone" groups="pdk" />
@@ -291,7 +289,6 @@
   <project path="external/gwp_asan" name="platform/external/gwp_asan" groups="pdk" />
   <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk" />
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk,qcom_msm8x26" />
-  <project path="external/horologist" name="platform/external/horologist" groups="pdk" />
   <project path="external/hyphenation-patterns" name="platform/external/hyphenation-patterns" groups="pdk" />
   <project path="external/icing" name="platform/external/icing" groups="pdk" />
   <project path="external/icu" name="platform/external/icu" groups="pdk" />
@@ -421,7 +418,6 @@
   <project path="external/minigbm" name="platform/external/minigbm" groups="pdk" />
   <project path="external/minijail" name="platform/external/minijail" groups="pdk" />
   <project path="external/mksh" name="platform/external/mksh" groups="pdk" />
-  <project path="external/pciutils" name="platform/external/pciutils" groups="pdk" />
   <project path="external/python/mobly" name="platform/external/python/mobly" groups="pdk" />
   <project path="external/private-join-and-compute" name="platform/external/private-join-and-compute" groups="pdk" />
   <project path="external/mobile-data-download" name="platform/external/mobile-data-download" groups="pdk" />
@@ -478,6 +474,7 @@
   <project path="external/pandora/mmi2grpc" name="platform/external/pandora/mmi2grpc" groups="pdk" />
   <project path="external/parameter-framework" name="platform/external/parameter-framework" groups="pdk" />
   <project path="external/pcre" name="platform/external/pcre" groups="pdk" />
+  <project path="external/pciutils" name="platform/external/pciutils" groups="pdk" />
   <project path="external/pdfium" name="platform/external/pdfium" groups="pdk" />
   <project path="external/perfetto" name="platform/external/perfetto" groups="pdk,sysui-studio" />
   <project path="external/perfmark" name="platform/external/perfmark" groups="pdk" />
@@ -692,7 +689,6 @@
   <project path="hardware/google/pixel-sepolicy" name="platform/hardware/google/pixel-sepolicy" groups="generic_fs,pixel" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk,sysui-studio" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk" />
-  <project path="hardware/knowles/athletico/sound_trigger_hal" name="platform/hardware/knowles/athletico/sound_trigger_hal" groups="coral,generic_fs" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
   <project path="hardware/nxp/keymint" name="platform/hardware/nxp/keymint" groups="pdk" />
@@ -700,30 +696,6 @@
   <project path="hardware/nxp/uwb" name="platform/hardware/nxp/uwb" />
   <project path="hardware/nxp/secure_element" name="platform/hardware/nxp/secure_element" groups="pdk" />
   <project path="hardware/nxp/weaver" name="platform/hardware/nxp/weaver" groups="pdk" />
-  <project path="hardware/qcom/bootctrl" name="platform/hardware/qcom/bootctrl" groups="pdk-qcom" />
-  <project path="hardware/qcom/sm7150/gps" name="platform/hardware/qcom/sm7150/gps" groups="qcom_sm7150" >
-    <linkfile src="os_pickup.mk" dest="hardware/qcom/sm7150/Android.mk" />
-    <linkfile src="os_pickup.bp" dest="hardware/qcom/sm7150/Android.bp" />
-  </project>
-  <project path="hardware/qcom/sm7250/display" name="platform/hardware/qcom/sm7250/display" groups="qcom_sm7250" />
-  <project path="hardware/qcom/sm7250/gps" name="platform/hardware/qcom/sm7250/gps" groups="qcom_sm7250" >
-    <linkfile src="os_pickup.mk" dest="hardware/qcom/sm7250/Android.mk" />
-    <linkfile src="os_pickup.bp" dest="hardware/qcom/sm7250/Android.bp" />
-  </project>
-  <project path="hardware/qcom/sm7250/media" name="platform/hardware/qcom/sm7250/media" groups="qcom_sm7250" />
-  <project path="hardware/qcom/sm8150/data/ipacfg-mgr" name="platform/hardware/qcom/sm8150/data/ipacfg-mgr" groups="qcom_sm8150" >
-    <linkfile src="os_pickup.mk" dest="hardware/qcom/sm8150/Android.mk" />
-    <linkfile src="os_pickup.bp" dest="hardware/qcom/sm8150/Android.bp" />
-  </project>
-  <project path="hardware/qcom/sm8150/display" name="platform/hardware/qcom/sm8150/display" groups="qcom_sm8150" />
-  <project path="hardware/qcom/sm8150/gps" name="platform/hardware/qcom/sm8150/gps" groups="qcom_sm8150" />
-  <project path="hardware/qcom/sm8150/media" name="platform/hardware/qcom/sm8150/media" groups="qcom_sm8150" />
-  <project path="hardware/qcom/sm8150/thermal" name="platform/hardware/qcom/sm8150/thermal" groups="qcom_sm8150" />
-  <project path="hardware/qcom/sm8150/vr" name="platform/hardware/qcom/sm8150/vr" groups="qcom_sm8150" />
-  <project path="hardware/qcom/sm8150p/gps" name="platform/hardware/qcom/sm8150p/gps" groups="qcom_sm8150p" >
-    <linkfile src="os_pickup.mk" dest="hardware/qcom/sm8150p/Android.mk" />
-    <linkfile src="os_pickup.bp" dest="hardware/qcom/sm8150p/Android.bp" />
-  </project>
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk-qcom" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
   <project path="hardware/st/nfc" name="platform/hardware/st/nfc" groups="pdk" />
@@ -770,9 +742,10 @@
   <project path="packages/apps/Car/RotaryController" name="platform/packages/apps/Car/RotaryController" groups="pdk-fs" />
   <project path="packages/apps/Car/Settings" name="platform/packages/apps/Car/Settings" groups="pdk-fs" />
   <project path="packages/apps/Car/SettingsIntelligence" name="platform/packages/apps/Car/SettingsIntelligence" groups="pdk-fs" />
-  <project path="packages/apps/Car/systemlibs" name="platform/packages/apps/Car/systemlibs" groups="pdk-fs" />
+  <project path="packages/apps/Car/systemlibs" name="platform/packages/apps/Car/systemlibs" groups="pdk-fs,pdk-cw-tvc" />
   <project path="packages/apps/Car/SystemUpdater" name="platform/packages/apps/Car/SystemUpdater" groups="pdk-fs" />
   <project path="packages/apps/Car/DataSubscriptionReference" name="platform/packages/apps/Car/DataSubscriptionReference" groups="pdk-fs" />
+  <project path="packages/apps/Car/References" name="platform/packages/apps/Car/References" groups="pdk-fs" />
   <project path="packages/apps/CarrierConfig" name="platform/packages/apps/CarrierConfig" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" groups="pdk-cw-fs,pdk-fs" />
@@ -805,7 +778,7 @@
   <project path="packages/apps/SafetyRegulatoryInfo" name="platform/packages/apps/SafetyRegulatoryInfo" groups="pdk-fs" />
   <project path="packages/apps/SampleLocationAttribution" name="platform/packages/apps/SampleLocationAttribution" groups="pdk-fs" />
   <project path="packages/apps/SecureElement" name="platform/packages/apps/SecureElement" groups="apps_se,pdk-fs,pdk-cw-fs" />
-  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" groups="pdk-fs" />
+  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" groups="pdk-fs,pdk-cw-tvc" />
   <project path="packages/apps/SettingsIntelligence" name="platform/packages/apps/SettingsIntelligence" groups="pdk-fs" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" groups="pdk-fs" />
   <project path="packages/apps/Stk" name="platform/packages/apps/Stk" groups="apps_stk,pdk-fs" />
@@ -859,6 +832,7 @@
   <project path="packages/modules/Telephony" name="platform/packages/modules/Telephony" groups="pdk-cw-fs,pdk-fs"/>
   <project path="packages/modules/ThreadNetwork" name="platform/packages/modules/ThreadNetwork" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/Uwb" name="platform/packages/modules/Uwb" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/modules/UprobeStats" name="platform/packages/modules/UprobeStats" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/Virtualization" name="platform/packages/modules/Virtualization" groups="pdk" />
   <project path="packages/modules/vndk" name="platform/packages/modules/vndk" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/modules/Wifi" name="platform/packages/modules/Wifi" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
@@ -911,7 +885,7 @@
   <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="notdefault,platform-darwin,darwin,pdk,tradefed" clone-depth="1" />
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
   <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" groups="pdk,pdk-cw-fs,pdk-fs" clone-depth="1" />
-  <project path="prebuilts/jdk/jdk21" name="platform/prebuilts/jdk/jdk21" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/jdk/jdk21" name="platform/prebuilts/jdk/jdk21" groups="pdk,sysui-studio" clone-depth="1" />
   <project path="prebuilts/jdk/jdk8" name="platform/prebuilts/jdk/jdk8" groups="pdk" clone-depth="1" />
   <project path="prebuilts/manifest-merger" name="platform/prebuilts/manifest-merger" groups="pdk" clone-depth="1" />
   <project path="prebuilts/maven_repo/bumptech" name="platform/prebuilts/maven_repo/bumptech" groups="pdk-cw-fs,pdk-fs" clone-depth="1" />
@@ -937,6 +911,7 @@
   <project path="prebuilts/module_sdk/Scheduling" name="platform/prebuilts/module_sdk/Scheduling" groups="pdk" clone-depth="1" />
   <project path="prebuilts/module_sdk/SdkExtensions" name="platform/prebuilts/module_sdk/SdkExtensions" groups="pdk" clone-depth="1" />
   <project path="prebuilts/module_sdk/StatsD" name="platform/prebuilts/module_sdk/StatsD" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/module_sdk/UprobeStats" name="platform/prebuilts/module_sdk/UprobeStats" groups="pdk" clone-depth="1" />
   <project path="prebuilts/module_sdk/Uwb" name="platform/prebuilts/module_sdk/Uwb" groups="pdk" clone-depth="1" />
   <project path="prebuilts/module_sdk/Wifi" name="platform/prebuilts/module_sdk/Wifi" groups="pdk" clone-depth="1" />
   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" clone-depth="1" />
@@ -1030,7 +1005,7 @@
   <project path="test/vts-testcase/performance" name="platform/test/vts-testcase/performance" groups="vts,projectarch,pdk" />
   <project path="test/vts-testcase/security" name="platform/test/vts-testcase/security" groups="vts,projectarch,pdk" />
   <project path="test/vts-testcase/vndk" name="platform/test/vts-testcase/vndk" groups="vts,pdk" />
-  <project path="test/catbox" name="platform/test/catbox" />
+  <project path="test/catbox" name="platform/test/catbox" groups="pdk" />
   <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" groups="pdk" clone-depth="1" />
   <project path="tools/aadevtools" name="platform/tools/aadevtools" groups="pdk" />
   <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,projectarch,pdk,tradefed" />
@@ -1038,6 +1013,7 @@
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
   <project path="tools/apkzlib" name="platform/tools/apkzlib" groups="pdk,tradefed" />
   <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" />
+  <project path="tools/camera" name="platform/tools/camera" groups="pdk,tools" />
   <project path="tools/carrier_settings" name="platform/tools/carrier_settings" groups="tools" />
   <project path="tools/content_addressed_storage/prebuilts" name="platform/tools/content_addressed_storage/prebuilts" groups="pdk,tools" />
   <project path="tools/currysrc" name="platform/tools/currysrc" groups="pdk" />
@@ -1051,7 +1027,7 @@
   <project path="tools/netsim" name="platform/tools/netsim" groups="pdk" />
   <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk,sysui-studio" />
   <project path="tools/ndkports" name="platform/tools/ndkports" groups="pdk" />
-  <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed,sysui-studio" revision="main" />
   <project path="tools/rr_prebuilt" name="platform/tools/rr_prebuilt" groups="pdk" />
   <project path="tools/security" name="platform/tools/security" groups="pdk,tools" />
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
@@ -1091,8 +1067,11 @@
   </project>
   <!-- END open-source projects -->
 
+
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
+  <!-- third_party_review marker START -->
+  <!-- third_party_review marker END -->
 
   <!--
     Merge marker to make it easier for git to merge AOSP-only manifest
