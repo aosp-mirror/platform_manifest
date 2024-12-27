@@ -36,7 +36,6 @@
   <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" revision="main" />
   <project path="external/googletest" name="platform/external/googletest" revision="main" />
   <project path="external/google-benchmark" name="platform/external/google-benchmark" revision="main" />
-  <project path="external/google-breakpad" name="platform/external/google-breakpad" />
   <project path="external/grpc" name="platform/external/grpc-grpc" />
   <project path="external/libusb" name="platform/external/libusb" />
   <project path="external/libpng" name="platform/external/libpng" revision="main" />
@@ -66,6 +65,13 @@
   <project path="prebuilts/android-emulator-build/qt" name="platform/prebuilts/android-emulator-build/qt" clone-depth="1" />
   <project name="device/google/cuttlefish" path="device/google/cuttlefish" revision="main"/>
   <project path="tools/netsim" name="platform/tools/netsim" revision="main" />
+
+  <!-- Crash reporting
+
+  Note: the emu-dev branch is the emulator team maintained version of crashpad
+  -->
+  <project path="external/google-breakpad" name="platform/external/google-breakpad" clone-depth="1" />
+  <project path="external/crashpad" name="platform/external/crashpad" clone-depth="1" revision="emu-dev" />
 
   <!-- Linux only toolchain dependencies -->
   <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="notdefault,platform-linux" />
