@@ -1,60 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-<!--
-    This branch is a main side branch and is configured to have all project
-    specific rules. When updating this manifest file, please also update the
-    project rule in google3 to ensure new projects get testing.
-    See go/side-branch-testing for details.
--->
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="llvm-r547379-release"
-           remote="aosp"
-           sync-j="4" />
-  <superproject name="platform/superproject" remote="aosp" />
+
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="llvm-r547379-release" remote="aosp" sync-j="4" />
   <contactinfo bugurl="go/repo-bug" />
-  <!-- Core LLVM toolchain components -->
-  <project path="bionic" name="platform/bionic" />
-  <project path="toolchain/binutils" name="toolchain/binutils" />
-  <project path="toolchain/llvm-project" name="toolchain/llvm-project" />
-  <project path="toolchain/llvm_android" name="toolchain/llvm_android" />
-  <project path="toolchain/common" name="toolchain/common" />
-  <!-- Android/ChromeOS shared toolchain-utils -->
-  <project path="external/toolchain-utils" name="platform/external/toolchain-utils"  />
-  <!-- Binutils/gcc toolchains -->
-  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1" />
-  <!-- CMake prebuilts -->
-  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" />
-  <!-- build-tools prebuilts (includes ninja) -->
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
-  <!-- Go prebuilts -->
-  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,pdk,tradefed" clone-depth="1" />
-  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
-  <!-- Dependencies for llvm -->
-  <project path="external/zstd" name="platform/external/zstd" />
-  <!-- Dependencies for lldb -->
-  <project path="external/libedit" name="platform/external/libedit" />
-  <project path="external/swig" name="platform/external/swig" />
-  <project path="toolchain/xz" name="toolchain/xz" />
-  <project path="external/libxml2" name="platform/external/libxml2" />
-  <project path="external/libncurses" name="platform/external/ncurses" />
-  <!-- Python prebuilts -->
-  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1"  />
-  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1"  />
-  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1"  />
-  <!-- Prebuilts (for ease of updating) -->
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" />
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" />
-  <!-- NDK headers/libraries -->
-  <project path="toolchain/prebuilts/ndk/releases" name="toolchain/prebuilts/ndk/releases" clone-depth="1" />
-  <!-- Repo hooks -->
-  <project path="tools/repohooks" name="platform/tools/repohooks" />
+  
+  <project path="bionic" name="platform/bionic" revision="4e9f23f55b0b0596f830ae151c33c149414a2029" upstream="llvm-r547379-release" />
+  <project path="toolchain/binutils" name="toolchain/binutils" revision="c19795e958ed532462948fd14b1bdfd4f6e96e03" upstream="llvm-r547379-release" />
+  <project path="toolchain/llvm-project" name="toolchain/llvm-project" revision="b718bcaf8c198c82f3021447d943401e3ab5bd54" upstream="llvm-r547379-release" />
+  <project path="toolchain/llvm_android" name="toolchain/llvm_android" revision="0350f5572815d1b3f2bf6f2f9f6032958d2c31c5" upstream="llvm-r547379-release" />
+  <project path="toolchain/common" name="toolchain/common" revision="0bce8b062126242872e9f3fc66760d3f76773c49" upstream="llvm-r547379-release" />
+  
+  <project path="external/toolchain-utils" name="platform/external/toolchain-utils" revision="a1bb7f26cc6b735c3d685db12739bb03ad9a2993" upstream="llvm-r547379-release" />
+  
+  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" clone-depth="1" revision="4ac4f7cc41cf3c9e36fc3d6cf37fd1cfa9587a68" upstream="llvm-r547379-release" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="49917e030f76c01f35d5a46b66a2b85b2976647c" upstream="llvm-r547379-release" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1" revision="97914b44bb197db77d851df67a29868665b4b578" upstream="llvm-r547379-release" />
+  
+  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1" revision="7aea7e9880110799088cd1de509886871078306f" upstream="llvm-r547379-release" />
+  <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" revision="e57c88d59d7d8408a32b16425158fd2aa64e2b3e" upstream="llvm-r547379-release" />
+  
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="19dce33cfd5c17b965f7d460597049676f29913b" upstream="llvm-r547379-release" />
+  
+  <project path="prebuilts/go/darwin-x86" name="platform/prebuilts/go/darwin-x86" groups="darwin,pdk,tradefed" clone-depth="1" revision="0a0e0f9da3e96d2e44cf3e8fd1ff03f8010106fb" upstream="llvm-r547379-release" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" revision="0d8b68baa0e87a28e7e39495848fa0fc0cacf0c5" upstream="llvm-r547379-release" />
+  
+  <project path="external/zstd" name="platform/external/zstd" revision="01826a4963a0d8a59bc3812d29bdf0fb76416722" upstream="llvm-r547379-release" />
+  
+  <project path="external/libedit" name="platform/external/libedit" revision="892b8b381ae82ac3184900d989a516854d8b1197" upstream="llvm-r547379-release" />
+  <project path="external/swig" name="platform/external/swig" revision="d0f0f90be16c2ac553b5fa08512045273135147a" upstream="llvm-r547379-release" />
+  <project path="toolchain/xz" name="toolchain/xz" revision="47426872d1366c32538a8e9c8f559b03cb45b648" upstream="llvm-r547379-release" />
+  <project path="external/libxml2" name="platform/external/libxml2" revision="721909c6e609ae5a5306a5fe3f03d1beaa020385" upstream="llvm-r547379-release" />
+  <project path="external/libncurses" name="platform/external/ncurses" revision="34cc24447dc9e5700110580c784d9606f6cff5f0" upstream="llvm-r547379-release" />
+  
+  <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="fce2346610379fdcce9dc7423c0e9a04e1a43cbf" upstream="llvm-r547379-release" />
+  <project path="prebuilts/python/darwin-x86" name="platform/prebuilts/python/darwin-x86" clone-depth="1" revision="3400487f6a77cc05ee5d4799575372713ce63232" upstream="llvm-r547379-release" />
+  <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="6d619afe3f821388a57b7b2b473bee85debfdd7c" upstream="llvm-r547379-release" />
+  
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="cbdf83f3e2b5728930d70ef0442c484f75165ff1" upstream="llvm-r547379-release" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="2fa77dca376be7be1e51b89fb2e23c792cd6286b" upstream="llvm-r547379-release" />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="5439159bcecbc897a60f4155db16c221cd9bc6cc" upstream="llvm-r547379-release" />
+  
+  <project path="toolchain/prebuilts/ndk/releases" name="toolchain/prebuilts/ndk/releases" clone-depth="1" revision="e98ef7e0275b506b8843f2d0d52f3256e46df4b5" upstream="llvm-r547379-release" />
+  
+  <project path="tools/repohooks" name="platform/tools/repohooks" revision="353fd1070cc852729e68be5706809e4ebf75968e" upstream="llvm-r547379-release" />
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
-  <!-- riscv64 platform sysroot -->
-  <project path="toolchain/prebuilts/sysroot/platform/riscv64-linux-android" name="toolchain/prebuilts/sysroot/platform/riscv64-linux-android" />
+  
+  <project path="toolchain/prebuilts/sysroot/platform/riscv64-linux-android" name="toolchain/prebuilts/sysroot/platform/riscv64-linux-android" revision="d19c6ae1817af6846099905de2a422eae1de5d11" upstream="llvm-r547379-release" />
 </manifest>
