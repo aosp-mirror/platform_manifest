@@ -1,68 +1,107 @@
 <manifest>
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="androidx-exifinterface-release" sync-j="8" />
-  
-  <project name="platform/build" path="build/make" revision="271e24954b5a7d718940968e36b1595eaa8411d0" upstream="androidx-exifinterface-release" />
-  <project name="platform/manifest" path="manifest" revision="f269285bc4cafdea3040dc38ef68e475877c91f6" upstream="androidx-exifinterface-release" />
-  
-  
-  <project clone-depth="1" groups="pdk" name="platform/external/noto-fonts" path="external/noto-fonts" revision="70ac0adb7ce9442a938fd5a04fcf3d86966c7ea6" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="9541aa39f0592fbe4d60565574ac6499576f015f" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/external/doclava" path="external/doclava" revision="b78f55c9c6969acac49f95806701b649e3d17ebc" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/external/dokka" path="external/dokka" revision="c302575a42b3ce7d064e25c4cac9e947a6c54b82" upstream="androidx-exifinterface-release" />
-  <project groups="pdk" name="platform/external/icing" path="external/icing" revision="04d376669226fc7bc4bf32c64e753b53de8f1b68" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/external/icu" path="external/icu" revision="d27a7510f76c3b7901f653ed2ec38a32b01fd0c0" upstream="androidx-exifinterface-release" />
-  
-  <project clone-depth="1" groups="pdk" name="platform/external/protobuf" path="external/protobuf" revision="b0e0d998d2f175a586e48b01d39761e4fceaf662" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="d7867af15d2d50fe0d20c8815fe767f67c912f34" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="2782c5c32e0a103145c24ea7d3633071ed939341" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="0e68fe542d74dce933e02ac7bafb4c3c9771180d" upstream="androidx-exifinterface-release" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="androidx-exifinterface-release" remote="aosp" />
+  <project path="build/make" name="platform/build" revision="c66d3805c87caa26ca19c90b8bdec74bcc2e7999" upstream="androidx-exifinterface-release" />
+
   
   
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="5605b149a53320fcb336619add7869da92a1b6b3" upstream="androidx-exifinterface-release" />
+  <project path="external/dexter" name="platform/tools/dexter" clone-depth="1" revision="7bc2c8ccf1db5bd95d471f52ecfe732b5722ff61" upstream="androidx-exifinterface-release" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" revision="a3db9c665ae88eeae07653f27d65a2eb31ee2b54" upstream="androidx-exifinterface-release" />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" revision="2b848b0d99124e554c66eddfe044887cfe32940e" upstream="androidx-exifinterface-release" />
+  <project path="external/icing" name="platform/external/icing" clone-depth="1" revision="241063e518bc437003bfee383e474f818b865eef" upstream="androidx-exifinterface-release" />
+  <project path="external/icu" name="platform/external/icu" clone-depth="1" revision="8908755ae02efc7435ddbd7a77bccbe51b281262" upstream="androidx-exifinterface-release" />
+  <project path="external/sqlite" name="platform/external/sqlite" clone-depth="1" revision="ea82b873876703f67948107f0d59691cea51ebd0" upstream="androidx-exifinterface-release" />
+
   
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/protobuf" path="prebuilts/protobuf" revision="7f770bcfc83d43216b156d29c38a833a51e4c7e6" upstream="androidx-exifinterface-release" />
-  <project groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" name="platform/tools/repohooks" path="tools/repohooks" revision="d404cd5c229c5cc7b228372e6d0ddc6fc2331b14" upstream="androidx-exifinterface-release" />
+  <project path="external/compose-hero-benchmarks/poxedex-compose" name="platform/external/compose-hero-benchmarks/poxedex-compose" clone-depth="1" revision="8be7e43f34ce289dc73c5f70d376546f253770e1" upstream="androidx-exifinterface-release" />
+
+  
+  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" revision="25a155a80c47b97529b83eec19d9a0a57cb8c5ce" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/chrome-for-testing" name="platform/prebuilts/androidx/chrome-for-testing" clone-depth="1" revision="554ec2c1ece82dcbe358592caf4c86a11ea49e62" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" revision="e9b83d12f0a03460a7cfc490cad9ee897bc2f982" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" revision="69dcddb83a16b7bd30ad02ab120027fb9a8b2688" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/javascript-for-kotlin" name="platform/prebuilts/androidx/javascript-for-kotlin" clone-depth="1" revision="fc3fd63751b5b6e9e24827dc99d6235c5a54015b" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" revision="0e68fe542d74dce933e02ac7bafb4c3c9771180d" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/ink" name="platform/prebuilts/androidx/ink" clone-depth="1" revision="b3482a4f965003b6ce024157df52eb5f3f4bdba2" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" revision="58a4b883df2016383aaa93099aaf07b22832ebff" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" revision="32629f9af9a9beb8b9ec3d43eae8e55abfd1bfbb" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/androidx/xr" name="platform/prebuilts/androidx/xr" clone-depth="1" revision="efe7fb62c93f085ceecea8b211994ee929c69e33" upstream="androidx-exifinterface-release" />
+  
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" revision="5bcfe68ed57d4507f6ccc037e588e8ca779f4088" upstream="androidx-exifinterface-release" />
+  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" revision="2a7a122b5c5b145a9e967b69ed8c3b02f8514f73" upstream="androidx-exifinterface-release" />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="817f5ad876a58caa7deab384d0f885de26b384b3" upstream="androidx-exifinterface-release" />
+
   
   
-  <project clone-depth="1" groups="tools" name="platform/tools/external/gradle" path="tools/external/gradle" revision="a4ace07b9b6617c5bcd5fe16c3d69d16496d3710" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" revision="c9814240bffb344076867338413fdc981234c24f" upstream="androidx-exifinterface-release" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" revision="1d21bcd6ce9ea91c97060bb0d05e478554d5ad1a" upstream="androidx-exifinterface-release" />
+  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1" revision="60f7c64b7a22a30065e034ac1ed9e5bdc0d47c68" upstream="androidx-exifinterface-release" />
+  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1" revision="d212b716eb682c6c6cf7a4214ab5ab817074c165" upstream="androidx-exifinterface-release" />
   
   
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-29" path="prebuilts/fullsdk-darwin/platforms/android-29" revision="a260b31f556025b390c450e879ea5db693b9c32e" upstream="androidx-exifinterface-release">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-29" src="." />
+  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" revision="9eb212a6988757e5f3c38ae2bf73ec246934e0af" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="645a7339a4d59d46aa57f89dd70eeed02d88cacc" upstream="androidx-exifinterface-release" />
+
+
+  
+  
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" revision="5401372eeb6c88e6066b9495c4700e8acf6d34d2" upstream="androidx-exifinterface-release" />
+
+  
+  <project path="prebuilts/fullsdk-darwin/platforms" name="platform/prebuilts/fullsdk/platforms" clone-depth="1" revision="299e3a1c64506a958c4c487377a9c196b69e3edb" upstream="androidx-exifinterface-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-29" path="prebuilts/fullsdk-darwin/sources/android-29" revision="0587eda606603d441c9b916f14d1329676ad64a3" upstream="androidx-exifinterface-release">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-29" src="." />
+  <project path="prebuilts/fullsdk-darwin/sources" name="platform/prebuilts/fullsdk/sources" clone-depth="1" revision="dc3f885ebe8ddc75bd9cf2d567eef4d1ed433a09" upstream="androidx-exifinterface-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-30" path="prebuilts/fullsdk-darwin/platforms/android-30" revision="03d553bc2b9890601943a4e04e02202337eb1af7" upstream="androidx-exifinterface-release">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-30" src="." />
+
+  
+  <project path="prebuilts/fullsdk-darwin/build-tools" name="platform/prebuilts/fullsdk-darwin/build-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="7540faf0c99f587e09526916f2663bc0342c0724" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/fullsdk-darwin/cmdline-tools" name="platform/prebuilts/fullsdk-darwin/cmdline-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="259b6a33db4ae6e34ce4121c79b48b222f9815ff" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="0962dc18ca71280e8ad7b7572743041d7151832a" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/fullsdk-darwin/tools" name="platform/prebuilts/fullsdk-darwin/tools" clone-depth="1" groups="notdefault,platform-darwin" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-exifinterface-release" />
+
+  
+  <project path="prebuilts/fullsdk-linux/build-tools" name="platform/prebuilts/fullsdk-linux/build-tools" clone-depth="1" groups="notdefault,platform-linux" revision="5d7b781b0367b83e6249396cbd4f9fab0a5313f0" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/fullsdk-linux/cmdline-tools" name="platform/prebuilts/fullsdk-linux/cmdline-tools" clone-depth="1" groups="notdefault,platform-linux" revision="066e40b1aba006cf95698c9d34a5c50ff992f5d8" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools" clone-depth="1" groups="notdefault,platform-linux" revision="c222f61337b3106cc1c34b14da6dcd76189af560" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/fullsdk-linux/tools" name="platform/prebuilts/fullsdk-linux/tools" clone-depth="1" groups="notdefault,platform-linux" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-exifinterface-release" />
+
+
+  
+  
+  <project path="prebuilts/fullsdk-darwin/ndk-bundle" name="toolchain/prebuilts/ndk-darwin/r27" revision="ca75344ceaacb4e90888371aa3b640d8f4fbcfa8" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/fullsdk-darwin/cmake" name="platform/prebuilts/cmake/darwin-x86" revision="df215db73635e42d81122316cdb61f27ba7be40e" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-exifinterface-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-30" path="prebuilts/fullsdk-darwin/sources/android-30" revision="de53a04b553b721f937d6d9dcbe8ab0dee7fc23f" upstream="androidx-exifinterface-release">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-30" src="." />
+  <project path="prebuilts/fullsdk-darwin/ninja" name="platform/prebuilts/ninja/darwin-x86" revision="f321e197944c19d273cec788b9a3e8ca94331248" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-exifinterface-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
   </project>
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="toolchain/prebuilts/ndk-darwin/r21" path="prebuilts/fullsdk-darwin/ndk" revision="1c4977f21886e391f7a2105c218fc9de9ac49b31" upstream="androidx-exifinterface-release">
+  <project path="prebuilts/fullsdk-linux/ndk-bundle" name="toolchain/prebuilts/ndk/r27" revision="77eba0d553f8f58557f99fa98f327eb5f46e0c8c" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/fullsdk-linux/cmake" name="platform/prebuilts/cmake/linux-x86" revision="c92da557a64a44e75a21880a5dae03317b594f0c" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-exifinterface-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
   </project>
-  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r21" path="prebuilts/fullsdk-linux/ndk" revision="01c46f37e7a0ce88be386708d2a911b5e3505e79" upstream="androidx-exifinterface-release">
+  <project path="prebuilts/fullsdk-linux/ninja" name="platform/prebuilts/ninja/linux-x86" revision="8a10824f74fe0e22af9bf314a837f5b70e2bb67f" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-exifinterface-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
   </project>
   
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3" path="prebuilts/fullsdk-darwin/build-tools/29.0.3" revision="f597735774e931d682fb10e0d0590392f4a69c38" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="cd44e460d170808d2de8265ca401f12f26d67009" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="cd9fc3f65cc4659433fa85afa80e77a344c5050e" upstream="androidx-exifinterface-release" />
+  
+  <project path="prebuilts/jdk/jdk17" name="platform/prebuilts/jdk/jdk17" revision="f6e0a88cff84fd57741fc671208ba0326f036c8e" clone-depth="1" upstream="androidx-exifinterface-release" />
+  <project path="prebuilts/jdk/jdk21" name="platform/prebuilts/jdk/jdk21" revision="74744435645bc33cfbeb3187d1550ded2f61a55f" clone-depth="1" upstream="androidx-exifinterface-release" />
   
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3" path="prebuilts/fullsdk-linux/build-tools/29.0.3" revision="2d89707a7cc994d40bd4c20b3cb42cf5a87e983a" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="db68d10ea99da5582d3792bf5cacc265a63a63a4" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="fe743aa0d39ef9bab51c612a957acdd4588d069c" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="e4fb089b45a6633baf0233e2c524d614ed7355f1" upstream="androidx-exifinterface-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="ca851be2f67b6b97beee58d751d19d69ec867eb5" upstream="androidx-exifinterface-release" />
+  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" revision="da8ec87535291f9da54276e1c2e02f6cc4af7321" upstream="androidx-exifinterface-release" />
+
   
-  <project clone-depth="1" groups="pdk" name="platform/frameworks/support-golden" path="golden" revision="1d4a143a6087501c2f38677a73c59a12d6afb375" upstream="androidx-exifinterface-release" />
+
+  
+  <project path="frameworks/support" name="platform/frameworks/support" revision="324bc08271a8808e541d9261189b5ed572076528" upstream="androidx-exifinterface-release" />
+  
+
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
   
   
-  <project groups="pdk-cw-fs,pdk-fs" name="platform/frameworks/support" path="frameworks/support" revision="cd97405c028bb97ed7a85e2dd917d7d2aa075f81" upstream="androidx-exifinterface-release" />
   
-  <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
 </manifest>
