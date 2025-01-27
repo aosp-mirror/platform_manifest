@@ -3,13 +3,11 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="androidx-main"
+  <default revision="androidx-documentfile-release"
            remote="aosp" />
   <superproject name="platform/superproject" remote="aosp"/>
-
   <!-- BEGIN dependencies -->
   <project path="build/make" name="platform/build" />
-
   <!-- External dependencies -->
   <!-- Config: shallow + same revision -->
   <project path="external/dexter" name="platform/tools/dexter" clone-depth="1" />
@@ -18,10 +16,8 @@
   <project path="external/icing" name="platform/external/icing" clone-depth="1" />
   <project path="external/icu" name="platform/external/icu" clone-depth="1" />
   <project path="external/sqlite" name="platform/external/sqlite" clone-depth="1" />
-
   <!-- External Compose Hero Benchmark Targets -->
-  <project path="external/compose-hero-benchmarks/poxedex-compose" name="platform/external/compose-hero-benchmarks/poxedex-compose" clone-depth="1" revision="androidx-main" />
-
+  <project path="external/compose-hero-benchmarks/poxedex-compose" name="platform/external/compose-hero-benchmarks/poxedex-compose" clone-depth="1"  />
   <!-- The contents of external/protobuf must be kept in sync with the contents of prebuilts/protobuf -->
   <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" />
   <project path="prebuilts/androidx/chrome-for-testing" name="platform/prebuilts/androidx/chrome-for-testing" clone-depth="1" />
@@ -34,42 +30,37 @@
   <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" />
   <project path="prebuilts/androidx/xr" name="platform/prebuilts/androidx/xr" clone-depth="1" />
   <!-- Config: shallow + main revision -->
-  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" revision="main" />
-  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" revision="main" />
-  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="main" />
-
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1"  />
+  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1"  />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1"  />
   <!-- Tools dependencies -->
   <!-- Config: shallow + main revision -->
   <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" />
-  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" revision="main" />
-  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1" revision="main" />
-  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1" revision="metalava-main" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1"  />
+  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1"  />
+  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1"  />
   <!-- Config: shallow + same revision -->
   <!-- The contents of external/protobuf must be kept in sync with the contents of prebuilts/protobuf -->
   <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
-
-
   <!-- Gradle dependencies -->
   <!-- Config: shallow + same revision -->
   <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" />
-
   <!-- SDK dependencies -->
   <project
     path="prebuilts/fullsdk-darwin/platforms"
     name="platform/prebuilts/fullsdk/platforms"
     clone-depth="1"
-    revision="main">
+    >
     <linkfile src="." dest="prebuilts/fullsdk-linux/platforms" />
   </project>
   <project
     path="prebuilts/fullsdk-darwin/sources"
     name="platform/prebuilts/fullsdk/sources"
     clone-depth="1"
-    revision="main">
+    >
     <linkfile src="." dest="prebuilts/fullsdk-linux/sources" />
   </project>
-
   <!-- darwin specific -->
   <project
     path="prebuilts/fullsdk-darwin/build-tools"
@@ -91,7 +82,6 @@
     name="platform/prebuilts/fullsdk-darwin/tools"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
-
   <!-- linux specific -->
   <project
     path="prebuilts/fullsdk-linux/build-tools"
@@ -113,20 +103,16 @@
     name="platform/prebuilts/fullsdk-linux/tools"
     clone-depth="1"
     groups="notdefault,platform-linux" />
-
-
   <!-- NDK dependencies -->
   <!-- Config: shallow + main revision -->
   <project
     path="prebuilts/fullsdk-darwin/ndk-bundle"
     name="toolchain/prebuilts/ndk-darwin/r27"
-    revision="main"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
   <project
     path="prebuilts/fullsdk-darwin/cmake"
     name="platform/prebuilts/cmake/darwin-x86"
-    revision="main"
     groups="notdefault,platform-darwin"
     clone-depth="1">
     <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
@@ -134,7 +120,6 @@
   <project
       path="prebuilts/fullsdk-darwin/ninja"
       name="platform/prebuilts/ninja/darwin-x86"
-      revision="main"
       groups="notdefault,platform-darwin"
       clone-depth="1" >
     <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
@@ -142,13 +127,11 @@
   <project
     path="prebuilts/fullsdk-linux/ndk-bundle"
     name="toolchain/prebuilts/ndk/r27"
-    revision="main"
     clone-depth="1"
     groups="notdefault,platform-linux" />
   <project
     path="prebuilts/fullsdk-linux/cmake"
     name="platform/prebuilts/cmake/linux-x86"
-    revision="main"
     groups="notdefault,platform-linux"
     clone-depth="1">
     <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
@@ -156,36 +139,27 @@
   <project
     path="prebuilts/fullsdk-linux/ninja"
     name="platform/prebuilts/ninja/linux-x86"
-    revision="main"
     groups="notdefault,platform-linux"
     clone-depth="1" >
     <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
   </project>
-  
   <!-- JDK dependencies -->
   <!-- Config: shallow + main revision -->
   <project
     path="prebuilts/jdk/jdk17"
     name="platform/prebuilts/jdk/jdk17"
-    revision="main"
     clone-depth="1" />
   <project
     path="prebuilts/jdk/jdk21"
     name="platform/prebuilts/jdk/jdk21"
-    revision="main"
     clone-depth="1" />
-  
   <!-- Golden images -->
   <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" />
-
   <!-- END dependencies -->
-
   <!-- BEGIN target project -->
   <project path="frameworks/support" name="platform/frameworks/support" />
   <!-- END target project -->
-
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
-
   <!-- go/android3p markers -->
   <!-- third_party_review marker START -->
   <!-- third_party_review marker END -->
