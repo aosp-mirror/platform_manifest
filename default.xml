@@ -4,11 +4,11 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/aml_uwb_351310040"
+  <default revision="refs/tags/aml_sta_351311000"
            remote="aosp"
            sync-j="4" />
 
-  <superproject name="platform/superproject" remote="aosp" revision="aml_uwb_351310040"/>
+  <superproject name="platform/superproject" remote="aosp" revision="aml_sta_351311000"/>
   <contactinfo bugurl="go/repo-bug" />
 
   <!-- BEGIN open-source projects -->
@@ -217,6 +217,7 @@
   <project path="external/exfatprogs" name="platform/external/exfatprogs" groups="pdk" />
   <project path="external/exoplayer" name="platform/external/exoplayer" groups="pdk" />
   <project path="external/expat" name="platform/external/expat" groups="pdk" />
+  <project path="external/executorch" name="platform/external/executorch" groups="pdk" />
   <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="pdk" />
   <project path="external/fastrpc" name="platform/external/fastrpc" groups="pdk" />
   <project path="external/federated-compute" name="platform/external/federated-compute" groups="pdk" />
@@ -288,7 +289,6 @@
   <project path="external/intel-media-driver" name="platform/external/intel-media-driver" groups="pdk" />
   <project path="external/iperf3" name="platform/external/iperf3" groups="pdk" />
   <project path="external/iproute2" name="platform/external/iproute2" groups="pdk" />
-  <project path="external/ipsec-tools" name="platform/external/ipsec-tools" groups="pdk" />
   <project path="external/iptables" name="platform/external/iptables" groups="pdk" />
   <project path="external/iputils" name="platform/external/iputils" groups="pdk" />
   <project path="external/iw" name="platform/external/iw" groups="pdk" />
@@ -319,6 +319,7 @@
   <project path="external/junit-params" name="platform/external/junit-params" groups="pdk" />
   <project path="external/kernel-headers" name="platform/external/kernel-headers" groups="pdk" />
   <project path="external/kmod" name="platform/external/kmod" groups="pdk" />
+  <project path="external/kotlin-compose-compiler" name="platform/external/kotlin-compose-compiler" groups="pdk" />
   <project path="external/kotlinc" name="platform/external/kotlinc" groups="pdk" />
   <project path="external/kotlinpoet" name="platform/external/kotlinpoet" groups="pdk" />
   <project path="external/kotlinx.atomicfu" name="platform/external/kotlinx.atomicfu" groups="pdk" />
@@ -521,389 +522,19 @@
   <project path="external/rnnoise" name="platform/external/rnnoise" groups="pdk" />
   <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" groups="pdk" />
   <project path="external/rust/crabbyavif" name="platform/external/rust/crabbyavif" groups="pdk" />
-  <project path="external/rust/crates/aarch64-paging" name="platform/external/rust/crates/aarch64-paging" groups="pdk" />
-  <project path="external/rust/crates/acpi" name="platform/external/rust/crates/acpi" groups="pdk" />
-  <project path="external/rust/crates/ahash" name="platform/external/rust/crates/ahash" groups="pdk" />
-  <project path="external/rust/crates/aho-corasick" name="platform/external/rust/crates/aho-corasick" groups="pdk" />
-  <project path="external/rust/crates/android_log-sys" name="platform/external/rust/crates/android_log-sys" groups="pdk" />
-  <project path="external/rust/crates/android_logger" name="platform/external/rust/crates/android_logger" groups="pdk" />
-  <project path="external/rust/crates/anes" name="platform/external/rust/crates/anes" groups="pdk" />
-  <project path="external/rust/crates/annotate-snippets" name="platform/external/rust/crates/annotate-snippets" groups="pdk" />
-  <project path="external/rust/crates/anyhow" name="platform/external/rust/crates/anyhow" groups="pdk" />
-  <project path="external/rust/crates/arbitrary" name="platform/external/rust/crates/arbitrary" groups="pdk" />
-  <project path="external/rust/crates/arc-swap" name="platform/external/rust/crates/arc-swap" groups="pdk" />
-  <project path="external/rust/crates/argh" name="platform/external/rust/crates/argh" groups="pdk" />
-  <project path="external/rust/crates/argh_derive" name="platform/external/rust/crates/argh_derive" groups="pdk" />
-  <project path="external/rust/crates/argh_shared" name="platform/external/rust/crates/argh_shared" groups="pdk" />
-  <project path="external/rust/crates/arrayvec" name="platform/external/rust/crates/arrayvec" groups="trusty" />
-  <project path="external/rust/crates/ash" name="platform/external/rust/crates/ash" groups="pdk" />
-  <project path="external/rust/crates/async-stream" name="platform/external/rust/crates/async-stream" groups="pdk" />
-  <project path="external/rust/crates/async-stream-impl" name="platform/external/rust/crates/async-stream-impl" groups="pdk" />
-  <project path="external/rust/crates/async-task" name="platform/external/rust/crates/async-task" groups="pdk" />
-  <project path="external/rust/crates/async-trait" name="platform/external/rust/crates/async-trait" groups="pdk" />
-  <project path="external/rust/crates/atomic" name="platform/external/rust/crates/atomic" groups="pdk" />
-  <project path="external/rust/crates/atty" name="platform/external/rust/crates/atty" groups="pdk" />
-  <project path="external/rust/crates/axum" name="platform/external/rust/crates/axum" groups="pdk" />
-  <project path="external/rust/crates/axum-core" name="platform/external/rust/crates/axum-core" groups="pdk" />
-  <project path="external/rust/crates/base64" name="platform/external/rust/crates/base64" groups="pdk" />
-  <project path="external/rust/crates/bencher" name="platform/external/rust/crates/bencher" groups="pdk" />
-  <project path="external/rust/crates/bincode" name="platform/external/rust/crates/bincode" groups="pdk" />
-  <project path="external/rust/crates/bindgen" name="platform/external/rust/crates/bindgen" groups="pdk" />
-  <project path="external/rust/crates/bindgen-cli" name="platform/external/rust/crates/bindgen-cli" groups="pdk" />
-  <project path="external/rust/crates/bit_field" name="platform/external/rust/crates/bit_field" groups="pdk" />
-  <project path="external/rust/crates/bitflags" name="platform/external/rust/crates/bitflags" groups="pdk" />
-  <project path="external/rust/crates/bitreader" name="platform/external/rust/crates/bitreader" groups="pdk" />
-  <project path="external/rust/crates/bstr" name="platform/external/rust/crates/bstr" groups="pdk" />
-  <project path="external/rust/crates/buddy_system_allocator" name="platform/external/rust/crates/buddy_system_allocator" groups="pdk" />
-  <project path="external/rust/crates/bytemuck" name="platform/external/rust/crates/bytemuck" groups="pdk" />
-  <project path="external/rust/crates/bytemuck_derive" name="platform/external/rust/crates/bytemuck_derive" groups="pdk" />
-  <project path="external/rust/crates/byteorder" name="platform/external/rust/crates/byteorder" groups="pdk" />
-  <project path="external/rust/crates/bytes" name="platform/external/rust/crates/bytes" groups="pdk" />
-  <project path="external/rust/crates/camino" name="platform/external/rust/crates/camino" groups="pdk" />
-  <project path="external/rust/crates/cast" name="platform/external/rust/crates/cast" groups="pdk" />
-  <project path="external/rust/crates/cesu8" name="platform/external/rust/crates/cesu8" groups="pdk" />
-  <project path="external/rust/crates/cexpr" name="platform/external/rust/crates/cexpr" groups="pdk" />
-  <project path="external/rust/crates/cfg-if" name="platform/external/rust/crates/cfg-if" groups="pdk" />
-  <project path="external/rust/crates/chrono" name="platform/external/rust/crates/chrono" groups="pdk" />
-  <project path="external/rust/crates/ciborium" name="platform/external/rust/crates/ciborium" groups="pdk" />
-  <project path="external/rust/crates/ciborium-io" name="platform/external/rust/crates/ciborium-io" groups="pdk" />
-  <project path="external/rust/crates/ciborium-ll" name="platform/external/rust/crates/ciborium-ll" groups="pdk" />
-  <project path="external/rust/crates/clang-sys" name="platform/external/rust/crates/clang-sys" groups="pdk" />
-  <project path="external/rust/crates/clap" name="platform/external/rust/crates/clap" groups="pdk" />
-  <project path="external/rust/crates/clap_complete" name="platform/external/rust/crates/clap_complete" groups="pdk" />
-  <project path="external/rust/crates/clap_derive" name="platform/external/rust/crates/clap_derive" groups="pdk" />
-  <project path="external/rust/crates/clap_lex" name="platform/external/rust/crates/clap_lex" groups="pdk" />
-  <project path="external/rust/crates/codespan-reporting" name="platform/external/rust/crates/codespan-reporting" groups="pdk" />
-  <project path="external/rust/crates/combine" name="platform/external/rust/crates/combine" groups="pdk" />
-  <project path="external/rust/crates/command-fds" name="platform/external/rust/crates/command-fds" groups="pdk" />
-  <project path="external/rust/crates/config" name="platform/external/rust/crates/config" groups="pdk" />
-  <project path="external/rust/crates/configparser" name="platform/external/rust/crates/configparser" groups="pdk" />
-  <project path="external/rust/crates/const-oid" name="platform/external/rust/crates/const-oid" groups="pdk" />
-  <project path="external/rust/crates/coset" name="platform/external/rust/crates/coset" groups="pdk" />
-  <project path="external/rust/crates/cov-mark" name="platform/external/rust/crates/cov-mark" groups="pdk" />
-  <project path="external/rust/crates/crc32fast" name="platform/external/rust/crates/crc32fast" groups="pdk" />
-  <project path="external/rust/crates/criterion" name="platform/external/rust/crates/criterion" groups="pdk" />
-  <project path="external/rust/crates/criterion-plot" name="platform/external/rust/crates/criterion-plot" groups="pdk" />
-  <project path="external/rust/crates/crossbeam-channel" name="platform/external/rust/crates/crossbeam-channel" groups="pdk" />
-  <project path="external/rust/crates/crossbeam-deque" name="platform/external/rust/crates/crossbeam-deque" groups="pdk" />
-  <project path="external/rust/crates/crossbeam-epoch" name="platform/external/rust/crates/crossbeam-epoch" groups="pdk" />
-  <project path="external/rust/crates/crossbeam-queue" name="platform/external/rust/crates/crossbeam-queue" groups="pdk" />
-  <project path="external/rust/crates/crossbeam-utils" name="platform/external/rust/crates/crossbeam-utils" groups="pdk" />
-  <project path="external/rust/crates/csv" name="platform/external/rust/crates/csv" groups="pdk" />
-  <project path="external/rust/crates/csv-core" name="platform/external/rust/crates/csv-core" groups="pdk" />
-  <project path="external/rust/crates/darling" name="platform/external/rust/crates/darling" groups="pdk" />
-  <project path="external/rust/crates/darling_core" name="platform/external/rust/crates/darling_core" groups="pdk" />
-  <project path="external/rust/crates/darling_macro" name="platform/external/rust/crates/darling_macro" groups="pdk" />
-  <project path="external/rust/crates/dashmap" name="platform/external/rust/crates/dashmap" groups="pdk" />
-  <project path="external/rust/crates/data-encoding" name="platform/external/rust/crates/data-encoding" groups="pdk" />
-  <project path="external/rust/crates/debug_tree" name="platform/external/rust/crates/debug_tree" groups="pdk" />
-  <project path="external/rust/crates/der" name="platform/external/rust/crates/der" groups="pdk" />
-  <project path="external/rust/crates/der_derive" name="platform/external/rust/crates/der_derive" groups="pdk" />
-  <project path="external/rust/crates/derive_arbitrary" name="platform/external/rust/crates/derive_arbitrary" groups="pdk" />
-  <project path="external/rust/crates/displaydoc" name="platform/external/rust/crates/displaydoc" groups="pdk" />
-  <project path="external/rust/crates/document-features" name="platform/external/rust/crates/document-features" groups="pdk" />
-  <project path="external/rust/crates/downcast" name="platform/external/rust/crates/downcast" groups="pdk" />
-  <project path="external/rust/crates/downcast-rs" name="platform/external/rust/crates/downcast-rs" groups="pdk" />
-  <project path="external/rust/crates/drm" name="platform/external/rust/crates/drm" groups="pdk" />
-  <project path="external/rust/crates/drm-ffi" name="platform/external/rust/crates/drm-ffi" groups="pdk" />
-  <project path="external/rust/crates/drm-fourcc" name="platform/external/rust/crates/drm-fourcc" groups="pdk" />
-  <project path="external/rust/crates/either" name="platform/external/rust/crates/either" groups="pdk" />
-  <project path="external/rust/crates/enumn" name="platform/external/rust/crates/enumn" groups="pdk" />
-  <project path="external/rust/crates/env_logger" name="platform/external/rust/crates/env_logger" groups="pdk" />
-  <project path="external/rust/crates/epoll" name="platform/external/rust/crates/epoll" groups="pdk" />
-  <project path="external/rust/crates/equivalent" name="platform/external/rust/crates/equivalent" groups="pdk" />
-  <project path="external/rust/crates/errno" name="platform/external/rust/crates/errno" groups="pdk" />
-  <project path="external/rust/crates/etherparse" name="platform/external/rust/crates/etherparse" groups="pdk" />
-  <project path="external/rust/crates/fallible-iterator" name="platform/external/rust/crates/fallible-iterator" groups="pdk" />
-  <project path="external/rust/crates/fallible-streaming-iterator" name="platform/external/rust/crates/fallible-streaming-iterator" groups="pdk" />
-  <project path="external/rust/crates/fastrand" name="platform/external/rust/crates/fastrand" groups="pdk" />
-  <project path="external/rust/crates/fixedbitset" name="platform/external/rust/crates/fixedbitset" groups="pdk" />
-  <project path="external/rust/crates/flagset" name="platform/external/rust/crates/flagset" groups="pdk" />
-  <project path="external/rust/crates/flate2" name="platform/external/rust/crates/flate2" groups="pdk" />
-  <project path="external/rust/crates/fnv" name="platform/external/rust/crates/fnv" groups="pdk" />
-  <project path="external/rust/crates/foreign-types" name="platform/external/rust/crates/foreign-types" groups="pdk" />
-  <project path="external/rust/crates/foreign-types-shared" name="platform/external/rust/crates/foreign-types-shared" groups="pdk" />
-  <project path="external/rust/crates/form_urlencoded" name="platform/external/rust/crates/form_urlencoded" groups="pdk" />
-  <project path="external/rust/crates/fragile" name="platform/external/rust/crates/fragile" groups="pdk" />
-  <project path="external/rust/crates/fs-err" name="platform/external/rust/crates/fs-err" groups="pdk" />
-  <project path="external/rust/crates/futures" name="platform/external/rust/crates/futures" groups="pdk" />
-  <project path="external/rust/crates/futures-channel" name="platform/external/rust/crates/futures-channel" groups="pdk" />
-  <project path="external/rust/crates/futures-core" name="platform/external/rust/crates/futures-core" groups="pdk" />
-  <project path="external/rust/crates/futures-executor" name="platform/external/rust/crates/futures-executor" groups="pdk" />
-  <project path="external/rust/crates/futures-io" name="platform/external/rust/crates/futures-io" groups="pdk" />
-  <project path="external/rust/crates/futures-macro" name="platform/external/rust/crates/futures-macro" groups="pdk" />
-  <project path="external/rust/crates/futures-sink" name="platform/external/rust/crates/futures-sink" groups="pdk" />
-  <project path="external/rust/crates/futures-task" name="platform/external/rust/crates/futures-task" groups="pdk" />
-  <project path="external/rust/crates/futures-test" name="platform/external/rust/crates/futures-test" groups="pdk" />
-  <project path="external/rust/crates/futures-util" name="platform/external/rust/crates/futures-util" groups="pdk" />
-  <project path="external/rust/crates/fxhash" name="platform/external/rust/crates/fxhash" groups="pdk" />
-  <project path="external/rust/crates/gbm" name="platform/external/rust/crates/gbm" groups="pdk" />
-  <project path="external/rust/crates/gdbstub" name="platform/external/rust/crates/gdbstub" groups="pdk" />
-  <project path="external/rust/crates/gdbstub_arch" name="platform/external/rust/crates/gdbstub_arch" groups="pdk" />
-  <project path="external/rust/crates/getrandom" name="platform/external/rust/crates/getrandom" groups="pdk" />
-  <project path="external/rust/crates/glam" name="platform/external/rust/crates/glam" groups="pdk" />
-  <project path="external/rust/crates/glob" name="platform/external/rust/crates/glob" groups="pdk" />
-  <project path="external/rust/crates/googletest" name="platform/external/rust/crates/googletest" groups="pdk" />
-  <project path="external/rust/crates/googletest_macro" name="platform/external/rust/crates/googletest_macro" groups="pdk" />
-  <project path="external/rust/crates/gpio-cdev" name="platform/external/rust/crates/gpio-cdev" groups="pdk" />
-  <project path="external/rust/crates/grpcio" name="platform/external/rust/crates/grpcio" groups="pdk" />
-  <project path="external/rust/crates/grpcio-compiler" name="platform/external/rust/crates/grpcio-compiler" groups="pdk" />
-  <project path="external/rust/crates/grpcio-sys" name="platform/external/rust/crates/grpcio-sys" groups="pdk" />
-  <project path="external/rust/crates/h2" name="platform/external/rust/crates/h2" groups="pdk" />
-  <project path="external/rust/crates/half" name="platform/external/rust/crates/half" groups="pdk" />
-  <project path="external/rust/crates/hashbrown" name="platform/external/rust/crates/hashbrown" groups="pdk" />
-  <project path="external/rust/crates/hashlink" name="platform/external/rust/crates/hashlink" groups="pdk" />
-  <project path="external/rust/crates/heck" name="platform/external/rust/crates/heck" groups="pdk" />
-  <project path="external/rust/crates/hex" name="platform/external/rust/crates/hex" groups="pdk" />
-  <project path="external/rust/crates/hound" name="platform/external/rust/crates/hound" groups="pdk" />
-  <project path="external/rust/crates/http" name="platform/external/rust/crates/http" groups="pdk" />
-  <project path="external/rust/crates/http-body" name="platform/external/rust/crates/http-body" groups="pdk" />
-  <project path="external/rust/crates/httparse" name="platform/external/rust/crates/httparse" groups="pdk" />
-  <project path="external/rust/crates/httpdate" name="platform/external/rust/crates/httpdate" groups="pdk" />
-  <project path="external/rust/crates/hyper" name="platform/external/rust/crates/hyper" groups="pdk" />
-  <project path="external/rust/crates/hyper-timeout" name="platform/external/rust/crates/hyper-timeout" groups="pdk" />
-  <project path="external/rust/crates/ident_case" name="platform/external/rust/crates/ident_case" groups="pdk" />
-  <project path="external/rust/crates/idna" name="platform/external/rust/crates/idna" groups="pdk" />
-  <project path="external/rust/crates/indexmap" name="platform/external/rust/crates/indexmap" groups="pdk" />
-  <project path="external/rust/crates/instant" name="platform/external/rust/crates/instant" groups="pdk" />
-  <project path="external/rust/crates/intrusive-collections" name="platform/external/rust/crates/intrusive-collections" groups="pdk" />
-  <project path="external/rust/crates/itertools" name="platform/external/rust/crates/itertools" groups="pdk" />
-  <project path="external/rust/crates/itoa" name="platform/external/rust/crates/itoa" groups="pdk" />
-  <project path="external/rust/crates/jni" name="platform/external/rust/crates/jni" groups="pdk" />
-  <project path="external/rust/crates/jni-sys" name="platform/external/rust/crates/jni-sys" groups="pdk" />
-  <project path="external/rust/crates/kernlog" name="platform/external/rust/crates/kernlog" groups="pdk" />
-  <project path="external/rust/crates/lazy_static" name="platform/external/rust/crates/lazy_static" groups="pdk" />
-  <project path="external/rust/crates/lazycell" name="platform/external/rust/crates/lazycell" groups="pdk" />
-  <project path="external/rust/crates/libbpf-rs" name="platform/external/rust/crates/libbpf-rs" groups="pdk" />
-  <project path="external/rust/crates/libbpf-sys" name="platform/external/rust/crates/libbpf-sys" groups="pdk" />
-  <project path="external/rust/crates/libc" name="platform/external/rust/crates/libc" groups="pdk" />
-  <project path="external/rust/crates/libfuzzer-sys" name="platform/external/rust/crates/libfuzzer-sys" groups="pdk" />
-  <project path="external/rust/crates/libloading" name="platform/external/rust/crates/libloading" groups="pdk" />
-  <project path="external/rust/crates/libm" name="platform/external/rust/crates/libm" groups="pdk" />
   <project path="external/rust/crates/libsqlite3-sys" name="platform/external/rust/crates/libsqlite3-sys" groups="pdk" />
-  <project path="external/rust/crates/libtest-mimic" name="platform/external/rust/crates/libtest-mimic" groups="pdk" />
-  <project path="external/rust/crates/libz-sys" name="platform/external/rust/crates/libz-sys" groups="pdk" />
-  <project path="external/rust/crates/linked-hash-map" name="platform/external/rust/crates/linked-hash-map" groups="pdk" />
-  <project path="external/rust/crates/linkme" name="platform/external/rust/crates/linkme" groups="pdk" />
-  <project path="external/rust/crates/linkme-impl" name="platform/external/rust/crates/linkme-impl" groups="pdk" />
-  <project path="external/rust/crates/litrs" name="platform/external/rust/crates/litrs" groups="pdk" />
-  <project path="external/rust/crates/lock_api" name="platform/external/rust/crates/lock_api" groups="pdk" />
-  <project path="external/rust/crates/log" name="platform/external/rust/crates/log" groups="pdk" />
-  <project path="external/rust/crates/lru-cache" name="platform/external/rust/crates/lru-cache" groups="pdk" />
-  <project path="external/rust/crates/lz4_flex" name="platform/external/rust/crates/lz4_flex" groups="pdk" />
-  <project path="external/rust/crates/macaddr" name="platform/external/rust/crates/macaddr" groups="pdk" />
-  <project path="external/rust/crates/managed" name="platform/external/rust/crates/managed" groups="pdk" />
-  <project path="external/rust/crates/matches" name="platform/external/rust/crates/matches" groups="trusty" />
-  <project path="external/rust/crates/matchit" name="platform/external/rust/crates/matchit" groups="pdk" />
-  <project path="external/rust/crates/maybe-async" name="platform/external/rust/crates/maybe-async" groups="pdk" />
-  <project path="external/rust/crates/memchr" name="platform/external/rust/crates/memchr" groups="pdk" />
-  <project path="external/rust/crates/memmap2" name="platform/external/rust/crates/memmap2" groups="pdk" />
-  <project path="external/rust/crates/memoffset" name="platform/external/rust/crates/memoffset" groups="pdk" />
-  <project path="external/rust/crates/merge" name="platform/external/rust/crates/merge" groups="pdk" />
-  <project path="external/rust/crates/merge_derive" name="platform/external/rust/crates/merge_derive" groups="pdk" />
-  <project path="external/rust/crates/miette" name="platform/external/rust/crates/miette" groups="pdk" />
-  <project path="external/rust/crates/miette-derive" name="platform/external/rust/crates/miette-derive" groups="pdk" />
-  <project path="external/rust/crates/mime" name="platform/external/rust/crates/mime" groups="pdk" />
-  <project path="external/rust/crates/minimal-lexical" name="platform/external/rust/crates/minimal-lexical" groups="pdk" />
-  <project path="external/rust/crates/mio" name="platform/external/rust/crates/mio" groups="pdk" />
-  <project path="external/rust/crates/mls-rs" name="platform/external/rust/crates/mls-rs" groups="pdk" />
-  <project path="external/rust/crates/mls-rs-codec" name="platform/external/rust/crates/mls-rs-codec" groups="pdk" />
-  <project path="external/rust/crates/mls-rs-codec-derive" name="platform/external/rust/crates/mls-rs-codec-derive" groups="pdk" />
-  <project path="external/rust/crates/mls-rs-core" name="platform/external/rust/crates/mls-rs-core" groups="pdk" />
-  <project path="external/rust/crates/mls-rs-crypto-traits" name="platform/external/rust/crates/mls-rs-crypto-traits" groups="pdk" />
-  <project path="external/rust/crates/mls-rs-uniffi" name="platform/external/rust/crates/mls-rs-uniffi" groups="pdk" />
-  <project path="external/rust/crates/mockall" name="platform/external/rust/crates/mockall" groups="pdk" />
-  <project path="external/rust/crates/mockall_derive" name="platform/external/rust/crates/mockall_derive" groups="pdk" />
-  <project path="external/rust/crates/moveit" name="platform/external/rust/crates/moveit" groups="pdk" />
-  <project path="external/rust/crates/named-lock" name="platform/external/rust/crates/named-lock" groups="pdk" />
-  <project path="external/rust/crates/nix" name="platform/external/rust/crates/nix" groups="pdk" />
-  <project path="external/rust/crates/no-panic" name="platform/external/rust/crates/no-panic" groups="pdk" />
-  <project path="external/rust/crates/nom" name="platform/external/rust/crates/nom" groups="pdk" />
-  <project path="external/rust/crates/num-bigint" name="platform/external/rust/crates/num-bigint" groups="pdk" />
-  <project path="external/rust/crates/num-complex" name="platform/external/rust/crates/num-complex" groups="pdk" />
-  <project path="external/rust/crates/num-derive" name="platform/external/rust/crates/num-derive" groups="pdk" />
-  <project path="external/rust/crates/num-integer" name="platform/external/rust/crates/num-integer" groups="pdk" />
-  <project path="external/rust/crates/num-traits" name="platform/external/rust/crates/num-traits" groups="pdk" />
-  <project path="external/rust/crates/num_cpus" name="platform/external/rust/crates/num_cpus" groups="pdk" />
-  <project path="external/rust/crates/num_enum" name="platform/external/rust/crates/num_enum" groups="pdk" />
-  <project path="external/rust/crates/num_enum_derive" name="platform/external/rust/crates/num_enum_derive" groups="pdk" />
-  <project path="external/rust/crates/octets" name="platform/external/rust/crates/octets" groups="pdk" />
-  <project path="external/rust/crates/once_cell" name="platform/external/rust/crates/once_cell" groups="pdk" />
-  <project path="external/rust/crates/oneshot-uniffi" name="platform/external/rust/crates/oneshot-uniffi" groups="pdk" />
-  <project path="external/rust/crates/oorandom" name="platform/external/rust/crates/oorandom" groups="pdk" />
+  <project path="external/rust/crates/libusb1-sys" name="platform/external/rust/crates/libusb1-sys" groups="pdk" />
   <project path="external/rust/crates/openssl" name="platform/external/rust/crates/openssl" groups="pdk" />
-  <project path="external/rust/crates/openssl-macros" name="platform/external/rust/crates/openssl-macros" groups="pdk" />
-  <project path="external/rust/crates/os_str_bytes" name="platform/external/rust/crates/os_str_bytes" groups="pdk" />
-  <project path="external/rust/crates/p9" name="platform/external/rust/crates/p9" groups="pdk" />
-  <project path="external/rust/crates/p9_wire_format_derive" name="platform/external/rust/crates/p9_wire_format_derive" groups="pdk" />
-  <project path="external/rust/crates/parking_lot" name="platform/external/rust/crates/parking_lot" groups="pdk" />
-  <project path="external/rust/crates/parking_lot_core" name="platform/external/rust/crates/parking_lot_core" groups="pdk" />
-  <project path="external/rust/crates/paste" name="platform/external/rust/crates/paste" groups="pdk" />
-  <project path="external/rust/crates/pathdiff" name="platform/external/rust/crates/pathdiff" groups="pdk" />
-  <project path="external/rust/crates/pdl-compiler" name="platform/external/rust/crates/pdl-compiler" groups="pdk" />
-  <project path="external/rust/crates/pdl-runtime" name="platform/external/rust/crates/pdl-runtime" groups="pdk" />
-  <project path="external/rust/crates/percent-encoding" name="platform/external/rust/crates/percent-encoding" groups="pdk" />
-  <project path="external/rust/crates/percore" name="platform/external/rust/crates/percore" groups="pdk" />
-  <project path="external/rust/crates/pest" name="platform/external/rust/crates/pest" groups="pdk" />
-  <project path="external/rust/crates/pest_derive" name="platform/external/rust/crates/pest_derive" groups="pdk" />
-  <project path="external/rust/crates/pest_generator" name="platform/external/rust/crates/pest_generator" groups="pdk" />
-  <project path="external/rust/crates/pest_meta" name="platform/external/rust/crates/pest_meta" groups="pdk" />
-  <project path="external/rust/crates/petgraph" name="platform/external/rust/crates/petgraph" groups="pdk" />
-  <project path="external/rust/crates/pin-project" name="platform/external/rust/crates/pin-project" groups="pdk" />
-  <project path="external/rust/crates/pin-project-internal" name="platform/external/rust/crates/pin-project-internal" groups="pdk" />
-  <project path="external/rust/crates/pin-project-lite" name="platform/external/rust/crates/pin-project-lite" groups="pdk" />
-  <project path="external/rust/crates/pin-utils" name="platform/external/rust/crates/pin-utils" groups="pdk" />
-  <project path="external/rust/crates/pkcs1" name="platform/external/rust/crates/pkcs1" groups="pdk" />
-  <project path="external/rust/crates/pkcs8" name="platform/external/rust/crates/pkcs8" groups="pdk" />
-  <project path="external/rust/crates/plotters" name="platform/external/rust/crates/plotters" groups="pdk" />
-  <project path="external/rust/crates/plotters-backend" name="platform/external/rust/crates/plotters-backend" groups="pdk" />
-  <project path="external/rust/crates/plotters-svg" name="platform/external/rust/crates/plotters-svg" groups="pdk" />
-  <project path="external/rust/crates/poll_token_derive" name="platform/external/rust/crates/poll_token_derive" groups="pdk" />
-  <project path="external/rust/crates/ppv-lite86" name="platform/external/rust/crates/ppv-lite86" groups="pdk" />
-  <project path="external/rust/crates/predicates" name="platform/external/rust/crates/predicates" groups="pdk" />
-  <project path="external/rust/crates/predicates-core" name="platform/external/rust/crates/predicates-core" groups="pdk" />
-  <project path="external/rust/crates/predicates-tree" name="platform/external/rust/crates/predicates-tree" groups="pdk" />
-  <project path="external/rust/crates/prettyplease" name="platform/external/rust/crates/prettyplease" groups="pdk" />
-  <project path="external/rust/crates/proc-macro2" name="platform/external/rust/crates/proc-macro2" groups="pdk" />
-  <project path="external/rust/crates/protobuf" name="platform/external/rust/crates/protobuf" groups="pdk" />
-  <project path="external/rust/crates/protobuf-codegen" name="platform/external/rust/crates/protobuf-codegen" groups="pdk" />
-  <project path="external/rust/crates/protobuf-json-mapping" name="platform/external/rust/crates/protobuf-json-mapping" groups="pdk" />
-  <project path="external/rust/crates/protobuf-parse" name="platform/external/rust/crates/protobuf-parse" groups="pdk" />
-  <project path="external/rust/crates/protobuf-support" name="platform/external/rust/crates/protobuf-support" groups="pdk" />
+  <project path="external/rust/crates/ptr_meta" name="platform/external/rust/crates/ptr_meta" groups="pdk" />
+  <project path="external/rust/crates/ptr_meta_derive" name="platform/external/rust/crates/ptr_meta_derive" groups="pdk" />
   <project path="external/rust/crates/quiche" name="platform/external/rust/crates/quiche" groups="pdk" />
-  <project path="external/rust/crates/quickcheck" name="platform/external/rust/crates/quickcheck" groups="pdk" />
-  <project path="external/rust/crates/quote" name="platform/external/rust/crates/quote" groups="pdk" />
-  <project path="external/rust/crates/rand" name="platform/external/rust/crates/rand" groups="pdk" />
-  <project path="external/rust/crates/rand_chacha" name="platform/external/rust/crates/rand_chacha" groups="pdk" />
-  <project path="external/rust/crates/rand_core" name="platform/external/rust/crates/rand_core" groups="pdk" />
-  <project path="external/rust/crates/rand_xorshift" name="platform/external/rust/crates/rand_xorshift" groups="pdk" />
-  <project path="external/rust/crates/rayon" name="platform/external/rust/crates/rayon" groups="pdk" />
-  <project path="external/rust/crates/rayon-core" name="platform/external/rust/crates/rayon-core" groups="pdk" />
-  <project path="external/rust/crates/regex" name="platform/external/rust/crates/regex" groups="pdk" />
-  <project path="external/rust/crates/regex-automata" name="platform/external/rust/crates/regex-automata" groups="pdk" />
-  <project path="external/rust/crates/regex-syntax" name="platform/external/rust/crates/regex-syntax" groups="pdk" />
-  <project path="external/rust/crates/remain" name="platform/external/rust/crates/remain" groups="pdk" />
-  <project path="external/rust/crates/ring" name="platform/external/rust/crates/ring" groups="pdk" />
-  <project path="external/rust/crates/rusqlite" name="platform/external/rust/crates/rusqlite" groups="pdk" />
-  <project path="external/rust/crates/rustc-demangle" name="platform/external/rust/crates/rustc-demangle" groups="pdk" />
-  <project path="external/rust/crates/rustc-demangle-capi" name="platform/external/rust/crates/rustc-demangle-capi" groups="pdk" />
-  <project path="external/rust/crates/rustc-hash" name="platform/external/rust/crates/rustc-hash" groups="pdk" />
-  <project path="external/rust/crates/rustix" name="platform/external/rust/crates/rustix" groups="pdk" />
-  <project path="external/rust/crates/rust-stemmers" name="platform/external/rust/crates/rust-stemmers" groups="pdk" />
-  <project path="external/rust/crates/rustversion" name="platform/external/rust/crates/rustversion" groups="pdk" />
-  <project path="external/rust/crates/ryu" name="platform/external/rust/crates/ryu" groups="pdk" />
-  <project path="external/rust/crates/same-file" name="platform/external/rust/crates/same-file" groups="pdk" />
-  <project path="external/rust/crates/scopeguard" name="platform/external/rust/crates/scopeguard" groups="pdk" />
-  <project path="external/rust/crates/sec1" name="platform/external/rust/crates/sec1" groups="pdk" />
-  <project path="external/rust/crates/semver" name="platform/external/rust/crates/semver" groups="pdk" />
-  <project path="external/rust/crates/serde" name="platform/external/rust/crates/serde" groups="pdk" />
-  <project path="external/rust/crates/serde-xml-rs" name="platform/external/rust/crates/serde-xml-rs" groups="pdk" />
-  <project path="external/rust/crates/serde_cbor" name="platform/external/rust/crates/serde_cbor" groups="pdk" />
-  <project path="external/rust/crates/serde_derive" name="platform/external/rust/crates/serde_derive" groups="pdk" />
-  <project path="external/rust/crates/serde_json" name="platform/external/rust/crates/serde_json" groups="pdk" />
-  <project path="external/rust/crates/serde_spanned" name="platform/external/rust/crates/serde_spanned" groups="pdk" />
-  <project path="external/rust/crates/serde_test" name="platform/external/rust/crates/serde_test" groups="pdk" />
-  <project path="external/rust/crates/serde_yaml" name="platform/external/rust/crates/serde_yaml" groups="pdk" />
-  <project path="external/rust/crates/sharded-slab" name="platform/external/rust/crates/sharded-slab" groups="pdk" />
-  <project path="external/rust/crates/shared_child" name="platform/external/rust/crates/shared_child" groups="pdk" />
-  <project path="external/rust/crates/shared_library" name="platform/external/rust/crates/shared_library" groups="pdk" />
-  <project path="external/rust/crates/shlex" name="platform/external/rust/crates/shlex" groups="pdk" />
-  <project path="external/rust/crates/siphasher" name="platform/external/rust/crates/siphasher" groups="pdk" />
-  <project path="external/rust/crates/slab" name="platform/external/rust/crates/slab" groups="pdk" />
-  <project path="external/rust/crates/smallvec" name="platform/external/rust/crates/smallvec" groups="pdk" />
-  <project path="external/rust/crates/smccc" name="platform/external/rust/crates/smccc" groups="pdk" />
-  <project path="external/rust/crates/socket2" name="platform/external/rust/crates/socket2" groups="pdk" />
-  <project path="external/rust/crates/spin" name="platform/external/rust/crates/spin" groups="pdk" />
-  <project path="external/rust/crates/spki" name="platform/external/rust/crates/spki" groups="pdk" />
-  <project path="external/rust/crates/static_assertions" name="platform/external/rust/crates/static_assertions" groups="pdk" />
-  <project path="external/rust/crates/strsim" name="platform/external/rust/crates/strsim" groups="pdk" />
-  <project path="external/rust/crates/strum" name="platform/external/rust/crates/strum" groups="pdk" />
-  <project path="external/rust/crates/strum_macros" name="platform/external/rust/crates/strum_macros" groups="pdk" />
-  <project path="external/rust/crates/syn" name="platform/external/rust/crates/syn" groups="pdk" />
-  <project path="external/rust/crates/syn-mid" name="platform/external/rust/crates/syn-mid" groups="pdk" />
-  <project path="external/rust/crates/sync_wrapper" name="platform/external/rust/crates/sync_wrapper" groups="pdk" />
-  <project path="external/rust/crates/synstructure" name="platform/external/rust/crates/synstructure" groups="pdk" />
-  <project path="external/rust/crates/tempfile" name="platform/external/rust/crates/tempfile" groups="pdk" />
-  <project path="external/rust/crates/termcolor" name="platform/external/rust/crates/termcolor" groups="pdk" />
-  <project path="external/rust/crates/termtree" name="platform/external/rust/crates/termtree" groups="pdk" />
-  <project path="external/rust/crates/textwrap" name="platform/external/rust/crates/textwrap" groups="pdk" />
-  <project path="external/rust/crates/thiserror" name="platform/external/rust/crates/thiserror" groups="pdk" />
-  <project path="external/rust/crates/thiserror-impl" name="platform/external/rust/crates/thiserror-impl" groups="pdk" />
-  <project path="external/rust/crates/thread_local" name="platform/external/rust/crates/thread_local" groups="pdk" />
-  <project path="external/rust/crates/threadpool" name="platform/external/rust/crates/threadpool" groups="pdk" />
-  <project path="external/rust/crates/tikv-jemalloc-sys" name="platform/external/rust/crates/tikv-jemalloc-sys" groups="pdk" />
-  <project path="external/rust/crates/tikv-jemallocator" name="platform/external/rust/crates/tikv-jemallocator" groups="pdk" />
-  <project path="external/rust/crates/tinyjson" name="platform/external/rust/crates/tinyjson" groups="pdk" />
-  <project path="external/rust/crates/tinytemplate" name="platform/external/rust/crates/tinytemplate" groups="pdk" />
-  <project path="external/rust/crates/tinyvec" name="platform/external/rust/crates/tinyvec" groups="pdk" />
-  <project path="external/rust/crates/tinyvec_macros" name="platform/external/rust/crates/tinyvec_macros" groups="pdk" />
-  <project path="external/rust/crates/tokio" name="platform/external/rust/crates/tokio" groups="pdk" />
-  <project path="external/rust/crates/tokio-io-timeout" name="platform/external/rust/crates/tokio-io-timeout" groups="pdk" />
-  <project path="external/rust/crates/tokio-macros" name="platform/external/rust/crates/tokio-macros" groups="pdk" />
-  <project path="external/rust/crates/tokio-openssl" name="platform/external/rust/crates/tokio-openssl" groups="pdk" />
-  <project path="external/rust/crates/tokio-stream" name="platform/external/rust/crates/tokio-stream" groups="pdk" />
-  <project path="external/rust/crates/tokio-test" name="platform/external/rust/crates/tokio-test" groups="pdk" />
-  <project path="external/rust/crates/tokio-util" name="platform/external/rust/crates/tokio-util" groups="pdk" />
-  <project path="external/rust/crates/toml" name="platform/external/rust/crates/toml" groups="pdk" />
-  <project path="external/rust/crates/toml_datetime" name="platform/external/rust/crates/toml_datetime" groups="pdk" />
-  <project path="external/rust/crates/toml_edit" name="platform/external/rust/crates/toml_edit" groups="pdk" />
-  <project path="external/rust/crates/tonic" name="platform/external/rust/crates/tonic" groups="pdk" />
-  <project path="external/rust/crates/tower" name="platform/external/rust/crates/tower" groups="pdk" />
-  <project path="external/rust/crates/tower-layer" name="platform/external/rust/crates/tower-layer" groups="pdk" />
-  <project path="external/rust/crates/tower-service" name="platform/external/rust/crates/tower-service" groups="pdk" />
-  <project path="external/rust/crates/tracing" name="platform/external/rust/crates/tracing" groups="pdk" />
-  <project path="external/rust/crates/tracing-attributes" name="platform/external/rust/crates/tracing-attributes" groups="pdk" />
-  <project path="external/rust/crates/tracing-core" name="platform/external/rust/crates/tracing-core" groups="pdk" />
-  <project path="external/rust/crates/tracing-subscriber" name="platform/external/rust/crates/tracing-subscriber" groups="pdk" />
-  <project path="external/rust/crates/try-lock" name="platform/external/rust/crates/try-lock" groups="pdk" />
-  <project path="external/rust/crates/tungstenite" name="platform/external/rust/crates/tungstenite" groups="pdk" />
-  <project path="external/rust/crates/twox-hash" name="platform/external/rust/crates/twox-hash" groups="pdk" />
-  <project path="external/rust/crates/ucd-trie" name="platform/external/rust/crates/ucd-trie" groups="pdk" />
-  <project path="external/rust/crates/unicode-bidi" name="platform/external/rust/crates/unicode-bidi" groups="pdk" />
-  <project path="external/rust/crates/unicode-ident" name="platform/external/rust/crates/unicode-ident" groups="pdk" />
-  <project path="external/rust/crates/unicode-normalization" name="platform/external/rust/crates/unicode-normalization" groups="pdk" />
-  <project path="external/rust/crates/unicode-segmentation" name="platform/external/rust/crates/unicode-segmentation" groups="pdk" />
-  <project path="external/rust/crates/unicode-width" name="platform/external/rust/crates/unicode-width" groups="pdk" />
-  <project path="external/rust/crates/unicode-xid" name="platform/external/rust/crates/unicode-xid" groups="pdk" />
-  <project path="external/rust/crates/uniffi" name="platform/external/rust/crates/uniffi" groups="pdk" />
-  <project path="external/rust/crates/uniffi_checksum_derive" name="platform/external/rust/crates/uniffi_checksum_derive" groups="pdk" />
-  <project path="external/rust/crates/uniffi_core" name="platform/external/rust/crates/uniffi_core" groups="pdk" />
-  <project path="external/rust/crates/uniffi_macros" name="platform/external/rust/crates/uniffi_macros" groups="pdk" />
-  <project path="external/rust/crates/uniffi_meta" name="platform/external/rust/crates/uniffi_meta" groups="pdk" />
-  <project path="external/rust/crates/unsafe-libyaml" name="platform/external/rust/crates/unsafe-libyaml" groups="pdk" />
-  <project path="external/rust/crates/untrusted" name="platform/external/rust/crates/untrusted" groups="pdk" />
-  <project path="external/rust/crates/url" name="platform/external/rust/crates/url" groups="pdk" />
-  <project path="external/rust/crates/userfaultfd" name="platform/external/rust/crates/userfaultfd" groups="pdk" />
-  <project path="external/rust/crates/userfaultfd-sys" name="platform/external/rust/crates/userfaultfd-sys" groups="pdk" />
-  <project path="external/rust/crates/utf-8" name="platform/external/rust/crates/utf-8" groups="pdk" />
-  <project path="external/rust/crates/uuid" name="platform/external/rust/crates/uuid" groups="pdk" />
+  <project path="external/rust/crates/rusb" name="platform/external/rust/crates/rusb" groups="pdk" />
+  <project path="external/rust/crates/ucs2" name="platform/external/rust/crates/ucs2" groups="pdk" />
+  <project path="external/rust/crates/uefi" name="platform/external/rust/crates/uefi" groups="pdk" />
+  <project path="external/rust/crates/uefi-macros" name="platform/external/rust/crates/uefi-macros" groups="pdk" />
+  <project path="external/rust/crates/uefi-raw" name="platform/external/rust/crates/uefi-raw" groups="pdk" />
+  <project path="external/rust/crates/uguid" name="platform/external/rust/crates/uguid" groups="pdk" />
   <project path="external/rust/crates/v4l2r" name="platform/external/rust/crates/v4l2r" groups="pdk" />
-  <project path="external/rust/crates/vhost" name="platform/external/rust/crates/vhost" groups="pdk" />
-  <project path="external/rust/crates/vhost-device-vsock" name="platform/external/rust/crates/vhost-device-vsock" groups="pdk" />
-  <project path="external/rust/crates/vsprintf" name="platform/external/rust/crates/vsprintf" groups="pdk" />
-  <project path="external/rust/crates/vhost-user-backend" name="platform/external/rust/crates/vhost-user-backend" groups="pdk" />
-  <project path="external/rust/crates/virtio-bindings" name="platform/external/rust/crates/virtio-bindings" groups="pdk" />
-  <project path="external/rust/crates/virtio-drivers" name="platform/external/rust/crates/virtio-drivers" groups="pdk" />
-  <project path="external/rust/crates/virtio-queue" name="platform/external/rust/crates/virtio-queue" groups="pdk" />
-  <project path="external/rust/crates/virtio-vsock" name="platform/external/rust/crates/virtio-vsock" groups="pdk" />
-  <project path="external/rust/crates/vm-memory" name="platform/external/rust/crates/vm-memory" groups="pdk" />
-  <project path="external/rust/crates/vmm-sys-util" name="platform/external/rust/crates/vmm-sys-util" groups="pdk" />
-  <project path="external/rust/crates/vsock" name="platform/external/rust/crates/vsock" groups="pdk" />
-  <project path="external/rust/crates/vulkano" name="platform/external/rust/crates/vulkano" groups="pdk" />
-  <project path="external/rust/crates/walkdir" name="platform/external/rust/crates/walkdir" groups="pdk" />
-  <project path="external/rust/crates/want" name="platform/external/rust/crates/want" groups="pdk" />
-  <project path="external/rust/crates/weak-table" name="platform/external/rust/crates/weak-table" groups="pdk" />
-  <project path="external/rust/crates/webpki" name="platform/external/rust/crates/webpki" groups="pdk" />
-  <project path="external/rust/crates/which" name="platform/external/rust/crates/which" groups="pdk" />
-  <project path="external/rust/crates/winnow" name="platform/external/rust/crates/winnow" groups="pdk" />
-  <project path="external/rust/crates/x509-cert" name="platform/external/rust/crates/x509-cert" groups="pdk" />
-  <project path="external/rust/crates/xml-rs" name="platform/external/rust/crates/xml-rs" groups="pdk" />
-  <project path="external/rust/crates/yaml-rust" name="platform/external/rust/crates/yaml-rust" groups="pdk" />
-  <project path="external/rust/crates/zerocopy" name="platform/external/rust/crates/zerocopy" groups="pdk" />
-  <project path="external/rust/crates/zerocopy-derive" name="platform/external/rust/crates/zerocopy-derive" groups="pdk" />
-  <project path="external/rust/crates/zeroize" name="platform/external/rust/crates/zeroize" groups="pdk" />
-  <project path="external/rust/crates/zeroize_derive" name="platform/external/rust/crates/zeroize_derive" groups="pdk" />
-  <project path="external/rust/crates/zip" name="platform/external/rust/crates/zip" groups="pdk" />
   <project path="external/rust/beto-rust" name="platform/external/rust/beto-rust" groups="pdk" />
   <project path="external/rust/cxx" name="platform/external/rust/cxx" groups="pdk" />
   <project path="external/rust/autocxx" name="platform/external/rust/autocxx" groups="pdk" />
@@ -966,6 +597,7 @@
   <project path="external/trusty/musl" name="trusty/external/musl" groups="trusty,pdk" />
   <project path="external/truth" name="platform/external/truth" groups="pdk" />
   <project path="external/turbine" name="platform/external/turbine" groups="pdk" />
+  <project path="external/ublksrv" name="platform/external/ublksrv" groups="pdk" />
   <project path="external/unicode" name="platform/external/unicode" groups="pdk" />
   <project path="external/universal-tween-engine" name="platform/external/universal-tween-engine" />
   <project path="external/uwb" name="platform/external/uwb" groups="pdk" />
