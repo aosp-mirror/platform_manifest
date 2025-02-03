@@ -1,82 +1,107 @@
 <manifest>
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="androidx-wear-wear-phone-interactions-release" />
-  <superproject name="platform/superproject" remote="aosp" />
-
-  
-  <project name="platform/build" path="build/make" revision="d49bc3b04ca153e503e579bc11e08ccfb1301a73" upstream="androidx-wear-wear-phone-interactions-release" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="androidx-wear-wear-phone-interactions-release" remote="aosp" />
+  <project path="build/make" name="platform/build" revision="3e89b8773c0909dbc8f37f336369340ac34e3b98" upstream="androidx-wear-wear-phone-interactions-release" />
 
   
   
-  <project clone-depth="1" name="platform/external/noto-fonts" path="external/noto-fonts" revision="be8a7617da8765fdcb3abe35d9f1578b1cc8d45a" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="ddce2571b16bab7fcba7b31245efba7e929790d1" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/external/icing" path="external/icing" revision="20437efd05ffb505b36624f092e3e2d6aa834ed7" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/external/icu" path="external/icu" revision="5bb65f197840a4e283efe52d4c2df4a06e6175c0" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/external/google-benchmark" path="external/google-benchmark" revision="ac78e79576a6149bfaa941e57013a1f4f0505067" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/dexter" name="platform/tools/dexter" clone-depth="1" revision="7bc2c8ccf1db5bd95d471f52ecfe732b5722ff61" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" revision="89f21b0b6a1394fc3a7998ef0361c8bf8103bf2d" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" revision="993557d48e979d526b412f34355fbce6fdc41cdf" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/icing" name="platform/external/icing" clone-depth="1" revision="6fba34c26e0005e353916f18b54e7eb19815f9f0" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/icu" name="platform/external/icu" clone-depth="1" revision="5bb65f197840a4e283efe52d4c2df4a06e6175c0" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/sqlite" name="platform/external/sqlite" clone-depth="1" revision="ea82b873876703f67948107f0d59691cea51ebd0" upstream="androidx-wear-wear-phone-interactions-release" />
+
   
-  <project clone-depth="1" name="platform/external/protobuf" path="external/protobuf" revision="61d8c3f503f67c0491c16e17b95bd391dd025428" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="8aab533826178924f6355e310f804e1247b91986" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="cb18f10f8bcba5b4dd0bdc441ef0837e9ad89255" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="8759893b15627e09a76140ae550f478c782d3387" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/prebuilts/androidx/traceprocessor" path="prebuilts/androidx/traceprocessor" revision="e7fb8fc784206eb07bce0b636fce4d276f20f150" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/compose-hero-benchmarks/poxedex-compose" name="platform/external/compose-hero-benchmarks/poxedex-compose" clone-depth="1" revision="8e2d50ddccba6a29fb380a33338e12000b665be2" upstream="androidx-wear-wear-phone-interactions-release" />
+
   
-  <project clone-depth="1" name="platform/external/doclava" path="external/doclava" revision="01990004ec2192d7c85bcbfb18f236c60d32828a" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/external/dokka" path="external/dokka" revision="01801820c58324ce5866a33e6650f28dd374182e" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" name="platform/external/libyuv" path="external/libyuv" revision="aa858a9636b88e56bc0ad5150524c8a2314f3b97" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" revision="00913e164a6daeaf8ed49df97614d4c48b27e447" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/chrome-for-testing" name="platform/prebuilts/androidx/chrome-for-testing" clone-depth="1" revision="554ec2c1ece82dcbe358592caf4c86a11ea49e62" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" revision="d82cb6ec38c02e0592443571100cb22cef3315d4" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" revision="353630e0390505c9ce2081fad8403b9b92ab2ece" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/javascript-for-kotlin" name="platform/prebuilts/androidx/javascript-for-kotlin" clone-depth="1" revision="fc3fd63751b5b6e9e24827dc99d6235c5a54015b" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" revision="8759893b15627e09a76140ae550f478c782d3387" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/ink" name="platform/prebuilts/androidx/ink" clone-depth="1" revision="ab673acc5e2c598b4ec3c47e071a8f710b8b5c74" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" revision="7e0e1a7f9edccfd0e1fe6f3ce3aa88744a7f1b10" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" revision="e385220a50d6c8909820335e3d7993fbba229169" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/androidx/xr" name="platform/prebuilts/androidx/xr" clone-depth="1" revision="5dbaf89aec53e8cb3bd0fc3f618632837bff4014" upstream="androidx-wear-wear-phone-interactions-release" />
+  
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" revision="2a702b70aa88f45d659d276bbb42a9e3b8ee25f8" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" revision="6cc88454220223252d5e7cb22fc46518b5595a0e" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="5a65cd8236a08fb8f41334113c0430340d6bf373" upstream="androidx-wear-wear-phone-interactions-release" />
 
   
   
-  <project clone-depth="1" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="836568c6b047544e77dc2d46044f0d8d3e820796" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project name="platform/tools/repohooks" path="tools/repohooks" revision="109ae1a1b8b8b80abdefb95729544d60601160c4" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" revision="02843f22ddff8218ded577d4a3e83db62aa63692" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" revision="b31659ec49112715256ca65a5c07fee32c105cb4" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1" revision="60f7c64b7a22a30065e034ac1ed9e5bdc0d47c68" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1" revision="4fc37e37c278cdaceddc1dad5bf5a7fd39095fca" upstream="androidx-wear-wear-phone-interactions-release" />
   
   
-  <project clone-depth="1" name="platform/prebuilts/protobuf" path="prebuilts/protobuf" revision="7ba74dff900f9e69a673dcd51b9c179205242b95" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" revision="7ba74dff900f9e69a673dcd51b9c179205242b95" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="645a7339a4d59d46aa57f89dd70eeed02d88cacc" upstream="androidx-wear-wear-phone-interactions-release" />
+
 
   
   
-  <project clone-depth="1" name="platform/tools/external/gradle" path="tools/external/gradle" revision="4b87e390f9a124cca25b67933e44e357c60ec60c" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" revision="333efc64a8b12e1ad4993d83af2144a15b9ac00c" upstream="androidx-wear-wear-phone-interactions-release" />
 
   
-  
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-31" path="prebuilts/fullsdk-darwin/platforms/android-31" revision="200e64779106cf6738f7c2cf02c9f23b683b5ac1" upstream="androidx-wear-wear-phone-interactions-release">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-31" src="." />
+  <project path="prebuilts/fullsdk-darwin/platforms" name="platform/prebuilts/fullsdk/platforms" clone-depth="1" revision="299e3a1c64506a958c4c487377a9c196b69e3edb" upstream="androidx-wear-wear-phone-interactions-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-31" path="prebuilts/fullsdk-darwin/sources/android-31" revision="75c718b2434a9003e34cb2fa3c89a1acf7449cc1" upstream="androidx-wear-wear-phone-interactions-release">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-31" src="." />
+  <project path="prebuilts/fullsdk-darwin/sources" name="platform/prebuilts/fullsdk/sources" clone-depth="1" revision="dc3f885ebe8ddc75bd9cf2d567eef4d1ed433a09" upstream="androidx-wear-wear-phone-interactions-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="822c8a5384d32626b45ffa34e8c1ed53eebadbdb" upstream="androidx-wear-wear-phone-interactions-release" />
+
   
+  <project path="prebuilts/fullsdk-darwin/build-tools" name="platform/prebuilts/fullsdk-darwin/build-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="7540faf0c99f587e09526916f2663bc0342c0724" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-darwin/cmdline-tools" name="platform/prebuilts/fullsdk-darwin/cmdline-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="259b6a33db4ae6e34ce4121c79b48b222f9815ff" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="7c2ef8795ae6be5cb2939a2fe5ed282905660dac" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-darwin/tools" name="platform/prebuilts/fullsdk-darwin/tools" clone-depth="1" groups="notdefault,platform-darwin" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-wear-wear-phone-interactions-release" />
+
   
-  <project clone-depth="1" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="b4ad6ebe55e333089df61ed0ff3203e866696c31" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-linux/build-tools" name="platform/prebuilts/fullsdk-linux/build-tools" clone-depth="1" groups="notdefault,platform-linux" revision="5d7b781b0367b83e6249396cbd4f9fab0a5313f0" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-linux/cmdline-tools" name="platform/prebuilts/fullsdk-linux/cmdline-tools" clone-depth="1" groups="notdefault,platform-linux" revision="066e40b1aba006cf95698c9d34a5c50ff992f5d8" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools" clone-depth="1" groups="notdefault,platform-linux" revision="9acd246805a7e2619c8ca1542784a2cd4de02c20" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-linux/tools" name="platform/prebuilts/fullsdk-linux/tools" clone-depth="1" groups="notdefault,platform-linux" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-wear-wear-phone-interactions-release" />
+
 
   
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3" path="prebuilts/fullsdk-darwin/build-tools/29.0.3" revision="f597735774e931d682fb10e0d0590392f4a69c38" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/30.0.3" path="prebuilts/fullsdk-darwin/build-tools/30.0.3" revision="17cc286169eb2246fe626f1e6ee907be0495521e" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="toolchain/prebuilts/ndk-darwin/r21" path="prebuilts/fullsdk-darwin/ndk" revision="1c4977f21886e391f7a2105c218fc9de9ac49b31" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="c78da7c1d817684e99e7bbb7252e1c505f568e26" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-darwin/ndk-bundle" name="toolchain/prebuilts/ndk-darwin/r27" revision="ca75344ceaacb4e90888371aa3b640d8f4fbcfa8" clone-depth="1" groups="notdefault,platform-darwin" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-darwin/cmake" name="platform/prebuilts/cmake/darwin-x86" revision="d55d089231ef9d652228e2b86e516ceeae0675bd" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-wear-wear-phone-interactions-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-darwin/ninja" name="platform/prebuilts/ninja/darwin-x86" revision="f321e197944c19d273cec788b9a3e8ca94331248" groups="notdefault,platform-darwin" clone-depth="1" upstream="androidx-wear-wear-phone-interactions-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/ndk-bundle" name="toolchain/prebuilts/ndk/r27" revision="77eba0d553f8f58557f99fa98f327eb5f46e0c8c" clone-depth="1" groups="notdefault,platform-linux" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/fullsdk-linux/cmake" name="platform/prebuilts/cmake/linux-x86" revision="9f8d7b0200ff4d0c2f9b67e24c04aae2a48a9e27" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-wear-wear-phone-interactions-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/ninja" name="platform/prebuilts/ninja/linux-x86" revision="8a10824f74fe0e22af9bf314a837f5b70e2bb67f" groups="notdefault,platform-linux" clone-depth="1" upstream="androidx-wear-wear-phone-interactions-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
+  </project>
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="fc59035d8c856055f2a263dc8a2f9de96c959cc2" upstream="androidx-wear-wear-phone-interactions-release" />
+  
+  
+  <project path="prebuilts/jdk/jdk17" name="platform/prebuilts/jdk/jdk17" revision="f6e0a88cff84fd57741fc671208ba0326f036c8e" clone-depth="1" upstream="androidx-wear-wear-phone-interactions-release" />
+  <project path="prebuilts/jdk/jdk21" name="platform/prebuilts/jdk/jdk21" revision="74744435645bc33cfbeb3187d1550ded2f61a55f" clone-depth="1" upstream="androidx-wear-wear-phone-interactions-release" />
+  
+  
+  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" revision="f03f5a198d9251c0cbc56477d7dcb7801f533ec3" upstream="androidx-wear-wear-phone-interactions-release" />
+
+  
+
+  
+  <project path="frameworks/support" name="platform/frameworks/support" revision="2a6e9213b8a20cd6b58f08550065b5aa6bc56150" upstream="androidx-wear-wear-phone-interactions-release" />
+  
+
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
   
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3" path="prebuilts/fullsdk-linux/build-tools/29.0.3" revision="2d89707a7cc994d40bd4c20b3cb42cf5a87e983a" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/30.0.3" path="prebuilts/fullsdk-linux/build-tools/30.0.3" revision="5074774ea2223b32b73717896c2e722df523c67b" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="toolchain/prebuilts/ndk/r21" path="prebuilts/fullsdk-linux/ndk" revision="be518ef4272ce61fd6dad9db73e9be74853b3974" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="1a6c32bae0ee5594740c6e8ff8d037c9a43d2865" upstream="androidx-wear-wear-phone-interactions-release" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-wear-wear-phone-interactions-release" />
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="de5fa1c66d3bdcbf2bbc62d2504ec6b0b0fb74e1" upstream="androidx-wear-wear-phone-interactions-release" />
-
-  
-  <project clone-depth="1" name="platform/frameworks/support-golden" path="golden" revision="b04bea86c4a5d352b2258dee9432e752b9af9a3e" upstream="androidx-wear-wear-phone-interactions-release" />
-
-  
-
-  
-  <project name="platform/frameworks/support" path="frameworks/support" revision="5ed4e34d76ec59f99715642050f8f8ad36c4875c" upstream="androidx-wear-wear-phone-interactions-release" />
-  
-
-  <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
 </manifest>
