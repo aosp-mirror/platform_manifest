@@ -39,7 +39,7 @@
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/pesto" name="platform/build/pesto" groups="pdk" />
   <project path="build/release" name="platform/build/release" groups="pdk,tradefed,sysui-studio" />
-  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
+  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed,sysui-studio" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
@@ -94,7 +94,7 @@
   <project path="device/google/gs101-sepolicy" name="device/google/gs101-sepolicy" groups="device,slider,bluejay,pdk-gs-arm" />
   <project path="device/google/gs201" name="device/google/gs201" groups="device,cloudripper,pdk-gs-arm" />
   <project path="device/google/gs201-sepolicy" name="device/google/gs201-sepolicy" groups="device,cloudripper,pdk-gs-arm" />
-  <project path="device/google/gs-common" name="device/google/gs-common" groups="device,slider,bluejay,cloudripper,pdk-gs-arm,pdk-cw-tvc" />
+  <project path="device/google/gs-common" name="device/google/gs-common" groups="device,slider,bluejay,cloudripper,pdk-gs-arm,pdk-cw-tvc,pdk-gs-imgtec" />
   <project path="device/google/lynx" name="device/google/lynx" groups="device,lynx" />
   <project path="device/google/lynx-sepolicy" name="device/google/lynx-sepolicy" groups="device,lynx" />
   <project path="device/google/lynx-kernels/5.10" name="device/google/lynx-kernels/5.10" groups="device,lynx" clone-depth="1" />
@@ -243,6 +243,7 @@
   <project path="external/fdlibm" name="platform/external/fdlibm" groups="pdk" />
   <project path="external/fec" name="platform/external/fec" groups="pdk" />
   <project path="external/fft2d" name="platform/external/fft2d" groups="pdk" />
+  <project path="external/fhir/spec/r4" name="platform/external/fhir/spec/r4" groups="pdk" />
   <project path="external/firebase-messaging" name="platform/external/firebase-messaging" groups="pdk"/>
   <project path="external/flac" name="platform/external/flac" groups="pdk" />
   <project path="external/flashrom" name="platform/external/flashrom" groups="pdk" />
@@ -331,6 +332,7 @@
   <project path="external/jline" name="platform/external/jline" groups="pdk,tradefed,pdk-fs" />
   <project path="external/jsilver" name="platform/external/jsilver" groups="pdk" />
   <project path="external/jsmn" name="platform/external/jsmn" groups="pdk" />
+  <project path="external/json-schema-validator" name="platform/external/json-schema-validator" groups="pdk" />
   <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="pdk" />
   <project path="external/jsoup" name="platform/external/jsoup" groups="pdk" />
   <project path="external/jspecify" name="platform/external/jspecify" groups="pdk" />
@@ -614,6 +616,7 @@
   <project path="external/unicode" name="platform/external/unicode" groups="pdk" />
   <project path="external/uwb" name="platform/external/uwb" groups="pdk" />
   <project path="external/v4l2_codec2" name="platform/external/v4l2_codec2" groups="pdk" />
+  <project path="external/v4l-utils" name="platform/external/v4l-utils" groups="pdk" />
   <project path="external/vboot_reference" name="platform/external/vboot_reference" groups="pdk" />
   <project path="external/virglrenderer" name="platform/external/virglrenderer" groups="pdk" />
   <project path="external/virtio-media" name="platform/external/virtio-media" groups="pdk" />
@@ -683,16 +686,17 @@
   <project path="hardware/google/apf" name="platform/hardware/google/apf" groups="pdk" />
   <project path="hardware/google/av" name="platform/hardware/google/av" groups="pdk" />
   <project path="hardware/google/camera" name="platform/hardware/google/camera" groups="pdk" />
-  <project path="hardware/google/gchips" name="platform/hardware/google/gchips" groups="pdk-lassen,pdk-gs-arm" />
+  <project path="hardware/google/display/common" name="platform/hardware/google/display/common" />
+  <project path="hardware/google/gchips" name="platform/hardware/google/gchips" groups="pdk-lassen,pdk-gs-arm,pdk-gs-imgtec" />
   <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream" groups="pdk" />
-  <project path="hardware/google/graphics/common" name="platform/hardware/google/graphics/common" groups="pdk-lassen,pdk-gs-arm" />
+  <project path="hardware/google/graphics/common" name="platform/hardware/google/graphics/common" groups="pdk-lassen,pdk-gs-arm,pdk-gs-imgtec" />
   <project path="hardware/google/graphics/gs101" name="platform/hardware/google/graphics/gs101" groups="pdk-lassen,pdk-gs-arm" />
   <project path="hardware/google/graphics/gs201" name="platform/hardware/google/graphics/gs201" groups="cloudripper,pdk-gs-arm" />
   <project path="hardware/google/graphics/zuma" name="platform/hardware/google/graphics/zuma" groups="ripcurrent,pdk-gs-arm" />
   <project path="hardware/google/graphics/zumapro" name="platform/hardware/google/graphics/zumapro" groups="ripcurrentpro" />
   <project path="hardware/google/interfaces" name="platform/hardware/google/interfaces" groups="pdk,sysui-studio" />
-  <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="generic_fs,pixel,pdk-gs-arm" />
-  <project path="hardware/google/pixel-sepolicy" name="platform/hardware/google/pixel-sepolicy" groups="generic_fs,pixel" />
+  <project path="hardware/google/pixel" name="platform/hardware/google/pixel" groups="generic_fs,pixel,pdk-gs-arm,pdk-gs-imgtec,pdk-desktop" />
+  <project path="hardware/google/pixel-sepolicy" name="platform/hardware/google/pixel-sepolicy" groups="generic_fs,pixel,pdk-desktop" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk,sysui-studio" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
@@ -777,6 +781,7 @@
   <project path="packages/apps/ManagedProvisioning" name="platform/packages/apps/ManagedProvisioning" groups="pdk-fs" />
   <project path="external/android_onboarding" name="platform/external/android_onboarding" groups="pdk-fs" />
   <project path="packages/apps/Messaging" name="platform/packages/apps/Messaging" groups="pdk-fs" />
+  <project path="packages/apps/Multiuser" name="platform/packages/apps/Multiuser" groups="pdk-fs" />
   <project path="packages/apps/Music" name="platform/packages/apps/Music" groups="pdk-fs" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" groups="pdk-fs" />
   <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" groups="apps_nfc,pdk-fs,pdk-cw-fs" />
@@ -1026,7 +1031,7 @@
   <project path="tools/apifinder" name="platform/tools/apifinder" groups="pdk,tools" />
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" />
   <project path="tools/apkzlib" name="platform/tools/apkzlib" groups="pdk,tradefed" />
-  <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" />
+  <project path="tools/asuite" name="platform/tools/asuite" groups="pdk,sysui-studio" />
   <project path="tools/camera" name="platform/tools/camera" groups="pdk,tools" />
   <project path="tools/carrier_settings" name="platform/tools/carrier_settings" groups="tools" />
   <project path="tools/content_addressed_storage/prebuilts" name="platform/tools/content_addressed_storage/prebuilts" groups="pdk,tools" />
@@ -1077,7 +1082,7 @@
   <project path="trusty/user/app/storage" name="trusty/app/storage" groups="trusty,pdk" />
   <project path="trusty/user/base" name="trusty/lib" groups="trusty,pdk" />
   <project path="trusty/user/desktop" name="trusty/user/desktop" groups="android-desktop,pdk,trusty" />
-  <project path="trusty/vendor/google/aosp" name="trusty/vendor/google/aosp" groups="trusty,pdk" >
+  <project path="trusty/vendor/google/aosp" name="trusty/vendor/google/aosp" groups="trusty,pdk">
     <copyfile src="lk_inc.mk" dest="lk_inc.mk" />
   </project>
   <!-- END open-source projects -->
