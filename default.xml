@@ -4,11 +4,11 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/aml_con_351412000"
+  <default revision="refs/tags/aml_tz6_351400020"
            remote="aosp"
            sync-j="4" />
 
-  <superproject name="platform/superproject" remote="aosp" revision="aml_con_351412000"/>
+  <superproject name="platform/superproject" remote="aosp" revision="aml_tz6_351400020"/>
   <contactinfo bugurl="go/repo-bug" />
   <!-- BEGIN open-source projects -->
   <project path="build/make" name="platform/build" groups="pdk,sysui-studio" >
@@ -51,10 +51,6 @@
   <project path="device/generic/common" name="device/generic/common" groups="pdk" />
   <project path="device/generic/goldfish" name="device/generic/goldfish" groups="pdk" />
   <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" groups="pdk" />
-  <project path="device/generic/mini-emulator-arm64" name="device/generic/mini-emulator-arm64" groups="pdk" />
-  <project path="device/generic/mini-emulator-armv7-a-neon" name="device/generic/mini-emulator-armv7-a-neon" groups="pdk" />
-  <project path="device/generic/mini-emulator-x86" name="device/generic/mini-emulator-x86" groups="pdk" />
-  <project path="device/generic/mini-emulator-x86_64" name="device/generic/mini-emulator-x86_64" groups="pdk" />
   <project path="device/generic/trusty" name="device/generic/trusty" groups="pdk" />
   <project path="device/generic/x86" name="device/generic/x86" groups="pdk" />
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="pdk" />
@@ -108,8 +104,6 @@
   <project path="device/linaro/dragonboard-kernel" name="device/linaro/dragonboard-kernel" groups="device,dragonboard,pdk" clone-depth="1" />
   <project path="device/linaro/hikey" name="device/linaro/hikey" groups="device,hikey,pdk" />
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" />
-  <project path="device/linaro/poplar" name="device/linaro/poplar" groups="device,poplar,pdk" />
-  <project path="device/linaro/poplar-kernel" name="device/linaro/poplar-kernel" groups="device,poplar,pdk" clone-depth="1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
   <project path="external/aac" name="platform/external/aac" groups="pdk" />
   <project path="external/abseil-cpp" name="platform/external/abseil-cpp" groups="pdk" />
@@ -120,7 +114,6 @@
   <project path="external/androidplot" name="platform/external/androidplot" groups="pdk" />
   <project path="external/angle" name="platform/external/angle" groups="pdk" />
   <project path="external/anonymous-counting-tokens" name="platform/external/anonymous-counting-tokens" groups="pdk" />
-  <project path="external/ant-glob" name="platform/external/ant-glob" groups="pdk" />
   <project path="external/antlr" name="platform/external/antlr" groups="pdk" />
   <project path="external/apache-commons-bcel" name="platform/external/apache-commons-bcel" groups="pdk" />
   <project path="external/apache-commons-compress" name="platform/external/apache-commons-compress" groups="pdk" />
@@ -283,6 +276,7 @@
   <project path="external/hamcrest" name="platform/external/hamcrest" groups="pdk" />
   <project path="external/harfbuzz_ng" name="platform/external/harfbuzz_ng" groups="pdk,qcom_msm8x26" />
   <project path="external/hyphenation-patterns" name="platform/external/hyphenation-patterns" groups="pdk" />
+  <project path="external/iamf_tools" name="platform/external/iamf_tools" groups="pdk" />
   <project path="external/icing" name="platform/external/icing" groups="pdk" />
   <project path="external/icu" name="platform/external/icu" groups="pdk" />
   <project path="external/igt-gpu-tools" name="platform/external/igt-gpu-tools" groups="pdk" />
@@ -298,6 +292,7 @@
   <project path="external/jackson-annotations" name="platform/external/jackson-annotations" groups="pdk" />
   <project path="external/jackson-core" name="platform/external/jackson-core" groups="pdk" />
   <project path="external/jackson-databind" name="platform/external/jackson-databind" groups="pdk" />
+  <project path="external/jakarta.inject" name="platform/external/jakarta.inject" groups="pdk" />
   <project path="external/jarjar" name="platform/external/jarjar" groups="pdk" />
   <project path="external/javaparser" name="platform/external/javaparser" groups="pdk" />
   <project path="external/javapoet" name="platform/external/javapoet" groups="pdk" />
@@ -328,6 +323,7 @@
   <project path="external/kotlinx.metadata" name="platform/external/kotlinx.metadata" groups="pdk" />
   <project path="external/kotlinx.serialization" name="platform/external/kotlinx.serialization" groups="pdk" />
   <project path="external/kotlin-compose-compiler" name="platform/external/kotlin-compose-compiler" groups="pdk" />
+  <project path="external/kotlin.metadata" name="platform/external/kotlin.metadata" groups="pdk" />
   <project path="external/ktfmt" name="platform/external/ktfmt" groups="pdk,sysui-studio" />
   <project path="external/ksoap2" name="platform/external/ksoap2" groups="pdk" />
   <project path="external/ksp" name="platform/external/ksp" groups="pdk" />
@@ -398,7 +394,6 @@
   <project path="external/linux-kselftest" name="platform/external/linux-kselftest" groups="vts,pdk" clone-depth="1" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
   <project path="external/llvm-libc" name="platform/external/llvm-libc" groups="pdk" />
-  <project path="external/lmfit" name="platform/external/lmfit" groups="pdk" />
   <project path="external/lottie" name="platform/external/lottie" groups="pdk" />
   <project path="external/lua" name="platform/external/lua" groups="pdk" />
   <project path="external/ltp" name="platform/external/ltp" groups="vts,pdk" />
@@ -425,6 +420,7 @@
   <project path="external/moshi" name="platform/external/moshi" groups="pdk" />
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="pdk" />
   <project path="external/MPAndroidChart" name="platform/external/MPAndroidChart" groups="pdk" />
+  <project path="external/mpdecimal" name="platform/external/mpdecimal" groups="pdk" />
   <project path="external/ms-tpm-20-ref" name="platform/external/ms-tpm-20-ref" groups="pdk" />
   <project path="external/mtools" name="platform/external/mtools" groups="pdk" />
   <project path="external/musl" name="platform/external/musl" groups="pdk" />
@@ -483,7 +479,6 @@
   <project path="external/python/asn1crypto" name="platform/external/python/asn1crypto" groups="pdk" />
   <project path="external/python/bumble" name="platform/external/python/bumble" groups="pdk" />
   <project path="external/python/cachetools" name="platform/external/python/cachetools" groups="pdk" />
-  <project path="external/python/cpython2" name="platform/external/python/cpython2" groups="pdk" />
   <project path="external/python/cpython3" name="platform/external/python/cpython3" groups="pdk" />
   <project path="external/python/dateutil" name="platform/external/python/dateutil" groups="pdk" />
   <project path="external/python/enum34" name="platform/external/python/enum34" groups="vts,pdk" />
@@ -506,7 +501,6 @@
   <project path="external/python/python-api-core" name="platform/external/python/python-api-core" groups="pdk" />
   <project path="external/python/pyyaml" name="platform/external/python/pyyaml" groups="pdk" />
   <project path="external/python/rsa" name="platform/external/python/rsa" groups="vts,pdk" />
-  <project path="external/python/setuptools" name="platform/external/python/setuptools" groups="vts,pdk" />
   <project path="external/python/six" name="platform/external/python/six" groups="vts,pdk" />
   <project path="external/python/timeout-decorator" name="platform/external/python/timeout-decorator" groups="pdk" />
   <project path="external/python/typing" name="platform/external/python/typing" groups="pdk" />
@@ -526,7 +520,6 @@
   <project path="external/rnnoise" name="platform/external/rnnoise" groups="pdk" />
   <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" groups="pdk" />
   <project path="external/rust/crabbyavif" name="platform/external/rust/crabbyavif" groups="pdk" />
-  <project path="external/rust/crates/libsqlite3-sys" name="platform/external/rust/crates/libsqlite3-sys" groups="pdk" />
   <project path="external/rust/crates/libusb1-sys" name="platform/external/rust/crates/libusb1-sys" groups="pdk" />
   <project path="external/rust/crates/openssl" name="platform/external/rust/crates/openssl" groups="pdk" />
   <project path="external/rust/crates/ptr_meta" name="platform/external/rust/crates/ptr_meta" groups="pdk" />
@@ -570,7 +563,6 @@
   <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
   <project path="external/spdx-tools" name="platform/external/spdx-tools" groups="pdk" />
   <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" />
-  <project path="external/stardoc" name="platform/external/stardoc" groups="pdk" />
   <project path="external/starlark-go" name="platform/external/starlark-go" groups="pdk" />
   <project path="external/stg" name="platform/external/stg" groups="pdk" />
   <project path="external/strace" name="platform/external/strace" groups="pdk" />
@@ -604,7 +596,6 @@
   <project path="external/turbine" name="platform/external/turbine" groups="pdk" />
   <project path="external/ublksrv" name="platform/external/ublksrv" groups="pdk" />
   <project path="external/unicode" name="platform/external/unicode" groups="pdk" />
-  <project path="external/universal-tween-engine" name="platform/external/universal-tween-engine" />
   <project path="external/uwb" name="platform/external/uwb" groups="pdk" />
   <project path="external/v4l2_codec2" name="platform/external/v4l2_codec2" groups="pdk" />
   <project path="external/v4l-utils" name="platform/external/v4l-utils" groups="pdk" />
@@ -999,7 +990,6 @@
   <project path="test/suite_harness" name="platform/test/suite_harness" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="test/vts" name="platform/test/vts" groups="vts,pdk" />
   <project path="test/vts-testcase/hal" name="platform/test/vts-testcase/hal" groups="vts,pdk" />
-  <project path="test/vts-testcase/hal-trace" name="platform/test/vts-testcase/hal-trace" groups="vts,pdk" />
   <project path="test/vts-testcase/kernel" name="platform/test/vts-testcase/kernel" groups="vts,pdk" />
   <project path="test/vts-testcase/nbu" name="platform/test/vts-testcase/nbu" groups="vts,projectarch,pdk" />
   <project path="test/vts-testcase/performance" name="platform/test/vts-testcase/performance" groups="vts,projectarch,pdk" />
