@@ -3,13 +3,11 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="androidx-main"
+  <default revision="androidx-appsearch-release"
            remote="aosp" />
   <superproject name="platform/superproject" remote="aosp"/>
-
   <!-- BEGIN dependencies -->
   <project path="build/make" name="platform/build" />
-
   <!-- External dependencies -->
   <!-- Config: shallow -->
   <project path="external/dexter" name="platform/tools/dexter" clone-depth="1" />
@@ -21,13 +19,10 @@
   <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" />
   <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" />
   <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" />
-
   <!-- External Compose Hero Benchmark Targets -->
   <project path="external/compose-hero-benchmarks/poxedex-compose" name="platform/external/compose-hero-benchmarks/poxedex-compose" clone-depth="1"/>
-
   <!-- The contents of external/protobuf must be kept in sync with the contents of prebuilts/protobuf -->
   <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" />
-
   <project path="prebuilts/androidx/chrome-for-testing" name="platform/prebuilts/androidx/chrome-for-testing" clone-depth="1" />
   <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" />
   <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" />
@@ -37,10 +32,9 @@
   <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" />
   <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" />
   <project path="prebuilts/androidx/xr" name="platform/prebuilts/androidx/xr" clone-depth="1" />
-
   <!-- Tools dependencies -->
   <!-- Config: shallow + metalava-main revision -->
-  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1" revision="metalava-main" />
+  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1"  />
   <!-- Config: shallow -->
   <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" />
   <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" />
@@ -48,12 +42,9 @@
   <!-- The contents of external/protobuf must be kept in sync with the contents of prebuilts/protobuf -->
   <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
-
-
   <!-- Gradle dependencies -->
   <!-- Config: shallow -->
   <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" />
-
   <!-- SDK dependencies -->
   <project
     path="prebuilts/fullsdk-darwin/platforms"
@@ -67,7 +58,6 @@
     clone-depth="1">
     <linkfile src="." dest="prebuilts/fullsdk-linux/sources" />
   </project>
-
   <!-- darwin specific -->
   <project
     path="prebuilts/fullsdk-darwin/build-tools"
@@ -89,7 +79,6 @@
     name="platform/prebuilts/fullsdk-darwin/tools"
     clone-depth="1"
     groups="notdefault,platform-darwin" />
-
   <!-- linux specific -->
   <project
     path="prebuilts/fullsdk-linux/build-tools"
@@ -111,8 +100,6 @@
     name="platform/prebuilts/fullsdk-linux/tools"
     clone-depth="1"
     groups="notdefault,platform-linux" />
-
-
   <!-- NDK dependencies -->
   <!-- Config: shallow -->
   <project
@@ -153,7 +140,6 @@
     clone-depth="1" >
     <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
   </project>
-  
   <!-- JDK dependencies -->
   <!-- Config: shallow -->
   <project
@@ -164,18 +150,13 @@
     path="prebuilts/jdk/jdk21"
     name="platform/prebuilts/jdk/jdk21"
     clone-depth="1" />
-  
   <!-- Golden images -->
   <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" />
-
   <!-- END dependencies -->
-
   <!-- BEGIN target project -->
   <project path="frameworks/support" name="platform/frameworks/support" />
   <!-- END target project -->
-
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
-
   <!-- go/android3p markers -->
   <!-- third_party_review marker START -->
   <!-- third_party_review marker END -->
