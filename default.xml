@@ -1,58 +1,107 @@
 <manifest>
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
-  <default remote="aosp" revision="androidx-swiperefreshlayout-release" sync-j="8" />
-  
-  <project name="platform/build" path="build/make" revision="e327ff3a6f655a17a0b51c9b8897b4d4894c7394" />
-  
-  
-  <project clone-depth="1" groups="pdk" name="platform/external/noto-fonts" path="external/noto-fonts" revision="486f71253fd8dce3156f36f0007c81b4315405a3" />
-  <project clone-depth="1" groups="pdk" name="platform/external/webview_support_interfaces" path="external/webview_support_interfaces" revision="42cb5981aa9ff7f8ccdb95d5d97607dded4ad4fe" />
-  <project clone-depth="1" groups="pdk" name="platform/external/doclava" path="external/doclava" revision="17bfa62ff68222b7333f74238caa73b908ceb2a0" />
-  <project clone-depth="1" groups="pdk" name="platform/external/dokka" path="external/dokka" revision="3e1d8d610165da51d26f127f92e609db4af65887" />
-  <project groups="pdk" name="platform/external/icing" path="external/icing" revision="6c8946099323224d409956c43ad37862cbb79302" />
-  <project clone-depth="1" groups="pdk" name="platform/external/icu" path="external/icu" revision="2d57dc7a110fcd3cabce9de8242593473104e98c" />
-  <project clone-depth="1" groups="pdk" name="platform/external/protobuf" path="external/protobuf" revision="df8e6979660e15686401a28a8dcb0a83d193ea00" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/external" path="prebuilts/androidx/external" revision="9d452e9b13b0f3923039578ee881267ae58784a3" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/internal" path="prebuilts/androidx/internal" revision="9a1326dc3be51a8a8f5368b4d732dc96ef0ce193" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/androidx/exoplayer" path="prebuilts/androidx/exoplayer" revision="8759893b15627e09a76140ae550f478c782d3387" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <default revision="androidx-swiperefreshlayout-release" remote="aosp" />
+  <project path="build/make" name="platform/build" revision="712ec964377ded7adf20737597e37e5dc8847c88" upstream="androidx-swiperefreshlayout-release" />
+
   
   
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/checkstyle" path="prebuilts/checkstyle" revision="2e69c77cd636a442ea9f13c5b256cb0ae773efaf" />
-  <project clone-depth="1" groups="pdk-fs" name="platform/prebuilts/ktlint" path="prebuilts/ktlint" revision="fddd5e7beee2d5aba454e8a0fe38700a6aae7d8a" />
-  <project groups="adt-infra,cts,eclipse,motodev,pdk,tools,tradefed" name="platform/tools/repohooks" path="tools/repohooks" revision="dc1782f93d841a558f809f10ca77fe2fe83791b1" />
+  <project path="external/dexter" name="platform/tools/dexter" clone-depth="1" revision="7bc2c8ccf1db5bd95d471f52ecfe732b5722ff61" upstream="androidx-swiperefreshlayout-release" />
+  <project path="external/noto-fonts" name="platform/external/noto-fonts" clone-depth="1" revision="e32c69736bcb7960b1d9f2c89824803530b01dd2" upstream="androidx-swiperefreshlayout-release" />
+  <project path="external/webview_support_interfaces" name="platform/external/webview_support_interfaces" clone-depth="1" revision="e26644018b8debafc5578e8e66405816a6d6c54b" upstream="androidx-swiperefreshlayout-release" />
+  <project path="external/icing" name="platform/external/icing" clone-depth="1" revision="29705911aa48c8aa0bd070dcc83d847ab945ae9f" upstream="androidx-swiperefreshlayout-release" />
+  <project path="external/icu" name="platform/external/icu" clone-depth="1" revision="dca72d8342a197953b61840553c53acd54b99fc4" upstream="androidx-swiperefreshlayout-release" />
+  <project path="external/sqlite" name="platform/external/sqlite" clone-depth="1" revision="ea82b873876703f67948107f0d59691cea51ebd0" upstream="androidx-swiperefreshlayout-release" />
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" clone-depth="1" revision="decc3e6e05667ccb5f8e2cfb20496b5e7b10cf99" upstream="androidx-swiperefreshlayout-release" />
+  <project path="external/ink-stroke-modeler" name="platform/external/ink-stroke-modeler" clone-depth="1" revision="6cc88454220223252d5e7cb22fc46518b5595a0e" upstream="androidx-swiperefreshlayout-release" />
+  <project path="external/libyuv" name="platform/external/libyuv" clone-depth="1" revision="df3f933cd997c6e5a6f842d9e9177cc68a1636a2" upstream="androidx-swiperefreshlayout-release" />
+
+  
+  <project path="external/compose-hero-benchmarks/poxedex-compose" name="platform/external/compose-hero-benchmarks/poxedex-compose" clone-depth="1" revision="e777ba83c95e103a5be4f2b24511ac84deb74159" upstream="androidx-swiperefreshlayout-release" />
+
+  
+  <project path="external/protobuf" name="platform/external/protobuf" clone-depth="1" revision="1238791db0213ed3625009cc5042472e7b6b0d88" upstream="androidx-swiperefreshlayout-release" />
+
+  <project path="prebuilts/androidx/chrome-for-testing" name="platform/prebuilts/androidx/chrome-for-testing" clone-depth="1" revision="554ec2c1ece82dcbe358592caf4c86a11ea49e62" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/androidx/external" name="platform/prebuilts/androidx/external" clone-depth="1" revision="6c9763e795f2213b5f78f085e5d00f0034f0c5e8" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/androidx/internal" name="platform/prebuilts/androidx/internal" clone-depth="1" revision="1a049d5b50b2aecc0b258e5c7ef12fe8bf6b1c14" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/androidx/javascript-for-kotlin" name="platform/prebuilts/androidx/javascript-for-kotlin" clone-depth="1" revision="fc3fd63751b5b6e9e24827dc99d6235c5a54015b" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/androidx/exoplayer" name="platform/prebuilts/androidx/exoplayer" clone-depth="1" revision="8759893b15627e09a76140ae550f478c782d3387" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/androidx/ink" name="platform/prebuilts/androidx/ink" clone-depth="1" revision="c87bca1c04ccc97281df484ef354226b4ede1469" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/androidx/traceprocessor" name="platform/prebuilts/androidx/traceprocessor" clone-depth="1" revision="35e71e32ce930193477c12049af9137e96b8e689" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/androidx/konan" name="platform/prebuilts/androidx/konan" clone-depth="1" revision="e385220a50d6c8909820335e3d7993fbba229169" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/androidx/xr" name="platform/prebuilts/androidx/xr" clone-depth="1" revision="1a141d945dfd2498868cc29a9d679b9d7f8d1cb0" upstream="androidx-swiperefreshlayout-release" />
+
   
   
-  <project clone-depth="1" groups="tools" name="platform/tools/external/gradle" path="tools/external/gradle" revision="b4f4529c94e02e4525a0fc6bb1b52c0e648acbdf" />
+  <project path="tools/metalava" name="platform/tools/metalava" clone-depth="1" revision="05cac6bbe92b272d22a4b791659afbac656b293e" upstream="androidx-swiperefreshlayout-release" />
+  
+  <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" clone-depth="1" revision="c9fad80b44904973f0332bddd73828ad143fa4de" upstream="androidx-swiperefreshlayout-release" />
+  <project path="tools/repohooks" name="platform/tools/repohooks" clone-depth="1" revision="037dd71207b6afdf17ebe0f68671da18c82e8e42" upstream="androidx-swiperefreshlayout-release" />
+  <project path="tools/fetch_artifact" name="tools/fetch_artifact" clone-depth="1" revision="c3c068d9a331575369438e39ffa4b34be9033e9b" upstream="androidx-swiperefreshlayout-release" />
+  
+  <project path="prebuilts/protobuf" name="platform/prebuilts/protobuf" clone-depth="1" revision="1032661b632ef1325de4c4829008dab8571c346e" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="645a7339a4d59d46aa57f89dd70eeed02d88cacc" upstream="androidx-swiperefreshlayout-release" />
+
+
   
   
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/platforms/android-29" path="prebuilts/fullsdk-darwin/platforms/android-29" revision="50e91e4827cdd58e191c942d33db0cc61362cdf6">
-    <linkfile dest="prebuilts/fullsdk-linux/platforms/android-29" src="." />
+  <project path="tools/external/gradle" name="platform/tools/external/gradle" clone-depth="1" revision="5482733c4aea03f828c325153f215eadbe06758a" upstream="androidx-swiperefreshlayout-release" />
+
+  
+  <project path="prebuilts/fullsdk-darwin/platforms" name="platform/prebuilts/fullsdk/platforms" clone-depth="1" revision="4f01d0c190594e3806aa55a97bf6ed1a065f6093" upstream="androidx-swiperefreshlayout-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/platforms" />
   </project>
-  <project clone-depth="1" name="platform/prebuilts/fullsdk/sources/android-29" path="prebuilts/fullsdk-darwin/sources/android-29" revision="05336000acd22925dd2de097a4d9ada6e9cdb348">
-    <linkfile dest="prebuilts/fullsdk-linux/sources/android-29" src="." />
+  <project path="prebuilts/fullsdk-darwin/sources" name="platform/prebuilts/fullsdk/sources" clone-depth="1" revision="dc3f885ebe8ddc75bd9cf2d567eef4d1ed433a09" upstream="androidx-swiperefreshlayout-release">
+    <linkfile src="." dest="prebuilts/fullsdk-linux/sources" />
   </project>
-   <project clone-depth="1" groups="pdk" name="toolchain/prebuilts/ndk/r20" path="prebuilts/fullsdk-darwin/ndk" revision="090bbcaa361eb158e8bfc5e6950081cb9679e350">
-    <linkfile dest="prebuilts/fullsdk-linux/ndk" src="." />
+
+  
+  <project path="prebuilts/fullsdk-darwin/build-tools" name="platform/prebuilts/fullsdk-darwin/build-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="7540faf0c99f587e09526916f2663bc0342c0724" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/fullsdk-darwin/cmdline-tools" name="platform/prebuilts/fullsdk-darwin/cmdline-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="259b6a33db4ae6e34ce4121c79b48b222f9815ff" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools" clone-depth="1" groups="notdefault,platform-darwin" revision="5a81a84dff3b6953a7c5ac532febc6151763ed53" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/fullsdk-darwin/tools" name="platform/prebuilts/fullsdk-darwin/tools" clone-depth="1" groups="notdefault,platform-darwin" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" upstream="androidx-swiperefreshlayout-release" />
+
+  
+  <project path="prebuilts/fullsdk-linux/build-tools" name="platform/prebuilts/fullsdk-linux/build-tools" clone-depth="1" groups="notdefault,platform-linux" revision="5d7b781b0367b83e6249396cbd4f9fab0a5313f0" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/fullsdk-linux/cmdline-tools" name="platform/prebuilts/fullsdk-linux/cmdline-tools" clone-depth="1" groups="notdefault,platform-linux" revision="066e40b1aba006cf95698c9d34a5c50ff992f5d8" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools" clone-depth="1" groups="notdefault,platform-linux" revision="1c86e494d7f2ea6419c37f78284d47aa1e33c3dd" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/fullsdk-linux/tools" name="platform/prebuilts/fullsdk-linux/tools" clone-depth="1" groups="notdefault,platform-linux" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" upstream="androidx-swiperefreshlayout-release" />
+
+
+  
+  
+  <project path="prebuilts/fullsdk-darwin/ndk-bundle" name="toolchain/prebuilts/ndk-darwin/r27" clone-depth="1" groups="notdefault,platform-darwin" revision="ca75344ceaacb4e90888371aa3b640d8f4fbcfa8" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/fullsdk-darwin/cmake" name="platform/prebuilts/cmake/darwin-x86" groups="notdefault,platform-darwin" clone-depth="1" revision="cd343fb0f4752f08ec3a95035bfb8aff82f0400b" upstream="androidx-swiperefreshlayout-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-darwin/ninja" name="platform/prebuilts/ninja/darwin-x86" groups="notdefault,platform-darwin" clone-depth="1" revision="5bee7476abca3c2636af60438fb140dcd14c8674" upstream="androidx-swiperefreshlayout-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/ndk-bundle" name="toolchain/prebuilts/ndk/r27" clone-depth="1" groups="notdefault,platform-linux" revision="77eba0d553f8f58557f99fa98f327eb5f46e0c8c" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/fullsdk-linux/cmake" name="platform/prebuilts/cmake/linux-x86" groups="notdefault,platform-linux" clone-depth="1" revision="57f93f69a48b690cb17cd71a12330e75eb6ff72a" upstream="androidx-swiperefreshlayout-release">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
+  </project>
+  <project path="prebuilts/fullsdk-linux/ninja" name="platform/prebuilts/ninja/linux-x86" groups="notdefault,platform-linux" clone-depth="1" revision="8b6456a781f2f178fade96e3d8d9234e73e9f817" upstream="androidx-swiperefreshlayout-release">
+    <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
   </project>
   
   
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/build-tools/29.0.3" path="prebuilts/fullsdk-darwin/build-tools/29.0.3" revision="f597735774e931d682fb10e0d0590392f4a69c38" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/platform-tools" path="prebuilts/fullsdk-darwin/platform-tools" revision="062713a08b2824062a3cdffa57ec79ed2ea87fe2" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/fullsdk-darwin/tools" path="prebuilts/fullsdk-darwin/tools" revision="204b8813ffedef10214a4afe04c843f1ee9e4fe7" />
-  <project clone-depth="1" groups="notdefault,platform-darwin" name="platform/prebuilts/cmake/darwin-x86" path="prebuilts/fullsdk-darwin/cmake" revision="fc59035d8c856055f2a263dc8a2f9de96c959cc2" />
+  
+  <project path="prebuilts/jdk/jdk17" name="platform/prebuilts/jdk/jdk17" clone-depth="1" revision="33f6d84fe86961209f18af6d356590d281913fb8" upstream="androidx-swiperefreshlayout-release" />
+  <project path="prebuilts/jdk/jdk21" name="platform/prebuilts/jdk/jdk21" clone-depth="1" revision="0d5dc22d255ae6a33738281b814238045ec7a723" upstream="androidx-swiperefreshlayout-release" />
   
   
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/build-tools/29.0.3" path="prebuilts/fullsdk-linux/build-tools/29.0.3" revision="2d89707a7cc994d40bd4c20b3cb42cf5a87e983a" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/platform-tools" path="prebuilts/fullsdk-linux/platform-tools" revision="4512b19ea9a410c64f740de3efcdfcdded07948a" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/fullsdk-linux/tools" path="prebuilts/fullsdk-linux/tools" revision="2d5e66a40bd1e6d43ee458efea6f1dd5d5166a59" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk8" path="prebuilts/jdk/jdk8" revision="fe743aa0d39ef9bab51c612a957acdd4588d069c" />
-  <project clone-depth="1" groups="pdk" name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="bffdb0223ff2898246bbd14a6b17d8920ac600de" />
-  <project clone-depth="1" groups="notdefault,platform-linux" name="platform/prebuilts/cmake/linux-x86" path="prebuilts/fullsdk-linux/cmake" revision="de5fa1c66d3bdcbf2bbc62d2504ec6b0b0fb74e1" />
+  <project path="golden" name="platform/frameworks/support-golden" clone-depth="1" revision="49cff3d8230774eddd0ae5ad70fd4e627026c753" upstream="androidx-swiperefreshlayout-release" />
+
   
-  <project clone-depth="1" groups="pdk" name="platform/frameworks/support-golden" path="golden" revision="375c8ccdd38e09ba3f6ad415e428f43df053a43f" />
+
+  
+  <project path="frameworks/support" name="platform/frameworks/support" revision="03db9dc8bc828d97e467bb11cb99fda231a67a99" upstream="androidx-swiperefreshlayout-release" />
+  
+
+  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
   
   
-  <project groups="pdk-cw-fs,pdk-fs" name="platform/frameworks/support" path="frameworks/support" revision="64d1f17187555272411272193aadfeb97b0effd5" />
   
-  <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks" />
 </manifest>
