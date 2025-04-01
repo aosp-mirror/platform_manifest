@@ -22,14 +22,28 @@
       revision="ub-automotive-main" groups="notdefault,platform-darwin" clone-depth="1" />
   <project path="prebuilts/fullsdk-darwin/platform-tools" name="platform/prebuilts/fullsdk-darwin/platform-tools"
       revision="ub-automotive-main" groups="notdefault,platform-darwin" clone-depth="1" />
+  <project path="prebuilts/fullsdk-darwin/ndk-bundle" name="toolchain/prebuilts/ndk-darwin/r27" clone-depth="1"/>
+  <project path="prebuilts/fullsdk-darwin/ninja" name="platform/prebuilts/ninja/darwin-x86" clone-depth="1" >
+    <linkfile src="ninja" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/ninja" />
+  </project>
+  <project path="prebuilts/cmake/darwin-x86" name="platform/prebuilts/cmake/darwin-x86" clone-depth="1">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-darwin/native-build-tools/bin/cmake" />
+  </project>
   <!-- linux specific -->
   <project path="prebuilts/fullsdk-linux/build-tools" name="platform/prebuilts/fullsdk-linux/build-tools"
       revision="ub-automotive-main" groups="notdefault,platform-linux" clone-depth="1" />
   <project path="prebuilts/fullsdk-linux/platform-tools" name="platform/prebuilts/fullsdk-linux/platform-tools"
       revision="ub-automotive-main" groups="notdefault,platform-linux" clone-depth="1" />
-  <project path="toolchain/prebuilts/ndk/r26" name="toolchain/prebuilts/ndk/r26" clone-depth="1"/>
+  <project path="prebuilts/fullsdk-linux/ndk-bundle" name="toolchain/prebuilts/ndk/r27" clone-depth="1" />
+  <project path="prebuilts/fullsdk-linux/ninja" name="platform/prebuilts/ninja/linux-x86" clone-depth="1" >
+    <linkfile src="ninja" dest="prebuilts/fullsdk-linux/native-build-tools/bin/ninja" />
+  </project>
+    <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1">
+    <linkfile src="bin/cmake" dest="prebuilts/fullsdk-linux/native-build-tools/bin/cmake" />
+  </project>
 
   <project path="external/ukey2" name="platform/external/ukey2" groups="pdk" />
+  <project path="external/libyuv" name="platform/external/libyuv" />
   <project path="frameworks/opt/car/setupwizard" name="platform/frameworks/opt/car/setupwizard" groups="pdk" />
   <project path="packages/apps/Car/BugReport" name="platform/packages/apps/Car/BugReport"  groups="pdk-fs" revision="mirror-car-apps-aosp-release" />
   <project path="packages/apps/Car/Calendar" name="platform/packages/apps/Car/Calendar" groups="pdk-fs" revision="mirror-car-apps-aosp-release" />
